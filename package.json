@@ -11,7 +11,6 @@
     "express": "~4.12.4",
     "jade": "~1.9.2",
     "morgan": "~1.5.3",
-    "querystring": "^0.2.0",
     "request": "^2.58.0",
     "serve-favicon": "~2.2.1",
     "stylus": "0.42.3",
