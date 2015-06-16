@@ -13,7 +13,7 @@ ENTU_URL    = 'https://helpific.entu.ee/api2'
 
 express()
     // logging
-    .use(logger('dev'))
+    .use(logger('combined'))
 
     // jade & stylus middleware
     .set('views', path.join(__dirname, 'views'))
