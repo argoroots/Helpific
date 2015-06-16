@@ -25,7 +25,7 @@ express()
 
     // static files path & favicon
     .use(express.static(path.join(__dirname, 'public')))
-    // .use(favicon(__dirname + '/public/favicon.ico'))
+    .use(favicon(path.join(__dirname, 'public', 'images', 'helpific-logo.ico')))
 
     // routes mapping
     .use('/',         require('./routes/index'))
