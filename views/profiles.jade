@@ -1,8 +1,10 @@
 extends layout
 
 block content
-    h1= title
-    ul
-        each p in profiles
-            li
-                a(href='/profiles/'+p.id)= p.name
+    .row
+        h1.col-xs-12= title
+    .row
+        ul.col-xs-12
+            each p in profiles
+                li
+                    a(href='/profiles/'+p.id)= p.name
