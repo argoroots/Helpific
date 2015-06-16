@@ -1,6 +1,7 @@
 var express = require('express')
 var path    = require('path')
 var logger  = require('morgan')
+var stylus  = require('stylus')
 var favicon = require('serve-favicon')
 var debug   = require('debug')('app:' + path.basename(__filename).replace('.js', ''))
 
@@ -20,7 +21,7 @@ express()
     // jade & stylus middleware
     .set('views', path.join(__dirname, 'views'))
     .set('view engine', 'jade')
-    .use(require('stylus').middleware(path.join(__dirname, 'public')))
+    .use(stylus.middleware({src: path.join(__dirname, 'public'), compress: true}))
 
     // static files path & favicon
     .use(express.static(path.join(__dirname, 'public')))
