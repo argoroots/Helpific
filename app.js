@@ -28,6 +28,7 @@ express()
 
     // routes mapping
     .use('/',         require('./routes/index'))
+    .use('/profiles', require('./routes/profiles'))
 
     // 404
     .use(function(req, res, next) {
