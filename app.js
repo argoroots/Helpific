@@ -2,7 +2,7 @@ var express = require('express')
 var path    = require('path')
 var logger  = require('morgan')
 var favicon = require('serve-favicon')
-var debug   = require('debug')('app:server')
+var debug   = require('debug')('app:' + path.basename(__filename).replace('.js', ''))
 
 
 
