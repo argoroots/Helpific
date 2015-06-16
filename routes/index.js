@@ -7,7 +7,9 @@ var debug   = require('debug')('app:' + path.basename(__filename).replace('.js',
 
 // GET home page
 router.get('/', function(req, res, next) {
-    res.render('index')
+    res.render('index', {
+        title: 'Helpific'
+    })
 })
 
 
