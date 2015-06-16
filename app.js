@@ -6,8 +6,10 @@ var debug   = require('debug')('app:server')
 
 
 
-// global variables
-ENTU_URL    = 'https://helpific.entu.ee/api2'
+// global variables (and list of all used environment variables)
+APP_DEBUG    = process.env.DEBUG
+APP_PORT     = process.env.PORT || 3000
+APP_ENTU_URL = process.env.ENTU || 'https://helpific.entu.ee/api2'
 
 
 
@@ -39,14 +41,14 @@ express()
         res.status(err.status || 500)
         res.render('error', {
             message: err.message,
-            error: process.env.DEBUG ? err : {}
+            error: APP_DEBUG ? err : {}
         })
         if(err.status !== 404) debug(err)
     })
 
     // start server
-    .listen(process.env.PORT || 3000)
+    .listen(APP_PORT)
 
 
 
-debug('Started at port %s', process.env.PORT || 3000)
+debug('Started at port %s', APP_PORT)
