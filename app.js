@@ -15,17 +15,19 @@ APP_ENTU_URL = process.env.ENTU || 'https://helpific.entu.ee/api2'
 
 
 express()
-    // logging
-    .use(logger('combined'))
-
-    // jade & stylus middleware
+    // jade view engine
     .set('views', path.join(__dirname, 'views'))
     .set('view engine', 'jade')
+
+    // stylus to css converter
     .use(stylus.middleware({src: path.join(__dirname, 'public'), compress: true}))
 
     // static files path & favicon
     .use(express.static(path.join(__dirname, 'public')))
     .use(favicon(path.join(__dirname, 'public', 'images', 'helpific-logo.ico')))
+
+    // logging
+    .use(logger('combined'))
 
     // routes mapping
     .use('/',         require('./routes/index'))
