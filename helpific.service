@@ -1,0 +1,21 @@
+[Unit]
+Description=Helpific webpage
+After=etcd.service
+After=docker.service
+
+[Service]
+TimeoutStartSec=0
+KillMode=none
+EnvironmentFile=/etc/environment
+ExecStartPre=-/usr/bin/docker kill helpific
+ExecStartPre=-/usr/bin/docker rm helpific
+ExecStartPre=/usr/bin/docker pull argoroots/helpific:latest
+ExecStart=/usr/bin/docker run \
+          --name="helpific" \
+          --env="PORT=4000" \
+          --publish="80:4000" \
+          argoroots/helpific
+ExecStop=/usr/bin/docker stop helpific
+
+[X-Fleet]
+X-ConditionMachineMetadata=public_ip=188.166.9.145
