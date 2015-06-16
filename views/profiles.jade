@@ -2,7 +2,5 @@ extends layout
 
 block content
     .row
-        ul.col-xs-12
-            each p in profiles
-                li
-                    a(href='/profiles/'+p.id)= p.name
+        each p in profiles
+            a.col-xs-12(href='/profiles/'+p.id)= p.name
