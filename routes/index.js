@@ -4,7 +4,7 @@ var debug   = require('debug')('app:index')
 
 
 
-/* GET home page. */
+// GET home page
 router.get('/', function(req, res, next) {
     res.render('index', { title: 'Helpific' })
 })

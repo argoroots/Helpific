@@ -4,7 +4,12 @@ var logger  = require('morgan')
 var favicon = require('serve-favicon')
 var debug   = require('debug')('app:server')
 
+
+
+// global variables
 ENTU_URL    = 'https://helpific.entu.ee/api2'
+
+
 
 express()
     // logging
@@ -20,7 +25,7 @@ express()
     // .use(favicon(__dirname + '/public/favicon.ico'))
 
     // routes mapping
-    .use('/',      require('./routes/index'))
+    .use('/',         require('./routes/index'))
 
     // 404
     .use(function(req, res, next) {
@@ -39,20 +44,9 @@ express()
         if(err.status !== 404) debug(err)
     })
 
-    //start server
-    .listen(getPort())
+    // start server
+    .listen(process.env.PORT || 3000)
 
 
 
-debug('Started at port %s', getPort())
-
-
-
-// validate and return server port
-function getPort() {
-    if(parseInt(process.env.PORT)) {
-        return parseInt(process.env.PORT)
-    } else {
-        return 3000
-    }
-}
+debug('Started at port %s', process.env.PORT || 3000)
