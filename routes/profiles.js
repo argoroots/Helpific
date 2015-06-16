@@ -31,7 +31,7 @@ router.get('/:id', function(req, res, next) {
 
         var profile = body.result
         res.render('profile', {
-            title: profile.displayname,
+            title: profile.displayname
         })
     })
 })

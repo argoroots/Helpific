@@ -1,7 +1,9 @@
 extends layout
 
+block header
+    span.col-xs-12 Meet with
+    | #{title}
+
 block content
-    .row
-        h1= title
     .row
         p= JSON.stringify(profile)

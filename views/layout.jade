@@ -8,4 +8,11 @@ html
         link(rel='icon', type='image/png', href='/images/helpific-logo.png')
     body
         .container
+            header.row
+                a(href='/')
+                    img.col-xs-4.col-sm-2.col-md-2.col-xs-offset-4.col-sm-offset-5.col-md-offset-0(src='/images/helpific-logo-text.png')
+                h1.col-xs-12.col-md-8.text-center
+                    block header
+                        | #{title}
+        .container
             block content
