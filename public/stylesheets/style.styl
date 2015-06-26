@@ -1,13 +1,41 @@
+footer-height = 300px
+
+html
+    height 100%
+
+
+
 body
+    height 100%
     color #585858
     font-family 'Montserrat', sans-serif
     font-size 16px
 
 
 
+#wrap
+    min-height 100%
+
+
+
+#main
+    overflow auto
+    padding-bottom footer-height * 1.5 /* this needs to be bigger than footer height*/
+
+
+
 header
     margin-top 50px
     margin-bottom 50px
+
+
+
+footer
+    position relative
+    margin-top footer-height * -1 /* negative value of footer height */
+    height footer-height
+    clear both
+    padding-top 20px
 
 
 
@@ -68,3 +96,14 @@ ul.nav-pills
                 border-radius 0px
                 color #ffffff
                 text-decoration none
+
+
+
+.spacer
+    height 100px
+
+
+
+i.social
+    font-size 40px
+    margin 5px
