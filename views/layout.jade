@@ -4,15 +4,53 @@ html
         title= (title && title !== 'Helpific') ? title + ' - Helpific' : 'Helpific'
         link(rel='stylesheet', type='text/css', href='https://fonts.googleapis.com/css?family=Montserrat:400,700')
         link(rel='stylesheet', type='text/css', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css')
+        link(rel='stylesheet', type='text/css', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css')
         link(rel='stylesheet', type='text/css', href='/stylesheets/style.css')
         link(rel='icon', type='image/png', href='/images/helpific-logo.png')
     body
-        .container
-            header.row
+        #wrap
+            #main
+                header.container
+                    .row
+                        a(href='/')
+                            img.col-xs-4.col-sm-2.col-md-2.col-xs-offset-4.col-sm-offset-5.col-md-offset-0(src='/images/helpific-logo-text.png', alt='Helpific logo')
+                        h1.col-xs-12.col-md-8.text-center
+                            block header
+                                | #{title}
+                .container
+                    block content
+
+        footer.container
+            .row
+                .col-xs-12
+                    hr
+            .row
+                .col-xs-12.text-center
+                    a(href='https://www.facebook.com/Helpific', target='_blank')
+                        i.fa.fa-facebook-square.social(style='color:#3b5998')
+                    a(href='http://www.twitter.com/helpific', target='_blank')
+                        i.fa.fa-twitter-square.social(style='color:#00aced')
+                    a(href='http://helpificeesti.blogspot.com/', target='_blank')
+                        i.fa.fa-rss-square.social(style='color:#f57d00')
+                    a(href='http://www.enjoygram.com/tag/helpific', target='_blank')
+                        i.fa.fa-instagram.social(style='color:#517fa4')
+                    a(href='https://www.linkedin.com/company/helpific', target='_blank')
+                        i.fa.fa-linkedin-square.social(style='color:#007bb6')
+                    a(href='https://www.pinterest.com/helpific/', target='_blank')
+                        i.fa.fa-pinterest-square.social(style='color:#cb2027')
+                    a(href='http://helpific.tumblr.com/', target='_blank')
+                        i.fa.fa-tumblr-square.social(style='color:#32506d')
+                    a(href='https://www.youtube.com/channel/UC0b5JqEQXdZuex5TNKSpoug', target='_blank')
+                        i.fa.fa-youtube-square.social(style='color:#bb0000')
+
+            .row.spacer
+
+            .row
                 a(href='/')
-                    img.col-xs-4.col-sm-2.col-md-2.col-xs-offset-4.col-sm-offset-5.col-md-offset-0(src='/images/helpific-logo-text.png')
-                h1.col-xs-12.col-md-8.text-center
-                    block header
-                        | #{title}
-        .container
-            block content
+                    img.col-xs-2.col-md-2.col-lg-1.col-xs-offset-1.col-md-offset-2.col-lg-offset-3(src='/images/helpific-logo-text.png', alt='Helpific logo')
+
+                a(href='https://www.tlu.ee/et/', target='_blank')
+                    img.col-xs-5.col-md-4.col-lg-3(src='/images/TLU-logo-pilt-vrv-suur.jpg', alt='TLÜ logo')
+
+                a(href='https://www.tlu.ee/et/bfm', target='_blank')
+                    img.col-xs-3.col-md-2.col-lg-2(src='/images/BFM-logo-suur-EST.jpg', alt='BMF logo')
