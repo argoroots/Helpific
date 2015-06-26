@@ -20,14 +20,11 @@ block content
     .row
         .col-xs-12
             ul.nav.nav-pills.nav-justified
-                li(style='background-color: #fab235')
+                li(style='background-color:#f14d3e')
                     a(href='')= profile.forename
-                li(style='background-color: #f14d3e')
-                    a(href='') Minu unistused
-                li(style='background-color: #55938e')
+                li(style='background-color:#55938e')
                     a(href='') Aitan sind
-                li(style='background-color: #fab235')
+                li(style='background-color:#fab235')
                     a(href='') Aita mind
     .row
-        .col-xs-12
-            p!= md(profile.about.text)
+        .col-xs-12!= md(profile.about.text)
