@@ -1,8 +1,12 @@
 extends layout
 
 block header
-    span.col-xs-12 Meet with
-    | #{title}
+    .row
+        a(href='/')
+            img.col-xs-4.col-sm-2.col-md-1.col-xs-offset-4.col-sm-offset-5.col-md-offset-0(src='/images/helpific-logo-text.png', alt='Helpific logo')
+        h1.col-xs-12.col-md-10.text-center
+            span.col-xs-12 Meet with
+            | #{title}
 
 block content
     .row
