@@ -6,7 +6,17 @@ block header
 
 block content
     .row
-        img.col-xs-12(src=profile.photo)
+        if profile.about.video
+            iframe.col-xs-12(src='https://fast.wistia.net/embed/iframe/' + profile.about.video + '?videoFoam=true', allowtransparency='true', frameborder='0', scrolling='no', class='wistia_embed', name='wistia_embed', allowfullscreen, mozallowfullscreen, webkitallowfullscreen, oallowfullscreen, msallowfullscreen)
+
+            script(src='https://fast.wistia.net/assets/external/E-v1.js')
+            //- .col-xs-12
+            //-     .wistia_embed(id='wistia_' + profile.about.video)
+            //- script(charset='ISO-8859-1' src='https://fast.wistia.com/assets/external/E-v1.js')
+            //- script wistiaEmbed = Wistia.embed('#{profile.about.video}', {videoFoam: true});
+
+        else if profile.about.photo
+            img.col-xs-12(src='https://helpific.entu.ee/api2/file-' + profile.about.photo, alt=profile.forename)
     .row
         .col-xs-12
             ul.nav.nav-pills.nav-justified
