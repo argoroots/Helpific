@@ -15,7 +15,7 @@ ExecStart=/usr/bin/docker run \
           --env="PORT=4000" \
           --env="NEW_RELIC_APP_NAME=Helpific" \
           --env="NEW_RELIC_LICENSE_KEY=" \
-          --env="NEW_RELIC_LOG=stdout " \
+          --env="NEW_RELIC_LOG=stdout" \
           --env="NEW_RELIC_LOG_LEVEL=error" \
           --env="NEW_RELIC_NO_CONFIG_FILE=true" \
           --publish="80:4000" \
