@@ -18,6 +18,7 @@ ExecStart=/usr/bin/docker run \
           --env="NEW_RELIC_LOG=stdout" \
           --env="NEW_RELIC_LOG_LEVEL=error" \
           --env="NEW_RELIC_NO_CONFIG_FILE=true" \
+          --volume="/data/helpific/log:/usr/src/helpific/log" \
           --publish="80:4000" \
           argoroots/helpific
 ExecStop=/usr/bin/docker stop helpific
