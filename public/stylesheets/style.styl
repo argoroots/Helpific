@@ -1,3 +1,5 @@
+header-height = 100px
+header-height-xs = 50px
 footer-height = 130px
 
 
@@ -27,12 +29,41 @@ body
 
 
 
-header
-    margin-top 50px
-    margin-bottom 50px
+.navbar
+    min-height header-height
+    background none
+    border none
 
-    img
-        margin-bottom 50px
+
+    .navbar-header
+        min-height header-height
+
+        img
+            height header-height - 30px !important
+
+    .navbar-collapse
+        border none
+
+
+    .navbar-nav
+        li
+            a
+                padding-top 0px
+                padding-bottom 0px
+                line-height header-height
+
+
+@media (max-width 767px)
+    .navbar
+        min-height header-height-xs
+
+        .navbar-nav
+            li
+                a
+                    line-height 20px
+                    padding-top 10px
+                    padding-bottom 10px
+                    line-height header-height-xs
 
 
 
@@ -82,9 +113,14 @@ h2
     letter-spacing 0px
 
 
+pre
+    padding 0px
+    background none
+    border none
+
 
 .jumbotron
-    background #ffffff
+    background none
 
 
 
