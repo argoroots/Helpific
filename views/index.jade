@@ -1,11 +1,5 @@
 extends layout
 
 block content
-    .row.jumbotron
-        p.col-xs-12.text-center Helpific connects volunteers to those who need help with everyday activities.
-        p.col-xs-12.text-center It's never been easier to give and get help.
-        p.col-xs-12.text-center At the moment we have 99 help requests fulfilled and 1044 active voluteers.
-
-    .row.jumbotron
-        p.col-xs-12.text-center
-            a(href='/profiles') Become volunteer, help others
+    if contents
+        .row.jumbotron.text-center!= md(contents)
