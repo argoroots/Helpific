@@ -5,17 +5,28 @@ var debug   = require('debug')('app:' + path.basename(__filename).replace('.js',
 var request = require('request')
 var md      = require('marked')
 
+var entu    = require('./entu')
+
 
 
 // GET profiles listing
 router.get('/', function(req, res, next) {
     request.get({url: APP_ENTU_URL + '/entity', qs: {definition: 'person'}, strictSSL: true, json: true}, function(error, response, body) {
-        if(error) throw error
-        if(response.statusCode !== 200 || !body.result) throw new Error(body)
+        if(error) return next(error)
+        if(response.statusCode !== 200 || !body.result) {
+            if(body.error) {
+                return next(new Error(body.error))
+            } else {
+                return next(new Error(body))
+            }
+        }
 
-        res.render('profiles', {
-            title: 'Profiles',
-            profiles: body.result
+        entu.get_page(630, function(error, page) {
+            if(error) return next(error)
+
+            page.profiles = body.result
+
+            res.render('profiles', page)
         })
     })
 })
@@ -27,8 +38,14 @@ router.get('/:id', function(req, res, next) {
     if(!req.params.id) res.redirect('/profiles')
 
     request.get({url: APP_ENTU_URL + '/entity-' + req.params.id, strictSSL: true, json: true}, function(error, response, body) {
-        if(error) throw error
-        if(response.statusCode !== 200 || !body.result) throw new Error(body)
+        if(error) return next(error)
+        if(response.statusCode !== 200 || !body.result) {
+            if(body.error) {
+                return next(new Error(body.error))
+            } else {
+                return next(new Error(body))
+            }
+        }
 
         var properties = body.result.properties
         var profile = {
@@ -69,11 +86,13 @@ router.get('/:id', function(req, res, next) {
         if(properties['you-help-me-photo'].values) profile.you_help.photo = properties['you-help-me-photo'].values[0].db_value
         if(properties['you-help-me-video'].values) profile.you_help.video = properties['you-help-me-video'].values[0].db_value
 
-        res.render('profile', {
-            pretitle: 'Meet with',
-            title: profile.forename + ' ' + profile.surname,
-            profile: profile,
-            md: md
+        entu.get_page(642, function(error, page) {
+            if(error) return next(error)
+
+            page.title = profile.forename + ' ' + profile.surname
+            page.profile = profile
+
+            res.render('profile', page)
         })
     })
 })

@@ -5,7 +5,7 @@ var md      = require('marked')
 
 
 
-//get page info from Entu
+//Get page (web-content)
 exports.get_page = function(id, callback) {
     request.get({url: APP_ENTU_URL + '/entity-' + id, strictSSL: true, json: true}, function(error, response, body) {
         if(error) return callback(error)
