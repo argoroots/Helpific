@@ -62,12 +62,15 @@ express()
 
     // error
     .use(function(err, req, res, next) {
-        res.status(err.status || 500)
+        var status = parseInt(res.status) || 500
+
+        res.status(status)
         res.render('error', {
-            title: err.status,
+            title: status,
             message: err.message,
             error: APP_DEBUG ? err : {}
         })
+
         if(err.status !== 404) debug(err)
     })
 
