@@ -65,3 +65,30 @@ exports.get_partners = function(callback) {
         callback(null, partners)
     })
 }
+
+
+
+//Get team
+exports.get_team = function(callback) {
+    request.get({url: APP_ENTU_URL + '/entity', qs: {definition: 'person'}, strictSSL: true, json: true}, function(error, response, body) {
+        if(error) return callback(error)
+        if(response.statusCode !== 200 || !body.result) {
+            if(body.error) {
+                return callback(new Error(body.error))
+            } else {
+                return callback(new Error(body))
+            }
+        }
+
+        partners = []
+        for(var i in body.result) {
+            partners.push({
+                name: body.result[i].name,
+                info: body.result[i].info,
+                picture: APP_ENTU_URL + '/entity-' + body.result[i].id + '/picture'
+            })
+        }
+
+        callback(null, partners)
+    })
+}

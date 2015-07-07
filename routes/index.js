@@ -28,7 +28,6 @@ router.get('/partners', function(req, res, next) {
 
             res.render('partners', page)
         })
-
     })
 })
 
@@ -39,7 +38,11 @@ router.get('/team', function(req, res, next) {
     entu.get_page(644, function(error, page) {
         if(error) return next(error)
 
-        res.render('index', page)
+        entu.get_team(function(error, partners) {
+            if(error) return next(error)
+
+            res.render('partners', page)
+        })
     })
 })
 
