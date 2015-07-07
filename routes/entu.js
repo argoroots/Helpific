@@ -30,11 +30,38 @@ exports.get_page = function(id, callback) {
         if(properties['description'].values) page.description = properties['description'].values[0].db_value
         if(properties['keyword'].values) {
             page.keywords = []
-            for(i in properties['keyword'].values) {
+            for(var i in properties['keyword'].values) {
                 page.keywords.push(properties['keyword'].values[1].db_value)
             }
         }
 
         callback(null, page)
+    })
+}
+
+
+
+//Get partners
+exports.get_partners = function(callback) {
+    request.get({url: APP_ENTU_URL + '/entity', qs: {definition: 'partner'}, strictSSL: true, json: true}, function(error, response, body) {
+        if(error) return callback(error)
+        if(response.statusCode !== 200 || !body.result) {
+            if(body.error) {
+                return callback(new Error(body.error))
+            } else {
+                return callback(new Error(body))
+            }
+        }
+
+        partners = []
+        for(var i in body.result) {
+            partners.push({
+                name: body.result[i].name,
+                info: body.result[i].info,
+                picture: APP_ENTU_URL + '/entity-' + body.result[i].id + '/picture'
+            })
+        }
+
+        callback(null, partners)
     })
 }

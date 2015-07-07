@@ -23,7 +23,12 @@ router.get('/partners', function(req, res, next) {
     entu.get_page(643, function(error, page) {
         if(error) return next(error)
 
-        res.render('index', page)
+        entu.get_partners(function(error, partners) {
+            if(error) return next(error)
+
+            res.render('partners', page)
+        })
+
     })
 })
 
