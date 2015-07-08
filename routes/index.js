@@ -26,6 +26,7 @@ router.get('/partners', function(req, res, next) {
         entu.get_partners(function(error, partners) {
             if(error) return next(error)
 
+            page.partners = partners
             res.render('partners', page)
         })
     })
@@ -41,7 +42,6 @@ router.get('/team', function(req, res, next) {
         entu.get_team(function(error, team) {
             if(error) return next(error)
 
-            debug(team)
             page.team = team
             res.render('team', page)
         })

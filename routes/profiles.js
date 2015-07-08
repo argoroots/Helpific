@@ -11,25 +11,20 @@ var entu    = require('./entu')
 
 // GET profiles listing
 router.get('/', function(req, res, next) {
-    request.get({url: APP_ENTU_URL + '/entity', qs: {definition: 'person'}, strictSSL: true, json: true}, function(error, response, body) {
+    entu.get_page(630, function(error, page) {
         if(error) return next(error)
-        if(response.statusCode !== 200 || !body.result) {
-            if(body.error) {
-                return next(new Error(body.error))
-            } else {
-                return next(new Error(body))
-            }
-        }
 
-        entu.get_page(630, function(error, page) {
+        entu.get_profiles(function(error, profiles) {
             if(error) return next(error)
 
-            page.profiles = body.result
-
+            page.profiles = profiles
             res.render('profiles', page)
         })
     })
 })
+
+
+
 
 
 

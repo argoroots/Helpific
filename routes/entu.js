@@ -116,3 +116,54 @@ exports.get_team = function(callback) {
         })
     })
 }
+
+
+
+//Get profiles
+exports.get_profiles = function(callback) {
+    request.get({url: APP_ENTU_URL + '/entity-615/childs', strictSSL: true, json: true}, function(error, response, body) {
+        if(error) return callback(error)
+        if(response.statusCode !== 200 || !body.result) {
+            if(body.error) {
+                return callback(new Error(body.error))
+            } else {
+                return callback(new Error(body))
+            }
+        }
+
+        profiles = []
+        async.each(body.result.person.entities, function(entity, callback) {
+            request.get({url: APP_ENTU_URL + '/entity-' + entity.id, strictSSL: true, json: true}, function(error, response, body) {
+                if(error) return callback(error)
+                if(response.statusCode !== 200 || !body.result) {
+                    if(body.error) {
+                        return callback(new Error(body.error))
+                    } else {
+                        return callback(new Error(body))
+                    }
+                }
+
+                var properties = body.result.properties
+                var profile = {}
+
+                if(properties['forename'].values) profile.forename = properties['forename'].values[0].db_value
+                if(properties['surname'].values) profile.surname = properties['surname'].values[0].db_value
+                if(properties['photo'].values) profile.photo = APP_ENTU_URL + '/file-' + properties['photo'].values[0].db_value
+                if(properties['slogan'].values) profile.slogan = properties['slogan'].values[0].db_value
+                if(properties['about-me-text'].values) profile.info = properties['about-me-text'].values[0].db_value
+
+                profiles.push({
+                    name: profile.forename + ' ' + profile.surname,
+                    info: profile.info,
+                    photo: profile.photo
+                })
+                callback()
+            })
+
+        }, function(error){
+            if(error) return callback(error)
+
+            callback(null, profiles)
+        })
+    })
+}
