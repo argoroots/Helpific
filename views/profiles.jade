@@ -10,5 +10,5 @@ block content
     .row
         each p in profiles.sort(function(obj1, obj2) { return obj1.forename + obj1.surname > obj2.forename + obj2.surname })
             a.col-xs-6.col-sm-3.col-md-2(href='/profiles/' + p.id)
-                img.col-xs-12.img-circle(src=p.photo)
+                img.col-xs-12.img-circle(src=p.photo, alt=p.forename, style='margin-bottom:20px')
                 p.col-xs-12.text-center= p.forename

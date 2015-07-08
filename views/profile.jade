@@ -6,13 +6,13 @@ block content
             ul.nav.nav-pills.nav-justified
                 if profile.i_help.video || profile.i_help.photo || profile.i_help.text || profile.you_help.video || profile.you_help.photo || profile.you_help.text
                     li(style='background-color:#f14d3e')
-                        a(href='#tab-about', data-toggle='tab')= profile.forename
+                        a(href='#tab-about', data-toggle='tab') About #{profile.forename}
                 if profile.i_help.video || profile.i_help.photo || profile.i_help.text
                     li(style='background-color:#55938e')
-                        a(href='#tab-i-help', data-toggle='tab') Aitan sind
+                        a(href='#tab-i-help', data-toggle='tab') I help you
                 if profile.you_help.video || profile.you_help.photo || profile.you_help.text
                     li(style='background-color:#fab235')
-                        a(href='#tab-you-help', data-toggle='tab') Aita mind
+                        a(href='#tab-you-help', data-toggle='tab') You help me
     .row.tab-content
         #tab-about.tab-pane.active
             if profile.about.video
