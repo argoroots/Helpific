@@ -1,12 +1,14 @@
 extends layout
 
 block content
-    #search.row(ng-controller='searchCtrl')
-      form.form-group.col-xs-10.col-sm-8.col-md-6.col-xs-offset-1.col-sm-offset-2.col-md-offset-3
-        label.col-xs-1(for='search-input')
-          i.fa.fa-search
-        input.col-xs-10.text-center(id='search-input', type='search', placeholder='', ng-model='search_query' autofocus)
+    //- #search.row(ng-controller='searchCtrl')
+    //-   form.form-group.col-xs-10.col-sm-8.col-md-6.col-xs-offset-1.col-sm-offset-2.col-md-offset-3
+    //-     label.col-xs-1(for='search-input')
+    //-       i.fa.fa-search
+    //-     input.col-xs-10.text-center(id='search-input', type='search', placeholder='', ng-model='search_query' autofocus)
 
     .row
-        each p in profiles
-            a.col-xs-12(href='/profiles/'+p.id)= p.name
+        each p in profiles.sort(function(obj1, obj2) { return obj1.forename + obj1.surname > obj2.forename + obj2.surname })
+            a.col-xs-6.col-sm-3.col-md-2(href='/profiles/' + p.id)
+                img.col-xs-12.img-circle(src=p.photo)
+                p.col-xs-12.text-center= p.forename

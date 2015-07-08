@@ -94,18 +94,16 @@ exports.get_team = function(callback) {
                 }
 
                 var properties = body.result.properties
-                var profile = {}
+                var profile = {
+                    id: body.result.id
+                }
 
                 if(properties['forename'].values) profile.forename = properties['forename'].values[0].db_value
                 if(properties['surname'].values) profile.surname = properties['surname'].values[0].db_value
-                if(properties['photo'].values) profile.photo = APP_ENTU_URL + '/file-' + properties['photo'].values[0].db_value
+                if(properties['photo'].values) profile.photo = APP_ENTU_URL + '/entity-' + body.result.id + '/picture'
                 if(properties['about-me-text'].values) profile.info = properties['about-me-text'].values[0].db_value
 
-                team.push({
-                    name: profile.forename + ' ' + profile.surname,
-                    info: profile.info,
-                    photo: profile.photo
-                })
+                team.push(profile)
                 callback()
             })
 
@@ -144,20 +142,17 @@ exports.get_profiles = function(callback) {
                 }
 
                 var properties = body.result.properties
-                var profile = {}
+                var profile = {
+                    id: body.result.id
+                }
 
                 if(properties['forename'].values) profile.forename = properties['forename'].values[0].db_value
                 if(properties['surname'].values) profile.surname = properties['surname'].values[0].db_value
-                if(properties['photo'].values) profile.photo = APP_ENTU_URL + '/file-' + properties['photo'].values[0].db_value
+                if(properties['photo'].values) profile.photo = APP_ENTU_URL + '/entity-' + body.result.id + '/picture'
                 if(properties['slogan'].values) profile.slogan = properties['slogan'].values[0].db_value
                 if(properties['about-me-text'].values) profile.info = properties['about-me-text'].values[0].db_value
 
-                profiles.push({
-                    id: body.result.id,
-                    name: profile.forename + ' ' + profile.surname,
-                    info: profile.info,
-                    photo: profile.photo
-                })
+                profiles.push(profile)
                 callback()
             })
 

@@ -2,6 +2,10 @@ header-height = 100px
 header-height-xs = 50px
 footer-height = 130px
 
+screen-sm-min = 768px
+screen-md-min = 992px
+screen-lg-min = 1200px
+
 
 
 html
@@ -56,7 +60,7 @@ body
 
 
 
-@media (max-width 767px)
+@media (max-width: 768px)
     .navbar
         min-height header-height-xs
 
@@ -184,9 +188,21 @@ ul.nav-pills
 
 
 .profile-photo
-    height 600px
     background-position center center
     background-size cover
+    height 300px
+
+@media (min-width: 768px) and (max-width: 992px)
+    .profile-photo
+        height 400px
+
+@media (min-width: 992px) and (max-width: 1199px)
+    .profile-photo
+        height 500px
+
+@media (min-width: 1200px)
+    .profile-photo
+        height 600px
 
 
 
