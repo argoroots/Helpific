@@ -168,3 +168,61 @@ exports.get_profiles = function(callback) {
         })
     })
 }
+
+
+
+//Get profile
+exports.get_profile = function(id, callback) {
+    request.get({url: APP_ENTU_URL + '/entity-' + id, strictSSL: true, json: true}, function(error, response, body) {
+        if(error) return callback(error)
+        if(response.statusCode !== 200 || !body.result) {
+            if(body.error) {
+                return callback(new Error(body.error))
+            } else {
+                return callback(new Error(body))
+            }
+        }
+
+        var properties = body.result.properties
+        var profile = {
+            forename: '',
+            surname: '',
+            about: {
+                text: '',
+                photo: '',
+                video: ''
+            },
+            i_help: {
+                text: '',
+                photo: '',
+                video: ''
+            },
+            you_help: {
+                text: '',
+                photo: '',
+                video: ''
+            },
+
+        }
+
+        if(properties['forename'].values) profile.forename = properties['forename'].values[0].db_value
+        if(properties['surname'].values) profile.surname = properties['surname'].values[0].db_value
+        if(properties['slogan'].values) profile.slogan = properties['slogan'].values[0].db_value
+        if(properties['photo'].values) profile.photo = APP_ENTU_URL + '/file-' + properties['photo'].values[0].db_value
+
+        if(properties['about-me-text'].values) profile.about.text = properties['about-me-text'].values[0].db_value
+        if(properties['about-me-photo'].values) profile.about.photo = APP_ENTU_URL + '/file-' + properties['about-me-photo'].values[0].db_value
+        if(properties['about-me-video'].values) profile.about.video = properties['about-me-video'].values[0].db_value
+
+        if(properties['me-help-you-text'].values) profile.i_help.text = properties['me-help-you-text'].values[0].db_value
+        if(properties['me-help-you-photo'].values) profile.i_help.photo = APP_ENTU_URL + '/file-' + properties['me-help-you-photo'].values[0].db_value
+        if(properties['me-help-you-video'].values) profile.i_help.video = properties['me-help-you-video'].values[0].db_value
+
+        if(properties['you-help-me-text'].values) profile.you_help.text = properties['you-help-me-text'].values[0].db_value
+        if(properties['you-help-me-photo'].values) profile.you_help.photo = APP_ENTU_URL + '/file-' + properties['you-help-me-photo'].values[0].db_value
+        if(properties['you-help-me-video'].values) profile.you_help.video = properties['you-help-me-video'].values[0].db_value
+
+        callback(null, profile)
+    })
+
+}
