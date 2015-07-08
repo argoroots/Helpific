@@ -5,7 +5,8 @@ block content
         .row
             .col-xs-12.col-sm-10.col-sm-offset-1
                 img.col-xs-6.col-sm-3.col-md-2(src=p.photo, alt=p.name, class=(i % 2 == 0) ? 'pull-left' : 'pull-right')
-                .col-xs-12.col-sm-9.col-md-10(class=(i % 2 == 0) ? '' : 'text-right')
+                .col-xs-12.col-sm-9.col-md-10.text-justify(class=(i % 2 == 0) ? '' : 'text-right')
                     h3= p.name
-                    p= p.info
+                    if p.info
+                        div!= md(p.info)
         .spacer
