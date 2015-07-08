@@ -2,6 +2,7 @@ var path    = require('path')
 var debug   = require('debug')('app:' + path.basename(__filename).replace('.js', ''))
 var request = require('request')
 var md      = require('marked')
+var async   = require('async')
 
 
 
@@ -70,7 +71,7 @@ exports.get_partners = function(callback) {
 
 //Get team
 exports.get_team = function(callback) {
-    request.get({url: APP_ENTU_URL + '/entity', qs: {definition: 'person'}, strictSSL: true, json: true}, function(error, response, body) {
+    request.get({url: APP_ENTU_URL + '/entity-612/childs', strictSSL: true, json: true}, function(error, response, body) {
         if(error) return callback(error)
         if(response.statusCode !== 200 || !body.result) {
             if(body.error) {
@@ -80,15 +81,38 @@ exports.get_team = function(callback) {
             }
         }
 
-        partners = []
-        for(var i in body.result) {
-            partners.push({
-                name: body.result[i].name,
-                info: body.result[i].info,
-                picture: APP_ENTU_URL + '/entity-' + body.result[i].id + '/picture'
-            })
-        }
+        team = []
+        async.each(body.result.person.entities, function(entity, callback) {
+            request.get({url: APP_ENTU_URL + '/entity-' + entity.id, strictSSL: true, json: true}, function(error, response, body) {
+                if(error) return callback(error)
+                if(response.statusCode !== 200 || !body.result) {
+                    if(body.error) {
+                        return callback(new Error(body.error))
+                    } else {
+                        return callback(new Error(body))
+                    }
+                }
 
-        callback(null, partners)
+                var properties = body.result.properties
+                var profile = {}
+
+                if(properties['forename'].values) profile.forename = properties['forename'].values[0].db_value
+                if(properties['surname'].values) profile.surname = properties['surname'].values[0].db_value
+                if(properties['photo'].values) profile.photo = APP_ENTU_URL + '/file-' + properties['photo'].values[0].db_value
+                if(properties['about-me-text'].values) profile.info = properties['about-me-text'].values[0].db_value
+
+                team.push({
+                    name: profile.forename + ' ' + profile.surname,
+                    info: profile.info,
+                    photo: profile.photo
+                })
+                callback()
+            })
+
+        }, function(error){
+            if(error) return callback(error)
+
+            callback(null, team)
+        })
     })
 }

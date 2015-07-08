@@ -38,10 +38,12 @@ router.get('/team', function(req, res, next) {
     entu.get_page(644, function(error, page) {
         if(error) return next(error)
 
-        entu.get_team(function(error, partners) {
+        entu.get_team(function(error, team) {
             if(error) return next(error)
 
-            res.render('partners', page)
+            debug(team)
+            page.team = team
+            res.render('team', page)
         })
     })
 })
