@@ -153,6 +153,7 @@ exports.get_profiles = function(callback) {
                 if(properties['about-me-text'].values) profile.info = properties['about-me-text'].values[0].db_value
 
                 profiles.push({
+                    id: body.result.id,
                     name: profile.forename + ' ' + profile.surname,
                     info: profile.info,
                     photo: profile.photo
