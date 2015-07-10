@@ -3,7 +3,8 @@ extends layout
 block content
     each p, i in partners
         .row.text-center
-            img.col-xs-6.col-sm-4.col-md-2.col-xs-offset-3.col-sm-offset-4.col-md-offset-5(src=p.picture, alt=p.name, style='margin-bottom:20px')
+            a(href=p.url, target='_blank')
+                img.col-xs-6.col-sm-4.col-md-2.col-xs-offset-3.col-sm-offset-4.col-md-offset-5(src=p.photo, alt=p.name, style='margin-bottom:20px')
             h3.col-xs-12= p.name
-            p.col-xs-12= p.info
+            p.col-xs-12= p.note
         .spacer

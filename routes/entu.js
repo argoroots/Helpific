@@ -55,15 +55,38 @@ exports.get_partners = function(callback) {
         }
 
         partners = []
-        for(var i in body.result) {
-            partners.push({
-                name: body.result[i].name,
-                info: body.result[i].info,
-                picture: APP_ENTU_URL + '/entity-' + body.result[i].id + '/picture'
-            })
-        }
+        async.each(body.result, function(entity, callback) {
+            request.get({url: APP_ENTU_URL + '/entity-' + entity.id, strictSSL: true, json: true}, function(error, response, body) {
+                if(error) return callback(error)
+                if(response.statusCode !== 200 || !body.result) {
+                    if(body.error) {
+                        return callback(new Error(body.error))
+                    } else {
+                        return callback(new Error(body))
+                    }
+                }
 
-        callback(null, partners)
+                var properties = body.result.properties
+                var profile = {
+                    id: body.result.id
+                }
+
+                if(properties['name'].values) profile.name = properties['name'].values[0].db_value
+                if(properties['note'].values) profile.note = properties['note'].values[0].db_value
+                if(properties['photo'].values) profile.photo = APP_ENTU_URL + '/entity-' + body.result.id + '/picture'
+                if(properties['url'].values) profile.url = properties['url'].values[0].db_value
+
+                debug(profile)
+
+                partners.push(profile)
+                callback()
+            })
+
+        }, function(error){
+            if(error) return callback(error)
+
+            callback(null, partners)
+        })
     })
 }
 
