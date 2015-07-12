@@ -73,10 +73,8 @@ exports.get_partners = function(callback) {
 
                 if(properties['name'].values) profile.name = properties['name'].values[0].db_value
                 if(properties['note'].values) profile.note = properties['note'].values[0].db_value
-                if(properties['photo'].values) profile.photo = APP_ENTU_URL + '/entity-' + body.result.id + '/picture'
+                if(properties['photo'].values) profile.photo = APP_ENTU_URL + '/file-' + properties['photo'].values[0].db_value
                 if(properties['url'].values) profile.url = properties['url'].values[0].db_value
-
-                debug(profile)
 
                 partners.push(profile)
                 callback()
