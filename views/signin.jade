@@ -1,0 +1,12 @@
+extends layout
+
+block content
+    if contents
+        .row.jumbotron.text-center!= md(contents)
+
+        .row.text-center
+            a(href='/user/signin/facebook', title='Facebook')
+                i.signin.fa.fa-facebook-square(style='color:#3b5998')
+
+            a(href='/user/signin/google', title='Google')
+                i.signin.fa.fa-google-plus-square(style='color:#dd4b39')

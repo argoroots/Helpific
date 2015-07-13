@@ -52,6 +52,7 @@ express()
     // routes mapping
     .use('/',         require('./routes/index'))
     .use('/profiles', require('./routes/profiles'))
+    .use('/user',     require('./routes/user'))
 
     // 404
     .use(function(req, res, next) {

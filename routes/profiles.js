@@ -25,9 +25,6 @@ router.get('/', function(req, res, next) {
 
 
 
-
-
-
 // GET profile
 router.get('/:id', function(req, res, next) {
     if(!req.params.id) res.redirect('/profiles')
