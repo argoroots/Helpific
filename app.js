@@ -12,10 +12,12 @@ var debug   = require('debug')('app:' + path.basename(__filename).replace('.js',
 
 
 // global variables (and list of all used environment variables)
-APP_DEBUG    = process.env.DEBUG
-APP_PORT     = process.env.PORT || 3000
-APP_LOG_DIR  = process.env.LOGDIR || __dirname + '/log'
-APP_ENTU_URL = process.env.ENTU || 'https://helpific.entu.ee/api2'
+APP_DEBUG     = process.env.DEBUG
+APP_PORT      = process.env.PORT || 3000
+APP_LOG_DIR   = process.env.LOGDIR || __dirname + '/log'
+APP_ENTU_URL  = process.env.ENTU || 'https://helpific.entu.ee/api2'
+APP_ENTU_USER = process.env.ENTU_USER
+APP_ENTU_KEY  = process.env.ENTU_KEY
 
 
 
@@ -63,7 +65,7 @@ express()
 
     // error
     .use(function(err, req, res, next) {
-        var status = parseInt(res.status) || 500
+        var status = parseInt(err.status) || 500
 
         res.status(status)
         res.render('error', {
