@@ -241,3 +241,40 @@ exports.get_user_session = function(auth_url, state, callback) {
 
 
 
+//Get user
+exports.get_user = function(auth_id, auth_token, callback) {
+    request.get({url: APP_ENTU_URL + '/entity-' + auth_id, headers: {'X-Auth-UserId': auth_id, 'X-Auth-Token': auth_token}, strictSSL: true, json: true}, function(error, response, body) {
+        if(error) return callback(error)
+        if(response.statusCode !== 200 || !body.result) return callback(new Error(op.get(body, 'error', body)))
+
+        var profile = {
+            id: body.result.id,
+            about: {},
+            i_help: {},
+            you_help: {}
+        }
+
+        profile.forename = op.get(body, 'result.properties.forename.values.0.db_value', null)
+        profile.surname = op.get(body, 'result.properties.surname.values.0.db_value', null)
+        profile.email = op.get(body, 'result.properties.email.values.0.db_value', null)
+        profile.topic = op.get(body, 'result.properties.slogan.values.0.db_value', null)
+        profile.photo = op.has(body, 'result.properties.photo.values.0.db_value') ? APP_ENTU_URL + '/file-' + op.get(body, 'result.properties.photo.values.0.db_value') : null
+
+        profile.about.text = op.get(body, 'result.properties.about-me-text.values.0.db_value', '')
+        profile.about.photo = op.has(body, 'result.properties.about-me-photo.values.0.db_value') ? APP_ENTU_URL + '/file-' + op.get(body, 'result.properties.photo.values.0.db_value') : null
+        profile.about.video = op.get(body, 'result.properties.about-me-video.values.0.db_value', null)
+
+        profile.i_help.text = op.get(body, 'result.properties.me-help-you-text.values.0.db_value', '')
+        profile.i_help.photo = op.has(body, 'result.properties.me-help-you-photo.values.0.db_value') ? APP_ENTU_URL + '/file-' + op.get(body, 'result.properties.photo.values.0.db_value') : null
+        profile.i_help.video = op.get(body, 'result.properties.me-help-you-video.values.0.db_value', null)
+
+        profile.you_help.text = op.get(body, 'result.properties.you-help-me-text.values.0.db_value', '')
+        profile.you_help.photo = op.has(body, 'result.properties.you-help-me-photo.values.0.db_value') ? APP_ENTU_URL + '/file-' + op.get(body, 'result.properties.photo.values.0.db_value') : null
+        profile.you_help.video = op.get(body, 'result.properties.you-help-me-video.values.0.db_value', null)
+
+        callback(null, profile)
+    })
+}
+
+
+

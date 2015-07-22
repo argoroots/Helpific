@@ -25,6 +25,27 @@ router.get('/', function(req, res, next) {
 
 
 
+// Show user own profile
+router.get('/me', function(req, res, next) {
+    if(!req.signedCookies.auth_id || !req.signedCookies.auth_token) {
+        res.redirect('/signin')
+        next(null)
+    }
+
+    entu.get_page(649, function(error, page) {
+        if(error) return next(error)
+
+        entu.get_user(req.signedCookies.auth_id, req.signedCookies.auth_token, function(error, profile) {
+            if(error) return next(error)
+
+            page.profile = profile
+            res.render('profile_edit', page)
+        })
+    })
+})
+
+
+
 // GET profile
 router.get('/:id', function(req, res, next) {
     if(!req.params.id) res.redirect('/profiles')
