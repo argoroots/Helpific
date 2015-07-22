@@ -1,116 +1,117 @@
 extends layout
 
 block content
-    form#profile
-        .row
-            .form-group.col-xs-12.col-sm-12
-                label.control-label(for='topic') Topic
-                input.form-control(id='topic', type='text', value=profile.topic)
+    .container
+        form#profile
+            .row
+                .form-group.col-xs-12.col-sm-12
+                    label.control-label(for='topic') Topic
+                    input.form-control(id='topic', type='text', value=profile.topic)
 
-            .form-group.col-xs-12.col-sm-3
-                label.control-label(for='forename') Forename
-                input.form-control(id='forename', type='text', value=profile.forename)
+                .form-group.col-xs-12.col-sm-3
+                    label.control-label(for='forename') Forename
+                    input.form-control(id='forename', type='text', value=profile.forename)
 
-            .form-group.col-xs-12.col-sm-3
-                label.control-label(for='surname') Surname
-                input.form-control(id='surname', type='text', value=profile.surname)
+                .form-group.col-xs-12.col-sm-3
+                    label.control-label(for='surname') Surname
+                    input.form-control(id='surname', type='text', value=profile.surname)
 
-            .form-group.col-xs-12.col-sm-3
-                label.control-label(for='email') E-mail
-                input.form-control(id='email', type='text', value=profile.email)
+                .form-group.col-xs-12.col-sm-3
+                    label.control-label(for='email') E-mail
+                    input.form-control(id='email', type='text', value=profile.email)
 
-            .form-group.col-xs-12.col-sm-3
-                label.control-label(for='you_help_photo') Profile Picture
-                input.form-control(id='you_help_photo', type='file')
-
-            .spacer.col-xs-12
-
-        .row
-            .col-xs-12
-                ul.nav.nav-pills.nav-justified
-                    li.active(style='background-color:#f14d3e')
-                        a(href='#tab-about', data-toggle='tab') About me
-                    li(style='background-color:#55938e')
-                        a(href='#tab-i-help', data-toggle='tab') I can help others
-                    li(style='background-color:#fab235')
-                        a(href='#tab-you-help', data-toggle='tab') I need help
-
-        .row.tab-content
-            #tab-about.tab-pane.active
-
-                .form-group.col-xs-12
-                    label.control-label(for='about_text') Write something about you
-                    textarea.form-control(id='about_text', rows=8)= profile.about.text
-                    p.text-right
-                        small you can use&nbsp;
-                            a(href='https://en.wikipedia.org/wiki/Markdown#Example', target='_blank') markdown
-
-                .form-group.col-xs-12.col-sm-4
-                    label.control-label(for='about_photo') Cover Photo
-                    input.form-control(id='about_photo', type='file')
-
-                .form-group.col-xs-12.col-sm-8
-                    label.control-label(for='about_video') Video URL
-                    input.form-control(id='about_video', type='text', value=profile.about_video)
-                    p.text-right
-                        small
-                            | we support only&nbsp;
-                            a(href='https://youtube.com', target='_blank') YouTube
-                            |  and&nbsp;
-                            a(href='https://vimeo.com', target='_blank') Vimeo
-                            |  urls
-
-            #tab-i-help.tab-pane
-
-                .form-group.col-xs-12
-                    label.control-label(for='i_help_text') How you can help others?
-                    textarea.form-control(id='i_help_text', rows=8)= profile.i_help.text
-                    p.text-right
-                        small you can use&nbsp;
-                            a(href='https://en.wikipedia.org/wiki/Markdown#Example', target='_blank') markdown
-
-                .form-group.col-xs-12.col-sm-4
-                    label.control-label(for='i_help_photo') Cover Photo
-                    input.form-control(id='i_help_photo', type='file')
-
-                .form-group.col-xs-12.col-sm-8
-                    label.control-label(for='i_help_video') Video URL
-                    input.form-control(id='i_help_video', type='text', value=profile.i_help_video)
-                    p.text-right
-                        small
-                            | we support only&nbsp;
-                            a(href='https://youtube.com', target='_blank') YouTube
-                            |  and&nbsp;
-                            a(href='https://vimeo.com', target='_blank') Vimeo
-                            |  urls
-
-            #tab-you-help.tab-pane
-
-                .form-group.col-xs-12
-                    label.control-label(for='you_help_text') What kind of help you need?
-                    textarea.form-control(id='you_help_text', rows=8)= profile.you_help.text
-                    p.text-right
-                        small you can use&nbsp;
-                            a(href='https://en.wikipedia.org/wiki/Markdown#Example', target='_blank') markdown
-
-                .form-group.col-xs-12.col-sm-4
-                    label.control-label(for='you_help_photo') Cover Photo
+                .form-group.col-xs-12.col-sm-3
+                    label.control-label(for='you_help_photo') Profile Picture
                     input.form-control(id='you_help_photo', type='file')
 
-                .form-group.col-xs-12.col-sm-8
-                    label.control-label(for='you_help_video') Video URL
-                    input.form-control(id='you_help_video', type='text', value=profile.you_help_video)
-                    p.text-right
-                        small
-                            | we support only&nbsp;
-                            a(href='https://youtube.com', target='_blank') YouTube
-                            |  and&nbsp;
-                            a(href='https://vimeo.com', target='_blank') Vimeo
-                            |  urls
+                .spacer.col-xs-12
 
-    script.
-        $('input, textarea').focus(function() {
-            $("label[for='" + this.id + "']").addClass('labelfocus')
-        }).blur(function() {
-            $('label').removeClass('labelfocus')
-        })
+            .row
+                .col-xs-12
+                    ul.nav.nav-pills.nav-justified
+                        li.active(style='background-color:#f14d3e')
+                            a(href='#tab-about', data-toggle='tab') About me
+                        li(style='background-color:#55938e')
+                            a(href='#tab-i-help', data-toggle='tab') I can help others
+                        li(style='background-color:#fab235')
+                            a(href='#tab-you-help', data-toggle='tab') I need help
+
+            .row.tab-content
+                #tab-about.tab-pane.active
+
+                    .form-group.col-xs-12
+                        label.control-label(for='about_text') Write something about you
+                        textarea.form-control(id='about_text', rows=8)= profile.about.text
+                        p.text-right
+                            small you can use&nbsp;
+                                a(href='https://en.wikipedia.org/wiki/Markdown#Example', target='_blank') markdown
+
+                    .form-group.col-xs-12.col-sm-4
+                        label.control-label(for='about_photo') Cover Photo
+                        input.form-control(id='about_photo', type='file')
+
+                    .form-group.col-xs-12.col-sm-8
+                        label.control-label(for='about_video') Video URL
+                        input.form-control(id='about_video', type='text', value=profile.about_video)
+                        p.text-right
+                            small
+                                | we support only&nbsp;
+                                a(href='https://youtube.com', target='_blank') YouTube
+                                |  and&nbsp;
+                                a(href='https://vimeo.com', target='_blank') Vimeo
+                                |  urls
+
+                #tab-i-help.tab-pane
+
+                    .form-group.col-xs-12
+                        label.control-label(for='i_help_text') How you can help others?
+                        textarea.form-control(id='i_help_text', rows=8)= profile.i_help.text
+                        p.text-right
+                            small you can use&nbsp;
+                                a(href='https://en.wikipedia.org/wiki/Markdown#Example', target='_blank') markdown
+
+                    .form-group.col-xs-12.col-sm-4
+                        label.control-label(for='i_help_photo') Cover Photo
+                        input.form-control(id='i_help_photo', type='file')
+
+                    .form-group.col-xs-12.col-sm-8
+                        label.control-label(for='i_help_video') Video URL
+                        input.form-control(id='i_help_video', type='text', value=profile.i_help_video)
+                        p.text-right
+                            small
+                                | we support only&nbsp;
+                                a(href='https://youtube.com', target='_blank') YouTube
+                                |  and&nbsp;
+                                a(href='https://vimeo.com', target='_blank') Vimeo
+                                |  urls
+
+                #tab-you-help.tab-pane
+
+                    .form-group.col-xs-12
+                        label.control-label(for='you_help_text') What kind of help you need?
+                        textarea.form-control(id='you_help_text', rows=8)= profile.you_help.text
+                        p.text-right
+                            small you can use&nbsp;
+                                a(href='https://en.wikipedia.org/wiki/Markdown#Example', target='_blank') markdown
+
+                    .form-group.col-xs-12.col-sm-4
+                        label.control-label(for='you_help_photo') Cover Photo
+                        input.form-control(id='you_help_photo', type='file')
+
+                    .form-group.col-xs-12.col-sm-8
+                        label.control-label(for='you_help_video') Video URL
+                        input.form-control(id='you_help_video', type='text', value=profile.you_help_video)
+                        p.text-right
+                            small
+                                | we support only&nbsp;
+                                a(href='https://youtube.com', target='_blank') YouTube
+                                |  and&nbsp;
+                                a(href='https://vimeo.com', target='_blank') Vimeo
+                                |  urls
+
+        script.
+            $('input, textarea').focus(function() {
+                $("label[for='" + this.id + "']").addClass('labelfocus')
+            }).blur(function() {
+                $('label').removeClass('labelfocus')
+            })

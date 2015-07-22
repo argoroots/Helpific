@@ -1,60 +1,61 @@
 extends layout
 
 block content
-    .row
-        .col-xs-12
-            ul.nav.nav-pills.nav-justified
-                if profile.i_help.video || profile.i_help.photo || profile.i_help.text || profile.you_help.video || profile.you_help.photo || profile.you_help.text
-                    li.active(style='background-color:#f14d3e')
-                        a(href='#tab-about', data-toggle='tab') About #{profile.forename}
-                if profile.i_help.video || profile.i_help.photo || profile.i_help.text
-                    li(style='background-color:#55938e')
-                        a(href='#tab-i-help', data-toggle='tab') I help you
-                if profile.you_help.video || profile.you_help.photo || profile.you_help.text
-                    li(style='background-color:#fab235')
-                        a(href='#tab-you-help', data-toggle='tab') You help me
-    .row.tab-content
-        #tab-about.tab-pane.active
-            if profile.about.video
-                iframe.col-xs-12(src='https://fast.wistia.net/embed/iframe/' + profile.about.video + '?videoFoam=true', allowtransparency='true', frameborder='0', scrolling='no', class='wistia_embed', name='wistia_embed', allowfullscreen, mozallowfullscreen, webkitallowfullscreen, oallowfullscreen, msallowfullscreen)
+    .container
+        .row
+            .col-xs-12
+                ul.nav.nav-pills.nav-justified
+                    if profile.i_help.video || profile.i_help.photo || profile.i_help.text || profile.you_help.video || profile.you_help.photo || profile.you_help.text
+                        li.active(style='background-color:#f14d3e')
+                            a(href='#tab-about', data-toggle='tab') About #{profile.forename}
+                    if profile.i_help.video || profile.i_help.photo || profile.i_help.text
+                        li(style='background-color:#55938e')
+                            a(href='#tab-i-help', data-toggle='tab') I help you
+                    if profile.you_help.video || profile.you_help.photo || profile.you_help.text
+                        li(style='background-color:#fab235')
+                            a(href='#tab-you-help', data-toggle='tab') You help me
+        .row.tab-content
+            #tab-about.tab-pane.active
+                if profile.about.video
+                    iframe.col-xs-12(src='https://fast.wistia.net/embed/iframe/' + profile.about.video + '?videoFoam=true', allowtransparency='true', frameborder='0', scrolling='no', class='wistia_embed', name='wistia_embed', allowfullscreen, mozallowfullscreen, webkitallowfullscreen, oallowfullscreen, msallowfullscreen)
 
-                script(src='https://fast.wistia.net/assets/external/E-v1.js')
-                //- .col-xs-12
-                //-     .wistia_embed(id='wistia_' + profile.about.video)
-                //- script(charset='ISO-8859-1' src='https://fast.wistia.com/assets/external/E-v1.js')
-                //- script wistiaEmbed = Wistia.embed('#{profile.about.video}', {videoFoam: true});
-            else if profile.about.photo
-                .col-xs-12
-                    .profile-photo(style='background-image: url(' + profile.about.photo + ')')
-            .spacer.col-xs-12
-            .col-xs-12.text-justify!= md(profile.about.text)
+                    script(src='https://fast.wistia.net/assets/external/E-v1.js')
+                    //- .col-xs-12
+                    //-     .wistia_embed(id='wistia_' + profile.about.video)
+                    //- script(charset='ISO-8859-1' src='https://fast.wistia.com/assets/external/E-v1.js')
+                    //- script wistiaEmbed = Wistia.embed('#{profile.about.video}', {videoFoam: true});
+                else if profile.about.photo
+                    .col-xs-12
+                        .profile-photo(style='background-image: url(' + profile.about.photo + ')')
+                .spacer.col-xs-12
+                .col-xs-12.text-justify!= md(profile.about.text)
 
-        #tab-i-help.tab-pane
-            if profile.i_help.video
-                iframe.col-xs-12(src='https://fast.wistia.net/embed/iframe/' + profile.i_help.video + '?videoFoam=true', allowtransparency='true', frameborder='0', scrolling='no', class='wistia_embed', name='wistia_embed', allowfullscreen, mozallowfullscreen, webkitallowfullscreen, oallowfullscreen, msallowfullscreen)
+            #tab-i-help.tab-pane
+                if profile.i_help.video
+                    iframe.col-xs-12(src='https://fast.wistia.net/embed/iframe/' + profile.i_help.video + '?videoFoam=true', allowtransparency='true', frameborder='0', scrolling='no', class='wistia_embed', name='wistia_embed', allowfullscreen, mozallowfullscreen, webkitallowfullscreen, oallowfullscreen, msallowfullscreen)
 
-                script(src='https://fast.wistia.net/assets/external/E-v1.js')
-                //- .col-xs-12
-                //-     .wistia_embed(id='wistia_' + profile.i_help.video)
-                //- script(charset='ISO-8859-1' src='https://fast.wistia.com/assets/external/E-v1.js')
-                //- script wistiaEmbed = Wistia.embed('#{profile.i_help.video}', {videoFoam: true});
-            else if profile.i_help.photo
-                .col-xs-12
-                    .profile-photo(style='background-image: url(' + profile.i_help.photo + ')')
-            .spacer.col-xs-12
-            .col-xs-12.text-justify!= md(profile.i_help.text)
+                    script(src='https://fast.wistia.net/assets/external/E-v1.js')
+                    //- .col-xs-12
+                    //-     .wistia_embed(id='wistia_' + profile.i_help.video)
+                    //- script(charset='ISO-8859-1' src='https://fast.wistia.com/assets/external/E-v1.js')
+                    //- script wistiaEmbed = Wistia.embed('#{profile.i_help.video}', {videoFoam: true});
+                else if profile.i_help.photo
+                    .col-xs-12
+                        .profile-photo(style='background-image: url(' + profile.i_help.photo + ')')
+                .spacer.col-xs-12
+                .col-xs-12.text-justify!= md(profile.i_help.text)
 
-        #tab-you-help.tab-pane
-            if profile.you_help.video
-                iframe.col-xs-12(src='https://fast.wistia.net/embed/iframe/' + profile.you_help.video + '?videoFoam=true', allowtransparency='true', frameborder='0', scrolling='no', class='wistia_embed', name='wistia_embed', allowfullscreen, mozallowfullscreen, webkitallowfullscreen, oallowfullscreen, msallowfullscreen)
+            #tab-you-help.tab-pane
+                if profile.you_help.video
+                    iframe.col-xs-12(src='https://fast.wistia.net/embed/iframe/' + profile.you_help.video + '?videoFoam=true', allowtransparency='true', frameborder='0', scrolling='no', class='wistia_embed', name='wistia_embed', allowfullscreen, mozallowfullscreen, webkitallowfullscreen, oallowfullscreen, msallowfullscreen)
 
-                script(src='https://fast.wistia.net/assets/external/E-v1.js')
-                //- .col-xs-12
-                //-     .wistia_embed(id='wistia_' + profile.you_help.video)
-                //- script(charset='ISO-8859-1' src='https://fast.wistia.com/assets/external/E-v1.js')
-                //- script wistiaEmbed = Wistia.embed('#{profile.you_help.video}', {videoFoam: true});
-            else if profile.you_help.photo
-                .col-xs-12
-                    .profile-photo(style='background-image: url(' + profile.you_help.photo + ')')
-            .spacer.col-xs-12
-            .col-xs-12.text-justify!= md(profile.you_help.text)
+                    script(src='https://fast.wistia.net/assets/external/E-v1.js')
+                    //- .col-xs-12
+                    //-     .wistia_embed(id='wistia_' + profile.you_help.video)
+                    //- script(charset='ISO-8859-1' src='https://fast.wistia.com/assets/external/E-v1.js')
+                    //- script wistiaEmbed = Wistia.embed('#{profile.you_help.video}', {videoFoam: true});
+                else if profile.you_help.photo
+                    .col-xs-12
+                        .profile-photo(style='background-image: url(' + profile.you_help.photo + ')')
+                .spacer.col-xs-12
+                .col-xs-12.text-justify!= md(profile.you_help.text)

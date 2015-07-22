@@ -1,8 +1,9 @@
 extends layout
 
 block content
-    if contents
-        .row.jumbotron.text-center!= md(contents)
+    .container
+        if contents
+            .row.jumbotron.text-center!= md(contents)
 
         .row.text-center
             a(href='/signin/facebook', title='Facebook')

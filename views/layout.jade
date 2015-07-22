@@ -18,7 +18,7 @@ html
     body
         #wrap
             #main
-                nav.navbar.navbar-default
+                nav.navbar.navbar-default.navbar-fixed-top
                     .container
                         .navbar-header
                             button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#bs-example-navbar-collapse-1', aria-expanded='false')
@@ -27,7 +27,7 @@ html
                                 span.icon-bar
                                 span.icon-bar
                             if title
-                                a.navbar-brand.hidden-xs(href='/')
+                                a.navbar-brand(href='/')
                                     img(src='/images/helpific-logo-text-hr.png', alt='Helpific logo', style='height:100%')
                         .collapse.navbar-collapse(id='bs-example-navbar-collapse-1')
                             ul.nav.navbar-nav.navbar-right
@@ -47,51 +47,44 @@ html
 
                 .container
                     a.row(href='/')
-                        if title
-                            img.visible-xs.col-xs-4.col-xs-offset-4(src='/images/helpific-logo-text.png', alt='Helpific logo')
-                        else
-                            img.col-xs-4.col-sm-4.col-md-2.col-xs-offset-4.col-sm-offset-4.col-md-offset-5(src='/images/helpific-logo-text.png', alt='Helpific logo')
+                        if !title
+                            img.col-xs-6.col-sm-4.col-md-2.col-xs-offset-3.col-sm-offset-4.col-md-offset-5(src='/images/helpific-logo-text.png', alt='Helpific logo')
+                    if title
+                        .row
+                            h1.col-xs-12.text-center
+                                span.col-xs-12= pretitle
+                                | #{title}
 
-                    .row
-                        h1.col-xs-12.text-center
-                            span.col-xs-12= pretitle
-                            | #{title}
+                block content
 
-                .container
-                    block content
-
-        footer.container
-            .row
-                .col-xs-12
-                    hr
-            .row
-                .col-xs-12.col-sm-5
-                    b HELPIFIC MTÜ
-                    br
-                    small
-                        | Reg nr: 80380146
+        footer.container-fluid
+            .container
+                .row
+                    .col-xs-9.col-sm-5
+                        b HELPIFIC MTÜ
                         br
-                        | Konto: EE102200221061303677
-                        br
-                        | SWIFT/BIC: HABAEE2X
-                        br
-                        | SWEDBANK AS
-                .visible-xs.col-xs-12
-                    hr
-                .col-xs-12.col-sm-7.text-right
-                    a(href='https://www.facebook.com/Helpific', target='_blank')
-                        i.fa.fa-facebook-square.social(style='color:#3b5998')
-                    a(href='https://www.twitter.com/helpific', target='_blank')
-                        i.fa.fa-twitter-square.social(style='color:#00aced')
-                    a(href='https://helpificeesti.blogspot.com/', target='_blank')
-                        i.fa.fa-rss-square.social(style='color:#f57d00')
-                    a(href='http://www.enjoygram.com/tag/helpific', target='_blank')
-                        i.fa.fa-instagram.social(style='color:#517fa4')
-                    a(href='https://www.linkedin.com/company/helpific', target='_blank')
-                        i.fa.fa-linkedin-square.social(style='color:#007bb6')
-                    a(href='https://www.pinterest.com/helpific/', target='_blank')
-                        i.fa.fa-pinterest-square.social(style='color:#cb2027')
-                    a(href='http://helpific.tumblr.com/', target='_blank')
-                        i.fa.fa-tumblr-square.social(style='color:#32506d')
-                    a(href='https://www.youtube.com/channel/UC0b5JqEQXdZuex5TNKSpoug', target='_blank')
-                        i.fa.fa-youtube-square.social(style='color:#bb0000')
+                        small
+                            | Reg nr: 80380146
+                            br
+                            | Konto: EE102200221061303677
+                            br
+                            | SWIFT/BIC: HABAEE2X
+                            br
+                            | SWEDBANK AS
+                    .col-xs-3.col-sm-7.text-right
+                        a(href='https://www.facebook.com/Helpific', target='_blank')
+                            i.fa.fa-facebook-square.social(style='color:#3b5998')
+                        a(href='https://www.twitter.com/helpific', target='_blank')
+                            i.fa.fa-twitter-square.social(style='color:#00aced')
+                        a(href='https://helpificeesti.blogspot.com/', target='_blank')
+                            i.fa.fa-rss-square.social(style='color:#f57d00')
+                        a(href='http://www.enjoygram.com/tag/helpific', target='_blank')
+                            i.fa.fa-instagram.social(style='color:#517fa4')
+                        a(href='https://www.linkedin.com/company/helpific', target='_blank')
+                            i.fa.fa-linkedin-square.social(style='color:#007bb6')
+                        a(href='https://www.pinterest.com/helpific/', target='_blank')
+                            i.fa.fa-pinterest-square.social(style='color:#cb2027')
+                        a(href='http://helpific.tumblr.com/', target='_blank')
+                            i.fa.fa-tumblr-square.social(style='color:#32506d')
+                        a(href='https://www.youtube.com/channel/UC0b5JqEQXdZuex5TNKSpoug', target='_blank')
+                            i.fa.fa-youtube-square.social(style='color:#bb0000')

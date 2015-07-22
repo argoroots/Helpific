@@ -1,6 +1,6 @@
 header-height = 100px
 header-height-xs = 50px
-footer-height = 200px
+footer-height = 150px
 
 screen-sm-min = 768px
 screen-md-min = 992px
@@ -14,6 +14,7 @@ html
 
 
 body
+    padding-top header-height + 50px
     height 100%
     color #585858
     font-family 'Raleway', sans-serif
@@ -35,8 +36,9 @@ body
 
 .navbar
     min-height header-height
-    background none
+    background rgba(255, 255, 255, 0.95)
     border none
+    border-bottom 1px solid #F0F0F0
 
     .navbar-header
         min-height header-height
@@ -45,6 +47,9 @@ body
             height header-height - 30px !important
 
     .navbar-collapse
+        border none
+
+    .navbar-toggle
         border none
 
     .navbar-nav
@@ -80,6 +85,7 @@ footer
     height footer-height
     clear both
     padding-top 20px
+    background-color #F4F4F4
 
 
 
@@ -219,13 +225,27 @@ ul.nav-pills
 
 i.social
     font-size 40px
-    margin 5px
+    margin 3px
 
 
 
 i.signin
     font-size 80px
     margin 20px
+
+
+
+.btn
+    border none
+    border-radius 0px
+    text-decoration none
+
+.btn-lg
+    padding-top 25px
+    padding-bottom 25px
+    font-weight bold
+    text-transform uppercase
+
 
 
 
