@@ -77,4 +77,16 @@ router.get('/signin/:provider', function(req, res, next) {
 
 
 
+// Sign out
+router.get('/signout', function(req, res, next) {
+    res.clearCookie('auth_url')
+    res.clearCookie('auth_state')
+    res.clearCookie('auth_id')
+    res.clearCookie('auth_token')
+
+    res.redirect('/')
+})
+
+
+
 module.exports = router

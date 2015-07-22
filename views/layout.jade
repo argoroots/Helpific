@@ -40,7 +40,10 @@ html
                                 li
                                     a(href='/terms') Terms
                                 li
-                                    a(href='/user/signin') Sign In
+                                    if user
+                                        a(href='/user/signout') Sign Out
+                                    else
+                                        a(href='/user/signin') Sign In
 
                 .container
                     a.row(href='/')

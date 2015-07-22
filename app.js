@@ -57,6 +57,17 @@ express()
     // logging
     .use(logger(':date[iso] | HTTP/:http-version | :method | :status | :url | :res[content-length] b | :response-time ms | :remote-addr | :referrer | :user-agent', {stream: access_log_stream}))
 
+    // set defaults for views
+    .use(function(req, res, next) {
+        if(req.signedCookies.auth_id && req.signedCookies.auth_token) {
+            res.locals.user = {
+                id: req.signedCookies.auth_id,
+                token: req.signedCookies.auth_token
+            }
+        }
+        next(null)
+    })
+
     // routes mapping
     .use('/',         require('./routes/index'))
     .use('/profiles', require('./routes/profiles'))
