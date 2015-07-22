@@ -14,7 +14,6 @@ html
 
 
 body
-    padding-top header-height + 50px
     height 100%
     color #585858
     font-family 'Raleway', sans-serif
@@ -47,9 +46,11 @@ body
             height header-height - 35px !important
 
     .navbar-collapse
+        max-height 600px
         border none
 
     .navbar-toggle
+        margin-top 33px
         border none
 
     .navbar-nav
@@ -67,6 +68,15 @@ body
     border-bottom 1px solid #F0F0F0
 
 
+
+#cover
+    background-image: url('/images/frontpage-cover-1.jpg')
+    background-position center center
+    background-size cover
+    height 550px
+
+
+
 @media (max-width: 768px)
     .navbar
         min-height header-height-xs
@@ -78,6 +88,7 @@ body
                     padding-top 10px
                     padding-bottom 10px
                     line-height header-height-xs
+                    text-align center
 
 
 
@@ -102,7 +113,7 @@ a
 
 
 h1
-    margin-top 0px
+    margin-top header-height + 50px
     margin-bottom 100px
     color #55938e
     font-size 64px

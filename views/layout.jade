@@ -26,9 +26,8 @@ html
                                 span.icon-bar
                                 span.icon-bar
                                 span.icon-bar
-                            if title
-                                a.navbar-brand(href='/')
-                                    img(src='/images/helpific-logo-text-hr.png', alt='Helpific logo')
+                            a.navbar-brand(href='/')
+                                img(src='/images/helpific-logo-text-hr.png', alt='Helpific logo')
                         .collapse.navbar-collapse(id='bs-example-navbar-collapse-1')
                             ul.nav.navbar-nav.navbar-right
                                 li
@@ -46,9 +45,6 @@ html
                                         a(href='/signin') Sign In
 
                 .container
-                    a.row(href='/')
-                        if !title
-                            img.col-xs-6.col-sm-4.col-md-2.col-xs-offset-3.col-sm-offset-4.col-md-offset-5(src='/images/helpific-logo-text.png', alt='Helpific logo')
                     if title
                         .row
                             h1.col-xs-12.text-center
@@ -92,6 +88,7 @@ html
 
         script.
             $(window).scroll(function(event) {
+                $('#cover').css('background-position', 'center ' + (($(window).scrollTop() * 0.3)) + 'px');
                 if($(window).scrollTop() > 10) {
                     $('.navbar').addClass('navbar-border')
                 } else {
