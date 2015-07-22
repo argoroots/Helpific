@@ -5,7 +5,7 @@ block content
         .col-xs-12
             ul.nav.nav-pills.nav-justified
                 if profile.i_help.video || profile.i_help.photo || profile.i_help.text || profile.you_help.video || profile.you_help.photo || profile.you_help.text
-                    li(style='background-color:#f14d3e')
+                    li.active(style='background-color:#f14d3e')
                         a(href='#tab-about', data-toggle='tab') About #{profile.forename}
                 if profile.i_help.video || profile.i_help.photo || profile.i_help.text
                     li(style='background-color:#55938e')

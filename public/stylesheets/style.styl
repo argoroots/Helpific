@@ -168,7 +168,10 @@ pre
 ul.nav-pills
     margin-bottom 20px
 
-    li, li.active
+    li
+        border-top solid 15px white
+        border-bottom solid 5px white
+
         a
             padding-top 25px
             padding-bottom 25px
@@ -176,14 +179,17 @@ ul.nav-pills
             color #ffffff
             font-size 20px
             text-decoration none
+            border-radius 0px
 
             &:hover, &:active, &:focus
-                padding-top 22px
                 background none !important
-                border-top solid 3px #ffffff
                 border-radius 0px
                 color #ffffff
                 text-decoration none
+
+    li.active
+        border-top none
+        border-bottom none
 
 
 
@@ -231,10 +237,6 @@ i.signin
         text-transform uppercase
         font-weight normal
 
-        span
-            display block
-            float right
-
     select
         border-color #777777
         outline none
@@ -256,7 +258,6 @@ i.signin
         font-size 18px
 
         &:focus
-            color #55938e
             border-color #55938e
             outline 0px
 
