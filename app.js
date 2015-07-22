@@ -17,6 +17,7 @@ var debug   = require('debug')('app:' + path.basename(__filename).replace('.js',
 APP_DEBUG     = process.env.DEBUG
 APP_PORT      = process.env.PORT || 3000
 APP_LOG_DIR   = process.env.LOGDIR || __dirname + '/log'
+APP_COOKIE_SECRET = process.env.COOKIE_SECRET || random.generate(16)
 APP_ENTU_URL  = process.env.ENTU_URL || 'https://helpific.entu.ee/api2'
 APP_ENTU_USER = process.env.ENTU_USER
 APP_ENTU_KEY  = process.env.ENTU_KEY
@@ -44,7 +45,7 @@ express()
     .set('view engine', 'jade')
 
     // cookies
-    .use(cookie(random.generate(16)))
+    .use(cookie(APP_COOKIE_SECRET))
 
     // stylus to css converter
     .use(stylus.middleware({src: path.join(__dirname, 'public'), compress: true}))
