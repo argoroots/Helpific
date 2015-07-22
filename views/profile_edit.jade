@@ -24,7 +24,7 @@ block content
                     label.control-label(for='you_help_photo') Profile Picture
                     input.form-control(id='you_help_photo', type='file')
 
-                .spacer.col-xs-12
+            .row.spacer
 
             .row
                 .col-xs-12
@@ -109,9 +109,9 @@ block content
                                 a(href='https://vimeo.com', target='_blank') Vimeo
                                 |  urls
 
-        script.
-            $('input, textarea').focus(function() {
-                $("label[for='" + this.id + "']").addClass('labelfocus')
-            }).blur(function() {
-                $('label').removeClass('labelfocus')
-            })
+    script.
+        $('input, textarea').focus(function() {
+            $("label[for='" + this.id + "']").addClass('labelfocus')
+        }).blur(function() {
+            $('label').removeClass('labelfocus')
+        })

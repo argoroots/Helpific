@@ -38,7 +38,6 @@ body
     min-height header-height
     background rgba(255, 255, 255, 0.95)
     border none
-    border-bottom 1px solid #F0F0F0
 
     .navbar-header
         min-height header-height
@@ -64,6 +63,8 @@ body
                 &:hover
                     text-decoration underline
 
+.navbar-border
+    border-bottom 1px solid #F0F0F0
 
 
 @media (max-width: 768px)
@@ -92,11 +93,11 @@ footer
 
 a
     color #cd5c5c
-    text-decoration underline
+    text-decoration none
 
     &:hover
         color #cd5c5c
-        text-decoration none
+        text-decoration underline
 
 
 
