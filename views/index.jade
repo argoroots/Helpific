@@ -3,7 +3,8 @@ extends layout
 block content
     .container-fluid(style='')
         if contents
-            .row.jumbotron.text-center!= md(contents)
+            .row
+                .jumbotron.col-xs-12.text-center!= md(contents)
 
         .row.text-center
             h2.col-xs-12 How Helpific works
@@ -25,5 +26,5 @@ block content
 
     .container
         .row
-            a.btn.btn-lg.btn-success.col-xs-10.col-sm-6.col-md-4.col-xs-offset-1.col-sm-offset-0.col-md-offset-1(href='/profiles?q=helper', style='background-color:#55938e') Meet the volunteers
-            a.btn.btn-lg.btn-success.col-xs-10.col-sm-6.col-md-4.col-xs-offset-1.col-sm-offset-0.col-md-offset-2(href='/profiles?q=helper', style='background-color:#fab235') Help those in need
+            a.btn.btn-lg.btn-success.col-xs-10.col-sm-5.col-xs-offset-1.col-sm-offset-1(href='/profiles?q=helper', style='background-color:#55938e') Meet the volunteers
+            a.btn.btn-lg.btn-success.col-xs-10.col-sm-5.col-xs-offset-1.col-sm-offset-0(href='/profiles?q=helper', style='background-color:#fab235') Help those in need
