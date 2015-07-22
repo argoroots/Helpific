@@ -107,3 +107,10 @@ block content
                             |  and&nbsp;
                             a(href='https://vimeo.com', target='_blank') Vimeo
                             |  urls
+
+    script.
+        $('input, textarea').focus(function() {
+            $("label[for='" + this.id + "']").addClass('labelfocus')
+        }).blur(function() {
+            $('label').removeClass('labelfocus')
+        })
