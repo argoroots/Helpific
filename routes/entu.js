@@ -4,6 +4,7 @@ var request = require('request')
 var md      = require('marked')
 var async   = require('async')
 var op      = require('object-path')
+var random  = require('randomstring')
 
 
 
@@ -192,3 +193,46 @@ exports.get_profile = function(id, callback) {
     })
 
 }
+
+
+
+//Get signin url
+exports.get_signin_url = function(redirect_url, provider, callback) {
+    var body = {
+        'state': random.generate(16),
+        'redirect_url': redirect_url,
+        'provider': provider
+    }
+    request.post({url: APP_ENTU_URL + '/user/auth', body: body, strictSSL: true, json: true}, function(error, response, body) {
+        if(error) return callback(error)
+        if(response.statusCode !== 200) return callback(new Error(op.get(body, 'error', body)))
+
+        var data = {}
+        data.state = op.get(body, 'result.state', null)
+        data.auth_url = op.get(body, 'result.auth_url', null)
+
+        callback(null, data)
+    })
+}
+
+
+
+//Get user
+exports.get_user_session = function(auth_url, state, callback) {
+    var body = {
+        'state': state
+    }
+    request.post({url: auth_url, body: body, strictSSL: true, json: true}, function(error, response, body) {
+        if(error) return callback(error)
+        if(response.statusCode !== 200 || !body.result) return callback(new Error(op.get(body, 'error', body)))
+
+        var user = {}
+        user.id = op.get(body, 'result.user.id', null)
+        user.token = op.get(body, 'result.user.session_key', null)
+
+        callback(null, user)
+    })
+}
+
+
+

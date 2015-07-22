@@ -7,6 +7,8 @@ var logger  = require('morgan')
 var rotator = require('file-stream-rotator')
 var stylus  = require('stylus')
 var favicon = require('serve-favicon')
+var cookie  = require('cookie-parser')
+var random  = require('randomstring')
 var debug   = require('debug')('app:' + path.basename(__filename).replace('.js', ''))
 
 
@@ -15,7 +17,7 @@ var debug   = require('debug')('app:' + path.basename(__filename).replace('.js',
 APP_DEBUG     = process.env.DEBUG
 APP_PORT      = process.env.PORT || 3000
 APP_LOG_DIR   = process.env.LOGDIR || __dirname + '/log'
-APP_ENTU_URL  = process.env.ENTU || 'https://helpific.entu.ee/api2'
+APP_ENTU_URL  = process.env.ENTU_URL || 'https://helpific.entu.ee/api2'
 APP_ENTU_USER = process.env.ENTU_USER
 APP_ENTU_KEY  = process.env.ENTU_KEY
 
@@ -40,6 +42,9 @@ express()
     // jade view engine
     .set('views', path.join(__dirname, 'views'))
     .set('view engine', 'jade')
+
+    // cookies
+    .use(cookie(random.generate(16)))
 
     // stylus to css converter
     .use(stylus.middleware({src: path.join(__dirname, 'public'), compress: true}))
