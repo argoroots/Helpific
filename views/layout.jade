@@ -90,11 +90,7 @@ html
 
         script.
             $(window).scroll(function(event) {
-                console.log(1 - $(window).scrollTop() / 200)
-                $('#cover').css('background-position', 'center ' + $(window).scrollTop() * 0.3 + 'px');
                 if($(window).scrollTop() > 10) {
-                    $('#cover').css('color', 'rgba(255, 255, 255, ' + (1 - $(window).scrollTop() / 200) + ')');
-                    $('#cover').css('text-shadow', '0px 0px 10px rgba(64, 64, 64, ' + (1 - $(window).scrollTop() / 200) + ')');
                     $('.navbar').addClass('navbar-border')
                 } else {
                     $('.navbar').removeClass('navbar-border')
