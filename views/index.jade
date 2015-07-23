@@ -13,22 +13,33 @@ block content
         .row.text-center
             h2.col-xs-12 How Helpific works?
             h3.col-xs-10.col-sm-4.col-md-2.col-xs-offset-1.col-sm-offset-0.col-md-offset-2.text-center
-                img(src='/images/bullet-1.png', style='margin-top:30px; margin-bottom:20px', alt='Step 1')
+                img(src='/images/bullet-1.png', style='margin-bottom:20px', alt='Step 1')
                 br
                 | Sign in via Facebook or Google
             h3.col-xs-10.col-sm-4.col-md-2.col-xs-offset-1.col-sm-offset-0.col-md-offset-1.text-center
-                img(src='/images/bullet-2.png', style='margin-top:30px; margin-bottom:20px', alt='Step 2')
+                img(src='/images/bullet-2.png', style='margin-bottom:20px', alt='Step 2')
                 br
                 | Let us know what you can do or need
             h3.col-xs-10.col-sm-4.col-md-2.col-xs-offset-1.col-sm-offset-0.col-md-offset-1.text-center
-                img(src='/images/bullet-3.png', style='margin-top:30px; margin-bottom:20px', alt='Step 3')
+                img(src='/images/bullet-3.png', style='margin-bottom:20px', alt='Step 3')
                 br
                 | Make your needs and deeds work
 
         .row.spacer
 
-        .row
-            a.btn.btn-lg.btn-success.col-xs-10.col-sm-5.col-xs-offset-1.col-sm-offset-1(href='/profiles?q=helper', style='background-color:#55938e') Meet the volunteers
-            a.btn.btn-lg.btn-success.col-xs-10.col-sm-5.col-xs-offset-1.col-sm-offset-0(href='/profiles?q=helper', style='background-color:#fab235') Help those in need
+        .row.text-center
+            h2.col-xs-12 Chose your way
 
-        .row.spacer
+    .container-fluid
+        .row.text-center
+            .col-xs-6(style='background-color:#55938e')
+                .spacer.col-xs-12
+                a(href='/profiles?q=helper')
+                    h3.col-xs-12(style='color:#ffffff') Meet the volunteers
+                    img.col-xs-8.col-md-4.col-xs-offset-2.col-md-offset-4(src='/images/door-left.png', alt='Left door')
+            .col-xs-6(style='background-color:#fab235')
+                .spacer.col-xs-12
+                a(href='/profiles?q=helper')
+                    h3.col-xs-12(style='color:#ffffff') Help those in need
+                    img.col-xs-8.col-md-4.col-xs-offset-2.col-md-offset-4(src='/images/door-right.png', alt='Right door')
+
