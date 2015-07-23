@@ -4,14 +4,13 @@ block content
     .container
         each p, i in team.sort(function(obj1, obj2) { return obj1.forename + obj1.surname > obj2.forename + obj2.surname })
             .row
-                .col-xs-12.col-sm-10.col-sm-offset-1
-                    img.col-xs-6.col-sm-3.col-md-2.img-circle(src=p.photo, alt=p.forename, class=(i % 2 == 0) ? 'pull-left' : 'pull-right', style='margin-bottom:20px')
-                    .col-xs-12.col-sm-9.col-md-10(class=(i % 2 == 0) ? '' : 'text-right')
-                        h3= p.forename + ' ' + p.surname
-                        if p.info
-                            .text-justify!= md(p.info)
-                        p
-                            a(href='mailto:'+p.email)= p.email
-                        p
-                            a(href='tel:'+p.phone)= p.phone
+                img.col-xs-3.col-sm-3.col-md-2.img-circle(src=p.photo, alt=p.forename, class=(i % 2 == 0) ? 'pull-left' : 'pull-right', style='margin-bottom:20px')
+                .col-xs-12.col-md-8(class=(i % 2 == 0) ? '' : 'text-right col-md-offset-2')
+                    h3= p.forename + ' ' + p.surname
+                    if p.info
+                        .text-justify!= md(p.info)
+                    p
+                        a(href='mailto:'+p.email)= p.email
+                    p
+                        a(href='tel:'+p.phone)= p.phone
             .row.spacer
