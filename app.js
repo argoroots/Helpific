@@ -9,6 +9,7 @@ var stylus  = require('stylus')
 var favicon = require('serve-favicon')
 var cookie  = require('cookie-parser')
 var random  = require('randomstring')
+var bparser = require('body-parser')
 var debug   = require('debug')('app:' + path.basename(__filename).replace('.js', ''))
 
 
@@ -46,6 +47,10 @@ express()
 
     // cookies
     .use(cookie(APP_COOKIE_SECRET))
+
+    // parse POST requests
+    .use(bparser.json())
+    .use(bparser.urlencoded({extended: true}))
 
     // stylus to css converter
     .use(stylus.middleware({src: path.join(__dirname, 'public'), compress: true}))

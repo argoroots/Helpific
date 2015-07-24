@@ -144,7 +144,7 @@ exports.get_profiles = function(callback) {
                 profile.forename = op.get(body, 'result.properties.forename.values.0.db_value', null)
                 profile.surname = op.get(body, 'result.properties.surname.values.0.db_value', null)
                 profile.photo = APP_ENTU_URL + '/entity-' + body.result.id + '/picture'
-                profile.topic = op.get(body, 'result.properties.slogan.values.0.db_value', null)
+                profile.topic = op.get(body, 'result.properties.topic.values.0.db_value', null)
                 profile.info = op.get(body, 'result.properties.about-me-text.values.0.db_value', null)
                 profile.town = op.get(body, 'result.properties.town.values.0.db_value', null)
                 profile.county = op.get(body, 'result.properties.county.values.0.db_value', null)
@@ -179,7 +179,7 @@ exports.get_profile = function(id, callback) {
         profile.forename = op.get(body, 'result.properties.forename.values.0.db_value', null)
         profile.surname = op.get(body, 'result.properties.surname.values.0.db_value', null)
         profile.email = op.get(body, 'result.properties.email.values.0.db_value', null)
-        profile.topic = op.get(body, 'result.properties.slogan.values.0.db_value', null)
+        profile.topic = op.get(body, 'result.properties.topic.values.0.db_value', null)
         profile.photo = op.has(body, 'result.properties.photo.values.0.db_value') ? APP_ENTU_URL + '/file-' + op.get(body, 'result.properties.photo.values.0.db_value') : null
 
         profile.about.text = op.get(body, 'result.properties.about-me-text.values.0.db_value', '')
@@ -254,23 +254,23 @@ exports.get_user = function(auth_id, auth_token, callback) {
             you_help: {}
         }
 
-        profile.forename = op.get(body, 'result.properties.forename.values.0.db_value', null)
-        profile.surname = op.get(body, 'result.properties.surname.values.0.db_value', null)
-        profile.email = op.get(body, 'result.properties.email.values.0.db_value', null)
-        profile.topic = op.get(body, 'result.properties.slogan.values.0.db_value', null)
+        profile.forename = op.get(body, 'result.properties.forename.values.0', {})
+        profile.surname = op.get(body, 'result.properties.surname.values.0', {})
+        profile.email = op.get(body, 'result.properties.email.values.0', {})
+        profile.topic = op.get(body, 'result.properties.topic.values.0', {})
         profile.photo = op.has(body, 'result.properties.photo.values.0.db_value') ? APP_ENTU_URL + '/file-' + op.get(body, 'result.properties.photo.values.0.db_value') : null
 
-        profile.about.text = op.get(body, 'result.properties.about-me-text.values.0.db_value', '')
+        profile.about.text = op.get(body, 'result.properties.about-me-text.values.0', {})
         profile.about.photo = op.has(body, 'result.properties.about-me-photo.values.0.db_value') ? APP_ENTU_URL + '/file-' + op.get(body, 'result.properties.photo.values.0.db_value') : null
-        profile.about.video = op.get(body, 'result.properties.about-me-video.values.0.db_value', null)
+        profile.about.video = op.get(body, 'result.properties.about-me-video.values.0', {})
 
-        profile.i_help.text = op.get(body, 'result.properties.me-help-you-text.values.0.db_value', '')
+        profile.i_help.text = op.get(body, 'result.properties.me-help-you-text.values.0', {})
         profile.i_help.photo = op.has(body, 'result.properties.me-help-you-photo.values.0.db_value') ? APP_ENTU_URL + '/file-' + op.get(body, 'result.properties.photo.values.0.db_value') : null
-        profile.i_help.video = op.get(body, 'result.properties.me-help-you-video.values.0.db_value', null)
+        profile.i_help.video = op.get(body, 'result.properties.me-help-you-video.values.0', {})
 
-        profile.you_help.text = op.get(body, 'result.properties.you-help-me-text.values.0.db_value', '')
+        profile.you_help.text = op.get(body, 'result.properties.you-help-me-text.values.0', {})
         profile.you_help.photo = op.has(body, 'result.properties.you-help-me-photo.values.0.db_value') ? APP_ENTU_URL + '/file-' + op.get(body, 'result.properties.photo.values.0.db_value') : null
-        profile.you_help.video = op.get(body, 'result.properties.you-help-me-video.values.0.db_value', null)
+        profile.you_help.video = op.get(body, 'result.properties.you-help-me-video.values.0', {})
 
         callback(null, profile)
     })
@@ -278,3 +278,20 @@ exports.get_user = function(auth_id, auth_token, callback) {
 
 
 
+//Set user
+exports.set_user = function(auth_id, auth_token, data, callback) {
+
+    property = 'person-' + op.get(data, 'property')
+    var body = {}
+    body[op.get(data, 'id') ? property + '.' + op.get(data, 'id') : property] = op.get(data, 'value', '')
+
+    request.put({url: APP_ENTU_URL + '/entity-' + auth_id, headers: {'X-Auth-UserId': auth_id, 'X-Auth-Token': auth_token}, body: body, strictSSL: true, json: true}, function(error, response, body) {
+        if(error) return callback(error)
+        if(response.statusCode !== 201 || !body.result) return callback(new Error(op.get(body, 'error', body)))
+
+        var new_property = op.get(body, 'result.properties.' + property + '.0', null)
+        debug(new_property)
+        callback(null, new_property)
+    })
+
+}

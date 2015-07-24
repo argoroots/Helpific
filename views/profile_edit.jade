@@ -6,23 +6,23 @@ block content
             .row
                 .form-group.col-xs-12.col-sm-12
                     label.control-label(for='topic') Topic
-                    input.form-control(id='topic', type='text', value=profile.topic)
+                    input.form-control(id='topic', type='text', value=profile.topic.db_value, data-value=profile.topic.db_value, data-id=profile.topic.id)
 
                 .form-group.col-xs-12.col-sm-3
                     label.control-label(for='forename') Forename
-                    input.form-control(id='forename', type='text', value=profile.forename)
+                    input.form-control(id='forename', type='text', value=profile.forename.db_value, data-value=profile.forename.db_value, data-id=profile.forename.id)
 
                 .form-group.col-xs-12.col-sm-3
                     label.control-label(for='surname') Surname
-                    input.form-control(id='surname', type='text', value=profile.surname)
+                    input.form-control(id='surname', type='text', value=profile.surname.db_value, data-value=profile.surname.db_value, data-id=profile.surname.id)
 
                 .form-group.col-xs-12.col-sm-3
                     label.control-label(for='email') E-mail
-                    input.form-control(id='email', type='text', value=profile.email)
+                    input.form-control(id='email', type='text', value=profile.email.db_value, data-value=profile.email.db_value, data-id=profile.email.id)
 
-                .form-group.col-xs-12.col-sm-3
-                    label.control-label(for='you_help_photo') Profile Picture
-                    input.form-control(id='you_help_photo', type='file')
+                //- .form-group.col-xs-12.col-sm-3
+                //-     label.control-label(for='you_help_photo') Profile Picture
+                //-     input.form-control(id='you_help_photo', type='file')
 
             .row.spacer
 
@@ -40,19 +40,19 @@ block content
                 #tab-about.tab-pane.active
 
                     .form-group.col-xs-12
-                        label.control-label(for='about_text') Write something about you
-                        textarea.form-control(id='about_text', rows=8)= profile.about.text
+                        label.control-label(for='about-me-text') Write something about you
+                        textarea.form-control(id='about-me-text', data-value=profile.about.text.db_value, data-id=profile.about.text.id, rows=8)= profile.about.text.db_value
                         p.text-right
                             small you can use&nbsp;
                                 a(href='https://en.wikipedia.org/wiki/Markdown#Example', target='_blank') markdown
 
-                    .form-group.col-xs-12.col-sm-4
-                        label.control-label(for='about_photo') Cover Photo
-                        input.form-control(id='about_photo', type='file')
+                    //- .form-group.col-xs-12.col-sm-4
+                    //-     label.control-label(for='about-me-photo') Cover Photo
+                    //-     input.form-control(id='about-me-photo', type='file')
 
                     .form-group.col-xs-12.col-sm-8
-                        label.control-label(for='about_video') Video URL
-                        input.form-control(id='about_video', type='text', value=profile.about_video)
+                        label.control-label(for='about-me-video') Video URL
+                        input.form-control(id='about-me-video', type='text', value=profile.about.video.db_value, data-value=profile.about.video.db_value, data-id=profile.about.video.id)
                         p.text-right
                             small
                                 | we support only&nbsp;
@@ -64,19 +64,19 @@ block content
                 #tab-i-help.tab-pane
 
                     .form-group.col-xs-12
-                        label.control-label(for='i_help_text') How you can help others?
-                        textarea.form-control(id='i_help_text', rows=8)= profile.i_help.text
+                        label.control-label(for='me-help-you-text') How you can help others?
+                        textarea.form-control(id='me-help-you-text', data-value=profile.i_help.text.db_value, data-id=profile.i_help.text.id, rows=8)= profile.i_help.text.db_value
                         p.text-right
                             small you can use&nbsp;
                                 a(href='https://en.wikipedia.org/wiki/Markdown#Example', target='_blank') markdown
 
-                    .form-group.col-xs-12.col-sm-4
-                        label.control-label(for='i_help_photo') Cover Photo
-                        input.form-control(id='i_help_photo', type='file')
+                    //- .form-group.col-xs-12.col-sm-4
+                    //-     label.control-label(for='me-help-you-photo') Cover Photo
+                    //-     input.form-control(id='me-help-you-photo', type='file')
 
                     .form-group.col-xs-12.col-sm-8
-                        label.control-label(for='i_help_video') Video URL
-                        input.form-control(id='i_help_video', type='text', value=profile.i_help_video)
+                        label.control-label(for='me-help-you-video') Video URL
+                        input.form-control(id='me-help-you-video', type='text', value=profile.i_help.video.db_value, data-value=profile.i_help.video.db_value, data-id=profile.i_help.video.id)
                         p.text-right
                             small
                                 | we support only&nbsp;
@@ -88,19 +88,19 @@ block content
                 #tab-you-help.tab-pane
 
                     .form-group.col-xs-12
-                        label.control-label(for='you_help_text') What kind of help you need?
-                        textarea.form-control(id='you_help_text', rows=8)= profile.you_help.text
+                        label.control-label(for='you-help-me-text') What kind of help you need?
+                        textarea.form-control(id='you-help-me-text', data-value=profile.you_help.text.db_value, data-id=profile.you_help.text.id, rows=8)= profile.you_help.text.db_value
                         p.text-right
                             small you can use&nbsp;
                                 a(href='https://en.wikipedia.org/wiki/Markdown#Example', target='_blank') markdown
 
-                    .form-group.col-xs-12.col-sm-4
-                        label.control-label(for='you_help_photo') Cover Photo
-                        input.form-control(id='you_help_photo', type='file')
+                    //- .form-group.col-xs-12.col-sm-4
+                    //-     label.control-label(for='you-help-me-photo') Cover Photo
+                    //-     input.form-control(id='you-help-me-photo', type='file')
 
                     .form-group.col-xs-12.col-sm-8
-                        label.control-label(for='you_help_video') Video URL
-                        input.form-control(id='you_help_video', type='text', value=profile.you_help_video)
+                        label.control-label(for='you-help-me-video') Video URL
+                        input.form-control(id='you-help-me-video', type='text', value=profile.you_help.video.db_value, data-value=profile.you_help.video.db_value, data-id=profile.you_help.video.id)
                         p.text-right
                             small
                                 | we support only&nbsp;
@@ -114,4 +114,18 @@ block content
             $("label[for='" + this.id + "']").addClass('labelfocus')
         }).blur(function() {
             $('label').removeClass('labelfocus')
+
+            input = $(this)
+            if(input.data('value') != input.val()) {
+                var postdata = {
+                    property: input.attr('id'),
+                    id: input.data('id'),
+                    value: input.val()
+                }
+                $.post('', postdata, function(data) {
+                    input.val(data.value)
+                    input.data('id', data.id)
+                    input.data('value', data.value)
+                }).fail(console.log)
+            }
         })

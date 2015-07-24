@@ -46,6 +46,22 @@ router.get('/me', function(req, res, next) {
 
 
 
+// Edit user profile
+router.post('/me', function(req, res, next) {
+    if(!req.signedCookies.auth_id || !req.signedCookies.auth_token) {
+        res.status(403).send()
+        return
+    }
+
+    entu.set_user(req.signedCookies.auth_id, req.signedCookies.auth_token, req.body, function(error, response) {
+        if(error) return next(error)
+
+        res.status(200).send(response)
+    })
+})
+
+
+
 // GET profile
 router.get('/:id', function(req, res, next) {
     if(!req.params.id) res.redirect('/profiles')
