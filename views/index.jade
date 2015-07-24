@@ -33,13 +33,13 @@ block content
     .container-fluid
         .row.text-center
             .col-xs-6(style='background-color:#55938e')
-                .spacer.col-xs-12
-                a(href='/profiles?q=helper')
+                a.col-xs-12(href='/profiles?q=helper')
+                    .spacer.col-xs-12
                     h3.col-xs-12(style='color:#ffffff') Meet the volunteers
                     img.col-xs-8.col-md-4.col-xs-offset-2.col-md-offset-4(src='/images/door-left.png', alt='Left door')
             .col-xs-6(style='background-color:#fab235')
-                .spacer.col-xs-12
-                a(href='/profiles?q=helper')
+                a.col-xs-12(href='/profiles?q=helper')
+                    .spacer.col-xs-12
                     h3.col-xs-12(style='color:#ffffff') Help those in need
                     img.col-xs-8.col-md-4.col-xs-offset-2.col-md-offset-4(src='/images/door-right.png', alt='Right door')
 
@@ -53,7 +53,7 @@ block content
                 $('#cover').css('text-shadow', '0px 0px 10px rgba(64, 64, 64, ' + alpha + ')')
             }
 
-            $('#bullet-1').css('opacity', ($(window).scrollTop() + $(window).height() - $('#bullet-1').position().top - $('#bullet-1').height() / 2  ) / 100)
-            $('#bullet-2').css('opacity', ($(window).scrollTop() + $(window).height() - $('#bullet-2').position().top - $('#bullet-2').height() / 1.5) / 100)
-            $('#bullet-3').css('opacity', ($(window).scrollTop() + $(window).height() - $('#bullet-3').position().top - $('#bullet-3').height())       / 100)
+            $('#bullet-1').css('opacity', ($(window).scrollTop() + $(window).height() - $('#bullet-1').offset().top - $('#bullet-1').height() / 2  ) / 100)
+            $('#bullet-2').css('opacity', ($(window).scrollTop() + $(window).height() - $('#bullet-2').offset().top - $('#bullet-2').height() / 1.5) / 100)
+            $('#bullet-3').css('opacity', ($(window).scrollTop() + $(window).height() - $('#bullet-3').offset().top - $('#bullet-3').height())       / 100)
         })
