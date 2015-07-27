@@ -17,13 +17,8 @@ block content
         .row.tab-content
             #tab-about.tab-pane.active
                 if profile.about.video
-                    iframe.col-xs-12(src='https://fast.wistia.net/embed/iframe/' + profile.about.video + '?videoFoam=true', allowtransparency='true', frameborder='0', scrolling='no', class='wistia_embed', name='wistia_embed', allowfullscreen, mozallowfullscreen, webkitallowfullscreen, oallowfullscreen, msallowfullscreen)
-
-                    script(src='https://fast.wistia.net/assets/external/E-v1.js')
-                    //- .col-xs-12
-                    //-     .wistia_embed(id='wistia_' + profile.about.video)
-                    //- script(charset='ISO-8859-1' src='https://fast.wistia.com/assets/external/E-v1.js')
-                    //- script wistiaEmbed = Wistia.embed('#{profile.about.video}', {videoFoam: true});
+                    .embed-responsive.embed-responsive-16by9
+                        iframe.embed-responsive-item.col-xs-12(src=profile.about.video, allowtransparency='true', frameborder='0', scrolling='no', allowfullscreen, mozallowfullscreen, webkitallowfullscreen, oallowfullscreen, msallowfullscreen)
                 else if profile.about.photo
                     .col-xs-12
                         .profile-photo(style='background-image: url(' + profile.about.photo + ')')
@@ -32,13 +27,8 @@ block content
 
             #tab-i-help.tab-pane
                 if profile.i_help.video
-                    iframe.col-xs-12(src='https://fast.wistia.net/embed/iframe/' + profile.i_help.video + '?videoFoam=true', allowtransparency='true', frameborder='0', scrolling='no', class='wistia_embed', name='wistia_embed', allowfullscreen, mozallowfullscreen, webkitallowfullscreen, oallowfullscreen, msallowfullscreen)
-
-                    script(src='https://fast.wistia.net/assets/external/E-v1.js')
-                    //- .col-xs-12
-                    //-     .wistia_embed(id='wistia_' + profile.i_help.video)
-                    //- script(charset='ISO-8859-1' src='https://fast.wistia.com/assets/external/E-v1.js')
-                    //- script wistiaEmbed = Wistia.embed('#{profile.i_help.video}', {videoFoam: true});
+                    .embed-responsive.embed-responsive-16by9
+                        iframe.embed-responsive-item.col-xs-12(src=profile.i_help.video, allowtransparency='true', frameborder='0', scrolling='no', allowfullscreen, mozallowfullscreen, webkitallowfullscreen, oallowfullscreen, msallowfullscreen)
                 else if profile.i_help.photo
                     .col-xs-12
                         .profile-photo(style='background-image: url(' + profile.i_help.photo + ')')
@@ -47,15 +37,11 @@ block content
 
             #tab-you-help.tab-pane
                 if profile.you_help.video
-                    iframe.col-xs-12(src='https://fast.wistia.net/embed/iframe/' + profile.you_help.video + '?videoFoam=true', allowtransparency='true', frameborder='0', scrolling='no', class='wistia_embed', name='wistia_embed', allowfullscreen, mozallowfullscreen, webkitallowfullscreen, oallowfullscreen, msallowfullscreen)
-
-                    script(src='https://fast.wistia.net/assets/external/E-v1.js')
-                    //- .col-xs-12
-                    //-     .wistia_embed(id='wistia_' + profile.you_help.video)
-                    //- script(charset='ISO-8859-1' src='https://fast.wistia.com/assets/external/E-v1.js')
-                    //- script wistiaEmbed = Wistia.embed('#{profile.you_help.video}', {videoFoam: true});
+                    .embed-responsive.embed-responsive-16by9
+                        iframe.embed-responsive-item.col-xs-12(src=profile.you_help.video, allowtransparency='true', frameborder='0', scrolling='no', allowfullscreen, mozallowfullscreen, webkitallowfullscreen, oallowfullscreen, msallowfullscreen)
                 else if profile.you_help.photo
                     .col-xs-12
                         .profile-photo(style='background-image: url(' + profile.you_help.photo + ')')
                 .spacer.col-xs-12
                 .col-xs-12.text-justify!= md(profile.you_help.text)
+        .row.spacer

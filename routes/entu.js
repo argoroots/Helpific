@@ -7,6 +7,19 @@ var op      = require('object-path')
 var random  = require('randomstring')
 
 
+function media_embed(url) {
+    if(url.indexOf('youtu.be/') > -1) {
+        return 'https://www.youtube.com/embed/' + url.split('youtu.be/')[1].split('?')[0]
+    } else if (url.indexOf('youtube.com/watch') > -1) {
+        return 'https://www.youtube.com/embed/' + url.split('v=')[1].split('&')[0]
+    }else if (url.indexOf('vimeo.com/') > -1) {
+        return 'https://player.vimeo.com/video/' + url.split('vimeo.com/')[1].split('?')[0]
+    }else {
+        return null
+    }
+}
+
+
 
 //Get page (web-content)
 exports.get_page = function(id, callback) {
@@ -184,15 +197,15 @@ exports.get_profile = function(id, callback) {
 
         profile.about.text = op.get(body, 'result.properties.about-me-text.values.0.db_value', '')
         profile.about.photo = op.has(body, 'result.properties.about-me-photo.values.0.db_value') ? APP_ENTU_URL + '/file-' + op.get(body, 'result.properties.photo.values.0.db_value') : null
-        profile.about.video = op.get(body, 'result.properties.about-me-video.values.0.db_value', null)
+        profile.about.video = media_embed(op.get(body, 'result.properties.about-me-video.values.0.db_value', null))
 
         profile.i_help.text = op.get(body, 'result.properties.me-help-you-text.values.0.db_value', '')
         profile.i_help.photo = op.has(body, 'result.properties.me-help-you-photo.values.0.db_value') ? APP_ENTU_URL + '/file-' + op.get(body, 'result.properties.photo.values.0.db_value') : null
-        profile.i_help.video = op.get(body, 'result.properties.me-help-you-video.values.0.db_value', null)
+        profile.i_help.video = media_embed(op.get(body, 'result.properties.me-help-you-video.values.0.db_value', null))
 
         profile.you_help.text = op.get(body, 'result.properties.you-help-me-text.values.0.db_value', '')
         profile.you_help.photo = op.has(body, 'result.properties.you-help-me-photo.values.0.db_value') ? APP_ENTU_URL + '/file-' + op.get(body, 'result.properties.photo.values.0.db_value') : null
-        profile.you_help.video = op.get(body, 'result.properties.you-help-me-video.values.0.db_value', null)
+        profile.you_help.video = media_embed(op.get(body, 'result.properties.you-help-me-video.values.0.db_value', null))
 
         callback(null, profile)
     })
