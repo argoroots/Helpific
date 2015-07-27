@@ -40,10 +40,13 @@ html
                                     a(href='/team') Team
                                 li
                                     a(href='/terms') Terms
-                                li
-                                    if user
+                                if user
+                                    li
+                                        a(href='/profiles/me') Me
+                                    li
                                         a(href='/signin/exit') Sign Out
-                                    else
+                                else
+                                    li
                                         a(href='/signin') Sign In
 
                 .container
