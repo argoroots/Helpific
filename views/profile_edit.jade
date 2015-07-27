@@ -25,6 +25,26 @@ block content
                 //-     input.form-control(id='you_help_photo', type='file')
 
             .row.spacer
+            .row.spacer
+
+                .form-group.col-xs-12.col-sm-4
+                    label.control-label(for='address') Address
+                    input.form-control(id='address', type='text', value=profile.address.db_value, data-value=profile.address.db_value, data-id=profile.address.id)
+                .form-group.col-xs-12.col-sm-4
+                    label.control-label(for='town') City
+                    input.form-control(id='town', type='text', value=profile.town.db_value, data-value=profile.town.db_value, data-id=profile.town.id)
+
+                .form-group.col-xs-12.col-sm-4
+                    label.control-label(for='county') County
+                    input.form-control(id='county', type='text', value=profile.county.db_value, data-value=profile.county.db_value, data-id=profile.county.id)
+
+                .form-group.col-xs-12.col-sm-4
+                    label.control-label(for='country') Country
+                    input.form-control(id='country', type='text', value=profile.country.db_value, data-value=profile.country.db_value, data-id=profile.country.id)
+
+
+            .row.spacer
+            .row.spacer
 
             .row
                 .col-xs-12

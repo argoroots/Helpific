@@ -276,6 +276,11 @@ exports.get_user = function(auth_id, auth_token, callback) {
         profile.email = op.get(body, 'result.properties.email.values.0', {})
         profile.topic = op.get(body, 'result.properties.topic.values.0', {})
         profile.photo = op.has(body, 'result.properties.photo.values.0.db_value') ? APP_ENTU_URL + '/file-' + op.get(body, 'result.properties.photo.values.0.db_value') : null
+        profile.address = op.get(body, 'result.properties.address.values.0', {})
+        profile.postalcode = op.get(body, 'result.properties.postalcode.values.0', {})
+        profile.town = op.get(body, 'result.properties.town.values.0', {})
+        profile.county = op.get(body, 'result.properties.county.values.0', {})
+        profile.country = op.get(body, 'result.properties.country.values.0', {})
 
         profile.about.text = op.get(body, 'result.properties.about-me-text.values.0', {})
         profile.about.photo = op.has(body, 'result.properties.about-me-photo.values.0.db_value') ? APP_ENTU_URL + '/file-' + op.get(body, 'result.properties.photo.values.0.db_value') : null
@@ -307,7 +312,7 @@ exports.set_user = function(auth_id, auth_token, data, callback) {
         if(response.statusCode !== 201 || !body.result) return callback(new Error(op.get(body, 'error', body)))
 
         var new_property = op.get(body, 'result.properties.' + property + '.0', null)
-        debug(new_property)
+
         callback(null, new_property)
     })
 
