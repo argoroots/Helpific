@@ -158,11 +158,10 @@ exports.get_profiles = function(callback) {
                     id: body.result.id
                 }
 
+                profile.slogan = op.get(body, 'result.properties.slogan.values.0.db_value', null)
                 profile.forename = op.get(body, 'result.properties.forename.values.0.db_value', null)
                 profile.surname = op.get(body, 'result.properties.surname.values.0.db_value', null)
                 profile.photo = APP_ENTU_URL + '/entity-' + body.result.id + '/picture'
-                profile.topic = op.get(body, 'result.properties.topic.values.0.db_value', null)
-                profile.info = op.get(body, 'result.properties.about-me-text.values.0.db_value', null)
                 profile.town = op.get(body, 'result.properties.town.values.0.db_value', null)
                 profile.county = op.get(body, 'result.properties.county.values.0.db_value', null)
 
@@ -193,10 +192,10 @@ exports.get_profile = function(id, callback) {
             you_help: {}
         }
 
+        profile.slogan = op.get(body, 'result.properties.slogan.values.0.db_value', null)
         profile.forename = op.get(body, 'result.properties.forename.values.0.db_value', null)
         profile.surname = op.get(body, 'result.properties.surname.values.0.db_value', null)
         profile.email = op.get(body, 'result.properties.email.values.0.db_value', null)
-        profile.topic = op.get(body, 'result.properties.topic.values.0.db_value', null)
         profile.photo = op.has(body, 'result.properties.photo.values.0.db_value') ? APP_ENTU_URL + '/file-' + op.get(body, 'result.properties.photo.values.0.db_value') : null
 
         profile.about.text = op.get(body, 'result.properties.about-me-text.values.0.db_value', '')
@@ -271,10 +270,10 @@ exports.get_user = function(auth_id, auth_token, callback) {
             you_help: {}
         }
 
+        profile.slogan = op.get(body, 'result.properties.slogan.values.0', {})
         profile.forename = op.get(body, 'result.properties.forename.values.0', {})
         profile.surname = op.get(body, 'result.properties.surname.values.0', {})
         profile.email = op.get(body, 'result.properties.email.values.0', {})
-        profile.topic = op.get(body, 'result.properties.topic.values.0', {})
         profile.photo = op.has(body, 'result.properties.photo.values.0.db_value') ? APP_ENTU_URL + '/file-' + op.get(body, 'result.properties.photo.values.0.db_value') : null
         profile.address = op.get(body, 'result.properties.address.values.0', {})
         profile.postalcode = op.get(body, 'result.properties.postalcode.values.0', {})
