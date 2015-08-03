@@ -17,7 +17,7 @@ router.get('/', function(req, res, next) {
             if(error) return next(error)
 
             page.profiles = profiles
-            res.render('profiles', page)
+            res.render('user_list', page)
         })
     })
 })
@@ -38,7 +38,7 @@ router.get('/me', function(req, res, next) {
             if(error) return next(error)
 
             page.profile = profile
-            res.render('profile_edit', page)
+            res.render('my_profile_edit', page)
         })
     })
 })
@@ -73,7 +73,7 @@ router.get('/:id', function(req, res, next) {
 
             page.title = profile.forename + ' ' + profile.surname
             page.profile = profile
-            res.render('profile', page)
+            res.render('user', page)
         })
     })
 

@@ -50,12 +50,12 @@ router.get('/team', function(req, res, next) {
 
 
 
-// GET terms page
-router.get('/terms', function(req, res, next) {
+// GET terms of service page
+router.get('/tos', function(req, res, next) {
     entu.get_page(640, function(error, page) {
         if(error) return next(error)
 
-        res.render('terms', page)
+        res.render('tos', page)
     })
 })
 
