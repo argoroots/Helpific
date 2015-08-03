@@ -33,13 +33,7 @@ html
                         .collapse.navbar-collapse(id='bs-example-navbar-collapse-1')
                             ul.nav.navbar-nav.navbar-right
                                 li
-                                    a(href='/profiles') Profiles
-                                li
-                                    a(href='/partners') Partners
-                                li
-                                    a(href='/team') Team
-                                li
-                                    a(href='/terms') Terms
+                                    a(href='/profiles') Users
                                 if user
                                     li
                                         a(href='/profiles/me') Me
@@ -61,7 +55,7 @@ html
         footer.container-fluid
             .container
                 .row
-                    .col-xs-9.col-sm-5
+                    .col-xs-12.col-sm-6
                         b HELPIFIC MTÜ
                         br
                         small
@@ -72,7 +66,14 @@ html
                             | SWIFT/BIC: HABAEE2X
                             br
                             | SWEDBANK AS
-                    .col-xs-3.col-sm-7.text-right
+                    .col-xs-12.col-sm-6.text-right
+                        a(href='/team') Team
+                        br
+                        a(href='/partners') Partners
+                        br
+                        a(href='/terms') Terms of Service
+                .row
+                    .col-xs-12.text-center
                         a(href='https://www.facebook.com/Helpific', target='_blank')
                             i.fa.fa-facebook-square.social(style='color:#3b5998')
                         a(href='https://www.twitter.com/helpific', target='_blank')
