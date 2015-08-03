@@ -74,9 +74,9 @@ express()
     })
 
     // routes mapping
-    .use('/',         require('./routes/index'))
-    .use('/profiles', require('./routes/profiles'))
-    .use('/signin',     require('./routes/signin'))
+    .use('/',       require('./routes/index'))
+    .use('/users',  require('./routes/profiles'))
+    .use('/signin', require('./routes/signin'))
 
     // 404
     .use(function(req, res, next) {

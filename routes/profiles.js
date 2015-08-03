@@ -63,7 +63,7 @@ router.post('/me', function(req, res, next) {
 
 // GET profile
 router.get('/:id', function(req, res, next) {
-    if(!req.params.id) res.redirect('/profiles')
+    if(!req.params.id) res.redirect('/users')
 
     entu.get_page(642, function(error, page) {
         if(error) return next(error)

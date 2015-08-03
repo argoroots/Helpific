@@ -11,10 +11,10 @@ block content
         each p, i in profiles.sort(function(obj1, obj2) { return obj1.forename + obj1.surname > obj2.forename + obj2.surname })
             .row
                 .col-xs-12.col-sm-10.col-sm-offset-1
-                    a(href='/profiles/' + p.id)
+                    a(href='/users/' + p.id)
                         img.col-xs-6.col-sm-3.col-md-2.img-circle(src=p.photo, alt=p.forename, class=(i % 2 == 0) ? 'pull-left' : 'pull-right', style='margin-bottom:20px')
                     .col-xs-12.col-sm-9.col-md-10(class=(i % 2 == 0) ? '' : 'text-right')
-                        a(href='/profiles/' + p.id)
+                        a(href='/users/' + p.id)
                             h3= p.forename + ' ' + p.surname
                         p= p.topic
                         p(style='font-style:italic')

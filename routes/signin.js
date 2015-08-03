@@ -34,7 +34,7 @@ router.get('/done', function(req, res, next) {
         res.cookie('auth_id', user.id, {signed:true, maxAge:1000*60*60*24*14})
         res.cookie('auth_token', user.token, {signed:true, maxAge:1000*60*60*24*14})
 
-        res.redirect('/profiles/me')
+        res.redirect('/users/me')
     })
 })
 
