@@ -32,15 +32,10 @@ exports.get_page = function(id, callback) {
         if(response.statusCode !== 200 || !body.result) return callback(new Error(op.get(body, 'error', body)))
 
         var page = {
-            md: md,
             keywords: []
         }
 
-        page.pretitle = op.get(body, 'result.properties.pretitle.values.0.db_value', null)
         page.title = op.get(body, 'result.properties.title.values.0.db_value', null)
-        page.photo = op.has(body, 'result.properties.photo.values.0.db_value') ? APP_ENTU_URL + '/file-' + op.get(body, 'result.properties.photo.values.0.db_value') : null
-        page.video = op.get(body, 'result.properties.video.values.0.db_value', null)
-        page.contents = op.get(body, 'result.properties.contents.values.0.db_value', null)
         page.description = op.get(body, 'result.properties.description.values.0.db_value', null)
         for(var i in op.get(body, 'result.properties.keyword.values', [])) {
             page.keywords.push(op.get(body, 'result.properties.keyword.values.' + i + '.db_value', null))
@@ -120,7 +115,7 @@ exports.get_team = function(callback) {
                 profile.photo = APP_ENTU_URL + '/entity-' + body.result.id + '/picture'
                 profile.email = op.get(body, 'result.properties.email.values.0.db_value', null)
                 profile.phone = op.get(body, 'result.properties.phone.values.0.db_value', null)
-                profile.info = op.get(body, 'result.properties.about-me-text.values.0.db_value', null)
+                profile.info = md(op.get(body, 'result.properties.about-me-text.values.0.db_value', ''))
 
                 team.push(profile)
                 callback()
@@ -198,15 +193,15 @@ exports.get_profile = function(id, callback) {
         profile.email = op.get(body, 'result.properties.email.values.0.db_value', null)
         profile.photo = op.has(body, 'result.properties.photo.values.0.db_value') ? APP_ENTU_URL + '/file-' + op.get(body, 'result.properties.photo.values.0.db_value') : null
 
-        profile.about.text = op.get(body, 'result.properties.about-me-text.values.0.db_value', '')
+        profile.about.text = md(op.get(body, 'result.properties.about-me-text.values.0.db_value', ''))
         profile.about.photo = op.has(body, 'result.properties.about-me-photo.values.0.db_value') ? APP_ENTU_URL + '/file-' + op.get(body, 'result.properties.photo.values.0.db_value') : null
         profile.about.video = media_embed(op.get(body, 'result.properties.about-me-video.values.0.db_value', null))
 
-        profile.i_help.text = op.get(body, 'result.properties.me-help-you-text.values.0.db_value', '')
+        profile.i_help.text = md(op.get(body, 'result.properties.me-help-you-text.values.0.db_value', ''))
         profile.i_help.photo = op.has(body, 'result.properties.me-help-you-photo.values.0.db_value') ? APP_ENTU_URL + '/file-' + op.get(body, 'result.properties.photo.values.0.db_value') : null
         profile.i_help.video = media_embed(op.get(body, 'result.properties.me-help-you-video.values.0.db_value', null))
 
-        profile.you_help.text = op.get(body, 'result.properties.you-help-me-text.values.0.db_value', '')
+        profile.you_help.text = md(op.get(body, 'result.properties.you-help-me-text.values.0.db_value', ''))
         profile.you_help.photo = op.has(body, 'result.properties.you-help-me-photo.values.0.db_value') ? APP_ENTU_URL + '/file-' + op.get(body, 'result.properties.photo.values.0.db_value') : null
         profile.you_help.video = media_embed(op.get(body, 'result.properties.you-help-me-video.values.0.db_value', null))
 

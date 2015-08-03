@@ -23,7 +23,7 @@ block content
                     .col-xs-12
                         .profile-photo(style='background-image: url(' + profile.about.photo + ')')
                 .spacer.col-xs-12
-                .col-xs-12.text-justify!= md(profile.about.text)
+                .col-xs-12.text-justify!= profile.about.text
 
             #tab-i-help.tab-pane
                 if profile.i_help.video
@@ -33,7 +33,7 @@ block content
                     .col-xs-12
                         .profile-photo(style='background-image: url(' + profile.i_help.photo + ')')
                 .spacer.col-xs-12
-                .col-xs-12.text-justify!= md(profile.i_help.text)
+                .col-xs-12.text-justify!= profile.i_help.text
 
             #tab-you-help.tab-pane
                 if profile.you_help.video
@@ -43,5 +43,5 @@ block content
                     .col-xs-12
                         .profile-photo(style='background-image: url(' + profile.you_help.photo + ')')
                 .spacer.col-xs-12
-                .col-xs-12.text-justify!= md(profile.you_help.text)
+                .col-xs-12.text-justify!= profile.you_help.text
         .row.spacer

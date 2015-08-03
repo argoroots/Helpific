@@ -2,9 +2,9 @@ extends layout
 
 block content
     .container
-        if contents
-            .row
-                .jumbotron.col-xs-12.text-center!= md(contents)
+        .row
+            .jumbotron.col-xs-12.text-center
+                p Please use your preferred identity provider to sign in...
 
         .row
             .col-xs-12.text-center
@@ -13,6 +13,3 @@ block content
 
                 a(href='/signin/google', title='Google')
                     i.signin.fa.fa-google-plus-square(style='color:#dd4b39')
-
-                //- a(href='/user/signin/twitter', title='Twitter')
-                //-     i.signin.fa.fa-twitter-square(style='color:#00aced')

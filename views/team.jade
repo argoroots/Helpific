@@ -8,7 +8,7 @@ block content
                 .col-xs-12.col-md-8(class=(i % 2 == 0) ? '' : 'text-right col-md-offset-2')
                     h3= p.forename + ' ' + p.surname
                     if p.info
-                        .text-justify!= md(p.info)
+                        .text-justify!= p.info
                     p
                         a(href='mailto:'+p.email)= p.email
                     p
