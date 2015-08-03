@@ -58,7 +58,7 @@ exports.get_partners = function(callback) {
         if(error) return callback(error)
         if(response.statusCode !== 200 || !body.result) return callback(new Error(op.get(body, 'error', body)))
 
-        partners = []
+        var partners = []
         async.each(body.result, function(entity, callback) {
             request.get({url: APP_ENTU_URL + '/entity-' + entity.id, strictSSL: true, json: true}, function(error, response, body) {
                 if(error) return callback(error)
@@ -99,7 +99,7 @@ exports.get_team = function(callback) {
         if(error) return callback(error)
         if(response.statusCode !== 200 || !body.result) return callback(new Error(op.get(body, 'error', body)))
 
-        team = []
+        var team = []
         async.each(body.result.person.entities, function(entity, callback) {
             request.get({url: APP_ENTU_URL + '/entity-' + entity.id, strictSSL: true, json: true}, function(error, response, body) {
                 if(error) return callback(error)
@@ -142,7 +142,7 @@ exports.get_profiles = function(callback) {
         if(error) return callback(error)
         if(response.statusCode !== 200 || !body.result) return callback(new Error(op.get(body, 'error', body)))
 
-        profiles = []
+        var profiles = []
         async.each(body.result.person.entities, function(entity, callback) {
             request.get({url: APP_ENTU_URL + '/entity-' + entity.id, strictSSL: true, json: true}, function(error, response, body) {
                 if(error) return callback(error)
