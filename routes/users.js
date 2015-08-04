@@ -90,7 +90,7 @@ router.get('/:id', function(req, res, next) {
         entu.get_entity(req.params.id, null, null, function(error, profile) {
             if(error) return next(error)
 
-            page.title = profile.get('forename.0.value', '') + ' ' + profile.get('surname.0.value', '')
+            page.title = profile.get('forename.value', '') + ' ' + profile.get('surname.value', '')
             page.profile = profile
             page.media_embed = media_embed
             res.render('user', page)

@@ -17,10 +17,10 @@ function get_entity(id, auth_id, auth_token, callback) {
         if(error) return callback(error)
         if(response.statusCode !== 200 || !body.result) return callback(new Error(op.get(body, 'error', body)))
 
-        var properties = op.get(body, ['result', 'properties'], {})
+        var properties = op.get(body, 'result.properties', {})
         var entity = {
-            _id: op.get(body, ['result', 'id'], null),
-            _picture: APP_ENTU_URL + '/entity-' + op.get(body, ['result', 'id'], null) + '/picture'
+            _id: op.get(body, 'result.id', null),
+            _picture: APP_ENTU_URL + '/entity-' + op.get(body, 'result.id', null) + '/picture'
         }
         for(var p in properties) {
             if(op.has(properties, [p, 'values'])) {
@@ -44,6 +44,7 @@ function get_entity(id, auth_id, auth_token, callback) {
                         })
                     }
                 }
+                if(op.get(properties, [p, 'multiplicity']) === 1) op.set(entity, p, op.get(entity, [p, 0]))
             }
         }
         // debug(JSON.stringify(entity, null, '  '))
@@ -61,9 +62,9 @@ exports.get_page = function get_page(id, callback) {
 
         var page = {}
 
-        page.title = entity.get(['title', 0, 'value'], null)
-        page.description = entity.get(['description', 0, 'value'], null)
-        for(var i in entity.get(['keyword', 'values'], [])) {
+        page.title = entity.get('title.value', null)
+        page.description = entity.get('description.value', null)
+        for(var i in entity.get('keyword.values', [])) {
             page.keywords.push(entity.get(['keyword', i, 'value'], null))
         }
 

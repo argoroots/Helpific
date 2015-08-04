@@ -6,19 +6,19 @@ block content
             .row
                 .form-group.col-xs-12.col-sm-12
                     label.control-label(for='slogan') Slogan
-                    input.form-control(id='slogan', type='text', value=profile.get('slogan.0.value'), data-value=profile.get('slogan.0.value'), data-id=profile.get('slogan.0.id'))
+                    input.form-control(id='slogan', type='text', value=profile.get('slogan.value'), data-value=profile.get('slogan.value'), data-id=profile.get('slogan.id'))
 
                 .form-group.col-xs-12.col-sm-3
                     label.control-label(for='forename') Forename
-                    input.form-control(id='forename', type='text', value=profile.get('forename.0.value'), data-value=profile.get('forename.0.value'), data-id=profile.get('forename.0.id'))
+                    input.form-control(id='forename', type='text', value=profile.get('forename.value'), data-value=profile.get('forename.value'), data-id=profile.get('forename.id'))
 
                 .form-group.col-xs-12.col-sm-3
                     label.control-label(for='surname') Surname
-                    input.form-control(id='surname', type='text', value=profile.get('surname.0.value'), data-value=profile.get('surname.0.value'), data-id=profile.get('surname.0.id'))
+                    input.form-control(id='surname', type='text', value=profile.get('surname.value'), data-value=profile.get('surname.value'), data-id=profile.get('surname.id'))
 
                 .form-group.col-xs-12.col-sm-3
                     label.control-label(for='email') E-mail
-                    input.form-control(id='email', type='text', value=profile.get('email.0.value'), data-value=profile.get('email.0.value'), data-id=profile.get('email.0.id'))
+                    input.form-control(id='email', type='text', value=profile.get('email.value'), data-value=profile.get('email.value'), data-id=profile.get('email.id'))
 
                 //- .form-group.col-xs-12.col-sm-3
                 //-     label.control-label(for='you_help_photo') Profile Picture
@@ -29,18 +29,18 @@ block content
 
                 .form-group.col-xs-12.col-sm-4
                     label.control-label(for='address') Address
-                    input.form-control(id='address', type='text', value=profile.get('address.0.value'), data-value=profile.get('address.0.value'), data-id=profile.get('address.0.id'))
+                    input.form-control(id='address', type='text', value=profile.get('address.value'), data-value=profile.get('address.value'), data-id=profile.get('address.id'))
                 .form-group.col-xs-12.col-sm-4
                     label.control-label(for='town') City
-                    input.form-control(id='town', type='text', value=profile.get('town.0.value'), data-value=profile.get('town.0.value'), data-id=profile.get('town.0.id'))
+                    input.form-control(id='town', type='text', value=profile.get('town.value'), data-value=profile.get('town.value'), data-id=profile.get('town.id'))
 
                 .form-group.col-xs-12.col-sm-4
                     label.control-label(for='county') County
-                    input.form-control(id='county', type='text', value=profile.get('county.0.value'), data-value=profile.get('county.0.value'), data-id=profile.get('county.0.id'))
+                    input.form-control(id='county', type='text', value=profile.get('county.value'), data-value=profile.get('county.value'), data-id=profile.get('county.id'))
 
                 .form-group.col-xs-12.col-sm-4
                     label.control-label(for='country') Country
-                    input.form-control(id='country', type='text', value=profile.get('country.0.value'), data-value=profile.get('country.0.value'), data-id=profile.get('country.0.id'))
+                    input.form-control(id='country', type='text', value=profile.get('country.value'), data-value=profile.get('country.value'), data-id=profile.get('country.id'))
 
 
             .row.spacer
@@ -61,7 +61,7 @@ block content
 
                     .form-group.col-xs-12
                         label.control-label(for='about-me-text') Write something about you
-                        textarea.form-control(id='about-me-text', data-value=profile.get('about-me-text.0.value'), data-id=profile.get('about-me-text.0.value'), rows=8)= profile.get('about-me-text.0.value')
+                        textarea.form-control(id='about-me-text', data-value=profile.get('about-me-text.value'), data-id=profile.get('about-me-text.id'), rows=8)= profile.get('about-me-text.value')
                         p.text-right
                             small you can use&nbsp;
                                 a(href='https://en.wikipedia.org/wiki/Markdown#Example', target='_blank') markdown
@@ -72,7 +72,7 @@ block content
 
                     .form-group.col-xs-12.col-sm-8
                         label.control-label(for='about-me-video') Video URL
-                        input.form-control(id='about-me-video', type='text', value=profile.get('about-me-video.0.value'), data-value=profile.get('about-me-video.0.value'), data-id=profile.get('about-me-video.0.value'))
+                        input.form-control(id='about-me-video', type='text', value=profile.get('about-me-video.value'), data-value=profile.get('about-me-video.value'), data-id=profile.get('about-me-video.value'))
                         p.text-right
                             small
                                 | we support only&nbsp;
@@ -87,7 +87,7 @@ block content
 
                     .form-group.col-xs-12
                         label.control-label(for='me-help-you-text') How you can help others?
-                        textarea.form-control(id='me-help-you-text', data-value=profile.get('me-help-you-text.0.value'), data-id=profile.get('me-help-you-text.0.id'), rows=8)= profile.get('me-help-you-text.0.value')
+                        textarea.form-control(id='me-help-you-text', data-value=profile.get('me-help-you-text.value'), data-id=profile.get('me-help-you-text.id'), rows=8)= profile.get('me-help-you-text.value')
                         p.text-right
                             small you can use&nbsp;
                                 a(href='https://en.wikipedia.org/wiki/Markdown#Example', target='_blank') markdown
@@ -98,7 +98,7 @@ block content
 
                     .form-group.col-xs-12.col-sm-8
                         label.control-label(for='me-help-you-video') Video URL
-                        input.form-control(id='me-help-you-video', type='text', value=profile.get('me-help-you-video.0.value'), data-value=profile.get('me-help-you-video.0.value'), data-id=profile.get('me-help-you-video.0.id'))
+                        input.form-control(id='me-help-you-video', type='text', value=profile.get('me-help-you-video.value'), data-value=profile.get('me-help-you-video.value'), data-id=profile.get('me-help-you-video.id'))
                         p.text-right
                             small
                                 | we support only&nbsp;
@@ -113,7 +113,7 @@ block content
 
                     .form-group.col-xs-12
                         label.control-label(for='you-help-me-text') What kind of help you need?
-                        textarea.form-control(id='you-help-me-text', data-value=profile.get('you-me-text.0.value'), data-id=profile.get('you-me-text.0.id'), rows=8)= profile.get('you-me-text.0.value')
+                        textarea.form-control(id='you-help-me-text', data-value=profile.get('you-help-me-text.value'), data-id=profile.get('you-help-me-text.id'), rows=8)= profile.get('you-help-me-text.value')
                         p.text-right
                             small you can use&nbsp;
                                 a(href='https://en.wikipedia.org/wiki/Markdown#Example', target='_blank') markdown
@@ -124,7 +124,7 @@ block content
 
                     .form-group.col-xs-12.col-sm-8
                         label.control-label(for='you-help-me-video') Video URL
-                        input.form-control(id='you-help-me-video', type='text', value=profile.get('you-me-video.0.value'), data-value=profile.get('you-me-video.0.value'), data-id=profile.get('you-me-video.0.id'))
+                        input.form-control(id='you-help-me-video', type='text', value=profile.get('you-help-me-video.value'), data-value=profile.get('you-help-me-video.value'), data-id=profile.get('you-help-me-video.id'))
                         p.text-right
                             small
                                 | we support only&nbsp;

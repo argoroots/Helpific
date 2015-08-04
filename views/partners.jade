@@ -5,7 +5,7 @@ block content
         each p, i in partners
             .row.text-center
                 a(href=p.url, target='_blank')
-                    img.col-xs-6.col-sm-4.col-md-2.col-xs-offset-3.col-sm-offset-4.col-md-offset-5(src=p.get('photo.0.file'), alt=p.get('name.0.value'), style='margin-bottom:20px')
-                h3.col-xs-12= p.get('name.0.value')
-                p.col-xs-12= p.get('note.0.value')
+                    img.col-xs-6.col-sm-4.col-md-2.col-xs-offset-3.col-sm-offset-4.col-md-offset-5(src=p.get('photo.file'), alt=p.get('name.value'), style='margin-bottom:20px')
+                h3.col-xs-12= p.get('name.value')
+                p.col-xs-12= p.get('note.value')
             .spacer
