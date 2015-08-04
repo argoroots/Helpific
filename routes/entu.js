@@ -74,44 +74,19 @@ exports.get_page = function get_page(id, callback) {
 
 
 
-//Get entities by definition
-exports.get_entities = function(definition, auth_id, auth_token, callback) {
+//Get entities by parent entity id and/or by definition
+exports.get_entities = function(parent_entity_id, definition, auth_id, auth_token, callback) {
+    var url = parent_entity_id ? '/entity-' + parent_entity_id + '/childs' : '/entity'
+    var loop = parent_entity_id ? ['result', definition, 'entities'] : 'result'
     var qs = definition ? {definition: definition} : {}
     var headers = (auth_id && auth_token) ? {'X-Auth-UserId': auth_id, 'X-Auth-Token': auth_token} : {}
 
-    request.get({url: APP_ENTU_URL + '/entity', qs: qs, headers: headers, strictSSL: true, json: true}, function(error, response, body) {
+    request.get({url: APP_ENTU_URL + url, qs: qs, headers: headers, strictSSL: true, json: true}, function(error, response, body) {
         if(error) return callback(error)
         if(response.statusCode !== 200 || !body.result) return callback(new Error(op.get(body, 'error', body)))
 
         var entities = []
-        async.each(op.get(body, 'result', []), function(e, callback) {
-            get_entity(e.id, auth_id, auth_token, function(error, entity) {
-                if(error) return callback(error)
-
-                entities.push(entity)
-                callback()
-            })
-        }, function(error){
-            if(error) return callback(error)
-
-            callback(null, entities)
-        })
-    })
-}
-
-
-
-//Get entity childs
-exports.get_entity_childs = function(id, definition, auth_id, auth_token, callback) {
-    var qs = definition ? {definition: definition} : {}
-    var headers = (auth_id && auth_token) ? {'X-Auth-UserId': auth_id, 'X-Auth-Token': auth_token} : {}
-
-    request.get({url: APP_ENTU_URL + '/entity-' + id + '/childs', qs: qs, headers: headers, strictSSL: true, json: true}, function(error, response, body) {
-        if(error) return callback(error)
-        if(response.statusCode !== 200 || !body.result) return callback(new Error(op.get(body, 'error', body)))
-
-        var entities = []
-        async.each(op.get(body, ['result', definition, 'entities'], []), function(e, callback) {
+        async.each(op.get(body, loop, []), function(e, callback) {
             get_entity(e.id, auth_id, auth_token, function(error, entity) {
                 if(error) return callback(error)
 

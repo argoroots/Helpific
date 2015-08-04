@@ -32,7 +32,7 @@ router.get('/', function(req, res, next) {
     entu.get_page(630, function(error, page) {
         if(error) return next(error)
 
-        entu.get_entity_childs(615, 'person', null, null, function(error, profiles) {
+        entu.get_entities(615, 'person', null, null, function(error, profiles) {
             if(error) return next(error)
 
             page.profiles = profiles
