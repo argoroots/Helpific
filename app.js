@@ -52,7 +52,26 @@ var ssl_options = {
         fs.readFileSync(__dirname + '/ssl/AddTrustExternalCARoot.crt', 'utf8'),
         fs.readFileSync(__dirname + '/ssl/COMODORSAAddTrustCA.crt', 'utf8'),
         fs.readFileSync(__dirname + '/ssl/COMODORSADomainValidationSecureServerCA.crt', 'utf8')
-    ]
+    ],
+    ciphers: [
+        'ECDHE-RSA-AES256-SHA384',
+        'DHE-RSA-AES256-SHA384',
+        'ECDHE-RSA-AES256-SHA256',
+        'DHE-RSA-AES256-SHA256',
+        'ECDHE-RSA-AES128-SHA256',
+        'DHE-RSA-AES128-SHA256',
+        'HIGH',
+        '!aNULL',
+        '!eNULL',
+        '!EXPORT',
+        '!DES',
+        '!RC4',
+        '!MD5',
+        '!PSK',
+        '!SRP',
+        '!CAMELLIA'
+    ].join(':'),
+    honorCipherOrder: true
 }
 
 
