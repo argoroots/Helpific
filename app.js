@@ -1,6 +1,7 @@
 if(process.env.NEW_RELIC_LICENSE_KEY) require('newrelic')
 
 var express = require('express')
+var helmet  = require('helmet')
 var https   = require('https')
 var http    = require('http')
 var path    = require('path')
@@ -80,10 +81,17 @@ var app = express()
     .set('views', path.join(__dirname, 'views'))
     .set('view engine', 'jade')
 
-    //redirect to correct domain and protocol
+    // redirect to correct domain and protocol
     .use(force_d({
         hostname: 'helpific.com',
         protocol: 'https'
+    }))
+
+    // HSTS (for ssl)
+    .use(helmet.hsts({
+        maxAge: 1000 * 60 *60 *24 * 365,
+        includeSubdomains: true,
+        force: true
     }))
 
     // cookies
