@@ -59,6 +59,32 @@ block content
                         li(style='background-color:#fab235')
                             a(href='#tab-you-help', data-toggle='tab') I need help
 
+                #tab-i-help.tab-pane
+
+                    .form-group.col-xs-12
+                        label.control-label(for='me-help-you-text') How you can help others?
+                        textarea.form-control(id='me-help-you-text', data-value=profile.get('me-help-you-text.value'), data-id=profile.get('me-help-you-text.id'), rows=8)= profile.get('me-help-you-text.value')
+                        p.text-right
+                            small you can use&nbsp;
+                                a(href='https://en.wikipedia.org/wiki/Markdown#Example', target='_blank') markdown
+
+                    //- .form-group.col-xs-12.col-sm-4
+                    //-     label.control-label(for='me-help-you-photo') Cover Photo
+                    //-     input.form-control(id='me-help-you-photo', type='file')
+
+                    .form-group.col-xs-12.col-sm-8
+                        label.control-label(for='me-help-you-video') Video URL
+                        input.form-control(id='me-help-you-video', type='text', value=profile.get('me-help-you-video.value'), data-value=profile.get('me-help-you-video.value'), data-id=profile.get('me-help-you-video.id'))
+                        p.text-right
+                            small
+                                | we support only&nbsp;
+                                a(href='https://youtube.com', target='_blank') YouTube
+                                | ,&nbsp;
+                                a(href='https://vimeo.com', target='_blank') Vimeo
+                                |  and&nbsp;
+                                a(href='https://wistia.com', target='_blank') Wistia
+                                |  urls
+
             .row.tab-content
                 #tab-about.tab-pane.active
 
@@ -76,32 +102,6 @@ block content
                     .form-group.col-xs-12.col-sm-8
                         label.control-label(for='about-me-video') Video URL
                         input.form-control(id='about-me-video', type='text', value=profile.get('about-me-video.value'), data-value=profile.get('about-me-video.value'), data-id=profile.get('about-me-video.id'))
-                        p.text-right
-                            small
-                                | we support only&nbsp;
-                                a(href='https://youtube.com', target='_blank') YouTube
-                                | ,&nbsp;
-                                a(href='https://vimeo.com', target='_blank') Vimeo
-                                |  and&nbsp;
-                                a(href='https://wistia.com', target='_blank') Wistia
-                                |  urls
-
-                #tab-i-help.tab-pane
-
-                    .form-group.col-xs-12
-                        label.control-label(for='me-help-you-text') How you can help others?
-                        textarea.form-control(id='me-help-you-text', data-value=profile.get('me-help-you-text.value'), data-id=profile.get('me-help-you-text.id'), rows=8)= profile.get('me-help-you-text.value')
-                        p.text-right
-                            small you can use&nbsp;
-                                a(href='https://en.wikipedia.org/wiki/Markdown#Example', target='_blank') markdown
-
-                    //- .form-group.col-xs-12.col-sm-4
-                    //-     label.control-label(for='me-help-you-photo') Cover Photo
-                    //-     input.form-control(id='me-help-you-photo', type='file')
-
-                    .form-group.col-xs-12.col-sm-8
-                        label.control-label(for='me-help-you-video') Video URL
-                        input.form-control(id='me-help-you-video', type='text', value=profile.get('me-help-you-video.value'), data-value=profile.get('me-help-you-video.value'), data-id=profile.get('me-help-you-video.id'))
                         p.text-right
                             small
                                 | we support only&nbsp;
