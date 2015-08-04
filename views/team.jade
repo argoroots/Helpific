@@ -2,15 +2,15 @@ extends layout
 
 block content
     .container
-        each p, i in team.sort(function(obj1, obj2) { return obj1.forename + obj1.surname > obj2.forename + obj2.surname })
+        each p, i in team.sort(function(obj1, obj2) { return obj1.get('forename.0.value') + obj1.get('surname.0.value') > obj2.get('forename.0.value') + obj2.get('surname.0.value') })
             .row
-                img.col-xs-3.col-sm-3.col-md-2.img-circle(src=p.photo, alt=p.forename, class=(i % 2 == 0) ? 'pull-left' : 'pull-right', style='margin-bottom:20px')
+                img.col-xs-3.col-sm-3.col-md-2.img-circle(src=p.get('_picture'), alt=p.get('forename.0.value'), class=(i % 2 == 0) ? 'pull-left' : 'pull-right', style='margin-bottom:20px')
                 .col-xs-12.col-md-8(class=(i % 2 == 0) ? '' : 'text-right col-md-offset-2')
-                    h3= p.forename + ' ' + p.surname
-                    if p.info
-                        .text-justify!= p.info
+                    h3= p.get('forename.0.value') + ' ' + p.get('surname.0.value')
+                    if p.has('about-me-text')
+                        .text-justify!= p.get('about-me-text.0.md')
                     p
-                        a(href='mailto:'+p.email)= p.email
+                        a(href='mailto:'+p.get('email.0.value'))= p.get('email.0.value')
                     p
-                        a(href='tel:'+p.phone)= p.phone
+                        a(href='tel:'+p.get('phone.0.value'))= p.get('phone.0.value')
             .row.spacer

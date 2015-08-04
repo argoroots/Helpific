@@ -23,7 +23,7 @@ router.get('/partners', function(req, res, next) {
     entu.get_page(643, function(error, page) {
         if(error) return next(error)
 
-        entu.get_partners(function(error, partners) {
+        entu.get_entities('partner', null, null, function(error, partners) {
             if(error) return next(error)
 
             page.partners = partners
@@ -39,7 +39,7 @@ router.get('/team', function(req, res, next) {
     entu.get_page(644, function(error, page) {
         if(error) return next(error)
 
-        entu.get_team(function(error, team) {
+        entu.get_entity_childs(612, 'person', null, null, function(error, team) {
             if(error) return next(error)
 
             page.team = team

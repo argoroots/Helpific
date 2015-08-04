@@ -1,44 +1,70 @@
 var path    = require('path')
 var debug   = require('debug')('app:' + path.basename(__filename).replace('.js', ''))
 var request = require('request')
-var md      = require('marked')
 var async   = require('async')
 var op      = require('object-path')
+var md      = require('marked')
 var random  = require('randomstring')
 
 
-function media_embed(url) {
-    if(!url) return null
 
-    if(url.indexOf('youtu.be/') > -1) {
-        return 'https://www.youtube.com/embed/' + url.split('youtu.be/')[1].split('?')[0]
-    } else if (url.indexOf('youtube.com/watch') > -1) {
-        return 'https://www.youtube.com/embed/' + url.split('v=')[1].split('&')[0]
-    }else if (url.indexOf('vimeo.com/') > -1) {
-        return 'https://player.vimeo.com/video/' + url.split('vimeo.com/')[1].split('?')[0]
-    }else if (url.indexOf('wistia.com/medias/') > -1) {
-        return 'https://fast.wistia.net/embed/iframe/' + url.split('wistia.com/medias/')[1].split('?')[0]
-    }else {
-        return null
-    }
+//Get entity from Entu
+exports.get_entity = get_entity
+function get_entity(id, auth_id, auth_token, callback) {
+    var headers = (auth_id && auth_token) ? {'X-Auth-UserId': auth_id, 'X-Auth-Token': auth_token} : {}
+
+    request.get({url: APP_ENTU_URL + '/entity-' + id, headers: headers, strictSSL: true, json: true}, function(error, response, body) {
+        if(error) return callback(error)
+        if(response.statusCode !== 200 || !body.result) return callback(new Error(op.get(body, 'error', body)))
+
+        var properties = op.get(body, ['result', 'properties'], {})
+        var entity = {
+            _id: op.get(body, ['result', 'id'], null),
+            _picture: APP_ENTU_URL + '/entity-' + op.get(body, ['result', 'id'], null) + '/picture'
+        }
+        for(var p in properties) {
+            if(op.has(properties, [p, 'values'])) {
+                for(var v in op.get(properties, [p, 'values'])) {
+                    if(op.get(properties, [p, 'datatype']) === 'file') {
+                        op.push(entity, p, {
+                            id: op.get(properties, [p, 'values', v, 'id']),
+                            value: op.get(properties, [p, 'values', v, 'value']),
+                            file: APP_ENTU_URL + '/file-' + op.get(properties, [p, 'values', v, 'db_value'])
+                        })
+                    } else if(op.get(properties, [p, 'datatype']) === 'text') {
+                        op.push(entity, p, {
+                            id: op.get(properties, [p, 'values', v, 'id']),
+                            value: op.get(properties, [p, 'values', v, 'value']),
+                            md: md(op.get(properties, [p, 'values', v, 'db_value']))
+                        })
+                    } else {
+                        op.push(entity, p, {
+                            id: op.get(properties, [p, 'values', v, 'id']),
+                            value: op.get(properties, [p, 'values', v, 'value']),
+                        })
+                    }
+                }
+            }
+        }
+        // debug(JSON.stringify(entity, null, '  '))
+
+        callback(null, op(entity))
+    })
 }
 
 
 
 //Get page (web-content)
-exports.get_page = function(id, callback) {
-    request.get({url: APP_ENTU_URL + '/entity-' + id, strictSSL: true, json: true}, function(error, response, body) {
+exports.get_page = function get_page(id, callback) {
+    get_entity(id, null, null, function(error, entity) {
         if(error) return callback(error)
-        if(response.statusCode !== 200 || !body.result) return callback(new Error(op.get(body, 'error', body)))
 
-        var page = {
-            keywords: []
-        }
+        var page = {}
 
-        page.title = op.get(body, 'result.properties.title.values.0.db_value', null)
-        page.description = op.get(body, 'result.properties.description.values.0.db_value', null)
-        for(var i in op.get(body, 'result.properties.keyword.values', [])) {
-            page.keywords.push(op.get(body, 'result.properties.keyword.values.' + i + '.db_value', null))
+        page.title = entity.get(['title', 0, 'value'], null)
+        page.description = entity.get(['description', 0, 'value'], null)
+        for(var i in entity.get(['keyword', 'values'], [])) {
+            page.keywords.push(entity.get(['keyword', i, 'value'], null))
         }
 
         callback(null, page)
@@ -47,167 +73,56 @@ exports.get_page = function(id, callback) {
 
 
 
-//Get partners
-exports.get_partners = function(callback) {
-    request.get({url: APP_ENTU_URL + '/entity', qs: {definition: 'partner'}, strictSSL: true, json: true}, function(error, response, body) {
+//Get entities by definition
+exports.get_entities = function(definition, auth_id, auth_token, callback) {
+    var qs = definition ? {definition: definition} : {}
+    var headers = (auth_id && auth_token) ? {'X-Auth-UserId': auth_id, 'X-Auth-Token': auth_token} : {}
+
+    request.get({url: APP_ENTU_URL + '/entity', qs: qs, headers: headers, strictSSL: true, json: true}, function(error, response, body) {
         if(error) return callback(error)
         if(response.statusCode !== 200 || !body.result) return callback(new Error(op.get(body, 'error', body)))
 
-        var partners = []
-        async.each(body.result, function(entity, callback) {
-            request.get({url: APP_ENTU_URL + '/entity-' + entity.id, strictSSL: true, json: true}, function(error, response, body) {
+        var entities = []
+        async.each(op.get(body, 'result', []), function(e, callback) {
+            get_entity(e.id, auth_id, auth_token, function(error, entity) {
                 if(error) return callback(error)
-                if(response.statusCode !== 200 || !body.result) {
-                    if(body.error) {
-                        return callback(new Error(body.error))
-                    } else {
-                        return callback(new Error(body))
-                    }
-                }
 
-                var profile = {
-                    id: body.result.id
-                }
-
-                profile.name = op.get(body, 'result.properties.name.values.0.db_value', null)
-                profile.note = op.get(body, 'result.properties.note.values.0.db_value', null)
-                profile.photo = op.has(body, 'result.properties.photo.values.0.db_value') ? APP_ENTU_URL + '/file-' + op.get(body, 'result.properties.photo.values.0.db_value') : null
-                profile.url = op.get(body, 'result.properties.url.values.0.db_value', null)
-
-                partners.push(profile)
+                entities.push(entity)
                 callback()
             })
-
         }, function(error){
             if(error) return callback(error)
 
-            callback(null, partners)
+            callback(null, entities)
         })
     })
 }
 
 
 
-//Get team
-exports.get_team = function(callback) {
-    request.get({url: APP_ENTU_URL + '/entity-612/childs', strictSSL: true, json: true}, function(error, response, body) {
+//Get entity childs
+exports.get_entity_childs = function(id, definition, auth_id, auth_token, callback) {
+    var qs = definition ? {definition: definition} : {}
+    var headers = (auth_id && auth_token) ? {'X-Auth-UserId': auth_id, 'X-Auth-Token': auth_token} : {}
+
+    request.get({url: APP_ENTU_URL + '/entity-' + id + '/childs', qs: qs, headers: headers, strictSSL: true, json: true}, function(error, response, body) {
         if(error) return callback(error)
         if(response.statusCode !== 200 || !body.result) return callback(new Error(op.get(body, 'error', body)))
 
-        var team = []
-        async.each(body.result.person.entities, function(entity, callback) {
-            request.get({url: APP_ENTU_URL + '/entity-' + entity.id, strictSSL: true, json: true}, function(error, response, body) {
+        var entities = []
+        async.each(op.get(body, ['result', definition, 'entities'], []), function(e, callback) {
+            get_entity(e.id, auth_id, auth_token, function(error, entity) {
                 if(error) return callback(error)
-                if(response.statusCode !== 200 || !body.result) {
-                    if(body.error) {
-                        return callback(new Error(body.error))
-                    } else {
-                        return callback(new Error(body))
-                    }
-                }
 
-                var profile = {
-                    id: body.result.id
-                }
-
-                profile.forename = op.get(body, 'result.properties.forename.values.0.db_value', null)
-                profile.surname = op.get(body, 'result.properties.surname.values.0.db_value', null)
-                profile.photo = APP_ENTU_URL + '/entity-' + body.result.id + '/picture'
-                profile.email = op.get(body, 'result.properties.email.values.0.db_value', null)
-                profile.phone = op.get(body, 'result.properties.phone.values.0.db_value', null)
-                profile.info = md(op.get(body, 'result.properties.about-me-text.values.0.db_value', ''))
-
-                team.push(profile)
+                entities.push(entity)
                 callback()
             })
-
         }, function(error){
             if(error) return callback(error)
 
-            callback(null, team)
+            callback(null, entities)
         })
     })
-}
-
-
-
-//Get profiles
-exports.get_profiles = function(callback) {
-    request.get({url: APP_ENTU_URL + '/entity-615/childs', strictSSL: true, json: true}, function(error, response, body) {
-        if(error) return callback(error)
-        if(response.statusCode !== 200 || !body.result) return callback(new Error(op.get(body, 'error', body)))
-
-        var profiles = []
-        async.each(body.result.person.entities, function(entity, callback) {
-            request.get({url: APP_ENTU_URL + '/entity-' + entity.id, strictSSL: true, json: true}, function(error, response, body) {
-                if(error) return callback(error)
-                if(response.statusCode !== 200 || !body.result) {
-                    if(body.error) {
-                        return callback(new Error(body.error))
-                    } else {
-                        return callback(new Error(body))
-                    }
-                }
-
-                var profile = {
-                    id: body.result.id
-                }
-
-                profile.slogan = op.get(body, 'result.properties.slogan.values.0.db_value', null)
-                profile.forename = op.get(body, 'result.properties.forename.values.0.db_value', null)
-                profile.surname = op.get(body, 'result.properties.surname.values.0.db_value', null)
-                profile.photo = APP_ENTU_URL + '/entity-' + body.result.id + '/picture'
-                profile.town = op.get(body, 'result.properties.town.values.0.db_value', null)
-                profile.county = op.get(body, 'result.properties.county.values.0.db_value', null)
-
-                profiles.push(profile)
-                callback()
-            })
-
-        }, function(error){
-            if(error) return callback(error)
-
-            callback(null, profiles)
-        })
-    })
-}
-
-
-
-//Get profile
-exports.get_profile = function(id, callback) {
-    request.get({url: APP_ENTU_URL + '/entity-' + id, strictSSL: true, json: true}, function(error, response, body) {
-        if(error) return callback(error)
-        if(response.statusCode !== 200 || !body.result) return callback(new Error(op.get(body, 'error', body)))
-
-        var profile = {
-            id: body.result.id,
-            about: {},
-            i_help: {},
-            you_help: {}
-        }
-
-        profile.slogan = op.get(body, 'result.properties.slogan.values.0.db_value', null)
-        profile.forename = op.get(body, 'result.properties.forename.values.0.db_value', null)
-        profile.surname = op.get(body, 'result.properties.surname.values.0.db_value', null)
-        profile.email = op.get(body, 'result.properties.email.values.0.db_value', null)
-        profile.photo = op.has(body, 'result.properties.photo.values.0.db_value') ? APP_ENTU_URL + '/file-' + op.get(body, 'result.properties.photo.values.0.db_value') : null
-
-        profile.about.text = md(op.get(body, 'result.properties.about-me-text.values.0.db_value', ''))
-        profile.about.photo = op.has(body, 'result.properties.about-me-photo.values.0.db_value') ? APP_ENTU_URL + '/file-' + op.get(body, 'result.properties.photo.values.0.db_value') : null
-        profile.about.video = media_embed(op.get(body, 'result.properties.about-me-video.values.0.db_value', null))
-
-        profile.i_help.text = md(op.get(body, 'result.properties.me-help-you-text.values.0.db_value', ''))
-        profile.i_help.photo = op.has(body, 'result.properties.me-help-you-photo.values.0.db_value') ? APP_ENTU_URL + '/file-' + op.get(body, 'result.properties.photo.values.0.db_value') : null
-        profile.i_help.video = media_embed(op.get(body, 'result.properties.me-help-you-video.values.0.db_value', null))
-
-        profile.you_help.text = md(op.get(body, 'result.properties.you-help-me-text.values.0.db_value', ''))
-        profile.you_help.photo = op.has(body, 'result.properties.you-help-me-photo.values.0.db_value') ? APP_ENTU_URL + '/file-' + op.get(body, 'result.properties.photo.values.0.db_value') : null
-        profile.you_help.video = media_embed(op.get(body, 'result.properties.you-help-me-video.values.0.db_value', null))
-
-        callback(null, profile)
-    })
-
 }
 
 
@@ -233,7 +148,7 @@ exports.get_signin_url = function(redirect_url, provider, callback) {
 
 
 
-//Get user
+//Get user session
 exports.get_user_session = function(auth_url, state, callback) {
     var body = {
         'state': state
@@ -247,48 +162,6 @@ exports.get_user_session = function(auth_url, state, callback) {
         user.token = op.get(body, 'result.user.session_key', null)
 
         callback(null, user)
-    })
-}
-
-
-
-//Get user
-exports.get_user = function(auth_id, auth_token, callback) {
-    request.get({url: APP_ENTU_URL + '/entity-' + auth_id, headers: {'X-Auth-UserId': auth_id, 'X-Auth-Token': auth_token}, strictSSL: true, json: true}, function(error, response, body) {
-        if(error) return callback(error)
-        if(response.statusCode !== 200 || !body.result) return callback(new Error(op.get(body, 'error', body)))
-
-        var profile = {
-            id: body.result.id,
-            about: {},
-            i_help: {},
-            you_help: {}
-        }
-
-        profile.slogan = op.get(body, 'result.properties.slogan.values.0', {})
-        profile.forename = op.get(body, 'result.properties.forename.values.0', {})
-        profile.surname = op.get(body, 'result.properties.surname.values.0', {})
-        profile.email = op.get(body, 'result.properties.email.values.0', {})
-        profile.photo = op.has(body, 'result.properties.photo.values.0.db_value') ? APP_ENTU_URL + '/file-' + op.get(body, 'result.properties.photo.values.0.db_value') : null
-        profile.address = op.get(body, 'result.properties.address.values.0', {})
-        profile.postalcode = op.get(body, 'result.properties.postalcode.values.0', {})
-        profile.town = op.get(body, 'result.properties.town.values.0', {})
-        profile.county = op.get(body, 'result.properties.county.values.0', {})
-        profile.country = op.get(body, 'result.properties.country.values.0', {})
-
-        profile.about.text = op.get(body, 'result.properties.about-me-text.values.0', {})
-        profile.about.photo = op.has(body, 'result.properties.about-me-photo.values.0.db_value') ? APP_ENTU_URL + '/file-' + op.get(body, 'result.properties.photo.values.0.db_value') : null
-        profile.about.video = op.get(body, 'result.properties.about-me-video.values.0', {})
-
-        profile.i_help.text = op.get(body, 'result.properties.me-help-you-text.values.0', {})
-        profile.i_help.photo = op.has(body, 'result.properties.me-help-you-photo.values.0.db_value') ? APP_ENTU_URL + '/file-' + op.get(body, 'result.properties.photo.values.0.db_value') : null
-        profile.i_help.video = op.get(body, 'result.properties.me-help-you-video.values.0', {})
-
-        profile.you_help.text = op.get(body, 'result.properties.you-help-me-text.values.0', {})
-        profile.you_help.photo = op.has(body, 'result.properties.you-help-me-photo.values.0.db_value') ? APP_ENTU_URL + '/file-' + op.get(body, 'result.properties.photo.values.0.db_value') : null
-        profile.you_help.video = op.get(body, 'result.properties.you-help-me-video.values.0', {})
-
-        callback(null, profile)
     })
 }
 

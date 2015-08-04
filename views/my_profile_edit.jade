@@ -6,19 +6,19 @@ block content
             .row
                 .form-group.col-xs-12.col-sm-12
                     label.control-label(for='slogan') Slogan
-                    input.form-control(id='slogan', type='text', value=profile.slogan.db_value, data-value=profile.slogan.db_value, data-id=profile.slogan.id)
+                    input.form-control(id='slogan', type='text', value=profile.get('slogan.0.value'), data-value=profile.get('slogan.0.value'), data-id=profile.get('slogan.0.id'))
 
                 .form-group.col-xs-12.col-sm-3
                     label.control-label(for='forename') Forename
-                    input.form-control(id='forename', type='text', value=profile.forename.db_value, data-value=profile.forename.db_value, data-id=profile.forename.id)
+                    input.form-control(id='forename', type='text', value=profile.get('forename.0.value'), data-value=profile.get('forename.0.value'), data-id=profile.get('forename.0.id'))
 
                 .form-group.col-xs-12.col-sm-3
                     label.control-label(for='surname') Surname
-                    input.form-control(id='surname', type='text', value=profile.surname.db_value, data-value=profile.surname.db_value, data-id=profile.surname.id)
+                    input.form-control(id='surname', type='text', value=profile.get('surname.0.value'), data-value=profile.get('surname.0.value'), data-id=profile.get('surname.0.id'))
 
                 .form-group.col-xs-12.col-sm-3
                     label.control-label(for='email') E-mail
-                    input.form-control(id='email', type='text', value=profile.email.db_value, data-value=profile.email.db_value, data-id=profile.email.id)
+                    input.form-control(id='email', type='text', value=profile.get('email.0.value'), data-value=profile.get('email.0.value'), data-id=profile.get('email.0.id'))
 
                 //- .form-group.col-xs-12.col-sm-3
                 //-     label.control-label(for='you_help_photo') Profile Picture
@@ -29,18 +29,18 @@ block content
 
                 .form-group.col-xs-12.col-sm-4
                     label.control-label(for='address') Address
-                    input.form-control(id='address', type='text', value=profile.address.db_value, data-value=profile.address.db_value, data-id=profile.address.id)
+                    input.form-control(id='address', type='text', value=profile.get('address.0.value'), data-value=profile.get('address.0.value'), data-id=profile.get('address.0.id'))
                 .form-group.col-xs-12.col-sm-4
                     label.control-label(for='town') City
-                    input.form-control(id='town', type='text', value=profile.town.db_value, data-value=profile.town.db_value, data-id=profile.town.id)
+                    input.form-control(id='town', type='text', value=profile.get('town.0.value'), data-value=profile.get('town.0.value'), data-id=profile.get('town.0.id'))
 
                 .form-group.col-xs-12.col-sm-4
                     label.control-label(for='county') County
-                    input.form-control(id='county', type='text', value=profile.county.db_value, data-value=profile.county.db_value, data-id=profile.county.id)
+                    input.form-control(id='county', type='text', value=profile.get('county.0.value'), data-value=profile.get('county.0.value'), data-id=profile.get('county.0.id'))
 
                 .form-group.col-xs-12.col-sm-4
                     label.control-label(for='country') Country
-                    input.form-control(id='country', type='text', value=profile.country.db_value, data-value=profile.country.db_value, data-id=profile.country.id)
+                    input.form-control(id='country', type='text', value=profile.get('country.0.value'), data-value=profile.get('country.0.value'), data-id=profile.get('country.0.id'))
 
 
             .row.spacer
@@ -61,7 +61,7 @@ block content
 
                     .form-group.col-xs-12
                         label.control-label(for='about-me-text') Write something about you
-                        textarea.form-control(id='about-me-text', data-value=profile.about.text.db_value, data-id=profile.about.text.id, rows=8)= profile.about.text.db_value
+                        textarea.form-control(id='about-me-text', data-value=profile.get('about-me-text.0.value'), data-id=profile.get('about-me-text.0.value'), rows=8)= profile.get('about-me-text.0.value')
                         p.text-right
                             small you can use&nbsp;
                                 a(href='https://en.wikipedia.org/wiki/Markdown#Example', target='_blank') markdown
@@ -72,7 +72,7 @@ block content
 
                     .form-group.col-xs-12.col-sm-8
                         label.control-label(for='about-me-video') Video URL
-                        input.form-control(id='about-me-video', type='text', value=profile.about.video.db_value, data-value=profile.about.video.db_value, data-id=profile.about.video.id)
+                        input.form-control(id='about-me-video', type='text', value=profile.get('about-me-video.0.value'), data-value=profile.get('about-me-video.0.value'), data-id=profile.get('about-me-video.0.value'))
                         p.text-right
                             small
                                 | we support only&nbsp;
@@ -87,7 +87,7 @@ block content
 
                     .form-group.col-xs-12
                         label.control-label(for='me-help-you-text') How you can help others?
-                        textarea.form-control(id='me-help-you-text', data-value=profile.i_help.text.db_value, data-id=profile.i_help.text.id, rows=8)= profile.i_help.text.db_value
+                        textarea.form-control(id='me-help-you-text', data-value=profile.get('me-help-you-text.0.value'), data-id=profile.get('me-help-you-text.0.id'), rows=8)= profile.get('me-help-you-text.0.value')
                         p.text-right
                             small you can use&nbsp;
                                 a(href='https://en.wikipedia.org/wiki/Markdown#Example', target='_blank') markdown
@@ -98,7 +98,7 @@ block content
 
                     .form-group.col-xs-12.col-sm-8
                         label.control-label(for='me-help-you-video') Video URL
-                        input.form-control(id='me-help-you-video', type='text', value=profile.i_help.video.db_value, data-value=profile.i_help.video.db_value, data-id=profile.i_help.video.id)
+                        input.form-control(id='me-help-you-video', type='text', value=profile.get('me-help-you-video.0.value'), data-value=profile.get('me-help-you-video.0.value'), data-id=profile.get('me-help-you-video.0.id'))
                         p.text-right
                             small
                                 | we support only&nbsp;
@@ -113,7 +113,7 @@ block content
 
                     .form-group.col-xs-12
                         label.control-label(for='you-help-me-text') What kind of help you need?
-                        textarea.form-control(id='you-help-me-text', data-value=profile.you_help.text.db_value, data-id=profile.you_help.text.id, rows=8)= profile.you_help.text.db_value
+                        textarea.form-control(id='you-help-me-text', data-value=profile.get('you-me-text.0.value'), data-id=profile.get('you-me-text.0.id'), rows=8)= profile.get('you-me-text.0.value')
                         p.text-right
                             small you can use&nbsp;
                                 a(href='https://en.wikipedia.org/wiki/Markdown#Example', target='_blank') markdown
@@ -124,7 +124,7 @@ block content
 
                     .form-group.col-xs-12.col-sm-8
                         label.control-label(for='you-help-me-video') Video URL
-                        input.form-control(id='you-help-me-video', type='text', value=profile.you_help.video.db_value, data-value=profile.you_help.video.db_value, data-id=profile.you_help.video.id)
+                        input.form-control(id='you-help-me-video', type='text', value=profile.get('you-me-video.0.value'), data-value=profile.get('you-me-video.0.value'), data-id=profile.get('you-me-video.0.id'))
                         p.text-right
                             small
                                 | we support only&nbsp;
