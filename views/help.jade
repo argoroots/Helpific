@@ -2,6 +2,29 @@ extends layout
 
 block content
     .container
+        if show_add
+            .row
+                .col-xs-12.text-right
+                    a#request-add(href='javascript:void(0)') Add new help #{help_type}
+            form#request-form.hidden
+                .row
+                    .form-group.col-xs-12.col-sm-3
+                        label.control-label(for='time') Date/time
+                        input#time.form-control(type='text')
+
+                    .form-group.col-xs-12.col-sm-3
+                        label.control-label(for='location') Location
+                        input#location.form-control(type='text')
+
+                    .form-group.col-xs-12.col-sm-5
+                        label.control-label(for='request') #{help_type}
+                        input#request.form-control(type='text')
+                    .form-group.col-xs-12.col-sm-1.text-right
+                        label.control-label(for='request') &nbsp;
+                        a#request-save.text-center(href='javascript:void(0)') Save
+
+        .row.spacer
+
         .table
             each r, i in requests.sort(function(obj1, obj2) { return obj1.get('time.value') > obj2.get('time.value') })
                 .row
@@ -14,3 +37,30 @@ block content
                     .col.col-xs-9.col-sm-7.col-md-8= r.get('request.value')
 
         .row.spacer
+
+    script.
+        $('input').focus(function() {
+            $("label[for='" + this.id + "']").addClass('labelfocus')
+        }).blur(function() {
+            $('label').removeClass('labelfocus')
+        })
+
+        $('#request-add').click(function() {
+            $('#request-add').addClass('hidden')
+            $('#request-form').removeClass('hidden')
+        })
+
+        $('#request-save').click(function() {
+            if($('#request').val()) {
+                var postdata = {
+                    'time': $('#time').val(),
+                    'location': $('#location').val(),
+                    'request': $('#request').val()
+                }
+                $.post('', postdata, function(data) {
+                    window.location.reload(true)
+                }).fail(console.log)
+            } else {
+                $('#request').focus()
+            }
+        })

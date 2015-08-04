@@ -109,6 +109,40 @@ exports.get_entities = function(parent_entity_id, definition, auth_id, auth_toke
 
 
 
+//Add entity
+exports.add = function(parent_entity_id, definition, properties, auth_id, auth_token, callback) {
+
+    var body = {
+        definition: definition
+    }
+    for(p in properties) {
+        body[definition + '-' + p] = properties[p]
+    }
+
+    request.post({url: APP_ENTU_URL + '/entity-' + parent_entity_id, headers: {'X-Auth-UserId': auth_id, 'X-Auth-Token': auth_token}, body: body, strictSSL: true, json: true}, function(error, response, body) {
+        if(error) return callback(error)
+        if(response.statusCode !== 201 || !body.result) return callback(new Error(op.get(body, 'error', body)))
+
+        callback(null, op.get(body, 'result.id', null))
+    })
+
+}
+
+
+
+//Share entity
+exports.make_public = function(id, auth_id, auth_token, callback) {
+    request.post({url: APP_ENTU_URL.replace('/api2', '') + '/entity-' + id + '/rights', headers: {'X-Auth-UserId': auth_id, 'X-Auth-Token': auth_token}, body: {'sharing': 'public'}, strictSSL: true, json: true}, function(error, response, body) {
+        if(error) return callback(error)
+        if(response.statusCode !== 200) return callback(new Error(op.get(body, 'error', body)))
+
+        callback(null, id)
+    })
+
+}
+
+
+
 //Get signin url
 exports.get_signin_url = function(redirect_url, provider, callback) {
     var body = {
