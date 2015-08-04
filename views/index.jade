@@ -31,16 +31,14 @@ block content
 
     .container-fluid
         .row.text-center
-            .col-xs-6(style='background-color:#55938e')
-                a.col-xs-12(href='/profiles?q=helper')
-                    .spacer.col-xs-12
-                    h3.col-xs-12(style='color:#ffffff') Meet the volunteers
-                    img.col-xs-8.col-md-4.col-xs-offset-2.col-md-offset-4(src='/images/door-left.png', alt='Left door')
-            .col-xs-6(style='background-color:#fab235')
-                a.col-xs-12(href='/profiles?q=helper')
-                    .spacer.col-xs-12
-                    h3.col-xs-12(style='color:#ffffff') Help those in need
-                    img.col-xs-8.col-md-4.col-xs-offset-2.col-md-offset-4(src='/images/door-right.png', alt='Right door')
+            a.col-xs-6(href='/help/offers', style='background-color:#55938e')
+                .spacer.col-xs-12
+                h3(style='color:#ffffff;margin-bottom:30px') Meet the volunteers
+                img.col-xs-8.col-md-4.col-xs-offset-2.col-md-offset-4(src='/images/door-left.png', alt='Left door')
+            a.col-xs-6(href='/help/requests', style='background-color:#fab235')
+                .spacer.col-xs-12
+                h3(style='color:#ffffff;margin-bottom:30px') Help those in need
+                img.col-xs-8.col-md-4.col-xs-offset-2.col-md-offset-4(src='/images/door-right.png', alt='Right door')
 
     script.
         $(window).scroll(function(event) {

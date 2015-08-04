@@ -76,6 +76,7 @@ express()
     // routes mapping
     .use('/',       require('./routes/index'))
     .use('/users',  require('./routes/users'))
+    .use('/help',   require('./routes/help'))
     .use('/signin', require('./routes/signin'))
 
     // 404

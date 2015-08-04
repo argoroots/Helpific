@@ -37,6 +37,12 @@ function get_entity(id, auth_id, auth_token, callback) {
                             value: op.get(properties, [p, 'values', v, 'value']),
                             md: md(op.get(properties, [p, 'values', v, 'db_value']))
                         })
+                    } else if(op.get(properties, [p, 'datatype']) === 'reference') {
+                        op.push(entity, p, {
+                            id: op.get(properties, [p, 'values', v, 'id']),
+                            value: op.get(properties, [p, 'values', v, 'value']),
+                            reference: op.get(properties, [p, 'values', v, 'db_value'])
+                        })
                     } else {
                         op.push(entity, p, {
                             id: op.get(properties, [p, 'values', v, 'id']),
