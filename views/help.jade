@@ -45,6 +45,11 @@ block content
             $('label').removeClass('labelfocus')
         })
 
+        $('#time').change(function() {
+            var d = Date.parse($(this).val());
+            if(d) $(this).val(d.toString('yyyy-MM-dd HH:mm'))
+        })
+
         $('#request-add').click(function() {
             $('#request-add').addClass('hidden')
             $('#request-form').removeClass('hidden')
