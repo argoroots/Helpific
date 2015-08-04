@@ -10,6 +10,7 @@ var favicon = require('serve-favicon')
 var cookie  = require('cookie-parser')
 var random  = require('randomstring')
 var bparser = require('body-parser')
+var force_d = require('forcedomain')
 var debug   = require('debug')('app:' + path.basename(__filename).replace('.js', ''))
 
 
@@ -44,6 +45,12 @@ express()
     // jade view engine
     .set('views', path.join(__dirname, 'views'))
     .set('view engine', 'jade')
+
+    //redirect to correct domain and protocol
+    .use(force_d({
+        hostname: 'helpific.com',
+        protocol: 'http'
+    }))
 
     // cookies
     .use(cookie(APP_COOKIE_SECRET))
