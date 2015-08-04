@@ -10,11 +10,7 @@ var entu    = require('./entu')
 
 // Show signin page
 router.get('/', function(req, res, next) {
-    entu.get_page(646, function(error, page) {
-        if(error) return next(error)
-
-        res.render('signin', page)
-    })
+    res.render('signin')
 })
 
 

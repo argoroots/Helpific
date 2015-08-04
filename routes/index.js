@@ -9,25 +9,18 @@ var entu    = require('./entu')
 
 // GET home page
 router.get('/', function(req, res, next) {
-    entu.get_page(641, function(error, page) {
-        if(error) return next(error)
-
-        res.render('index', page)
-    })
+    res.render('index')
 })
 
 
 
 // GET partners page
 router.get('/partners', function(req, res, next) {
-    entu.get_page(643, function(error, page) {
+    entu.get_entities(null, 'partner', null, null, function(error, partners) {
         if(error) return next(error)
 
-        entu.get_entities(null, 'partner', null, null, function(error, partners) {
-            if(error) return next(error)
-
-            page.partners = partners
-            res.render('partners', page)
+        res.render('partners', {
+            partners: partners
         })
     })
 })
@@ -36,14 +29,11 @@ router.get('/partners', function(req, res, next) {
 
 // GET team page
 router.get('/team', function(req, res, next) {
-    entu.get_page(644, function(error, page) {
+    entu.get_entities(612, 'person', null, null, function(error, team) {
         if(error) return next(error)
 
-        entu.get_entities(612, 'person', null, null, function(error, team) {
-            if(error) return next(error)
-
-            page.team = team
-            res.render('team', page)
+        res.render('team', {
+            team: team
         })
     })
 })
@@ -52,11 +42,7 @@ router.get('/team', function(req, res, next) {
 
 // GET terms of service page
 router.get('/tos', function(req, res, next) {
-    entu.get_page(640, function(error, page) {
-        if(error) return next(error)
-
-        res.render('tos', page)
-    })
+    res.render('tos')
 })
 
 

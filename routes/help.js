@@ -23,16 +23,13 @@ router.get('/:type', function(req, res, next) {
         return
     }
 
-    entu.get_page(page_id, function(error, page) {
+    entu.get_entities(help_group, 'request', null, null, function(error, requests) {
         if(error) return next(error)
 
-        entu.get_entities(help_group, 'request', null, null, function(error, requests) {
-            if(error) return next(error)
-
-            page.requests = requests
-            page.show_add = (req.signedCookies.auth_id && req.signedCookies.auth_token)
-            page.help_type = help_type
-            res.render('help', page)
+        res.render('help', {
+            requests: requests,
+            show_add: (req.signedCookies.auth_id && req.signedCookies.auth_token),
+            help_type: help_type
         })
     })
 })

@@ -1,5 +1,8 @@
 extends layout
 
+block vars
+    - title='Our team'
+
 block content
     .container
         each p, i in team.sort(function(obj1, obj2) { return obj1.get('forename.value') + obj1.get('surname.value') > obj2.get('forename.value') + obj2.get('surname.value') })

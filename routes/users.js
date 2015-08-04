@@ -29,14 +29,11 @@ function media_embed(url) {
 
 // GET profiles listing
 router.get('/', function(req, res, next) {
-    entu.get_page(630, function(error, page) {
+    entu.get_entities(615, 'person', null, null, function(error, profiles) {
         if(error) return next(error)
 
-        entu.get_entities(615, 'person', null, null, function(error, profiles) {
-            if(error) return next(error)
-
-            page.profiles = profiles
-            res.render('user_list', page)
+        res.render('user_list', {
+            profiles: profiles
         })
     })
 })
@@ -50,14 +47,11 @@ router.get('/me', function(req, res, next) {
         next(null)
     }
 
-    entu.get_page(649, function(error, page) {
+    entu.get_entity(req.signedCookies.auth_id, req.signedCookies.auth_id, req.signedCookies.auth_token, function(error, profile) {
         if(error) return next(error)
 
-        entu.get_entity(req.signedCookies.auth_id, req.signedCookies.auth_id, req.signedCookies.auth_token, function(error, profile) {
-            if(error) return next(error)
-
-            page.profile = profile
-            res.render('my_profile_edit', page)
+        res.render('my_profile_edit', {
+            profile: profile
         })
     })
 })
@@ -84,19 +78,15 @@ router.post('/me', function(req, res, next) {
 router.get('/:id', function(req, res, next) {
     if(!req.params.id) res.redirect('/users')
 
-    entu.get_page(642, function(error, page) {
-        if(error) return next(error)
-
         entu.get_entity(req.params.id, null, null, function(error, profile) {
             if(error) return next(error)
 
-            page.title = profile.get('forename.value', '') + ' ' + profile.get('surname.value', '')
-            page.profile = profile
-            page.media_embed = media_embed
-            res.render('user', page)
+            res.render('user', {
+                title: profile.get('forename.value', '') + ' ' + profile.get('surname.value', ''),
+                profile: profile,
+                media_embed: media_embed
+            })
         })
-    })
-
 })
 
 

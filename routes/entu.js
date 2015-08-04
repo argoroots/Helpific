@@ -61,25 +61,6 @@ function get_entity(id, auth_id, auth_token, callback) {
 
 
 
-//Get page (web-content)
-exports.get_page = function get_page(id, callback) {
-    get_entity(id, null, null, function(error, entity) {
-        if(error) return callback(error)
-
-        var page = {}
-
-        page.title = entity.get('title.value', null)
-        page.description = entity.get('description.value', null)
-        for(var i in entity.get('keyword.values', [])) {
-            page.keywords.push(entity.get(['keyword', i, 'value'], null))
-        }
-
-        callback(null, page)
-    })
-}
-
-
-
 //Get entities by parent entity id and/or by definition
 exports.get_entities = function(parent_entity_id, definition, auth_id, auth_token, callback) {
     var url = parent_entity_id ? '/entity-' + parent_entity_id + '/childs' : '/entity'
