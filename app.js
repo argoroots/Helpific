@@ -1,6 +1,8 @@
 if(process.env.NEW_RELIC_LICENSE_KEY) require('newrelic')
 
 var express = require('express')
+var https   = require('https')
+var http    = require('http')
 var path    = require('path')
 var fs      = require('fs')
 var logger  = require('morgan')
@@ -18,6 +20,7 @@ var debug   = require('debug')('app:' + path.basename(__filename).replace('.js',
 // global variables (and list of all used environment variables)
 APP_DEBUG     = process.env.DEBUG
 APP_PORT      = process.env.PORT || 3000
+APP_PORT_SSL  = process.env.PORT_SSL || 3001
 APP_LOG_DIR   = process.env.LOGDIR || __dirname + '/log'
 APP_COOKIE_SECRET = process.env.COOKIE_SECRET || random.generate(16)
 APP_ENTU_URL  = process.env.ENTU_URL || 'https://helpific.entu.ee/api2'
@@ -41,7 +44,20 @@ var access_log_stream = rotator.getStream({
 
 
 
-express()
+// ssl conf
+var ssl_options = {
+    key: fs.readFileSync('ssl/helpific_com.key', 'utf8'),
+    cert: fs.readFileSync('ssl/helpific_com.crt', 'utf8'),
+    ca: [
+        fs.readFileSync('ssl/AddTrustExternalCARoot.crt', 'utf8'),
+        fs.readFileSync('ssl/COMODORSAAddTrustCA.crt', 'utf8'),
+        fs.readFileSync('ssl/COMODORSADomainValidationSecureServerCA.crt', 'utf8')
+    ]
+}
+
+
+
+var app = express()
     // jade view engine
     .set('views', path.join(__dirname, 'views'))
     .set('view engine', 'jade')
@@ -49,7 +65,7 @@ express()
     //redirect to correct domain and protocol
     .use(force_d({
         hostname: 'helpific.com',
-        protocol: 'http'
+        protocol: 'https'
     }))
 
     // cookies
@@ -107,9 +123,9 @@ express()
         if(err.status !== 404) debug(err)
     })
 
-    // start server
-    .listen(APP_PORT)
+// start servers
+http.createServer(app).listen(APP_PORT);
+https.createServer(ssl_options, app).listen(APP_PORT_SSL);
 
-
-
-debug('Started at port %s', APP_PORT)
+debug('HTTP started at port %s', APP_PORT)
+debug('HTTPS started at port %s', APP_PORT_SSL)

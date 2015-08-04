@@ -8,13 +8,14 @@ TimeoutStartSec=0
 KillMode=none
 Restart=always
 EnvironmentFile=/etc/environment
-ExecStartPre=-/usr/bin/mkdir -p /data/helpific/log
+ExecStartPre=-/usr/bin/mkdir -p /data/helpific/log /data/helpific/ssl
 ExecStartPre=-/usr/bin/docker kill helpific
 ExecStartPre=-/usr/bin/docker rm helpific
 ExecStartPre=/usr/bin/docker pull argoroots/helpific
 ExecStart=/usr/bin/docker run \
           --name="helpific" \
           --env="PORT=4000" \
+          --env="PORT_SSL=4001" \
           --env="NEW_RELIC_APP_NAME=" \
           --env="NEW_RELIC_LICENSE_KEY=" \
           --env="NEW_RELIC_LOG=stdout" \
@@ -22,8 +23,9 @@ ExecStart=/usr/bin/docker run \
           --env="NEW_RELIC_NO_CONFIG_FILE=true" \
           --env="ENTU_USER=" \
           --env="ENTU_KEY=" \
-          --volume="/data/helpific/log:/usr/src/helpific/log" \
+          --volume="/data/helpific:/usr/src/helpific" \
           --publish="80:4000" \
+          --publish="443:4001" \
           argoroots/helpific
 ExecStop=/usr/bin/docker stop helpific
 
