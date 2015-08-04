@@ -46,12 +46,12 @@ var access_log_stream = rotator.getStream({
 
 // ssl conf
 var ssl_options = {
-    key: fs.readFileSync('ssl/helpific_com.key', 'utf8'),
-    cert: fs.readFileSync('ssl/helpific_com.crt', 'utf8'),
+    key: fs.readFileSync(__dirname + '/ssl/helpific_com.key', 'utf8'),
+    cert: fs.readFileSync(__dirname + '/ssl/helpific_com.crt', 'utf8'),
     ca: [
-        fs.readFileSync('ssl/AddTrustExternalCARoot.crt', 'utf8'),
-        fs.readFileSync('ssl/COMODORSAAddTrustCA.crt', 'utf8'),
-        fs.readFileSync('ssl/COMODORSADomainValidationSecureServerCA.crt', 'utf8')
+        fs.readFileSync(__dirname + '/ssl/AddTrustExternalCARoot.crt', 'utf8'),
+        fs.readFileSync(__dirname + '/ssl/COMODORSAAddTrustCA.crt', 'utf8'),
+        fs.readFileSync(__dirname + '/ssl/COMODORSADomainValidationSecureServerCA.crt', 'utf8')
     ]
 }
 
