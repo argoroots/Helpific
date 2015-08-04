@@ -42,7 +42,7 @@ router.get('/:type', function(req, res, next) {
 // Create request/offer
 router.post('/:type', function(req, res, next) {
     if(!req.signedCookies.auth_id || !req.signedCookies.auth_token) {
-        res.sendStatus(403).send()
+        res.status(403).send()
         return
     }
 
@@ -55,7 +55,7 @@ router.post('/:type', function(req, res, next) {
         var help_group = 651
         var help_type = 'offer'
     } else {
-        res.sendStatus(403).send()
+        res.status(403).send()
         return
     }
 
@@ -68,7 +68,7 @@ router.post('/:type', function(req, res, next) {
         entu.make_public(new_id, req.signedCookies.auth_id, req.signedCookies.auth_token, function(error, response) {
             if(error) return next(error)
 
-            res.sendStatus(200).send(response)
+            res.status(200).send(response)
         })
 
     })
