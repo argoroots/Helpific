@@ -361,6 +361,8 @@ i.signin
         &:last-child
             border-bottom none
 
+
+
 #btn-add
     margin-top 30px
     font-size 50px
@@ -371,3 +373,13 @@ i.signin
         font-size 14px
         line-height 14px
 
+
+
+#tos
+    ol
+        padding-left 30px
+        counter-reset section
+        list-style-type none
+    li:before
+        counter-increment section
+        content counters(section, ".") " "
