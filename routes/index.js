@@ -14,6 +14,15 @@ router.get('/', function(req, res, next) {
 
 
 
+// GET home page
+router.get('/E13518FB248434854F2680AC1B00BFF9.txt', function(req, res, next) {
+    res.setHeader('Content-Type', 'text/plain; charset=UTF-8')
+    res.status(200)
+    res.send('301C4D8396D027DDF1E4A9124248E0538E32F6C7\nCOMODOCA.COM')
+})
+
+
+
 // GET partners page
 router.get('/partners', function(req, res, next) {
     entu.get_entities(null, 'partner', null, null, function(error, partners) {
