@@ -41,7 +41,7 @@ block content
                         img.col-xs-3.col-sm-2.col-md-1.img-circle(src=APP_ENTU_URL + '/entity-' + r.get('person.reference') + '/picture', alt=r.get('person.value'))
                     .col.col-xs-9.col-sm-3.col-md-3
                         a(href='/users/' + r.get('person.reference', ''))= r.get('person.value')
-                        div= r.get('time.value')
+                        div= r.get('time.value', '').replace(' 00:00', '')
                         div(style='font-style:italic')= r.get('location.value')
                     .col.col-xs-9.col-sm-7.col-md-8= r.get('request.value')
 
@@ -57,7 +57,7 @@ block content
         $('#time').change(function() {
             var d = Date.parse($(this).val())
             if(d) {
-                $(this).val(d.toString('yyyy-MM-dd HH:mm'))
+                $(this).val(d.toString('yyyy-MM-dd HH:mm').replace(' 00:00', ''))
             } else {
                 $(this).val('')
             }
