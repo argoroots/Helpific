@@ -9,19 +9,19 @@ block content
             .row
                 .form-group.col-xs-12.col-sm-12
                     label.control-label(for='slogan') Slogan
-                    input.form-control(id='slogan', type='text', value=profile.get('slogan.value'), data-value=profile.get('slogan.value'), data-id=profile.get('slogan.id'))
+                    input.form-control(id='slogan', type='text', placeholder='', value=profile.get('slogan.value'), data-value=profile.get('slogan.value'), data-id=profile.get('slogan.id'))
 
                 .form-group.col-xs-12.col-sm-3
                     label.control-label(for='forename') Forename
-                    input.form-control(id='forename', type='text', value=profile.get('forename.value'), data-value=profile.get('forename.value'), data-id=profile.get('forename.id'))
+                    input.form-control(id='forename', type='text', placeholder='e.g. John', value=profile.get('forename.value'), data-value=profile.get('forename.value'), data-id=profile.get('forename.id'))
 
                 .form-group.col-xs-12.col-sm-3
                     label.control-label(for='surname') Surname
-                    input.form-control(id='surname', type='text', value=profile.get('surname.value'), data-value=profile.get('surname.value'), data-id=profile.get('surname.id'))
+                    input.form-control(id='surname', type='text', placeholder='e.g. Appleseed', value=profile.get('surname.value'), data-value=profile.get('surname.value'), data-id=profile.get('surname.id'))
 
                 .form-group.col-xs-12.col-sm-3
                     label.control-label(for='email') E-mail
-                    input.form-control(id='email', type='text', value=profile.get('email.value'), data-value=profile.get('email.value'), data-id=profile.get('email.id'))
+                    input.form-control(id='email', type='text', placeholder='e.g. john@appleseed.com', value=profile.get('email.value'), data-value=profile.get('email.value'), data-id=profile.get('email.id'))
 
                 //- .form-group.col-xs-12.col-sm-3
                 //-     label.control-label(for='you_help_photo') Profile Picture
@@ -32,18 +32,18 @@ block content
 
                 .form-group.col-xs-12.col-sm-4
                     label.control-label(for='address') Address
-                    input.form-control(id='address', type='text', value=profile.get('address.value'), data-value=profile.get('address.value'), data-id=profile.get('address.id'))
+                    input.form-control(id='address', type='text', placeholder='e.g. Tartu mnt. 1', value=profile.get('address.value'), data-value=profile.get('address.value'), data-id=profile.get('address.id'))
                 .form-group.col-xs-12.col-sm-4
                     label.control-label(for='town') City
-                    input.form-control(id='town', type='text', value=profile.get('town.value'), data-value=profile.get('town.value'), data-id=profile.get('town.id'))
+                    input.form-control(id='town', type='text', placeholder='e.g. Tallinn', value=profile.get('town.value'), data-value=profile.get('town.value'), data-id=profile.get('town.id'))
 
                 .form-group.col-xs-12.col-sm-4
                     label.control-label(for='county') County
-                    input.form-control(id='county', type='text', value=profile.get('county.value'), data-value=profile.get('county.value'), data-id=profile.get('county.id'))
+                    input.form-control(id='county', type='text', placeholder='e.g. Harjumaa', value=profile.get('county.value'), data-value=profile.get('county.value'), data-id=profile.get('county.id'))
 
                 .form-group.col-xs-12.col-sm-4
                     label.control-label(for='country') Country
-                    input.form-control(id='country', type='text', value=profile.get('country.value'), data-value=profile.get('country.value'), data-id=profile.get('country.id'))
+                    input.form-control(id='country', type='text', placeholder='e.g. Estonia', value=profile.get('country.value'), data-value=profile.get('country.value'), data-id=profile.get('country.id'))
 
 
             .row.spacer
@@ -59,6 +59,7 @@ block content
                         li(style='background-color:#fab235')
                             a(href='#tab-you-help', data-toggle='tab') I need help
 
+            .row.tab-content
                 #tab-i-help.tab-pane
 
                     .form-group.col-xs-12
@@ -74,7 +75,7 @@ block content
 
                     .form-group.col-xs-12.col-sm-8
                         label.control-label(for='me-help-you-video') Video URL
-                        input.form-control(id='me-help-you-video', type='text', value=profile.get('me-help-you-video.value'), data-value=profile.get('me-help-you-video.value'), data-id=profile.get('me-help-you-video.id'))
+                        input.form-control(id='me-help-you-video', type='text', placeholder='e.g. https://www.youtube.com/watch?v=QH2-TGUlwu4', value=profile.get('me-help-you-video.value'), data-value=profile.get('me-help-you-video.value'), data-id=profile.get('me-help-you-video.id'))
                         p.text-right
                             small
                                 | we support only&nbsp;
@@ -85,7 +86,6 @@ block content
                                 a(href='https://wistia.com', target='_blank') Wistia
                                 |  urls
 
-            .row.tab-content
                 #tab-about.tab-pane.active
 
                     .form-group.col-xs-12
@@ -101,7 +101,7 @@ block content
 
                     .form-group.col-xs-12.col-sm-8
                         label.control-label(for='about-me-video') Video URL
-                        input.form-control(id='about-me-video', type='text', value=profile.get('about-me-video.value'), data-value=profile.get('about-me-video.value'), data-id=profile.get('about-me-video.id'))
+                        input.form-control(id='about-me-video', type='text', placeholder='e.g. https://www.youtube.com/watch?v=QH2-TGUlwu4', value=profile.get('about-me-video.value'), data-value=profile.get('about-me-video.value'), data-id=profile.get('about-me-video.id'))
                         p.text-right
                             small
                                 | we support only&nbsp;
@@ -127,7 +127,7 @@ block content
 
                     .form-group.col-xs-12.col-sm-8
                         label.control-label(for='you-help-me-video') Video URL
-                        input.form-control(id='you-help-me-video', type='text', value=profile.get('you-help-me-video.value'), data-value=profile.get('you-help-me-video.value'), data-id=profile.get('you-help-me-video.id'))
+                        input.form-control(id='you-help-me-video', type='text', placeholder='e.g. https://www.youtube.com/watch?v=QH2-TGUlwu4', value=profile.get('you-help-me-video.value'), data-value=profile.get('you-help-me-video.value'), data-id=profile.get('you-help-me-video.id'))
                         p.text-right
                             small
                                 | we support only&nbsp;

@@ -3,6 +3,11 @@ extends layout
 block vars
     - title='Help ' + help_type + 's'
 
+    if help_type === 'offer'
+        - request_placeholder = 'e.g. Will go to Nuustaku and got extra room'
+    if help_type === 'request'
+        - request_placeholder = 'e.g. I\'ll want to go to Nuustaku'
+
 block content
     .container
         if show_add
@@ -13,15 +18,15 @@ block content
                 .row
                     .form-group.col-xs-12.col-sm-3
                         label.control-label(for='time') Date/time
-                        input#time.form-control(type='text')
+                        input#time.form-control(type='text', placeholder='e.g. 2015-08-04 02:59')
 
                     .form-group.col-xs-12.col-sm-3
                         label.control-label(for='location') Location
-                        input#location.form-control(type='text')
+                        input#location.form-control(type='text', placeholder='e.g. Tallinn, Harjumaa')
 
                     .form-group.col-xs-12.col-sm-5
                         label.control-label(for='request') #{help_type}
-                        input#request.form-control(type='text')
+                        input#request.form-control(type='text', placeholder=request_placeholder)
                     .form-group.col-xs-12.col-sm-1.text-right
                         label.control-label(for='request') &nbsp;
                         a#request-save.text-center(href='javascript:void(0)') Save
@@ -49,8 +54,12 @@ block content
         })
 
         $('#time').change(function() {
-            var d = Date.parse($(this).val());
-            if(d) $(this).val(d.toString('yyyy-MM-dd HH:mm'))
+            var d = Date.parse($(this).val())
+            if(d) {
+                $(this).val(d.toString('yyyy-MM-dd HH:mm'))
+            } else {
+                $(this).val('')
+            }
         })
 
         $('#request-add').click(function() {
