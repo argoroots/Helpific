@@ -36,10 +36,10 @@ block content
         .table
             each r, i in requests.sort(function(obj1, obj2) { return obj1.get('time.value') > obj2.get('time.value') })
                 .row
-                    a(href='/users/' + r.get('person.reference'))
+                    a(href='/users/' + r.get('person.reference', ''))
                         img.col-xs-3.col-sm-2.col-md-1.img-circle(src=APP_ENTU_URL + '/entity-' + r.get('person.reference') + '/picture', alt=r.get('person.value'))
                     .col.col-xs-9.col-sm-3.col-md-3
-                        a(href='/users/' + r.get('person.reference'))= r.get('person.value')
+                        a(href='/users/' + r.get('person.reference', ''))= r.get('person.value')
                         div= r.get('time.value')
                         div(style='font-style:italic')= r.get('location.value')
                     .col.col-xs-9.col-sm-7.col-md-8= r.get('request.value')
