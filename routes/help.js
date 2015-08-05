@@ -65,7 +65,9 @@ router.post('/:type', function(req, res, next) {
         entu.make_public(new_id, req.signedCookies.auth_id, req.signedCookies.auth_token, function(error, response) {
             if(error) return next(error)
 
-            res.status(200).send(response)
+            res.setHeader('Content-Type', 'application/json')
+            res.status(200)
+            res.send(response)
         })
 
     })

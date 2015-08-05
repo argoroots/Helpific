@@ -68,7 +68,9 @@ router.post('/me', function(req, res, next) {
     entu.set_user(req.signedCookies.auth_id, req.signedCookies.auth_token, req.body, function(error, response) {
         if(error) return next(error)
 
-        res.status(200).send(response)
+        res.setHeader('Content-Type', 'application/json')
+        res.status(200)
+        res.send(response)
     })
 })
 
