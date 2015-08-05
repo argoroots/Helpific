@@ -30,6 +30,7 @@ block content
                     .form-group.col-xs-12.col-sm-1.text-right
                         label.control-label(for='request') &nbsp;
                         a#request-save.text-center(href='javascript:void(0)') Save
+                        i#request-spinner.hidden.fa.fa-2x.fa-cog.fa-spin
 
         .row.spacer
 
@@ -69,15 +70,21 @@ block content
 
         $('#request-save').click(function() {
             if($('#request').val()) {
+                $('#request-save').addClass('hidden')
+                $('#request-spinner').removeClass('hidden')
                 var postdata = {
                     'time': $('#time').val(),
                     'location': $('#location').val(),
                     'request': $('#request').val()
                 }
                 $.post('', postdata, function(data) {
-                    location.reload(true)
+                    setTimeout(function() {
+                        location.reload(true)
+                    }, 1500)
                 }).fail(
-                    location.reload(true)
+                    setTimeout(function() {
+                        location.reload(true)
+                    }, 1500)
                 )
             } else {
                 $('#request').focus()
