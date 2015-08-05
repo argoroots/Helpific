@@ -50,6 +50,7 @@ var ssl_options = {
     key: fs.readFileSync(__dirname + '/ssl/helpific_com.key', 'utf8'),
     cert: fs.readFileSync(__dirname + '/ssl/helpific_com.crt', 'utf8'),
     ca: [
+        // fs.readFileSync(__dirname + '/ssl/AddTrustExternalCARoot.crt', 'utf8'),
         fs.readFileSync(__dirname + '/ssl/COMODORSAAddTrustCA.crt', 'utf8'),
         fs.readFileSync(__dirname + '/ssl/COMODORSADomainValidationSecureServerCA.crt', 'utf8')
     ],
