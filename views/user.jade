@@ -18,7 +18,7 @@ block content
                             a(href='#tab-you-help', data-toggle='tab') You help me
         .row.tab-content
             #tab-me-help.tab-pane
-                if profile.has('me-help-you-video')
+                if media_embed(profile.get('me-help-you-video.value'))
                     .embed-responsive.embed-responsive-16by9
                         iframe.embed-responsive-item.col-xs-12(src=media_embed(profile.get('me-help-you-video.value')), allowtransparency='true', frameborder='0', scrolling='no', allowfullscreen, mozallowfullscreen, webkitallowfullscreen, oallowfullscreen, msallowfullscreen)
                 else if profile.has('me-help-you-photo')
@@ -28,7 +28,7 @@ block content
                 .col-xs-12.text-justify!= profile.get('me-help-you-text.md')
 
             #tab-about.tab-pane.active
-                if profile.has('about-me-video')
+                if media_embed(profile.get('about-me-video.value'))
                     .embed-responsive.embed-responsive-16by9
                         iframe.embed-responsive-item.col-xs-12(src=media_embed(profile.get('about-me-video.value')), allowtransparency='true', frameborder='0', scrolling='no', allowfullscreen, mozallowfullscreen, webkitallowfullscreen, oallowfullscreen, msallowfullscreen)
                 else if profile.has('about-me-photo')
@@ -38,7 +38,7 @@ block content
                 .col-xs-12.text-justify!= profile.get('about-me-text.md')
 
             #tab-you-help.tab-pane
-                if profile.has('you-help-me-video')
+                if media_embed(profile.get('you-help-me-video.value'))
                     .embed-responsive.embed-responsive-16by9
                         iframe.embed-responsive-item.col-xs-12(src=media_embed(profile.get('you-help-me-video.value')), allowtransparency='true', frameborder='0', scrolling='no', allowfullscreen, mozallowfullscreen, webkitallowfullscreen, oallowfullscreen, msallowfullscreen)
                 else if profile.has('you-help-me-photo')
