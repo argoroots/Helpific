@@ -5,15 +5,44 @@ var async   = require('async')
 var op      = require('object-path')
 var md      = require('marked')
 var random  = require('randomstring')
+var crypto  = require('crypto')
+
+
+
+function sign_data(data) {
+    data = data || {}
+
+    if(!APP_ENTU_USER || !APP_ENTU_KEY) return data
+
+    var conditions = []
+    for(k in data) {
+        conditions.push({k: data[k]})
+    }
+
+    var expiration = new Date()
+    expiration.setMinutes(expiration.getMinutes() + 10)
+
+    data.user = APP_ENTU_USER
+    data.policy = new Buffer(JSON.stringify({expiration: expiration.toISOString(), conditions: conditions})).toString('base64')
+    data.signature = crypto.createHmac('sha1', APP_ENTU_KEY).update(data.policy).digest('base64')
+
+    return data
+}
 
 
 
 //Get entity from Entu
 exports.get_entity = get_entity
 function get_entity(id, auth_id, auth_token, callback) {
-    var headers = (auth_id && auth_token) ? {'X-Auth-UserId': auth_id, 'X-Auth-Token': auth_token} : {}
+    if(auth_id && auth_token) {
+        var headers = {'X-Auth-UserId': auth_id, 'X-Auth-Token': auth_token}
+        var qs = {}
+    } else {
+        var headers = {}
+        var qs = sign_data()
+    }
 
-    request.get({url: APP_ENTU_URL + '/entity-' + id, headers: headers, strictSSL: true, json: true}, function(error, response, body) {
+    request.get({url: APP_ENTU_URL + '/entity-' + id, headers: headers, qs: qs, strictSSL: true, json: true}, function(error, response, body) {
         if(error) return callback(error)
         if(response.statusCode !== 200 || !body.result) return callback(new Error(op.get(body, 'error', body)))
 
@@ -63,12 +92,18 @@ function get_entity(id, auth_id, auth_token, callback) {
 
 //Get entities by parent entity id and/or by definition
 exports.get_entities = function(parent_entity_id, definition, auth_id, auth_token, callback) {
+    if(auth_id && auth_token) {
+        var headers = {'X-Auth-UserId': auth_id, 'X-Auth-Token': auth_token}
+        var qs = definition ? {definition: definition} : {}
+    } else {
+        var headers = {}
+        var qs = definition ? sign_data({definition: definition}) : sign_data()
+    }
+
     var url = parent_entity_id ? '/entity-' + parent_entity_id + '/childs' : '/entity'
     var loop = parent_entity_id ? ['result', definition, 'entities'] : 'result'
-    var qs = definition ? {definition: definition} : {}
-    var headers = (auth_id && auth_token) ? {'X-Auth-UserId': auth_id, 'X-Auth-Token': auth_token} : {}
 
-    request.get({url: APP_ENTU_URL + url, qs: qs, headers: headers, strictSSL: true, json: true}, function(error, response, body) {
+    request.get({url: APP_ENTU_URL + url, headers: headers, qs: qs, strictSSL: true, json: true}, function(error, response, body) {
         if(error) return callback(error)
         if(response.statusCode !== 200 || !body.result) return callback(new Error(op.get(body, 'error', body)))
 
@@ -92,34 +127,48 @@ exports.get_entities = function(parent_entity_id, definition, auth_id, auth_toke
 
 //Add entity
 exports.add = function(parent_entity_id, definition, properties, auth_id, auth_token, callback) {
-
-    var body = {
+    var data = {
         definition: definition
     }
+
     for(p in properties) {
-        body[definition + '-' + p] = properties[p]
+        data[definition + '-' + p] = properties[p]
     }
 
-    request.post({url: APP_ENTU_URL + '/entity-' + parent_entity_id, headers: {'X-Auth-UserId': auth_id, 'X-Auth-Token': auth_token}, body: body, strictSSL: true, json: true}, function(error, response, body) {
+    if(auth_id && auth_token) {
+        var headers = {'X-Auth-UserId': auth_id, 'X-Auth-Token': auth_token}
+        var qb = body
+    } else {
+        var headers = {}
+        var qb =sign_data(body)
+    }
+
+    request.post({url: APP_ENTU_URL + '/entity-' + parent_entity_id, headers: headers, body: qb, strictSSL: true, json: true}, function(error, response, body) {
         if(error) return callback(error)
         if(response.statusCode !== 201 || !body.result) return callback(new Error(op.get(body, 'error', body)))
 
         callback(null, op.get(body, 'result.id', null))
     })
-
 }
 
 
 
 //Share entity
 exports.make_public = function(id, auth_id, auth_token, callback) {
-    request.post({url: APP_ENTU_URL.replace('/api2', '') + '/entity-' + id + '/rights', headers: {'X-Auth-UserId': auth_id, 'X-Auth-Token': auth_token}, body: {'sharing': 'public'}, strictSSL: true, json: true}, function(error, response, body) {
+    if(auth_id && auth_token) {
+        var headers = {'X-Auth-UserId': auth_id, 'X-Auth-Token': auth_token}
+        var qb = {sharing: 'public'}
+    } else {
+        var headers = {}
+        var qb = sign_data({sharing: 'public'})
+    }
+
+    request.post({url: APP_ENTU_URL.replace('/api2', '') + '/entity-' + id + '/rights', headers: headers, body: qb, strictSSL: true, json: true}, function(error, response, body) {
         if(error) return callback(error)
         if(response.statusCode !== 200) return callback(new Error(op.get(body, 'error', body)))
 
         callback(null, id)
     })
-
 }
 
 
@@ -166,12 +215,19 @@ exports.get_user_session = function(auth_url, state, callback) {
 
 //Set user
 exports.set_user = function(auth_id, auth_token, data, callback) {
-
     property = 'person-' + op.get(data, 'property')
     var body = {}
     body[op.get(data, 'id') ? property + '.' + op.get(data, 'id') : property] = op.get(data, 'value', '')
 
-    request.put({url: APP_ENTU_URL + '/entity-' + auth_id, headers: {'X-Auth-UserId': auth_id, 'X-Auth-Token': auth_token}, body: body, strictSSL: true, json: true}, function(error, response, body) {
+    if(auth_id && auth_token) {
+        var headers = {'X-Auth-UserId': auth_id, 'X-Auth-Token': auth_token}
+        var qb = body
+    } else {
+        var headers = {}
+        var qb = sign_data(body)
+    }
+
+    request.put({url: APP_ENTU_URL + '/entity-' + auth_id, headers: headers, body: qb, strictSSL: true, json: true}, function(error, response, body) {
         if(error) return callback(error)
         if(response.statusCode !== 201 || !body.result) return callback(new Error(op.get(body, 'error', body)))
 
@@ -179,5 +235,4 @@ exports.set_user = function(auth_id, auth_token, data, callback) {
 
         callback(null, new_property)
     })
-
 }

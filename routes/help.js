@@ -57,9 +57,9 @@ router.post('/:type', function(req, res, next) {
     }
 
     var properties = req.body
-    properties['person'] = req.signedCookies.auth_id
+    properties.person = req.signedCookies.auth_id
 
-    entu.add(help_group, 'request', properties, req.signedCookies.auth_id, req.signedCookies.auth_token, function(error, new_id) {
+    entu.add(help_group, 'request', properties, function(error, new_id) {
         if(error) return next(error)
 
         entu.make_public(new_id, req.signedCookies.auth_id, req.signedCookies.auth_token, function(error, response) {
