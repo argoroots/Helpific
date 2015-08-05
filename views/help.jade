@@ -75,8 +75,10 @@ block content
                     'request': $('#request').val()
                 }
                 $.post('', postdata, function(data) {
-                    window.location.reload(true)
-                }).fail(console.log)
+                    location.reload(true)
+                }).fail(
+                    location.reload(true)
+                )
             } else {
                 $('#request').focus()
             }

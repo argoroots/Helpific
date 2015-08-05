@@ -154,16 +154,20 @@ exports.add = function(parent_entity_id, definition, properties, auth_id, auth_t
 
 
 //Share entity
-exports.make_public = function(id, auth_id, auth_token, callback) {
+exports.rights = function(id, person_id, right, auth_id, auth_token, callback) {
+    var body = {
+        entity: person_id,
+        right: right
+    }
     if(auth_id && auth_token) {
         var headers = {'X-Auth-UserId': auth_id, 'X-Auth-Token': auth_token}
-        var qb = {sharing: 'public'}
+        var qb = body
     } else {
         var headers = {}
-        var qb = sign_data({sharing: 'public'})
+        var qb = sign_data(body)
     }
 
-    request.post({url: APP_ENTU_URL.replace('/api2', '') + '/entity-' + id + '/rights', headers: headers, body: qb, strictSSL: true, json: true}, function(error, response, body) {
+    request.post({url: APP_ENTU_URL + '/entity-' + id + '/rights', headers: headers, body: qb, strictSSL: true, json: true}, function(error, response, body) {
         if(error) return callback(error)
         if(response.statusCode !== 200) return callback(new Error(op.get(body, 'error', body)))
 
@@ -175,12 +179,12 @@ exports.make_public = function(id, auth_id, auth_token, callback) {
 
 //Get signin url
 exports.get_signin_url = function(redirect_url, provider, callback) {
-    var body = {
+    var qb = {
         'state': random.generate(16),
         'redirect_url': redirect_url,
         'provider': provider
     }
-    request.post({url: APP_ENTU_URL + '/user/auth', body: body, strictSSL: true, json: true}, function(error, response, body) {
+    request.post({url: APP_ENTU_URL + '/user/auth', body: qb, strictSSL: true, json: true}, function(error, response, body) {
         if(error) return callback(error)
         if(response.statusCode !== 200) return callback(new Error(op.get(body, 'error', body)))
 
@@ -196,10 +200,10 @@ exports.get_signin_url = function(redirect_url, provider, callback) {
 
 //Get user session
 exports.get_user_session = function(auth_url, state, callback) {
-    var body = {
+    var qb = {
         'state': state
     }
-    request.post({url: auth_url, body: body, strictSSL: true, json: true}, function(error, response, body) {
+    request.post({url: auth_url, body: qb, strictSSL: true, json: true}, function(error, response, body) {
         if(error) return callback(error)
         if(response.statusCode !== 200 || !body.result) return callback(new Error(op.get(body, 'error', body)))
 

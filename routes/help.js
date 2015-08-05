@@ -60,12 +60,16 @@ router.post('/:type', function(req, res, next) {
     entu.add(help_group, 'request', properties, null, null, function(error, new_id) {
         if(error) return next(error)
 
-        entu.make_public(new_id, req.signedCookies.auth_id, req.signedCookies.auth_token, function(error, response) {
+        entu.rights(new_id, req.signedCookies.auth_id, 'owner', null, null, function(error, response) {
             if(error) return next(error)
 
-            res.setHeader('Content-Type', 'application/json')
-            res.status(200)
-            res.send(response)
+            entu.rights(new_id, APP_ENTU_USER, 'viewer', null, null, function(error, response) {
+                if(error) return next(error)
+
+                res.setHeader('Content-Type', 'application/json')
+                res.status(200)
+                res.send(response)
+            })
         })
 
     })
