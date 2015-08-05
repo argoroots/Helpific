@@ -44,11 +44,9 @@ router.post('/:type', function(req, res, next) {
     }
 
     if(req.params.type === 'requests') {
-        var page_id = 654
         var help_group = 650
         var help_type = 'request'
     } else if(req.params.type === 'offers') {
-        var page_id = 655
         var help_group = 651
         var help_type = 'offer'
     } else {
@@ -59,7 +57,7 @@ router.post('/:type', function(req, res, next) {
     var properties = req.body
     properties.person = req.signedCookies.auth_id
 
-    entu.add(help_group, 'request', properties, function(error, new_id) {
+    entu.add(help_group, 'request', properties, null, null, function(error, new_id) {
         if(error) return next(error)
 
         entu.make_public(new_id, req.signedCookies.auth_id, req.signedCookies.auth_token, function(error, response) {

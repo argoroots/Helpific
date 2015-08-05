@@ -137,10 +137,10 @@ exports.add = function(parent_entity_id, definition, properties, auth_id, auth_t
 
     if(auth_id && auth_token) {
         var headers = {'X-Auth-UserId': auth_id, 'X-Auth-Token': auth_token}
-        var qb = body
+        var qb = data
     } else {
         var headers = {}
-        var qb =sign_data(body)
+        var qb =sign_data(data)
     }
 
     request.post({url: APP_ENTU_URL + '/entity-' + parent_entity_id, headers: headers, body: qb, strictSSL: true, json: true}, function(error, response, body) {
