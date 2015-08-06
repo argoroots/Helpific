@@ -64,11 +64,12 @@ html
                                 else
                                     li
                                         a(href='/signin') Sign In
-
-                .container
-                    if title
-                        .row
-                            h1.col-xs-12.text-center= title
+                block title
+                    #title
+                        .container
+                            if title
+                                .row
+                                    h1.col-xs-12.text-center= title
 
                 block content
 
