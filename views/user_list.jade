@@ -20,8 +20,7 @@ block content
                         a(href='/users/' + p.get('_id'))
                             h3= p.get('forename.value', '') + ' ' + p.get('surname.value', '')
                         p= p.get('topic.value')
-                        p(style='font-style:italic')
-                            | #{p.get('town.value')}
+                        em= p.get('town.value')
                             if p.get('county.value') && p.get('town.value')
                                 | ,
                             |  #{p.get('county.value')}

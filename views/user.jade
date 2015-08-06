@@ -8,13 +8,13 @@ block content
             .col-xs-12
                 ul.nav.nav-pills.nav-justified
                     if profile.has('me-help-you-video') || profile.has('me-help-you-photo') || profile.has('me-help-you-text')
-                        li(style='background-color:#55938e')
+                        li.bg-green
                             a(href='#tab-me-help', data-toggle='tab') I help you
                     if profile.has('me-help-you-video') || profile.has('me-help-you-photo') || profile.has('me-help-you-text') || profile.has('you-help-me-video') || profile.has('you-help-me-photo') || profile.has('you-help-me-text')
-                        li.active(style='background-color:#f14d3e')
+                        li.bg-red.active
                             a(href='#tab-about', data-toggle='tab') About #{profile.get('forename.value', 'me')}
                     if profile.has('you-help-me-video') || profile.has('you-help-me-photo') || profile.has('you-help-me-text')
-                        li(style='background-color:#fab235')
+                        li.bg-yellow
                             a(href='#tab-you-help', data-toggle='tab') You help me
         .row.tab-content
             #tab-me-help.tab-pane
