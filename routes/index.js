@@ -41,8 +41,8 @@ router.get('/team', function(req, res, next) {
 
 
 // GET terms of service page
-router.get('/tos', function(req, res, next) {
-    res.render('tos')
+router.get('/terms', function(req, res, next) {
+    res.render('terms')
 })
 
 
