@@ -6,9 +6,17 @@ screen-sm-min = 768px
 screen-md-min = 992px
 screen-lg-min = 1200px
 
-helpific-red = #ee4e44
-helpific-green = #57938e
-helpific-yellow = #f8b144
+color-helpific-red = #ee4e44
+color-helpific-green = #57938e
+color-helpific-yellow = #f8b144
+
+color-white = #ffffff
+color-white-transparent = rgba(255, 255, 255, 0.95)
+
+color-gray = #ababab
+color-gray-dark = #585858
+color-gray-light = #ededed
+color-gray-transparent = rgba(88, 88, 88, 0.5)
 
 
 
@@ -19,7 +27,7 @@ html
 
 body
     height 100%
-    color #585858
+    color color-gray-dark
     font-family 'Raleway', sans-serif
     font-size 16px
     letter-spacing 1px
@@ -39,7 +47,7 @@ body
 
 .navbar
     min-height header-height
-    background rgba(255, 255, 255, 0.95)
+    background color-white-transparent
     border none
 
     .navbar-header
@@ -69,7 +77,7 @@ body
                     text-decoration underline
 
 .navbar-border
-    border-bottom 1px solid #f0f0f0
+    border-bottom 1px solid color-gray-light
 
 @media (max-width: 768px)
     .navbar
@@ -88,7 +96,7 @@ body
 
 #cover
     padding-top 280px
-    color #ffffff
+    color color-white
     background-image url('/images/tom.jpg')
     background-position center top
     background-size cover
@@ -97,7 +105,7 @@ body
     font-size 40px
     font-weight bold
     text-align center
-    text-shadow 0px 0px 10px rgba(64, 64, 64, 1)
+    text-shadow 0px 0px 10px color-gray-transparent
     vertical-align middle
     text-transform uppercase
 
@@ -108,8 +116,7 @@ body
     bottom 0px
     width 100%
     text-align center
-    color rgba(64, 64, 64, 0.5)
-    background-color rgba(255, 255, 255, 0.5)
+    color color-gray-transparent
 
 
 
@@ -118,8 +125,8 @@ body
     position fixed
     bottom 20px
     right 20px
-    color helpific-red
-    text-shadow 0px 0px 10px rgba(64, 64, 64, 0.5)
+    color color-helpific-red
+    text-shadow 0px 0px 10px color-gray-transparent
     cursor pointer
 
 #feedback-close
@@ -133,15 +140,15 @@ body
     bottom 20px
     right 20px
     max-width 500px
-    color #ffffff
-    background-color helpific-red
+    color color-white
+    background-color color-helpific-red
     border-radius 6px
-    box-shadow 0px 0px 10px rgba(64, 64, 64, 0.5)
+    box-shadow 0px 0px 10px color-gray-transparent
 
     h2
         margin 20px
         padding 0px
-        color #ffffff
+        color color-white
 
     label
         margin-top 0px !important
@@ -157,7 +164,7 @@ body
     a
         margin-top 10px
         margin-bottom 20px
-        color #ffffff
+        color color-white
         font-weight bold
 
 @media (max-width: 768px)
@@ -178,18 +185,22 @@ footer
     height footer-height
     clear both
     padding-top 20px
-    background-color #f4f4f4
+    background-color color-gray-light
     overflow hidden
+
+    .social
+        margin 20px 3px
+        color color-gray
 
 
 
 a
-    color helpific-red
+    color color-helpific-red
     text-decoration none
     outline: 0
 
     &:hover
-        color helpific-red
+        color color-helpific-red
         text-decoration underline
 
 
@@ -197,7 +208,7 @@ a
 h1
     margin-top header-height + 50px
     margin-bottom 100px
-    color helpific-green
+    color color-helpific-green
     font-size 64px
     line-height 64px
     font-weight normal
@@ -215,7 +226,7 @@ h1
 
 h2
     margin-bottom 30px
-    color helpific-green
+    color color-helpific-green
     font-size 32px
     font-weight normal
     height auto
@@ -225,7 +236,7 @@ h2
 
 h3
     margin-top 0px
-    color #585858
+    color color-gray-dark
     font-size 20px
     font-weight bold
     height auto
@@ -251,8 +262,8 @@ pre
     height 80px
     width 80px
     border-radius 40px
-    color #ffffff
-    background-color helpific-red
+    color color-white
+    background-color color-helpific-red
     font-family helvetica
     font-size 50px
     line-height 80px
@@ -263,20 +274,20 @@ pre
     margin-bottom 80px
 
     .form-group
-        border-bottom solid 1px helpific-green
+        border-bottom solid 1px color-helpific-green
 
     label
         padding 0px
         z-index 10
 
         i
-            color helpific-green
+            color color-helpific-green
             font-size 25px
 
     input
         margin-bottom 5px
         padding 0px
-        color helpific-green
+        color color-helpific-green
         border none
         outline none
         font-weight normal
@@ -294,7 +305,7 @@ ul.nav-pills
             padding-top 25px
             padding-bottom 25px
             background none !important
-            color #ffffff
+            color color-white
             font-size 20px
             text-decoration none
             border-radius 0px
@@ -302,7 +313,7 @@ ul.nav-pills
             &:hover, &:active, &:focus
                 background none !important
                 border-radius 0px
-                color #ffffff
+                color color-white
                 text-decoration none
 
     li.active
@@ -365,17 +376,17 @@ i.signin
         font-weight normal
 
     label.labelfocus
-        color helpific-green
+        color color-helpific-green
         font-weight bold
 
     select
-        border-color #777777
+        border-color color-gray-dark
         outline none
         box-shadow none
 
         &:focus
             outline none
-            border-color helpific-green
+            border-color color-helpific-green
             outline 0px
 
     input
@@ -383,13 +394,13 @@ i.signin
         padding 5px 1px
         border-radius 0px
         border none
-        border-bottom solid 1px #777777
+        border-bottom solid 1px color-gray-dark
         outline none
         box-shadow none
         font-size 18px
 
         &:focus
-            border-bottom solid 2px helpific-green
+            border-bottom solid 2px color-helpific-green
             outline 0px
 
         &[type=file]
@@ -410,7 +421,7 @@ i.signin
         margin-bottom 0px
         padding-top 10px
         padding-bottom 10px
-        border-bottom 1px solid #f0f0f0
+        border-bottom 1px solid color-gray-light
 
         &:last-child
             border-bottom none
@@ -420,7 +431,7 @@ i.signin
 #btn-add
     margin-top 30px
     font-size 50px
-    color helpific-green
+    color color-helpific-green
 
     span
         display block
