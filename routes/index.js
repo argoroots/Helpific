@@ -47,4 +47,38 @@ router.get('/tos', function(req, res, next) {
 
 
 
+// Send feedback
+router.post('/feedback', function(req, res, next) {
+    var properties = req.body
+    if(req.signedCookies.auth_id) properties.person = req.signedCookies.auth_id
+
+    entu.add(APP_ENTU_USER, 'feedback', properties, null, null, function(error, new_id) {
+        if(error) return next(error)
+
+        if(req.signedCookies.auth_id) {
+            entu.rights(new_id, req.signedCookies.auth_id, 'owner', null, null, function(error, response) {
+                if(error) return next(error)
+
+                entu.rights(new_id, APP_ENTU_USER, '', null, null, function(error, response) {
+                    if(error) return next(error)
+
+                    res.setHeader('Content-Type', 'application/json')
+                    res.status(200)
+                    res.send(new_id)
+                })
+            })
+        } else {
+                entu.rights(new_id, APP_ENTU_USER, '', null, null, function(error, response) {
+                    if(error) return next(error)
+
+                    res.setHeader('Content-Type', 'application/json')
+                    res.status(200)
+                    res.send(new_id)
+                })
+        }
+    })
+})
+
+
+
 module.exports = router

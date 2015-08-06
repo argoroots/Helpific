@@ -72,6 +72,24 @@ html
 
                 block content
 
+        .container
+            .row
+                i#feedback-open.fa.fa-envelope.fa-3x(title='Send feedback')
+                form#feedback.hidden.col-xs-12.col-sm-6.col-md-5
+                    #feedback-form
+                        i#feedback-close.fa.fa-times-circle.fa-2x
+                        h2.text-center Send feedback
+                        if !user
+                            .form-group.col-xs-12
+                                label.control-label(for='feedback-email') Your e-mail
+                                input#feedback-email.form-control(type='email')
+                        .form-group.col-xs-12
+                            label.control-label(for='feedback-message') Message
+                            textarea#feedback-message.form-control(rows=4)
+                        a#feedback-send.col-xs-12.text-center(href='javascript:void(0)') Send
+                    #feedback-ok.hidden.text-center
+                        h2.text-center Thank You!
+
         footer.container-fluid
             .container
                 .row
@@ -118,5 +136,38 @@ html
                     $('.navbar').addClass('navbar-border')
                 } else {
                     $('.navbar').removeClass('navbar-border')
+                }
+            })
+
+            $('#feedback-open').click(function() {
+                $('#feedback-open').addClass('hidden')
+                $('#feedback').removeClass('hidden')
+            })
+
+            $('#feedback-close').click(function() {
+                $('#feedback').addClass('hidden')
+                $('#feedback-open').removeClass('hidden')
+            })
+
+            $('#feedback-send').click(function() {
+                if($('#feedback-message').val()) {
+                    $('#feedback-form').addClass('hidden')
+                    $('#feedback-ok').removeClass('hidden')
+                    var postdata = {
+                        email: $('#feedback-email').val(),
+                        message: $('#feedback-message').val()
+                    }
+                    $.post('/feedback', postdata, function(data) {
+                        console.log(data)
+                    }).fail(console.log)
+                    setTimeout(function() {
+                        $('#feedback-message').val('')
+                        $('#feedback-ok').addClass('hidden')
+                        $('#feedback-form').removeClass('hidden')
+                        $('#feedback').addClass('hidden')
+                        $('#feedback-open').removeClass('hidden')
+                    }, 1500)
+                } else {
+                    $('#feedback-message').focus()
                 }
             })
