@@ -6,6 +6,7 @@ var op      = require('object-path')
 var md      = require('marked')
 var random  = require('randomstring')
 var crypto  = require('crypto')
+var sanitize = require('sanitize-html')
 
 
 
@@ -57,25 +58,25 @@ function get_entity(id, auth_id, auth_token, callback) {
                     if(op.get(properties, [p, 'datatype']) === 'file') {
                         op.push(entity, p, {
                             id: op.get(properties, [p, 'values', v, 'id']),
-                            value: op.get(properties, [p, 'values', v, 'value']),
+                            value: sanitize(op.get(properties, [p, 'values', v, 'value'])),
                             file: APP_ENTU_URL + '/file-' + op.get(properties, [p, 'values', v, 'db_value'])
                         })
                     } else if(op.get(properties, [p, 'datatype']) === 'text') {
                         op.push(entity, p, {
                             id: op.get(properties, [p, 'values', v, 'id']),
-                            value: op.get(properties, [p, 'values', v, 'value']),
-                            md: md(op.get(properties, [p, 'values', v, 'db_value']))
+                            value: sanitize(op.get(properties, [p, 'values', v, 'value'])),
+                            md: md(sanitize(op.get(properties, [p, 'values', v, 'db_value'])))
                         })
                     } else if(op.get(properties, [p, 'datatype']) === 'reference') {
                         op.push(entity, p, {
                             id: op.get(properties, [p, 'values', v, 'id']),
-                            value: op.get(properties, [p, 'values', v, 'value']),
+                            value: sanitize(op.get(properties, [p, 'values', v, 'value'])),
                             reference: op.get(properties, [p, 'values', v, 'db_value'])
                         })
                     } else {
                         op.push(entity, p, {
                             id: op.get(properties, [p, 'values', v, 'id']),
-                            value: op.get(properties, [p, 'values', v, 'value']),
+                            value: sanitize(op.get(properties, [p, 'values', v, 'value'])),
                         })
                     }
                 }
