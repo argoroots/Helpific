@@ -1,5 +1,9 @@
 extends layout
 
+block head
+    link(rel='stylesheet', type='text/css', href='https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css')
+    script(src='https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js')
+
 block vars
     - title='My profile'
 
@@ -144,7 +148,40 @@ block content
             .row.spacer
 
     script.
-        $('input, textarea').focus(function() {
+        var md = {}
+        $('textarea').each(function() {
+            var input = $(this)
+            var id = input.attr('id')
+            md[id] = new SimpleMDE({
+                element: document.getElementById(id),
+                status: false,
+                spellChecker: false
+            })
+            md[id].render()
+            md[id].codemirror.on('focus', function() {
+                $("label[for='" + id + "']").addClass('labelfocus')
+                $('.CodeMirror').addClass('CodeMirror-focus')
+            })
+            md[id].codemirror.on('blur', function() {
+                $("label[for='" + id + "']").removeClass('labelfocus')
+                $('.CodeMirror').removeClass('CodeMirror-focus')
+                var value = md[id].value()
+                if(input.data('value') !=value) {
+                    var postdata = {
+                        property: input.attr('id'),
+                        id: input.data('id'),
+                        value: value
+                    }
+                    $.post('', postdata, function(data) {
+                        input.val(data.value)
+                        input.data('id', data.id)
+                        input.data('value', data.value)
+                    }).fail(console.log)
+                }
+            })
+        })
+
+        $('input').focus(function() {
             $("label[for='" + this.id + "']").addClass('labelfocus')
         }).blur(function() {
             $('label').removeClass('labelfocus')
