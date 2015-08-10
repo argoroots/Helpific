@@ -18,44 +18,46 @@ block title
 block content
     .container
         .row
-            .row
-                .col-xs-12
-                    if profile.has('me-help-you-video') || profile.has('me-help-you-photo') || profile.has('me-help-you-text')
-                        a.profile-tab.col-xs-4.bg-green(href='javascript:void(0)', data-tab='me-help-you-tab') I can help others
-                    if profile.has('me-help-you-video') || profile.has('me-help-you-photo') || profile.has('me-help-you-text') || profile.has('you-help-me-video') || profile.has('you-help-me-photo') || profile.has('you-help-me-text')
-                        a.profile-tab.profile-tab-active.col-xs-4.bg-red(href='javascript:void(0)', data-tab='about-me-tab') About me
-                    if profile.has('you-help-me-video') || profile.has('you-help-me-photo') || profile.has('you-help-me-text')
-                        a.profile-tab.col-xs-4.bg-yellow(href='javascript:void(0)', data-tab='you-help-me-tab') I need help
+            .col-xs-12
+                if profile.has('me-help-you-video') || profile.has('me-help-you-photo') || profile.has('me-help-you-text')
+                    a.profile-tab.col-xs-4.bg-green(href='javascript:void(0)', data-tab='me-help-you-tab') I can help others
+                if profile.has('me-help-you-video') || profile.has('me-help-you-photo') || profile.has('me-help-you-text') || profile.has('you-help-me-video') || profile.has('you-help-me-photo') || profile.has('you-help-me-text')
+                    a.profile-tab.profile-tab-active.col-xs-4.bg-red(href='javascript:void(0)', data-tab='about-me-tab') About me
+                if profile.has('you-help-me-video') || profile.has('you-help-me-photo') || profile.has('you-help-me-text')
+                    a.profile-tab.col-xs-4.bg-yellow(href='javascript:void(0)', data-tab='you-help-me-tab') I need help
 
         .row
             #me-help-you-tab.hidden.profile-tab-pane
                 if media_embed(profile.get('me-help-you-video.value'))
                     .embed-responsive.embed-responsive-16by9
                         iframe.embed-responsive-item.col-xs-12(src=media_embed(profile.get('me-help-you-video.value')), allowtransparency='true', frameborder='0', scrolling='no', allowfullscreen, mozallowfullscreen, webkitallowfullscreen, oallowfullscreen, msallowfullscreen)
+                    .spacer.col-xs-12
                 else if profile.has('me-help-you-photo')
                     .col-xs-12
                         .profile-photo(style='background-image: url(' + profile.get('me-help-you-photo.file', '') + ')')
-                .spacer.col-xs-12
+                    .spacer.col-xs-12
                 .col-xs-12.text-justify!= profile.get('me-help-you-text.md')
 
             #about-me-tab.profile-tab-pane
                 if media_embed(profile.get('about-me-video.value'))
                     .embed-responsive.embed-responsive-16by9
                         iframe.embed-responsive-item.col-xs-12(src=media_embed(profile.get('about-me-video.value')), allowtransparency='true', frameborder='0', scrolling='no', allowfullscreen, mozallowfullscreen, webkitallowfullscreen, oallowfullscreen, msallowfullscreen)
+                    .spacer.col-xs-12
                 else if profile.has('about-me-photo')
                     .col-xs-12
                         .profile-photo(style='background-image: url(' + profile.get('about-me-photo.file', '') + ')')
-                .spacer.col-xs-12
+                    .spacer.col-xs-12
                 .col-xs-12.text-justify!= profile.get('about-me-text.md')
 
             #you-help-me-tab.hidden.profile-tab-pane
                 if media_embed(profile.get('you-help-me-video.value'))
                     .embed-responsive.embed-responsive-16by9
                         iframe.embed-responsive-item.col-xs-12(src=media_embed(profile.get('you-help-me-video.value')), allowtransparency='true', frameborder='0', scrolling='no', allowfullscreen, mozallowfullscreen, webkitallowfullscreen, oallowfullscreen, msallowfullscreen)
+                    .spacer.col-xs-12
                 else if profile.has('you-help-me-photo')
                     .col-xs-12
                         .profile-photo(style='background-image: url(' + profile.get('you-help-me-photo.file', '') + ')')
-                .spacer.col-xs-12
+                    .spacer.col-xs-12
                 .col-xs-12.text-justify!= profile.get('you-help-me-text.md')
         .row.spacer
 
