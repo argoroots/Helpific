@@ -18,19 +18,17 @@ block title
 block content
     .container
         .row
-            .col-xs-12
-                ul.nav.nav-pills.nav-justified
+            .row
+                .col-xs-12
                     if profile.has('me-help-you-video') || profile.has('me-help-you-photo') || profile.has('me-help-you-text')
-                        li.bg-green
-                            a(href='#tab-me-help', data-toggle='tab') I help you
+                        a.profile-tab.col-xs-4.bg-green(href='javascript:void(0)', data-tab='me-help-you-tab') I can help others
                     if profile.has('me-help-you-video') || profile.has('me-help-you-photo') || profile.has('me-help-you-text') || profile.has('you-help-me-video') || profile.has('you-help-me-photo') || profile.has('you-help-me-text')
-                        li.bg-red.active
-                            a(href='#tab-about', data-toggle='tab') About #{profile.get('forename.value', 'me')}
+                        a.profile-tab.profile-tab-active.col-xs-4.bg-red(href='javascript:void(0)', data-tab='about-me-tab') About me
                     if profile.has('you-help-me-video') || profile.has('you-help-me-photo') || profile.has('you-help-me-text')
-                        li.bg-yellow
-                            a(href='#tab-you-help', data-toggle='tab') You help me
-        .row.tab-content
-            #tab-me-help.tab-pane
+                        a.profile-tab.col-xs-4.bg-yellow(href='javascript:void(0)', data-tab='you-help-me-tab') I need help
+
+        .row
+            #me-help-you-tab.hidden.profile-tab-pane
                 if media_embed(profile.get('me-help-you-video.value'))
                     .embed-responsive.embed-responsive-16by9
                         iframe.embed-responsive-item.col-xs-12(src=media_embed(profile.get('me-help-you-video.value')), allowtransparency='true', frameborder='0', scrolling='no', allowfullscreen, mozallowfullscreen, webkitallowfullscreen, oallowfullscreen, msallowfullscreen)
@@ -40,7 +38,7 @@ block content
                 .spacer.col-xs-12
                 .col-xs-12.text-justify!= profile.get('me-help-you-text.md')
 
-            #tab-about.tab-pane.active
+            #about-me-tab.profile-tab-pane
                 if media_embed(profile.get('about-me-video.value'))
                     .embed-responsive.embed-responsive-16by9
                         iframe.embed-responsive-item.col-xs-12(src=media_embed(profile.get('about-me-video.value')), allowtransparency='true', frameborder='0', scrolling='no', allowfullscreen, mozallowfullscreen, webkitallowfullscreen, oallowfullscreen, msallowfullscreen)
@@ -50,7 +48,7 @@ block content
                 .spacer.col-xs-12
                 .col-xs-12.text-justify!= profile.get('about-me-text.md')
 
-            #tab-you-help.tab-pane
+            #you-help-me-tab.hidden.profile-tab-pane
                 if media_embed(profile.get('you-help-me-video.value'))
                     .embed-responsive.embed-responsive-16by9
                         iframe.embed-responsive-item.col-xs-12(src=media_embed(profile.get('you-help-me-video.value')), allowtransparency='true', frameborder='0', scrolling='no', allowfullscreen, mozallowfullscreen, webkitallowfullscreen, oallowfullscreen, msallowfullscreen)
@@ -60,3 +58,12 @@ block content
                 .spacer.col-xs-12
                 .col-xs-12.text-justify!= profile.get('you-help-me-text.md')
         .row.spacer
+
+    script.
+        $('.profile-tab').click(function() {
+            $('.profile-tab').removeClass('profile-tab-active')
+            $(this).addClass('profile-tab-active')
+
+            $('.profile-tab-pane').addClass('hidden')
+            $('#' + $(this).data('tab')).removeClass('hidden')
+        })

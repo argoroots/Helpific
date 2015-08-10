@@ -55,17 +55,12 @@ block content
 
             .row
                 .col-xs-12
-                    ul.nav.nav-pills.nav-justified
-                        li.bg-green
-                            a(href='#tab-i-help', data-toggle='tab') I can help others
-                        li.bg-red.active
-                            a(href='#tab-about', data-toggle='tab') About me
-                        li.bg-yellow
-                            a(href='#tab-you-help', data-toggle='tab') I need help
+                    a.profile-tab.col-xs-4.bg-green(href='javascript:void(0)', data-tab='me-help-you-tab') I can help others
+                    a.profile-tab.profile-tab-active.col-xs-4.bg-red(href='javascript:void(0)', data-tab='about-me-tab') About me
+                    a.profile-tab.col-xs-4.bg-yellow(href='javascript:void(0)', data-tab='you-help-me-tab') I need help
 
-            .row.tab-content
-                #tab-i-help.tab-pane
-
+            .row
+                #me-help-you-tab.profile-tab-pane
                     .form-group.col-xs-12
                         label.control-label(for='me-help-you-text') How you can help others?
                         textarea.form-control(id='me-help-you-text', data-value=profile.get('me-help-you-text.value'), data-id=profile.get('me-help-you-text.id'), rows=8)= profile.get('me-help-you-text.value')
@@ -91,8 +86,7 @@ block content
                                 a(href='https://wistia.com', target='_blank') Wistia
                                 |  urls
 
-                #tab-about.tab-pane.active
-
+                #about-me-tab.profile-tab-pane
                     .form-group.col-xs-12
                         label.control-label(for='about-me-text') Write something about you
                         textarea.form-control(id='about-me-text', data-value=profile.get('about-me-text.value'), data-id=profile.get('about-me-text.id'), rows=8)= profile.get('about-me-text.value')
@@ -118,8 +112,7 @@ block content
                                 a(href='https://wistia.com', target='_blank') Wistia
                                 |  urls
 
-                #tab-you-help.tab-pane
-
+                #you-help-me-tab.profile-tab-pane
                     .form-group.col-xs-12
                         label.control-label(for='you-help-me-text') What kind of help you need?
                         textarea.form-control(id='you-help-me-text', data-value=profile.get('you-help-me-text.value'), data-id=profile.get('you-help-me-text.id'), rows=8)= profile.get('you-help-me-text.value')
@@ -148,6 +141,20 @@ block content
             .row.spacer
 
     script.
+        setTimeout(function() {
+            $('#me-help-you-tab').addClass('hidden')
+            $('#you-help-me-tab').addClass('hidden')
+        }, 100)
+
+        $('.profile-tab').click(function() {
+            $('.profile-tab').removeClass('profile-tab-active')
+            $(this).addClass('profile-tab-active')
+
+            $('.profile-tab-pane').addClass('hidden')
+            $('#' + $(this).data('tab')).removeClass('hidden')
+        })
+
+
         var md = {}
         $('textarea').each(function() {
             var input = $(this)
