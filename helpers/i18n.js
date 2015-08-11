@@ -12,7 +12,8 @@ exports.configure = function(config) {
     if(!config) config = {}
 
     i18n_config.file = config.file || path.join(__dirname, 'locales.yaml')
-    i18n_config.locales = config.locales || ['en']
+    i18n_config.locales = config.locales || ['en', 'en']
+    i18n_config.redirectWrongLocale = config.redirectWrongLocale || true
     i18n_config.defaultLocale = config.defaultLocale || 'en'
     i18n_config.updateFile = config.updateFile || false
 
@@ -24,6 +25,12 @@ exports.configure = function(config) {
 
 exports.init = function(req, res, next) {
     i18n_config.lang = req.path.split('/')[1] || i18n_config.defaultLocale
+
+    if(i18n_config.redirectWrongLocale === true && i18n_config.locales.indexOf(i18n_config.lang) === -1) {
+        var path = req.path.split('/')
+        path[1] = i18n_config.defaultLocale
+        return res.redirect(path.join('/'))
+    }
 
     res.locals.lang = i18n_config.lang
     res.locals.t = translate
