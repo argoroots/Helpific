@@ -26,6 +26,7 @@ exports.configure = function(config) {
 exports.init = function(req, res, next) {
     i18n_config.lang = req.path.split('/')[1] || i18n_config.defaultLocale
 
+    if(i18n_config.redirectWrongLocale === true && req.path === '/') return res.redirect('/' + i18n_config.lang)
     if(i18n_config.redirectWrongLocale === true && i18n_config.locales.indexOf(i18n_config.lang) === -1) {
         var path = req.path.split('/')
         path[1] = i18n_config.defaultLocale
