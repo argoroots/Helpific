@@ -42,7 +42,7 @@ router.get('/team', function(req, res, next) {
 
 // GET terms of service page
 router.get('/terms', function(req, res, next) {
-    res.render('terms')
+    res.render('terms.' + res.locals.lang + '.jade')
 })
 
 
