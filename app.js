@@ -14,6 +14,7 @@ var cookie  = require('cookie-parser')
 var random  = require('randomstring')
 var bparser = require('body-parser')
 var force_d = require('forcedomain')
+var i18n    = require('./routes/i18n')
 var debug   = require('debug')('app:' + path.basename(__filename).replace('.js', ''))
 
 
@@ -22,7 +23,7 @@ var debug   = require('debug')('app:' + path.basename(__filename).replace('.js',
 APP_DEBUG     = process.env.DEBUG
 APP_PORT      = process.env.PORT || 3000
 APP_PORT_SSL  = process.env.PORT_SSL || 3001
-APP_LOG_DIR   = process.env.LOGDIR || __dirname + '/log'
+APP_LOG_DIR   = process.env.LOGDIR || path.join(__dirname, 'log')
 APP_COOKIE_SECRET = process.env.COOKIE_SECRET || random.generate(16)
 APP_ENTU_URL  = process.env.ENTU_URL || 'https://helpific.entu.ee/api2'
 APP_ENTU_USER = process.env.ENTU_USER
@@ -77,6 +78,16 @@ var ssl_options = {
 
 
 
+// Configure i18n
+i18n.configure({
+    locales: ['en', 'et'],
+    defaultLocale: 'en',
+    file: path.join(__dirname, 'locales.yaml'),
+    updateFile: true
+})
+
+
+
 var app = express()
     // jade view engine
     .set('views', path.join(__dirname, 'views'))
@@ -112,8 +123,12 @@ var app = express()
     // logging
     .use(logger(':date[iso] | HTTP/:http-version | :method | :status | :url | :res[content-length] b | :response-time ms | :remote-addr | :referrer | :user-agent', {stream: access_log_stream}))
 
+    //Initiate i18n
+    app.use(i18n.init)
+
     // set defaults for views
     .use(function(req, res, next) {
+        if(req.path === '/') return res.redirect('/en')
         if(req.signedCookies.auth_id && req.signedCookies.auth_token) {
             res.locals.user = {
                 id: req.signedCookies.auth_id,
@@ -124,10 +139,10 @@ var app = express()
     })
 
     // routes mapping
-    .use('/',       require('./routes/index'))
-    .use('/users',  require('./routes/users'))
-    .use('/help',   require('./routes/help'))
-    .use('/signin', require('./routes/signin'))
+    .use('/:lang',       require('./routes/index'))
+    .use('/:lang/users',  require('./routes/users'))
+    .use('/:lang/help',   require('./routes/help'))
+    .use('/:lang/signin', require('./routes/signin'))
 
     // 404
     .use(function(req, res, next) {
@@ -150,9 +165,13 @@ var app = express()
         if(err.status !== 404) debug(err)
     })
 
+
+
 // start servers
-http.createServer(app).listen(APP_PORT);
-https.createServer(ssl_options, app).listen(APP_PORT_SSL);
+http.createServer(app).listen(APP_PORT)
+https.createServer(ssl_options, app).listen(APP_PORT_SSL)
+
+
 
 debug('HTTP started at port %s', APP_PORT)
 debug('HTTPS started at port %s', APP_PORT_SSL)

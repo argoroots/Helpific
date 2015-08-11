@@ -31,6 +31,7 @@
         "fs": "0.x",
         "helmet": "0.10.x",
         "jade": "1.x",
+        "js-yaml": "3.x",
         "marked": "0.x",
         "morgan": "1.x",
         "newrelic": "1.x",
