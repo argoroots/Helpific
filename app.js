@@ -14,7 +14,7 @@ var cookie  = require('cookie-parser')
 var random  = require('randomstring')
 var bparser = require('body-parser')
 var force_d = require('forcedomain')
-var i18n    = require('./routes/i18n')
+var i18n    = require('./helpers/i18n')
 var debug   = require('debug')('app:' + path.basename(__filename).replace('.js', ''))
 
 

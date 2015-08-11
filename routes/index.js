@@ -3,7 +3,7 @@ var router  = express.Router()
 var path    = require('path')
 var debug   = require('debug')('app:' + path.basename(__filename).replace('.js', ''))
 
-var entu    = require('./entu')
+var entu    = require('../helpers/entu')
 
 
 
