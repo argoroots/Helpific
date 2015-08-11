@@ -1,0 +1,47 @@
+feedback:
+  email:
+    en: E-mail
+    et: E-post
+  message:
+    en: Message
+    et: Teade
+  send:
+    en: Send
+    et: Saada
+  thanks:
+    en: 'Thank you!'
+    et: 'Täname!'
+  title:
+    en: Send feedback
+    et: Saada tagasiside
+nav:
+  me:
+    en: Me
+    et: Mina
+  offers:
+    en: Offers
+    et: Pakkumised
+  partners:
+    en: Partners
+    et: Partnerid
+  requests:
+    en: Requests
+    et: Palved
+  sign-in:
+    en: Sign in
+    et: Sisene
+  sign-out:
+    en: Sign out
+    et: Välju
+  team:
+    en: Team
+    et: Meeskond
+  terms:
+    en: Terms of Use
+    et: Tingimused
+  toggle-navigation:
+    en: Toggle navigation
+    et: Toggle navigation
+  users:
+    en: Users
+    et: Kasutajad

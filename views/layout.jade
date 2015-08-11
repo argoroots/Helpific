@@ -45,28 +45,28 @@ html
                     .container
                         .navbar-header
                             button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#bs-example-navbar-collapse-1', aria-expanded='false')
-                                span.sr-only Toggle navigation
+                                span.sr-only=t('nav.toggle-navigation')
                                 span.icon-bar
                                 span.icon-bar
                                 span.icon-bar
-                            a.navbar-brand(href='/')
+                            a.navbar-brand(href='')
                                 img(src='/images/helpific-logo-text-hr.png', alt='Helpific logo')
                         .collapse.navbar-collapse(id='bs-example-navbar-collapse-1')
                             ul.nav.navbar-nav.navbar-right
                                 li
-                                    a(href='/help/requests') Requests
+                                    a(href='help/requests')= t('nav.requests')
                                 li
-                                    a(href='/help/offers') Offers
+                                    a(href='help/offers')= t('nav.offers')
                                 li
-                                    a(href='/users') Users
+                                    a(href='users')= t('nav.users')
                                 if user
                                     li
-                                        a(href='/users/me') Me
+                                        a(href='users/me')= t('nav.me')
                                     li
-                                        a(href='/signin/exit') Sign Out
+                                        a(href='signin/exit')= t('nav.sign-out')
                                 else
                                     li
-                                        a(href='/signin') Sign In
+                                        a(href='signin')= t('nav.sign-in')
                 block title
                     #title
                         .container
@@ -78,21 +78,21 @@ html
 
         .container
             .row
-                i#feedback-open.fa.fa-envelope.fa-3x(title='Send feedback')
+                i#feedback-open.fa.fa-envelope.fa-3x(title=t('feedback.title'))
                 form#feedback.hidden.col-xs-12.col-sm-6.col-md-5
                     #feedback-form
                         i#feedback-close.fa.fa-times-circle.fa-2x
-                        h2.text-center Send feedback
+                        h2.text-center= t('feedback.title')
                         if !user
                             .form-group.col-xs-12
-                                label.control-label(for='feedback-email') Your e-mail
+                                label.control-label(for='feedback-email')= t('feedback.email')
                                 input#feedback-email.form-control(type='email')
                         .form-group.col-xs-12
-                            label.control-label(for='feedback-message') Message
+                            label.control-label(for='feedback-message')= t('feedback.message')
                             textarea#feedback-message.form-control(rows=4)
-                        a#feedback-send.col-xs-12.text-center(href='javascript:void(0)') Send
+                        a#feedback-send.col-xs-12.text-center(href='javascript:void(0)')= t('feedback.send')
                     #feedback-ok.hidden.text-center
-                        h2.text-center Thank You!
+                        h2.text-center= t('feedback.thanks')
 
         footer.container-fluid
             .container
@@ -109,11 +109,11 @@ html
                             br
                             | SWEDBANK AS
                     .col-xs-12.col-sm-6.text-right
-                        a(href='/team') Team
+                        a(href='team')= t('nav.team')
                         br
-                        a(href='/partners') Partners
+                        a(href='partners')= t('nav.partners')
                         br
-                        a(href='/terms') Terms of Use
+                        a(href='terms')= t('nav.terms')
                 .row
                     .col-xs-12.text-center
                         a(href='https://www.facebook.com/Helpific', target='_blank')
