@@ -5,44 +5,41 @@ block vars
 block title
 
 block content
-    #cover.container-fluid Isn't it easier together?
+    #cover.container-fluid= t('pages.index.slogan')
 
     .container
         .row.spacer
 
         .row
-            .jumbotron.col-xs-12.text-center
-                h2 It's never been easier to give and get help
-                p Helpific connects volunteers to those who need help with everyday activities.
-                p At the moment we have 99 help requests fulfilled and 1044 active voluteers.
+            .jumbotron.col-xs-12.text-center!= md(t('pages.index.text'))
 
         .row.text-center
-            h2.col-xs-12 How Helpific works?
+            h2.col-xs-12= t('pages.index.how-it-works')
             #bullet-1.col-xs-10.col-sm-4.col-md-2.col-xs-offset-1.col-sm-offset-0.col-md-offset-2.text-center
                 .bullet 1
-                | Sign in via Facebook or Google
+                | #{ t('pages.index.bullet-1') }
             #bullet-2.col-xs-10.col-sm-4.col-md-2.col-xs-offset-1.col-sm-offset-0.col-md-offset-1.text-center
                 .bullet 2
-                | Let us know what you can do or need
+                | #{ t('pages.index.bullet-2') }
             #bullet-3.col-xs-10.col-sm-4.col-md-2.col-xs-offset-1.col-sm-offset-0.col-md-offset-1.text-center
                 .bullet 3
-                | Make your needs and deeds work
+                | #{ t('pages.index.bullet-3') }
 
         .row.spacer
 
         .row.text-center
-            h2.col-xs-12 Choose your way
+            h2.col-xs-12= t('pages.index.choose-way')
 
     .container-fluid
         .row.text-center
-            a.bg-green.col-xs-6(href='/help/offers')
+            a.bg-green.col-xs-6(href='help/offers')
                 .spacer.col-xs-12
-                h3.col-xs-12(style='color:#ffffff;margin-bottom:30px') Meet the volunteers
-                img.col-xs-8.col-md-4.col-xs-offset-2.col-md-offset-4(src='/images/door-left.png', alt='Left door')
-            a.bg-yellow.col-xs-6(href='/help/requests')
+                h3.col-xs-12(style='color:#ffffff;margin-bottom:30px')= t('pages.index.offers-link')
+                img.col-xs-8.col-md-4.col-xs-offset-2.col-md-offset-4(src='/images/door-left.png', alt=t('pages.index.offers-link-alt'))
+            a.bg-yellow.col-xs-6(href='help/requests')
                 .spacer.col-xs-12
-                h3.col-xs-12(style='color:#ffffff;margin-bottom:30px') Help those in need
-                img.col-xs-8.col-md-4.col-xs-offset-2.col-md-offset-4(src='/images/door-right.png', alt='Right door')
+                h3.col-xs-12(style='color:#ffffff;margin-bottom:30px')= t('pages.index.requests-link')
+                img.col-xs-8.col-md-4.col-xs-offset-2.col-md-offset-4(src='/images/door-right.png', alt=t('pages.index.requests-link-alt'))
 
     #scroll-down
         i.fa.fa-chevron-down.fa-3x
