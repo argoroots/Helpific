@@ -1,13 +1,13 @@
 extends layout
 
 block vars
-    - title='Sign In'
+    - title = t('pages.sign-in.title')
 
 block content
     .container
         .row
             .jumbotron.col-xs-12.text-center
-                p Please use your preferred identity provider to sign in...
+                p= t('pages.sign-in.text')
 
         .row
             .col-xs-12.text-center
@@ -21,5 +21,4 @@ block content
 
         .row
             .col-xs-12.text-center
-                p * if you sign in, you accept our&nbsp;
-                    a(href='terms') terms of service
+                p!= t('pages.sign-in.terms')

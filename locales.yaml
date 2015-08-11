@@ -45,3 +45,40 @@ nav:
   users:
     en: Users
     et: Kasutajad
+pages:
+  error:
+    title:
+      en: Error
+      et: Viga
+  partners:
+    title:
+      en: Partners
+      et: Partnerid
+  sign-in:
+    terms:
+      en: '* if you sign in, you accept our <a href="terms">terms of use and privacy policy</a>'
+      et: '* sisenedes nõustud meie <a href="terms">kasutaja- ja privaatsustingimustega</a>'
+    text:
+      en: Please use your preferred identity provider to sign in...
+      et: Sisenemiseks kasuta meelepärast identiteedipakkujat...
+    title:
+      en: Sign in
+      et: Sisene
+  team:
+    title:
+      en: Our Team
+      et: Meie meeskond
+  user:
+    about-me-tab:
+      en: About me
+      et: Minust
+    me-help-you-tab:
+      en: I can help others
+      et: Aitan sind
+    you-help-me-tab:
+      en: I need help
+      et: Vajan abi
+  users:
+    title:
+      en: Users
+      et: Kasutajad

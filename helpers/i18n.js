@@ -4,7 +4,7 @@ var yaml  = require('js-yaml')
 var op    = require('object-path')
 var debug = require('debug')('app:' + path.basename(__filename).replace('.js', ''))
 
-var i18n_config = {}
+i18n_config = {}
 
 
 
