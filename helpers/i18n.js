@@ -49,7 +49,7 @@ function translate(key) {
     if(!value && i18n_config.updateFile === true && i18n_config.locales.indexOf(i18n_config.lang) > -1) {
         op.set(i18n_config, 'translations.' + key + '.' + i18n_config.lang, key)
 
-        fs.writeFile(i18n_config.file, yaml.safeDump(i18n_config.translations, { sortKeys: true }), function(err) {
+        fs.writeFile(i18n_config.file, yaml.safeDump(i18n_config.translations, { sortKeys: true, indent: 4 }), function(err) {
             if(err) return console.log(err)
         })
     }

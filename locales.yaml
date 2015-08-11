@@ -1,167 +1,166 @@
 feedback:
-  email:
-    en: E-mail
-    et: E-post
-  message:
-    en: Message
-    et: Teade
-  send:
-    en: Send
-    et: Saada
-  thanks:
-    en: 'Thank you!'
-    et: 'Täname!'
-  title:
-    en: Send feedback
-    et: Saada tagasiside
+    email:
+        en: E-mail
+        et: E-post
+    message:
+        en: Message
+        et: Teade
+    send:
+        en: Send
+        et: Saada
+    thanks:
+        en: 'Thank you!'
+        et: 'Täname!'
+    title:
+        en: Send feedback
+        et: Saada tagasiside
 nav:
-  me:
-    en: Me
-    et: Mina
-  offers:
-    en: Offers
-    et: Abipakkumised
-  partners:
-    en: Partners
-    et: Partnerid
-  requests:
-    en: Requests
-    et: Abisoovid
-  sign-in:
-    en: Sign in
-    et: Sisene
-  sign-out:
-    en: Sign out
-    et: Välju
-  team:
-    en: Team
-    et: Meeskond
-  terms:
-    en: Terms of Use
-    et: Tingimused
-  toggle-navigation:
-    en: Toggle navigation
-    et: Toggle navigation
-  users:
-    en: Users
-    et: Kasutajad
-pages:
-  error:
-    title:
-      en: Error
-      et: Viga
-  help:
-    add-new-offer:
-      en: Add new help offer
-      et: Lisa uus abipakkumine
-    add-new-request:
-      en: Add new help request
-      et: Lisa uus abisoov
-    location:
-      en: Location
-      et: Asukoht
-    location-ph:
-      en: 'e.g. Tallinn, Harjumaa'
-      et: 'näit. Tallinn, Harjumaa'
-    offer-request:
-      en: Offer
-      et: Pakkumine
-    offer-request-ph:
-      en: e.g. Will go to Nuustaku and got extra room
-      et: näit. Lähen Nuustakule ja on üks vaba koht
-    offer-title:
-      en: Help offers
-      et: Abipakkumised
-    request-request:
-      en: Request
-      et: Soov
-    request-request-ph:
-      en: e.g. I'll want to go to Nuustaku
-      et: näit. Soovin minna Nuustakule
-    request-title:
-      en: Help requests
-      et: Abisoovid
-    save:
-      en: Save
-      et: Salvesta
-    time:
-      en: Date/time
-      et: Kuupäev/kellaaeg
-    time-ph:
-      en: e.g. 2015-08-04 02:59
-      et: näit. 2015-08-04 02:59
-  index:
-    bullet-1:
-      en: Sign in via Facebook or Google
-      et: Sisene Facebooki või Google'i kaudu
-    bullet-2:
-      en: Let us know what you can do or need
-      et: Anna teada kuidas saad aidata või mida vajad
-    bullet-3:
-      en: Make your needs and deeds work
-      et: pages.index.bullet-3
-    choose-way:
-      en: Choose your way
-      et: Vali oma tee
-    how-it-works:
-      en: How Helpific works?
-      et: Kuidas Helpific töötab?
-    offers-link:
-      en: Meet the volunteers
-      et: Kohtu vabatahtlikega
-    offers-link-alt:
-      en: Left door
-      et: Vasak uks
-    requests-link:
-      en: Help those in need
-      et: Aita abivajajaid
-    requests-link-alt:
-      en: Right door
-      et: Parem uks
-    slogan:
-      en: "Isn't it easier together?"
-      et: Koos on ju lihtsam!
-    text:
-      en: >
-        ## It's never been easier to give and get help
-
-        Helpific connects volunteers to those who need help with everyday
-        activities. At the moment we have 99 help requests fulfilled and 1044
-        active voluteers.
-      et: pages.index.text
-  partners:
-    title:
-      en: Partners
-      et: Partnerid
-  profile:
-    title:
-      en: My profile
-      et: Minu profiil
-  sign-in:
+    me:
+        en: Me
+        et: Mina
+    offers:
+        en: Offers
+        et: Abipakkumised
+    partners:
+        en: Partners
+        et: Partnerid
+    requests:
+        en: Requests
+        et: Abisoovid
+    sign-in:
+        en: Sign in
+        et: Sisene
+    sign-out:
+        en: Sign out
+        et: Välju
+    team:
+        en: Team
+        et: Meeskond
     terms:
-      en: '* if you sign in, you accept our <a href="terms">terms of use and privacy policy</a>'
-      et: '* sisenedes nõustud meie <a href="terms">kasutaja- ja privaatsustingimustega</a>'
-    text:
-      en: Please use your preferred identity provider to sign in...
-      et: Sisenemiseks kasuta meelepärast identiteedipakkujat...
-    title:
-      en: Sign in
-      et: Sisene
-  team:
-    title:
-      en: Our Team
-      et: Meie meeskond
-  user:
-    about-me-tab:
-      en: About me
-      et: Minust
-    me-help-you-tab:
-      en: I can help others
-      et: Aitan sind
-    you-help-me-tab:
-      en: I need help
-      et: Vajan abi
-  users:
-    title:
-      en: Users
-      et: Kasutajad
+        en: Terms of Use
+        et: Tingimused
+    toggle-navigation:
+        en: Toggle navigation
+        et: Toggle navigation
+    users:
+        en: Users
+        et: Kasutajad
+pages:
+    error:
+        title:
+            en: Error
+            et: Viga
+    help:
+        add-new-offer:
+            en: Add new help offer
+            et: Lisa uus abipakkumine
+        add-new-request:
+            en: Add new help request
+            et: Lisa uus abisoov
+        location:
+            en: Location
+            et: Asukoht
+        location-ph:
+            en: 'e.g. Tallinn, Harjumaa'
+            et: 'näit. Tallinn, Harjumaa'
+        offer-request:
+            en: Offer
+            et: Pakkumine
+        offer-request-ph:
+            en: e.g. Will go to Nuustaku and got extra room
+            et: näit. Lähen Nuustakule ja on üks vaba koht
+        offer-title:
+            en: Help offers
+            et: Abipakkumised
+        request-request:
+            en: Request
+            et: Soov
+        request-request-ph:
+            en: "e.g. I'll want to go to Nuustaku"
+            et: näit. Soovin minna Nuustakule
+        request-title:
+            en: Help requests
+            et: Abisoovid
+        save:
+            en: Save
+            et: Salvesta
+        time:
+            en: Date/time
+            et: Kuupäev/kellaaeg
+        time-ph:
+            en: 'e.g. 2015-08-04 02:59'
+            et: 'näit. 2015-08-04 02:59'
+    index:
+        bullet-1:
+            en: Sign in via Facebook or Google
+            et: "Sisene Facebooki või Google'i kaudu"
+        bullet-2:
+            en: Let us know what you can do or need
+            et: Anna teada kuidas saad aidata või mida vajad
+        bullet-3:
+            en: Make your needs and deeds work
+            et: pages.index.bullet-3
+        choose-way:
+            en: Choose your way
+            et: Vali oma tee
+        how-it-works:
+            en: How Helpific works?
+            et: Kuidas Helpific töötab?
+        offers-link:
+            en: Meet the volunteers
+            et: Kohtu vabatahtlikega
+        offers-link-alt:
+            en: Left door
+            et: Vasak uks
+        requests-link:
+            en: Help those in need
+            et: Aita abivajajaid
+        requests-link-alt:
+            en: Right door
+            et: Parem uks
+        slogan:
+            en: "Isn't it easier together?"
+            et: 'Koos on ju lihtsam!'
+        text:
+            en: >
+                ## It's never been easier to give and get help
+
+                Helpific connects volunteers to those who need help with everyday
+                activities. At the moment we have 99 help requests fulfilled and
+                1044 active voluteers.
+            et: pages.index.text
+    partners:
+        title:
+            en: Partners
+            et: Partnerid
+    profile:
+        title:
+            et: pages.profile.title
+    sign-in:
+        terms:
+            en: '* if you sign in, you accept our <a href="terms">terms of use and privacy policy</a>'
+            et: '* sisenedes nõustud meie <a href="terms">kasutaja- ja privaatsustingimustega</a>'
+        text:
+            en: Please use your preferred identity provider to sign in...
+            et: Sisenemiseks kasuta meelepärast identiteedipakkujat...
+        title:
+            en: Sign in
+            et: Sisene
+    team:
+        title:
+            en: Our Team
+            et: Meie meeskond
+    user:
+        about-me-tab:
+            en: About me
+            et: Minust
+        me-help-you-tab:
+            en: I can help others
+            et: Aitan sind
+        you-help-me-tab:
+            en: I need help
+            et: Vajan abi
+    users:
+        title:
+            en: Users
+            et: Kasutajad
