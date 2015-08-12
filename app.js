@@ -129,6 +129,7 @@ var app = express()
 
     // set defaults for views
     .use(function(req, res, next) {
+        res.locals.path = req.path
         if(req.signedCookies.auth_id && req.signedCookies.auth_token) {
             res.locals.user = {
                 id: req.signedCookies.auth_id,

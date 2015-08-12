@@ -76,6 +76,32 @@ body
                 &:hover
                     text-decoration underline
 
+        .dropdown
+            font-size 20px
+
+            &:hover
+                .dropdown-menu
+                    display block
+                    margin-top 0 // remove the gap so it doesn't close
+
+        .dropdown-menu
+            margin-top -30px !important
+            margin-right 10px !important
+            padding 0px
+            background color-white
+            border 1px solid color-gray-light
+            border-top 1px solid color-gray-light
+            border-radius 3px
+            box-shadow none
+
+            li
+                a
+                    line-height 40px !important
+
+        .open
+            a
+                background none !important
+
 .navbar-border
     border-bottom 1px solid color-gray-light
 
@@ -91,6 +117,13 @@ body
                     padding-bottom 10px
                     line-height header-height-xs
                     text-align center
+
+            .dropdown-menu
+                margin-top 0px !important
+                margin-right 0px !important
+                background none
+                border none !important
+                border-top 1px solid color-gray-light !important
 
 
 

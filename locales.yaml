@@ -28,6 +28,13 @@ footer:
                 Reg nr: 80380146<br>
                 Konto: EE102200221061303677
             </small>
+locales:
+    en:
+        en: English
+        et: English
+    et:
+        en: Eesti keel
+        et: Eesti keel
 nav:
     me:
         en: Me

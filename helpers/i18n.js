@@ -40,6 +40,7 @@ exports.init = function(req, res, next) {
     }
 
     res.locals.lang = i18n_config.lang
+    res.locals.locales = i18n_config.locales
     res.locals.t = translate
     res.locals.md = md
 

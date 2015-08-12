@@ -34,6 +34,7 @@ html
             ga('send', 'pageview');
 
         script(src='https://code.jquery.com/jquery-2.1.4.min.js')
+        script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js')
         script(src='/javascripts/date-et-EE.js')
         script(src='/javascripts/newrelic.js')
 
@@ -67,6 +68,13 @@ html
                                 else
                                     li
                                         a(href='signin')= t('nav.sign-in')
+                                li.dropdown
+                                    a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false')
+                                        i.fa.fa-globe
+                                    ul.dropdown-menu
+                                        each l in locales
+                                            li
+                                                a(href='/' + l + path.substring(3))= t('locales.' + l)
                 block title
                     #title
                         .container
