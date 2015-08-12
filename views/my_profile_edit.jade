@@ -5,49 +5,49 @@ block head
     script(src='https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js')
 
 block vars
-    - title='My profile'
+    - title = t('pages.profile.title')
 
 block content
     .container
         form#profile
             .row
                 .form-group.col-xs-12.col-sm-12
-                    label.control-label(for='slogan') Slogan
-                    input.form-control(id='slogan', type='text', placeholder='', value=profile.get('slogan.value'), data-value=profile.get('slogan.value'), data-id=profile.get('slogan.id'))
+                    label.control-label(for='slogan')= t('pages.profile.slogan')
+                    input#slogan.form-control(type='text', placeholder='', value=profile.get('slogan.value'), data-value=profile.get('slogan.value'), data-id=profile.get('slogan.id'))
 
                 .form-group.col-xs-12.col-sm-3
-                    label.control-label(for='forename') Forename
-                    input.form-control(id='forename', type='text', placeholder='e.g. John', value=profile.get('forename.value'), data-value=profile.get('forename.value'), data-id=profile.get('forename.id'))
+                    label.control-label(for='forename')= t('pages.profile.forename')
+                    input#forename.form-control(type='text', placeholder=t('pages.profile.forename-ph'), value=profile.get('forename.value'), data-value=profile.get('forename.value'), data-id=profile.get('forename.id'))
 
                 .form-group.col-xs-12.col-sm-3
-                    label.control-label(for='surname') Surname
-                    input.form-control(id='surname', type='text', placeholder='e.g. Appleseed', value=profile.get('surname.value'), data-value=profile.get('surname.value'), data-id=profile.get('surname.id'))
+                    label.control-label(for='surname')= t('pages.profile.surname')
+                    input#surname.form-control(type='text', placeholder=t('pages.profile.surname-ph'), value=profile.get('surname.value'), data-value=profile.get('surname.value'), data-id=profile.get('surname.id'))
 
                 .form-group.col-xs-12.col-sm-3
-                    label.control-label(for='email') E-mail
-                    input.form-control(id='email', type='text', placeholder='e.g. john@appleseed.com', value=profile.get('email.value'), data-value=profile.get('email.value'), data-id=profile.get('email.id'))
+                    label.control-label(for='email')= t('pages.profile.email')
+                    input#email.form-control(type='text', placeholder=t('pages.profile.email-ph'), value=profile.get('email.value'), data-value=profile.get('email.value'), data-id=profile.get('email.id'))
 
                 //- .form-group.col-xs-12.col-sm-3
-                //-     label.control-label(for='you_help_photo') Profile Picture
-                //-     input.form-control(id='you_help_photo', type='file')
+                //-     label.control-label(for='photo') Profile Picture
+                //-     input#photo.form-control(type='file')
 
             .row.spacer
             .row.spacer
 
                 .form-group.col-xs-12.col-sm-4
-                    label.control-label(for='address') Address
-                    input.form-control(id='address', type='text', placeholder='e.g. Tartu mnt. 1', value=profile.get('address.value'), data-value=profile.get('address.value'), data-id=profile.get('address.id'))
+                    label.control-label(for='address')= t('pages.profile.address')
+                    input#address.form-control(type='text', placeholder=t('pages.profile.address-ph'), value=profile.get('address.value'), data-value=profile.get('address.value'), data-id=profile.get('address.id'))
                 .form-group.col-xs-12.col-sm-4
-                    label.control-label(for='town') City
-                    input.form-control(id='town', type='text', placeholder='e.g. Tallinn', value=profile.get('town.value'), data-value=profile.get('town.value'), data-id=profile.get('town.id'))
+                    label.control-label(for='town')= t('pages.profile.city')
+                    input#town.form-control(type='text', placeholder=t('pages.profile.city-ph'), value=profile.get('town.value'), data-value=profile.get('town.value'), data-id=profile.get('town.id'))
 
                 .form-group.col-xs-12.col-sm-4
-                    label.control-label(for='county') County
-                    input.form-control(id='county', type='text', placeholder='e.g. Harjumaa', value=profile.get('county.value'), data-value=profile.get('county.value'), data-id=profile.get('county.id'))
+                    label.control-label(for='county')= t('pages.profile.county')
+                    input#county.form-control(type='text', placeholder=t('pages.profile.county-ph'), value=profile.get('county.value'), data-value=profile.get('county.value'), data-id=profile.get('county.id'))
 
                 .form-group.col-xs-12.col-sm-4
-                    label.control-label(for='country') Country
-                    input.form-control(id='country', type='text', placeholder='e.g. Estonia', value=profile.get('country.value'), data-value=profile.get('country.value'), data-id=profile.get('country.id'))
+                    label.control-label(for='country')= t('pages.profile.country')
+                    input#country.form-control(type='text', placeholder=t('pages.profile.country-ph'), value=profile.get('country.value'), data-value=profile.get('country.value'), data-id=profile.get('country.id'))
 
 
             .row.spacer
@@ -55,88 +55,61 @@ block content
 
             .row
                 .col-xs-12
-                    a.profile-tab.col-xs-4.bg-green(href='javascript:void(0)', data-tab='me-help-you-tab') I can help others
-                    a.profile-tab.profile-tab-active.col-xs-4.bg-red(href='javascript:void(0)', data-tab='about-me-tab') About me
-                    a.profile-tab.col-xs-4.bg-yellow(href='javascript:void(0)', data-tab='you-help-me-tab') I need help
+                    a.profile-tab.col-xs-4.bg-green(href='javascript:void(0)', data-tab='me-help-you-tab')= t('pages.profile.me-help-you-tab')
+                    a.profile-tab.profile-tab-active.col-xs-4.bg-red(href='javascript:void(0)', data-tab='about-me-tab')= t('pages.profile.about-me-tab')
+                    a.profile-tab.col-xs-4.bg-yellow(href='javascript:void(0)', data-tab='you-help-me-tab')= t('pages.profile.you-help-me-tab')
 
             .row
                 #me-help-you-tab.profile-tab-pane
                     .form-group.col-xs-12
-                        label.control-label(for='me-help-you-text') How you can help others?
-                        textarea.form-control(id='me-help-you-text', data-value=profile.get('me-help-you-text.value'), data-id=profile.get('me-help-you-text.id'), rows=8)= profile.get('me-help-you-text.value')
+                        label.control-label(for='me-help-you-text')= t('pages.profile.me-help-you-text')
+                        textarea#me-help-you-text.form-control(data-value=profile.get('me-help-you-text.value'), data-id=profile.get('me-help-you-text.id'), rows=8)= profile.get('me-help-you-text.value')
                         p.text-right
-                            small use&nbsp;
-                                a(href='https://en.wikipedia.org/wiki/Markdown#Example', target='_blank') markdown
-                                |  for styling your text
+                            small!= t('pages.profile.markdown-info')
 
                     //- .form-group.col-xs-12.col-sm-4
                     //-     label.control-label(for='me-help-you-photo') Cover Photo
-                    //-     input.form-control(id='me-help-you-photo', type='file')
+                    //-     input#me-help-you-photo.form-control(type='file')
 
                     .form-group.col-xs-12.col-sm-8
-                        label.control-label(for='me-help-you-video') Video URL
-                        input.form-control(id='me-help-you-video', type='text', placeholder='e.g. https://www.youtube.com/watch?v=QH2-TGUlwu4', value=profile.get('me-help-you-video.value'), data-value=profile.get('me-help-you-video.value'), data-id=profile.get('me-help-you-video.id'))
+                        label.control-label(for='me-help-you-video')= t('pages.profile.me-help-you-video')
+                        input#me-help-you-video.form-control(type='text', placeholder=t('pages.profile.video-ph'), value=profile.get('me-help-you-video.value'), data-value=profile.get('me-help-you-video.value'), data-id=profile.get('me-help-you-video.id'))
                         p.text-right
-                            small
-                                | we support only&nbsp;
-                                a(href='https://youtube.com', target='_blank') YouTube
-                                | ,&nbsp;
-                                a(href='https://vimeo.com', target='_blank') Vimeo
-                                |  and&nbsp;
-                                a(href='https://wistia.com', target='_blank') Wistia
-                                |  urls
+                            small!= t('pages.profile.video-info')
 
                 #about-me-tab.profile-tab-pane
                     .form-group.col-xs-12
-                        label.control-label(for='about-me-text') Write something about you
-                        textarea.form-control(id='about-me-text', data-value=profile.get('about-me-text.value'), data-id=profile.get('about-me-text.id'), rows=8)= profile.get('about-me-text.value')
+                        label.control-label(for='about-me-text')= t('pages.profile.about-me-text')
+                        textarea#about-me-text.form-control(data-value=profile.get('about-me-text.value'), data-id=profile.get('about-me-text.id'), rows=8)= profile.get('about-me-text.value')
                         p.text-right
-                            small use&nbsp;
-                                a(href='https://en.wikipedia.org/wiki/Markdown#Example', target='_blank') markdown
-                                |  for styling your text
+                            small!= t('pages.profile.markdown-info')
 
                     //- .form-group.col-xs-12.col-sm-4
                     //-     label.control-label(for='about-me-photo') Cover Photo
-                    //-     input.form-control(id='about-me-photo', type='file')
+                    //-     input#about-me-photo.form-control(type='file')
 
                     .form-group.col-xs-12.col-sm-8
-                        label.control-label(for='about-me-video') Video URL
-                        input.form-control(id='about-me-video', type='text', placeholder='e.g. https://www.youtube.com/watch?v=QH2-TGUlwu4', value=profile.get('about-me-video.value'), data-value=profile.get('about-me-video.value'), data-id=profile.get('about-me-video.id'))
+                        label.control-label(for='about-me-video')= t('pages.profile.about-me-video')
+                        input#about-me-video.form-control(type='text', placeholder=t('pages.profile.video-ph'), value=profile.get('about-me-video.value'), data-value=profile.get('about-me-video.value'), data-id=profile.get('about-me-video.id'))
                         p.text-right
-                            small
-                                | we support only&nbsp;
-                                a(href='https://youtube.com', target='_blank') YouTube
-                                | ,&nbsp;
-                                a(href='https://vimeo.com', target='_blank') Vimeo
-                                |  and&nbsp;
-                                a(href='https://wistia.com', target='_blank') Wistia
-                                |  urls
+                            small!= t('pages.profile.video-info')
 
                 #you-help-me-tab.profile-tab-pane
                     .form-group.col-xs-12
-                        label.control-label(for='you-help-me-text') What kind of help you need?
-                        textarea.form-control(id='you-help-me-text', data-value=profile.get('you-help-me-text.value'), data-id=profile.get('you-help-me-text.id'), rows=8)= profile.get('you-help-me-text.value')
+                        label.control-label(for='you-help-me-text')= t('pages.profile.you-help-me-text')
+                        textarea#you-help-me-text.form-control(data-value=profile.get('you-help-me-text.value'), data-id=profile.get('you-help-me-text.id'), rows=8)= profile.get('you-help-me-text.value')
                         p.text-right
-                            small use&nbsp;
-                                a(href='https://en.wikipedia.org/wiki/Markdown#Example', target='_blank') markdown
-                                |  for styling your text
+                            small!= t('pages.profile.markdown-info')
 
                     //- .form-group.col-xs-12.col-sm-4
                     //-     label.control-label(for='you-help-me-photo') Cover Photo
-                    //-     input.form-control(id='you-help-me-photo', type='file')
+                    //-     input#you-help-me-photo.form-control(type='file')
 
                     .form-group.col-xs-12.col-sm-8
-                        label.control-label(for='you-help-me-video') Video URL
-                        input.form-control(id='you-help-me-video', type='text', placeholder='e.g. https://www.youtube.com/watch?v=QH2-TGUlwu4', value=profile.get('you-help-me-video.value'), data-value=profile.get('you-help-me-video.value'), data-id=profile.get('you-help-me-video.id'))
+                        label.control-label(for='you-help-me-video')= t('pages.profile.you-help-me-video')
+                        input#you-help-me-video.form-control(type='text', placeholder=t('pages.profile.video-ph'), value=profile.get('you-help-me-video.value'), data-value=profile.get('you-help-me-video.value'), data-id=profile.get('you-help-me-video.id'))
                         p.text-right
-                            small
-                                | we support only&nbsp;
-                                a(href='https://youtube.com', target='_blank') YouTube
-                                | ,&nbsp;
-                                a(href='https://vimeo.com', target='_blank') Vimeo
-                                |  and&nbsp;
-                                a(href='https://wistia.com', target='_blank') Wistia
-                                |  urls
+                            small!= t('pages.profile.video-info')
 
             .row.spacer
 

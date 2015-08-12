@@ -41,7 +41,7 @@ nav:
         et: Tingimused
     toggle-navigation:
         en: Toggle navigation
-        et: Toggle navigation
+        et: Ava menüü
     users:
         en: Users
         et: Kasutajad
@@ -128,14 +128,101 @@ pages:
                 Helpific connects volunteers to those who need help with everyday
                 activities. At the moment we have 99 help requests fulfilled and
                 1044 active voluteers.
-            et: pages.index.text
+            et: >
+                ## It's never been easier to give and get help
+
+                Helpific connects volunteers to those who need help with everyday
+                activities. At the moment we have 99 help requests fulfilled and
+                1044 active voluteers.
     partners:
         title:
             en: Partners
             et: Partnerid
     profile:
+        about-me-tab:
+            en: About me
+            et: Minust
+        about-me-text:
+            en: Write something about you
+            et: Kirjuta midagi endast
+        about-me-video:
+            en: Video URL
+            et: Video viide
+        address:
+            en: Address
+            et: Aaddress
+        address-ph:
+            en: e.g. 767 5th Avenue
+            et: e.g. Tartu mnt. 1
+        city:
+            en: City
+            et: Linn
+        city-ph:
+            en: e.g. New York
+            et: näit. Tallinn
+        country:
+            en: Country
+            et: Riik
+        country-ph:
+            en: e.g. United States
+            et: näit. Eesti
+        county:
+            en: County
+            et: Maakond
+        county-ph:
+            en: e.g NY
+            et: näit. Harjumaa
+        email:
+            en: E-mail
+            et: E-post
+        email-ph:
+            en: e.g. john@appleseed.com
+            et: näit. juhan@õunaseeme.ee
+        forename:
+            en: Forename
+            et: Eesnimi
+        forename-ph:
+            en: e.g. John
+            et: näit. Juhan
+        markdown-info:
+            en: 'use <a href="https://en.wikipedia.org/wiki/Markdown#Example" target="_blank">markdown</a> for styling your text'
+            et: 'teksti kujundamiseks kasuta <a href="https://en.wikipedia.org/wiki/Markdown#Example" target="_blank">markdowni</a>'
+        me-help-you-tab:
+            en: I can help others
+            et: Aitan sind
+        me-help-you-text:
+            en: How you can help others?
+            et: Kuidas sa saad teisi aidata?
+        me-help-you-video:
+            en: Video URL
+            et: Video viide
+        slogan:
+            en: Slogan
+            et: Slõugan
+        surname:
+            en: Surname
+            et: Perenimi
+        surname-ph:
+            en: e.g. Appleseed
+            et: näit. Õunaseeme
         title:
-            et: pages.profile.title
+            en: My profile
+            et: Minu profiil
+        video-info:
+            en: 'we support only <a href="https://youtube.com" target="_blank">YouTube</a>, <a href="https://vimeo.com" target="_blank">Vimeo</a> and <a href="https://wistia.com" target="_blank">Wistia</a> urls'
+            et: 'toetatud on ainult <a href="https://youtube.com" target="_blank">YouTube</a>, <a href="https://vimeo.com" target="_blank">Vimeo</a> ja <a href="https://wistia.com" target="_blank">Wistia</a> viited'
+        video-ph:
+            en: 'näit. https://www.youtube.com/watch?v=QH2-TGUlwu4'
+            et: 'e. g. https://www.youtube.com/watch?v=QH2-TGUlwu4'
+        you-help-me-tab:
+            en: I need help
+            et: Vajan abi
+        you-help-me-text:
+            en: What kind of help you need?
+            et: Millist abi sa vajad?
+        you-help-me-video:
+            en: Video URL
+            et: Video viide
     sign-in:
         terms:
             en: '* if you sign in, you accept our <a href="terms">terms of use and privacy policy</a>'
