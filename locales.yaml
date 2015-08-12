@@ -14,6 +14,20 @@ feedback:
     title:
         en: Send feedback
         et: Saada tagasiside
+footer:
+    contact:
+        en: |
+            <strong>HELPIFIC MTÜ</strong><br> <small>
+                Reg nr: 80380146<br>
+                Account: EE102200221061303677<br>
+                SWIFT/BIC: HABAEE2X<br>
+                SWEDBANK AS
+            </small>
+        et: |
+            <strong>HELPIFIC MTÜ</strong><br> <small>
+                Reg nr: 80380146<br>
+                Konto: EE102200221061303677
+            </small>
 nav:
     me:
         en: Me
@@ -199,6 +213,9 @@ pages:
         slogan:
             en: Slogan
             et: Slõugan
+        slogan-ph:
+            en: "e.g. Isn't it easier together?"
+            et: 'näit. Koos on ju lihtsam!'
         surname:
             en: Surname
             et: Perenimi

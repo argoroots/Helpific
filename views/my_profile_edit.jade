@@ -13,7 +13,7 @@ block content
             .row
                 .form-group.col-xs-12.col-sm-12
                     label.control-label(for='slogan')= t('pages.profile.slogan')
-                    input#slogan.form-control(type='text', placeholder='', value=profile.get('slogan.value'), data-value=profile.get('slogan.value'), data-id=profile.get('slogan.id'))
+                    input#slogan.form-control(type='text', placeholder=t('pages.profile.slogan-ph'), value=profile.get('slogan.value'), data-value=profile.get('slogan.value'), data-id=profile.get('slogan.id'))
 
                 .form-group.col-xs-12.col-sm-3
                     label.control-label(for='forename')= t('pages.profile.forename')
