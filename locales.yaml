@@ -20,13 +20,14 @@ footer:
             <strong>HELPIFIC MTÜ</strong><br> <small>
                 Reg nr: 80380146<br>
                 Account: EE102200221061303677<br>
-                SWIFT/BIC: HABAEE2X<br>
-                SWEDBANK AS
+                SWIFT/BIC: HABAEE2X (SWEDBANK AS)<br>
+                <a href="mailto:support@helpific.com">support@helpific.com</a>
             </small>
         et: |
             <strong>HELPIFIC MTÜ</strong><br> <small>
                 Reg nr: 80380146<br>
-                Konto: EE102200221061303677
+                Konto: EE102200221061303677<br>
+                <a href="mailto:support@helpific.com">support@helpific.com</a>
             </small>
 locales:
     en:
