@@ -13,7 +13,7 @@ exports.configure = function(config) {
     if(!config) config = {}
 
     i18n_config.file = config.file || path.join(__dirname, 'locales.yaml')
-    i18n_config.locales = config.locales || ['en', 'en']
+    i18n_config.locales = config.locales || ['en']
     i18n_config.redirectWrongLocale = config.redirectWrongLocale || true
     i18n_config.defaultLocale = config.defaultLocale || 'en'
     i18n_config.updateFile = config.updateFile || false
