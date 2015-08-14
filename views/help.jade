@@ -3,6 +3,9 @@ extends layout
 block vars
     - title = t('pages.help.' + help_type + '-title')
 
+block head
+    script(src='/javascripts/date-et-EE.js')
+
 block content
     .container
         if show_add
@@ -52,7 +55,7 @@ block content
         $('#time').change(function() {
             var d = Date.parse($(this).val())
             if(d) {
-                $(this).val(d.toString('yyyy-MM-dd HH:mm').replace(' 00:00', ''))
+                $(this).val(d.toString('dd.MM.yyyy HH:mm').replace(' 00:00', ''))
             } else {
                 $(this).val('')
             }

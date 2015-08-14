@@ -57,6 +57,13 @@ router.post('/:type', function(req, res, next) {
     var properties = req.body
     properties.person = req.signedCookies.auth_id
 
+    var time_date = properties.time.split(' ')[0].split('.')
+    var time_time = properties.time.split(' ')[1]
+    properties.time = time_date[2] + '-' + time_date[1] + '-' + time_date[0]
+    if(time_time) properties.time = properties.time + ' ' + time_time
+
+    debug(properties.time)
+
     entu.add(help_group, 'request', properties, null, null, function(error, new_id) {
         if(error) return next(error)
 

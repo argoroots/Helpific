@@ -110,8 +110,8 @@ pages:
             en: Date/time
             et: Kuupäev/kellaaeg
         time-ph:
-            en: 'e.g. 2015-08-04 02:59'
-            et: 'näit. 2015-08-04 02:59'
+            en: 'e.g. 04.08.2015 02:59'
+            et: 'näit. 04.08.2015 02:59'
     index:
         bullet-1:
             en: Sign in via Facebook or Google
