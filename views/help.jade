@@ -33,7 +33,7 @@ block content
         .row.spacer
 
         .table
-            each r, i in requests.sort(function(obj1, obj2) { return obj1.get('time.value', '') > obj2.get('time.value', '') })
+            each r, i in requests
                 .row
                     a(href='users/' + r.get('person.reference', ''))
                         img.col-xs-3.col-sm-2.col-md-1.img-circle(src=APP_ENTU_URL + '/entity-' + r.get('person.reference') + '/picture', alt=r.get('person.value'))

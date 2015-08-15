@@ -26,6 +26,11 @@ router.get('/:type', function(req, res, next) {
     entu.get_entities(help_group, 'request', null, null, function(error, requests) {
         if(error) return next(error)
 
+        requests.sort(function(obj1, obj2) {
+            return (obj1.get('time.value', '') > obj2.get('time.value', '')) ? 1 : -1
+            return 0
+        })
+
         res.render('help', {
             requests: requests,
             show_add: (req.signedCookies.auth_id && req.signedCookies.auth_token),
