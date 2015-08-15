@@ -11,7 +11,7 @@ color-helpific-green = rgb(87, 147, 144)
 color-helpific-yellow = rgb(252, 185, 76)
 
 color-white = #ffffff
-color-white-transparent = rgba(255, 255, 255, 0.95)
+color-white-transparent = rgba(255, 255, 255, 0.97)
 
 color-gray = #ababab
 color-gray-dark = #585858
@@ -79,11 +79,6 @@ body
         .dropdown
             font-size 20px
 
-            &:hover
-                .dropdown-menu
-                    display block
-                    margin-top 0 // remove the gap so it doesn't close
-
         .dropdown-menu
             margin-top -30px !important
             margin-right 10px !important
@@ -105,12 +100,33 @@ body
 .navbar-border
     border-bottom 1px solid color-gray-light
 
-@media (max-width: 768px)
+@media (max-width: 991px)
+    .navbar-header
+        float none
+
+    .navbar-text
+        float none
+        margin 15px 0
+
+    .navbar-toggle
+        display block
+
+    .navbar-collapse.collapse
+        display none !important
+
+    .navbar-collapse.collapse.in
+        display block !important
+
     .navbar
         min-height header-height-xs
 
         .navbar-nav
+            float none !important
+            margin 7.5px -15px
+
             li
+                float none
+
                 a
                     line-height 20px
                     padding-top 10px
@@ -119,11 +135,16 @@ body
                     text-align center
 
             .dropdown-menu
+                position static
+                float none
                 margin-top 0px !important
                 margin-right 0px !important
                 background none
                 border none !important
                 border-top 1px solid color-gray-light !important
+
+    .collapsing
+        overflow hidden !important
 
 
 
@@ -262,7 +283,8 @@ h1
 
 
 h2
-    margin-bottom 30px
+    margin-top 40px
+    margin-bottom 10px
     color color-helpific-green
     font-size 32px
     font-weight normal
