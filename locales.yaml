@@ -17,14 +17,16 @@ feedback:
 footer:
     contact:
         en: |
-            <strong>HELPIFIC MTÜ</strong><br> <small>
+            <strong>HELPIFIC MTÜ</strong><br>
+            <small>
                 Reg nr: 80380146<br>
                 Account: EE102200221061303677<br>
                 SWIFT/BIC: HABAEE2X (SWEDBANK AS)<br>
                 <a href="mailto:support@helpific.com">support@helpific.com</a>
             </small>
         et: |
-            <strong>HELPIFIC MTÜ</strong><br> <small>
+            <strong>HELPIFIC MTÜ</strong><br>
+            <small>
                 Reg nr: 80380146<br>
                 Konto: EE102200221061303677<br>
                 <a href="mailto:support@helpific.com">support@helpific.com</a>
@@ -144,18 +146,14 @@ pages:
             en: "Isn't it easier together?"
             et: 'Koos on ju lihtsam!'
         text:
-            en: >
-                ## It's never been easier to give and get help
-
-                Helpific connects volunteers to those who need help with everyday
-                activities. At the moment we have 99 help requests fulfilled and
-                1044 active voluteers.
-            et: >
-                ## Veel kunagi pole abi andmine ja saamine olnud lihtsam
-
-                Helpific ühendab vabatahtlikke abivajajatega.
-                Praeguseks on meil 99 täidetud abisoovi
-                ja 1044 aktiivset vabatahtlikku.
+            en: |
+                <h2>It's never been easier to give and get help</h2>
+                <p>Helpific connects volunteers to those who need help with everyday activities.</p>
+                <p>At the moment we have 99 help requests fulfilled and 1044 active voluteers.</p>
+            et: |
+                <h2>Veel kunagi pole abi andmine ja saamine olnud lihtsam</h2>
+                <p>Helpific ühendab vabatahtlikke abivajajatega.</p>
+                <p>Praeguseks on meil 99 täidetud abisoovi ja 1044 aktiivset vabatahtlikku.</p>
     partners:
         title:
             en: Partners

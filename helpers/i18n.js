@@ -2,7 +2,6 @@ var fs    = require('fs')
 var path  = require('path')
 var yaml  = require('js-yaml')
 var op    = require('object-path')
-var md    = require('marked')
 var debug = require('debug')
 
 i18n_config = {}
@@ -42,7 +41,6 @@ exports.init = function(req, res, next) {
     res.locals.lang = i18n_config.lang
     res.locals.locales = i18n_config.locales
     res.locals.t = translate
-    res.locals.md = md
 
     next()
 }
