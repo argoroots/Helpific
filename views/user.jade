@@ -12,6 +12,9 @@ block title
                 .row
                     h1.col-xs-12.text-center= title
                     p.text-center
+                        small
+                            a(href='mailto:' + profile.get('email.value'))= profile.get('email.value')
+                    p.text-center
                         em= profile.get('slogan.value')
 
 
