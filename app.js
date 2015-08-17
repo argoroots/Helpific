@@ -13,7 +13,6 @@ var favicon = require('serve-favicon')
 var cookie  = require('cookie-parser')
 var random  = require('randomstring')
 var bparser = require('body-parser')
-var force_d = require('forcedomain')
 var i18n    = require('./helpers/i18n')
 var debug   = require('debug')('app:' + path.basename(__filename).replace('.js', ''))
 
@@ -21,8 +20,8 @@ var debug   = require('debug')('app:' + path.basename(__filename).replace('.js',
 
 // global variables (and list of all used environment variables)
 APP_DEBUG     = process.env.DEBUG
-APP_PORT      = process.env.PORT || 3000
-APP_PORT_SSL  = process.env.PORT_SSL || 3001
+APP_PORT      = process.env.PORT
+APP_PORT_SSL  = process.env.PORT_SSL
 APP_LOG_DIR   = process.env.LOGDIR || path.join(__dirname, 'log')
 APP_COOKIE_SECRET = process.env.COOKIE_SECRET || random.generate(16)
 APP_ENTU_URL  = process.env.ENTU_URL || 'https://helpific.entu.ee/api2'
@@ -94,12 +93,6 @@ var app = express()
     .set('views', path.join(__dirname, 'views'))
     .set('view engine', 'jade')
 
-    // redirect to correct domain and protocol
-    // .use(force_d({
-    //     hostname: 'helpific.com',
-    //     protocol: 'https'
-    // }))
-
     // HSTS (for ssl)
     .use(helmet.hsts({
         maxAge: 1000 * 60 *60 *24 * 365,
@@ -168,11 +161,12 @@ var app = express()
 
 
 
-// start servers
-http.createServer(app).listen(APP_PORT)
-https.createServer(ssl_options, app).listen(APP_PORT_SSL)
-
-
-
-debug('HTTP started at port %s', APP_PORT)
-debug('HTTPS started at port %s', APP_PORT_SSL)
+// start servers if ports are set
+if(APP_PORT) {
+    http.createServer(app).listen(APP_PORT)
+    debug('HTTP started at port %s', APP_PORT)
+}
+if(APP_PORT_SSL) {
+    https.createServer(ssl_options, app).listen(APP_PORT_SSL)
+    debug('HTTPS started at port %s', APP_PORT_SSL)
+}

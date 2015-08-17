@@ -27,7 +27,6 @@
         "debug": "2.x",
         "express": "4.x",
         "file-stream-rotator": "0.x",
-        "forcedomain": "0.4.x",
         "fs": "0.x",
         "helmet": "0.10.x",
         "jade": "1.x",
