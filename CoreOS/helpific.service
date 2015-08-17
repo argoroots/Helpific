@@ -1,5 +1,6 @@
 [Unit]
-Description=Helpific service %i
+Description=Helpific service on port %i
+
 After=etcd.service
 After=docker.service
 
@@ -14,22 +15,21 @@ ExecStartPre=-/usr/bin/docker rm helpific
 ExecStartPre=/usr/bin/docker pull argoroots/helpific
 ExecStart=/usr/bin/docker run \
           --name="helpific" \
-          --env="PORT=4000" \
-          --env="PORT_SSL=4001" \
+          --env="PORT_SSL=%i" \
+          --env="COOKIE_SECRET=" \
           --env="NEW_RELIC_APP_NAME=helpific" \
-          --env="NEW_RELIC_LICENSE_KEY=79a51e5a5ae4ff518a25598a677bdbf34f529f1e" \
+          --env="NEW_RELIC_LICENSE_KEY=" \
           --env="NEW_RELIC_LOG=stdout" \
           --env="NEW_RELIC_LOG_LEVEL=error" \
           --env="NEW_RELIC_NO_CONFIG_FILE=true" \
-          --env="ENTU_USER=647" \
-          --env="ENTU_KEY=qc6prEZH76PC6a5rpqGu7LnxLHXS8QpK" \
-          --volume="/data/helpific/log:/usr/src/helpific/log" \
-          --volume="/data/helpific/ssl:/usr/src/helpific/ssl" \
-          --publish="80:4000" \
-          --publish="443:4001" \
+          --env="ENTU_USER=" \
+          --env="ENTU_KEY=" \
+          --volume="/data/log/helpific:/usr/src/helpific/log" \
+          --volume="/data/ssl/helpific:/usr/src/helpific/ssl" \
+          --publish="${COREOS_PRIVATE_IPV4}:%i:%i" \
           argoroots/helpific
 ExecStop=/usr/bin/docker stop helpific
 
 [X-Fleet]
 Conflicts=helpific*
-MachineMetadata=public_ip=188.166.120.37
+MachineMetadata=app=true
