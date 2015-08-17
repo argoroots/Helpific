@@ -95,10 +95,10 @@ var app = express()
     .set('view engine', 'jade')
 
     // redirect to correct domain and protocol
-    .use(force_d({
-        hostname: 'helpific.com',
-        protocol: 'https'
-    }))
+    // .use(force_d({
+    //     hostname: 'helpific.com',
+    //     protocol: 'https'
+    // }))
 
     // HSTS (for ssl)
     .use(helmet.hsts({
