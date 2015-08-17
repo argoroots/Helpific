@@ -89,6 +89,9 @@ i18n.configure({
 
 
 var app = express()
+    // get correct client IP behind nginx
+    .set('trust proxy', true)
+
     // jade view engine
     .set('views', path.join(__dirname, 'views'))
     .set('view engine', 'jade')
