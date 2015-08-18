@@ -2,18 +2,23 @@ feedback:
     email:
         en: E-mail
         et: E-post
+        ru: feedback.email
     message:
         en: Message
         et: Teade
+        ru: feedback.message
     send:
         en: Send
         et: Saada
+        ru: feedback.send
     thanks:
         en: 'Thank you!'
         et: 'Täname!'
+        ru: feedback.thanks
     title:
         en: Send feedback
         et: Saada tagasiside
+        ru: feedback.title
 footer:
     contact:
         en: |
@@ -29,123 +34,165 @@ footer:
                 Konto: EE102200221061303677<br>
                 <a href="mailto:support@helpific.com">support@helpific.com</a>
             </small>
+        ru: footer.contact
 locales:
     en:
         en: English
         et: English
+        ru: English
     et:
         en: Eesti keel
         et: Eesti keel
+        ru: Eesti keel
+    ru:
+        en: Русский
+        et: Русский
+        ru: Русский
 nav:
     bb:
         en: Beyond Borders
         et: Piirideta Elu
+        ru: Жизнь Без Границ
     me:
         en: Me
         et: Mina
+        ru: nav.me
     offers:
         en: Offers
         et: Abipakkumised
+        ru: nav.offers
     partners:
         en: Partners
         et: Partnerid
+        ru: nav.partners
     requests:
         en: Requests
         et: Abisoovid
+        ru: nav.requests
     sign-in:
         en: Sign in
         et: Sisene
+        ru: nav.sign-in
     sign-out:
         en: Sign out
         et: Välju
+        ru: nav.sign-out
     team:
         en: Team
         et: Meeskond
+        ru: nav.team
     terms:
         en: Terms of Use
         et: Tingimused
+        ru: nav.terms
     toggle-navigation:
         en: Toggle navigation
         et: Ava menüü
+        ru: nav.toggle-navigation
     users:
         en: Users
         et: Kasutajad
+        ru: nav.users
 pages:
     error:
         title:
             en: Error
             et: Viga
+            ru: pages.error.title
     help:
         add-new-offer:
             en: Add new help offer
             et: Lisa uus abipakkumine
+            ru: pages.help.add-new-offer
         add-new-request:
             en: Add new help request
             et: Lisa uus abisoov
+            ru: pages.help.add-new-request
         location:
             en: Location
             et: Asukoht
+            ru: pages.help.location
         location-ph:
             en: 'e.g. Tallinn, Harjumaa'
             et: 'näit. Tallinn, Harjumaa'
+            ru: pages.help.location-ph
         offer-request:
             en: Offer
             et: Pakkumine
+            ru: pages.help.offer-request
         offer-request-ph:
             en: e.g. Will go to Nuustaku and got extra room
             et: näit. Lähen Nuustakule ja on üks vaba koht
+            ru: pages.help.offer-request-ph
         offer-title:
             en: Help offers
             et: Abipakkumised
+            ru: pages.help.offer-title
         request-request:
             en: Request
             et: Soov
+            ru: pages.help.request-request
         request-request-ph:
             en: "e.g. I'll want to go to Nuustaku"
             et: näit. Soovin minna Nuustakule
+            ru: pages.help.request-request-ph
         request-title:
             en: Help requests
             et: Abisoovid
+            ru: pages.help.request-title
         save:
             en: Save
             et: Salvesta
+            ru: pages.help.save
         time:
             en: Date/time
             et: Kuupäev/kellaaeg
+            ru: pages.help.time
         time-ph:
             en: 'e.g. 04.08.2015 02:59'
             et: 'näit. 04.08.2015 02:59'
+            ru: pages.help.time-ph
     index:
         bullet-1:
             en: Sign in via Facebook or Google
             et: "Sisene Facebooki või Google'i kaudu"
+            ru: pages.index.bullet-1
         bullet-2:
             en: Let us know what you can do or need
             et: Anna teada kuidas saad aidata või mida vajad
+            ru: pages.index.bullet-2
         bullet-3:
             en: Make your needs and deeds work
             et: pages.index.bullet-3
+            ru: pages.index.bullet-3
         choose-way:
             en: Choose your way
             et: Vali oma tee
+            ru: pages.index.choose-way
         how-it-works:
             en: How Helpific works?
             et: Kuidas Helpific töötab?
+            ru: pages.index.how-it-works
         offers-link:
             en: Meet the volunteers
             et: Kohtu vabatahtlikega
+            ru: pages.index.offers-link
         offers-link-alt:
             en: Left door
             et: Vasak uks
+            ru: pages.index.offers-link-alt
         requests-link:
             en: Help those in need
             et: Aita abivajajaid
+            ru: pages.index.requests-link
         requests-link-alt:
             en: Right door
             et: Parem uks
+            ru: pages.index.requests-link-alt
         slogan:
             en: "Isn't it easier together?"
             et: 'Koos on ju lihtsam!'
+            ru: pages.index.slogan
         text:
             en: >
                 <h2>It's never been easier to give and get help</h2> <p>Helpific
@@ -157,128 +204,168 @@ pages:
                 <p>Helpific ühendab vabatahtlikke abivajajatega.</p>
                 <p>Praeguseks on meil 99 täidetud abisoovi ja 1044 aktiivset
                 vabatahtlikku.</p>
+            ru: pages.index.text
     partners:
         title:
             en: Partners
             et: Partnerid
+            ru: pages.partners.title
     profile:
         about-me-tab:
             en: About me
             et: Minust
+            ru: pages.profile.about-me-tab
         about-me-text:
             en: Write something about you
             et: Kirjuta midagi endast
+            ru: pages.profile.about-me-text
         about-me-video:
             en: Video URL
             et: Video viide
+            ru: pages.profile.about-me-video
         address:
             en: Address
             et: Aaddress
+            ru: pages.profile.address
         address-ph:
             en: e.g. 767 5th Avenue
             et: e.g. Tartu mnt. 1
+            ru: pages.profile.address-ph
         city:
             en: City
             et: Linn
+            ru: pages.profile.city
         city-ph:
             en: e.g. New York
             et: näit. Tallinn
+            ru: pages.profile.city-ph
         country:
             en: Country
             et: Riik
+            ru: pages.profile.country
         country-ph:
             en: e.g. United States
             et: näit. Eesti
+            ru: pages.profile.country-ph
         county:
             en: County
             et: Maakond
+            ru: pages.profile.county
         county-ph:
             en: e.g NY
             et: näit. Harjumaa
+            ru: pages.profile.county-ph
         email:
             en: E-mail
             et: E-post
+            ru: pages.profile.email
         email-ph:
             en: e.g. john@appleseed.com
             et: näit. juhan@õunaseeme.ee
+            ru: pages.profile.email-ph
         forename:
             en: Forename
             et: Eesnimi
+            ru: pages.profile.forename
         forename-ph:
             en: e.g. John
             et: näit. Juhan
+            ru: pages.profile.forename-ph
         markdown-info:
             en: 'use <a href="https://en.wikipedia.org/wiki/Markdown#Example" target="_blank">markdown</a> for styling your text'
             et: 'teksti kujundamiseks kasuta <a href="https://en.wikipedia.org/wiki/Markdown#Example" target="_blank">markdowni</a>'
+            ru: pages.profile.markdown-info
         me-help-you-tab:
             en: I can help others
             et: Aitan sind
+            ru: pages.profile.me-help-you-tab
         me-help-you-text:
             en: How you can help others?
             et: Kuidas sa saad teisi aidata?
+            ru: pages.profile.me-help-you-text
         me-help-you-video:
             en: Video URL
             et: Video viide
+            ru: pages.profile.me-help-you-video
         slogan:
             en: Slogan
             et: Slõugan
+            ru: pages.profile.slogan
         slogan-ph:
             en: "e.g. Isn't it easier together?"
             et: 'näit. Koos on ju lihtsam!'
+            ru: pages.profile.slogan-ph
         surname:
             en: Surname
             et: Perenimi
+            ru: pages.profile.surname
         surname-ph:
             en: e.g. Appleseed
             et: näit. Õunaseeme
+            ru: pages.profile.surname-ph
         title:
             en: My profile
             et: Minu profiil
+            ru: pages.profile.title
         video-info:
             en: 'we support only <a href="https://youtube.com" target="_blank">YouTube</a>, <a href="https://vimeo.com" target="_blank">Vimeo</a> and <a href="https://wistia.com" target="_blank">Wistia</a> urls'
             et: 'toetatud on ainult <a href="https://youtube.com" target="_blank">YouTube</a>, <a href="https://vimeo.com" target="_blank">Vimeo</a> ja <a href="https://wistia.com" target="_blank">Wistia</a> viited'
+            ru: pages.profile.video-info
         video-ph:
             en: 'näit. https://www.youtube.com/watch?v=QH2-TGUlwu4'
             et: 'e. g. https://www.youtube.com/watch?v=QH2-TGUlwu4'
+            ru: pages.profile.video-ph
         you-help-me-tab:
             en: I need help
             et: Vajan abi
+            ru: pages.profile.you-help-me-tab
         you-help-me-text:
             en: What kind of help you need?
             et: Millist abi sa vajad?
+            ru: pages.profile.you-help-me-text
         you-help-me-video:
             en: Video URL
             et: Video viide
+            ru: pages.profile.you-help-me-video
     sign-in:
         terms:
             en: '* if you sign in, you accept our <a href="terms">terms of use and privacy policy</a>'
             et: '* sisenedes nõustud meie <a href="terms">kasutaja- ja privaatsustingimustega</a>'
+            ru: pages.sign-in.terms
         text:
             en: Please use your preferred identity provider to sign in...
             et: Sisenemiseks kasuta meelepärast identiteedipakkujat...
+            ru: pages.sign-in.text
         title:
             en: Sign in
             et: Sisene
+            ru: pages.sign-in.title
     team:
         title:
             en: Our Team
             et: Meie meeskond
+            ru: pages.team.title
     user:
         about-me-tab:
             en: About me
             et: Minust
+            ru: pages.user.about-me-tab
         donate:
             en: Donate
             et: Anneta
+            ru: pages.user.donate
         donate-info:
-            en: For donation transfer money to Helpific MTÜ account. Transfer description must be "%s"
-            et: Annetus kanna Helpific MTÜ kontole. Makse selgitusse märgi kindlasti "%s"
+            en: 'For donation transfer money to Helpific MTÜ account. Transfer description must be "%s"'
+            et: 'Annetus kanna Helpific MTÜ kontole. Makse selgitusse märgi kindlasti "%s"'
+            ru: pages.user.donate-info
         me-help-you-tab:
             en: I can help others
             et: Aitan sind
+            ru: pages.user.me-help-you-tab
         you-help-me-tab:
             en: I need help
             et: Vajan abi
+            ru: pages.user.you-help-me-tab
     users:
         title:
             en: Users

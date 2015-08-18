@@ -79,7 +79,7 @@ var ssl_options = {
 
 // Configure i18n
 i18n.configure({
-    locales: ['en', 'et'],
+    locales: ['en', 'et', 'ru'],
     defaultLocale: 'en',
     redirectWrongLocale: true,
     file: path.join(__dirname, 'locales.yaml'),
