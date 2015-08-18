@@ -37,6 +37,9 @@ locales:
         en: Eesti keel
         et: Eesti keel
 nav:
+    bb:
+        en: Beyond Borders
+        et: Piirideta Elu
     me:
         en: Me
         et: Mina

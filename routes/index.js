@@ -54,6 +54,13 @@ router.get('/terms', function(req, res, next) {
 
 
 
+// GET bb page
+router.get('/bb', function(req, res, next) {
+    res.render('bb.' + res.locals.lang + '.jade')
+})
+
+
+
 // Send feedback
 router.post('/feedback', function(req, res, next) {
     var properties = req.body
