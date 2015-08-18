@@ -58,6 +58,7 @@ function translate(key, text) {
             debug('i18n:translate')('Locales file saved to ' + i18n_config.file)
         })
     }
+    if(value === key) value = op.get(i18n_config, 'translations.' + key + '.' + i18n_config.defaultLocale, key)
     if(text && value) value = value.replace('%s', text)
     return value || key
 }
