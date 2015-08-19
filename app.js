@@ -120,7 +120,12 @@ var app = express()
     // logging
     .use(logger(':date[iso] | HTTP/:http-version | :method | :status | :url | :res[content-length] b | :response-time ms | :remote-addr | :referrer | :user-agent', {stream: access_log_stream}))
 
-    //Initiate i18n
+    // redirects
+    .use('/piiridetaelu', function(req, res, next) {
+        res.redirect('/et/bb')
+    })
+
+    // initiate i18n
     app.use(i18n.init)
 
     // set defaults for views
