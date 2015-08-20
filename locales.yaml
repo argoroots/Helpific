@@ -32,7 +32,7 @@ footer:
             <strong>HELPIFIC MTÜ</strong><br> <small>
                 Reg nr: 80380146<br>
                 Konto: EE102200221061303677<br>
-                <a href="mailto:support@helpific.com">support@helpific.com</a>
+                <a href="mailto:tugi@helpific.com">tugi@helpific.com</a>
             </small>
         ru: footer.contact
 locales:
@@ -175,7 +175,7 @@ pages:
             ru: pages.index.how-it-works
         offers-link:
             en: Meet the volunteers
-            et: Kohtu vabatahtlikega
+            et: Kohtu vabatahtlike abistajatega
             ru: pages.index.offers-link
         offers-link-alt:
             en: Left door
@@ -200,10 +200,9 @@ pages:
                 activities.</p> <p>At the moment we have 99 help requests
                 fulfilled and 1044 active voluteers.</p>
             et: >
-                <h2>Veel kunagi pole abi andmine ja saamine olnud lihtsam</h2>
-                <p>Helpific ühendab vabatahtlikke abivajajatega.</p>
-                <p>Praeguseks on meil 99 täidetud abisoovi ja 1044 aktiivset
-                vabatahtlikku.</p>
+                <h2>Kunagi varem pole abi osutamine ja saamine olnud nii lihtne!</h2>
+                <p>Helpific ühendab vabatahtlikud abistajad erivajadustega abivajajatega.</p>
+                <p>Hetkel on meil 99 täidetud abisoovi ja 1044 aktiivset vabatahtlikku abistajat.</p>
             ru: pages.index.text
     partners:
         title:
