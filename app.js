@@ -45,38 +45,6 @@ var access_log_stream = rotator.getStream({
 
 
 
-// ssl conf
-var ssl_options = {
-    key: fs.readFileSync(__dirname + '/ssl/helpific_com.key', 'utf8'),
-    cert: fs.readFileSync(__dirname + '/ssl/helpific_com.crt', 'utf8'),
-    ca: [
-        // fs.readFileSync(__dirname + '/ssl/AddTrustExternalCARoot.crt', 'utf8'),
-        fs.readFileSync(__dirname + '/ssl/COMODORSAAddTrustCA.crt', 'utf8'),
-        fs.readFileSync(__dirname + '/ssl/COMODORSADomainValidationSecureServerCA.crt', 'utf8')
-    ],
-    ciphers: [
-        'ECDHE-RSA-AES256-SHA384',
-        'DHE-RSA-AES256-SHA384',
-        'ECDHE-RSA-AES256-SHA256',
-        'DHE-RSA-AES256-SHA256',
-        'ECDHE-RSA-AES128-SHA256',
-        'DHE-RSA-AES128-SHA256',
-        'HIGH',
-        '!aNULL',
-        '!eNULL',
-        '!EXPORT',
-        '!DES',
-        '!RC4',
-        '!MD5',
-        '!PSK',
-        '!SRP',
-        '!CAMELLIA'
-    ].join(':'),
-    honorCipherOrder: true
-}
-
-
-
 // Configure i18n
 i18n.configure({
     locales: ['en', 'et', 'ru'],
@@ -175,6 +143,34 @@ if(APP_PORT) {
     debug('HTTP started at port %s', APP_PORT)
 }
 if(APP_PORT_SSL) {
+    var ssl_options = {
+        key: fs.readFileSync(__dirname + '/ssl/helpific_com.key', 'utf8'),
+        cert: fs.readFileSync(__dirname + '/ssl/helpific_com.crt', 'utf8'),
+        ca: [
+            // fs.readFileSync(__dirname + '/ssl/AddTrustExternalCARoot.crt', 'utf8'),
+            fs.readFileSync(__dirname + '/ssl/COMODORSAAddTrustCA.crt', 'utf8'),
+            fs.readFileSync(__dirname + '/ssl/COMODORSADomainValidationSecureServerCA.crt', 'utf8')
+        ],
+        ciphers: [
+            'ECDHE-RSA-AES256-SHA384',
+            'DHE-RSA-AES256-SHA384',
+            'ECDHE-RSA-AES256-SHA256',
+            'DHE-RSA-AES256-SHA256',
+            'ECDHE-RSA-AES128-SHA256',
+            'DHE-RSA-AES128-SHA256',
+            'HIGH',
+            '!aNULL',
+            '!eNULL',
+            '!EXPORT',
+            '!DES',
+            '!RC4',
+            '!MD5',
+            '!PSK',
+            '!SRP',
+            '!CAMELLIA'
+        ].join(':'),
+        honorCipherOrder: true
+    }
     https.createServer(ssl_options, app).listen(APP_PORT_SSL)
     debug('HTTPS started at port %s', APP_PORT_SSL)
 }
