@@ -14,7 +14,7 @@
         "url": "https://github.com/argoroots/helpific/issues"
     },
     "scripts": {
-        "start": "node ./app.js"
+        "start": "node ./master.js"
     },
     "engines": {
         "node": "0.x"
