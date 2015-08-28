@@ -1,10 +1,11 @@
-var cluster = require('cluster')
+var path     = require('path')
+var cluster  = require('cluster')
 var cpuCount = require('os').cpus().length
 
 
 
 cluster.setupMaster({
-    exec: 'app.js',
+    exec: path.join(__dirname, 'app.js'),
 })
 
 // Create a worker for each CPU
