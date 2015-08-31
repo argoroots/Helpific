@@ -64,7 +64,7 @@ router.get('/bb', function(req, res, next) {
 // Send feedback
 router.post('/feedback', function(req, res, next) {
     var properties = req.body
-    if(req.signedCookies.auth_id) properties.person = req.signedCookies.auth_id
+    if(req.signedCookies.auth_id) properties['from-person'] = req.signedCookies.auth_id
 
     entu.add(APP_ENTU_USER, 'message', properties, null, null, function(error, new_id) {
         if(error) return next(error)

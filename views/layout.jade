@@ -157,7 +157,7 @@ html
                     $('#feedback-form').addClass('hidden')
                     $('#feedback-ok').removeClass('hidden')
                     var postdata = {
-                        email: $('#feedback-email').val(),
+                        'from-email': $('#feedback-email').val(),
                         message: $('#feedback-message').val()
                     }
                     $.post('feedback', postdata, function(data) {
