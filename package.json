@@ -10,14 +10,13 @@
         "url": "https://github.com/argoroots/helpific.git"
     },
     "bugs": {
-        "email": "argo@roots.ee",
         "url": "https://github.com/argoroots/helpific/issues"
     },
     "scripts": {
         "start": "node ./master.js"
     },
     "engines": {
-        "node": "0.x"
+        "node": "0.12.x"
     },
     "dependencies": {
         "async": "1.x",
