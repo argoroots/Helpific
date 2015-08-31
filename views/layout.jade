@@ -160,7 +160,7 @@ html
                         email: $('#feedback-email').val(),
                         message: $('#feedback-message').val()
                     }
-                    $.post('/feedback', postdata, function(data) {
+                    $.post('feedback', postdata, function(data) {
                         console.log(data)
                     }).fail(console.log)
                     setTimeout(function() {
