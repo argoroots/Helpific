@@ -381,7 +381,7 @@ pages:
             ru: pages.user.me-help-you-tab
         send-message:
             en: Send message
-            et: Saada teade
+            et: Saada sõnum
             ru: pages.user.send-message
         you-help-me-tab:
             en: I need help
