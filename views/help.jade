@@ -42,7 +42,7 @@ block content
                         div= r.get('time.value', '').replace(' 00:00', '')
                         em= r.get('location.value')
                     .col.col-xs-8.col-sm-6.col-md-7= r.get('request.value')
-                    a.col.col-xs-1(href='messages/' + r.get('person.reference', ''))= t('pages.help.reply')
+                    a.col.col-xs-1(href='messages/' + r.get('person.reference', '') + '#message')= t('pages.help.reply')
 
         .row.spacer
 

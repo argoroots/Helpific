@@ -1,0 +1,77 @@
+extends layout
+
+block vars
+
+block title
+    #title
+        .container
+            .row
+                a(href='users/' + profile.get('_id'))
+                    img.col-xs-4.col-md-2.col-xs-offset-4.col-md-offset-5.img-circle(src=profile.get('_picture'), alt=profile.get('forename.value'))
+
+            .row
+                h1.col-xs-12.text-center
+                    | #{profile.get('forename.value')} #{profile.get('surname.value')}
+                p.text-center
+                    em= profile.get('slogan.value')
+
+block content
+    .container
+        .table
+            each r, i in messages
+                .row
+                    if r.get('from-person.reference', '') === profile.get('_id')
+                        a(href='users/' + r.get('from-person.reference', ''))
+                            img.col-xs-2.col-md-1.img-circle(src=APP_ENTU_URL + '/entity-' + r.get('from-person.reference') + '/picture', alt=r.get('from-person.value'))
+                        .col-xs-8.col-md-10
+                            em= r.get('entu-created-at.value', '')
+                            br
+                            | #{r.get('message.value')}
+                    else
+                        .col-xs-8.col-md-9.col-xs-offset-2.col-md-offset-2
+                            em= r.get('entu-created-at.value', '')
+                            br
+                            | #{r.get('message.value')}
+                        a(href='users/' + r.get('from-person.reference', ''))
+                            img.col-xs-2.col-md-1.img-circle(src=APP_ENTU_URL + '/entity-' + r.get('from-person.reference') + '/picture', alt=r.get('from-person.value'))
+
+        .row.spacer
+
+        form#message-form
+            .row
+                .form-group.col-xs-12
+                    label.control-label(for='message')= t('pages.messages.new-message')
+                    textarea#message.form-control(rows=5)
+                a#message-send.btn.btn-lg.bg-yellow.col-xs-12.col-sm-6.col-md-offset-3.text-center(href='javascript:void(0)')= t('pages.messages.send')
+                .col-xs-12.text-center
+                    i#message-spinner.hidden.fa.fa-cog.fa-spin.fa-2x
+
+        .row.spacer
+
+    script.
+        $('textarea').focus(function() {
+            $("label[for='" + this.id + "']").addClass('labelfocus')
+        }).blur(function() {
+            $('label').removeClass('labelfocus')
+        })
+
+        $('#message-send').click(function() {
+            if($('#message').val()) {
+                $('#message-send').addClass('hidden')
+                $('#message-spinner').removeClass('hidden')
+                var postdata = {
+                    'message': $('#message').val()
+                }
+                $.post('', postdata, function(data) {
+                    setTimeout(function() {
+                        location.reload(true)
+                    }, 1500)
+                }).fail(
+                    setTimeout(function() {
+                        location.reload(true)
+                    }, 1500)
+                )
+            } else {
+                $('#message').focus()
+            }
+        })

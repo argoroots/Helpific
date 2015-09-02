@@ -204,10 +204,24 @@ pages:
                 activities.</p> <p>At the moment we have 99 help requests
                 fulfilled and 1044 active voluteers.</p>
             et: >
-                <h2>Kunagi varem pole abi osutamine ja saamine olnud nii lihtne!</h2>
-                <p>Helpific ühendab vabatahtlikud abistajad erivajadustega abivajajatega.</p>
-                <p>Hetkel on meil 99 täidetud abisoovi ja 1044 aktiivset vabatahtlikku abistajat.</p>
+                <h2>Kunagi varem pole abi osutamine ja saamine olnud nii
+                lihtne!</h2> <p>Helpific ühendab vabatahtlikud abistajad
+                erivajadustega abivajajatega.</p> <p>Hetkel on meil 99 täidetud
+                abisoovi ja 1044 aktiivset vabatahtlikku abistajat.</p>
             ru: pages.index.text
+    messages:
+        new-message:
+            en: New message
+            et: Uus sõnum
+            ru: pages.messages.message
+        send:
+            en: Send
+            et: Saada
+            ru: pages.messages.send
+        title:
+            en: Messages
+            et: Sõnumid
+            ru: pages.messages.title
     partners:
         title:
             en: Partners
@@ -365,6 +379,10 @@ pages:
             en: I can help others
             et: Aitan sind
             ru: pages.user.me-help-you-tab
+        send-message:
+            en: Send message
+            et: Saada teade
+            ru: pages.user.send-message
         you-help-me-tab:
             en: I need help
             et: Vajan abi
@@ -373,3 +391,4 @@ pages:
         title:
             en: Users
             et: Kasutajad
+            ru: pages.users.title

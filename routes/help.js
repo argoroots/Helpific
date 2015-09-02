@@ -67,8 +67,6 @@ router.post('/:type', function(req, res, next) {
     properties.time = time_date[2] + '-' + time_date[1] + '-' + time_date[0]
     if(time_time) properties.time = properties.time + ' ' + time_time
 
-    debug(properties.time)
-
     entu.add(help_group, 'request', properties, null, null, function(error, new_id) {
         if(error) return next(error)
 

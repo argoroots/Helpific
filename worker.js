@@ -112,6 +112,7 @@ var app = express()
     .use('/:lang',       require('./routes/index'))
     .use('/:lang/users',  require('./routes/users'))
     .use('/:lang/help',   require('./routes/help'))
+    .use('/:lang/messages',   require('./routes/messages'))
     .use('/:lang/signin', require('./routes/signin'))
 
     // 404

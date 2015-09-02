@@ -6,6 +6,7 @@ block title
     #title
         .container
             .row
+                a#message-send.btn.bg-yellow.col-xs-12.col-sm-2.pull-right.text-center(href='messages/' + profile.get('_id') + '#message')= t('pages.user.send-message')
                 img.col-xs-4.col-md-2.col-xs-offset-4.col-md-offset-5.img-circle(src=profile.get('_picture'), alt=profile.get('forename.value'))
 
             if title
