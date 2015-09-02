@@ -11,7 +11,7 @@ block content
         if show_add
             .row
                 .col-xs-12.text-right
-                    a#request-add(href='javascript:void(0)')= t('pages.help.add-new-' + help_type)
+                    a#request-add.btn.bg-red(href='javascript:void(0)')= t('pages.help.add-new-' + help_type)
             form#request-form.hidden
                 .row
                     .form-group.col-xs-12.col-sm-3
@@ -27,7 +27,7 @@ block content
                         input#request.form-control(type='text', placeholder=t('pages.help.' + help_type + '-request-ph'))
                     .form-group.col-xs-12.col-sm-1.text-right
                         label.control-label(for='request') &nbsp;
-                        a#request-save.text-center(href='javascript:void(0)')= t('pages.help.save')
+                        a#request-save.btn.bg-red.text-center(href='javascript:void(0)')= t('pages.help.save')
                         i#request-spinner.hidden.fa.fa-cog.fa-spin.fa-2x
 
         .row.spacer
