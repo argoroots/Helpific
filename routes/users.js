@@ -50,7 +50,7 @@ router.get('/', function(req, res, next) {
 // Show user own profile
 router.get('/me', function(req, res, next) {
     if(!req.signedCookies.auth_id || !req.signedCookies.auth_token) {
-        res.redirect('/signin')
+        res.redirect('/' + res.locals.lang + '/signin')
         next(null)
     }
 
@@ -85,7 +85,7 @@ router.post('/me', function(req, res, next) {
 
 // GET profile
 router.get('/:id', function(req, res, next) {
-    if(!req.params.id) res.redirect('/users')
+    if(!req.params.id) res.redirect('/' + res.locals.lang + '/users')
 
         entu.get_entity(req.params.id, null, null, function(error, profile) {
             if(error) return next(error)
