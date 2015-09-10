@@ -115,14 +115,14 @@ var app = express()
     .use('/:lang/messages',   require('./routes/messages'))
     .use('/:lang/signin', require('./routes/signin'))
 
-    // 404
+    // show 404
     .use(function(req, res, next) {
         var err = new Error('Not Found')
         err.status = 404
         next(err)
     })
 
-    // error
+    // show error
     .use(function(err, req, res, next) {
         var status = parseInt(err.status) || 500
 
