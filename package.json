@@ -7,7 +7,7 @@
     "author": "Argo Roots <argo@roots.ee>",
     "repository": {
         "type": "git",
-        "url": "https://github.com/argoroots/helpific.git"
+        "url": "git+https://github.com/argoroots/helpific.git"
     },
     "bugs": {
         "url": "https://github.com/argoroots/helpific/issues"
@@ -16,7 +16,7 @@
         "start": "node ./master.js"
     },
     "engines": {
-        "node": "0.12.x"
+        "node": "4.0.x"
     },
     "dependencies": {
         "async": "1.x",
