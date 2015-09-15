@@ -13,6 +13,7 @@ var favicon = require('serve-favicon')
 var cookie  = require('cookie-parser')
 var random  = require('randomstring')
 var bparser = require('body-parser')
+var raven   = require('raven')
 var i18n    = require('./helpers/i18n')
 var debug   = require('debug')('app:' + path.basename(__filename).replace('.js', ''))
 
@@ -27,6 +28,7 @@ APP_COOKIE_SECRET = process.env.COOKIE_SECRET || random.generate(16)
 APP_ENTU_URL  = process.env.ENTU_URL || 'https://helpific.entu.ee/api2'
 APP_ENTU_USER = process.env.ENTU_USER
 APP_ENTU_KEY  = process.env.ENTU_KEY
+APP_SENTRY    = process.env.SENTRY_DSN
 
 
 
@@ -64,6 +66,9 @@ var app = express()
     .set('views', path.join(__dirname, 'views'))
     .set('view engine', 'jade')
 
+    // logs to getsentry.com
+    .use(raven.middleware.express(APP_SENTRY))
+
     // HSTS (for ssl)
     .use(helmet.hsts({
         maxAge: 1000 * 60 *60 *24 * 365,
@@ -94,7 +99,7 @@ var app = express()
     })
 
     // initiate i18n
-    app.use(i18n.init)
+    .use(i18n.init)
 
     // set defaults for views
     .use(function(req, res, next) {

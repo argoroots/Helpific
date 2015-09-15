@@ -10,7 +10,7 @@ git pull
 version=`date +"%y%m%d.%H%M%S"`
 
 docker build -q -t helpific:$version ./ && docker tag -f helpific:$version helpific:latest
-docker kill helpific
+docker stop helpific
 docker rm helpific
 docker run -d \
     --name="helpific" \
@@ -25,6 +25,7 @@ docker run -d \
     --env="NEW_RELIC_NO_CONFIG_FILE=true" \
     --env="ENTU_USER=" \
     --env="ENTU_KEY=" \
+    --env="SENTRY_DSN=" \
     --volume="/data/helpific/log:/usr/src/helpific/log" \
     helpific:latest
 
