@@ -35,10 +35,10 @@ block content
         .table
             each r, i in requests
                 .row
-                    a(href='users/' + r.get('person.reference', ''))
+                    a(href='help/' + help_type + '/' + r.get('_id', ''))
                         img.col-xs-3.col-sm-2.col-md-1.img-circle(src=APP_ENTU_URL + '/entity-' + r.get('person.reference') + '/picture', alt=r.get('person.value'))
                     .col.col-xs-9.col-sm-3.col-md-3
-                        a(href='users/' + r.get('person.reference', ''))= r.get('person.value')
+                        a(href='help/' + help_type + '/' + r.get('_id', ''))= r.get('person.value')
                         div= r.get('time.value', '').replace(' 00:00', '')
                         em= r.get('location.value')
                     .col.col-xs-8.col-sm-6.col-md-7= r.get('request.value')

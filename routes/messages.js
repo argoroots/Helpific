@@ -8,7 +8,7 @@ var entu    = require('../helpers/entu')
 
 
 
-// GET requests/offers listing
+// GET listing of messages with user
 router.get('/:id', function(req, res, next) {
     if(!req.signedCookies.auth_id || !req.signedCookies.auth_token) {
         res.redirect('/' + res.locals.lang + '/signin')

@@ -19,7 +19,7 @@ router.get('/:type', function(req, res, next) {
         var help_group = 651
         var help_type = 'offer'
     } else {
-        res.redirect('/help/requests')
+        res.redirect('/' + res.locals.lang + '/help/requests')
         return
     }
 
@@ -36,6 +36,34 @@ router.get('/:type', function(req, res, next) {
             show_add: (req.signedCookies.auth_id && req.signedCookies.auth_token),
             help_type: help_type
         })
+    })
+})
+
+
+
+// GET request/offer
+router.get('/:type/:id', function(req, res, next) {
+    if(req.params.type === 'request' && req.params.type) {
+        var help_type = 'request'
+    } else if(req.params.type === 'offer' && req.params.type) {
+        var help_type = 'offer'
+    } else {
+        res.redirect('/' + res.locals.lang + '/help/requests')
+        return
+    }
+
+    entu.get_entity(req.params.id, null, null, function(error, help) {
+        if(error) return next(error)
+
+        entu.get_entity(help.get('person.reference'), null, null, function(error, profile) {
+            if(error) return next(error)
+
+            res.render('help_offer', {
+                profile: profile,
+                help: help
+            })
+        })
+
     })
 })
 
