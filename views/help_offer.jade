@@ -2,6 +2,11 @@ extends layout
 
 block vars
 
+block head
+    meta(property='og:title', content=profile.get('forename.value') + ' ' + profile.get('surname.value'))
+    meta(property='og:image', content=profile.get('_picture'))
+    meta(property='og:description', content=help.get('request.value'))
+
 block title
     #title
         .container
