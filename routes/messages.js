@@ -3,6 +3,7 @@ var router  = express.Router()
 var path    = require('path')
 var debug   = require('debug')('app:' + path.basename(__filename).replace('.js', ''))
 var request = require('request')
+var async   = require('async')
 
 var entu    = require('../helpers/entu')
 
@@ -58,32 +59,41 @@ router.post('/:id', function(req, res, next) {
     entu.add(APP_ENTU_USER, 'message', properties, null, null, function(error, new_id) {
         if(error) return next(error)
 
-        entu.rights(new_id, req.signedCookies.auth_id, 'owner', null, null, function(error, response) {
+        async.waterfall([
+            function(callback) {
+                entu.rights(new_id, req.signedCookies.auth_id, 'owner', null, null, callback)
+            },
+            function(result, callback) {
+                entu.rights(new_id, req.params.id, 'viewer', null, null, callback)
+            },
+            function(result, callback) {
+                entu.rights(new_id, APP_ENTU_USER, '', null, null, callback)
+            },
+            function(result, callback) {
+                entu.get_entity(req.params.id, null, null, callback)
+            },
+            function(profile, callback) {
+                if(profile.has('email.value')) {
+                    entu.message(to=profile.get('email.value'),
+                        subject=res.locals.t('message.email-subject'),
+                        message=res.locals.t('message.email-message',
+                        req.signedCookies.auth_id),
+                        req.signedCookies.auth_id,
+                        req.signedCookies.auth_token,
+                        callback
+                    )
+                } else {
+                    callback(null)
+                }
+            }
+        ],
+        function(err, results) {
             if(error) return next(error)
 
-            entu.rights(new_id, req.params.id, 'viewer', null, null, function(error, response) {
-                if(error) return next(error)
-
-                entu.rights(new_id, APP_ENTU_USER, '', null, null, function(error, response) {
-                    if(error) return next(error)
-
-                    entu.get_entity(req.params.id, null, null, function(error, profile) {
-                        if(error) return next(error)
-
-                        if(profile.has('email.value')) {
-                            entu.message(to=profile.get('email.value'), subject=res.locals.t('message.email-subject'), message=res.locals.t('message.email-message', req.signedCookies.auth_id), req.signedCookies.auth_id, req.signedCookies.auth_token, function(error, response) {
-                                if(error) return next(error)
-                            })
-                        }
-                    })
-
-                    res.setHeader('Content-Type', 'application/json')
-                    res.status(200)
-                    res.send(new_id)
-                })
-            })
+            res.setHeader('Content-Type', 'application/json')
+            res.status(200)
+            res.send(new_id)
         })
-
     })
 })
 
