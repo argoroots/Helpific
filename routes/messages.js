@@ -67,6 +67,16 @@ router.post('/:id', function(req, res, next) {
                 entu.rights(new_id, APP_ENTU_USER, '', null, null, function(error, response) {
                     if(error) return next(error)
 
+                    entu.get_entity(req.params.id, null, null, function(error, profile) {
+                        if(error) return next(error)
+
+                        if(profile.has('email.value')) {
+                            entu.message(to=profile.get('email.value'), subject=res.locals.t('message.email-subject'), message=res.locals.t('message.email-message', req.signedCookies.auth_id), req.signedCookies.auth_id, req.signedCookies.auth_token, function(error, response) {
+                                if(error) return next(error)
+                            })
+                        }
+                    })
+
                     res.setHeader('Content-Type', 'application/json')
                     res.status(200)
                     res.send(new_id)

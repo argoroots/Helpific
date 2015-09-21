@@ -48,6 +48,19 @@ locales:
         en: Русский
         et: Русский
         ru: Русский
+message:
+    email-message:
+        en: |
+            Hi!<br>
+            <br>
+            You have new message in helpific.com: <a href="https://helpific.com/en/messages/%s">helpific.com/en/messages/%s</a>
+        et: |
+            Hei!<br>
+            <br>
+            Sulle on sõnum helpific.com'is: <a href="https://helpific.com/en/messages/%s">helpific.com/en/messages/%s</a>
+    email-subject:
+        en: "New message in helpific.com"
+        et: "Uus sõnum helpific.com'is"
 nav:
     bb:
         en: Beyond Borders

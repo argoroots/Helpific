@@ -178,6 +178,32 @@ exports.rights = function(id, person_id, right, auth_id, auth_token, callback) {
 
 
 
+//Send message
+exports.message = function(to, subject, message, auth_id, auth_token, callback) {
+    var body = {
+        to: to,
+        subject: subject,
+        message: message,
+        html: true
+    }
+    if(auth_id && auth_token) {
+        var headers = {'X-Auth-UserId': auth_id, 'X-Auth-Token': auth_token}
+        var qb = body
+    } else {
+        var headers = {}
+        var qb = sign_data(body)
+    }
+
+    request.post({url: APP_ENTU_URL + '/email', headers: headers, body: qb, strictSSL: true, json: true}, function(error, response, body) {
+        if(error) return callback(error)
+        if(response.statusCode !== 200) return callback(new Error(op.get(body, 'error', body)))
+
+        callback(null, body)
+    })
+}
+
+
+
 //Get signin url
 exports.get_signin_url = function(redirect_url, provider, callback) {
     var qb = {
