@@ -74,10 +74,11 @@ router.post('/:id', function(req, res, next) {
             },
             function(profile, callback) {
                 if(profile.has('email.value')) {
-                    entu.message(to=profile.get('email.value'),
-                        subject=res.locals.t('message.email-subject'),
-                        message=res.locals.t('message.email-message',
-                        req.signedCookies.auth_id),
+                    entu.message(
+                        profile.get('email.value'),
+                        res.locals.t('message.email-subject'),
+                        res.locals.t('message.email-message', req.signedCookies.auth_id),
+                        'message',
                         req.signedCookies.auth_id,
                         req.signedCookies.auth_token,
                         callback

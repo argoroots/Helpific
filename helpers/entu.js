@@ -179,12 +179,13 @@ exports.rights = function(id, person_id, right, auth_id, auth_token, callback) {
 
 
 //Send message
-exports.message = function(to, subject, message, auth_id, auth_token, callback) {
+exports.message = function(to, subject, message, tag, auth_id, auth_token, callback) {
     var body = {
         to: to,
         subject: subject,
         message: message,
-        html: true
+        html: true,
+        tag: tag
     }
     if(auth_id && auth_token) {
         var headers = {'X-Auth-UserId': auth_id, 'X-Auth-Token': auth_token}
