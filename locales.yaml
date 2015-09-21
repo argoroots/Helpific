@@ -233,7 +233,7 @@ pages:
             et: Minust
             ru: pages.profile.about-me-tab
         about-me-text:
-            en: Write something about you
+            en: Write something about you. What would you like people to know about you?
             et: Kirjuta midagi endast
             ru: pages.profile.about-me-text
         about-me-video:
@@ -297,7 +297,7 @@ pages:
             et: Aitan sind
             ru: pages.profile.me-help-you-tab
         me-help-you-text:
-            en: How you can help others?
+            en: How can you help others? You do not have to fill it if you do not feel like it now.
             et: Kuidas sa saad teisi aidata?
             ru: pages.profile.me-help-you-text
         me-help-you-video:
@@ -337,7 +337,7 @@ pages:
             et: Vajan abi
             ru: pages.profile.you-help-me-tab
         you-help-me-text:
-            en: What kind of help you need?
+            en: How can people help you? You can leave it empty if you are not searching for help through this site.
             et: Millist abi sa vajad?
             ru: pages.profile.you-help-me-text
         you-help-me-video:
