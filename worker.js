@@ -106,7 +106,7 @@ var app = express()
         res.locals.path = req.path
         if(req.signedCookies.auth_id && req.signedCookies.auth_token) {
             res.locals.user = {
-                id: req.signedCookies.auth_id,
+                id: parseInt(req.signedCookies.auth_id),
                 token: req.signedCookies.auth_token
             }
         }

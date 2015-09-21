@@ -21,7 +21,8 @@ router.get('/:id', function(req, res, next) {
 
         messages = []
         for(var i in entities) {
-            if(entities[i].get('from-person.reference') === parseInt(req.params.id) || entities[i].get('to-person.reference') === parseInt(req.params.id)) messages.push(entities[i])
+            if(!entities[i].get('from-person.reference') || !entities[i].get('to-person.reference')) continue
+            if(entities[i].get('from-person.reference') === parseInt(req.params.id) && entities[i].get('to-person.reference') === res.locals.user.id || entities[i].get('to-person.reference') === parseInt(req.params.id) && entities[i].get('from-person.reference') === res.locals.user.id) messages.push(entities[i])
         }
 
         messages.sort(function(obj1, obj2) {
