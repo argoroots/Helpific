@@ -3,13 +3,15 @@
 mkdir -p /data/helpific/code /data/helpific/log /data/helpific/ssl
 cd /data/helpific/code
 
-git clone https://github.com/argoroots/helpific.git ./
-git checkout master
+git clone -q https://github.com/argoroots/helpific.git ./
+git checkout -q master
 git pull
+printf "\n\n"
 
 version=`date +"%y%m%d.%H%M%S"`
-
 docker build -q -t helpific:$version ./ && docker tag -f helpific:$version helpific:latest
+printf "\n\n"
+
 docker stop helpific
 docker rm helpific
 docker run -d \
@@ -28,5 +30,8 @@ docker run -d \
     --env="SENTRY_DSN=" \
     --volume="/data/helpific/log:/usr/src/helpific/log" \
     helpific:latest
+
+docker inspect -f "{{ .NetworkSettings.IPAddress }}" helpific
+printf "\n\n"
 
 /data/nginx.sh
