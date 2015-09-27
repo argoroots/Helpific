@@ -66,8 +66,8 @@ var app = express()
     .set('views', path.join(__dirname, 'views'))
     .set('view engine', 'jade')
 
-    // logs to getsentry.com
-    .use(raven.middleware.express(APP_SENTRY))
+    // logs to getsentry.com - start
+    .use(raven.middleware.express.requestHandler(APP_SENTRY))
 
     // HSTS (for ssl)
     .use(helmet.hsts({
@@ -119,6 +119,9 @@ var app = express()
     .use('/:lang/help',   require('./routes/help'))
     .use('/:lang/messages',   require('./routes/messages'))
     .use('/:lang/signin', require('./routes/signin'))
+
+    // logs to getsentry.com - error
+    .use(raven.middleware.express.errorHandler(APP_SENTRY))
 
     // show 404
     .use(function(req, res, next) {
