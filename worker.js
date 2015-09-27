@@ -20,15 +20,16 @@ var debug   = require('debug')('app:' + path.basename(__filename).replace('.js',
 
 
 // global variables (and list of all used environment variables)
-APP_DEBUG     = process.env.DEBUG
-APP_PORT      = process.env.PORT
-APP_PORT_SSL  = process.env.PORT_SSL
-APP_LOG_DIR   = process.env.LOGDIR || path.join(__dirname, 'log')
+APP_VERSION       = process.env.VERSION || require('./package').version
+APP_DEBUG         = process.env.DEBUG
+APP_PORT          = process.env.PORT
+APP_PORT_SSL      = process.env.PORT_SSL
+APP_LOG_DIR       = process.env.LOGDIR || path.join(__dirname, 'log')
 APP_COOKIE_SECRET = process.env.COOKIE_SECRET || random.generate(16)
-APP_ENTU_URL  = process.env.ENTU_URL || 'https://helpific.entu.ee/api2'
-APP_ENTU_USER = process.env.ENTU_USER
-APP_ENTU_KEY  = process.env.ENTU_KEY
-APP_SENTRY    = process.env.SENTRY_DSN
+APP_ENTU_URL      = process.env.ENTU_URL || 'https://helpific.entu.ee/api2'
+APP_ENTU_USER     = process.env.ENTU_USER
+APP_ENTU_KEY      = process.env.ENTU_KEY
+APP_SENTRY        = process.env.SENTRY_DSN
 
 
 
@@ -58,6 +59,18 @@ i18n.configure({
 
 
 
+// initialize getsentry.com client
+var raven_client = new raven.Client({
+    release: APP_VERSION,
+    dataCallback: function(data) {
+        delete data.request.env
+        return data
+    }
+})
+
+
+
+// start express app
 var app = express()
     // get correct client IP behind nginx
     .set('trust proxy', true)
@@ -67,7 +80,7 @@ var app = express()
     .set('view engine', 'jade')
 
     // logs to getsentry.com - start
-    .use(raven.middleware.express.requestHandler(APP_SENTRY))
+    .use(raven.middleware.express.requestHandler(raven_client))
 
     // HSTS (for ssl)
     .use(helmet.hsts({
@@ -121,7 +134,7 @@ var app = express()
     .use('/:lang/signin', require('./routes/signin'))
 
     // logs to getsentry.com - error
-    .use(raven.middleware.express.errorHandler(APP_SENTRY))
+    .use(raven.middleware.express.errorHandler(raven_client))
 
     // show 404
     .use(function(req, res, next) {
