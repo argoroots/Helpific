@@ -50,16 +50,22 @@ locales:
         ru: Русский
 message:
     email-message:
-        en: |
+        en: >
             Hi!<br>
+
             <br>
-            You have new message in helpific.com: <a href="https://helpific.com/en/messages/%s">helpific.com/en/messages/%s</a>
-        et: |
+
+            You have new message in helpific.com: <a
+            href="https://helpific.com/en/messages/%s">helpific.com/en/messages/%s</a>
+        et: >
             Hei!<br>
+
             <br>
-            Sulle on sõnum helpific.com'is: <a href="https://helpific.com/en/messages/%s">helpific.com/en/messages/%s</a>
+
+            Sulle on sõnum helpific.com'is: <a
+            href="https://helpific.com/en/messages/%s">helpific.com/en/messages/%s</a>
     email-subject:
-        en: "New message in helpific.com"
+        en: New message in helpific.com
         et: "Uus sõnum helpific.com'is"
 nav:
     bb:
@@ -67,9 +73,14 @@ nav:
         et: Piirideta Elu
         ru: Жизнь Без Границ
     me:
-        en: Me
-        et: Mina
-        ru: nav.me
+        profile:
+            en: My profile
+            et: Minu profiil
+            ru: nav.me.profile
+        sign-out:
+            en: Sign out
+            et: Välju
+            ru: nav.me.sign-out
     offers:
         en: Offers
         et: Abipakkumised
@@ -86,10 +97,6 @@ nav:
         en: Sign in
         et: Sisene
         ru: nav.sign-in
-    sign-out:
-        en: Sign out
-        et: Välju
-        ru: nav.sign-out
     team:
         en: Team
         et: Meeskond

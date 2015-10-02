@@ -62,20 +62,25 @@ html(lang=lang)
                                 li
                                     a(href='users')= t('nav.users')
                                 if user
-                                    li
-                                        a(href='users/me')= t('nav.me')
-                                    li
-                                        a(href='signin/exit')= t('nav.sign-out')
+                                    li.dropdown
+                                        a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false')
+                                            i.fa.fa-user
+                                        ul.dropdown-menu
+                                            li
+                                                a(href='users/me')= t('nav.me.profile')
+                                            li.divider
+                                            li
+                                                a(href='signin/exit')= t('nav.me.sign-out')
                                 else
                                     li
                                         a(href='signin')= t('nav.sign-in')
-                                li.dropdown
-                                    a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false')
-                                        i.fa.fa-language
-                                    ul.dropdown-menu
-                                        each l in locales
-                                            li
-                                                a(href='/' + l + path.substring(3))= t('locales.' + l)
+                                    li.dropdown
+                                        a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false')
+                                            i.fa.fa-language
+                                        ul.dropdown-menu
+                                            each l in locales
+                                                li
+                                                    a(href='/' + l + path.substring(3))= t('locales.' + l)
                 block title
                     #title
                         .container
