@@ -46,7 +46,7 @@ router.get('/json', function(req, res, next) {
                 name: results.id.get('forename.value') + ' ' + results.id.get('surname.value'),
                 picture: APP_ENTU_URL + '/entity-' + results.id.get('_id') + '/picture',
                 date: null,
-                message_id: 0
+                ordinal: 'ZZZ'
             }
         }
 
@@ -62,7 +62,8 @@ router.get('/json', function(req, res, next) {
                 date: results.from[i].get('_changed'),
                 relative_date: moment.utc(results.from[i].get('_changed')).tz(APP_TIMEZONE).fromNow(),
                 message: results.from[i].get('message.value'),
-                message_id: results.from[i].get('_id')
+                message_id: results.from[i].get('_id'),
+                ordinal: results.from[i].get('_id')
             }
         }
 
@@ -78,7 +79,8 @@ router.get('/json', function(req, res, next) {
                 date: results.to[i].get('_changed'),
                 relative_date: moment.utc(results.to[i].get('_changed')).tz(APP_TIMEZONE).fromNow(),
                 message: results.to[i].get('message.value'),
-                message_id: results.to[i].get('_id')
+                message_id: results.to[i].get('_id'),
+                ordinal: results.to[i].get('_id')
             }
         }
 
