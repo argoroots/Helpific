@@ -31,6 +31,8 @@ APP_ENTU_USER      = process.env.ENTU_USER
 APP_ENTU_KEY       = process.env.ENTU_KEY
 APP_SENTRY         = process.env.SENTRY_DSN
 APP_DEFAULT_LOCALE = 'en'
+APP_TIMEZONE       = 'Europe/Tallinn'
+
 
 
 // ensure log directory exists

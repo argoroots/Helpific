@@ -4,6 +4,7 @@ var path    = require('path')
 var debug   = require('debug')('app:' + path.basename(__filename).replace('.js', ''))
 var request = require('request')
 var async   = require('async')
+var moment  = require('moment-timezone')
 var _       = require('underscore')
 
 var entu    = require('../helpers/entu')
@@ -31,6 +32,8 @@ router.get('/json', function(req, res, next) {
         entu.get_entity(req.query.id, null, null, callback)
     }
 
+    moment.locale(res.locals.lang)
+
     async.parallel(calls,
     function(err, results) {
         if(err) return next(err)
@@ -57,6 +60,7 @@ router.get('/json', function(req, res, next) {
                 name: results.from[i].get('to-person.value'),
                 picture: APP_ENTU_URL + '/entity-' + results.from[i].get('to-person.reference') + '/picture',
                 date: results.from[i].get('_changed'),
+                relative_date: moment.utc(results.from[i].get('_changed')).tz(APP_TIMEZONE).fromNow(),
                 message: results.from[i].get('message.value'),
                 message_id: results.from[i].get('_id')
             }
@@ -72,6 +76,7 @@ router.get('/json', function(req, res, next) {
                 name: results.to[i].get('from-person.value'),
                 picture: APP_ENTU_URL + '/entity-' + results.to[i].get('from-person.reference') + '/picture',
                 date: results.to[i].get('_changed'),
+                relative_date: moment.utc(results.to[i].get('_changed')).tz(APP_TIMEZONE).fromNow(),
                 message: results.to[i].get('message.value'),
                 message_id: results.to[i].get('_id')
             }
@@ -90,6 +95,8 @@ router.get('/:id/json', function(req, res, next) {
         return
     }
 
+    moment.locale(res.locals.lang)
+
     async.parallel({
         from: function(callback) {
             entu.get_entities(null, 'message', 'from.' + req.params.id + '.to.' + req.signedCookies.auth_id + '.', req.signedCookies.auth_id, req.signedCookies.auth_token, callback)
@@ -102,30 +109,48 @@ router.get('/:id/json', function(req, res, next) {
         if(err) return next(err)
 
         messages = []
+        days = {}
 
         for(var i in results.from) {
+            var relative_date = moment.utc(results.from[i].get('_changed')).tz(APP_TIMEZONE).fromNow()
+            days[relative_date] = {
+                date: results.from[i].get('_created'),
+                relative_date: relative_date,
+                ordinal: results.from[i].get('_id')
+            }
             messages.push({
                 to: true,
                 name: results.from[i].get('from-person.value'),
                 picture: APP_ENTU_URL + '/entity-' + results.from[i].get('from-person.reference') + '/picture',
                 date: results.from[i].get('_created'),
+                relative_date: relative_date,
                 message: results.from[i].get('message.value'),
                 message_id: results.from[i].get('_id')
             })
         }
 
         for(var i in results.to) {
+            var relative_date = moment.utc(results.to[i].get('_changed')).tz(APP_TIMEZONE).fromNow()
+            days[relative_date] = {
+                date: results.to[i].get('_changed'),
+                relative_date: relative_date,
+                ordinal: results.to[i].get('_id')
+            }
             messages.push({
                 from: true,
                 name: results.to[i].get('from-person.value'),
                 picture: APP_ENTU_URL + '/entity-' + results.to[i].get('from-person.reference') + '/picture',
                 date: results.to[i].get('_changed'),
+                relative_date: relative_date,
                 message: results.to[i].get('message.value'),
                 message_id: results.to[i].get('_id')
             })
         }
 
-        res.send(messages)
+        res.send({
+            messages: messages,
+            days: _.values(days)
+        })
     })
 })
 

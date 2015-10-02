@@ -12,28 +12,25 @@ block content
     .container(ng-controller='messagesCtrl')
         .row
             .conversation-list.col-xs-2.col-md-4
-                .row.conversation(ng-repeat='c in conversations | orderBy:["-message_id"]', ng-class='c.id === selected ? "bg-red" : ""', ng-click='openConversation(c.id)')
+                .row.conversation(ng-repeat='c in conversations | orderBy:"-message_id"', ng-class='c.id === selected ? "bg-red" : ""', ng-click='openConversation(c.id)')
                     img.col-xs-11.col-md-3.img-circle(ng-src='{{ c.picture }}', alt='{{ c.name }}')
                     .hidden-xs.hidden-sm.col-xs-8.col-md-9 {{ c.name }}
                         br
-                        small(ng-if='c.date') {{ c.date }}
+                        small(ng-if='c.relative_date', title='{{ c.date }}') {{ c.relative_date }}
 
             .col-xs-8.col-md-7.col-xs-offset-1
-                .row(ng-repeat='m in messages | orderBy:["message_id"]')
-                    .message.bg-green.pull-left(ng-if='m.to')
-                        //- small {{ m.date }}
-                        span {{ m.message }}
-                    .message.bg-yellow.pull-right.text-right(ng-if='m.from')
-                        //- small {{ m.date }}
-                        span {{ m.message }}
-
-                .row.spacer
+                .row(ng-repeat-start='d in messages.days | orderBy:"ordinal"')
+                    .col-xs-12.text-center(title='{{ d.date }}') {{ d.relative_date }}
+                .row(ng-repeat='m in messages.messages | filter:{ relative_date: d.relative_date } | orderBy:"message_id"')
+                    .message.bg-green.pull-left(ng-if='m.to', title='{{ m.date }}') {{ m.message }}
+                    .message.bg-yellow.pull-right.text-right(ng-if='m.from', title='{{ m.date }}'){{ m.message }}
+                .row.spacer(ng-repeat-end)
 
                 form#message-form(ng-show='selected')
                     .row
                         .form-group.col-xs-12
                             label.control-label(for='message')= t('pages.messages.new-message')
-                            textarea#message.form-control(rows=5)
+                            textarea#message.form-control(rows=5, autofocus)
                         a#message-send.btn.btn-lg.bg-yellow.col-xs-8.col-md-6.col-xs-offset-2.col-md-offset-3.text-center(href='javascript:void(0)')= t('pages.messages.send')
                 .col-xs-12.text-center
                     i#message-spinner.hidden.fa.fa-cog.fa-spin.fa-2x

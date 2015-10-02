@@ -33,6 +33,8 @@
         "js-yaml": "3.x",
         "marked": "0.x",
         "morgan": "1.x",
+        "moment": "2.x",
+        "moment-timezone": "0.x",
         "newrelic": "1.x",
         "object-path": "0.x",
         "randomstring": "1.x",
