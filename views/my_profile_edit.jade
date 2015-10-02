@@ -27,6 +27,14 @@ block content
                     label.control-label(for='email')= t('pages.profile.email')
                     input#email.form-control(type='text', placeholder=t('pages.profile.email-ph'), value=profile.get('email.value'), data-value=profile.get('email.value'), data-id=profile.get('email.id'))
 
+                .form-group.col-xs-12.col-sm-3
+                    label.control-label(for='language')= t('pages.profile.language')
+                    select#language.form-control(type='text', data-value=profile.get('language.value'), data-id=profile.get('language.id'))
+                        if !profile.get('language.value')
+                            option()
+                        each l in locales
+                            option(selected=profile.get('language.value') == l, value=l)= t('locales.' + l)
+
                 //- .form-group.col-xs-12.col-sm-3
                 //-     label.control-label(for='photo') Profile Picture
                 //-     input#photo.form-control(type='file')
@@ -179,4 +187,19 @@ block content
                     input.data('value', data.value)
                 }).fail(console.log)
             }
+        })
+        $('#language').change(function() {
+            input = $(this)
+            var postdata = {
+                property: input.attr('id'),
+                id: input.data('id'),
+                value: input.val()
+            }
+            $.post('', postdata, function(data) {
+                input.val(data.value)
+                input.data('id', data.id)
+                input.data('value', data.value)
+                    
+                location.href = '/' + data.value + '#{ path.substring(3) }'
+            }).fail(console.log)
         })

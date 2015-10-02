@@ -301,6 +301,10 @@ pages:
             en: e.g. John
             et: näit. Juhan
             ru: pages.profile.forename-ph
+        language:
+            en: Language
+            et: Keel
+            ru: pages.profile.language
         markdown-info:
             en: 'use <a href="https://en.wikipedia.org/wiki/Markdown#Example" target="_blank">markdown</a> for styling your text'
             et: 'teksti kujundamiseks kasuta <a href="https://en.wikipedia.org/wiki/Markdown#Example" target="_blank">markdowni</a>'
