@@ -3,25 +3,30 @@ extends layout
 block vars
     - title = t('pages.users.title')
 
-block content
-    .container
-        //- #search.row(ng-controller='searchCtrl')
-        //-   form.form-group.col-xs-10.col-sm-8.col-md-6.col-xs-offset-1.col-sm-offset-2.col-md-offset-3
-        //-     label.col-xs-1(for='search-input')
-        //-       i.fa.fa-search
-        //-     input.col-xs-10.text-center(id='search-input', type='search', placeholder='', ng-model='search_query' autofocus)
+block head
+    script(src='/javascripts/angularjs/angular.min.js')
+    script(src='/javascripts/angularjs/angular-route.min.js')
+    script(src='/javascripts/helpific.js')
 
-        each p, i in profiles
-            .row
-                .col-xs-12.col-sm-10.col-sm-offset-1
-                    a(href='users/' + p.get('_id'))
-                        img.col-xs-6.col-sm-3.col-md-2.img-circle(src=p.get('_picture'), alt=p.get('forename.value'), class=(i % 2 == 0) ? 'pull-left' : 'pull-right', style='margin-bottom:20px')
-                    .col-xs-12.col-sm-9.col-md-10(class=(i % 2 == 0) ? '' : 'text-right')
-                        a(href='users/' + p.get('_id'))
-                            h3= p.get('forename.value', '') + ' ' + p.get('surname.value', '')
-                        p= p.get('topic.value')
-                        em= p.get('town.value')
-                            if p.get('county.value') && p.get('town.value')
-                                | ,
-                            |  #{p.get('county.value')}
-            .row.spacer
+block content
+    .container(ng-controller='usersCtrl')
+        #search.row
+            form.form-group.col-xs-10.col-sm-8.col-md-6.col-xs-offset-1.col-sm-offset-2.col-md-offset-3
+                label.col-xs-1(for='search-input')
+                    i.fa.fa-search
+                input#search-input.col-xs-10.text-center(type='search', placeholder='', ng-model='search_query' autofocus)
+
+        .col-xs-12.text-center(ng-if='!users && search_query')
+            i.fa.fa-spinner.fa-pulse.fa-2x
+
+        .table
+            .row(ng-repeat='u in users | filter:search_query | orderBy:["name"]')
+                a(href='users/{{ u.id }}')
+                    img.col-xs-2.col-sm-1.img-circle(ng-src='{{ u.picture }}', alt='{{ u.name }}')
+                .col-xs-10.col-sm-4
+                    a(href='users/{{ u.id }}') {{ u.name }}
+                    br(ng-if='u.location')
+                    em(ng-if='u.location') {{ u.location }}
+                .col-xs-12.col-sm-7.col-xs-offset-2.col-sm-offset-0 {{ u.slogan }}
+
+        .row.spacer

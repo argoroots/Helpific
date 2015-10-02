@@ -27,21 +27,31 @@ function media_embed(url) {
 
 
 
-// GET profiles listing
+// GET profiles page
 router.get('/', function(req, res, next) {
+    res.render('user_list')
+})
+
+
+
+// GET profiles listing in JSON
+router.get('/json', function(req, res, next) {
     entu.get_entities(615, 'person', null, null, function(error, profiles) {
         if(error) return next(error)
 
-        profiles.sort(function(obj1, obj2) {
-            var o1 = obj1.get('forename.value', '') + ' ' + obj1.get('surname.value', '')
-            var o2 = obj2.get('forename.value', '') + ' ' + obj2.get('surname.value', '')
-            return (o1 > o2) ? 1 : -1
-            return 0
-        })
+        var users = []
+        for(i in profiles) {
+            var p = profiles[i]
+            users.push({
+                id: p.get('_id'),
+                name: p.get('forename.value', '') + ' ' + p.get('surname.value', ''),
+                picture: p.get('_picture'),
+                slogan: p.get('slogan.value'),
+                location: p.has('town.value') && p.has('county.value') ? p.get('town.value') + ', ' + p.get('county.value') : p.get('town.value') + p.get('county.value')
+            })
+        }
 
-        res.render('user_list', {
-            profiles: profiles
-        })
+        res.send(users)
     })
 })
 
