@@ -43,7 +43,7 @@ function get_entity(id, auth_id, auth_token, callback) {
         var qs = sign_data()
     }
 
-    request.get({url: APP_ENTU_URL + '/entity-' + id, headers: headers, qs: qs, strictSSL: true, json: true}, function(error, response, body) {
+    request.get({url: APP_ENTU_URL + '/entity-' + id, headers: headers, qs: qs, strictSSL: true, json: true, timeout: 60000}, function(error, response, body) {
         if(error) return callback(error)
         if(response.statusCode !== 200 || !body.result) return callback(new Error(op.get(body, 'error', body)))
 
@@ -104,7 +104,7 @@ exports.get_entities = function(parent_entity_id, definition, auth_id, auth_toke
     var url = parent_entity_id ? '/entity-' + parent_entity_id + '/childs' : '/entity'
     var loop = parent_entity_id ? ['result', definition, 'entities'] : 'result'
 
-    request.get({url: APP_ENTU_URL + url, headers: headers, qs: qs, strictSSL: true, json: true}, function(error, response, body) {
+    request.get({url: APP_ENTU_URL + url, headers: headers, qs: qs, strictSSL: true, json: true, timeout: 60000}, function(error, response, body) {
         if(error) return callback(error)
         if(response.statusCode !== 200 || !body.result) return callback(new Error(op.get(body, 'error', body)))
 
@@ -144,7 +144,7 @@ exports.add = function(parent_entity_id, definition, properties, auth_id, auth_t
         var qb =sign_data(data)
     }
 
-    request.post({url: APP_ENTU_URL + '/entity-' + parent_entity_id, headers: headers, body: qb, strictSSL: true, json: true}, function(error, response, body) {
+    request.post({url: APP_ENTU_URL + '/entity-' + parent_entity_id, headers: headers, body: qb, strictSSL: true, json: true, timeout: 60000}, function(error, response, body) {
         if(error) return callback(error)
         if(response.statusCode !== 201 || !body.result) return callback(new Error(op.get(body, 'error', body)))
 
@@ -168,7 +168,7 @@ exports.rights = function(id, person_id, right, auth_id, auth_token, callback) {
         var qb = sign_data(body)
     }
 
-    request.post({url: APP_ENTU_URL + '/entity-' + id + '/rights', headers: headers, body: qb, strictSSL: true, json: true}, function(error, response, body) {
+    request.post({url: APP_ENTU_URL + '/entity-' + id + '/rights', headers: headers, body: qb, strictSSL: true, json: true, timeout: 60000}, function(error, response, body) {
         if(error) return callback(error)
         if(response.statusCode !== 200) return callback(new Error(op.get(body, 'error', body)))
 
@@ -195,7 +195,7 @@ exports.message = function(to, subject, message, tag, auth_id, auth_token, callb
         var qb = sign_data(body)
     }
 
-    request.post({url: APP_ENTU_URL + '/email', headers: headers, body: qb, strictSSL: true, json: true}, function(error, response, body) {
+    request.post({url: APP_ENTU_URL + '/email', headers: headers, body: qb, strictSSL: true, json: true, timeout: 60000}, function(error, response, body) {
         if(error) return callback(error)
         if(response.statusCode !== 200) return callback(new Error(op.get(body, 'error', body)))
 
@@ -212,7 +212,7 @@ exports.get_signin_url = function(redirect_url, provider, callback) {
         'redirect_url': redirect_url,
         'provider': provider
     }
-    request.post({url: APP_ENTU_URL + '/user/auth', body: qb, strictSSL: true, json: true}, function(error, response, body) {
+    request.post({url: APP_ENTU_URL + '/user/auth', body: qb, strictSSL: true, json: true, timeout: 60000}, function(error, response, body) {
         if(error) return callback(error)
         if(response.statusCode !== 200) return callback(new Error(op.get(body, 'error', body)))
 
@@ -231,7 +231,7 @@ exports.get_user_session = function(auth_url, state, callback) {
     var qb = {
         'state': state
     }
-    request.post({url: auth_url, body: qb, strictSSL: true, json: true}, function(error, response, body) {
+    request.post({url: auth_url, body: qb, strictSSL: true, json: true, timeout: 60000}, function(error, response, body) {
         if(error) return callback(error)
         if(response.statusCode !== 200 || !body.result) return callback(new Error(op.get(body, 'error', body)))
 
@@ -259,7 +259,7 @@ exports.set_user = function(auth_id, auth_token, data, callback) {
         var qb = sign_data(body)
     }
 
-    request.put({url: APP_ENTU_URL + '/entity-' + auth_id, headers: headers, body: qb, strictSSL: true, json: true}, function(error, response, body) {
+    request.put({url: APP_ENTU_URL + '/entity-' + auth_id, headers: headers, body: qb, strictSSL: true, json: true, timeout: 60000}, function(error, response, body) {
         if(error) return callback(error)
         if(response.statusCode !== 201 || !body.result) return callback(new Error(op.get(body, 'error', body)))
 
