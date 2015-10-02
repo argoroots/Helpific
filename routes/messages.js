@@ -56,7 +56,7 @@ router.get('/json', function(req, res, next) {
                 id: results.from[i].get('to-person.reference'),
                 name: results.from[i].get('to-person.value'),
                 picture: APP_ENTU_URL + '/entity-' + results.from[i].get('to-person.reference') + '/picture',
-                date: results.from[i].get('_created'),
+                date: results.from[i].get('_changed'),
                 message: results.from[i].get('message.value'),
                 message_id: results.from[i].get('_id')
             }
