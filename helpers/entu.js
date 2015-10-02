@@ -50,6 +50,7 @@ function get_entity(id, auth_id, auth_token, callback) {
         var properties = op.get(body, 'result.properties', {})
         var entity = {
             _id: op.get(body, 'result.id', null),
+            _changed: op.get(body, 'result.changed', op.get(body, 'result.created', null)),
             _picture: APP_ENTU_URL + '/entity-' + op.get(body, 'result.id', null) + '/picture'
         }
         for(var p in properties) {

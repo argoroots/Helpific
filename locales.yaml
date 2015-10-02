@@ -73,6 +73,10 @@ nav:
         et: Piirideta Elu
         ru: Жизнь Без Границ
     me:
+        messages:
+            en: Messages
+            et: Sõnumid
+            ru: nav.me.messages
         profile:
             en: My profile
             et: Minu profiil
