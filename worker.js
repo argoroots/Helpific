@@ -20,17 +20,17 @@ var debug   = require('debug')('app:' + path.basename(__filename).replace('.js',
 
 
 // global variables (and list of all used environment variables)
-APP_VERSION       = process.env.VERSION || require('./package').version
-APP_DEBUG         = process.env.DEBUG
-APP_PORT          = process.env.PORT
-APP_PORT_SSL      = process.env.PORT_SSL
-APP_LOG_DIR       = process.env.LOGDIR || path.join(__dirname, 'log')
-APP_COOKIE_SECRET = process.env.COOKIE_SECRET || random.generate(16)
-APP_ENTU_URL      = process.env.ENTU_URL || 'https://helpific.entu.ee/api2'
-APP_ENTU_USER     = process.env.ENTU_USER
-APP_ENTU_KEY      = process.env.ENTU_KEY
-APP_SENTRY        = process.env.SENTRY_DSN
-
+APP_VERSION        = process.env.VERSION || require('./package').version
+APP_DEBUG          = process.env.DEBUG
+APP_PORT           = process.env.PORT
+APP_PORT_SSL       = process.env.PORT_SSL
+APP_LOG_DIR        = process.env.LOGDIR || path.join(__dirname, 'log')
+APP_COOKIE_SECRET  = process.env.COOKIE_SECRET || random.generate(16)
+APP_ENTU_URL       = process.env.ENTU_URL || 'https://helpific.entu.ee/api2'
+APP_ENTU_USER      = process.env.ENTU_USER
+APP_ENTU_KEY       = process.env.ENTU_KEY
+APP_SENTRY         = process.env.SENTRY_DSN
+APP_DEFAULT_LOCALE = 'en'
 
 
 // ensure log directory exists
@@ -51,7 +51,7 @@ var access_log_stream = rotator.getStream({
 // Configure i18n
 i18n.configure({
     locales: ['en', 'et', 'ru'],
-    defaultLocale: 'en',
+    defaultLocale: APP_DEFAULT_LOCALE,
     redirectWrongLocale: true,
     file: path.join(__dirname, 'locales.yaml'),
     updateFile: true

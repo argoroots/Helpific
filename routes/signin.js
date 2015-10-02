@@ -30,7 +30,11 @@ router.get('/done', function(req, res, next) {
         res.cookie('auth_id', user.id, {signed:true, maxAge:1000*60*60*24*14})
         res.cookie('auth_token', user.token, {signed:true, maxAge:1000*60*60*24*14})
 
-        res.redirect('/' + res.locals.lang + '/users/me')
+        entu.get_entity(user.id, user.id, user.token, function(error, profile) {
+            if(error) return next(error)
+
+            res.redirect('/' + profile.get('language.value', APP_DEFAULT_LOCALE) + '/users/me')
+        })
     })
 })
 
