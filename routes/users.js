@@ -36,7 +36,7 @@ router.get('/', function(req, res, next) {
 
 // GET profiles listing in JSON
 router.get('/json', function(req, res, next) {
-    entu.get_entities(615, 'person', null, null, function(error, profiles) {
+    entu.get_entities(615, 'person', null, null, null, function(error, profiles) {
         if(error) return next(error)
 
         var users = []

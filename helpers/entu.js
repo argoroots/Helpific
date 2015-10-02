@@ -92,13 +92,16 @@ function get_entity(id, auth_id, auth_token, callback) {
 
 
 //Get entities by parent entity id and/or by definition
-exports.get_entities = function(parent_entity_id, definition, auth_id, auth_token, callback) {
+exports.get_entities = function(parent_entity_id, definition, query, auth_id, auth_token, callback) {
+    var headers = {}
+    var qs = {}
+    if(definition) qs.definition = definition
+    if(query) qs.query = query
+
     if(auth_id && auth_token) {
         var headers = {'X-Auth-UserId': auth_id, 'X-Auth-Token': auth_token}
-        var qs = definition ? {definition: definition} : {}
     } else {
-        var headers = {}
-        var qs = definition ? sign_data({definition: definition}) : sign_data()
+        var qs = sign_data(qs)
     }
 
     var url = parent_entity_id ? '/entity-' + parent_entity_id + '/childs' : '/entity'

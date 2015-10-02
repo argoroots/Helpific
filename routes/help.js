@@ -23,7 +23,7 @@ router.get('/:type', function(req, res, next) {
         return
     }
 
-    entu.get_entities(help_group, 'request', null, null, function(error, requests) {
+    entu.get_entities(help_group, 'request', null, null, null, function(error, requests) {
         if(error) return next(error)
 
         requests.sort(function(obj1, obj2) {
