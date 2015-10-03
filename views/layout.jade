@@ -51,8 +51,12 @@ html(lang=lang, ng-app='hlpfc')
                                 span.icon-bar
                                 span.icon-bar
                                 span.icon-bar
-                            a.navbar-brand(href='/' + lang)
+                            a#brand-image.navbar-brand(href='/' + lang)
                                 img(src='/images/helpific-logo-text-hr.png', alt='Helpific logo')
+                            a#brand-text.hidden.navbar-brand(href='/' + lang)
+                                span
+                                    img(src='/images/helpific-logo.png', alt='Helpific logo')
+                                | #{ title }
                         .collapse.navbar-collapse(id='bs-example-navbar-collapse-1')
                             ul.nav.navbar-nav.navbar-right
                                 li
@@ -148,6 +152,17 @@ html(lang=lang, ng-app='hlpfc')
                     $('.navbar').addClass('navbar-border')
                 } else {
                     $('.navbar').removeClass('navbar-border')
+                }
+                if(window.location.pathname !== '/#{ lang }') {
+                    if($(window).scrollTop() > 60) {
+                        $('#brand-image').addClass('hidden')
+                        $('#brand-text').removeClass('hidden')
+                        $('#title h1').addClass('color-white')
+                    } else {
+                        $('#brand-image').removeClass('hidden')
+                        $('#brand-text').addClass('hidden')
+                        $('#title h1').removeClass('color-white')
+                    }
                 }
             })
 

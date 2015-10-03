@@ -57,9 +57,21 @@ body
     .navbar-header
         min-height header-height
 
-        img
-            padding-top 5px
-            height header-height - 35px !important
+        .navbar-brand
+            display block
+            height header-height !important
+            overflow hidden
+            white-space nowrap
+            color color-helpific-green
+            font-size 37px
+            text-overflow ellipsis !important
+            letter-spacing -1px !important
+
+            img
+                padding-top 5px
+                padding-right 10px
+                height header-height - 35px !important
+
 
     .navbar-collapse
         max-height 600px
@@ -112,6 +124,22 @@ body
 .navbar-border
     border-bottom 1px solid color-gray-light
 
+@media (max-width: 767px)
+    .navbar-brand
+        width 85%
+
+@media (min-width: 768px) and (max-width: 992px)
+    .navbar-brand
+        width 660px
+
+@media (min-width: 992px) and (max-width: 1199px)
+    .navbar-brand
+        width 320px
+
+@media (min-width: 1200px)
+    .navbar-brand
+        width 500px
+
 @media (max-width: 991px)
     .navbar-header
         float none
@@ -133,6 +161,7 @@ body
         min-height header-height-xs
 
         .navbar-nav
+            min-height 100%
             float none !important
             margin 0px -15px
             border-bottom 1px solid color-gray-light !important
@@ -347,6 +376,17 @@ pre
     font-family helvetica
     font-size 50px
     line-height 80px
+
+
+
+.color-white
+    color color-white
+.color-red
+    color color-helpific-red
+.color-green
+    color color-helpific-green
+.color-yellow
+    color color-helpific-yellow
 
 
 
