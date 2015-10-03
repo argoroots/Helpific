@@ -10,57 +10,42 @@ block head
 
 block content
     .container(ng-controller='messagesCtrl')
-        .row
+        .row(ng-show='!conversations')
+            .col-xs-12.text-center
+                i.fa.fa-spinner.fa-pulse.fa-2x
+        .row(ng-show='conversations')
             .conversation-list.col-xs-2.col-md-4
-                .row.conversation(ng-repeat='c in conversations | orderBy:"-ordinal"', ng-class='c.id === selected ? "bg-red" : ""', ng-click='openConversation(c.id)')
+                .row.conversation
+                .row.conversation(ng-repeat='c in conversations | orderBy:"-ordinal"', ng-class='c.id === selected ? "selected" : ""', ng-click='openConversation(c.id)')
                     img.col-xs-11.col-md-3.img-circle(ng-src='{{ c.picture }}', alt='{{ c.name }}')
                     .hidden-xs.hidden-sm.col-xs-8.col-md-9 {{ c.name }}
                         br
+                        i.pull-right.fa.fa-spinner.fa-pulse(ng-show='selected === c.id && loading')
                         small(ng-if='c.relative_date', title='{{ c.date }}') {{ c.relative_date }}
+                .row.conversation
 
-            .col-xs-8.col-md-7.col-xs-offset-1
+            .message-list.col-xs-8.col-md-7.col-xs-offset-1(ng-show='selected && !loading')
                 .row(ng-repeat-start='d in messages.days | orderBy:"ordinal"')
-                    .col-xs-12.text-center(title='{{ d.date }}') {{ d.relative_date }}
+                    h5.col-xs-12.text-center {{ d.relative_date }}
                 .row(ng-repeat='m in messages.messages | filter:{ relative_date: d.relative_date } | orderBy:"message_id"')
-                    .message.bg-green.pull-left(ng-if='m.to', title='{{ m.date }}') {{ m.message }}
-                    .message.bg-yellow.pull-right.text-right(ng-if='m.from', title='{{ m.date }}'){{ m.message }}
-                .row.spacer(ng-repeat-end)
+                    .message.bg-green-transparent.col-xs-11.col-sm-10.pull-left(ng-if='m.to') 
+                        small.pull-left {{ m.date }}
+                        br
+                        | {{ m.message }}
+                    .message.bg-yellow-transparent.col-xs-11.col-sm-10.pull-right.text-right(ng-if='m.from') 
+                        small.pull-right {{ m.date }}
+                        br
+                        | {{ m.message }}
+                .row(ng-repeat-end)
+                
+                .row.spacer
 
-                form#message-form(ng-show='selected')
-                    .row
-                        .form-group.col-xs-12
-                            label.control-label(for='message')= t('pages.messages.new-message')
-                            textarea#message.form-control(rows=5, autofocus)
-                        a#message-send.btn.btn-lg.bg-yellow.col-xs-8.col-md-6.col-xs-offset-2.col-md-offset-3.text-center(href='javascript:void(0)')= t('pages.messages.send')
-                .col-xs-12.text-center
-                    i#message-spinner.hidden.fa.fa-cog.fa-spin.fa-2x
+                form#message-form.row
+                    .input-group
+                        textarea.form-control(rows=3, autofocus, placeholder=t('pages.messages.new-message'), ng-model='message', ng-readonly='sending')
+                        .input-group-btn
+                            a.btn.btn-lg.text-center(ng-show='!sending', ng-click='sendMessage()')= t('pages.messages.send')
+                            a.btn.btn-lg.text-center(ng-show='sending')
+                                i.fa.fa-spinner.fa-pulse.fa-2x
 
         .row.spacer
-
-    script.
-        $('textarea').focus(function() {
-            $("label[for='" + this.id + "']").addClass('labelfocus')
-        }).blur(function() {
-            $('label').removeClass('labelfocus')
-        })
-
-        $('#message-send').click(function() {
-            if($('#message').val()) {
-                $('#message-form').addClass('hidden')
-                $('#message-spinner').removeClass('hidden')
-                var postdata = {
-                    'message': $('#message').val()
-                }
-                $.post('', postdata, function(data) {
-                    setTimeout(function() {
-                        location.reload(true)
-                    }, 1500)
-                }).fail(
-                    setTimeout(function() {
-                        location.reload(true)
-                    }, 1500)
-                )
-            } else {
-                $('#message').focus()
-            }
-        })

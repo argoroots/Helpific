@@ -1,3 +1,6 @@
+PATH = location.pathname.split('/')
+LANGUAGE = PATH[1]
+
 angular.module('hlpfc', ['ngRoute'])
 
 
@@ -20,34 +23,71 @@ angular.module('hlpfc', ['ngRoute'])
 
 // USERS
     .controller('usersCtrl', function($scope, $http, $routeParams) {
-        var path = location.pathname.split('/')
-        $http({method: 'GET', url: '/' + path[1] + '/users/json'}).success(function(data) {
-            $scope.users = data
-        })
+        $http({
+                method : 'GET',
+                url    : '/' + LANGUAGE + '/users/json'
+            })
+            .success(function(data) {
+                $scope.users = data
+            })
     })
 
 
 
 // MESSAGES
     .controller('messagesCtrl', function($scope, $http, $routeParams) {
-        var path = location.pathname.split('/')
-        var id = ''
+        $scope.id = PATH[3]
+        var id_param = $scope.id ? '?id=' + $scope.id : ''
 
-        if(path[3]) {
-            var id = '?id=' + path[3]
-            $scope.selected = parseInt(path[3])
-            $http({method: 'GET', url: '/' + path[1] + '/messages/' + path[3] + '/json'}).success(function(data) {
-                $scope.messages = data
+        $http({
+                method : 'GET',
+                url    : '/' + LANGUAGE + '/messages/json' + id_param
             })
-        }
-
-        $http({method: 'GET', url: '/' + path[1] + '/messages/json' + id}).success(function(data) {
-            $scope.conversations = data
-        })
+            .success(function(data) {
+                $scope.conversations = data
+            })
 
         $scope.openConversation = function(id) {
-            if(path.length === 4) path.pop()
-            path.push(id)
-            location.href = path.join('/')
+            $scope.id = id
+            $scope.selected = parseInt(id)
+            $scope.loading = true
+
+            $http({
+                    method : 'GET',
+                    url    : '/' + LANGUAGE + '/messages/' + id + '/json'
+                })
+                .success(function(data) {
+                    $scope.messages = data
+                    $scope.loading = false
+                })
         }
+
+        $scope.sendMessage = function() {
+            $scope.sending = true
+            $http({
+                    method : 'POST',
+                    url    : '/' + LANGUAGE + '/messages/' + $scope.id,
+                    data   : { 'message': $scope.message }
+                })
+                .success(function(data) {
+                    var day_in_list = false
+                    for(i in $scope.messages.days) {
+                        if($scope.messages.days[i].relative_date === data.day.relative_date) {
+                            day_in_list = true
+                            break
+                        }
+                    }
+                    if(!day_in_list) $scope.messages.days.push(data.day)
+
+                    $scope.messages.messages.push(data.message)
+                    $scope.message = ''
+                    $scope.sending = false
+                })
+                .error(function(data) {
+                    console.log(data)
+                    $scope.sending = false
+                })
+        }
+
+        if($scope.id) $scope.openConversation($scope.id)
     })

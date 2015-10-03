@@ -10,6 +10,10 @@ color-helpific-red = rgb(241, 101, 73)
 color-helpific-green = rgb(87, 147, 144)
 color-helpific-yellow = rgb(252, 185, 76)
 
+color-helpific-red-transparent = rgba(241, 101, 73, 0.2)
+color-helpific-green-transparent = rgba(87, 147, 144, 0.2)
+color-helpific-yellow-transparent = rgba(252, 185, 76, 0.2)
+
 color-white = #ffffff
 color-white-transparent = rgba(255, 255, 255, 0.97)
 
@@ -348,6 +352,24 @@ pre
 
 
 
+.bg-red-transparent
+    background-color color-helpific-red-transparent !important
+.bg-green-transparent
+    background-color color-helpific-green-transparent !important
+.bg-yellow-transparent
+    background-color color-helpific-yellow-transparent !important
+
+
+
+.border-red
+    border solid 1px color-helpific-red
+.border-green
+    border solid 1px color-helpific-green
+.border-yellow
+    border solid 1px color-helpific-yellow
+
+
+
 #search
     margin-top 0px
     margin-bottom 40px
@@ -444,7 +466,6 @@ i.signin
 #profile-form
 #request-form
 #feedback-form
-#message-form
     label
         display block
         margin-top 30px
@@ -518,45 +539,60 @@ i.signin
             border-bottom none
 
 
-.conversation-list
-    padding-top 80px
-    padding-bottom 80px
-    border-right 1px solid color-helpific-red
 
 .conversation
     padding 10px 0px
     cursor pointer
+    border 1px solid color-white
+    border-right 1px solid color-helpific-red
     border-top-left-radius 70px
     border-bottom-left-radius 70px
 
-@media (min-width: 768px) and (max-width: 992px)
-    .conversation-list
-        border none
+.conversation.selected
+    border 1px solid color-helpific-red
+    border-right 1px solid color-white
 
-    .conversation
-        border-top-left-radius 70px
-        border-bottom-left-radius 70px
-        border-top-right-radius 70px
-        border-bottom-right-radius 70px
+.message-list
+    h5
+        margin-top 20px
+        color color-gray !important
+
 
 @media (max-width: 768px)
     .conversation-list
         border none
 
-    .conversation
-        border-top-left-radius 0px
-        border-bottom-left-radius 0px
-        border-top-right-radius 70px
-        border-bottom-right-radius 70px
+    .conversation.selected
+        border-left none
+        border-radius 0px
 
 
 
 .message
     margin-top 10px
     margin-bottom 10px
-    padding 5px 20px
-    border-radius 20px
+    padding-top 5px
+    padding-bottom 5px
+    border-radius 10px
 
+    small
+        color color-gray
+
+
+
+#message-form
+    textarea
+        border-radius 0px
+        border solid 1px color-helpific-red
+        outline none
+        box-shadow none
+        font-size 18px
+
+        &:focus
+            outline 0px
+
+        &[readonly]
+            background-color white
 
 
 #btn-add

@@ -114,6 +114,7 @@ router.get('/:id/json', function(req, res, next) {
         days = {}
 
         for(var i in results.from) {
+            var date = moment.utc(results.from[i].get('_changed')).tz(APP_TIMEZONE).calendar()
             var relative_date = moment.utc(results.from[i].get('_changed')).tz(APP_TIMEZONE).fromNow()
             days[relative_date] = {
                 date: results.from[i].get('_created'),
@@ -124,7 +125,7 @@ router.get('/:id/json', function(req, res, next) {
                 to: true,
                 name: results.from[i].get('from-person.value'),
                 picture: APP_ENTU_URL + '/entity-' + results.from[i].get('from-person.reference') + '/picture',
-                date: results.from[i].get('_created'),
+                date: date,
                 relative_date: relative_date,
                 message: results.from[i].get('message.value'),
                 message_id: results.from[i].get('_id')
@@ -132,6 +133,7 @@ router.get('/:id/json', function(req, res, next) {
         }
 
         for(var i in results.to) {
+            var date = moment.utc(results.to[i].get('_changed')).tz(APP_TIMEZONE).calendar()
             var relative_date = moment.utc(results.to[i].get('_changed')).tz(APP_TIMEZONE).fromNow()
             days[relative_date] = {
                 date: results.to[i].get('_changed'),
@@ -142,7 +144,7 @@ router.get('/:id/json', function(req, res, next) {
                 from: true,
                 name: results.to[i].get('from-person.value'),
                 picture: APP_ENTU_URL + '/entity-' + results.to[i].get('from-person.reference') + '/picture',
-                date: results.to[i].get('_changed'),
+                date: date,
                 relative_date: relative_date,
                 message: results.to[i].get('message.value'),
                 message_id: results.to[i].get('_id')
@@ -231,9 +233,22 @@ router.post('/:id', function(req, res, next) {
         function(err, results) {
             if(err) return next(err)
 
-            res.setHeader('Content-Type', 'application/json')
-            res.status(200)
-            res.send(new_id)
+            var date = moment.utc().tz(APP_TIMEZONE).calendar()
+            var relative_date = moment.utc().tz(APP_TIMEZONE).fromNow()
+            res.send({
+                day: {
+                    date: date,
+                    relative_date: relative_date,
+                    ordinal: new_id
+                },
+                message: {
+                    from: true,
+                    date: date,
+                    relative_date: relative_date,
+                    message: req.body.message,
+                    message_id: new_id
+                }
+            })
         })
     })
 })
