@@ -1,9 +1,11 @@
 extends layout
 
 block vars
-    - title = t('pages.error.title')
+    - title = title || t('pages.error.title')
 
 block content
     .container
-        h2= message
-        pre #{error.stack}
+        .row
+            h2.col-xs-12= message
+            pre.col-xs-12 #{error.stack}
+        .row.spacer

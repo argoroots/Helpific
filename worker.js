@@ -154,7 +154,8 @@ var app = express()
     // show 404
     .use(function(req, res, next) {
         res.render('error', {
-            message: 404,
+            title: 404,
+            message: '',
             error: {}
         })
     })
