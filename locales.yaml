@@ -403,6 +403,14 @@ pages:
             en: 'For donation transfer money to Helpific MTÜ account. Transfer description must be "%s"'
             et: 'Annetus kanna Helpific MTÜ kontole. Makse selgitusse märgi kindlasti "%s"'
             ru: pages.user.donate-info
+        help-offers:
+            en: My help offers
+            et: Minu abipakkumised
+            ru: pages.user.help-offers
+        help-requests:
+            en: My help requests
+            et: Minu abisoovid
+            ru: pages.user.help-requests
         me-help-you-tab:
             en: I can help others
             et: Aitan sind

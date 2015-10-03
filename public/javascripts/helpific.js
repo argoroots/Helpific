@@ -34,6 +34,21 @@ angular.module('hlpfc', ['ngRoute'])
 
 
 
+// USER
+    .controller('userCtrl', function($scope, $http) {
+        $scope.id = PATH[3]
+        $http({
+                method : 'GET',
+                url    : '/' + LANGUAGE + '/help/json?id=' + $scope.id
+            })
+            .success(function(data) {
+                console.log(data)
+                $scope.help = data
+            })
+    })
+
+
+
 // MESSAGES
     .controller('messagesCtrl', function($scope, $http, $routeParams) {
         $scope.id = PATH[3]
