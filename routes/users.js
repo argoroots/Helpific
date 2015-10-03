@@ -59,12 +59,12 @@ router.get('/json', function(req, res, next) {
 
 // Show user own profile
 router.get('/me', function(req, res, next) {
-    if(!req.signedCookies.auth_id || !req.signedCookies.auth_token) {
+    if(!res.locals.user) {
         res.redirect('/' + res.locals.lang + '/signin')
         next(null)
     }
 
-    entu.get_entity(req.signedCookies.auth_id, req.signedCookies.auth_id, req.signedCookies.auth_token, function(error, profile) {
+    entu.get_entity(res.locals.user.id, res.locals.user.id, res.locals.user.token, function(error, profile) {
         if(error) return next(error)
 
         res.render('my_profile_edit', {
@@ -77,12 +77,12 @@ router.get('/me', function(req, res, next) {
 
 // Edit user profile
 router.post('/me', function(req, res, next) {
-    if(!req.signedCookies.auth_id || !req.signedCookies.auth_token) {
+    if(!res.locals.user) {
         res.status(403).send()
         return
     }
 
-    entu.set_user(req.signedCookies.auth_id, req.signedCookies.auth_token, req.body, function(error, response) {
+    entu.set_user(res.locals.user.id, res.locals.user.token, req.body, function(error, response) {
         if(error) return next(error)
 
         res.setHeader('Content-Type', 'application/json')

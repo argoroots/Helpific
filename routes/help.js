@@ -33,7 +33,7 @@ router.get('/:type', function(req, res, next) {
 
         res.render('help', {
             requests: requests,
-            show_add: (req.signedCookies.auth_id && req.signedCookies.auth_token),
+            show_add: !!res.locals.user,
             help_type: help_type
         })
     })
@@ -71,7 +71,7 @@ router.get('/:type/:id', function(req, res, next) {
 
 // Create request/offer
 router.post('/:type', function(req, res, next) {
-    if(!req.signedCookies.auth_id || !req.signedCookies.auth_token) {
+    if(!res.locals.user) {
         res.status(403).send()
         return
     }
@@ -88,7 +88,7 @@ router.post('/:type', function(req, res, next) {
     }
 
     var properties = req.body
-    properties.person = req.signedCookies.auth_id
+    properties.person = res.locals.user.id
 
     if(properties.time) {
         var time_date = properties.time.split(' ')[0].split('.')
@@ -100,7 +100,7 @@ router.post('/:type', function(req, res, next) {
     entu.add(help_group, 'request', properties, null, null, function(error, new_id) {
         if(error) return next(error)
 
-        entu.rights(new_id, req.signedCookies.auth_id, 'owner', null, null, function(error, response) {
+        entu.rights(new_id, res.locals.user.id, 'owner', null, null, function(error, response) {
             if(error) return next(error)
 
             entu.rights(new_id, APP_ENTU_USER, 'viewer', null, null, function(error, response) {

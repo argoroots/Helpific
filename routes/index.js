@@ -64,13 +64,13 @@ router.get('/bb', function(req, res, next) {
 // Send feedback
 router.post('/feedback', function(req, res, next) {
     var properties = req.body
-    if(req.signedCookies.auth_id) properties['from-person'] = req.signedCookies.auth_id
+    if(res.locals.user.id) properties['from-person'] = res.locals.user.id
 
     entu.add(APP_ENTU_USER, 'message', properties, null, null, function(error, new_id) {
         if(error) return next(error)
 
-        if(req.signedCookies.auth_id) {
-            entu.rights(new_id, req.signedCookies.auth_id, 'owner', null, null, function(error, response) {
+        if(res.locals.user.id) {
+            entu.rights(new_id, res.locals.user.id, 'owner', null, null, function(error, response) {
                 if(error) return next(error)
 
                 entu.rights(new_id, APP_ENTU_USER, '', null, null, function(error, response) {

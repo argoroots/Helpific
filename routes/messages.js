@@ -13,7 +13,7 @@ var entu    = require('../helpers/entu')
 
 // GET listing of conversations
 router.get('/json', function(req, res, next) {
-    if(!req.signedCookies.auth_id || !req.signedCookies.auth_token) {
+    if(!res.locals.user) {
         res.redirect('/' + res.locals.lang + '/signin')
         next(null)
         return
@@ -21,10 +21,10 @@ router.get('/json', function(req, res, next) {
 
     var calls = {
         from: function(callback) {
-            entu.get_entities(null, 'message', 'from.' + req.signedCookies.auth_id + '.', req.signedCookies.auth_id, req.signedCookies.auth_token, callback)
+            entu.get_entities(null, 'message', 'from.' + res.locals.user.id + '.', res.locals.user.id, res.locals.user.token, callback)
         },
         to: function(callback) {
-            entu.get_entities(null, 'message', 'to.' + req.signedCookies.auth_id + '.', req.signedCookies.auth_id, req.signedCookies.auth_token, callback)
+            entu.get_entities(null, 'message', 'to.' + res.locals.user.id + '.', res.locals.user.id, res.locals.user.token, callback)
         },
     }
 
@@ -91,7 +91,7 @@ router.get('/json', function(req, res, next) {
 
 // GET conversation messages
 router.get('/:id/json', function(req, res, next) {
-    if(!req.signedCookies.auth_id || !req.signedCookies.auth_token) {
+    if(!res.locals.user) {
         res.redirect('/' + res.locals.lang + '/signin')
         next(null)
         return
@@ -101,10 +101,10 @@ router.get('/:id/json', function(req, res, next) {
 
     async.parallel({
         from: function(callback) {
-            entu.get_entities(null, 'message', 'from.' + req.params.id + '.to.' + req.signedCookies.auth_id + '.', req.signedCookies.auth_id, req.signedCookies.auth_token, callback)
+            entu.get_entities(null, 'message', 'from.' + req.params.id + '.to.' + res.locals.user.id + '.', res.locals.user.id, res.locals.user.token, callback)
         },
         to: function(callback) {
-            entu.get_entities(null, 'message', 'from.' + req.signedCookies.auth_id + '.to.' + req.params.id + '.', req.signedCookies.auth_id, req.signedCookies.auth_token, callback)
+            entu.get_entities(null, 'message', 'from.' + res.locals.user.id + '.to.' + req.params.id + '.', res.locals.user.id, res.locals.user.token, callback)
         },
     },
     function(err, results) {
@@ -162,7 +162,7 @@ router.get('/:id/json', function(req, res, next) {
 
 // GET messages page
 router.get('/', function(req, res, next) {
-    if(!req.signedCookies.auth_id || !req.signedCookies.auth_token) {
+    if(!res.locals.user) {
         res.redirect('/' + res.locals.lang + '/signin')
         next(null)
         return
@@ -175,7 +175,7 @@ router.get('/', function(req, res, next) {
 
 // GET messages page
 router.get('/:id', function(req, res, next) {
-    if(!req.signedCookies.auth_id || !req.signedCookies.auth_token) {
+    if(!res.locals.user) {
         res.redirect('/' + res.locals.lang + '/signin')
         next(null)
         return
@@ -188,22 +188,22 @@ router.get('/:id', function(req, res, next) {
 
 // Create request/offer
 router.post('/:id', function(req, res, next) {
-    if(!req.signedCookies.auth_id || !req.signedCookies.auth_token || !req.params.id) {
+    if(!res.locals.user || !req.params.id) {
         res.status(403).send()
         return
     }
 
     var properties = req.body
-    properties['from-person'] = req.signedCookies.auth_id
+    properties['from-person'] = res.locals.user.id
     properties['to-person'] = req.params.id
-    properties['participants'] = 'from.' + req.signedCookies.auth_id + '.to.' + req.params.id + '.'
+    properties['participants'] = 'from.' + res.locals.user.id + '.to.' + req.params.id + '.'
 
     entu.add(APP_ENTU_USER, 'message', properties, null, null, function(error, new_id) {
         if(error) return next(error)
 
         async.waterfall([
             function(callback) {
-                entu.rights(new_id, req.signedCookies.auth_id, 'owner', null, null, callback)
+                entu.rights(new_id, res.locals.user.id, 'owner', null, null, callback)
             },
             function(result, callback) {
                 entu.rights(new_id, req.params.id, 'viewer', null, null, callback)
@@ -219,10 +219,10 @@ router.post('/:id', function(req, res, next) {
                     entu.message(
                         profile.get('email.value'),
                         res.locals.t('message.email-subject'),
-                        res.locals.t('message.email-message', req.signedCookies.auth_id),
+                        res.locals.t('message.email-message', res.locals.user.id),
                         'message',
-                        req.signedCookies.auth_id,
-                        req.signedCookies.auth_token,
+                        res.locals.user.id,
+                        res.locals.user.token,
                         callback
                     )
                 } else {
