@@ -3,11 +3,6 @@ extends layout
 block vars
     - title = t('pages.messages.title')
 
-block head
-    script(src='/javascripts/angularjs/angular.min.js')
-    script(src='/javascripts/angularjs/angular-route.min.js')
-    script(src='/javascripts/helpific.js')
-
 block content
     .container(ng-controller='messagesCtrl')
         .row(ng-show='!conversations')
