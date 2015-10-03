@@ -417,7 +417,7 @@ pages:
             ru: pages.user.you-help-me-tab
     users:
         count:
-            en: "Thera are total {{ users.length }} users here <span ng-if='search_query'> - found {{ (users | filter:search_query).length }}</span>"
+            en: "There are total {{ users.length }} users here <span ng-if='search_query'> - found {{ (users | filter:search_query).length }}</span>"
             et: "Kokku on meil {{ users.length }} kasutajat <span ng-if='search_query'> - leiti {{ (users | filter:search_query).length }}</span>"
             ru: pages.users.count
         title:
