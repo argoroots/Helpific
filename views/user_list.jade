@@ -16,8 +16,10 @@ block content
                     i.fa.fa-search
                 input#search-input.col-xs-10.text-center(type='search', placeholder='', ng-model='search_query' autofocus)
 
-        .col-xs-12.text-center(ng-if='!users && search_query')
-            i.fa.fa-spinner.fa-pulse.fa-2x
+            .col-xs-12.text-center(ng-if='!users && search_query')
+                i.fa.fa-spinner.fa-pulse.fa-2x
+            
+            small.col-xs-12.text-center(ng-if='users')!= t('pages.users.count')
 
         .table
             .row(ng-repeat='u in users | filter:search_query | orderBy:["name"]')
