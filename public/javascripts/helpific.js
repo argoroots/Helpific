@@ -77,6 +77,13 @@ angular.module('hlpfc', ['ngRoute'])
                             break
                         }
                     }
+                    for(i in $scope.conversations) {
+                        if($scope.conversations[i].id === $scope.id) {
+                            $scope.conversations[i].relative_date = data.message.relative_date
+                            $scope.conversations[i].ordinal = data.message.message_id
+                            break
+                        }
+                    }
                     if(!day_in_list) $scope.messages.days.push(data.day)
 
                     $scope.messages.messages.push(data.message)
