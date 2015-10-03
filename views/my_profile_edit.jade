@@ -29,7 +29,7 @@ block content
 
                 .form-group.col-xs-12.col-sm-3
                     label.control-label(for='language')= t('pages.profile.language')
-                    select#language.form-control(type='text', data-value=profile.get('language.value'), data-id=profile.get('language.id'))
+                    select#language.form-control(data-value=profile.get('language.value'), data-id=profile.get('language.id'))
                         if !profile.get('language.value')
                             option()
                         each l in locales

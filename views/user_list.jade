@@ -18,10 +18,10 @@ block content
 
         .table
             .row(ng-repeat='u in users | filter:search_query | orderBy:["name"]')
-                a(href='users/{{ u.id }}')
+                a(ng-href='users/{{ u.id }}')
                     img.col-xs-2.col-sm-1.img-circle(ng-src='{{ u.picture }}', alt='{{ u.name }}')
                 .col-xs-10.col-sm-4
-                    a(href='users/{{ u.id }}') {{ u.name }}
+                    a(ng-href='users/{{ u.id }}') {{ u.name }}
                     br(ng-if='u.location')
                     em(ng-if='u.location') {{ u.location }}
                 .col-xs-12.col-sm-7.col-xs-offset-2.col-sm-offset-0 {{ u.slogan }}
