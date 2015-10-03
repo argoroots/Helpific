@@ -1,28 +1,14 @@
 PATH = location.pathname.split('/')
 LANGUAGE = PATH[1]
 
-angular.module('hlpfc', ['ngRoute'])
 
 
-// CONFIG
-    .config(function($locationProvider, $routeProvider) {
-        $locationProvider.html5Mode(true)
-        $routeProvider
-            .when('/:lang/users', {
-                controller: 'usersCtrl'
-            })
-            .when('/:lang/messages/:id', {
-                controller: 'messagesCtrl'
-            })
-            .otherwise({
-                redirectTo: '/'
-            })
-    })
+angular.module('hlpfc')
 
 
 
 // USERS
-    .controller('usersCtrl', function($scope, $http, $routeParams) {
+    .controller('usersCtrl', function($scope, $http) {
         $http({
                 method : 'GET',
                 url    : '/' + LANGUAGE + '/users/json'
@@ -50,7 +36,7 @@ angular.module('hlpfc', ['ngRoute'])
 
 
 // MESSAGES
-    .controller('messagesCtrl', function($scope, $http, $routeParams) {
+    .controller('messagesCtrl', function($scope, $http) {
         $scope.id = PATH[3]
         var id_param = $scope.id ? '?id=' + $scope.id : ''
 
