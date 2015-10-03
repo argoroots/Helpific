@@ -3,7 +3,7 @@ LANGUAGE = PATH[1]
 
 
 
-angular.module('hlpfc')
+angular.module('hlpfc', [])
 
 
 
@@ -28,7 +28,6 @@ angular.module('hlpfc')
                 url    : '/' + LANGUAGE + '/help/json?id=' + $scope.id
             })
             .success(function(data) {
-                console.log(data)
                 $scope.help = data
             })
     })
