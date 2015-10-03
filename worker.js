@@ -162,6 +162,7 @@ var app = express()
 
     // show error
     .use(function(err, req, res, next) {
+        if(APP_DEBUG) debug(err)
         res.render('error', {
             message: err.message,
             error: APP_DEBUG ? err : {}
