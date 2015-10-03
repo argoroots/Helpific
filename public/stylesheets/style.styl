@@ -103,6 +103,7 @@ body
 
             .divider
                 margin 0px !important
+                background-color color-gray-light !important
 
         .open
             a
@@ -133,19 +134,24 @@ body
 
         .navbar-nav
             float none !important
-            margin 7.5px -15px
+            margin 0px -15px
+            border-bottom 1px solid color-gray-light !important
 
             li
                 float none
 
                 a
                     line-height 20px
-                    padding-top 10px
-                    padding-bottom 10px
+                    padding-top 0px !important
+                    padding-bottom 0px !important
                     line-height header-height-xs
                     text-align center
 
+            .dropdown-toggle
+                display none
+
             .dropdown-menu
+                display block
                 position static
                 float none
                 margin-top 0px !important
@@ -153,6 +159,10 @@ body
                 background none
                 border none !important
                 border-top 1px solid color-gray-light !important
+                border-bottom 1px solid color-gray-light !important
+
+                .divider
+                    display none
 
     .collapsing
         overflow hidden !important
@@ -362,11 +372,11 @@ pre
 
 
 .border-red
-    border solid 1px color-helpific-red
+    border 1px solid color-helpific-red
 .border-green
-    border solid 1px color-helpific-green
+    border 1px solid color-helpific-green
 .border-yellow
-    border solid 1px color-helpific-yellow
+    border 1px solid color-helpific-yellow
 
 
 
@@ -375,7 +385,7 @@ pre
     margin-bottom 40px
 
     .form-group
-        border-bottom solid 1px color-helpific-green
+        border-bottom 1px solid color-helpific-green
 
     label
         padding 0px
@@ -492,7 +502,7 @@ i.signin
         padding 5px 1px
         border-radius 0px
         border none
-        border-bottom solid 1px color-gray-dark
+        border-bottom 1px solid color-gray-dark
         outline none
         box-shadow none
         font-size 18px
@@ -520,7 +530,7 @@ i.signin
     border-right none !important
 
 .CodeMirror
-    border-bottom solid 1px color-gray-dark !important
+    border-bottom 1px solid color-gray-dark !important
 
 .CodeMirror-focus
     border-bottom solid 2px color-helpific-green !important
@@ -583,7 +593,7 @@ i.signin
 #message-form
     textarea
         border-radius 0px
-        border solid 1px color-helpific-red
+        border 1px solid color-helpific-red
         outline none
         box-shadow none
         font-size 18px
