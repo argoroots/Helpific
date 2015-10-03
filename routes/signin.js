@@ -19,7 +19,7 @@ router.get('/', function(req, res, next) {
 router.get('/done', function(req, res, next) {
     if(!req.signedCookies.auth_url || !req.signedCookies.auth_state) {
         res.redirect('/' + res.locals.lang + '/signin')
-        next(null)
+        return
     }
 
     entu.get_user_session(req.signedCookies.auth_url, req.signedCookies.auth_state, function(error, user) {

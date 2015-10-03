@@ -15,7 +15,6 @@ var entu    = require('../helpers/entu')
 router.get('/json', function(req, res, next) {
     if(!res.locals.user) {
         res.redirect('/' + res.locals.lang + '/signin')
-        next(null)
         return
     }
 
@@ -93,7 +92,6 @@ router.get('/json', function(req, res, next) {
 router.get('/:id/json', function(req, res, next) {
     if(!res.locals.user) {
         res.redirect('/' + res.locals.lang + '/signin')
-        next(null)
         return
     }
 
@@ -164,7 +162,6 @@ router.get('/:id/json', function(req, res, next) {
 router.get('/', function(req, res, next) {
     if(!res.locals.user) {
         res.redirect('/' + res.locals.lang + '/signin')
-        next(null)
         return
     }
 
@@ -177,7 +174,6 @@ router.get('/', function(req, res, next) {
 router.get('/:id', function(req, res, next) {
     if(!res.locals.user) {
         res.redirect('/' + res.locals.lang + '/signin')
-        next(null)
         return
     }
 

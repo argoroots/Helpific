@@ -119,6 +119,8 @@ var app = express()
     // set defaults for views
     .use(function(req, res, next) {
         res.locals.path = req.path
+
+        if(!req.signedCookies) next(null)
         if(req.signedCookies.auth_id && req.signedCookies.auth_token) {
             res.locals.user = {
                 id: parseInt(req.signedCookies.auth_id),
@@ -140,23 +142,18 @@ var app = express()
 
     // show 404
     .use(function(req, res, next) {
-        var err = new Error('Not Found')
-        err.status = 404
-        next(err)
+        res.render('error', {
+            message: 404,
+            error: {}
+        })
     })
 
     // show error
     .use(function(err, req, res, next) {
-        var status = parseInt(err.status) || 500
-
-        res.status(status)
         res.render('error', {
-            title: status,
             message: err.message,
             error: APP_DEBUG ? err : {}
         })
-
-        if(err.status !== 404) debug(err)
     })
 
 
