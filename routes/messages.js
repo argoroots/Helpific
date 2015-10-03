@@ -13,10 +13,7 @@ var entu    = require('../helpers/entu')
 
 // GET listing of conversations
 router.get('/json', function(req, res, next) {
-    if(!res.locals.user) {
-        res.redirect('/' + res.locals.lang + '/signin')
-        return
-    }
+    if(!res.authenticate()) return
 
     var calls = {
         from: function(callback) {
@@ -90,10 +87,7 @@ router.get('/json', function(req, res, next) {
 
 // GET conversation messages
 router.get('/:id/json', function(req, res, next) {
-    if(!res.locals.user) {
-        res.redirect('/' + res.locals.lang + '/signin')
-        return
-    }
+    if(!res.authenticate()) return
 
     moment.locale(res.locals.lang)
 
@@ -160,10 +154,7 @@ router.get('/:id/json', function(req, res, next) {
 
 // GET messages page
 router.get('/', function(req, res, next) {
-    if(!res.locals.user) {
-        res.redirect('/' + res.locals.lang + '/signin')
-        return
-    }
+    if(!res.authenticate()) return
 
     res.render('messages')
 })
@@ -172,10 +163,7 @@ router.get('/', function(req, res, next) {
 
 // GET messages page
 router.get('/:id', function(req, res, next) {
-    if(!res.locals.user) {
-        res.redirect('/' + res.locals.lang + '/signin')
-        return
-    }
+    if(!res.authenticate()) return
 
     res.render('messages')
 })

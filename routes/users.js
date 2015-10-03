@@ -59,10 +59,7 @@ router.get('/json', function(req, res, next) {
 
 // Show user own profile
 router.get('/me', function(req, res, next) {
-    if(!res.locals.user) {
-        res.redirect('/' + res.locals.lang + '/signin')
-        return
-    }
+    if(!res.authenticate()) return
 
     entu.get_entity(res.locals.user.id, res.locals.user.id, res.locals.user.token, function(error, profile) {
         if(error) return next(error)

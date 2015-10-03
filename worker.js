@@ -119,7 +119,6 @@ var app = express()
     // set defaults for views
     .use(function(req, res, next) {
         res.locals.path = req.path
-
         if(!req.signedCookies) next(null)
         if(req.signedCookies.auth_id && req.signedCookies.auth_token) {
             res.locals.user = {
@@ -127,6 +126,18 @@ var app = express()
                 token: req.signedCookies.auth_token
             }
         }
+
+        res.authenticate = function() {
+            if(!res.locals.user) {
+                res.cookie('redirect_url', '/' + res.locals.path.split('/').slice(2).join('/'), {signed:true, maxAge:1000*60*60})
+                res.redirect('/' + res.locals.lang + '/signin')
+                return false
+            } else {
+                return true
+            }
+
+        }
+
         next(null)
     })
 
