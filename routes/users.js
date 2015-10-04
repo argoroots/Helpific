@@ -27,7 +27,7 @@ function media_embed(url) {
 
 // GET profiles page
 router.get('/', function(req, res, next) {
-    res.render('user_list')
+    res.render('users')
 })
 
 
@@ -39,7 +39,7 @@ router.get('/me', function(req, res, next) {
     entu.get_entity(res.locals.user.id, res.locals.user.id, res.locals.user.token, function(error, profile) {
         if(error) return next(error)
 
-        res.render('my_profile_edit', {
+        res.render('profile', {
             profile: profile
         })
     })

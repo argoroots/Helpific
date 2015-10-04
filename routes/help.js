@@ -29,7 +29,7 @@ router.get('/:type', function(req, res, next) {
             return 0
         })
 
-        res.render('help', {
+        res.render('helps', {
             requests: requests,
             show_add: !!res.locals.user,
             help_type: help_type
@@ -56,7 +56,7 @@ router.get('/:type/:id', function(req, res, next) {
         entu.get_entity(help.get('person.reference'), null, null, function(error, profile) {
             if(error) return next(error)
 
-            res.render('help_offer', {
+            res.render('help', {
                 profile: profile,
                 help: help
             })

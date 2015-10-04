@@ -1,91 +1,36 @@
 extends layout
 
 block vars
-    - title = t('pages.help.' + help_type + '-title')
+    - title = profile.get('forename.value') + ' ' + profile.get('surname.value')
 
 block head
-    script(src='/javascripts/date-et-EE.js')
+    meta(property='og:title', content=profile.get('forename.value') + ' ' + profile.get('surname.value'))
+    meta(property='og:image', content=profile.get('_picture'))
+    meta(property='og:description', content=help.get('request.value'))
+
+block title
+    #title
+        .container
+            .row
+                img.col-xs-4.col-md-2.col-xs-offset-4.col-md-offset-5.img-circle(src=profile.get('_picture'), alt=profile.get('forename.value'))
+
+            .row
+                h1.color-green.col-xs-12.text-center
+                    | #{profile.get('forename.value')} #{profile.get('surname.value')}
+                p.text-center
+                    em= profile.get('slogan.value')
+
 
 block content
     .container
-        if show_add
-            .row
-                .col-xs-12.text-right
-                    a#request-add.btn.bg-red(href='javascript:void(0)')= t('pages.help.add-new-' + help_type)
-            form#request-form.hidden
-                .row
-                    .form-group.col-xs-12.col-sm-3
-                        label.control-label(for='time')= t('pages.help.time')
-                        input#time.form-control(type='text', placeholder=t('pages.help.time-ph'))
-
-                    .form-group.col-xs-12.col-sm-3
-                        label.control-label(for='location')= t('pages.help.location')
-                        input#location.form-control(type='text', placeholder=t('pages.help.location-ph'))
-
-                    .form-group.col-xs-12.col-sm-5
-                        label.control-label(for='request')= t('pages.help.' + help_type + '-request')
-                        input#request.form-control(type='text', placeholder=t('pages.help.' + help_type + '-request-ph'))
-                    .form-group.col-xs-12.col-sm-1.text-right
-                        label.control-label(for='request') &nbsp;
-                        a#request-save.btn.bg-red.text-center(href='javascript:void(0)')= t('pages.help.save')
-                        i#request-spinner.hidden.fa.fa-cog.fa-spin.fa-2x
-
-            .row.spacer
-
-        .table
-            each r, i in requests
-                .row
-                    a(href='help/' + help_type + '/' + r.get('_id', ''))
-                        img.col-xs-2.col-md-1.img-circle(src=APP_ENTU_URL + '/entity-' + r.get('person.reference') + '/picture', alt=r.get('person.value'))
-                    .col.col-xs-10.col-sm-3.col-md-3
-                        a(href='help/' + help_type + '/' + r.get('_id', ''))= r.get('person.value')
-                        div= r.get('time.value', '').replace(' 00:00', '')
-                        em= r.get('location.value')
-                    .col.col-xs-12.col-sm-6.col-md-7= r.get('request.value')
-                    a.col.col-xs-12.col-sm-1.text-center(href='messages/' + r.get('person.reference', ''))= t('pages.help.reply')
-
+        .row.text-center
+            strong.col-xs-12= help.get('time.value', '').replace(' 00:00', '')
+            .col-xs-12
+                em= help.get('location.value')
+                br
+                br
+            .col-xs-12= help.get('request.value')
         .row.spacer
-
-    script.
-        $('input').focus(function() {
-            $("label[for='" + this.id + "']").addClass('labelfocus')
-        }).blur(function() {
-            $('label').removeClass('labelfocus')
-        })
-
-        $('#time').change(function() {
-            var d = Date.parse($(this).val())
-            if(d) {
-                $(this).val(d.toString('dd.MM.yyyy HH:mm').replace(' 00:00', ''))
-            } else {
-                $(this).val('')
-            }
-        })
-
-        $('#request-add').click(function() {
-            $('#request-add').addClass('hidden')
-            $('#request-form').removeClass('hidden')
-        })
-
-        $('#request-save').click(function() {
-            if($('#request').val()) {
-                $('#request-save').addClass('hidden')
-                $('#request-spinner').removeClass('hidden')
-                var postdata = {
-                    'time': $('#time').val(),
-                    'location': $('#location').val(),
-                    'request': $('#request').val()
-                }
-                $.post('', postdata, function(data) {
-                    setTimeout(function() {
-                        location.reload(true)
-                    }, 1500)
-                }).fail(
-                    setTimeout(function() {
-                        location.reload(true)
-                    }, 1500)
-                )
-            } else {
-                $('#request').focus()
-            }
-        })
+        .row.text-center
+            a.btn.bg-red.col.col-xs-2.col-xs-offset-5(href='messages/' + help.get('person.reference', ''))= t('pages.help.reply')
+        .row.spacer
