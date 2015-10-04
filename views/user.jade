@@ -45,15 +45,15 @@ block content
                         .profile-photo(style='background-image: url(' + profile.get('me-help-you-photo.file', '') + ')')
                     .spacer.col-xs-12
                 .col-xs-12.text-justify!= profile.get('me-help-you-text.md')
-                
-                h2.col-xs-12(ng-if='help.offers.length > 0')= t('pages.user.help-offers')                
+
+                h2.col-xs-12(ng-if='help.offers.length > 0')= t('pages.user.help-offers')
                 .table(ng-if='help.offers.length > 0')
                     .row(ng-repeat='o in help.offers | orderBy:["-date","-id"]')
                         .col-xs-12
                             .col.col-xs-12.col-sm-3
                                 div {{ o.date }}
                                 em {{ o.location }}
-                            .col.col-xs-12.col-sm-9 {{ o.request }}                
+                            .col.col-xs-12.col-sm-9 {{ o.request }}
 
             #about-me-tab(ng-show='tab === 2 || !tab')
                 if media_embed(profile.get('about-me-video.value'))
@@ -76,15 +76,15 @@ block content
                         .profile-photo(style='background-image: url(' + profile.get('you-help-me-photo.file', '') + ')')
                     .spacer.col-xs-12
                 .col-xs-12.text-justify!= profile.get('you-help-me-text.md')
-                
-                h2.col-xs-12(ng-if='help.requests.length > 0')= t('pages.user.help-requests')                
+
+                h2.col-xs-12(ng-if='help.requests.length > 0')= t('pages.user.help-requests')
                 .table(ng-if='help.requests.length > 0')
                     .row(ng-repeat='r in help.requests | orderBy:["-date","-id"]')
                         .col-xs-12
                             .col.col-xs-12.col-sm-3
                                 div {{ r.date }}
                                 em {{ r.location }}
-                            .col.col-xs-12.col-sm-9 {{ r.request }}                
+                            .col.col-xs-12.col-sm-9 {{ r.request }}
 
                 h2.col-xs-12= t('pages.user.donate')
                 p.col-xs-12= t('pages.user.donate-info', title)
