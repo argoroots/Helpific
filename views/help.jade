@@ -36,13 +36,13 @@ block content
             each r, i in requests
                 .row
                     a(href='help/' + help_type + '/' + r.get('_id', ''))
-                        img.col-xs-3.col-sm-2.col-md-1.img-circle(src=APP_ENTU_URL + '/entity-' + r.get('person.reference') + '/picture', alt=r.get('person.value'))
-                    .col.col-xs-9.col-sm-3.col-md-3
+                        img.col-xs-2.col-md-1.img-circle(src=APP_ENTU_URL + '/entity-' + r.get('person.reference') + '/picture', alt=r.get('person.value'))
+                    .col.col-xs-10.col-sm-3.col-md-3
                         a(href='help/' + help_type + '/' + r.get('_id', ''))= r.get('person.value')
                         div= r.get('time.value', '').replace(' 00:00', '')
                         em= r.get('location.value')
-                    .col.col-xs-8.col-sm-6.col-md-7= r.get('request.value')
-                    a.col.col-xs-1(href='messages/' + r.get('person.reference', ''))= t('pages.help.reply')
+                    .col.col-xs-12.col-sm-6.col-md-7= r.get('request.value')
+                    a.col.col-xs-12.col-sm-1.text-center(href='messages/' + r.get('person.reference', ''))= t('pages.help.reply')
 
         .row.spacer
 
