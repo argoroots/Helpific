@@ -93,7 +93,7 @@ function get_entity(id, auth_id, auth_token, callback) {
 
 
 //Get entities by parent entity id and/or by definition
-exports.get_entities = function(parent_entity_id, definition, query, auth_id, auth_token, callback) {
+exports.get_entities = function(parent_entity_id, definition, query, full_object, auth_id, auth_token, callback) {
     var headers = {}
     var qs = {}
     if(definition) qs.definition = definition
@@ -114,12 +114,17 @@ exports.get_entities = function(parent_entity_id, definition, query, auth_id, au
 
         var entities = []
         async.each(op.get(body, loop, []), function(e, callback) {
-            get_entity(e.id, auth_id, auth_token, function(error, entity) {
-                if(error) return callback(error)
+            if(full_object === true) {
+                get_entity(e.id, auth_id, auth_token, function(error, entity) {
+                    if(error) return callback(error)
 
-                entities.push(entity)
+                    entities.push(entity)
+                    callback()
+                })
+            } else {
+                entities.push(op(e))
                 callback()
-            })
+            }
         }, function(error){
             if(error) return callback(error)
 

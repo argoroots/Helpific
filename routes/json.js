@@ -13,10 +13,10 @@ var entu    = require('../helpers/entu')
 router.get('/help', function(req, res, next) {
     async.parallel({
         requests: function(callback) {
-            entu.get_entities(650, 'request', null, null, null, callback)
+            entu.get_entities(650, 'request', null, true, null, null, callback)
         },
         offers: function(callback) {
-            entu.get_entities(651, 'request', null, null, null, callback)
+            entu.get_entities(651, 'request', null, true, null, null, callback)
         },
     },
     function(err, results) {
@@ -64,10 +64,10 @@ router.get('/messages', function(req, res, next) {
 
     var calls = {
         from: function(callback) {
-            entu.get_entities(null, 'message', 'from.' + res.locals.user.id + '.', res.locals.user.id, res.locals.user.token, callback)
+            entu.get_entities(null, 'message', 'from.' + res.locals.user.id + '.', true, res.locals.user.id, res.locals.user.token, callback)
         },
         to: function(callback) {
-            entu.get_entities(null, 'message', 'to.' + res.locals.user.id + '.', res.locals.user.id, res.locals.user.token, callback)
+            entu.get_entities(null, 'message', 'to.' + res.locals.user.id + '.', true, res.locals.user.id, res.locals.user.token, callback)
         },
     }
 
@@ -142,10 +142,10 @@ router.get('/messages/:id', function(req, res, next) {
 
     async.parallel({
         from: function(callback) {
-            entu.get_entities(null, 'message', 'from.' + req.params.id + '.to.' + res.locals.user.id + '.', res.locals.user.id, res.locals.user.token, callback)
+            entu.get_entities(null, 'message', 'from.' + req.params.id + '.to.' + res.locals.user.id + '.', true, res.locals.user.id, res.locals.user.token, callback)
         },
         to: function(callback) {
-            entu.get_entities(null, 'message', 'from.' + res.locals.user.id + '.to.' + req.params.id + '.', res.locals.user.id, res.locals.user.token, callback)
+            entu.get_entities(null, 'message', 'from.' + res.locals.user.id + '.to.' + req.params.id + '.', true, res.locals.user.id, res.locals.user.token, callback)
         },
     },
     function(err, results) {
@@ -269,7 +269,7 @@ router.post('/messages/:id', function(req, res, next) {
 
 // Get users
 router.get('/users', function(req, res, next) {
-    entu.get_entities(615, 'person', null, null, null, function(error, profiles) {
+    entu.get_entities(615, 'person', null, true, null, null, function(error, profiles) {
         if(error) return next(error)
 
         var users = []

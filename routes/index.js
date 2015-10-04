@@ -30,7 +30,7 @@ router.get('/profile', function(req, res, next) {
 
 // GET partners page
 router.get('/partners', function(req, res, next) {
-    entu.get_entities(null, 'partner', null, null, null, function(error, partners) {
+    entu.get_entities(null, 'partner', null, true, null, null, function(error, partners) {
         if(error) return next(error)
 
         res.render('partners', {
@@ -43,7 +43,7 @@ router.get('/partners', function(req, res, next) {
 
 // GET team page
 router.get('/team', function(req, res, next) {
-    entu.get_entities(612, 'person', null, null, null, function(error, team) {
+    entu.get_entities(612, 'person', null, true, null, null, function(error, team) {
         if(error) return next(error)
 
         team.sort(function(obj1, obj2) {
