@@ -64,7 +64,7 @@ block content
             .row
                 .col-xs-12
                     a.profile-tab.col-xs-4.bg-green(href='javascript:void(0)', data-tab='me-help-you-tab')= t('pages.profile.me-help-you-tab')
-                    a.profile-tab.profile-tab-active.col-xs-4.bg-red(href='javascript:void(0)', data-tab='about-me-tab')= t('pages.profile.about-me-tab')
+                    a.profile-tab.active.col-xs-4.bg-red(href='javascript:void(0)', data-tab='about-me-tab')= t('pages.profile.about-me-tab')
                     a.profile-tab.col-xs-4.bg-yellow(href='javascript:void(0)', data-tab='you-help-me-tab')= t('pages.profile.you-help-me-tab')
 
             .row
@@ -128,8 +128,8 @@ block content
         }, 100)
 
         $('.profile-tab').click(function() {
-            $('.profile-tab').removeClass('profile-tab-active')
-            $(this).addClass('profile-tab-active')
+            $('.profile-tab').removeClass('active')
+            $(this).addClass('active')
 
             $('.profile-tab-pane').addClass('hidden')
             $('#' + $(this).data('tab')).removeClass('hidden')
