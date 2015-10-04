@@ -8,7 +8,7 @@ var path    = require('path')
 var fs      = require('fs')
 var logger  = require('morgan')
 var rotator = require('file-stream-rotator')
-var stylus  = require('stylus')
+var minify  = require('express-minify')
 var favicon = require('serve-favicon')
 var cookie  = require('cookie-parser')
 var random  = require('randomstring')
@@ -25,6 +25,7 @@ APP_DEBUG          = process.env.DEBUG
 APP_PORT           = process.env.PORT
 APP_PORT_SSL       = process.env.PORT_SSL
 APP_LOG_DIR        = process.env.LOGDIR || path.join(__dirname, 'log')
+APP_CACHE_DIR      = process.env.CACHEDIR || path.join(__dirname, 'cache')
 APP_COOKIE_SECRET  = process.env.COOKIE_SECRET || random.generate(16)
 APP_ENTU_URL       = process.env.ENTU_URL || 'https://helpific.entu.ee/api2'
 APP_ENTU_USER      = process.env.ENTU_USER
@@ -35,8 +36,9 @@ APP_TIMEZONE       = 'Europe/Tallinn'
 
 
 
-// ensure log directory exists
+// ensure log and cache directory exists
 fs.existsSync(APP_LOG_DIR) || fs.mkdirSync(APP_LOG_DIR)
+fs.existsSync(APP_CACHE_DIR) || fs.mkdirSync(APP_CACHE_DIR)
 
 
 
@@ -98,8 +100,13 @@ var app = express()
     .use(bparser.json())
     .use(bparser.urlencoded({extended: true}))
 
-    // stylus to css converter
-    .use(stylus.middleware({src: path.join(__dirname, 'public'), compress: true}))
+    // use express-minify to minify css/js
+    .use(minify({
+        js_match: /javascript/,
+        stylus_match: /stylus/,
+        json_match: /do_not_cache_json/,
+        cache: APP_CACHE_DIR
+    }))
 
     // static files path & favicon
     .use(express.static(path.join(__dirname, 'public')))

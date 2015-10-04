@@ -8,7 +8,7 @@ angular.module('hlpfc', [])
 
 
 // USERS
-    .controller('usersCtrl', function($scope, $http) {
+    .controller('usersCtrl', ['$scope', '$http', function($scope, $http) {
         $http({
                 method : 'GET',
                 url    : '/' + LANGUAGE + '/users/json'
@@ -16,12 +16,12 @@ angular.module('hlpfc', [])
             .success(function(data) {
                 $scope.users = data
             })
-    })
+    }])
 
 
 
 // USER
-    .controller('userCtrl', function($scope, $http) {
+    .controller('userCtrl', ['$scope', '$http', function($scope, $http) {
         $scope.id = PATH[3]
         $http({
                 method : 'GET',
@@ -30,12 +30,12 @@ angular.module('hlpfc', [])
             .success(function(data) {
                 $scope.help = data
             })
-    })
+    }])
 
 
 
 // MESSAGES
-    .controller('messagesCtrl', function($scope, $http) {
+    .controller('messagesCtrl', ['$scope', '$http', function($scope, $http) {
         $scope.id = PATH[3]
         var id_param = $scope.id ? '?id=' + $scope.id : ''
 
@@ -97,4 +97,4 @@ angular.module('hlpfc', [])
         }
 
         if($scope.id) $scope.openConversation($scope.id)
-    })
+    }])

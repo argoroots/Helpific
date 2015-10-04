@@ -1,4 +1,4 @@
 ssl
 node_modules
-*.css
-*.log
+cache
+log
