@@ -1,11 +1,11 @@
 extends layout
 
+block vars
+    - title = t('pages.profile.title')
+
 block head
     link(rel='stylesheet', type='text/css', href='https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css')
     script(src='https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js')
-
-block vars
-    - title = t('pages.profile.title')
 
 block content
     .container

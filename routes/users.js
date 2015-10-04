@@ -98,7 +98,6 @@ router.get('/:id', function(req, res, next) {
             if(error) return next(error)
 
             res.render('user', {
-                title: profile.get('forename.value', '') + ' ' + profile.get('surname.value', ''),
                 profile: profile,
                 media_embed: media_embed
             })

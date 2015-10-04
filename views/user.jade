@@ -1,6 +1,7 @@
 extends layout
 
 block vars
+    - title = profile.get('forename.value') + ' ' + profile.get('surname.value')
 
 block head
     meta(property='og:title', content=profile.get('forename.value') + ' ' + profile.get('surname.value'))
@@ -16,7 +17,7 @@ block title
 
             if title
                 .row
-                    h1.col-xs-12.text-center= title
+                    h1.color-green.col-xs-12.text-center= title
                     p.text-center
                         em= profile.get('slogan.value')
 
