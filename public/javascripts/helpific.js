@@ -11,7 +11,7 @@ angular.module('hlpfc', [])
     .controller('usersCtrl', ['$scope', '$http', function($scope, $http) {
         $http({
                 method : 'GET',
-                url    : '/' + LANGUAGE + '/users/json'
+                url    : '/' + LANGUAGE + '/json/users'
             })
             .success(function(data) {
                 $scope.users = data
@@ -25,7 +25,7 @@ angular.module('hlpfc', [])
         $scope.id = PATH[3]
         $http({
                 method : 'GET',
-                url    : '/' + LANGUAGE + '/help/json?id=' + $scope.id
+                url    : '/' + LANGUAGE + '/json/help?id=' + $scope.id
             })
             .success(function(data) {
                 $scope.help = data
@@ -37,11 +37,11 @@ angular.module('hlpfc', [])
 // MESSAGES
     .controller('messagesCtrl', ['$scope', '$http', function($scope, $http) {
         $scope.id = PATH[3]
-        var id_param = $scope.id ? '?id=' + $scope.id : ''
+        var id_param = $scope.id ? '?new_id=' + $scope.id : ''
 
         $http({
                 method : 'GET',
-                url    : '/' + LANGUAGE + '/messages/json' + id_param
+                url    : '/' + LANGUAGE + '/json/messages' + id_param
             })
             .success(function(data) {
                 $scope.conversations = data
@@ -54,7 +54,7 @@ angular.module('hlpfc', [])
 
             $http({
                     method : 'GET',
-                    url    : '/' + LANGUAGE + '/messages/' + id + '/json'
+                    url    : '/' + LANGUAGE + '/json/messages/' + id
                 })
                 .success(function(data) {
                     $scope.messages = data
@@ -66,7 +66,7 @@ angular.module('hlpfc', [])
             $scope.sending = true
             $http({
                     method : 'POST',
-                    url    : '/' + LANGUAGE + '/messages/' + $scope.id,
+                    url    : '/' + LANGUAGE + '/json/messages/' + $scope.id,
                     data   : { 'message': $scope.message }
                 })
                 .success(function(data) {

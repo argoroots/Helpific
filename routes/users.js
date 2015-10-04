@@ -1,8 +1,6 @@
-var express = require('express')
-var router  = express.Router()
+var router  = require('express').Router()
 var path    = require('path')
 var debug   = require('debug')('app:' + path.basename(__filename).replace('.js', ''))
-var request = require('request')
 
 var entu    = require('../helpers/entu')
 
@@ -30,29 +28,6 @@ function media_embed(url) {
 // GET profiles page
 router.get('/', function(req, res, next) {
     res.render('user_list')
-})
-
-
-
-// GET profiles listing in JSON
-router.get('/json', function(req, res, next) {
-    entu.get_entities(615, 'person', null, null, null, function(error, profiles) {
-        if(error) return next(error)
-
-        var users = []
-        for(i in profiles) {
-            var p = profiles[i]
-            users.push({
-                id: p.get('_id'),
-                name: p.get('forename.value', '') + ' ' + p.get('surname.value', ''),
-                picture: p.get('_picture'),
-                slogan: p.get('slogan.value'),
-                location: p.has('town.value') && p.has('county.value') ? p.get('town.value') + ', ' + p.get('county.value') : p.get('town.value') + p.get('county.value')
-            })
-        }
-
-        res.send(users)
-    })
 })
 
 

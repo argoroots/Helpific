@@ -1,60 +1,8 @@
-var express = require('express')
-var router  = express.Router()
+var router  = require('express').Router()
 var path    = require('path')
 var debug   = require('debug')('app:' + path.basename(__filename).replace('.js', ''))
-var request = require('request')
-var async   = require('async')
 
 var entu    = require('../helpers/entu')
-
-
-
-// GET requests/offers listing
-router.get('/json', function(req, res, next) {
-    async.parallel({
-        requests: function(callback) {
-            entu.get_entities(650, 'request', null, null, null, callback)
-        },
-        offers: function(callback) {
-            entu.get_entities(651, 'request', null, null, null, callback)
-        },
-    },
-    function(err, results) {
-        if(err) return next(err)
-
-        requests = []
-        offers = []
-
-        for(var i in results.requests) {
-            var r = results.requests[i]
-            if(req.query.id && parseInt(req.query.id) !== r.get('person.reference')) continue
-            requests.push({
-                id: r.get('id'),
-                person: r.get('person.reference'),
-                date: r.get('time.value', '').replace(' 00:00', ''),
-                location: r.get('location.value'),
-                request: r.get('request.value')
-            })
-        }
-
-        for(var i in results.offers) {
-            var r = results.offers[i]
-            if(req.query.id && parseInt(req.query.id) !== r.get('person.reference')) continue
-            offers.push({
-                id: r.get('id'),
-                person: r.get('person.reference'),
-                date: r.get('time.value', '').replace(' 00:00', ''),
-                location: r.get('location.value'),
-                request: r.get('request.value')
-            })
-        }
-
-        res.send({
-            requests: requests,
-            offers: offers
-        })
-    })
-})
 
 
 
