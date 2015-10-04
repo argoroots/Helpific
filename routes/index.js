@@ -13,7 +13,7 @@ router.get('/', function(req, res, next) {
 
 
 
-// Show user own profile
+// GET user own profile
 router.get('/profile', function(req, res, next) {
     if(!res.authenticate()) return
 
@@ -24,6 +24,15 @@ router.get('/profile', function(req, res, next) {
             profile: profile
         })
     })
+})
+
+
+
+// GET messages page
+router.get('/messages/:id*?', function(req, res, next) {
+    if(!res.authenticate()) return
+
+    res.render('messages')
 })
 
 

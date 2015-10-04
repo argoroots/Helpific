@@ -152,7 +152,6 @@ var app = express()
     .use('/:lang',          require('./routes/index'))
     .use('/:lang/help',     require('./routes/help'))
     .use('/:lang/json',     require('./routes/json'))
-    .use('/:lang/messages', require('./routes/messages'))
     .use('/:lang/signin',   require('./routes/signin'))
     .use('/:lang/users',    require('./routes/users'))
 
