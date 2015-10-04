@@ -7,6 +7,20 @@ angular.module('hlpfc', [])
 
 
 
+// INDEX
+    .controller('indexCtrl', ['$scope', '$http', function($scope, $http) {
+        $http({
+                method : 'GET',
+                url    : '/' + LANGUAGE + '/json/index'
+            })
+            .success(function(data) {
+                console.log(data);
+                $scope.info = data
+            })
+    }])
+
+
+
 // USERS
     .controller('usersCtrl', ['$scope', '$http', function($scope, $http) {
         $http({

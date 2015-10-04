@@ -225,13 +225,13 @@ pages:
             en: >
                 <h2>It's never been easier to give and get help</h2> <p>Helpific
                 connects volunteers to those who need help with everyday
-                activities.</p> <p>At the moment we have 99 help requests
-                fulfilled and 1044 active voluteers.</p>
+                activities.</p> <p ng-if='info'>At the moment we have {{ info.help }} help requests
+                fulfilled and {{ info.users }} active voluteers.</p>
             et: >
                 <h2>Kunagi varem pole abi osutamine ja saamine olnud nii
                 lihtne!</h2> <p>Helpific ühendab vabatahtlikud abistajad
-                erivajadustega abivajajatega.</p> <p>Hetkel on meil 99 täidetud
-                abisoovi ja 1044 aktiivset vabatahtlikku abistajat.</p>
+                erivajadustega abivajajatega.</p> <p ng-if='info'>Hetkel on meil {{ info.help }} täidetud
+                abisoovi ja {{ info.users }} aktiivset vabatahtlikku abistajat.</p>
             ru: pages.index.text
     messages:
         new-message:

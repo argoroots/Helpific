@@ -9,6 +9,28 @@ var entu    = require('../helpers/entu')
 
 
 
+// Get help and users count
+router.get('/index', function(req, res, next) {
+    async.parallel({
+        help: function(callback) {
+            entu.get_entities(null, 'request', null, false, null, null, callback)
+        },
+        users: function(callback) {
+            entu.get_entities(null, 'person', null, false, null, null, callback)
+        },
+    },
+    function(err, results) {
+        if(err) return next(err)
+
+        res.send({
+            help: results.help.length,
+            users: results.users.length
+        })
+    })
+})
+
+
+
 // Get requests/offers
 router.get('/help', function(req, res, next) {
     async.parallel({
