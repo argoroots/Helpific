@@ -31,7 +31,7 @@ router.get('/done', function(req, res, next) {
         entu.get_entity(user.id, user.id, user.token, function(error, profile) {
             if(error) return next(error)
 
-            var url = req.signedCookies.redirect_url || '/users/me'
+            var url = req.signedCookies.redirect_url || '/profile'
 
             res.clearCookie('redirect_url')
             res.redirect('/' + profile.get('language.value', APP_DEFAULT_LOCALE) + url)

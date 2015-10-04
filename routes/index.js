@@ -13,6 +13,21 @@ router.get('/', function(req, res, next) {
 
 
 
+// Show user own profile
+router.get('/profile', function(req, res, next) {
+    if(!res.authenticate()) return
+
+    entu.get_entity(res.locals.user.id, res.locals.user.id, res.locals.user.token, function(error, profile) {
+        if(error) return next(error)
+
+        res.render('profile', {
+            profile: profile
+        })
+    })
+})
+
+
+
 // GET partners page
 router.get('/partners', function(req, res, next) {
     entu.get_entities(null, 'partner', null, null, null, function(error, partners) {

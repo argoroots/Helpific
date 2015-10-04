@@ -203,10 +203,7 @@ router.get('/messages/:id', function(req, res, next) {
 
 // Create message
 router.post('/messages/:id', function(req, res, next) {
-    if(!res.locals.user || !req.params.id) {
-        res.status(403).send()
-        return
-    }
+    if(!res.authenticate()) return
 
     var properties = req.body
     properties['from-person'] = res.locals.user.id
@@ -288,6 +285,19 @@ router.get('/users', function(req, res, next) {
         }
 
         res.send(users)
+    })
+})
+
+
+
+// Edit user profile
+router.post('/profile', function(req, res, next) {
+    if(!res.authenticate()) return
+
+    entu.set_user(res.locals.user.id, res.locals.user.token, req.body, function(error, response) {
+        if(error) return next(error)
+
+        res.send(response)
     })
 })
 

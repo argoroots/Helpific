@@ -32,39 +32,6 @@ router.get('/', function(req, res, next) {
 
 
 
-// Show user own profile
-router.get('/me', function(req, res, next) {
-    if(!res.authenticate()) return
-
-    entu.get_entity(res.locals.user.id, res.locals.user.id, res.locals.user.token, function(error, profile) {
-        if(error) return next(error)
-
-        res.render('profile', {
-            profile: profile
-        })
-    })
-})
-
-
-
-// Edit user profile
-router.post('/me', function(req, res, next) {
-    if(!res.locals.user) {
-        res.status(403).send()
-        return
-    }
-
-    entu.set_user(res.locals.user.id, res.locals.user.token, req.body, function(error, response) {
-        if(error) return next(error)
-
-        res.setHeader('Content-Type', 'application/json')
-        res.status(200)
-        res.send(response)
-    })
-})
-
-
-
 // GET profile
 router.get('/:id', function(req, res, next) {
     if(!req.params.id) res.redirect('/' + res.locals.lang + '/users')
