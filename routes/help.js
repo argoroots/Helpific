@@ -21,7 +21,11 @@ router.get('/:type', function(req, res, next) {
         return
     }
 
-    entu.get_entities(help_group, 'request', null, true, null, null, function(error, requests) {
+    entu.get_entities({
+        parent_entity_id: help_group,
+        definition: 'request',
+        full_object: true
+    }, function(error, requests) {
         if(error) return next(error)
 
         requests.sort(function(obj1, obj2) {
@@ -50,10 +54,14 @@ router.get('/:type/:id', function(req, res, next) {
         return
     }
 
-    entu.get_entity(req.params.id, null, null, function(error, help) {
+    entu.get_entity({
+        id: req.params.id
+    }, function(error, help) {
         if(error) return next(error)
 
-        entu.get_entity(help.get('person.reference'), null, null, function(error, profile) {
+        entu.get_entity({
+            id: help.get('person.reference')
+        }, function(error, profile) {
             if(error) return next(error)
 
             res.render('help', {
@@ -95,13 +103,25 @@ router.post('/:type', function(req, res, next) {
         if(time_time) properties.time = properties.time + ' ' + time_time
     }
 
-    entu.add(help_group, 'request', properties, null, null, function(error, new_id) {
+    entu.add({
+        parent_entity_id: help_group,
+        definition: 'request',
+        properties: properties
+    }, function(error, new_id) {
         if(error) return next(error)
 
-        entu.rights(new_id, res.locals.user.id, 'owner', null, null, function(error, response) {
+        entu.rights({
+            id: new_id,
+            person_id: res.locals.user.id,
+            right: 'owner'
+        }, function(error, response) {
             if(error) return next(error)
 
-            entu.rights(new_id, APP_ENTU_USER, 'viewer', null, null, function(error, response) {
+            entu.rights({
+                id: new_id,
+                person_id: APP_ENTU_USER,
+                right: 'viewer'
+            }, function(error, response) {
                 if(error) return next(error)
 
                 res.setHeader('Content-Type', 'application/json')

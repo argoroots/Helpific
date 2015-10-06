@@ -13,10 +13,16 @@ var entu    = require('../helpers/entu')
 router.get('/index', function(req, res, next) {
     async.parallel({
         help: function(callback) {
-            entu.get_entities(null, 'request', null, false, null, null, callback)
+            entu.get_entities({
+                definition: 'request',
+                full_object: false
+            }, callback)
         },
         users: function(callback) {
-            entu.get_entities(null, 'person', null, false, null, null, callback)
+            entu.get_entities({
+                definition: 'person',
+                full_object: false
+            }, callback)
         },
     },
     function(err, results) {
@@ -35,10 +41,18 @@ router.get('/index', function(req, res, next) {
 router.get('/help', function(req, res, next) {
     async.parallel({
         requests: function(callback) {
-            entu.get_entities(650, 'request', null, true, null, null, callback)
+            entu.get_entities({
+                parent_entity_id: 650,
+                definition: 'request',
+                full_object: true
+            }, callback)
         },
         offers: function(callback) {
-            entu.get_entities(651, 'request', null, true, null, null, callback)
+            entu.get_entities({
+                parent_entity_id: 651,
+                definition: 'request',
+                full_object: true
+            }, callback)
         },
     },
     function(err, results) {
@@ -86,15 +100,29 @@ router.get('/messages', function(req, res, next) {
 
     var calls = {
         from: function(callback) {
-            entu.get_entities(null, 'message', 'from.' + res.locals.user.id + '.', true, res.locals.user.id, res.locals.user.token, callback)
+            entu.get_entities({
+                definition: 'message',
+                query: 'from.' + res.locals.user.id + '.',
+                full_object: true,
+                auth_id: res.locals.user.id,
+                auth_token: res.locals.user.token
+            }, callback)
         },
         to: function(callback) {
-            entu.get_entities(null, 'message', 'to.' + res.locals.user.id + '.', true, res.locals.user.id, res.locals.user.token, callback)
+            entu.get_entities({
+                definition: 'message',
+                query: 'to.' + res.locals.user.id + '.',
+                full_object: true,
+                auth_id: res.locals.user.id,
+                auth_token: res.locals.user.token
+            }, callback)
         },
     }
 
     if(req.query.new_id) calls.id = function(callback) {
-        entu.get_entity(req.query.new_id, null, null, callback)
+        entu.get_entity({
+            id: req.query.new_id
+        }, callback)
     }
 
     moment.locale(res.locals.lang)
@@ -164,10 +192,22 @@ router.get('/messages/:id', function(req, res, next) {
 
     async.parallel({
         from: function(callback) {
-            entu.get_entities(null, 'message', 'from.' + req.params.id + '.to.' + res.locals.user.id + '.', true, res.locals.user.id, res.locals.user.token, callback)
+            entu.get_entities({
+                definition: 'message',
+                query: 'from.' + req.params.id + '.to.' + res.locals.user.id + '.',
+                full_object: true,
+                auth_id: res.locals.user.id,
+                auth_token: res.locals.user.token
+            }, callback)
         },
         to: function(callback) {
-            entu.get_entities(null, 'message', 'from.' + res.locals.user.id + '.to.' + req.params.id + '.', true, res.locals.user.id, res.locals.user.token, callback)
+            entu.get_entities({
+                definition: 'message',
+                query: 'from.' + res.locals.user.id + '.to.' + req.params.id + '.',
+                full_object: true,
+                auth_id: res.locals.user.id,
+                auth_token: res.locals.user.token
+            }, callback)
         },
     },
     function(err, results) {
@@ -232,31 +272,50 @@ router.post('/messages/:id', function(req, res, next) {
     properties['to-person'] = req.params.id
     properties['participants'] = 'from.' + res.locals.user.id + '.to.' + req.params.id + '.'
 
-    entu.add(APP_ENTU_USER, 'message', properties, null, null, function(error, new_id) {
+    entu.add({
+        parent_entity_id: APP_ENTU_USER,
+        definition: 'message',
+        properties: properties
+    }, function(error, new_id) {
         if(error) return next(error)
 
         async.waterfall([
             function(callback) {
-                entu.rights(new_id, res.locals.user.id, 'owner', null, null, callback)
+                entu.rights({
+                    id: new_id,
+                    person_id: res.locals.user.id,
+                    right: 'owner'
+                }, callback)
             },
             function(result, callback) {
-                entu.rights(new_id, req.params.id, 'viewer', null, null, callback)
+                entu.rights({
+                    id: new_id,
+                    person_id: req.params.id,
+                    right: 'viewer'
+                }, callback)
             },
             function(result, callback) {
-                entu.rights(new_id, APP_ENTU_USER, '', null, null, callback)
+                entu.rights({
+                    id: new_id,
+                    person_id: APP_ENTU_USER,
+                    right: ''
+                }, callback)
             },
             function(result, callback) {
-                entu.get_entity(req.params.id, null, null, callback)
+                entu.get_entity({
+                    id: req.params.id
+                }, callback)
             },
             function(profile, callback) {
                 if(profile.has('email.value')) {
-                    entu.message(
-                        profile.get('email.value'),
-                        res.locals.t('message.email-subject'),
-                        res.locals.t('message.email-message', res.locals.user.id),
-                        'message',
-                        res.locals.user.id,
-                        res.locals.user.token,
+                    entu.message({
+                            to: profile.get('email.value'),
+                            subject: res.locals.t('message.email-subject'),
+                            message: res.locals.t('message.email-message', res.locals.user.id),
+                            tag: 'message',
+                            auth_id: res.locals.user.id,
+                            auth_token: res.locals.user.token
+                        },
                         callback
                     )
                 } else {
@@ -291,7 +350,11 @@ router.post('/messages/:id', function(req, res, next) {
 
 // Get users
 router.get('/users', function(req, res, next) {
-    entu.get_entities(615, 'person', null, true, null, null, function(error, profiles) {
+    entu.get_entities({
+        parent_entity_id: 615,
+        definition: 'person',
+        full_object: true
+    }, function(error, profiles) {
         if(error) return next(error)
 
         var users = []
@@ -316,7 +379,11 @@ router.get('/users', function(req, res, next) {
 router.post('/profile', function(req, res, next) {
     if(!res.authenticate()) return
 
-    entu.set_user(res.locals.user.id, res.locals.user.token, req.body, function(error, response) {
+    entu.set_user({
+        auth_id: res.locals.user.id,
+        auth_token: res.locals.user.token,
+        data: req.body
+    }, function(error, response) {
         if(error) return next(error)
 
         res.send(response)

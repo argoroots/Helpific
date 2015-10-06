@@ -17,7 +17,11 @@ router.get('/', function(req, res, next) {
 router.get('/profile', function(req, res, next) {
     if(!res.authenticate()) return
 
-    entu.get_entity(res.locals.user.id, res.locals.user.id, res.locals.user.token, function(error, profile) {
+    entu.get_entity({
+        id: res.locals.user.id,
+        auth_id: res.locals.user.id,
+        auth_token: res.locals.user.token
+    }, function(error, profile) {
         if(error) return next(error)
 
         res.render('profile', {
@@ -39,7 +43,10 @@ router.get('/messages/:id*?', function(req, res, next) {
 
 // GET partners page
 router.get('/partners', function(req, res, next) {
-    entu.get_entities(null, 'partner', null, true, null, null, function(error, partners) {
+    entu.get_entities({
+        definition: 'partner',
+        full_object: true
+    }, function(error, partners) {
         if(error) return next(error)
 
         res.render('partners', {
@@ -52,7 +59,11 @@ router.get('/partners', function(req, res, next) {
 
 // GET team page
 router.get('/team', function(req, res, next) {
-    entu.get_entities(612, 'person', null, true, null, null, function(error, team) {
+    entu.get_entities({
+        parent_entity_id: 612,
+        definition: 'person',
+        full_object: true
+    }, function(error, team) {
         if(error) return next(error)
 
         team.sort(function(obj1, obj2) {
@@ -87,16 +98,28 @@ router.get('/bb', function(req, res, next) {
 // Send feedback
 router.post('/feedback', function(req, res, next) {
     var properties = req.body
-    if(res.locals.user.id) properties['from-person'] = res.locals.user.id
+    if(res.locals.user) properties['from-person'] = res.locals.user.id
 
-    entu.add(APP_ENTU_USER, 'message', properties, null, null, function(error, new_id) {
+    entu.add({
+        parent_entity_id: APP_ENTU_USER,
+        definition: 'message',
+        properties: properties
+    }, function(error, new_id) {
         if(error) return next(error)
 
-        if(res.locals.user.id) {
-            entu.rights(new_id, res.locals.user.id, 'owner', null, null, function(error, response) {
+        if(res.locals.user) {
+            entu.rights({
+                id: new_id,
+                person_id: res.locals.user.id,
+                right: 'owner'
+            }, function(error, response) {
                 if(error) return next(error)
 
-                entu.rights(new_id, APP_ENTU_USER, '', null, null, function(error, response) {
+                entu.rights({
+                    id: new_id,
+                    person_id: APP_ENTU_USER,
+                    right: ''
+                }, function(error, response) {
                     if(error) return next(error)
 
                     res.setHeader('Content-Type', 'application/json')
@@ -105,7 +128,11 @@ router.post('/feedback', function(req, res, next) {
                 })
             })
         } else {
-                entu.rights(new_id, APP_ENTU_USER, '', null, null, function(error, response) {
+                entu.rights({
+                    id: new_id,
+                    person_id: APP_ENTU_USER,
+                    right: ''
+                }, function(error, response) {
                     if(error) return next(error)
 
                     res.setHeader('Content-Type', 'application/json')

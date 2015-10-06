@@ -20,7 +20,10 @@ router.get('/done', function(req, res, next) {
         return
     }
 
-    entu.get_user_session(req.signedCookies.auth_url, req.signedCookies.auth_state, function(error, user) {
+    entu.get_user_session({
+        auth_url: req.signedCookies.auth_url,
+        state: req.signedCookies.auth_state
+    }, function(error, user) {
         if(error) return next(error)
 
         res.clearCookie('auth_url')
@@ -28,7 +31,11 @@ router.get('/done', function(req, res, next) {
         res.cookie('auth_id', user.id, {signed:true, maxAge:1000*60*60*24*14})
         res.cookie('auth_token', user.token, {signed:true, maxAge:1000*60*60*24*14})
 
-        entu.get_entity(user.id, user.id, user.token, function(error, profile) {
+        entu.get_entity({
+            id: user.id,
+            auth_id: user.id,
+            auth_token: user.token
+        }, function(error, profile) {
             if(error) return next(error)
 
             var url = req.signedCookies.redirect_url || '/profile'
@@ -62,7 +69,10 @@ router.get('/:provider', function(req, res, next) {
     res.clearCookie('auth_id')
     res.clearCookie('auth_token')
 
-    entu.get_signin_url(req.protocol + '://' + req.hostname + '/' + res.locals.lang + '/signin/done',  req.params.provider, function(error, data) {
+    entu.get_signin_url({
+        redirect_url: req.protocol + '://' + req.hostname + '/' + res.locals.lang + '/signin/done',
+        provider: req.params.provider
+    }, function(error, data) {
         if(error) return next(error)
 
         res.cookie('auth_url', data.auth_url, {signed:true, maxAge:1000*60*10})
