@@ -38,57 +38,33 @@ router.get('/index', function(req, res, next) {
 
 
 // Get requests/offers
-router.get('/help', function(req, res, next) {
-    async.parallel({
-        requests: function(callback) {
-            entu.get_entities({
-                parent_entity_id: 650,
-                definition: 'request',
-                full_object: true
-            }, callback)
-        },
-        offers: function(callback) {
-            entu.get_entities({
-                parent_entity_id: 651,
-                definition: 'request',
-                full_object: true
-            }, callback)
-        },
-    },
-    function(err, results) {
+router.get('/help/:type*?', function(req, res, next) {
+    entu.get_entities({
+        definition: 'request',
+        query: req.params.type ? req.params.type : '',
+        full_object: true
+    }, function(err, results) {
         if(err) return next(err)
 
         requests = []
-        offers = []
-
-        for(var i in results.requests) {
-            var r = results.requests[i]
+        for(var i in results) {
+            var r = results[i]
             if(req.query.id && parseInt(req.query.id) !== r.get('person.reference')) continue
+            if(req.params.type && req.params.type !== r.get('type.value')) continue
             requests.push({
                 id: r.get('id'),
-                person: r.get('person.reference'),
+                type: r.get('type.value'),
+                person_id: r.get('person.reference'),
+                person: r.get('person.value'),
+                picture: APP_ENTU_URL + '/entity-' + r.get('person.reference') + '/picture',
                 date: r.get('time.value', '').replace(' 00:00', ''),
                 location: r.get('location.value'),
+                status: r.get('status.value'),
                 request: r.get('request.value')
             })
         }
 
-        for(var i in results.offers) {
-            var r = results.offers[i]
-            if(req.query.id && parseInt(req.query.id) !== r.get('person.reference')) continue
-            offers.push({
-                id: r.get('id'),
-                person: r.get('person.reference'),
-                date: r.get('time.value', '').replace(' 00:00', ''),
-                location: r.get('location.value'),
-                request: r.get('request.value')
-            })
-        }
-
-        res.send({
-            requests: requests,
-            offers: offers
-        })
+        res.send(requests)
     })
 })
 
