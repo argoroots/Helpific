@@ -10,7 +10,7 @@ var sanitize = require('sanitize-html')
 
 
 
-function sign_data(data) {
+var sign_data = function(data) {
     data = data || {}
 
     if(!APP_ENTU_USER || !APP_ENTU_KEY) return data
@@ -128,7 +128,7 @@ exports.get_entities = function(params, callback) {
                 entities.push(op(e))
                 callback()
             }
-        }, function(error){
+        }, function(error) {
             if(error) return callback(error)
 
             callback(null, entities)

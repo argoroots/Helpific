@@ -1,8 +1,8 @@
-var router  = require('express').Router()
-var path    = require('path')
-var debug   = require('debug')('app:' + path.basename(__filename).replace('.js', ''))
+var router = require('express').Router()
+var path   = require('path')
+var debug  = require('debug')('app:' + path.basename(__filename).replace('.js', ''))
 
-var entu    = require('../helpers/entu')
+var entu   = require('../helpers/entu')
 
 
 
@@ -12,13 +12,13 @@ function media_embed(url) {
 
     if(url.indexOf('youtu.be/') > -1) {
         return 'https://www.youtube.com/embed/' + url.split('youtu.be/')[1].split('?')[0]
-    } else if (url.indexOf('youtube.com/watch') > -1) {
+    } else if(url.indexOf('youtube.com/watch') > -1) {
         return 'https://www.youtube.com/embed/' + url.split('v=')[1].split('&')[0]
-    }else if (url.indexOf('vimeo.com/') > -1) {
+    } else if(url.indexOf('vimeo.com/') > -1) {
         return 'https://player.vimeo.com/video/' + url.split('vimeo.com/')[1].split('?')[0]
-    }else if (url.indexOf('wistia.com/medias/') > -1) {
+    } else if(url.indexOf('wistia.com/medias/') > -1) {
         return 'https://fast.wistia.net/embed/iframe/' + url.split('wistia.com/medias/')[1].split('?')[0]
-    }else {
+    } else {
         return null
     }
 }

@@ -1,8 +1,8 @@
-var router  = require('express').Router()
-var path    = require('path')
-var debug   = require('debug')('app:' + path.basename(__filename).replace('.js', ''))
+var router = require('express').Router()
+var path   = require('path')
+var debug  = require('debug')('app:' + path.basename(__filename).replace('.js', ''))
 
-var entu    = require('../helpers/entu')
+var entu   = require('../helpers/entu')
 
 
 
