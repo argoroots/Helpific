@@ -21,6 +21,31 @@ angular.module('hlpfc', [])
 
 
 
+// HELP
+    .controller('helpCtrl', ['$scope', '$http', function($scope, $http) {
+        if(PATH[3] === 'requests') $scope.type = 'request'
+        if(PATH[3] === 'offers') $scope.type = 'offer'
+
+        $http({
+                method : 'GET',
+                url    : '/' + LANGUAGE + '/json/help/statuses'
+            })
+            .success(function(data) {
+                console.log(data);
+                $scope.statuses = data
+            })
+
+        $http({
+                method : 'GET',
+                url    : '/' + LANGUAGE + '/json/help'
+            })
+            .success(function(data) {
+                $scope.help = data
+            })
+    }])
+
+
+
 // USERS
     .controller('usersCtrl', ['$scope', '$http', function($scope, $http) {
         $http({

@@ -9,35 +9,17 @@ var entu   = require('../helpers/entu')
 // GET requests/offers listing
 router.get('/:type', function(req, res, next) {
     if(req.params.type === 'requests') {
-        var page_id = 654
-        var help_group = 650
         var help_type = 'request'
     } else if(req.params.type === 'offers') {
-        var page_id = 655
-        var help_group = 651
         var help_type = 'offer'
     } else {
         res.redirect('/' + res.locals.lang + '/help/requests')
         return
     }
 
-    entu.get_entities({
-        parent_entity_id: help_group,
-        definition: 'request',
-        full_object: true
-    }, function(error, requests) {
-        if(error) return next(error)
-
-        requests.sort(function(obj1, obj2) {
-            return (obj1.get('time.value', '') > obj2.get('time.value', '')) ? 1 : -1
-            return 0
-        })
-
-        res.render('helps', {
-            requests: requests,
-            show_add: !!res.locals.user,
-            help_type: help_type
-        })
+    res.render('helps', {
+        show_add: !!res.locals.user,
+        help_type: help_type
     })
 })
 

@@ -140,6 +140,10 @@ pages:
             en: 'e.g. Tallinn, Harjumaa'
             et: 'näit. Tallinn, Harjumaa'
             ru: pages.help.location-ph
+        offer-count:
+            en: "There are total {{ (help | filter:{type:type }).length }} help offers here <span ng-if='search_query'> - found {{ (help | filter:{type:type} | filter:search_query).length }}</span>"
+            et: "Kokku on meil {{ (help | filter:{type:type }).length }} abipakkumist <span ng-if='search_query'> - leiti {{ (help | filter:{type:type} | filter:search_query).length }}</span>"
+            ru: pages.help.offer-count
         offer-request:
             en: Offer
             et: Pakkumine
@@ -156,6 +160,10 @@ pages:
             en: Reply
             et: Vasta
             ru: pages.help.reply
+        request-count:
+            en: "There are total {{ (help | filter:{type:type }).length }} help requests here <span ng-if='search_query'> - found {{ (help | filter:{type:type} | filter:search_query).length }}</span>"
+            et: "Kokku on meil {{ (help | filter:{type:type }).length }} abisoovi <span ng-if='search_query'> - leiti {{ (help | filter:{type:type} | filter:search_query).length }}</span>"
+            ru: pages.help.request-count
         request-request:
             en: Request
             et: Soov
@@ -172,6 +180,18 @@ pages:
             en: Save
             et: Salvesta
             ru: pages.help.save
+        status-accepted:
+            en: Accepted
+            et: Vastuvõetud
+            ru: pages.help.status-accepted
+        status-active:
+            en: Active
+            et: Aktiivsed
+            ru: pages.help.status-active
+        status-done:
+            en: Done
+            et: Tehtud
+            ru: pages.help.status-done
         time:
             en: Date/time
             et: Kuupäev/kellaaeg
@@ -225,13 +245,15 @@ pages:
             en: >
                 <h2>It's never been easier to give and get help</h2> <p>Helpific
                 connects volunteers to those who need help with everyday
-                activities.</p> <p ng-if='info'>At the moment we have {{ info.help }} help requests
-                fulfilled and {{ info.users }} active voluteers.</p>
+                activities.</p> <p ng-if='info'>At the moment we have {{
+                info.help }} help requests fulfilled and {{ info.users }} active
+                voluteers.</p>
             et: >
                 <h2>Kunagi varem pole abi osutamine ja saamine olnud nii
                 lihtne!</h2> <p>Helpific ühendab vabatahtlikud abistajad
-                erivajadustega abivajajatega.</p> <p ng-if='info'>Hetkel on meil {{ info.help }} täidetud
-                abisoovi ja {{ info.users }} aktiivset vabatahtlikku abistajat.</p>
+                erivajadustega abivajajatega.</p> <p ng-if='info'>Hetkel on meil
+                {{ info.help }} täidetud abisoovi ja {{ info.users }} aktiivset
+                vabatahtlikku abistajat.</p>
             ru: pages.index.text
     messages:
         new-message:

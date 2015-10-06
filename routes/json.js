@@ -37,6 +37,17 @@ router.get('/index', function(req, res, next) {
 
 
 
+// Get requests/offers statuses
+router.get('/help/statuses', function(req, res, next) {
+    res.send([
+        {status: 'active', label: res.locals.t('pages.help.status-active')},
+        {status: 'accepted', label: res.locals.t('pages.help.status-accepted')},
+        {status: 'done', label: res.locals.t('pages.help.status-done')}
+    ])
+})
+
+
+
 // Get requests/offers
 router.get('/help/:type*?', function(req, res, next) {
     entu.get_entities({
@@ -52,7 +63,7 @@ router.get('/help/:type*?', function(req, res, next) {
             if(req.query.id && parseInt(req.query.id) !== r.get('person.reference')) continue
             if(req.params.type && req.params.type !== r.get('type.value')) continue
             requests.push({
-                id: r.get('id'),
+                id: r.get('_id'),
                 type: r.get('type.value'),
                 person_id: r.get('person.reference'),
                 person: r.get('person.value'),

@@ -7,7 +7,18 @@ block head
     script(src='/javascripts/date-et-EE.js')
 
 block content
-    .container
+    .container(ng-controller='helpCtrl')
+        #search.row
+            form.form-group.col-xs-10.col-sm-8.col-md-6.col-xs-offset-1.col-sm-offset-2.col-md-offset-3
+                label.col-xs-1(for='search-input')
+                    i.fa.fa-search
+                input#search-input.col-xs-10.text-center(type='search', placeholder='', ng-model='search_query' autofocus)
+
+            .col-xs-12.text-center(ng-if='!help && search_query')
+                i.fa.fa-spinner.fa-pulse.fa-2x
+
+            small.col-xs-12.text-center(ng-if='help')!= t('pages.help.' + help_type + '-count')
+
         if show_add
             .row
                 .col-xs-12.text-right
@@ -32,17 +43,20 @@ block content
 
             .row.spacer
 
-        .table
-            each r, i in requests
-                .row
-                    a(href='help/' + help_type + '/' + r.get('_id', ''))
-                        img.col-xs-2.col-md-1.img-circle(src=APP_ENTU_URL + '/entity-' + r.get('person.reference') + '/picture', alt=r.get('person.value'))
+        .row(ng-repeat-start='s in statuses')
+            h2.col-xs-12(ng-if='(help | filter:{status:s.status, type:type} | filter:search_query).length > 0') {{ s.label }}
+        .table(ng-if='(help | filter:{status:s.status, type:type} | filter:search_query).length > 0')
+            .row(ng-repeat='h in help | filter:{status:s.status, type:type} | filter:search_query | orderBy:["-date", "-id"]')
+                .col-xs-12
+                    a(ng-href='help/{{ h.type }}/{{ h.id }}')
+                        img.col-xs-2.col-md-1.img-circle(ng-src='{{ h.picture }}', alt='{{ h.person }}')
                     .col.col-xs-10.col-sm-3.col-md-3
-                        a(href='help/' + help_type + '/' + r.get('_id', ''))= r.get('person.value')
-                        div= r.get('time.value', '').replace(' 00:00', '')
-                        em= r.get('location.value')
-                    .col.col-xs-12.col-sm-6.col-md-7= r.get('request.value')
-                    a.col.col-xs-12.col-sm-1.text-center(href='messages/' + r.get('person.reference', ''))= t('pages.help.reply')
+                        a(ng-href='help/{{ h.type }}/{{ h.id }}') {{ h.person }}
+                        div {{ h.date }}
+                        em {{ h.location }}
+                    .col.col-xs-12.col-sm-6.col-md-7 {{ h.request }}
+                    a.col.col-xs-12.col-sm-1.text-center(href='messages/{{ h.person_id }}')= t('pages.help.reply')
+        div(ng-repeat-end)
 
         .row.spacer
 
