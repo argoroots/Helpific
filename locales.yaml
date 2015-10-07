@@ -132,6 +132,14 @@ pages:
             en: Add new help request
             et: Lisa uus abisoov
             ru: pages.help.add-new-request
+        cancel:
+            en: Cancel
+            et: Tühista
+            ru: pages.help.cancel
+        edit:
+            en: Edit
+            et: Muuda
+            ru: pages.help.edit
         location:
             en: Location
             et: Asukoht
@@ -180,6 +188,10 @@ pages:
             en: Save
             et: Salvesta
             ru: pages.help.save
+        status:
+            en: Status
+            et: Staatus
+            ru: pages.help.status
         status-accepted:
             en: Accepted
             et: Vastuvõetud

@@ -31,7 +31,6 @@ angular.module('hlpfc', [])
                 url    : '/' + LANGUAGE + '/json/help/statuses'
             })
             .success(function(data) {
-                console.log(data);
                 $scope.statuses = data
             })
 
