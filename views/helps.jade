@@ -88,6 +88,7 @@ block content
                 $('#request-save').addClass('hidden')
                 $('#request-spinner').removeClass('hidden')
                 var postdata = {
+                    'type': '#{ help_type }',
                     'time': $('#time').val(),
                     'location': $('#location').val(),
                     'request': $('#request').val()
