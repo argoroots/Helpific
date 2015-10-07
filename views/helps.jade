@@ -9,7 +9,7 @@ block head
 block content
     .container(ng-controller='helpCtrl')
         #search.row
-            form.form-group.col-xs-10.col-sm-8.col-md-6.col-xs-offset-1.col-sm-offset-2.col-md-offset-3
+            form.form-group.narrow.col-xs-10.col-sm-8.col-md-6.col-xs-offset-1.col-sm-offset-2.col-md-offset-3
                 label.col-xs-1(for='search-input')
                     i.fa.fa-search
                 input#search-input.col-xs-10.text-center(type='search', placeholder='', ng-model='search_query' autofocus)
@@ -32,21 +32,21 @@ block content
             .table(ng-show='add_new')
                 .row.bg-green-transparent
                     form
-                        .form-group.col-xs-12.col-sm-3
+                        .form-group.narrow.col-xs-12.col-sm-3
                             label.control-label(ng-class='{ "active": time_new }')= t('pages.help.time')
                             input#time.form-control(type='text', placeholder=t('pages.help.time-ph'), ng-focus='time_new = true', ng-blur='time_new = false')
 
-                        .form-group.col-xs-12.col-sm-3
+                        .form-group.narrow.col-xs-12.col-sm-3
                             label.control-label(ng-class='{ "active": location_new }')= t('pages.help.location')
                             input#location.form-control(type='text', placeholder=t('pages.help.location-ph'), ng-focus='location_new = true', ng-blur='location_new = false')
 
-                        .form-group.col-xs-12.col-sm-6
+                        .form-group.narrow.col-xs-12.col-sm-6
                             label.control-label(ng-class='{ "active": request_new }')= t('pages.help.' + help_type + '-request')
                             input#request.form-control(type='text', placeholder=t('pages.help.' + help_type + '-request-ph'), ng-focus='request_new = true', ng-blur='request_new = false')
-                        .form-group.col-xs-10.col-sm-2.pull-right.text-right
+                        .form-group.narrow.col-xs-10.col-sm-2.pull-right.text-right
                             a#request-save.btn.bg-red.col-xs-12.text-center(href='javascript:void(0)')= t('pages.help.save')
                             i#request-spinner.hidden.fa.fa-cog.fa-spin.fa-2x
-                        .form-group.col-xs-2.pull-right.text-right
+                        .form-group.narrow.col-xs-2.pull-right.text-right
                             label.control-label
                             a.btn.btn-link.text-right(ng-click='add_new = false')= t('pages.help.cancel')
 
@@ -68,23 +68,23 @@ block content
                     a.col.col-xs-12.col-sm-1.text-center(ng-if='h.person_id == #{ user_id }', ng-click='h.editing = true')= t('pages.help.edit')
 
                 form(ng-show='h.editing')
-                    .form-group.col-xs-12.col-sm-2
+                    .form-group.narrow.col-xs-12.col-sm-2
                         label.control-label(ng-class='{ "active": edit[$index].time }')= t('pages.help.time')
                         input.form-control(type='text', placeholder=t('pages.help.time-ph'), ng-model='h.time_formatted', ng-focus='edit[$index].time = true', ng-blur='edit[$index].time = false')
-                    .form-group.col-xs-12.col-sm-2
+                    .form-group.narrow.col-xs-12.col-sm-2
                         label.control-label(ng-class='{ "active": edit[$index].location }')= t('pages.help.location')
                         input.form-control(type='text', placeholder=t('pages.help.location-ph'), ng-model='h.location', ng-focus='edit[$index].location = true', ng-blur='edit[$index].location = false')
-                    .form-group.col-xs-12.col-sm-6
+                    .form-group.narrow.col-xs-12.col-sm-6
                         label.control-label(ng-class='{ "active": edit[$index].request }')= t('pages.help.' + help_type + '-request')
                         input.form-control(type='text', placeholder=t('pages.help.' + help_type + '-request-ph'), ng-model='h.request', ng-focus='edit[$index].request = true', ng-blur='edit[$index].request = false')
-                    .form-group.col-xs-12.col-sm-2
+                    .form-group.narrow.col-xs-12.col-sm-2
                         label.control-label(ng-class='{ "active": edit[$index].status }')= t('pages.help.status')
                         select.form-control(ng-options='s.status as s.label for s in statuses', ng-model='h.status', ng-focus='edit[$index].status = true', ng-blur='edit[$index].status = false')
-                    .form-group.col-xs-10.col-sm-2.pull-right.text-right
+                    .form-group.narrow.col-xs-10.col-sm-2.pull-right.text-right
                         label.control-label
                         a.btn.bg-red.col-xs-12.text-center(ng-click='Save(h)')= t('pages.help.save')
                         i.hidden.fa.fa-cog.fa-spin.fa-2x
-                    .form-group.col-xs-2.pull-right.text-right
+                    .form-group.narrow.col-xs-2.pull-right.text-right
                         label.control-label
                         a.btn.btn-link.text-right(ng-click='h.editing = false')= t('pages.help.cancel')
 

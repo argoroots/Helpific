@@ -515,10 +515,11 @@ i.signin
 
 
 .form-group
+    margin-top 30px
+    margin-bottom 5px
+
     label
         display block
-        margin-top 30px
-        margin-bottom 5px
         text-transform uppercase
         font-weight normal
 
@@ -561,17 +562,19 @@ i.signin
     button
         margin-top 100px
 
-.help-form
-    .form-group
+    &.narrow
         margin-top 5px
         margin-bottom 5px
 
-    label
-        margin-top 0px
-        font-size 12px !important
+        label
+            margin-top 0px
+            font-size 12px !important
 
-    input
-        border none
+        input
+            border none
+
+            &:focus
+                border-bottom solid 2px color-helpific-green
 
 
 
