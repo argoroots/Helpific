@@ -26,7 +26,7 @@ block content
                 .checkbox.col-xs-6.col-sm-6.pull-left
                     label
                         input(type='checkbox', ng-model='search_my')
-                        | #{ t('pages.help.only-my') }
+                        | #{ t('pages.help.only-my-' + help_type) }
                 .col-xs-6.col-sm-6.text-right.pull-right
                     a.btn.bg-red(ng-click='add_new = true')= t('pages.help.add-new-' + help_type)
             .table(ng-show='add_new')
