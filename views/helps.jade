@@ -19,33 +19,36 @@ block content
 
             small.col-xs-12.text-center(ng-if='help')!= t('pages.help.' + help_type + '-count')
 
-        if show_add
+        if user
             .row.spacer
 
-            .row
+            .row(ng-show='!add_new')
                 .checkbox.col-xs-6.col-sm-6.pull-left
                     label
                         input(type='checkbox', ng-model='search_my')
                         | #{ t('pages.help.only-my') }
                 .col-xs-6.col-sm-6.text-right.pull-right
-                    a#request-add.btn.bg-red(href='javascript:void(0)')= t('pages.help.add-new-' + help_type)
-            form#help-form.help-form.hidden
-                .row
-                    .form-group.col-xs-12.col-sm-3
-                        label.control-label(for='time')= t('pages.help.time')
-                        input#time.form-control(type='text', placeholder=t('pages.help.time-ph'))
+                    a.btn.bg-red(ng-click='add_new = true')= t('pages.help.add-new-' + help_type)
+            .table(ng-show='add_new')
+                .row.bg-green-transparent
+                    form.help-form
+                        .form-group.col-xs-12.col-sm-3
+                            label.control-label(for='time')= t('pages.help.time')
+                            input#time.form-control(type='text', placeholder=t('pages.help.time-ph'))
 
-                    .form-group.col-xs-12.col-sm-3
-                        label.control-label(for='location')= t('pages.help.location')
-                        input#location.form-control(type='text', placeholder=t('pages.help.location-ph'))
+                        .form-group.col-xs-12.col-sm-3
+                            label.control-label(for='location')= t('pages.help.location')
+                            input#location.form-control(type='text', placeholder=t('pages.help.location-ph'))
 
-                    .form-group.col-xs-12.col-sm-5
-                        label.control-label(for='request')= t('pages.help.' + help_type + '-request')
-                        input#request.form-control(type='text', placeholder=t('pages.help.' + help_type + '-request-ph'))
-                    .form-group.col-xs-12.col-sm-1.text-right
-                        label.control-label(for='request') &nbsp;
-                        a#request-save.btn.bg-red.text-center(href='javascript:void(0)')= t('pages.help.save')
-                        i#request-spinner.hidden.fa.fa-cog.fa-spin.fa-2x
+                        .form-group.col-xs-12.col-sm-6
+                            label.control-label(for='request')= t('pages.help.' + help_type + '-request')
+                            input#request.form-control(type='text', placeholder=t('pages.help.' + help_type + '-request-ph'))
+                        .form-group.col-xs-10.col-sm-2.pull-right.text-right
+                            a#request-save.btn.bg-red.col-xs-12.text-center(href='javascript:void(0)')= t('pages.help.save')
+                            i#request-spinner.hidden.fa.fa-cog.fa-spin.fa-2x
+                        .form-group.col-xs-2.pull-right.text-right
+                            label.control-label
+                            a.btn.btn-link.text-right(ng-click='add_new = false')= t('pages.help.cancel')
 
         .row(ng-repeat-start='s in statuses')
             h2.col-xs-12(ng-if='(help | filter:{status:s.status, type:type, my:search_my} | filter:search_query).length > 0') {{ s.plural }}
@@ -79,11 +82,11 @@ block content
                         select.form-control(ng-options='s.status as s.label for s in statuses', ng-model='h.status')
                     .form-group.col-xs-10.col-sm-2.pull-right.text-right
                         label.control-label
-                        a#request-save.btn.bg-red.col-xs-12.text-center(href='javascript:void(0)')= t('pages.help.save')
-                        i#request-spinner.hidden.fa.fa-cog.fa-spin.fa-2x
+                        a.btn.bg-red.col-xs-12.text-center(href='javascript:void(0)')= t('pages.help.save')
+                        i.hidden.fa.fa-cog.fa-spin.fa-2x
                     .form-group.col-xs-2.pull-right.text-right
                         label.control-label
-                        a#request-save.btn.btn-link.text-right(ng-click='h.editing = false')= t('pages.help.cancel')
+                        a.btn.btn-link.text-right(ng-click='h.editing = false')= t('pages.help.cancel')
 
         div(ng-repeat-end)
 
@@ -103,11 +106,6 @@ block content
             } else {
                 $(this).val('')
             }
-        })
-
-        $('#request-add').click(function() {
-            $('#request-add').addClass('hidden')
-            $('#help-form').removeClass('hidden')
         })
 
         $('#request-save').click(function() {
