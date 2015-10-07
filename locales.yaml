@@ -164,6 +164,10 @@ pages:
             en: Help offers
             et: Abipakkumised
             ru: pages.help.offer-title
+        only-my:
+            en: Show only mine
+            et: Näita ainult minu
+            ru: pages.help.only-my
         reply:
             en: Reply
             et: Vasta

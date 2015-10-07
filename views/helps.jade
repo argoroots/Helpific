@@ -23,7 +23,11 @@ block content
             .row.spacer
 
             .row
-                .col-xs-12.text-right
+                .checkbox.col-xs-6.col-sm-6.pull-left
+                    label
+                        input(type='checkbox', ng-model='search_my')
+                        | #{ t('pages.help.only-my') }
+                .col-xs-6.col-sm-6.text-right.pull-right
                     a#request-add.btn.bg-red(href='javascript:void(0)')= t('pages.help.add-new-' + help_type)
             form#help-form.help-form.hidden
                 .row
@@ -44,10 +48,10 @@ block content
                         i#request-spinner.hidden.fa.fa-cog.fa-spin.fa-2x
 
         .row(ng-repeat-start='s in statuses')
-            h2.col-xs-12(ng-if='(help | filter:{status:s.status, type:type} | filter:search_query).length > 0') {{ s.plural }}
+            h2.col-xs-12(ng-if='(help | filter:{status:s.status, type:type, my:search_my} | filter:search_query).length > 0') {{ s.plural }}
 
         .table(ng-if='(help | filter:{status:s.status, type:type} | filter:search_query).length > 0')
-            .row(ng-repeat='h in help | filter:{status:s.status, type:type} | filter:search_query | orderBy:["-time", "-id"]', ng-class='h.editing ? "bg-green-transparent" : ""')
+            .row(ng-repeat='h in help | filter:{status:s.status, type:type, my:search_my} | filter:search_query | orderBy:["-time", "-id"]', ng-class='h.editing ? "bg-green-transparent" : ""')
 
                 div(ng-show='!h.editing')
                     a(ng-href='help/{{ h.type }}/{{ h.id }}')

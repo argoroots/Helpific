@@ -75,7 +75,8 @@ router.get('/help/:type*?', function(req, res, next) {
                 time_formatted: r.get('time.value', '') ? moment(r.get('time.value', '')).tz(APP_TIMEZONE).format('DD.MM.YYYY HH:mm').replace(' 00:00', '') : '',
                 location: r.get('location.value'),
                 status: r.get('status.value'),
-                request: r.get('request.value')
+                request: r.get('request.value'),
+                my: res.locals.user ? (res.locals.user.id === r.get('person.reference')) : 'null'
             })
         }
 
