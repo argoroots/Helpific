@@ -43,7 +43,7 @@ router.get('/help/statuses', function(req, res, next) {
         {status: 'active', label: res.locals.t('pages.help.status-active'), plural: res.locals.t('pages.help.status-active-plural')},
         {status: 'accepted', label: res.locals.t('pages.help.status-accepted'), plural: res.locals.t('pages.help.status-accepted-plural')},
         {status: 'done', label: res.locals.t('pages.help.status-done'), plural: res.locals.t('pages.help.status-done-plural')},
-        // {status: 'canceled', label: res.locals.t('pages.help.status-canceled')}
+        {status: 'canceled', label: res.locals.t('pages.help.status-canceled'), plural: res.locals.t('pages.help.status-canceled-plural')}
     ])
 })
 
@@ -65,6 +65,8 @@ router.get('/help/:type*?', function(req, res, next) {
             var r = results[i]
             if(req.query.id && parseInt(req.query.id) !== r.get('person.reference')) continue
             if(req.params.type && req.params.type !== r.get('type.value')) continue
+            if(r.get('status.value') === 'canceled' && !res.locals.user) continue
+            if(r.get('status.value') === 'canceled' && r.get('person.reference') !== res.locals.user.id) continue
             requests.push({
                 id: r.get('_id'),
                 type: r.get('type.value'),
@@ -78,9 +80,18 @@ router.get('/help/:type*?', function(req, res, next) {
                     sql: r.get('time.value', ''),
                     value: r.get('time.value', '') ? moment(r.get('time.value', '')).tz(APP_TIMEZONE).format('DD.MM.YYYY HH:mm').replace(' 00:00', '') : ''
                 },
-                location: r.get('location'),
-                status: r.get('status'),
-                request: r.get('request'),
+                location: {
+                    id: r.get('location.id'),
+                    value: r.get('location.value')
+                },
+                status: {
+                    id: r.get('status.id'),
+                    value: r.get('status.value')
+                },
+                request: {
+                    id: r.get('request.id'),
+                    value: r.get('request.value')
+                },
                 filter_status: r.get('status.value'),
                 filter_my: res.locals.user ? (res.locals.user.id === r.get('person.reference')) : 'null',
             })
@@ -90,6 +101,24 @@ router.get('/help/:type*?', function(req, res, next) {
     })
 })
 
+
+
+// Set help property
+router.post('/help/:id', function(req, res, next) {
+    if(!res.authenticate()) return
+
+    entu.edit({
+        id: req.params.id,
+        definition: 'request',
+        data: req.body,
+        auth_id: res.locals.user.id,
+        auth_token: res.locals.user.token
+    }, function(err, result) {
+        if(err) return next(err)
+
+        res.send(result)
+    })
+})
 
 
 // Get conversations

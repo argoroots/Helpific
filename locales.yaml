@@ -164,13 +164,13 @@ pages:
             en: Help offers
             et: Abipakkumised
             ru: pages.help.offer-title
-        only-my-request:
-            en: Show only my help requests
-            et: Näita ainult minu abisoove
-            ru: pages.help.only-my
         only-my-offer:
             en: Show only my help offers
             et: Näita ainult minu abipakkumisi
+            ru: pages.help.only-my
+        only-my-request:
+            en: Show only my help requests
+            et: Näita ainult minu abisoove
             ru: pages.help.only-my
         reply:
             en: Reply
@@ -216,6 +216,14 @@ pages:
             en: Active
             et: Aktiivsed
             ru: pages.help.status-active
+        status-canceled:
+            en: Canceled
+            et: Tühistatud
+            ru: pages.help.status-canceled
+        status-canceled-plural:
+            en: Canceled
+            et: Tühistatud
+            ru: pages.help.status-canceled-plural
         status-done:
             en: Done
             et: Tehtud

@@ -38,8 +38,43 @@ angular.module('hlpfc', [])
                 url    : '/' + LANGUAGE + '/json/help'
             })
             .success(function(data) {
-                $scope.help = data
+                $scope.help = []
+                angular.forEach(data, function(value, key) {
+                    value.time.old = value.time.value
+                    value.location.old = value.location.value
+                    value.request.old = value.request.value
+                    value.status.old = value.status.value
+                    $scope.help.push(value)
+                })
             })
+
+        $scope.Save = function(data) {
+            var post_data = {}
+            if(data.time.old != data.time.value) post_data.time = data.time
+            if(data.location.old != data.location.value) post_data.location = data.location
+            if(data.request.old != data.request.value) post_data.request = data.request
+            if(data.status.old != data.status.value) post_data.status = data.status
+
+            angular.forEach(post_data, function(value, key) {
+                $http({
+                        method : 'POST',
+                        url    : '/' + LANGUAGE + '/json/help/' + data.id,
+                        data   : {
+                            property: key,
+                            id: value.id,
+                            value: value.value,
+                        }
+                    })
+                    .success(function(result) {
+                        data[key].id = result.id
+                        data[key].value = result.value
+                        data[key].old = result.value
+
+                        data.filter_status = data.status.value
+                        data.editing = false
+                    })
+            })
+        }
     }])
 
 

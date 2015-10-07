@@ -166,6 +166,32 @@ exports.add = function(params, callback) {
 
 
 
+//Edit entity
+exports.edit = function(params, callback) {
+    var property = params.definition + '-' + op.get(params.data, 'property')
+    var body = {}
+    body[op.get(params.data, 'id') ? property + '.' + op.get(params.data, 'id') : property] = op.get(params.data, 'value', '')
+
+    if(params.auth_id && params.auth_token) {
+        var headers = {'X-Auth-UserId': params.auth_id, 'X-Auth-Token': params.auth_token}
+        var qb = body
+    } else {
+        var headers = {}
+        var qb = sign_data(body)
+    }
+
+    request.put({url: APP_ENTU_URL + '/entity-' + params.id, headers: headers, body: qb, strictSSL: true, json: true, timeout: 60000}, function(error, response, body) {
+        if(error) return callback(error)
+        if(response.statusCode !== 201 || !body.result) return callback(new Error(op.get(body, 'error', body)))
+
+        var new_property = op.get(body, 'result.properties.' + property + '.0', null)
+
+        callback(null, new_property)
+    })
+}
+
+
+
 //Share entity
 exports.rights = function(params, callback) {
     var body = {
@@ -259,7 +285,7 @@ exports.get_user_session = function(params, callback) {
 
 //Set user
 exports.set_user = function(params, callback) {
-    property = 'person-' + op.get(params.data, 'property')
+    var property = 'person-' + op.get(params.data, 'property')
     var body = {}
     body[op.get(params.data, 'id') ? property + '.' + op.get(params.data, 'id') : property] = op.get(params.data, 'value', '')
 
