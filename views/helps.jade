@@ -64,21 +64,21 @@ block content
                         div {{ h.time_formatted }}
                         em {{ h.location }}
                     .col.col-xs-12.col-sm-6.col-md-7 {{ h.request }}
-                    a.col.col-xs-12.col-sm-1.text-center(ng-if='h.person_id != #{ user.id }', ng-href='messages/{{ h.person_id }}')= t('pages.help.reply')
-                    a.col.col-xs-12.col-sm-1.text-center(ng-if='h.person_id == #{ user.id }', ng-click='h.editing = true')= t('pages.help.edit')
+                    a.col.col-xs-12.col-sm-1.text-center(ng-if='h.person_id != #{ user_id }', ng-href='messages/{{ h.person_id }}')= t('pages.help.reply')
+                    a.col.col-xs-12.col-sm-1.text-center(ng-if='h.person_id == #{ user_id }', ng-click='h.editing = true')= t('pages.help.edit')
 
                 form.help-form(ng-show='h.editing')
                     .form-group.col-xs-12.col-sm-2
-                        label.control-label(for='time')= t('pages.help.time')
+                        label.control-label= t('pages.help.time')
                         input.form-control(type='text', placeholder=t('pages.help.time-ph'), ng-model='h.time_formatted')
                     .form-group.col-xs-12.col-sm-2
-                        label.control-label(for='location')= t('pages.help.location')
+                        label.control-label= t('pages.help.location')
                         input.form-control(type='text', placeholder=t('pages.help.location-ph'), ng-model='h.location')
                     .form-group.col-xs-12.col-sm-6
-                        label.control-label(for='request')= t('pages.help.' + help_type + '-request')
+                        label.control-label= t('pages.help.' + help_type + '-request')
                         input.form-control(type='text', placeholder=t('pages.help.' + help_type + '-request-ph'), ng-model='h.request')
                     .form-group.col-xs-12.col-sm-2
-                        label.control-label(for='location')= t('pages.help.status')
+                        label.control-label= t('pages.help.status')
                         select.form-control(ng-options='s.status as s.label for s in statuses', ng-model='h.status')
                     .form-group.col-xs-10.col-sm-2.pull-right.text-right
                         label.control-label

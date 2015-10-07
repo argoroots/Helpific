@@ -18,6 +18,7 @@ router.get('/:type', function(req, res, next) {
     }
 
     res.render('helps', {
+        user_id: res.locals.user ? res.locals.user.id : null,
         help_type: help_type
     })
 })

@@ -149,8 +149,8 @@ pages:
             et: 'näit. Tallinn, Harjumaa'
             ru: pages.help.location-ph
         offer-count:
-            en: "There are total {{ (help | filter:{type:type }).length }} help offers here <span ng-if='search_query'> - found {{ (help | filter:{type:type} | filter:search_query).length }}</span>"
-            et: "Kokku on meil {{ (help | filter:{type:type }).length }} abipakkumist <span ng-if='search_query'> - leiti {{ (help | filter:{type:type} | filter:search_query).length }}</span>"
+            en: "There are total {{ (help | filter:{type:type }).length }} help offers here <span ng-if='search_query || search_my'> - found {{ (help | filter:{status:s.status, type:type, my:search_my} | filter:search_query).length }}</span>"
+            et: "Kokku on meil {{ (help | filter:{type:type }).length }} abipakkumist <span ng-if='search_query || search_my'> - leiti {{ (help | filter:{status:s.status, type:type, my:search_my} | filter:search_query).length }}</span>"
             ru: pages.help.offer-count
         offer-request:
             en: Offer
@@ -173,8 +173,8 @@ pages:
             et: Vasta
             ru: pages.help.reply
         request-count:
-            en: "There are total {{ (help | filter:{type:type }).length }} help requests here <span ng-if='search_query'> - found {{ (help | filter:{type:type} | filter:search_query).length }}</span>"
-            et: "Kokku on meil {{ (help | filter:{type:type }).length }} abisoovi <span ng-if='search_query'> - leiti {{ (help | filter:{type:type} | filter:search_query).length }}</span>"
+            en: "There are total {{ (help | filter:{type:type }).length }} help requests here <span ng-if='search_query || search_my'> - found {{ (help | filter:{status:s.status, type:type, my:search_my} | filter:search_query).length }}</span>"
+            et: "Kokku on meil {{ (help | filter:{type:type }).length }} abisoovi <span ng-if='search_query || search_my'> - leiti {{ (help | filter:{status:s.status, type:type, my:search_my} | filter:search_query).length }}</span>"
             ru: pages.help.request-count
         request-request:
             en: Request
