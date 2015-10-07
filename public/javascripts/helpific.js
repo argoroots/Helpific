@@ -14,7 +14,6 @@ angular.module('hlpfc', [])
                 url    : '/' + LANGUAGE + '/json/index'
             })
             .success(function(data) {
-                console.log(data);
                 $scope.info = data
             })
     }])

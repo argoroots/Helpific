@@ -147,11 +147,11 @@ block content
             })
             md[id].render()
             md[id].codemirror.on('focus', function() {
-                $("label[for='" + id + "']").addClass('labelfocus')
+                $("label[for='" + id + "']").addClass('active')
                 $('.CodeMirror').addClass('CodeMirror-focus')
             })
             md[id].codemirror.on('blur', function() {
-                $("label[for='" + id + "']").removeClass('labelfocus')
+                $("label[for='" + id + "']").removeClass('active')
                 $('.CodeMirror').removeClass('CodeMirror-focus')
                 var value = md[id].value()
                 if(input.data('value') !=value) {
@@ -170,9 +170,9 @@ block content
         })
 
         $('input').focus(function() {
-            $("label[for='" + this.id + "']").addClass('labelfocus')
+            $("label[for='" + this.id + "']").addClass('active')
         }).blur(function() {
-            $('label').removeClass('labelfocus')
+            $('label').removeClass('active')
 
             input = $(this)
             if(input.data('value') != input.val()) {
@@ -188,6 +188,13 @@ block content
                 }).fail(console.log)
             }
         })
+
+        $('select').focus(function() {
+            $("label[for='" + this.id + "']").addClass('active')
+        }).blur(function() {
+            $('label').removeClass('active')
+        })
+
         $('#language').change(function() {
             input = $(this)
             var postdata = {
