@@ -23,7 +23,7 @@ block content
             .row.spacer
 
             .row(ng-show='!add_new')
-                .checkbox.col-xs-6.col-sm-6.pull-left
+                .checkbox.col-xs-6.col-sm-6.pull-left(ng-show='help')
                     label
                         input(type='checkbox', ng-model='search_my')
                         | #{ t('pages.help.only-my-' + help_type) }
@@ -51,35 +51,35 @@ block content
                             a.btn.btn-link.text-right(ng-click='add_new = false')= t('pages.help.cancel')
 
         .row(ng-repeat-start='s in statuses')
-            h2.col-xs-12(ng-if='(help | filter:{status:s.status, type:type, my:search_my} | filter:search_query).length > 0') {{ s.plural }}
+            h2.col-xs-12(ng-if='(help | filter:{filter_status:s.status, type:type, filter_my:search_my} | filter:search_query).length > 0') {{ s.plural }}
 
-        .table(ng-if='(help | filter:{status:s.status, type:type} | filter:search_query).length > 0')
-            .row(ng-repeat='h in help | filter:{status:s.status, type:type, my:search_my} | filter:search_query | orderBy:["-time", "-id"]', ng-class='{ "bg-green-transparent": h.editing }')
+        .table(ng-if='(help | filter:{filter_status:s.status, type:type} | filter:search_query).length > 0')
+            .row(ng-repeat='h in help | filter:{filter_status:s.status, type:type, filter_my:search_my} | filter:search_query | orderBy:["-time.sql", "-id"]', ng-class='{ "bg-green-transparent": h.editing }')
 
                 div(ng-show='!h.editing')
                     a(ng-href='help/{{ h.type }}/{{ h.id }}')
-                        img.col-xs-2.col-md-1.img-circle(ng-src='{{ h.picture }}', alt='{{ h.person }}')
+                        img.col-xs-2.col-md-1.img-circle(ng-src='{{ h.person.picture }}', alt='{{ h.person.name }}')
                     .col.col-xs-10.col-sm-3.col-md-3
-                        a(ng-href='help/{{ h.type }}/{{ h.id }}') {{ h.person }}
-                        div {{ h.time_formatted }}
-                        em {{ h.location }}
-                    .col.col-xs-12.col-sm-6.col-md-7 {{ h.request }}
-                    a.col.col-xs-12.col-sm-1.text-center(ng-if='h.person_id != #{ user_id }', ng-href='messages/{{ h.person_id }}')= t('pages.help.reply')
-                    a.col.col-xs-12.col-sm-1.text-center(ng-if='h.person_id == #{ user_id }', ng-click='h.editing = true')= t('pages.help.edit')
+                        a(ng-href='help/{{ h.type }}/{{ h.id }}') {{ h.person.name }}
+                        div {{ h.time.value }}
+                        em {{ h.location.value }}
+                    .col.col-xs-12.col-sm-6.col-md-7 {{ h.request.value }}
+                    a.col.col-xs-12.col-sm-1.text-center(ng-if='h.person.reference != #{ user_id }', ng-href='messages/{{ h.person.reference }}')= t('pages.help.reply')
+                    a.col.col-xs-12.col-sm-1.text-center(ng-if='h.person.reference == #{ user_id }', ng-click='h.editing = true')= t('pages.help.edit')
 
                 form(ng-show='h.editing')
                     .form-group.narrow.col-xs-12.col-sm-2
                         label.control-label(ng-class='{ "active": edit[$index].time }')= t('pages.help.time')
-                        input.form-control(type='text', placeholder=t('pages.help.time-ph'), ng-model='h.time_formatted', ng-focus='edit[$index].time = true', ng-blur='edit[$index].time = false')
+                        input.form-control(type='text', placeholder=t('pages.help.time-ph'), ng-model='h.time.value', ng-focus='edit[$index].time = true', ng-blur='edit[$index].time = false')
                     .form-group.narrow.col-xs-12.col-sm-2
                         label.control-label(ng-class='{ "active": edit[$index].location }')= t('pages.help.location')
-                        input.form-control(type='text', placeholder=t('pages.help.location-ph'), ng-model='h.location', ng-focus='edit[$index].location = true', ng-blur='edit[$index].location = false')
+                        input.form-control(type='text', placeholder=t('pages.help.location-ph'), ng-model='h.location.value', ng-focus='edit[$index].location = true', ng-blur='edit[$index].location = false')
                     .form-group.narrow.col-xs-12.col-sm-6
                         label.control-label(ng-class='{ "active": edit[$index].request }')= t('pages.help.' + help_type + '-request')
-                        input.form-control(type='text', placeholder=t('pages.help.' + help_type + '-request-ph'), ng-model='h.request', ng-focus='edit[$index].request = true', ng-blur='edit[$index].request = false')
+                        input.form-control(type='text', placeholder=t('pages.help.' + help_type + '-request-ph'), ng-model='h.request.value', ng-focus='edit[$index].request = true', ng-blur='edit[$index].request = false')
                     .form-group.narrow.col-xs-12.col-sm-2
                         label.control-label(ng-class='{ "active": edit[$index].status }')= t('pages.help.status')
-                        select.form-control(ng-options='s.status as s.label for s in statuses', ng-model='h.status', ng-focus='edit[$index].status = true', ng-blur='edit[$index].status = false')
+                        select.form-control(ng-options='s.status as s.label for s in statuses', ng-model='h.status.value', ng-focus='edit[$index].status = true', ng-blur='edit[$index].status = false')
                     .form-group.narrow.col-xs-10.col-sm-2.pull-right.text-right
                         label.control-label
                         a.btn.bg-red.col-xs-12.text-center(ng-click='Save(h)')= t('pages.help.save')

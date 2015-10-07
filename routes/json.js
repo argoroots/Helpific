@@ -68,15 +68,21 @@ router.get('/help/:type*?', function(req, res, next) {
             requests.push({
                 id: r.get('_id'),
                 type: r.get('type.value'),
-                person_id: r.get('person.reference'),
-                person: r.get('person.value'),
-                picture: APP_ENTU_URL + '/entity-' + r.get('person.reference') + '/picture',
-                time: r.get('time.value', ''),
-                time_formatted: r.get('time.value', '') ? moment(r.get('time.value', '')).tz(APP_TIMEZONE).format('DD.MM.YYYY HH:mm').replace(' 00:00', '') : '',
-                location: r.get('location.value'),
-                status: r.get('status.value'),
-                request: r.get('request.value'),
-                my: res.locals.user ? (res.locals.user.id === r.get('person.reference')) : 'null'
+                person: {
+                    reference: r.get('person.reference'),
+                    name: r.get('person.value'),
+                    picture: APP_ENTU_URL + '/entity-' + r.get('person.reference') + '/picture',
+                },
+                time: {
+                    id: r.get('time.id'),
+                    sql: r.get('time.value', ''),
+                    value: r.get('time.value', '') ? moment(r.get('time.value', '')).tz(APP_TIMEZONE).format('DD.MM.YYYY HH:mm').replace(' 00:00', '') : ''
+                },
+                location: r.get('location'),
+                status: r.get('status'),
+                request: r.get('request'),
+                filter_status: r.get('status.value'),
+                filter_my: res.locals.user ? (res.locals.user.id === r.get('person.reference')) : 'null',
             })
         }
 
