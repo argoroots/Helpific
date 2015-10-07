@@ -40,9 +40,10 @@ router.get('/index', function(req, res, next) {
 // Get requests/offers statuses
 router.get('/help/statuses', function(req, res, next) {
     res.send([
-        {status: 'active', label: res.locals.t('pages.help.status-active')},
-        {status: 'accepted', label: res.locals.t('pages.help.status-accepted')},
-        {status: 'done', label: res.locals.t('pages.help.status-done')}
+        {status: 'active', label: res.locals.t('pages.help.status-active'), plural: res.locals.t('pages.help.status-active-plural')},
+        {status: 'accepted', label: res.locals.t('pages.help.status-accepted'), plural: res.locals.t('pages.help.status-accepted-plural')},
+        {status: 'done', label: res.locals.t('pages.help.status-done'), plural: res.locals.t('pages.help.status-done-plural')},
+        // {status: 'canceled', label: res.locals.t('pages.help.status-canceled')}
     ])
 })
 

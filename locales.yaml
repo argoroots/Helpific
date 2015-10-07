@@ -196,11 +196,23 @@ pages:
             en: Accepted
             et: Vastuvõetud
             ru: pages.help.status-accepted
+        status-accepted-plural:
+            en: Accepted
+            et: Vastuvõetud
+            ru: pages.help.status-accepted
         status-active:
+            en: Active
+            et: Aktiivne
+            ru: pages.help.status-active
+        status-active-plural:
             en: Active
             et: Aktiivsed
             ru: pages.help.status-active
         status-done:
+            en: Done
+            et: Tehtud
+            ru: pages.help.status-done
+        status-done-plural:
             en: Done
             et: Tehtud
             ru: pages.help.status-done
