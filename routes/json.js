@@ -50,6 +50,8 @@ router.get('/help/statuses', function(req, res, next) {
 
 // Get requests/offers
 router.get('/help/:type*?', function(req, res, next) {
+    moment.locale(res.locals.lang)
+
     entu.get_entities({
         definition: 'request',
         query: req.params.type ? req.params.type : '',
@@ -68,7 +70,8 @@ router.get('/help/:type*?', function(req, res, next) {
                 person_id: r.get('person.reference'),
                 person: r.get('person.value'),
                 picture: APP_ENTU_URL + '/entity-' + r.get('person.reference') + '/picture',
-                date: r.get('time.value', '').replace(' 00:00', ''),
+                time: r.get('time.value', ''),
+                time_formatted: r.get('time.value', '') ? moment(r.get('time.value', '')).tz(APP_TIMEZONE).format('DD.MM.YYYY HH:mm').replace(' 00:00', '') : '',
                 location: r.get('location.value'),
                 status: r.get('status.value'),
                 request: r.get('request.value')

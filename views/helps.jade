@@ -20,6 +20,8 @@ block content
             small.col-xs-12.text-center(ng-if='help')!= t('pages.help.' + help_type + '-count')
 
         if show_add
+            .row.spacer
+
             .row
                 .col-xs-12.text-right
                     a#request-add.btn.bg-red(href='javascript:void(0)')= t('pages.help.add-new-' + help_type)
@@ -41,18 +43,18 @@ block content
                         a#request-save.btn.bg-red.text-center(href='javascript:void(0)')= t('pages.help.save')
                         i#request-spinner.hidden.fa.fa-cog.fa-spin.fa-2x
 
-            .row.spacer
-
         .row(ng-repeat-start='s in statuses')
             h2.col-xs-12(ng-if='(help | filter:{status:s.status, type:type} | filter:search_query).length > 0') {{ s.label }}
+
         .table(ng-if='(help | filter:{status:s.status, type:type} | filter:search_query).length > 0')
-            .row(ng-repeat='h in help | filter:{status:s.status, type:type} | filter:search_query | orderBy:["-date", "-id"]')
-                .col-xs-12
+            .row(ng-repeat='h in help | filter:{status:s.status, type:type} | filter:search_query | orderBy:["-time", "-id"]', ng-class='h.editing ? "bg-green-transparent" : ""')
+
+                div(ng-show='!h.editing')
                     a(ng-href='help/{{ h.type }}/{{ h.id }}')
                         img.col-xs-2.col-md-1.img-circle(ng-src='{{ h.picture }}', alt='{{ h.person }}')
                     .col.col-xs-10.col-sm-3.col-md-3
                         a(ng-href='help/{{ h.type }}/{{ h.id }}') {{ h.person }}
-                        div {{ h.date }}
+                        div {{ h.time_formatted }}
                         em {{ h.location }}
                     .col.col-xs-12.col-sm-6.col-md-7 {{ h.request }}
                     a.col.col-xs-12.col-sm-1.text-center(href='messages/{{ h.person_id }}')= t('pages.help.reply')
