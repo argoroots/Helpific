@@ -14,6 +14,34 @@ router.get('/', function(req, res, next) {
 
 
 
+// Get help and users count
+router.get('/json', function(req, res, next) {
+    async.parallel({
+        help: function(callback) {
+            entu.get_entities({
+                definition: 'request',
+                full_object: false
+            }, callback)
+        },
+        users: function(callback) {
+            entu.get_entities({
+                definition: 'person',
+                full_object: false
+            }, callback)
+        },
+    },
+    function(err, results) {
+        if(err) return next(err)
+
+        res.send({
+            help: results.help.length,
+            users: results.users.length
+        })
+    })
+})
+
+
+
 // Show user own profile
 router.get('/profile', function(req, res, next) {
     if(!res.authenticate()) return
