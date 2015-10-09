@@ -11,7 +11,7 @@ angular.module('hlpfc', [])
     .controller('indexCtrl', ['$scope', '$http', function($scope, $http) {
         $http({
                 method : 'GET',
-                url    : '/' + LANGUAGE + '/json/index'
+                url    : '/' + LANGUAGE + '/json'
             })
             .success(function(data) {
                 $scope.info = data
@@ -27,7 +27,7 @@ angular.module('hlpfc', [])
 
         $http({
                 method : 'GET',
-                url    : '/' + LANGUAGE + '/json/help/statuses'
+                url    : '/' + LANGUAGE + '/help/json/statuses'
             })
             .success(function(data) {
                 $scope.statuses = data
@@ -35,9 +35,10 @@ angular.module('hlpfc', [])
 
         $http({
                 method : 'GET',
-                url    : '/' + LANGUAGE + '/json/help'
+                url    : '/' + LANGUAGE + '/help/json'
             })
             .success(function(data) {
+                console.log(data);
                 $scope.help = []
                 angular.forEach(data, function(value, key) {
                     value.time.old = value.time.value
@@ -57,7 +58,7 @@ angular.module('hlpfc', [])
 
             $http({
                     method : 'POST',
-                    url    : '/' + LANGUAGE + '/json/help',
+                    url    : '/' + LANGUAGE + '/help',
                     data   : data
                 })
                 .success(function(result) {
@@ -87,7 +88,7 @@ angular.module('hlpfc', [])
             angular.forEach(post_data, function(value, key) {
                 $http({
                         method : 'PUT',
-                        url    : '/' + LANGUAGE + '/json/help/' + data.id,
+                        url    : '/' + LANGUAGE + '/help/' + data.id,
                         data   : {
                             property: key,
                             id: value.id,
@@ -131,7 +132,7 @@ angular.module('hlpfc', [])
         $scope.id = PATH[3]
         $http({
                 method : 'GET',
-                url    : '/' + LANGUAGE + '/json/help?id=' + $scope.id
+                url    : '/' + LANGUAGE + '/help/json?id=' + $scope.id
             })
             .success(function(data) {
                 $scope.help = data
