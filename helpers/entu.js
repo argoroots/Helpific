@@ -91,7 +91,7 @@ exports.get_entity = get_entity = function(params, callback) {
 
 
 
-//Get entities by parent entity id and/or by definition
+//Get entities by parent, definition or query
 exports.get_entities = function(params, callback) {
     var headers = {}
     var qs = {}
@@ -192,7 +192,7 @@ exports.edit = function(params, callback) {
 
 
 
-//Share entity
+//Set entity rights
 exports.rights = function(params, callback) {
     var body = {
         entity: params.person_id,

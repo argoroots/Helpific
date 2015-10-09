@@ -7,14 +7,14 @@ var entu   = require('../helpers/entu')
 
 
 
-// GET home page
+// Show homepage
 router.get('/', function(req, res, next) {
     res.render('index')
 })
 
 
 
-// GET user own profile
+// Show user own profile
 router.get('/profile', function(req, res, next) {
     if(!res.authenticate()) return
 
@@ -33,7 +33,7 @@ router.get('/profile', function(req, res, next) {
 
 
 
-// GET messages page
+// Show messages page
 router.get('/messages/:id*?', function(req, res, next) {
     if(!res.authenticate()) return
 
@@ -42,7 +42,7 @@ router.get('/messages/:id*?', function(req, res, next) {
 
 
 
-// GET partners page
+// Show partners page
 router.get('/partners', function(req, res, next) {
     entu.get_entities({
         definition: 'partner',
@@ -58,7 +58,7 @@ router.get('/partners', function(req, res, next) {
 
 
 
-// GET team page
+// Show team page
 router.get('/team', function(req, res, next) {
     entu.get_entities({
         parent_entity_id: 612,
@@ -82,14 +82,14 @@ router.get('/team', function(req, res, next) {
 
 
 
-// GET terms of service page
+// Show terms of service page
 router.get('/terms', function(req, res, next) {
     res.render('terms.' + res.locals.lang + '.jade')
 })
 
 
 
-// GET bb page
+// Show bb page
 router.get('/bb', function(req, res, next) {
     res.render('bb.' + res.locals.lang + '.jade')
 })

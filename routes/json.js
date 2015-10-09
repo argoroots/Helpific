@@ -103,7 +103,7 @@ router.get('/help/:type*?', function(req, res, next) {
 
 
 
-// Create request/offer
+// Add request/offer
 router.post('/help', function(req, res, next) {
     if(!res.locals.user) {
         res.status(403).send()
@@ -339,7 +339,7 @@ router.get('/messages/:id', function(req, res, next) {
 
 
 
-// Create message
+// Add message
 router.post('/messages/:id', function(req, res, next) {
     if(!res.authenticate()) return
 

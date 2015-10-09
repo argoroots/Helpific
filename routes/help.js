@@ -7,7 +7,7 @@ var entu   = require('../helpers/entu')
 
 
 
-// GET requests/offers listing
+// Show requests/offers list
 router.get('/:type', function(req, res, next) {
     if(req.params.type === 'requests') {
         var help_type = 'request'
@@ -26,7 +26,7 @@ router.get('/:type', function(req, res, next) {
 
 
 
-// GET request/offer
+// Show request/offer
 router.get('/:type/:id', function(req, res, next) {
     if(req.params.type !== 'request' && req.params.type !== 'offer') {
         res.redirect('/' + res.locals.lang + '/help/requests')

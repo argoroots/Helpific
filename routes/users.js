@@ -25,14 +25,14 @@ function media_embed(url) {
 
 
 
-// GET profiles page
+// Show users list
 router.get('/', function(req, res, next) {
     res.render('users')
 })
 
 
 
-// GET profile
+// Show user profile
 router.get('/:id', function(req, res, next) {
     if(!req.params.id) res.redirect('/' + res.locals.lang + '/users')
 
