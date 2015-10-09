@@ -147,7 +147,7 @@ angular.module('hlpfc', [])
 
         $http({
                 method : 'GET',
-                url    : '/' + LANGUAGE + '/json/messages' + id_param
+                url    : '/' + LANGUAGE + '/messages/json' + id_param
             })
             .success(function(data) {
                 $scope.conversations = data
@@ -160,7 +160,7 @@ angular.module('hlpfc', [])
 
             $http({
                     method : 'GET',
-                    url    : '/' + LANGUAGE + '/json/messages/' + id
+                    url    : '/' + LANGUAGE + '/messages/json/' + id
                 })
                 .success(function(data) {
                     $scope.messages = data
@@ -172,7 +172,7 @@ angular.module('hlpfc', [])
             $scope.sending = true
             $http({
                     method : 'POST',
-                    url    : '/' + LANGUAGE + '/json/messages/' + $scope.id,
+                    url    : '/' + LANGUAGE + '/messages/' + $scope.id,
                     data   : { 'message': $scope.message }
                 })
                 .success(function(data) {

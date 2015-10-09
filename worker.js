@@ -152,8 +152,9 @@ var app = express()
     .use('/:lang',          require('./routes/index'))
     .use('/:lang/help',     require('./routes/help'))
     .use('/:lang/json',     require('./routes/json'))
+    .use('/:lang/messages', require('./routes/messages'))
+    .use('/:lang/profile',  require('./routes/profile'))
     .use('/:lang/signin',   require('./routes/signin'))
-    .use('/:lang/profile',   require('./routes/profile'))
     .use('/:lang/users',    require('./routes/users'))
 
     // logs to getsentry.com - error

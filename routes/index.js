@@ -42,15 +42,6 @@ router.get('/json', function(req, res, next) {
 
 
 
-// Show messages page
-router.get('/messages/:id*?', function(req, res, next) {
-    if(!res.authenticate()) return
-
-    res.render('messages')
-})
-
-
-
 // Show partners page
 router.get('/partners', function(req, res, next) {
     entu.get_entities({

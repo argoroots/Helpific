@@ -10,7 +10,7 @@ var entu   = require('../helpers/entu')
 
 
 // Get conversations JSON
-router.get('/messages', function(req, res, next) {
+router.get('/json', function(req, res, next) {
     if(!res.authenticate()) return
 
     var calls = {
@@ -100,7 +100,7 @@ router.get('/messages', function(req, res, next) {
 
 
 // Get conversation messages JSON
-router.get('/messages/:id', function(req, res, next) {
+router.get('/json/:id', function(req, res, next) {
     if(!res.authenticate()) return
 
     moment.locale(res.locals.lang)
@@ -178,8 +178,17 @@ router.get('/messages/:id', function(req, res, next) {
 
 
 
+// Show messages page
+router.get('/:id*?', function(req, res, next) {
+    if(!res.authenticate()) return
+
+    res.render('messages')
+})
+
+
+
 // Add message
-router.post('/messages/:id', function(req, res, next) {
+router.post('/:id', function(req, res, next) {
     if(!res.authenticate()) return
 
     var properties = req.body
