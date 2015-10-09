@@ -99,10 +99,10 @@ router.get('/bb', function(req, res, next) {
 // Send feedback
 router.post('/feedback', function(req, res, next) {
     var properties = req.body
-    var new_id = null
 
     if(res.locals.user) properties['from-person'] = res.locals.user.id
 
+    var new_id = null
     async.series([
         function(callback) {
             entu.add({
@@ -111,8 +111,8 @@ router.post('/feedback', function(req, res, next) {
                 properties: properties
             }, function(error, id) {
                 if(error) callback(error)
-
                 new_id = id
+                callback(null)
             })
         },
         function(callback) {
