@@ -25,6 +25,33 @@ function media_embed(url) {
 
 
 
+// Get users JSON
+router.get('/json', function(req, res, next) {
+    entu.get_entities({
+        parent_entity_id: 615,
+        definition: 'person',
+        full_object: true
+    }, function(error, profiles) {
+        if(error) return next(error)
+
+        var users = []
+        for(i in profiles) {
+            var p = profiles[i]
+            users.push({
+                id: p.get('_id'),
+                name: p.get('forename.value', '') + ' ' + p.get('surname.value', ''),
+                picture: p.get('_picture'),
+                slogan: p.get('slogan.value'),
+                location: p.has('town.value') && p.has('county.value') ? p.get('town.value') + ', ' + p.get('county.value') : p.get('town.value', '') + p.get('county.value', '')
+            })
+        }
+
+        res.send(users)
+    })
+})
+
+
+
 // Show users list
 router.get('/', function(req, res, next) {
     res.render('users')

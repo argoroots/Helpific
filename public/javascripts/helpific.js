@@ -38,7 +38,6 @@ angular.module('hlpfc', [])
                 url    : '/' + LANGUAGE + '/help/json'
             })
             .success(function(data) {
-                console.log(data);
                 $scope.help = []
                 angular.forEach(data, function(value, key) {
                     value.time.old = value.time.value
@@ -118,7 +117,7 @@ angular.module('hlpfc', [])
     .controller('usersCtrl', ['$scope', '$http', function($scope, $http) {
         $http({
                 method : 'GET',
-                url    : '/' + LANGUAGE + '/json/users'
+                url    : '/' + LANGUAGE + '/users/json'
             })
             .success(function(data) {
                 $scope.users = data

@@ -263,33 +263,6 @@ router.post('/messages/:id', function(req, res, next) {
 
 
 
-// Get users
-router.get('/users', function(req, res, next) {
-    entu.get_entities({
-        parent_entity_id: 615,
-        definition: 'person',
-        full_object: true
-    }, function(error, profiles) {
-        if(error) return next(error)
-
-        var users = []
-        for(i in profiles) {
-            var p = profiles[i]
-            users.push({
-                id: p.get('_id'),
-                name: p.get('forename.value', '') + ' ' + p.get('surname.value', ''),
-                picture: p.get('_picture'),
-                slogan: p.get('slogan.value'),
-                location: p.has('town.value') && p.has('county.value') ? p.get('town.value') + ', ' + p.get('county.value') : p.get('town.value') + p.get('county.value')
-            })
-        }
-
-        res.send(users)
-    })
-})
-
-
-
 // Edit user profile
 router.post('/profile', function(req, res, next) {
     if(!res.authenticate()) return
