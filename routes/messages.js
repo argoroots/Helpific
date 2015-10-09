@@ -13,87 +13,65 @@ var entu   = require('../helpers/entu')
 router.get('/json', function(req, res, next) {
     if(!res.authenticate()) return
 
-    var calls = {
-        from: function(callback) {
-            entu.get_entities({
-                definition: 'message',
-                query: 'from.' + res.locals.user.id + '.',
-                full_object: true,
-                auth_id: res.locals.user.id,
-                auth_token: res.locals.user.token
-            }, callback)
-        },
-        to: function(callback) {
-            entu.get_entities({
-                definition: 'message',
-                query: 'to.' + res.locals.user.id + '.',
-                full_object: true,
-                auth_id: res.locals.user.id,
-                auth_token: res.locals.user.token
-            }, callback)
-        },
-    }
-
-    if(req.query.new_id) calls.id = function(callback) {
-        entu.get_entity({
-            id: req.query.new_id
-        }, callback)
-    }
-
     moment.locale(res.locals.lang)
 
-    async.parallel(
-        calls,
-    function(err, results) {
-        if(err) return next(err)
+    entu.get_entities({
+        definition: 'message',
+        query: '.' + res.locals.user.id + '.',
+        full_object: true,
+        auth_id: res.locals.user.id,
+        auth_token: res.locals.user.token
+    }, function(error, result) {
+        var conversations = {}
+        var new_id_exists = false
 
-        conversations = {}
+        for(var i in result) {
+            var m = result[i]
 
-        if(results.id) {
-            conversations[results.id.get('_id')] = {
-                id: results.id.get('_id'),
-                name: results.id.get('forename.value') + ' ' + results.id.get('surname.value'),
-                picture: APP_ENTU_URL + '/entity-' + results.id.get('_id') + '/picture',
-                date: null,
-                ordinal: 'ZZZ'
+            if(m.get('from-person.reference') === res.locals.user.id) {
+                if(!m.get('to-person')) continue
+                var person = m.get('to-person')
+            } else if(m.get('to-person.reference') === res.locals.user.id) {
+                if(!m.get('from-person')) continue
+                var person = m.get('from-person')
+            } else {
+                continue
+            }
+
+            if(conversations[person.reference]) {
+                if(conversations[person.reference].message_id > m.get('_id')) continue
+            }
+
+            if(new_id_exists === false) new_id_exists = person.reference === parseInt(req.query.new_id)
+
+            conversations[person.reference] = {
+                id: person.reference,
+                name: person.value,
+                picture: APP_ENTU_URL + '/entity-' + person.reference + '/picture',
+                date: m.get('_changed'),
+                relative_date: moment.utc(m.get('_changed')).tz(APP_TIMEZONE).fromNow(),
+                message: m.get('message.value'),
+                message_id: m.get('_id'),
+                ordinal: m.get('_id')
             }
         }
 
-        for(var i in results.from) {
-            if(conversations[results.from[i].get('to-person.reference')]) {
-                if(conversations[results.from[i].get('to-person.reference')].message_id > results.from[i].get('_id')) continue
-            }
-
-            conversations[results.from[i].get('to-person.reference')] = {
-                id: results.from[i].get('to-person.reference'),
-                name: results.from[i].get('to-person.value'),
-                picture: APP_ENTU_URL + '/entity-' + results.from[i].get('to-person.reference') + '/picture',
-                date: results.from[i].get('_changed'),
-                relative_date: moment.utc(results.from[i].get('_changed')).tz(APP_TIMEZONE).fromNow(),
-                message: results.from[i].get('message.value'),
-                message_id: results.from[i].get('_id'),
-                ordinal: results.from[i].get('_id')
-            }
+        if(req.query.new_id && !new_id_exists) {
+            entu.get_entity({
+                id: req.query.new_id
+            }, function(error, person) {
+                conversations[person.get('_id')] = {
+                    id: person.get('_id'),
+                    name: person.get('forename.value') + ' ' + person.get('surname.value'),
+                    picture: APP_ENTU_URL + '/entity-' + person.get('_id') + '/picture',
+                    date: null,
+                    ordinal: 'ZZZ'
+                }
+                res.send(_.values(conversations))
+            })
+        } else {
+            res.send(_.values(conversations))
         }
-
-        for(var i in results.to) {
-            if(conversations[results.to[i].get('from-person.reference')]) {
-                if(conversations[results.to[i].get('from-person.reference')].message_id > results.to[i].get('_id')) continue
-            }
-
-            conversations[results.to[i].get('from-person.reference')] = {
-                id: results.to[i].get('from-person.reference'),
-                name: results.to[i].get('from-person.value'),
-                picture: APP_ENTU_URL + '/entity-' + results.to[i].get('from-person.reference') + '/picture',
-                date: results.to[i].get('_changed'),
-                relative_date: moment.utc(results.to[i].get('_changed')).tz(APP_TIMEZONE).fromNow(),
-                message: results.to[i].get('message.value'),
-                message_id: results.to[i].get('_id'),
-                ordinal: results.to[i].get('_id')
-            }
-        }
-
-        res.send(_.values(conversations))
     })
 })
 
@@ -105,67 +83,40 @@ router.get('/json/:id', function(req, res, next) {
 
     moment.locale(res.locals.lang)
 
-    async.parallel({
-        from: function(callback) {
-            entu.get_entities({
-                definition: 'message',
-                query: 'from.' + req.params.id + '.to.' + res.locals.user.id + '.',
-                full_object: true,
-                auth_id: res.locals.user.id,
-                auth_token: res.locals.user.token
-            }, callback)
-        },
-        to: function(callback) {
-            entu.get_entities({
-                definition: 'message',
-                query: 'from.' + res.locals.user.id + '.to.' + req.params.id + '.',
-                full_object: true,
-                auth_id: res.locals.user.id,
-                auth_token: res.locals.user.token
-            }, callback)
-        },
-    },
-    function(err, results) {
-        if(err) return next(err)
-
+    entu.get_entities({
+        definition: 'message',
+        query: '.' + res.locals.user.id + '. .' + req.params.id + '.',
+        full_object: true,
+        auth_id: res.locals.user.id,
+        auth_token: res.locals.user.token
+    }, function(error, result) {
         messages = []
         days = {}
 
-        for(var i in results.from) {
-            var date = moment.utc(results.from[i].get('_changed')).tz(APP_TIMEZONE).calendar()
-            var relative_date = moment.utc(results.from[i].get('_changed')).tz(APP_TIMEZONE).fromNow()
-            days[relative_date] = {
-                date: results.from[i].get('_created'),
-                relative_date: relative_date,
-                ordinal: results.from[i].get('_id')
-            }
-            messages.push({
-                to: true,
-                name: results.from[i].get('from-person.value'),
-                picture: APP_ENTU_URL + '/entity-' + results.from[i].get('from-person.reference') + '/picture',
-                date: date,
-                relative_date: relative_date,
-                message: results.from[i].get('message.value'),
-                message_id: results.from[i].get('_id')
-            })
-        }
+        for(var i in result) {
+            var m = result[i]
 
-        for(var i in results.to) {
-            var date = moment.utc(results.to[i].get('_changed')).tz(APP_TIMEZONE).calendar()
-            var relative_date = moment.utc(results.to[i].get('_changed')).tz(APP_TIMEZONE).fromNow()
+            if(m.get('from-person.reference') === res.locals.user.id) {
+                if(m.get('to-person.reference') !== parseInt(req.params.id)) continue
+            } else if(m.get('to-person.reference') === res.locals.user.id) {
+                if(m.get('from-person.reference') !== parseInt(req.params.id)) continue
+            } else {
+                continue
+            }
+
+            var date = moment.utc(m.get('_changed')).tz(APP_TIMEZONE).calendar()
+            var relative_date = moment.utc(m.get('_changed')).tz(APP_TIMEZONE).fromNow()
             days[relative_date] = {
-                date: results.to[i].get('_changed'),
+                date: m.get('_created'),
                 relative_date: relative_date,
-                ordinal: results.to[i].get('_id')
+                ordinal: m.get('_id')
             }
             messages.push({
-                from: true,
-                name: results.to[i].get('from-person.value'),
-                picture: APP_ENTU_URL + '/entity-' + results.to[i].get('from-person.reference') + '/picture',
+                id: m.get('_id'),
+                person: m.get('from-person.reference'),
                 date: date,
                 relative_date: relative_date,
-                message: results.to[i].get('message.value'),
-                message_id: results.to[i].get('_id')
+                message: m.get('message.value')
             })
         }
 
@@ -259,7 +210,7 @@ router.post('/:id', function(req, res, next) {
                     ordinal: new_id
                 },
                 message: {
-                    from: true,
+                    person: parseInt(req.params.id),
                     date: date,
                     relative_date: relative_date,
                     message: req.body.message,

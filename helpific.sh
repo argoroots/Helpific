@@ -1,6 +1,6 @@
 #!/bin/bash
 
-mkdir -p /data/helpific/code /data/helpific/log /data/helpific/ssl
+mkdir -p /data/helpific/code /data/helpific/ssl
 cd /data/helpific/code
 
 git clone -q https://github.com/argoroots/helpific.git ./

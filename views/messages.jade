@@ -22,12 +22,12 @@ block content
             .message-list.col-xs-8.col-md-7.col-xs-offset-1(ng-show='selected && !loading')
                 .row(ng-repeat-start='d in messages.days | orderBy:"ordinal"')
                     h5.col-xs-12.text-center {{ d.relative_date }}
-                .row(ng-repeat='m in messages.messages | filter:{ relative_date: d.relative_date } | orderBy:"message_id"')
-                    .message.bg-green-transparent.col-xs-11.col-sm-10.pull-left(ng-if='m.to')
+                .row(ng-repeat='m in messages.messages | filter:{ relative_date: d.relative_date } | orderBy:"id"')
+                    .message.bg-green-transparent.col-xs-11.col-sm-10.pull-left(ng-if='m.person !== #{ user.id }')
                         small.pull-left {{ m.date }}
                         br
                         | {{ m.message }}
-                    .message.bg-yellow-transparent.col-xs-11.col-sm-10.pull-right.text-right(ng-if='m.from')
+                    .message.bg-yellow-transparent.col-xs-11.col-sm-10.pull-right.text-right(ng-if='m.person === #{ user.id }')
                         small.pull-right {{ m.date }}
                         br
                         | {{ m.message }}
