@@ -210,7 +210,7 @@ router.post('/:id', function(req, res, next) {
                     ordinal: new_id
                 },
                 message: {
-                    person: parseInt(req.params.id),
+                    person: res.locals.user.id,
                     date: date,
                     relative_date: relative_date,
                     message: req.body.message,
