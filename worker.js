@@ -1,13 +1,8 @@
 if(process.env.NEW_RELIC_LICENSE_KEY) require('newrelic')
 
 var express = require('express')
-var helmet  = require('helmet')
-var https   = require('https')
-var http    = require('http')
 var path    = require('path')
 var fs      = require('fs')
-var logger  = require('morgan')
-var rotator = require('file-stream-rotator')
 var minify  = require('express-minify')
 var favicon = require('serve-favicon')
 var cookie  = require('cookie-parser')
@@ -23,8 +18,6 @@ var debug   = require('debug')('app:' + path.basename(__filename).replace('.js',
 APP_VERSION        = process.env.VERSION || require('./package').version
 APP_DEBUG          = process.env.DEBUG
 APP_PORT           = process.env.PORT
-APP_PORT_SSL       = process.env.PORT_SSL
-APP_LOG_DIR        = process.env.LOGDIR || path.join(__dirname, 'log')
 APP_CACHE_DIR      = process.env.CACHEDIR || path.join(__dirname, 'cache')
 APP_COOKIE_SECRET  = process.env.COOKIE_SECRET || random.generate(16)
 APP_ENTU_URL       = process.env.ENTU_URL || 'https://helpific.entu.ee/api2'
@@ -36,19 +29,8 @@ APP_TIMEZONE       = 'Europe/Tallinn'
 
 
 
-// ensure log and cache directory exists
-fs.existsSync(APP_LOG_DIR) || fs.mkdirSync(APP_LOG_DIR)
+// ensure cache directory exists
 fs.existsSync(APP_CACHE_DIR) || fs.mkdirSync(APP_CACHE_DIR)
-
-
-
-// create a rotating write stream
-var access_log_stream = rotator.getStream({
-  filename: APP_LOG_DIR + '/access-%DATE%.log',
-  frequency: 'daily',
-  verbose: false,
-  date_format: 'YYYY-MM-DD'
-})
 
 
 
@@ -86,13 +68,6 @@ var app = express()
     // logs to getsentry.com - start
     .use(raven.middleware.express.requestHandler(raven_client))
 
-    // HSTS (for ssl)
-    .use(helmet.hsts({
-        maxAge: 1000 * 60 *60 *24 * 365,
-        includeSubdomains: true,
-        force: true
-    }))
-
     // cookies
     .use(cookie(APP_COOKIE_SECRET))
 
@@ -111,9 +86,6 @@ var app = express()
     // static files path & favicon
     .use(express.static(path.join(__dirname, 'public')))
     .use(favicon(path.join(__dirname, 'public', 'images', 'helpific-logo.ico')))
-
-    // logging
-    .use(logger(':date[iso] | HTTP/:http-version | :method | :status | :url | :res[content-length] b | :response-time ms | :remote-addr | :referrer | :user-agent', {stream: access_log_stream}))
 
     // redirects
     .use('/piiridetaelu', function(req, res, next) {
@@ -177,42 +149,5 @@ var app = express()
         })
     })
 
-
-
-// start servers if ports are set
-if(APP_PORT) {
-    http.createServer(app).listen(APP_PORT)
-    debug('HTTP started at port %s', APP_PORT)
-}
-if(APP_PORT_SSL) {
-    var ssl_options = {
-        key: fs.readFileSync(__dirname + '/ssl/helpific_com.key', 'utf8'),
-        cert: fs.readFileSync(__dirname + '/ssl/helpific_com.crt', 'utf8'),
-        ca: [
-            // fs.readFileSync(__dirname + '/ssl/AddTrustExternalCARoot.crt', 'utf8'),
-            fs.readFileSync(__dirname + '/ssl/COMODORSAAddTrustCA.crt', 'utf8'),
-            fs.readFileSync(__dirname + '/ssl/COMODORSADomainValidationSecureServerCA.crt', 'utf8')
-        ],
-        ciphers: [
-            'ECDHE-RSA-AES256-SHA384',
-            'DHE-RSA-AES256-SHA384',
-            'ECDHE-RSA-AES256-SHA256',
-            'DHE-RSA-AES256-SHA256',
-            'ECDHE-RSA-AES128-SHA256',
-            'DHE-RSA-AES128-SHA256',
-            'HIGH',
-            '!aNULL',
-            '!eNULL',
-            '!EXPORT',
-            '!DES',
-            '!RC4',
-            '!MD5',
-            '!PSK',
-            '!SRP',
-            '!CAMELLIA'
-        ].join(':'),
-        honorCipherOrder: true
-    }
-    https.createServer(ssl_options, app).listen(APP_PORT_SSL)
-    debug('HTTPS started at port %s', APP_PORT_SSL)
-}
+    // start servers if ports are set
+    .listen(APP_PORT)
