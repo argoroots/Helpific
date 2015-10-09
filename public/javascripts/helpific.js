@@ -48,7 +48,36 @@ angular.module('hlpfc', [])
                 })
             })
 
+        $scope.Add = function(type, data) {
+            if(!type || !data) return
+            if(!data.time || !data.location || !data.request) return
+
+            $scope.adding = true
+            data.type = type
+
+            $http({
+                    method : 'POST',
+                    url    : '/' + LANGUAGE + '/json/help',
+                    data   : data
+                })
+                .success(function(result) {
+                    $scope.new.time = null
+                    $scope.new.location = null
+                    $scope.new.request = null
+                    $scope.adding = false
+                    $scope.add_new = false
+
+                    window.location.reload()
+                })
+                .error(function(data) {
+                    console.log(data)
+                    $scope.adding = false
+                })
+        }
+
         $scope.Save = function(data) {
+            $scope.saving = true
+
             var post_data = {}
             if(data.time.old != data.time.value) post_data.time = data.time
             if(data.location.old != data.location.value) post_data.location = data.location
@@ -72,6 +101,11 @@ angular.module('hlpfc', [])
 
                         data.filter_status = data.status.value
                         data.editing = false
+                        $scope.saving = false
+                    })
+                    .error(function(data) {
+                        console.log(data)
+                        $scope.saving = false
                     })
             })
         }

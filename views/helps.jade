@@ -34,18 +34,20 @@ block content
                     form
                         .form-group.narrow.col-xs-12.col-sm-3
                             label.control-label(ng-class='{ "active": time_new }')= t('pages.help.time')
-                            input#time.form-control(type='text', placeholder=t('pages.help.time-ph'), ng-focus='time_new = true', ng-blur='time_new = false')
+                            input#time.form-control(type='text', placeholder=t('pages.help.time-ph'), ng-model='new.time', ng-focus='time_new = true', ng-blur='time_new = false')
 
                         .form-group.narrow.col-xs-12.col-sm-3
                             label.control-label(ng-class='{ "active": location_new }')= t('pages.help.location')
-                            input#location.form-control(type='text', placeholder=t('pages.help.location-ph'), ng-focus='location_new = true', ng-blur='location_new = false')
+                            input.form-control(type='text', placeholder=t('pages.help.location-ph'), ng-model='new.location', ng-focus='location_new = true', ng-blur='location_new = false')
 
                         .form-group.narrow.col-xs-12.col-sm-6
                             label.control-label(ng-class='{ "active": request_new }')= t('pages.help.' + help_type + '-request')
-                            input#request.form-control(type='text', placeholder=t('pages.help.' + help_type + '-request-ph'), ng-focus='request_new = true', ng-blur='request_new = false')
+                            input.form-control(type='text', placeholder=t('pages.help.' + help_type + '-request-ph'), ng-model='new.request', ng-focus='request_new = true', ng-blur='request_new = false')
                         .form-group.narrow.col-xs-10.col-sm-2.pull-right.text-right
-                            a#request-save.btn.bg-red.col-xs-12.text-center(href='javascript:void(0)')= t('pages.help.save')
-                            i#request-spinner.hidden.fa.fa-cog.fa-spin.fa-2x
+                            label.control-label
+                            a.btn.bg-red.col-xs-12.text-center(ng-if='!adding', ng-click='Add("#{ help_type }", new)')= t('pages.help.save')
+                            a.btn.bg-red.col-xs-12.text-center(ng-if='adding', disabled)
+                                i.fa.fa-spinner.fa-pulse
                         .form-group.narrow.col-xs-2.pull-right.text-right
                             label.control-label
                             a.btn.btn-link.text-right(ng-click='add_new = false')= t('pages.help.cancel')
@@ -82,8 +84,9 @@ block content
                         select.form-control(ng-options='s.status as s.label for s in statuses', ng-model='h.status.value', ng-focus='edit[$index].status = true', ng-blur='edit[$index].status = false')
                     .form-group.narrow.col-xs-10.col-sm-2.pull-right.text-right
                         label.control-label
-                        a.btn.bg-red.col-xs-12.text-center(ng-click='Save(h)')= t('pages.help.save')
-                        i.hidden.fa.fa-cog.fa-spin.fa-2x
+                        a.btn.bg-red.col-xs-12.text-center(ng-if='!saving', ng-click='Save(h)')= t('pages.help.save')
+                        a.btn.bg-red.col-xs-12.text-center(ng-if='saving', disabled)
+                            i.fa.fa-spinner.fa-pulse
                     .form-group.narrow.col-xs-2.pull-right.text-right
                         label.control-label
                         a.btn.btn-link.text-right(ng-click='h.editing = false')= t('pages.help.cancel')
@@ -99,29 +102,5 @@ block content
                 $(this).val(d.toString('dd.MM.yyyy HH:mm').replace(' 00:00', ''))
             } else {
                 $(this).val('')
-            }
-        })
-
-        $('#request-save').click(function() {
-            if($('#request').val()) {
-                $('#request-save').addClass('hidden')
-                $('#request-spinner').removeClass('hidden')
-                var postdata = {
-                    'type': '#{ help_type }',
-                    'time': $('#time').val(),
-                    'location': $('#location').val(),
-                    'request': $('#request').val()
-                }
-                $.post('json/help', postdata, function(data) {
-                    setTimeout(function() {
-                        location.reload(true)
-                    }, 1500)
-                }).fail(
-                    setTimeout(function() {
-                        location.reload(true)
-                    }, 1500)
-                )
-            } else {
-                $('#request').focus()
             }
         })

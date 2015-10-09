@@ -120,33 +120,41 @@ router.post('/help', function(req, res, next) {
         if(time_time) properties.time = properties.time + ' ' + time_time
     }
 
-    entu.add({
-        parent_entity_id: APP_ENTU_USER,
-        definition: 'request',
-        properties: properties
-    }, function(error, new_id) {
-        if(error) return next(error)
-
-        entu.rights({
-            id: new_id,
-            person_id: res.locals.user.id,
-            right: 'owner'
-        }, function(error, response) {
-            if(error) return next(error)
-
+    var new_id = null
+    async.series([
+        function(callback) {
+            entu.add({
+                parent_entity_id: APP_ENTU_USER,
+                definition: 'request',
+                properties: properties
+            }, function(error, id) {
+                if(error) callback(error)
+                new_id = id
+                callback(null)
+            })
+        },
+        function(callback) {
+            if(!res.locals.user) callback(null)
+            entu.rights({
+                id: new_id,
+                person_id: res.locals.user.id,
+                right: 'owner'
+            }, callback)
+        },
+        function(callback) {
             entu.rights({
                 id: new_id,
                 person_id: APP_ENTU_USER,
                 right: 'viewer'
-            }, function(error, response) {
-                if(error) return next(error)
+            }, callback)
+        },
+    ],
+    function(err) {
+        if(err) return next(err)
 
-                res.setHeader('Content-Type', 'application/json')
-                res.status(200)
-                res.send(response)
-            })
+        res.send({
+            id: new_id
         })
-
     })
 })
 
