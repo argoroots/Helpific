@@ -1,9 +1,9 @@
 var router = require('express').Router()
-var path   = require('path')
-var debug  = require('debug')('app:' + path.basename(__filename).replace('.js', ''))
+var _      = require('underscore')
 var async  = require('async')
 var moment = require('moment-timezone')
-var _      = require('underscore')
+var path   = require('path')
+var debug  = require('debug')('app:' + path.basename(__filename).replace('.js', ''))
 
 var entu   = require('../helpers/entu')
 

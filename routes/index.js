@@ -1,4 +1,5 @@
 var router = require('express').Router()
+var async  = require('async')
 var path   = require('path')
 var debug  = require('debug')('app:' + path.basename(__filename).replace('.js', ''))
 
@@ -98,48 +99,44 @@ router.get('/bb', function(req, res, next) {
 // Send feedback
 router.post('/feedback', function(req, res, next) {
     var properties = req.body
+    var new_id = null
+
     if(res.locals.user) properties['from-person'] = res.locals.user.id
 
-    entu.add({
-        parent_entity_id: APP_ENTU_USER,
-        definition: 'message',
-        properties: properties
-    }, function(error, new_id) {
-        if(error) return next(error)
+    async.series([
+        function(callback) {
+            entu.add({
+                parent_entity_id: APP_ENTU_USER,
+                definition: 'message',
+                properties: properties
+            }, function(error, id) {
+                if(error) callback(error)
 
-        if(res.locals.user) {
+                new_id = id
+            })
+        },
+        function(callback) {
+            if(!res.locals.user) callback(null)
             entu.rights({
                 id: new_id,
                 person_id: res.locals.user.id,
                 right: 'owner'
-            }, function(error, response) {
-                if(error) return next(error)
+            }, callback)
+        },
+        function(callback) {
+            entu.rights({
+                id: new_id,
+                person_id: APP_ENTU_USER,
+                right: ''
+            }, callback)
+        },
+    ],
+    function(err) {
+        if(err) return next(err)
 
-                entu.rights({
-                    id: new_id,
-                    person_id: APP_ENTU_USER,
-                    right: ''
-                }, function(error, response) {
-                    if(error) return next(error)
-
-                    res.setHeader('Content-Type', 'application/json')
-                    res.status(200)
-                    res.send(new_id)
-                })
-            })
-        } else {
-                entu.rights({
-                    id: new_id,
-                    person_id: APP_ENTU_USER,
-                    right: ''
-                }, function(error, response) {
-                    if(error) return next(error)
-
-                    res.setHeader('Content-Type', 'application/json')
-                    res.status(200)
-                    res.send(new_id)
-                })
-        }
+        res.send({
+            id: new_id
+        })
     })
 })
 
