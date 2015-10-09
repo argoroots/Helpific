@@ -103,8 +103,57 @@ router.get('/help/:type*?', function(req, res, next) {
 
 
 
-// Set help property
-router.post('/help/:id', function(req, res, next) {
+// Create request/offer
+router.post('/help', function(req, res, next) {
+    if(!res.locals.user) {
+        res.status(403).send()
+        return
+    }
+
+    var properties = req.body
+    properties.person = res.locals.user.id
+
+    if(properties.time) {
+        var time_date = properties.time.split(' ')[0].split('.')
+        var time_time = properties.time.split(' ')[1]
+        properties.time = time_date[2] + '-' + time_date[1] + '-' + time_date[0]
+        if(time_time) properties.time = properties.time + ' ' + time_time
+    }
+
+    entu.add({
+        parent_entity_id: APP_ENTU_USER,
+        definition: 'request',
+        properties: properties
+    }, function(error, new_id) {
+        if(error) return next(error)
+
+        entu.rights({
+            id: new_id,
+            person_id: res.locals.user.id,
+            right: 'owner'
+        }, function(error, response) {
+            if(error) return next(error)
+
+            entu.rights({
+                id: new_id,
+                person_id: APP_ENTU_USER,
+                right: 'viewer'
+            }, function(error, response) {
+                if(error) return next(error)
+
+                res.setHeader('Content-Type', 'application/json')
+                res.status(200)
+                res.send(response)
+            })
+        })
+
+    })
+})
+
+
+
+// Edit request/offer
+router.put('/help/:id', function(req, res, next) {
     if(!res.authenticate()) return
 
     entu.edit({

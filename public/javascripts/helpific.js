@@ -57,7 +57,7 @@ angular.module('hlpfc', [])
 
             angular.forEach(post_data, function(value, key) {
                 $http({
-                        method : 'POST',
+                        method : 'PUT',
                         url    : '/' + LANGUAGE + '/json/help/' + data.id,
                         data   : {
                             property: key,
