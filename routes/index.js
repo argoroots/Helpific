@@ -14,7 +14,7 @@ router.get('/', function(req, res, next) {
 
 
 
-// Get help and users count
+// Get help and users count JSON
 router.get('/json', function(req, res, next) {
     async.parallel({
         help: function(callback) {
@@ -36,25 +36,6 @@ router.get('/json', function(req, res, next) {
         res.send({
             help: results.help.length,
             users: results.users.length
-        })
-    })
-})
-
-
-
-// Show user own profile
-router.get('/profile', function(req, res, next) {
-    if(!res.authenticate()) return
-
-    entu.get_entity({
-        id: res.locals.user.id,
-        auth_id: res.locals.user.id,
-        auth_token: res.locals.user.token
-    }, function(error, profile) {
-        if(error) return next(error)
-
-        res.render('profile', {
-            profile: profile
         })
     })
 })

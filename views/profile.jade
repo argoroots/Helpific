@@ -160,7 +160,7 @@ block content
                         id: input.data('id'),
                         value: value
                     }
-                    $.post('json/profile', postdata, function(data) {
+                    $.post('', postdata, function(data) {
                         input.val(data.value)
                         input.data('id', data.id)
                         input.data('value', data.value)
@@ -181,7 +181,7 @@ block content
                     id: input.data('id'),
                     value: input.val()
                 }
-                $.post('json/profile', postdata, function(data) {
+                $.post('', postdata, function(data) {
                     input.val(data.value)
                     input.data('id', data.id)
                     input.data('value', data.value)
@@ -202,7 +202,7 @@ block content
                 id: input.data('id'),
                 value: input.val()
             }
-            $.post('json/profile', postdata, function(data) {
+            $.post('', postdata, function(data) {
                 input.val(data.value)
                 input.data('id', data.id)
                 input.data('value', data.value)

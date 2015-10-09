@@ -9,7 +9,7 @@ var entu   = require('../helpers/entu')
 
 
 
-// Get conversations
+// Get conversations JSON
 router.get('/messages', function(req, res, next) {
     if(!res.authenticate()) return
 
@@ -99,7 +99,7 @@ router.get('/messages', function(req, res, next) {
 
 
 
-// Get conversation messages
+// Get conversation messages JSON
 router.get('/messages/:id', function(req, res, next) {
     if(!res.authenticate()) return
 
@@ -258,23 +258,6 @@ router.post('/messages/:id', function(req, res, next) {
                 }
             })
         })
-    })
-})
-
-
-
-// Edit user profile
-router.post('/profile', function(req, res, next) {
-    if(!res.authenticate()) return
-
-    entu.set_user({
-        auth_id: res.locals.user.id,
-        auth_token: res.locals.user.token,
-        data: req.body
-    }, function(error, response) {
-        if(error) return next(error)
-
-        res.send(response)
     })
 })
 
