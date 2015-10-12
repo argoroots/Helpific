@@ -360,7 +360,7 @@ pages:
             ru: pages.profile.county-ph
         delete-photo:
             en: Delete photo
-            et: Kustuta foto
+            et: Kustuta pilt
             ru: pages.profile.delete-photo
         email:
             en: E-mail
