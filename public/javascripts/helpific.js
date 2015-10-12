@@ -3,7 +3,7 @@ LANGUAGE = PATH[1]
 
 
 
-angular.module('hlpfc', [])
+angular.module('hlpfc', ['ngSanitize'])
 
 
 

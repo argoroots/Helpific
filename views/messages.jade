@@ -26,11 +26,11 @@ block content
                     .message.bg-green-transparent.col-xs-11.col-sm-10.pull-left(ng-if='m.person !== #{ user.id }')
                         small.pull-left {{ m.date }}
                         br
-                        | {{ m.message }}
+                        div(ng-bind-html='m.message | linky')
                     .message.bg-yellow-transparent.col-xs-11.col-sm-10.pull-right.text-right(ng-if='m.person === #{ user.id }')
                         small.pull-right {{ m.date }}
                         br
-                        | {{ m.message }}
+                        div(ng-bind-html='m.message | linky')
                 .row(ng-repeat-end)
 
                 .row.spacer
