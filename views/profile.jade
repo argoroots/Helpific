@@ -8,28 +8,28 @@ block head
     script(src='https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js')
 
 block content
-    .container
+    .container(ng-controller='profileCtrl')
         form#profile-form
             .row
                 .form-group.col-xs-12.col-sm-12
-                    label.control-label(for='slogan')= t('pages.profile.slogan')
-                    input#slogan.form-control(type='text', placeholder=t('pages.profile.slogan-ph'), value=profile.get('slogan.value'), data-value=profile.get('slogan.value'), data-id=profile.get('slogan.id'))
+                    label.control-label(ng-class='{ "active": p.slogan.edit }')= t('pages.profile.slogan')
+                    input#slogan.form-control(type='text', placeholder=t('pages.profile.slogan-ph'), value=profile.get('slogan.value'), data-value=profile.get('slogan.value'), data-id=profile.get('slogan.id'), ng-focus='p.slogan.edit = true', ng-blur='p.slogan.edit = false')
 
                 .form-group.col-xs-12.col-sm-3
-                    label.control-label(for='forename')= t('pages.profile.forename')
-                    input#forename.form-control(type='text', placeholder=t('pages.profile.forename-ph'), value=profile.get('forename.value'), data-value=profile.get('forename.value'), data-id=profile.get('forename.id'))
+                    label.control-label(ng-class='{ "active": p.forename.edit }')= t('pages.profile.forename')
+                    input#forename.form-control(type='text', placeholder=t('pages.profile.forename-ph'), value=profile.get('forename.value'), data-value=profile.get('forename.value'), data-id=profile.get('forename.id'), ng-focus='p.forename.edit = true', ng-blur='p.forename.edit = false')
 
                 .form-group.col-xs-12.col-sm-3
-                    label.control-label(for='surname')= t('pages.profile.surname')
-                    input#surname.form-control(type='text', placeholder=t('pages.profile.surname-ph'), value=profile.get('surname.value'), data-value=profile.get('surname.value'), data-id=profile.get('surname.id'))
+                    label.control-label(ng-class='{ "active": p.surname.edit }')= t('pages.profile.surname')
+                    input#surname.form-control(type='text', placeholder=t('pages.profile.surname-ph'), value=profile.get('surname.value'), data-value=profile.get('surname.value'), data-id=profile.get('surname.id'), ng-focus='p.surname.edit = true', ng-blur='p.surname.edit = false')
 
                 .form-group.col-xs-12.col-sm-3
-                    label.control-label(for='email')= t('pages.profile.email')
-                    input#email.form-control(type='text', placeholder=t('pages.profile.email-ph'), value=profile.get('email.value'), data-value=profile.get('email.value'), data-id=profile.get('email.id'))
+                    label.control-label(ng-class='{ "active": p.email.edit }')= t('pages.profile.email')
+                    input#email.form-control(type='text', placeholder=t('pages.profile.email-ph'), value=profile.get('email.value'), data-value=profile.get('email.value'), data-id=profile.get('email.id'), ng-focus='p.email.edit = true', ng-blur='p.email.edit = false')
 
                 .form-group.col-xs-12.col-sm-3
-                    label.control-label(for='language')= t('pages.profile.language')
-                    select#language.form-control(data-value=profile.get('language.value'), data-id=profile.get('language.id'))
+                    label.control-label(ng-class='{ "active": p.language.edit }')= t('pages.profile.language')
+                    select#language.form-control(data-value=profile.get('language.value'), data-id=profile.get('language.id'), ng-focus='p.language.edit = true', ng-blur='p.language.edit = false')
                         if !profile.get('language.value')
                             option()
                         each l in locales
@@ -43,19 +43,19 @@ block content
             .row.spacer
 
                 .form-group.col-xs-12.col-sm-4
-                    label.control-label(for='address')= t('pages.profile.address')
-                    input#address.form-control(type='text', placeholder=t('pages.profile.address-ph'), value=profile.get('address.value'), data-value=profile.get('address.value'), data-id=profile.get('address.id'))
+                    label.control-label(ng-class='{ "active": p.address.edit }')= t('pages.profile.address')
+                    input#address.form-control(type='text', placeholder=t('pages.profile.address-ph'), value=profile.get('address.value'), data-value=profile.get('address.value'), data-id=profile.get('address.id'), ng-focus='p.address.edit = true', ng-blur='p.address.edit = false')
                 .form-group.col-xs-12.col-sm-4
-                    label.control-label(for='town')= t('pages.profile.city')
-                    input#town.form-control(type='text', placeholder=t('pages.profile.city-ph'), value=profile.get('town.value'), data-value=profile.get('town.value'), data-id=profile.get('town.id'))
+                    label.control-label(ng-class='{ "active": p.town.edit }')= t('pages.profile.city')
+                    input#town.form-control(type='text', placeholder=t('pages.profile.city-ph'), value=profile.get('town.value'), data-value=profile.get('town.value'), data-id=profile.get('town.id'), ng-focus='p.town.edit = true', ng-blur='p.town.edit = false')
 
                 .form-group.col-xs-12.col-sm-4
-                    label.control-label(for='county')= t('pages.profile.county')
-                    input#county.form-control(type='text', placeholder=t('pages.profile.county-ph'), value=profile.get('county.value'), data-value=profile.get('county.value'), data-id=profile.get('county.id'))
+                    label.control-label(ng-class='{ "active": p.county.edit }')= t('pages.profile.county')
+                    input#county.form-control(type='text', placeholder=t('pages.profile.county-ph'), value=profile.get('county.value'), data-value=profile.get('county.value'), data-id=profile.get('county.id'), ng-focus='p.county.edit = true', ng-blur='p.county.edit = false')
 
                 .form-group.col-xs-12.col-sm-4
-                    label.control-label(for='country')= t('pages.profile.country')
-                    input#country.form-control(type='text', placeholder=t('pages.profile.country-ph'), value=profile.get('country.value'), data-value=profile.get('country.value'), data-id=profile.get('country.id'))
+                    label.control-label(ng-class='{ "active": p.country.edit }')= t('pages.profile.country')
+                    input#country.form-control(type='text', placeholder=t('pages.profile.country-ph'), value=profile.get('country.value'), data-value=profile.get('country.value'), data-id=profile.get('country.id'), ng-focus='p.country.edit = true', ng-blur='p.country.edit = false')
 
 
             .row.spacer
@@ -80,8 +80,8 @@ block content
                     //-     input#me-help-you-photo.form-control(type='file')
 
                     .form-group.col-xs-12.col-sm-8
-                        label.control-label(for='me-help-you-video')= t('pages.profile.me-help-you-video')
-                        input#me-help-you-video.form-control(type='text', placeholder=t('pages.profile.video-ph'), value=profile.get('me-help-you-video.value'), data-value=profile.get('me-help-you-video.value'), data-id=profile.get('me-help-you-video.id'))
+                        label.control-label(ng-class='{ "active": p.me_help_video.edit }')= t('pages.profile.me-help-you-video')
+                        input#me-help-you-video.form-control(type='text', placeholder=t('pages.profile.video-ph'), value=profile.get('me-help-you-video.value'), data-value=profile.get('me-help-you-video.value'), data-id=profile.get('me-help-you-video.id'), ng-focus='p.me_help_video.edit = true', ng-blur='p.me_help_video.edit = false')
                         p.text-right
                             small!= t('pages.profile.video-info')
 
@@ -97,8 +97,8 @@ block content
                     //-     input#about-me-photo.form-control(type='file')
 
                     .form-group.col-xs-12.col-sm-8
-                        label.control-label(for='about-me-video')= t('pages.profile.about-me-video')
-                        input#about-me-video.form-control(type='text', placeholder=t('pages.profile.video-ph'), value=profile.get('about-me-video.value'), data-value=profile.get('about-me-video.value'), data-id=profile.get('about-me-video.id'))
+                        label.control-label(ng-class='{ "active": p.about_video.edit }')= t('pages.profile.about-me-video')
+                        input#about-me-video.form-control(type='text', placeholder=t('pages.profile.video-ph'), value=profile.get('about-me-video.value'), data-value=profile.get('about-me-video.value'), data-id=profile.get('about-me-video.id'), ng-focus='p.about_video.edit = true', ng-blur='p.about_video.edit = false')
                         p.text-right
                             small!= t('pages.profile.video-info')
 
@@ -114,8 +114,8 @@ block content
                     //-     input#you-help-me-photo.form-control(type='file')
 
                     .form-group.col-xs-12.col-sm-8
-                        label.control-label(for='you-help-me-video')= t('pages.profile.you-help-me-video')
-                        input#you-help-me-video.form-control(type='text', placeholder=t('pages.profile.video-ph'), value=profile.get('you-help-me-video.value'), data-value=profile.get('you-help-me-video.value'), data-id=profile.get('you-help-me-video.id'))
+                        label.control-label(ng-class='{ "active": p.you_help_video.edit }')= t('pages.profile.you-help-me-video')
+                        input#you-help-me-video.form-control(type='text', placeholder=t('pages.profile.video-ph'), value=profile.get('you-help-me-video.value'), data-value=profile.get('you-help-me-video.value'), data-id=profile.get('you-help-me-video.id'), ng-focus='p.you_help_video.edit = true', ng-blur='p.you_help_video.edit = false')
                         p.text-right
                             small!= t('pages.profile.video-info')
 
@@ -155,11 +155,7 @@ block content
             })
         })
 
-        $('input').focus(function() {
-            $("label[for='" + this.id + "']").addClass('active')
-        }).blur(function() {
-            $('label').removeClass('active')
-
+        $('input').blur(function() {
             input = $(this)
             if(input.data('value') != input.val()) {
                 var postdata = {
@@ -175,13 +171,7 @@ block content
             }
         })
 
-        $('select').focus(function() {
-            $("label[for='" + this.id + "']").addClass('active')
-        }).blur(function() {
-            $('label').removeClass('active')
-        })
-
-        $('#language').change(function() {
+        $('select').change(function() {
             input = $(this)
             var postdata = {
                 property: input.attr('id'),
