@@ -184,9 +184,7 @@ exports.edit = function(params, callback) {
         if(error) return callback(error)
         if(response.statusCode !== 201 || !body.result) return callback(new Error(op.get(body, 'error', body)))
 
-        var new_property = op.get(body, 'result.properties.' + property + '.0', null)
-
-        callback(null, new_property)
+        callback(null, op.get(body, 'result.properties.' + property + '.0', null))
     })
 }
 
@@ -211,6 +209,26 @@ exports.rights = function(params, callback) {
         if(response.statusCode !== 200) return callback(new Error(op.get(body, 'error', body)))
 
         callback(null, params.id)
+    })
+}
+
+
+
+//Add file
+exports.file = function(params, callback) {
+    if(params.auth_id && params.auth_token) {
+        var headers = {'X-Auth-UserId': params.auth_id, 'X-Auth-Token': params.auth_token}
+        var qb = params
+    } else {
+        var headers = {}
+        var qb = sign_data(params)
+    }
+
+    request.post({url: APP_ENTU_URL + '/file/s3', headers: headers, body: qb, strictSSL: true, json: true, timeout: 60000}, function(error, response, body) {
+        if(error) return callback(error)
+        if(response.statusCode !== 200 || !body.result) return callback(new Error(op.get(body, 'error', body)))
+
+        callback(null, op.get(body, 'result', null))
     })
 }
 

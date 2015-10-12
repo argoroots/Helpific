@@ -358,6 +358,10 @@ pages:
             en: e.g NY
             et: näit. Harjumaa
             ru: pages.profile.county-ph
+        delete-photo:
+            en: Delete photo
+            et: Kustuta foto
+            ru: pages.profile.delete-photo
         email:
             en: E-mail
             et: E-post
@@ -394,6 +398,14 @@ pages:
             en: Video URL
             et: Video viide
             ru: pages.profile.me-help-you-video
+        photo:
+            en: Profile photo
+            et: Profiilipilt
+            ru: pages.profile.photo
+        photo-upload:
+            en: "{{ photo_upload }}% uploaded..."
+            et: "{{ photo_upload }}% laaditud..."
+            ru: pages.profile.photo-upload
         slogan:
             en: Slogan
             et: Slõugan

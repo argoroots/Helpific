@@ -7,6 +7,18 @@ angular.module('hlpfc', ['ngSanitize'])
 
 
 
+// File input custom-on-change directive
+    .directive('customOnChange', function() {
+        return {
+            restrict: 'A',
+            link: function(scope, element, attrs) {
+                element.bind('change', scope.$eval(attrs.customOnChange))
+            }
+        }
+    })
+
+
+
 // INDEX
     .controller('indexCtrl', ['$scope', '$http', function($scope, $http) {
         $http({
@@ -182,7 +194,7 @@ angular.module('hlpfc', ['ngSanitize'])
             $http({
                     method : 'POST',
                     url    : '/' + LANGUAGE + '/messages/' + $scope.id,
-                    data   : { 'message': $scope.message }
+                    data   : { message: $scope.message }
                 })
                 .success(function(data) {
                     var day_in_list = false
@@ -212,4 +224,77 @@ angular.module('hlpfc', ['ngSanitize'])
         }
 
         if($scope.id) $scope.openConversation($scope.id)
+    }])
+
+
+
+// PROFILE
+    .controller('profileCtrl', ['$scope', '$http', function($scope, $http) {
+        $scope.photoUpload = function(e) {
+            var file = e.target.files[0]
+
+            $http({
+                    method : 'POST',
+                    url    : '/' + LANGUAGE + '/profile/photo',
+                    data   : {
+                        filename: file.name,
+                        filesize: file.size,
+                        filetype: file.type
+                    }
+                })
+                .success(function(data) {
+                    var form = new FormData()
+                    var xhr  = new XMLHttpRequest()
+
+                    for(var i in data.s3.data) {
+                        form.append(i, data.s3.data[i])
+                    }
+                    form.append('file', file)
+
+                    xhr.upload.addEventListener('progress', function(ev) {
+                        if(!ev.lengthComputable) return
+                        $scope.photo_upload = (ev.loaded * 100 / ev.total - 0.1).toFixed(1)
+                        $scope.$apply()
+                    }, false)
+
+                    xhr.onreadystatechange = function(ev) {
+                        if(xhr.readyState != 4) return
+                        if(xhr.status == 201) {
+                            $scope.photo_upload = 100
+                            $scope.$apply()
+                            window.location.reload()
+                        } else {
+                            console.log(xhr)
+                            $scope.photo_upload = null
+                            $scope.$apply()
+                        }
+                    }
+
+                    xhr.open('POST', data.s3.url, true)
+                    xhr.send(form)
+                })
+                .error(function(data) {
+                    console.log(data)
+                    $scope.sending = false
+                })
+        }
+
+        $scope.photoDelete = function(id) {
+            $http({
+                    method : 'POST',
+                    url    : '/' + LANGUAGE + '/profile',
+                    data   : {
+                        property: 'photo',
+                        id: id
+                    }
+                })
+                .success(function(data) {
+                    console.log(data)
+                    window.location.reload()
+                })
+                .error(function(data) {
+                    console.log(data)
+                    $scope.sending = false
+                })
+        }
     }])

@@ -35,9 +35,17 @@ block content
                         each l in locales
                             option(selected=profile.get('language.value') == l, value=l)= t('locales.' + l)
 
-                //- .form-group.col-xs-12.col-sm-3
-                //-     label.control-label(for='photo') Profile Picture
-                //-     input#photo.form-control(type='file')
+                .form-group.col-xs-12
+                    label.control-label(for='photo')= t('pages.profile.photo')
+                    if !profile.get('photo')
+                        input.form-control(ng-show='!photo_upload', type='file', custom-on-change='photoUpload')
+                        small(ng-show='photo_upload')= t('pages.profile.photo-upload')
+                    else
+                        .row
+                            .col-xs-2
+                                .row
+                                    img.col-xs-12(src=profile.get('photo.file'), alt=profile.get('photo.value'))
+                                    a.btn.col-xs-12.text-left(ng-click='photoDelete(#{ profile.get("photo.id") })')= t('pages.profile.delete-photo')
 
             .row.spacer
             .row.spacer
