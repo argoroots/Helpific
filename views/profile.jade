@@ -63,12 +63,12 @@ block content
 
             .row
                 .col-xs-12
-                    a.profile-tab.col-xs-4.bg-green(href='javascript:void(0)', data-tab='me-help-you-tab')= t('pages.profile.me-help-you-tab')
-                    a.profile-tab.active.col-xs-4.bg-red(href='javascript:void(0)', data-tab='about-me-tab')= t('pages.profile.about-me-tab')
-                    a.profile-tab.col-xs-4.bg-yellow(href='javascript:void(0)', data-tab='you-help-me-tab')= t('pages.profile.you-help-me-tab')
+                    a.profile-tab.col-xs-4.bg-green(ng-click='tab = 1', ng-class='{ "active": tab === 1 }')= t('pages.profile.me-help-you-tab')
+                    a.profile-tab.active.col-xs-4.bg-red(ng-click='tab = 2', ng-class='{ "active": !tab || tab === 2 }')= t('pages.profile.about-me-tab')
+                    a.profile-tab.col-xs-4.bg-yellow(ng-click='tab = 3', ng-class='{ "active": tab === 3 }')= t('pages.profile.you-help-me-tab')
 
             .row
-                #me-help-you-tab.profile-tab-pane
+                .profile-tab-pane(ng-show='tab === 1')
                     .form-group.col-xs-12
                         label.control-label(for='me-help-you-text')= t('pages.profile.me-help-you-text')
                         textarea#me-help-you-text.form-control(data-value=profile.get('me-help-you-text.value'), data-id=profile.get('me-help-you-text.id'), rows=8)= profile.get('me-help-you-text.value')
@@ -85,7 +85,7 @@ block content
                         p.text-right
                             small!= t('pages.profile.video-info')
 
-                #about-me-tab.profile-tab-pane
+                .profile-tab-pane(ng-show='!tab || tab === 2')
                     .form-group.col-xs-12
                         label.control-label(for='about-me-text')= t('pages.profile.about-me-text')
                         textarea#about-me-text.form-control(data-value=profile.get('about-me-text.value'), data-id=profile.get('about-me-text.id'), rows=8)= profile.get('about-me-text.value')
@@ -102,7 +102,7 @@ block content
                         p.text-right
                             small!= t('pages.profile.video-info')
 
-                #you-help-me-tab.profile-tab-pane
+                .profile-tab-pane(ng-show='tab === 3')
                     .form-group.col-xs-12
                         label.control-label(for='you-help-me-text')= t('pages.profile.you-help-me-text')
                         textarea#you-help-me-text.form-control(data-value=profile.get('you-help-me-text.value'), data-id=profile.get('you-help-me-text.id'), rows=8)= profile.get('you-help-me-text.value')
@@ -122,20 +122,6 @@ block content
             .row.spacer
 
     script.
-        setTimeout(function() {
-            $('#me-help-you-tab').addClass('hidden')
-            $('#you-help-me-tab').addClass('hidden')
-        }, 100)
-
-        $('.profile-tab').click(function() {
-            $('.profile-tab').removeClass('active')
-            $(this).addClass('active')
-
-            $('.profile-tab-pane').addClass('hidden')
-            $('#' + $(this).data('tab')).removeClass('hidden')
-        })
-
-
         var md = {}
         $('textarea').each(function() {
             var input = $(this)
