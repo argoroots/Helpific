@@ -5,14 +5,14 @@ block vars
 
 block content
     .container(ng-controller='usersCtrl')
-        #search.row
+        .row(ng-show='!users')
+            .col-xs-12.text-center
+                i.fa.fa-spinner.fa-pulse.fa-2x
+        #search.row(ng-show='users')
             form.form-group.col-xs-10.col-sm-8.col-md-6.col-xs-offset-1.col-sm-offset-2.col-md-offset-3
                 label.col-xs-1(for='search-input')
                     i.fa.fa-search
                 input#search-input.col-xs-10.text-center(type='search', placeholder='', ng-model='search_query' autofocus)
-
-            .col-xs-12.text-center(ng-if='!users && search_query')
-                i.fa.fa-spinner.fa-pulse.fa-2x
 
             small.col-xs-12.text-center(ng-if='users')!= t('pages.users.count')
 
