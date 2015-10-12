@@ -48,6 +48,15 @@ angular.module('hlpfc', ['ngSanitize'])
                 })
             })
 
+        $scope.formatTime = function(time) {
+            var d = Date.parse(time)
+            if(d) {
+                return d.toString('dd.MM.yyyy HH:mm').replace(' 00:00', '')
+            } else {
+                return ''
+            }
+        }
+
         $scope.Add = function(type, data) {
             if(!type || !data) return
             if(!data.time || !data.location || !data.request) return

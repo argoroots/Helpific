@@ -139,10 +139,8 @@ router.post('/', function(req, res, next) {
     properties.person = res.locals.user.id
 
     if(properties.time) {
-        var time_date = properties.time.split(' ')[0].split('.')
-        var time_time = properties.time.split(' ')[1]
-        properties.time = time_date[2] + '-' + time_date[1] + '-' + time_date[0]
-        if(time_time) properties.time = properties.time + ' ' + time_time
+        if(properties.time.lenght === 10) properties.time + ' 00:00'
+        properties.time = moment(properties.time, 'DD.MM.YYYY HH:mm').format('YYYY-MM-DD HH:mm')
     }
 
     var new_id = null
@@ -188,6 +186,11 @@ router.post('/', function(req, res, next) {
 // Edit request/offer
 router.put('/:id', function(req, res, next) {
     if(!res.authenticate()) return
+
+    if(req.body.property === 'time' && req.body.value) {
+        if(req.body.value.lenght === 10) req.body.value + ' 00:00'
+        req.body.value = moment(req.body.value, 'DD.MM.YYYY HH:mm').format('YYYY-MM-DD HH:mm')
+    }
 
     entu.edit({
         id: req.params.id,

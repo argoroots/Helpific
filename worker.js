@@ -150,4 +150,6 @@ var app = express()
     })
 
     // start servers if ports are set
-    .listen(APP_PORT)
+    .listen(APP_PORT, function() {
+        debug('Started listening port ' + APP_PORT)
+    })
