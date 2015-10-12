@@ -11,7 +11,7 @@ block content
         .row(ng-show='conversations')
             .conversation-list.col-xs-2.col-md-4
                 .row.conversation
-                .row.conversation(ng-repeat='c in conversations | orderBy:"-ordinal"', ng-class='c.id === selected ? "selected" : ""', ng-click='openConversation(c.id)')
+                .row.conversation(ng-repeat='c in conversations | orderBy:"-ordinal"', ng-class='{ "selected": c.id === selected }', ng-click='openConversation(c.id)')
                     img.col-xs-11.col-md-3.img-circle(ng-src='{{ c.picture }}', alt='{{ c.name }}')
                     .hidden-xs.hidden-sm.col-xs-8.col-md-9 {{ c.name }}
                         br

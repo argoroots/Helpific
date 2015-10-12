@@ -28,11 +28,11 @@ block content
         .row
             .col-xs-12
                 if profile.has('me-help-you-video') || profile.has('me-help-you-photo') || profile.has('me-help-you-text')
-                    a.profile-tab.col-xs-4.bg-green(ng-click='tab = 1', ng-class='{"active": tab === 1}')= t('pages.user.me-help-you-tab')
+                    a.profile-tab.col-xs-4.bg-green(ng-click='tab = 1', ng-class='{ "active": tab === 1 }')= t('pages.user.me-help-you-tab')
                 if profile.has('me-help-you-video') || profile.has('me-help-you-photo') || profile.has('me-help-you-text') || profile.has('you-help-me-video') || profile.has('you-help-me-photo') || profile.has('you-help-me-text')
-                    a.profile-tab.profile-tab-active.col-xs-4.bg-red(ng-click='tab = 2', ng-class='{"active": !tab || tab === 2}')= t('pages.user.about-me-tab')
+                    a.profile-tab.profile-tab-active.col-xs-4.bg-red(ng-click='tab = 2', ng-class='{ "active": !tab || tab === 2 }')= t('pages.user.about-me-tab')
                 if profile.has('you-help-me-video') || profile.has('you-help-me-photo') || profile.has('you-help-me-text')
-                    a.profile-tab.col-xs-4.bg-yellow(ng-click='tab = 3', ng-class='{"active": tab === 3}')= t('pages.user.you-help-me-tab')
+                    a.profile-tab.col-xs-4.bg-yellow(ng-click='tab = 3', ng-class='{ "active": tab === 3 }')= t('pages.user.you-help-me-tab')
 
         .row
             #me-help-you-tab(ng-show='tab === 1')
