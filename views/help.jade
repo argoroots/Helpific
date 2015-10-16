@@ -12,11 +12,13 @@ block title
     #title
         .container
             .row
-                img.col-xs-4.col-md-2.col-xs-offset-4.col-md-offset-5.img-circle(src=profile.get('_picture'), alt=profile.get('forename.value'))
+                a(href='users/' + help.get('person.reference', ''))
+                    img.col-xs-4.col-md-2.col-xs-offset-4.col-md-offset-5.img-circle(src=profile.get('_picture'), alt=profile.get('forename.value'))
 
             .row
-                h1.color-green.col-xs-12.text-center
-                    | #{profile.get('forename.value')} #{profile.get('surname.value')}
+                a(href='users/' + help.get('person.reference', ''))
+                    h1.color-green.col-xs-12.text-center
+                        | #{profile.get('forename.value')} #{profile.get('surname.value')}
                 p.text-center
                     em= profile.get('slogan.value')
 
