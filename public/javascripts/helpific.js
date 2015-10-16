@@ -36,6 +36,10 @@ angular.module('hlpfc', ['ngSanitize'])
     .controller('helpCtrl', ['$scope', '$http', function($scope, $http) {
         if(PATH[3] === 'requests') $scope.type = 'request'
         if(PATH[3] === 'offers') $scope.type = 'offer'
+        if(location.hash === '#add') {
+            $scope.add_new = true
+            $scope.search_my = true
+        }
 
         $http({
                 method : 'GET',

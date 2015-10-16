@@ -326,6 +326,14 @@ pages:
             en: Video URL
             et: Video viide
             ru: pages.profile.about-me-video
+        add-new-offer:
+            en: Add new help offer
+            et: Lisa uus abipakkumine
+            ru: pages.profile.add-new-offer
+        add-new-request:
+            en: Add new help request
+            et: Lisa uus abisoov
+            ru: pages.profile.add-new-request
         address:
             en: Address
             et: Aaddress
@@ -398,13 +406,17 @@ pages:
             en: Video URL
             et: Video viide
             ru: pages.profile.me-help-you-video
+        messages:
+            en: Messages
+            et: Sõnumid
+            ru: pages.profile.messages
         photo:
             en: Profile photo
             et: Profiilipilt
             ru: pages.profile.photo
         photo-upload:
-            en: "{{ photo_upload }}% uploaded..."
-            et: "{{ photo_upload }}% laaditud..."
+            en: '{{ photo_upload }}% uploaded...'
+            et: '{{ photo_upload }}% laaditud...'
             ru: pages.profile.photo-upload
         slogan:
             en: Slogan

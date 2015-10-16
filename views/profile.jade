@@ -9,6 +9,11 @@ block head
 
 block content
     .container(ng-controller='profileCtrl')
+        .row
+            .col-xs-12.text-center
+                a.btn(href='messages')= t('pages.profile.messages')
+                a.btn(href='help/requests#add')= t('pages.profile.add-new-request')
+                a.btn(href='help/offers#add')= t('pages.profile.add-new-offer')
         form#profile-form
             .row
                 .form-group.col-xs-12.col-sm-12
