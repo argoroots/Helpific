@@ -37,15 +37,13 @@ block content
 
                 .form-group.col-xs-12
                     label.control-label(for='photo')= t('pages.profile.photo')
-                    if !profile.get('photo')
-                        input.form-control(ng-show='!photo_upload', type='file', custom-on-change='photoUpload')
-                        small(ng-show='photo_upload')= t('pages.profile.photo-upload')
-                    else
+                    if profile.get('photo')
                         .row
-                            .col-xs-2
-                                .row
-                                    img.col-xs-12(src=profile.get('photo.file'), alt=profile.get('photo.value'))
-                                    a.btn.col-xs-12.text-left(ng-click='photoDelete(#{ profile.get("photo.id") })')= t('pages.profile.delete-photo')
+                            img.col-xs-12.col-sm-2(ng-show='!photo_upload', src=profile.get('photo.file'), alt=profile.get('photo.value'))
+                            a.col-xs-12.col-sm-2.text-left(ng-show='!photo_upload', ng-click='photoDelete(#{ profile.get("photo.id") })')= t('pages.profile.delete-photo')
+                    input.form-control.col-xs-12(ng-show='!photo_upload', type='file', custom-on-change='photoUpload')
+                    .row
+                        small.col-xs-12(ng-show='photo_upload')= t('pages.profile.photo-upload')
 
             .row.spacer
             .row.spacer

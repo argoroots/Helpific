@@ -1,4 +1,5 @@
 var router = require('express').Router()
+var async  = require('async')
 var path   = require('path')
 var debug  = require('debug')('app:' + path.basename(__filename).replace('.js', ''))
 
@@ -46,16 +47,41 @@ router.post('/', function(req, res, next) {
 router.post('/photo', function(req, res, next) {
     if(!res.authenticate()) return
 
-    entu.file({
-        entity: res.locals.user.id,
-        property: 'person-photo',
-        filename: req.body.filename,
-        filesize: req.body.filesize,
-        filetype: req.body.filetype,
-        auth_id: res.locals.user.id,
-        auth_token: res.locals.user.token
-    }, function(error, response) {
-        if(error) return next(error)
+    async.waterfall([
+        function(callback) {
+            entu.get_entity({
+                id: res.locals.user.id,
+                auth_id: res.locals.user.id,
+                auth_token: res.locals.user.token
+            }, callback)
+        },
+        function(user, callback) {
+            debug(user.has('photo'))
+            if(!user.has('photo')) return callback(null, {})
+
+            entu.set_user({
+                data: {
+                    property: 'photo',
+                    id: user.get('photo.id')
+                },
+                auth_id: res.locals.user.id,
+                auth_token: res.locals.user.token
+            }, callback)
+        },
+        function(x, callback) {
+            entu.file({
+                entity: res.locals.user.id,
+                property: 'person-photo',
+                filename: req.body.filename,
+                filesize: req.body.filesize,
+                filetype: req.body.filetype,
+                auth_id: res.locals.user.id,
+                auth_token: res.locals.user.token
+            }, callback)
+        }
+    ],
+    function(err, response) {
+        if(err) return next(err)
 
         res.send(response)
     })
