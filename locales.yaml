@@ -80,7 +80,7 @@ nav:
         offers:
             en: My offers
             et: Minu abipakkumised
-            ru: nav.offers
+            ru: nav.me.offers
         profile:
             en: Edit profile
             et: Muuda profiili
@@ -88,22 +88,22 @@ nav:
         requests:
             en: My requests
             et: Minu abisoovid
-            ru: nav.requests
+            ru: nav.me.requests
         sign-out:
             en: Sign out
             et: Välju
             ru: nav.me.sign-out
     offers:
-        en: nav.offers
-        et: nav.offers
+        en: Offers
+        et: Abipakkumised
         ru: nav.offers
     partners:
         en: Partners
         et: Partnerid
         ru: nav.partners
     requests:
-        en: nav.requests
-        et: nav.requests
+        en: Requests
+        et: Abisoovid
         ru: nav.requests
     sign-in:
         en: Sign in
