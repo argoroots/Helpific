@@ -74,11 +74,11 @@ html(lang=lang, ng-app='hlpfc')
                                         ul.dropdown-menu
                                             li
                                                 a(href='messages')= t('nav.me.messages')
-                                            //- li
-                                            //-     a(href='help/requests')= t('nav.requests')
-                                            //- li
-                                            //-     a(href='help/offers')= t('nav.offers')
-                                            //- li.divider
+                                            li
+                                                a(href='help/requests#my')= t('nav.me.requests')
+                                            li
+                                                a(href='help/offers#my')= t('nav.me.offers')
+                                            li.divider
                                             li
                                                 a(href='profile')= t('nav.me.profile')
                                             li.divider

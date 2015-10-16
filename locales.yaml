@@ -77,25 +77,33 @@ nav:
             en: Messages
             et: Sõnumid
             ru: nav.me.messages
+        offers:
+            en: My offers
+            et: Minu abipakkumised
+            ru: nav.offers
         profile:
-            en: My profile
-            et: Minu profiil
+            en: Edit profile
+            et: Muuda profiili
             ru: nav.me.profile
+        requests:
+            en: My requests
+            et: Minu abisoovid
+            ru: nav.requests
         sign-out:
             en: Sign out
             et: Välju
             ru: nav.me.sign-out
     offers:
-        en: Offers
-        et: Abipakkumised
+        en: nav.offers
+        et: nav.offers
         ru: nav.offers
     partners:
         en: Partners
         et: Partnerid
         ru: nav.partners
     requests:
-        en: Requests
-        et: Abisoovid
+        en: nav.requests
+        et: nav.requests
         ru: nav.requests
     sign-in:
         en: Sign in

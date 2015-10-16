@@ -39,6 +39,8 @@ angular.module('hlpfc', ['ngSanitize'])
         if(location.hash === '#add') {
             $scope.add_new = true
             $scope.search_my = true
+        } else if(location.hash === '#my') {
+            $scope.search_my = true
         }
 
         $http({
