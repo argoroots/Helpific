@@ -30,7 +30,9 @@ router.get('/', function(req, res, next) {
 router.post('/', function(req, res, next) {
     if(!res.authenticate()) return
 
-    entu.set_user({
+    entu.edit({
+        id: res.locals.user.id,
+        definition: 'person',
         data: req.body,
         auth_id: res.locals.user.id,
         auth_token: res.locals.user.token
@@ -59,7 +61,9 @@ router.post('/photo', function(req, res, next) {
             debug(user.has('photo'))
             if(!user.has('photo')) return callback(null, {})
 
-            entu.set_user({
+            entu.edit({
+                id: res.locals.user.id,
+                definition: 'person',
                 data: {
                     property: 'photo',
                     id: user.get('photo.id')
