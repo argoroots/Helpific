@@ -18,6 +18,7 @@ docker run -d \
     --name="helpific" \
     --restart="always" \
     --memory="512m" \
+    --env="VERSION=$version" \
     --env="PORT=80" \
     --env="COOKIE_SECRET=" \
     --env="NEW_RELIC_APP_NAME=helpific" \

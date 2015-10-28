@@ -51,18 +51,11 @@ locales:
 message:
     email-message:
         en: >
-            Hi!<br>
-
-            <br>
-
-            You have new message in helpific.com: <a
+            Hi!<br> <br> You have new message in Helpific: <a
             href="https://helpific.com/en/messages/%s">helpific.com/en/messages/%s</a>
         et: >
-            Hei!<br>
-
-            <br>
-
-            Sulle on sõnum helpific.com'is: <a
+            Hei!<br> <br> Sulle on sõnum Helpific'is: <a
+            href="https://helpific.com/en/messages/%s">helpific.com/en/messages/%s</a>
             href="https://helpific.com/en/messages/%s">helpific.com/en/messages/%s</a>
     email-subject:
         en: New message in helpific.com
