@@ -337,7 +337,7 @@ pages:
             ru: pages.profile.add-new-request
         address:
             en: Address
-            et: Aaddress
+            et: Aadress
             ru: pages.profile.address
         address-ph:
             en: e.g. 767 5th Avenue
