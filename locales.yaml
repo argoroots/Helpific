@@ -7,7 +7,7 @@
     message:
         en: Message
         et: Teade
-        ru: feedback.message
+        ru: Сообщение
 	    hu: üzenet
     send:
         en: Send
@@ -40,13 +40,13 @@ footer:
                 <a href="mailto:info@helpific.com">info@helpific.com</a>
             </small>
         ru: footer.contact
-        hu:
-           <strong>HELPIFIC MTÜ</strong><br> <small>
-                    Reg nr: 80380146<br>
-                    Számlaszám: EE102200221061303677<br>
-                    SWIFT/BIC: HABAEE2X (SWEDBANK AS)<br>
-                    <a href="mailto:info@helpific.com">info@helpific.com</a>
-                </small>
+        hu: |
+            <strong>HELPIFIC MTÜ</strong><br> <small>
+                Reg nr: 80380146<br>
+                Számlaszám: EE102200221061303677<br>
+                SWIFT/BIC: HABAEE2X (SWEDBANK AS)<br>
+                <a href="mailto:info@helpific.com">info@helpific.com</a>
+            </small>
 locales:
     en:
         en: English
@@ -81,13 +81,14 @@ message:
             Sulle on sõnum helpific.com'is: <a
             href="https://helpific.com/en/messages/%s">helpific.com/en/messages/%s</a>
         hu: >
-                Szia!<br>
-                <br>
-                új üzeneted érkezett a helpific.com-ra: <a
-                href="https://helpific.com/en/messages/%s">helpific.com/en/messages/%s</a>
+            Szia!<br>
+            <br>
+            új üzeneted érkezett a helpific.com-ra: <a
+            href="https://helpific.com/en/messages/%s">helpific.com/en/messages/%s</a>
     email-subject:
         en: New message in helpific.com
         et: "Uus sõnum helpific.com'is"
+        ru: Новое сообщение от helpific.com
     	hu: új üzeneted érkezett a helpific.com-ra
 nav:
     bb:
@@ -379,10 +380,9 @@ pages:
                 vabatahtlikku abistajat.</p>
             ru: pages.index.text
             hu: >
-                <h2>Sosem volt még ilyen egyszeru segítséget kérni is nyújtani</h2> <p>A Helpific önkéntes felajnánlásokat 
+                <h2>Sosem volt még ilyen egyszeru segítséget kérni is nyújtani</h2> <p>A Helpific önkéntes felajnánlásokat
 		        köt össze olyan emberekkel, akiknek segítségre van szüksége a mindennapokban.
-                </p> <p ng-if='info'>Jelenleg {{
-                info.help }} segítségkérésre érkezett már válasz {{ info.users }} aktív
+                </p> <p ng-if='info'>Jelenleg {{ info.help }} segítségkérésre érkezett már válasz {{ info.users }} aktív
                 önkéntestol.</p>
     messages:
         new-message:
