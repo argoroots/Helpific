@@ -25,14 +25,15 @@
         "cookie-parser": "1.x",
         "crypto": "0.x",
         "debug": "2.x",
-        "express": "4.x",
         "express-minify": "0.x",
+        "express": "4.x",
         "fs": "0.x",
         "jade": "1.x",
         "js-yaml": "3.x",
+        "log4js": "0.6.x",
         "marked": "0.x",
-        "moment": "2.x",
         "moment-timezone": "0.x",
+        "moment": "2.x",
         "newrelic": "1.x",
         "object-path": "0.x",
         "randomstring": "1.x",
@@ -41,7 +42,6 @@
         "sanitize-html": "1.x",
         "serve-favicon": "2.x",
         "stylus": "0.x",
-        "underscore": "1.x",
-        "log4js": "0.6.x"
+        "underscore": "1.x"
     }
 }
