@@ -9,14 +9,15 @@ var cookie  = require('cookie-parser')
 var random  = require('randomstring')
 var bparser = require('body-parser')
 var raven   = require('raven')
+var log4js  = require('log4js')
+
 var i18n    = require('./helpers/i18n')
-var debug   = require('debug')('app:' + path.basename(__filename).replace('.js', ''))
 
 
 
 // global variables (and list of all used environment variables)
 APP_VERSION        = process.env.VERSION || require('./package').version
-APP_DEBUG          = process.env.DEBUG
+APP_LOGLEVEL       = process.env.LOGLEVEL || 'info'
 APP_PORT           = process.env.PORT
 APP_CACHE_DIR      = process.env.CACHEDIR || path.join(__dirname, 'cache')
 APP_COOKIE_SECRET  = process.env.COOKIE_SECRET || random.generate(16)
@@ -27,6 +28,10 @@ APP_SENTRY         = process.env.SENTRY_DSN
 APP_DEFAULT_LOCALE = 'en'
 APP_TIMEZONE       = 'Europe/Tallinn'
 
+
+// start logging
+log = log4js.getLogger()
+log.setLevel(APP_LOGLEVEL)
 
 
 // ensure cache directory exists
@@ -142,14 +147,15 @@ var app = express()
 
     // show error
     .use(function(err, req, res, next) {
-        if(APP_DEBUG) debug(err)
+        log.error(err)
+
         res.render('error', {
             message: err.message,
-            error: APP_DEBUG ? err : {}
+            error: APP_LOGLEVEL == 'debug' ? err : {}
         })
     })
 
     // start servers if ports are set
     .listen(APP_PORT, function() {
-        debug('Started listening port ' + APP_PORT)
+        log.info('Started listening port ' + APP_PORT)
     })

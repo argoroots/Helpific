@@ -2,7 +2,6 @@ var fs    = require('fs')
 var path  = require('path')
 var yaml  = require('js-yaml')
 var op    = require('object-path')
-var debug = require('debug')
 
 i18n_config = {}
 
@@ -20,9 +19,9 @@ exports.configure = function(config) {
     i18n_config.translations = {}
     if(fs.existsSync(i18n_config.file)) {
         i18n_config.translations = yaml.safeLoad(fs.readFileSync(i18n_config.file))
-        debug('i18n:configure')('Opened locales file ' + i18n_config.file)
+        log.debug('Opened locales file ' + i18n_config.file)
     } else {
-        debug('i18n:configure')('Locales file ' + i18n_config.file + ' missing!')
+        log.error('Locales file ' + i18n_config.file + ' missing!')
     }
 }
 
@@ -52,10 +51,10 @@ function translate(key, text) {
     var value = op.get(i18n_config, 'translations.' + key + '.' + i18n_config.lang)
     if(!value && i18n_config.updateFile === true && i18n_config.locales.indexOf(i18n_config.lang) > -1) {
         op.set(i18n_config, 'translations.' + key + '.' + i18n_config.lang, key)
-        debug('i18n:translate')('Created missing key ' + key + '.' + i18n_config.lang)
+        log.warn('Created missing key ' + key + '.' + i18n_config.lang)
         fs.writeFile(i18n_config.file, yaml.safeDump(i18n_config.translations, { sortKeys: true, indent: 4 }), function(err) {
             if(err) return console.log(err)
-            debug('i18n:translate')('Locales file saved to ' + i18n_config.file)
+            log.debug('Locales file saved to ' + i18n_config.file)
         })
     }
     if(value === key) value = op.get(i18n_config, 'translations.' + key + '.' + i18n_config.defaultLocale, key)

@@ -1,6 +1,8 @@
 var path     = require('path')
 var cluster  = require('cluster')
 var cpuCount = require('os').cpus().length
+var log4js   = require('log4js')
+var log      = log4js.getLogger()
 
 
 
@@ -15,11 +17,11 @@ for(var i = 0; i < cpuCount; i += 1) {
 
 // Listen for new workers
 cluster.on('online', function(worker) {
-    console.log(new Date().toString() + ' worker ' + worker.id + ' started')
+    log.info('Worker #' + worker.id + ' started')
 })
 
 // Listen for dying workers nad replace the dead worker, we're not sentimental
 cluster.on('exit', function(worker) {
-    console.log(new Date().toString() + ' worker ' + worker.id + ' died')
+    log.warn('Worker #' + worker.id + ' died')
     cluster.fork()
 })
