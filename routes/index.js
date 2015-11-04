@@ -85,7 +85,7 @@ router.get('/team', function(req, res, next) {
 
 // Show terms of service page
 router.get('/terms', function(req, res, next) {
-    var template = 'terms.' + res.locals.lang + '.jade';
+    var template = 'terms.' + res.locals.lang + '.jade'
     if(fs.existsSync(template)){
         res.render(template)
     } else {
@@ -97,7 +97,7 @@ router.get('/terms', function(req, res, next) {
 
 // Show bb page
 router.get('/bb', function(req, res, next) {
-    var bbTemplate = 'bb.' + res.locals.lang + '.jade';
+    var bbTemplate = 'bb.' + res.locals.lang + '.jade'
     if(fs.existsSync(bbTemplate)){
         res.render(bbTemplate)
     } else {
