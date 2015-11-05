@@ -1,7 +1,5 @@
 var router = require('express').Router()
 var async  = require('async')
-var path   = require('path')
-var debug  = require('debug')('app:' + path.basename(__filename).replace('.js', ''))
 
 var entu   = require('../helpers/entu')
 
@@ -58,7 +56,6 @@ router.post('/photo', function(req, res, next) {
             }, callback)
         },
         function(user, callback) {
-            debug(user.has('photo'))
             if(!user.has('photo')) return callback(null, {})
 
             entu.edit({

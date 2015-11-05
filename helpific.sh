@@ -20,6 +20,7 @@ docker run -d \
     --memory="512m" \
     --env="VERSION=$version" \
     --env="PORT=80" \
+    --env="LOGLEVEL=error" \
     --env="COOKIE_SECRET=" \
     --env="NEW_RELIC_APP_NAME=helpific" \
     --env="NEW_RELIC_LICENSE_KEY=" \
