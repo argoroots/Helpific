@@ -53,7 +53,7 @@ router.get('/exit', function(req, res, next) {
     res.clearCookie('auth_id')
     res.clearCookie('auth_token')
 
-    res.redirect('/' + res.locals.lang)
+    res.redirect('/')
 })
 
 
