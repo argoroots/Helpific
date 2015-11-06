@@ -374,7 +374,7 @@ pages:
                 {{ info.help }} täidetud abisoovi ja {{ info.users }} aktiivset
                 vabatahtlikku abistajat.</p>
             hu: >
-                <h2>Sosem volt még ilyen egyszeru segítséget kérni is
+                <h2>Sosem volt még ilyen egyszerű segítséget kérni és
                 nyújtani</h2> <p>A Helpific önkénteseket köt össze olyan
                 emberekkel, akiknek segítségre van szüksége a
                 mindennapokban. </p> <p ng-if='info'>Jelenleg {{ info.help }} segítségkérésre
