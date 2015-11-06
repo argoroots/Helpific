@@ -47,6 +47,17 @@ footer:
                 <a href="mailto:info@helpific.com">info@helpific.com</a>
             </small>
         ru: footer.contact
+help:
+    admin-email-message:
+        en: 'https://helpific.com/help/%s'
+        et: 'https://helpific.com/help/%s'
+        hu: 'https://helpific.com/help/%s'
+        ru: 'https://helpific.com/help/%s'
+    admin-email-subject:
+        en: 'Added new help request/offer'
+        et: 'Lisati uus abisoov/abipakkumine'
+        hu: help.admin-email-subject
+        ru: help.admin-email-subject
 locales:
     en:
         en: English
@@ -71,25 +82,25 @@ locales:
 message:
     email-message:
         en: >
-            Hi!<br> <br> You have new message in Helpific:<br>
-            <a href="https://helpific.com/en/messages/%s">helpific.com/en/messages/%s</a>
+            Hi!<br> <br> You have new message in Helpific:<br> <a
+            href="https://helpific.com/en/messages/%s">helpific.com/en/messages/%s</a>
         et: >
-            Hei!<br> <br> Sulle on sõnum Helpific'is:<br>
-            <a href="https://helpific.com/en/messages/%s">helpific.com/en/messages/%s</a>
+            Hei!<br> <br> Sulle on sõnum Helpific'is:<br> <a
+            href="https://helpific.com/en/messages/%s">helpific.com/en/messages/%s</a>
         hu: >
-            Szia!<br> <br> Új üzeneted érkezett a Helpific:<br>
-            <a href="https://helpific.com/en/messages/%s">helpific.com/en/messages/%s</a>
+            Szia!<br> <br> Új üzeneted érkezett a Helpific:<br> <a
+            href="https://helpific.com/en/messages/%s">helpific.com/en/messages/%s</a>
     email-subject:
         en: New message in helpific.com
         et: "Uus sõnum helpific.com'is"
-        hu: "Új üzeneted érkezett a helpific.com-ra"
-        ru: "Новое сообщение от helpific.com"
+        hu: Új üzeneted érkezett a helpific.com-ra
+        ru: Новое сообщение от helpific.com
 nav:
     bb:
         en: Beyond Borders
         et: Piirideta Elu
-        hu: "Túl a határokon"
-        ru: "Жизнь Без Границ"
+        hu: Túl a határokon
+        ru: Жизнь Без Границ
     me:
         messages:
             en: Messages
@@ -376,8 +387,8 @@ pages:
             hu: >
                 <h2>Sosem volt még ilyen egyszerű segítséget kérni és
                 nyújtani</h2> <p>A Helpific önkénteseket köt össze olyan
-                emberekkel, akiknek segítségre van szüksége a
-                mindennapokban. </p> <p ng-if='info'>Jelenleg {{ info.help }} segítségkérésre
+                emberekkel, akiknek segítségre van szüksége a mindennapokban.
+                </p> <p ng-if='info'>Jelenleg {{ info.help }} segítségkérésre
                 érkezett már válasz {{ info.users }} embertől.</p>
             ru: pages.index.text
     messages:

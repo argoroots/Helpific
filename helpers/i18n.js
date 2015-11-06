@@ -61,7 +61,7 @@ function translate(key, text) {
         })
     }
     if(value === key) value = op.get(i18n_config, 'translations.' + key + '.' + i18n_config.defaultLocale, key)
-    if(text && value) {
+    if(text && value && value !== key) {
         var re = new RegExp('%s', 'g')
         value = value.replace(re, text)
     }

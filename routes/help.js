@@ -169,6 +169,17 @@ router.post('/', function(req, res, next) {
                 right: 'viewer'
             }, callback)
         },
+        function(callback) {
+            if(!APP_ADMIN_EMAILS) callback(null)
+            entu.message({
+                    to: APP_ADMIN_EMAILS,
+                    subject: res.locals.t('help.admin-email-subject'),
+                    message: res.locals.t('help.admin-email-message', properties.type + '/' + new_id),
+                    tag: 'message'
+                },
+                callback
+            )
+        },
     ],
     function(err) {
         if(err) return next(err)
