@@ -71,18 +71,18 @@ locales:
 message:
     email-message:
         en: >
-            Hi!<br> <br> You have new message in helpific.com: <a
-            href="https://helpific.com/en/messages/%s">helpific.com/en/messages/%s</a>
+            Hi!<br> <br> You have new message in Helpific:<br>
+            <a href="https://helpific.com/en/messages/%s">helpific.com/en/messages/%s</a>
         et: >
-            Hei!<br> <br> Sulle on sõnum helpific.com'is: <a
-            href="https://helpific.com/en/messages/%s">helpific.com/en/messages/%s</a>
+            Hei!<br> <br> Sulle on sõnum Helpific'is:<br>
+            <a href="https://helpific.com/en/messages/%s">helpific.com/en/messages/%s</a>
         hu: >
-            Szia!<br> <br> új üzeneted érkezett a helpific.com-ra: <a
-            href="https://helpific.com/en/messages/%s">helpific.com/en/messages/%s</a>
+            Szia!<br> <br> Új üzeneted érkezett a Helpific:<br>
+            <a href="https://helpific.com/en/messages/%s">helpific.com/en/messages/%s</a>
     email-subject:
         en: New message in helpific.com
         et: "Uus sõnum helpific.com'is"
-        hu: "új üzeneted érkezett a helpific.com-ra"
+        hu: "Új üzeneted érkezett a helpific.com-ra"
         ru: "Новое сообщение от helpific.com"
 nav:
     bb:
@@ -99,7 +99,7 @@ nav:
         offers:
             en: My offers
             et: Minu abipakkumised
-            hu: Az én ajánlataim
+            hu: Az én felajánlásaim
             ru: nav.me.offers
         profile:
             en: Edit profile
@@ -119,7 +119,7 @@ nav:
     offers:
         en: Offers
         et: Abipakkumised
-        hu: Ajánlatok
+        hu: Felajánlások
         ru: nav.offers
     partners:
         en: Partners
@@ -144,7 +144,7 @@ nav:
     terms:
         en: Terms of Use
         et: Tingimused
-        hu: Felhasználási Feltételek
+        hu: Felhasználói Feltételek
         ru: nav.terms
     toggle-navigation:
         en: Toggle navigation
@@ -232,7 +232,7 @@ pages:
         request-count:
             en: "There are total {{ (help | filter:{type:type }).length }} help requests here <span ng-if='search_query || search_my'> - found {{ (help | filter:{status:s.status, type:type, my:search_my} | filter:search_query).length }}</span>"
             et: "Kokku on meil {{ (help | filter:{type:type }).length }} abisoovi <span ng-if='search_query || search_my'> - leiti {{ (help | filter:{status:s.status, type:type, my:search_my} | filter:search_query).length }}</span>"
-            hu: "Összesen {{ (help | filter:{type:type }).length }} van a rendszerben <span ng-if='search_query || search_my'> - találat {{ (help | filter:{status:s.status, type:type, my:search_my} | filter:search_query).length }}</span>"
+            hu: "Összesen {{ (help | filter:{type:type }).length }} segítségkérés van a rendszerben <span ng-if='search_query || search_my'> - találat {{ (help | filter:{status:s.status, type:type, my:search_my} | filter:search_query).length }}</span>"
             ru: pages.help.request-count
         request-request:
             en: Request
@@ -328,12 +328,12 @@ pages:
         choose-way:
             en: Choose your way
             et: Vali oma tee
-            hu: Találd meg a magad útját
+            hu: Válassz az alábbi lehetőségek közül
             ru: pages.index.choose-way
         how-it-works:
             en: How Helpific works?
             et: Kuidas Helpific töötab?
-            hu: Hogyan muködik a Helpific?
+            hu: Hogyan működik a Helpific?
             ru: pages.index.how-it-works
         offers-link:
             en: Meet the volunteers
@@ -373,7 +373,12 @@ pages:
                 erivajadustega abivajajatega.</p> <p ng-if='info'>Hetkel on meil
                 {{ info.help }} täidetud abisoovi ja {{ info.users }} aktiivset
                 vabatahtlikku abistajat.</p>
-            hu: "> <h2>Sosem volt még ilyen egyszeru segítséget kérni is nyújtani</h2> <p>A Helpific önkéntes felajnánlásokat köt össze olyan emberekkel, akiknek segítségre van szüksége a mindennapokban. </p> <p ng-if='info'>Jelenleg {{ info.help }} segítségkérésre érkezett már válasz {{ info.users }} aktív önkéntestol.</p>"
+            hu: >
+                <h2>Sosem volt még ilyen egyszerű segítséget kérni és
+                nyújtani</h2> <p>A Helpific önkénteseket köt össze olyan
+                emberekkel, akiknek segítségre van szüksége a
+                mindennapokban. </p> <p ng-if='info'>Jelenleg {{ info.help }} segítségkérésre
+                érkezett már válasz {{ info.users }} embertől.</p>
             ru: pages.index.text
     messages:
         new-message:
@@ -571,7 +576,7 @@ pages:
         you-help-me-text:
             en: How can people help you? You can leave it empty if you are not searching for help through this site.
             et: Millist abi sa vajad?
-            hu: Miben lehetnek mások segítségedre? Hagyd ezt a mezot üresen ha jelenleg nincs szükséged segítségre.
+            hu: Miben lehetnek mások segítségedre? Hagyd ezt a mezőt üresen ha jelenleg nincs szükséged segítségre.
             ru: pages.profile.you-help-me-text
         you-help-me-video:
             en: Video URL
@@ -587,7 +592,7 @@ pages:
         text:
             en: Please use your preferred identity provider to sign in...
             et: Sisenemiseks kasuta meelepärast identiteedipakkujat...
-            hu: Válaszd ki a számodra megfelelo belépési módot...
+            hu: Válaszd ki a számodra megfelelő belépési módot...
             ru: pages.sign-in.text
         title:
             en: Sign in
