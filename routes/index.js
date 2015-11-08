@@ -5,6 +5,17 @@ var fs     = require('fs')
 var entu   = require('../helpers/entu')
 
 
+function isTemplaeteExists(template) {
+    try{
+        var filePath = __dirname + '/../views/' + template
+        var lstats = fs.lstatSync(filePath)
+        return lstats.isFile()
+    } catch (e) {
+        log.warn('Template ' + template + " does not exists")
+        return false
+    }
+}
+
 
 // Show homepage
 router.get('/', function(req, res, next) {
@@ -84,7 +95,7 @@ router.get('/team', function(req, res, next) {
 // Show terms of service page
 router.get('/terms', function(req, res, next) {
     var template = 'terms.' + res.locals.lang + '.jade'
-    if(fs.existsSync(template)){
+    if(isTemplaeteExists(template)){
         res.render(template)
     } else {
         res.render('terms.en.jade')
@@ -96,7 +107,7 @@ router.get('/terms', function(req, res, next) {
 // Show bb page
 router.get('/bb', function(req, res, next) {
     var template = 'bb.' + res.locals.lang + '.jade'
-    if(fs.existsSync(template)){
+    if(isTemplaeteExists(template)){
         res.render(template)
     } else {
         res.render('bb.en.jade')
