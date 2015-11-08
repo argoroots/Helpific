@@ -12,6 +12,7 @@ var raven   = require('raven')
 var log4js  = require('log4js')
 
 var i18n    = require('./helpers/i18n')
+var entu    = require('./helpers/entu')
 
 
 
@@ -25,8 +26,9 @@ APP_ENTU_URL       = process.env.ENTU_URL || 'https://helpific.entu.ee/api2'
 APP_ENTU_USER      = process.env.ENTU_USER
 APP_ENTU_KEY       = process.env.ENTU_KEY
 APP_SENTRY         = process.env.SENTRY_DSN
-APP_DEFAULT_LOCALE = 'en'
-APP_TIMEZONE       = 'Europe/Tallinn'
+APP_DEFAULT_LOCALE = process.env.DEFAULT_LOCALE || 'en'
+APP_TIMEZONE       = process.env.TIMEZONE || 'Europe/Tallinn'
+APP_ADMIN_EMAILS   = process.env.ADMIN_EMAILS
 
 
 // start logging
@@ -97,20 +99,8 @@ var app = express()
         res.redirect('/et/bb')
     })
 
-    // initiate i18n
-    .use(i18n.init)
-
     // set defaults for views
     .use(function(req, res, next) {
-        res.locals.path = req.path
-        if(!req.signedCookies) next(null)
-        if(req.signedCookies.auth_id && req.signedCookies.auth_token) {
-            res.locals.user = {
-                id: parseInt(req.signedCookies.auth_id),
-                token: req.signedCookies.auth_token
-            }
-        }
-
         res.authenticate = function() {
             if(!res.locals.user) {
                 res.cookie('redirect_url', '/' + res.locals.path.split('/').slice(2).join('/'), {signed:true, maxAge:1000*60*60})
@@ -122,8 +112,33 @@ var app = express()
 
         }
 
-        next(null)
+        res.locals.path = req.path
+        if(!req.signedCookies) next(null)
+        if(req.signedCookies.auth_id && req.signedCookies.auth_token) {
+            res.locals.user = {
+                id: parseInt(req.signedCookies.auth_id),
+                token: req.signedCookies.auth_token
+            }
+            if(!res.locals.user.lang) {
+                entu.get_entity({
+                    id: res.locals.user.id,
+                    auth_id: res.locals.user.id,
+                    auth_token: res.locals.user.token
+                }, function(error, profile) {
+                    if(error) return next(error)
+
+                    res.locals.user.lang = profile.get('language.value') || APP_DEFAULT_LOCALE
+                    next(null)
+                })
+            }
+        } else {
+            next(null)
+        }
+
     })
+
+    // initiate i18n
+    .use(i18n.init)
 
     // routes mapping
     .use('/:lang',          require('./routes/index'))
