@@ -1,13 +1,15 @@
 var router = require('express').Router()
 var async  = require('async')
 var fs     = require('fs')
+var path   = require('path')
 
 var entu   = require('../helpers/entu')
 
 
 function isTemplateExists(template) {
     try{
-        var filePath = __dirname + '/../views/' + template
+        var filePath = path.join(__dirname, '..', 'views', template)
+        log.trace('Prepared path = ' + filePath)
         var lstats = fs.lstatSync(filePath)
         return lstats.isFile()
     } catch (e) {
