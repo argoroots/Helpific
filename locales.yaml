@@ -441,7 +441,7 @@ pages:
             ru: pages.profile.add-new-request
         address:
             en: Address
-            et: Aaddress
+            et: Aadress
             hu: Cím
             ru: pages.profile.address
         address-ph:

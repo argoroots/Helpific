@@ -1,9 +1,22 @@
 var router = require('express').Router()
 var async  = require('async')
 var fs     = require('fs')
+var path   = require('path')
 
 var entu   = require('../helpers/entu')
 
+
+function isTemplateExists(template) {
+    try{
+        var filePath = path.join(__dirname, '..', 'views', template)
+        log.trace('Prepared path = ' + filePath)
+        var lstats = fs.lstatSync(filePath)
+        return lstats.isFile()
+    } catch (e) {
+        log.warn('Template ' + template + " does not exist")
+        return false
+    }
+}
 
 
 // Show homepage
@@ -84,7 +97,7 @@ router.get('/team', function(req, res, next) {
 // Show terms of service page
 router.get('/terms', function(req, res, next) {
     var template = 'terms.' + res.locals.lang + '.jade'
-    if(fs.existsSync(template)){
+    if(isTemplateExists(template)){
         res.render(template)
     } else {
         res.render('terms.en.jade')
@@ -96,7 +109,7 @@ router.get('/terms', function(req, res, next) {
 // Show bb page
 router.get('/bb', function(req, res, next) {
     var template = 'bb.' + res.locals.lang + '.jade'
-    if(fs.existsSync(template)){
+    if(isTemplateExists(template)){
         res.render(template)
     } else {
         res.render('bb.en.jade')
