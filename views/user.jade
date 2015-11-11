@@ -26,36 +26,8 @@ block title
 block content
     .container(ng-controller='userCtrl')
         .row
-            .col-xs-12
-                if profile.has('me-help-you-video') || profile.has('me-help-you-photo') || profile.has('me-help-you-text')
-                    a.profile-tab.col-xs-4.bg-green(ng-click='tab = 1', ng-class='{ "active": tab === 1 }')= t('pages.user.me-help-you-tab')
-                if profile.has('me-help-you-video') || profile.has('me-help-you-photo') || profile.has('me-help-you-text') || profile.has('you-help-me-video') || profile.has('you-help-me-photo') || profile.has('you-help-me-text')
-                    a.profile-tab.profile-tab-active.col-xs-4.bg-red(ng-click='tab = 2', ng-class='{ "active": !tab || tab === 2 }')= t('pages.user.about-me-tab')
-                if profile.has('you-help-me-video') || profile.has('you-help-me-photo') || profile.has('you-help-me-text')
-                    a.profile-tab.col-xs-4.bg-yellow(ng-click='tab = 3', ng-class='{ "active": tab === 3 }')= t('pages.user.you-help-me-tab')
-
-        .row
-            #me-help-you-tab(ng-show='tab === 1')
-                if media_embed(profile.get('me-help-you-video.value'))
-                    .embed-responsive.embed-responsive-16by9
-                        iframe.embed-responsive-item.col-xs-12(src=media_embed(profile.get('me-help-you-video.value')), allowtransparency='true', frameborder='0', scrolling='no', allowfullscreen, mozallowfullscreen, webkitallowfullscreen, oallowfullscreen, msallowfullscreen)
-                    .spacer.col-xs-12
-                else if profile.has('me-help-you-photo')
-                    .col-xs-12
-                        .profile-photo(style='background-image: url(' + profile.get('me-help-you-photo.file', '') + ')')
-                    .spacer.col-xs-12
-                .col-xs-12.text-justify!= profile.get('me-help-you-text.md')
-
-                h2.col-xs-12(ng-if='(help | filter:{type:"offer"}).length > 0')= t('pages.user.help-offers')
-                .table(ng-if='(help | filter:{type:"offer"}).length > 0')
-                    .row(ng-repeat='h in help | filter:{type:"offer"} | orderBy:["-time.value","-id"]')
-                        .col-xs-12
-                            .col.col-xs-12.col-sm-3
-                                div {{ h.time.value }}
-                                em {{ h.location.value }}
-                            .col.col-xs-12.col-sm-9 {{ h.request.value }}
-
-            #about-me-tab(ng-show='tab === 2 || !tab')
+            if profile.has('me-help-you-video') || profile.has('me-help-you-photo') || profile.has('me-help-you-text') || profile.has('you-help-me-video') || profile.has('you-help-me-photo') || profile.has('you-help-me-text')
+                h2()= t('pages.user.about-me-tab')
                 if media_embed(profile.get('about-me-video.value'))
                     .embed-responsive.embed-responsive-16by9
                         iframe.embed-responsive-item.col-xs-12(src=media_embed(profile.get('about-me-video.value')), allowtransparency='true', frameborder='0', scrolling='no', allowfullscreen, mozallowfullscreen, webkitallowfullscreen, oallowfullscreen, msallowfullscreen)
@@ -66,7 +38,32 @@ block content
                     .spacer.col-xs-12
                 .col-xs-12.text-justify!= profile.get('about-me-text.md')
 
-            #you-help-me-tab(ng-show='tab === 3')
+
+        .row
+            if profile.has('me-help-you-video') || profile.has('me-help-you-photo') || profile.has('me-help-you-text')
+                h2()= t('pages.user.me-help-you-tab')
+                if media_embed(profile.get('me-help-you-video.value'))
+                    .embed-responsive.embed-responsive-16by9
+                        iframe.embed-responsive-item.col-xs-12(src=media_embed(profile.get('me-help-you-video.value')), allowtransparency='true', frameborder='0', scrolling='no', allowfullscreen, mozallowfullscreen, webkitallowfullscreen, oallowfullscreen, msallowfullscreen)
+                    .spacer.col-xs-12
+                else if profile.has('me-help-you-photo')
+                    .col-xs-12
+                        .profile-photo(style='background-image: url(' + profile.get('me-help-you-photo.file', '') + ')')
+                    .spacer.col-xs-12
+                .col-xs-12.text-justify!= profile.get('me-help-you-text.md')
+                h2.col-xs-12(ng-if='(help | filter:{type:"offer"}).length > 0')= t('pages.user.help-offers')
+                .table(ng-if='(help | filter:{type:"offer"}).length > 0')
+                    .row(ng-repeat='h in help | filter:{type:"offer"} | orderBy:["-time.value","-id"]')
+                        .col-xs-12
+                            .col.col-xs-12.col-sm-3
+                                div
+                                em {{ h.location.value }}
+                            .col.col-xs-12.col-sm-9 {{ h.request.value }}
+
+        .row
+            if profile.has('you-help-me-video') || profile.has('you-help-me-photo') || profile.has('you-help-me-text')
+                h2()= t('pages.user.you-help-me-tab')
+
                 if media_embed(profile.get('you-help-me-video.value'))
                     .embed-responsive.embed-responsive-16by9
                         iframe.embed-responsive-item.col-xs-12(src=media_embed(profile.get('you-help-me-video.value')), allowtransparency='true', frameborder='0', scrolling='no', allowfullscreen, mozallowfullscreen, webkitallowfullscreen, oallowfullscreen, msallowfullscreen)
@@ -85,7 +82,7 @@ block content
                     .row(ng-repeat='h in help | filter:{type:"request"} | orderBy:["-time.value","-id"]')
                         .col-xs-12
                             .col.col-xs-12.col-sm-3
-                                div {{ h.time.value }}
+                                div
                                 em {{ h.location.value }}
                             .col.col-xs-12.col-sm-9 {{ h.request.value }}
 

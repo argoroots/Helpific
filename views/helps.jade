@@ -63,7 +63,7 @@ block content
                         img.col-xs-2.col-md-1.img-circle(ng-src='{{ h.person.picture }}', alt='{{ h.person.name }}')
                     .col.col-xs-10.col-sm-3.col-md-3
                         a(ng-href='help/{{ h.type }}/{{ h.id }}') {{ h.person.name }}
-                        div {{ h.time.value }}
+                        div
                         em {{ h.location.value }}
                     .col.col-xs-12.col-sm-6.col-md-7 {{ h.request.value }}
                     a.col.col-xs-12.col-sm-1.text-center(ng-if='h.person.reference != #{ user_id }', ng-href='messages/{{ h.person.reference }}')= t('pages.help.reply')

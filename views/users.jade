@@ -17,13 +17,14 @@ block content
             small.col-xs-12.text-center(ng-if='users')!= t('pages.users.count')
 
         .table
-            .row(ng-repeat='u in users | filter:search_query | orderBy:["name"]')
-                a(ng-href='users/{{ u.id }}')
-                    img.col-xs-2.col-sm-1.img-circle(ng-src='{{ u.picture }}', alt='{{ u.name }}')
-                .col-xs-10.col-sm-4
+            .row.user-block(ng-repeat='u in users | filter:search_query | orderBy:["name"]')
+                .col-xs-3.col-sm-4
+                    a(ng-href='users/{{ u.id }}')
+                        img.img-circle(ng-src='{{ u.picture }}', alt='{{ u.name }}')
+                .col-xs-9.col-sm-8
                     a(ng-href='users/{{ u.id }}') {{ u.name }}
                     br(ng-if='u.location')
                     em(ng-if='u.location') {{ u.location }}
-                .col-xs-12.col-sm-7.col-xs-offset-2.col-sm-offset-0 {{ u.slogan }}
+                .col-xs-12.col-sm-8.col-xs-offset-3.col-sm-offset-0 {{ u.slogan }}
 
         .row.spacer

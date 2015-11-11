@@ -11,10 +11,27 @@ block content
     .container(ng-controller='profileCtrl')
         .row
             .col-xs-12.text-center
-                a.btn(href='messages')= t('pages.profile.messages')
-                a.btn(href='help/requests#add')= t('pages.profile.add-new-request')
-                a.btn(href='help/offers#add')= t('pages.profile.add-new-offer')
+                .button-block
+                    a.btn.btn-lg.bg-green(href='messages')= t('pages.profile.messages')
+
+                .button-block
+                    a.btn.btn-lg.bg-red(href='help/requests#add')= t('pages.profile.add-new-request')
+
+                .button-block
+                    a.btn.btn-lg.bg-yellow(href='help/offers#add')= t('pages.profile.add-new-offer')
         form#profile-form
+            .row
+                .form-group.col-xs-12
+                    label.control-label(for='photo')= t('pages.profile.photo')
+                    if profile.get('photo')
+                        .row
+                            img.col-xs-12.col-sm-2(ng-show='!photo_upload', src=profile.get('photo.file'), alt=profile.get('photo.value'))
+                            a.col-xs-12.col-sm-2.text-left(ng-show='!photo_upload', ng-click='photoDelete(#{ profile.get("photo.id") })')= t('pages.profile.delete-photo')
+                    input.form-control.col-xs-12(ng-show='!photo_upload', type='file', custom-on-change='photoUpload')
+                    .row
+                        small.col-xs-12(ng-show='photo_upload')= t('pages.profile.photo-upload')
+
+
             .row
                 .form-group.col-xs-12.col-sm-12
                     label.control-label(ng-class='{ "active": p.slogan.edit }')= t('pages.profile.slogan')
@@ -40,19 +57,6 @@ block content
                         each l in locales
                             option(selected=profile.get('language.value') == l, value=l)= t('locales.' + l)
 
-                .form-group.col-xs-12
-                    label.control-label(for='photo')= t('pages.profile.photo')
-                    if profile.get('photo')
-                        .row
-                            img.col-xs-12.col-sm-2(ng-show='!photo_upload', src=profile.get('photo.file'), alt=profile.get('photo.value'))
-                            a.col-xs-12.col-sm-2.text-left(ng-show='!photo_upload', ng-click='photoDelete(#{ profile.get("photo.id") })')= t('pages.profile.delete-photo')
-                    input.form-control.col-xs-12(ng-show='!photo_upload', type='file', custom-on-change='photoUpload')
-                    .row
-                        small.col-xs-12(ng-show='photo_upload')= t('pages.profile.photo-upload')
-
-            .row.spacer
-            .row.spacer
-
                 .form-group.col-xs-12.col-sm-4
                     label.control-label(ng-class='{ "active": p.address.edit }')= t('pages.profile.address')
                     input#address.form-control(type='text', placeholder=t('pages.profile.address-ph'), value=profile.get('address.value'), data-value=profile.get('address.value'), data-id=profile.get('address.id'), ng-focus='p.address.edit = true', ng-blur='p.address.edit = false')
@@ -68,34 +72,11 @@ block content
                     label.control-label(ng-class='{ "active": p.country.edit }')= t('pages.profile.country')
                     input#country.form-control(type='text', placeholder=t('pages.profile.country-ph'), value=profile.get('country.value'), data-value=profile.get('country.value'), data-id=profile.get('country.id'), ng-focus='p.country.edit = true', ng-blur='p.country.edit = false')
 
-
-            .row.spacer
-            .row.spacer
-
-            .row
+            .row.text-center
                 .col-xs-12
-                    a.profile-tab.col-xs-4.bg-green(ng-click='tab = 1', ng-class='{ "active": tab === 1 }')= t('pages.profile.me-help-you-tab')
-                    a.profile-tab.active.col-xs-4.bg-red(ng-click='tab = 2', ng-class='{ "active": !tab || tab === 2 }')= t('pages.profile.about-me-tab')
-                    a.profile-tab.col-xs-4.bg-yellow(ng-click='tab = 3', ng-class='{ "active": tab === 3 }')= t('pages.profile.you-help-me-tab')
+                    h2.col-xs-12= t('pages.profile.about-me-tab')
 
             .row
-                .profile-tab-pane(ng-show='tab === 1')
-                    .form-group.col-xs-12
-                        label.control-label(for='me-help-you-text')= t('pages.profile.me-help-you-text')
-                        textarea#me-help-you-text.form-control(data-value=profile.get('me-help-you-text.value'), data-id=profile.get('me-help-you-text.id'), rows=8)= profile.get('me-help-you-text.value')
-                        p.text-right
-                            small!= t('pages.profile.markdown-info')
-
-                    //- .form-group.col-xs-12.col-sm-4
-                    //-     label.control-label(for='me-help-you-photo') Cover Photo
-                    //-     input#me-help-you-photo.form-control(type='file')
-
-                    .form-group.col-xs-12.col-sm-8
-                        label.control-label(ng-class='{ "active": p.me_help_video.edit }')= t('pages.profile.me-help-you-video')
-                        input#me-help-you-video.form-control(type='text', placeholder=t('pages.profile.video-ph'), value=profile.get('me-help-you-video.value'), data-value=profile.get('me-help-you-video.value'), data-id=profile.get('me-help-you-video.id'), ng-focus='p.me_help_video.edit = true', ng-blur='p.me_help_video.edit = false')
-                        p.text-right
-                            small!= t('pages.profile.video-info')
-
                 .profile-tab-pane(ng-show='!tab || tab === 2')
                     .form-group.col-xs-12
                         label.control-label(for='about-me-text')= t('pages.profile.about-me-text')
@@ -103,32 +84,13 @@ block content
                         p.text-right
                             small!= t('pages.profile.markdown-info')
 
-                    //- .form-group.col-xs-12.col-sm-4
-                    //-     label.control-label(for='about-me-photo') Cover Photo
-                    //-     input#about-me-photo.form-control(type='file')
-
                     .form-group.col-xs-12.col-sm-8
                         label.control-label(ng-class='{ "active": p.about_video.edit }')= t('pages.profile.about-me-video')
                         input#about-me-video.form-control(type='text', placeholder=t('pages.profile.video-ph'), value=profile.get('about-me-video.value'), data-value=profile.get('about-me-video.value'), data-id=profile.get('about-me-video.id'), ng-focus='p.about_video.edit = true', ng-blur='p.about_video.edit = false')
                         p.text-right
                             small!= t('pages.profile.video-info')
 
-                .profile-tab-pane(ng-show='tab === 3')
-                    .form-group.col-xs-12
-                        label.control-label(for='you-help-me-text')= t('pages.profile.you-help-me-text')
-                        textarea#you-help-me-text.form-control(data-value=profile.get('you-help-me-text.value'), data-id=profile.get('you-help-me-text.id'), rows=8)= profile.get('you-help-me-text.value')
-                        p.text-right
-                            small!= t('pages.profile.markdown-info')
 
-                    //- .form-group.col-xs-12.col-sm-4
-                    //-     label.control-label(for='you-help-me-photo') Cover Photo
-                    //-     input#you-help-me-photo.form-control(type='file')
-
-                    .form-group.col-xs-12.col-sm-8
-                        label.control-label(ng-class='{ "active": p.you_help_video.edit }')= t('pages.profile.you-help-me-video')
-                        input#you-help-me-video.form-control(type='text', placeholder=t('pages.profile.video-ph'), value=profile.get('you-help-me-video.value'), data-value=profile.get('you-help-me-video.value'), data-id=profile.get('you-help-me-video.id'), ng-focus='p.you_help_video.edit = true', ng-blur='p.you_help_video.edit = false')
-                        p.text-right
-                            small!= t('pages.profile.video-info')
 
             .row.spacer
 

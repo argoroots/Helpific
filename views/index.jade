@@ -30,19 +30,22 @@ block content
 
         .row.spacer
 
-        .row.text-center
-            h2.col-xs-12= t('pages.index.choose-way')
+    unless user
+        .container-fluid
+            .row.text-center
+                h2.col-xs-12= t('pages.sign-in.title')
+            .row
+                .col-xs-12.text-center
+                    a(href='signin/facebook', title='Facebook')
+                        i.signin.fa.fa-facebook-square.fa-5x(style='color:#3b5998')
+                    a(href='signin/google', title='Google')
+                        i.signin.fa.fa-google-plus-square.fa-5x(style='color:#dd4b39')
+            .row.spacer
+            .row
+                .col-xs-12.text-center
+                    p!= t('pages.sign-in.terms')
+            .row.spacer
 
-    .container-fluid
-        .row.text-center
-            a.bg-green.col-xs-6(href='help/offers')
-                .spacer.col-xs-12
-                h3.col-xs-12(style='color:#ffffff;margin-bottom:30px')= t('pages.index.offers-link')
-                img.col-xs-8.col-md-4.col-xs-offset-2.col-md-offset-4(src='/images/door-left.png', alt=t('pages.index.offers-link-alt'))
-            a.bg-yellow.col-xs-6(href='help/requests')
-                .spacer.col-xs-12
-                h3.col-xs-12(style='color:#ffffff;margin-bottom:30px')= t('pages.index.requests-link')
-                img.col-xs-8.col-md-4.col-xs-offset-2.col-md-offset-4(src='/images/door-right.png', alt=t('pages.index.requests-link-alt'))
 
     #scroll-down
         i.fa.fa-chevron-down.fa-3x
