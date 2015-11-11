@@ -72,6 +72,10 @@ block content
                     label.control-label(ng-class='{ "active": p.country.edit }')= t('pages.profile.country')
                     input#country.form-control(type='text', placeholder=t('pages.profile.country-ph'), value=profile.get('country.value'), data-value=profile.get('country.value'), data-id=profile.get('country.id'), ng-focus='p.country.edit = true', ng-blur='p.country.edit = false')
 
+                .form-group.col-xs-12.col-sm-8
+                    label.control-label(ng-class='{ "active": p.newsletter.edit }')= t('pages.profile.newsletter')
+                    input#newsletter(type='checkbox', checked=(profile.get('newsletter.value') === 'True' ? 'checked' : undefined) data-value=profile.get('newsletter.value'), data-id=profile.get('newsletter.id'), ng-focus='p.newsletter.edit = true', ng-blur='p.newsletter.edit = false')
+
             .row.text-center
                 .col-xs-12
                     h2.col-xs-12= t('pages.profile.about-me-tab')
@@ -135,6 +139,22 @@ block content
                     property: input.attr('id'),
                     id: input.data('id'),
                     value: input.val()
+                }
+                $.post('', postdata, function(data) {
+                    input.val(data.value)
+                    input.data('id', data.id)
+                    input.data('value', data.value)
+                }).fail(console.log)
+            }
+        })
+
+        $('input[type="checkbox"]').change(function() {
+            input = $(this)
+            if(input.data('value') != input.is(':checked')) {
+                var postdata = {
+                    property: input.attr('id'),
+                    id: input.data('id'),
+                    value: input.is(':checked')
                 }
                 $.post('', postdata, function(data) {
                     input.val(data.value)

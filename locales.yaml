@@ -5,8 +5,8 @@ feedback:
         hu: 'https://helpific.entu.ee/entity/feedback/%s'
         ru: 'https://helpific.entu.ee/entity/feedback/%s'
     admin-email-subject:
-        en: 'Added new feedback'
-        et: 'Lisati uus tagasiside'
+        en: Added new feedback
+        et: Lisati uus tagasiside
         hu: help.admin-email-subject
         ru: help.admin-email-subject
     email:
@@ -64,8 +64,8 @@ help:
         hu: 'https://helpific.com/help/%s'
         ru: 'https://helpific.com/help/%s'
     admin-email-subject:
-        en: 'Added new help request/offer'
-        et: 'Lisati uus abisoov/abipakkumine'
+        en: Added new help request/offer
+        et: Lisati uus abisoov/abipakkumine
         hu: help.admin-email-subject
         ru: help.admin-email-subject
 locales:
@@ -544,6 +544,11 @@ pages:
             et: Sõnumid
             hu: Üzenetek
             ru: pages.profile.messages
+        newsletter:
+            en: I would like to receive information about Helpific
+            et: Soovin saada Helpificu infot
+            hu: pages.profile.send-newsletter
+            ru: pages.profile.send-newsletter
         photo:
             en: Profile photo
             et: Profiilipilt
