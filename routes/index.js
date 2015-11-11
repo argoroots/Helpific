@@ -130,7 +130,7 @@ router.post('/feedback', function(req, res, next) {
         function(callback) {
             entu.add({
                 parent_entity_id: APP_ENTU_USER,
-                definition: 'message',
+                definition: 'feedback',
                 properties: properties
             }, function(error, id) {
                 if(error) callback(error)
