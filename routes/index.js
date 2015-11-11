@@ -139,12 +139,15 @@ router.post('/feedback', function(req, res, next) {
             })
         },
         function(callback) {
-            if(!res.locals.user) callback(null)
-            entu.rights({
-                id: new_id,
-                person_id: res.locals.user.id,
-                right: 'owner'
-            }, callback)
+            if(res.locals.user) {
+                entu.rights({
+                    id: new_id,
+                    person_id: res.locals.user.id,
+                    right: 'owner'
+                }, callback)
+            } else {
+                callback(null)
+            }
         },
         function(callback) {
             entu.rights({
@@ -152,6 +155,20 @@ router.post('/feedback', function(req, res, next) {
                 person_id: APP_ENTU_USER,
                 right: ''
             }, callback)
+        },
+        function(callback) {
+            if(APP_FEEDBACK_EMAILS) {
+                entu.message({
+                        to: APP_FEEDBACK_EMAILS,
+                        subject: res.locals.t('feedback.admin-email-subject'),
+                        message: res.locals.t('feedback.admin-email-message',  new_id),
+                        tag: 'feedback'
+                    },
+                    callback
+                )
+            } else {
+                callback(null)
+            }
         },
     ],
     function(err) {

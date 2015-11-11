@@ -17,18 +17,19 @@ var entu    = require('./helpers/entu')
 
 
 // global variables (and list of all used environment variables)
-APP_VERSION        = process.env.VERSION || require('./package').version
-APP_LOGLEVEL       = process.env.LOGLEVEL || 'info'
-APP_PORT           = process.env.PORT
-APP_CACHE_DIR      = process.env.CACHEDIR || path.join(__dirname, 'cache')
-APP_COOKIE_SECRET  = process.env.COOKIE_SECRET || random.generate(16)
-APP_ENTU_URL       = process.env.ENTU_URL || 'https://helpific.entu.ee/api2'
-APP_ENTU_USER      = process.env.ENTU_USER
-APP_ENTU_KEY       = process.env.ENTU_KEY
-APP_SENTRY         = process.env.SENTRY_DSN
-APP_DEFAULT_LOCALE = process.env.DEFAULT_LOCALE || 'en'
-APP_TIMEZONE       = process.env.TIMEZONE || 'Europe/Tallinn'
-APP_ADMIN_EMAILS   = process.env.ADMIN_EMAILS
+APP_VERSION         = process.env.VERSION || require('./package').version
+APP_LOGLEVEL        = process.env.LOGLEVEL || 'info'
+APP_PORT            = process.env.PORT
+APP_CACHE_DIR       = process.env.CACHEDIR || path.join(__dirname, 'cache')
+APP_COOKIE_SECRET   = process.env.COOKIE_SECRET || random.generate(16)
+APP_ENTU_URL        = process.env.ENTU_URL || 'https://helpific.entu.ee/api2'
+APP_ENTU_USER       = process.env.ENTU_USER
+APP_ENTU_KEY        = process.env.ENTU_KEY
+APP_SENTRY          = process.env.SENTRY_DSN
+APP_DEFAULT_LOCALE  = process.env.DEFAULT_LOCALE || 'en'
+APP_TIMEZONE        = process.env.TIMEZONE || 'Europe/Tallinn'
+APP_ADMIN_EMAILS    = process.env.ADMIN_EMAILS
+APP_FEEDBACK_EMAILS = process.env.FEEDBACK_EMAILS
 
 
 // start logging
