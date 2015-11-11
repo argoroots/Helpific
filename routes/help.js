@@ -175,7 +175,7 @@ router.post('/', function(req, res, next) {
                     to: APP_ADMIN_EMAILS,
                     subject: res.locals.t('help.admin-email-subject'),
                     message: res.locals.t('help.admin-email-message', properties.type + '/' + new_id),
-                    tag: 'message'
+                    tag: 'help'
                 },
                 callback
             )

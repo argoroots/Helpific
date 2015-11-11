@@ -1,4 +1,14 @@
 feedback:
+    admin-email-message:
+        en: 'https://helpific.entu.ee/entity/feedback/%s'
+        et: 'https://helpific.entu.ee/entity/feedback/%s'
+        hu: 'https://helpific.entu.ee/entity/feedback/%s'
+        ru: 'https://helpific.entu.ee/entity/feedback/%s'
+    admin-email-subject:
+        en: 'Added new feedback'
+        et: 'Lisati uus tagasiside'
+        hu: help.admin-email-subject
+        ru: help.admin-email-subject
     email:
         en: E-mail
         et: E-post
