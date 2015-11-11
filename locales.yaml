@@ -559,6 +559,11 @@ pages:
             et: '{{ photo_upload }}% laaditud...'
             hu: '{{ photo_upload }}% feltöltve...'
             ru: pages.profile.photo-upload
+        save-info:
+            en: Your profile info is saved automatically
+            et: Sinu profiili info salvestub automaatselt
+            hu: pages.profile.save-info
+            ru: pages.profile.save-info
         slogan:
             en: Slogan
             et: Slõugan
