@@ -157,9 +157,9 @@ router.post('/feedback', function(req, res, next) {
             }, callback)
         },
         function(callback) {
-            if(APP_ADMIN_EMAILS) {
+            if(APP_FEEDBACK_EMAILS) {
                 entu.message({
-                        to: APP_ADMIN_EMAILS,
+                        to: APP_FEEDBACK_EMAILS,
                         subject: res.locals.t('feedback.admin-email-subject'),
                         message: res.locals.t('feedback.admin-email-message',  new_id),
                         tag: 'feedback'

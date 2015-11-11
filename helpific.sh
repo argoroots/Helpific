@@ -23,6 +23,7 @@ docker run -d \
     --env="LOGLEVEL=error" \
     --env="COOKIE_SECRET=" \
     --env="ADMIN_EMAILS=" \
+    --env="FEEDBACK_EMAILS=" \
     --env="NEW_RELIC_APP_NAME=helpific" \
     --env="NEW_RELIC_LICENSE_KEY=" \
     --env="NEW_RELIC_LOG=stdout" \
