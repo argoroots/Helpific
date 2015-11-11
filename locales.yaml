@@ -3,7 +3,7 @@ feedback:
         en: E-mail
         et: E-post
         hu: E-mail
-        ru: feedback.email
+        ru: Э-почта
     message:
         en: Message
         et: Teade
@@ -13,17 +13,17 @@ feedback:
         en: Send
         et: Saada
         hu: Küldés
-        ru: feedback.send
+        ru: Отправить
     thanks:
         en: 'Thank you!'
         et: 'Täname!'
         hu: 'köszönjük!'
-        ru: feedback.thanks
+        ru: 'Благодарим!'
     title:
         en: Send feedback
         et: Saada tagasiside
         hu: Visszajelzés küldése
-        ru: feedback.title
+        ru: Отправить обратную связь
 footer:
     contact:
         en: |
@@ -46,18 +46,12 @@ footer:
                 SWIFT/BIC: HABAEE2X (SWEDBANK AS)<br>
                 <a href="mailto:info@helpific.com">info@helpific.com</a>
             </small>
-        ru: footer.contact
-help:
-    admin-email-message:
-        en: 'https://helpific.com/help/%s'
-        et: 'https://helpific.com/help/%s'
-        hu: 'https://helpific.com/help/%s'
-        ru: 'https://helpific.com/help/%s'
-    admin-email-subject:
-        en: 'Added new help request/offer'
-        et: 'Lisati uus abisoov/abipakkumine'
-        hu: help.admin-email-subject
-        ru: help.admin-email-subject
+        ru: |
+            <strong>HELPIFIC MTÜ</strong><br> <small>
+                Рег. нр.: 80380146<br>
+                Счет: EE102200221061303677<br>
+                <a href="mailto:info@helpific.com">info@helpific.com</a>
+            </small>
 locales:
     en:
         en: English
@@ -90,11 +84,14 @@ message:
         hu: >
             Szia!<br> <br> Új üzeneted érkezett a Helpific:<br> <a
             href="https://helpific.com/en/messages/%s">helpific.com/en/messages/%s</a>
+        ru: >
+            Привет!<br> <br> У тебя новое сообщение в Helpific:<br> <a
+            href="https://helpific.com/en/messages/%s">helpific.com/en/messages/%s</a>
     email-subject:
         en: New message in helpific.com
         et: "Uus sõnum helpific.com'is"
         hu: Új üzeneted érkezett a helpific.com-ra
-        ru: Новое сообщение от helpific.com
+        ru: Новое сообщение в helpific.com
 nav:
     bb:
         en: Beyond Borders
@@ -106,231 +103,231 @@ nav:
             en: Messages
             et: Sõnumid
             hu: Üzenetek
-            ru: nav.me.messages
+            ru: Сообщения
         offers:
             en: My offers
             et: Minu abipakkumised
             hu: Az én felajánlásaim
-            ru: nav.me.offers
+            ru: Мои предложения
         profile:
             en: Edit profile
             et: Muuda profiili
             hu: Profil szerkesztése
-            ru: nav.me.profile
+            ru: Редактировать профиль
         requests:
             en: My requests
             et: Minu abisoovid
             hu: Segítségkéréseim
-            ru: nav.me.requests
+            ru: Мои просьбы
         sign-out:
             en: Sign out
             et: Välju
             hu: Kijelentkezés
-            ru: nav.me.sign-out
+            ru: Выйти
     offers:
         en: Offers
         et: Abipakkumised
         hu: Felajánlások
-        ru: nav.offers
+        ru: Предложения помощи
     partners:
         en: Partners
         et: Partnerid
         hu: Partnerek
-        ru: nav.partners
+        ru: Партнеры
     requests:
         en: Requests
         et: Abisoovid
         hu: Segítségkérések
-        ru: nav.requests
+        ru: Просьбы
     sign-in:
         en: Sign in
         et: Sisene
         hu: Bejelentkezés
-        ru: nav.sign-in
+        ru: Войти
     team:
         en: Team
         et: Meeskond
         hu: Team
-        ru: nav.team
+        ru: Команда
     terms:
         en: Terms of Use
         et: Tingimused
         hu: Felhasználói Feltételek
-        ru: nav.terms
+        ru: Условия пользования
     toggle-navigation:
         en: Toggle navigation
         et: Ava menüü
         hu: Visszalépés a menübe
-        ru: nav.toggle-navigation
+        ru: Открыть меню
     users:
         en: Users
         et: Kasutajad
         hu: Felhasználók
-        ru: nav.users
+        ru: Участники
 pages:
     error:
         title:
             en: Error
             et: Viga
             hu: Hiba
-            ru: pages.error.title
+            ru: Ошибка
     help:
         add-new-offer:
             en: Add new help offer
             et: Lisa uus abipakkumine
             hu: Új felajánlás hozzáadása
-            ru: pages.help.add-new-offer
+            ru: Добавить новое предложение помощи
         add-new-request:
             en: Add new help request
             et: Lisa uus abisoov
             hu: Új segítségkérés hozzáadása
-            ru: pages.help.add-new-request
+            ru: Добавить новую просьбу о помощи
         cancel:
             en: Cancel
             et: Tühista
             hu: Mégse
-            ru: pages.help.cancel
+            ru: Отменить
         edit:
             en: Edit
             et: Muuda
             hu: Szerkesztés
-            ru: pages.help.edit
+            ru: Редактировать
         location:
             en: Location
             et: Asukoht
             hu: Helyszín
-            ru: pages.help.location
+            ru: Месторасположение
         location-ph:
             en: 'e.g. Tallinn, Harjumaa'
             et: 'näit. Tallinn, Harjumaa'
             hu: pl. Budapest
-            ru: pages.help.location-ph
+            ru: 'напр., Таллинн'
         offer-count:
             en: "There are total {{ (help | filter:{type:type }).length }} help offers here <span ng-if='search_query || search_my'> - found {{ (help | filter:{status:s.status, type:type, my:search_my} | filter:search_query).length }}</span>"
             et: "Kokku on meil {{ (help | filter:{type:type }).length }} abipakkumist <span ng-if='search_query || search_my'> - leiti {{ (help | filter:{status:s.status, type:type, my:search_my} | filter:search_query).length }}</span>"
             hu: "Összesen {{ (help | filter:{type:type }).length }} felajánlás található a rendszerben <span ng-if='search_query || search_my'> - tal?lat {{ (help | filter:{status:s.status, type:type, my:search_my} | filter:search_query).length }}</span>"
-            ru: pages.help.offer-count
+            ru: "У нас в общей сложности {{ (help | filter:{type:type }).length }} предложений помощи <span ng-if='search_query || search_my'> - найдено {{ (help | filter:{status:s.status, type:type, my:search_my} | filter:search_query).length }}</span>"
         offer-request:
             en: Offer
             et: Pakkumine
             hu: Felajánlás
-            ru: pages.help.offer-request
+            ru: Предложение
         offer-request-ph:
             en: e.g. Will go to Nuustaku and got extra room
             et: näit. Lähen Nuustakule ja on üks vaba koht
             hu: pl. Budapestre megyek van egy szabad hely a kocsimban
-            ru: pages.help.offer-request-ph
+            ru: напр., еду на пляж и есть одно свободное место
         offer-title:
             en: Help offers
             et: Abipakkumised
             hu: Felajánlások
-            ru: pages.help.offer-title
+            ru: Предложения о помощи
         only-my-offer:
             en: Show only my help offers
             et: Näita ainult minu abipakkumisi
             hu: Csak az én felajánlásaim legyenek láthatóak
-            ru: pages.help.only-my
+            ru: Показывать только мои предложения помощи
         only-my-request:
             en: Show only my help requests
             et: Näita ainult minu abisoove
             hu: Csak az én segítségkéréseim legyenek láthatóak
-            ru: pages.help.only-my
+            ru: Показывать только мои просьбы о помощи
         reply:
             en: Reply
             et: Vasta
             hu: Válasz
-            ru: pages.help.reply
+            ru: Ответить
         request-count:
             en: "There are total {{ (help | filter:{type:type }).length }} help requests here <span ng-if='search_query || search_my'> - found {{ (help | filter:{status:s.status, type:type, my:search_my} | filter:search_query).length }}</span>"
             et: "Kokku on meil {{ (help | filter:{type:type }).length }} abisoovi <span ng-if='search_query || search_my'> - leiti {{ (help | filter:{status:s.status, type:type, my:search_my} | filter:search_query).length }}</span>"
             hu: "Összesen {{ (help | filter:{type:type }).length }} segítségkérés van a rendszerben <span ng-if='search_query || search_my'> - találat {{ (help | filter:{status:s.status, type:type, my:search_my} | filter:search_query).length }}</span>"
-            ru: pages.help.request-count
+            ru: "У нас в общей сложности {{ (help | filter:{type:type }).length }} просьб о помощи <span ng-if='search_query || search_my'> - найдено {{ (help | filter:{status:s.status, type:type, my:search_my} | filter:search_query).length }}</span>"
         request-request:
             en: Request
             et: Soov
             hu: Segítségkérés
-            ru: pages.help.request-request
+            ru: Просьба
         request-request-ph:
             en: "e.g. I'll want to go to Nuustaku"
             et: näit. Soovin minna Nuustakule
             hu: pl. Budapestre akarok menni
-            ru: pages.help.request-request-ph
+            ru: напр., хочу поехать на пляж
         request-title:
             en: Help requests
             et: Abisoovid
             hu: Segítségkérés
-            ru: pages.help.request-title
+            ru: Просьбы о помощи
         save:
             en: Save
             et: Salvesta
             hu: Mentés
-            ru: pages.help.save
+            ru: Сохранить
         status:
             en: Status
             et: Staatus
             hu: Státusz
-            ru: pages.help.status
+            ru: Статус
         status-accepted:
             en: Accepted
             et: Vastuvõetud
             hu: Elfogadva
-            ru: pages.help.status-accepted
+            ru: Принято
         status-accepted-plural:
             en: Accepted
             et: Vastuvõetud
             hu: Elfogadva
-            ru: pages.help.status-accepted
+            ru: Приняты
         status-active:
             en: Active
             et: Aktiivne
             hu: Aktív
-            ru: pages.help.status-active
+            ru: Активный
         status-active-plural:
             en: Active
             et: Aktiivsed
             hu: pages.help.status-active-plural
-            ru: pages.help.status-active
+            ru: Активные
         status-canceled:
             en: Canceled
             et: Tühistatud
             hu: Törölve
-            ru: pages.help.status-canceled
+            ru: Отменен
         status-canceled-plural:
             en: Canceled
             et: Tühistatud
             hu: Törölve
-            ru: pages.help.status-canceled-plural
+            ru: Отменены
         status-done:
             en: Done
             et: Tehtud
             hu: Lezárt
-            ru: pages.help.status-done
+            ru: Сделано
         status-done-plural:
             en: Done
             et: Tehtud
             hu: Lezárt
-            ru: pages.help.status-done
+            ru: Сделаны
         time:
             en: Date/time
             et: Kuupäev/kellaaeg
             hu: Dátum/ido
-            ru: pages.help.time
+            ru: Дата/время
         time-ph:
             en: 'e.g. 04.08.2015 02:59'
             et: 'näit. 04.08.2015 02:59'
             hu: "Pl. 04.08.2015 02:59'"
-            ru: pages.help.time-ph
+            ru: 'напр., 04.08.2015 02:59'
     index:
         bullet-1:
             en: Sign in via Facebook or Google
             et: "Sisene Facebooki või Google'i kaudu"
             hu: Belépés Facebook vagy Google profillal
-            ru: pages.index.bullet-1
+            ru: Войти через Facebook или Google
         bullet-2:
             en: Let us know what you can do or need
             et: Anna teada kuidas saad aidata või mida vajad
             hu: Küld el nekünk segítségkérésed vagy felajánlásod
-            ru: pages.index.bullet-2
+            ru: Дай знать, что Ты можешь предложить или в чем нуждаешься
         bullet-3:
             en: Make your needs and deeds work
             et: pages.index.bullet-3
@@ -340,37 +337,37 @@ pages:
             en: Choose your way
             et: Vali oma tee
             hu: Válassz az alábbi lehetőségek közül
-            ru: pages.index.choose-way
+            ru: Выбери свой путь
         how-it-works:
             en: How Helpific works?
             et: Kuidas Helpific töötab?
             hu: Hogyan működik a Helpific?
-            ru: pages.index.how-it-works
+            ru: Как устроен Helpific?
         offers-link:
             en: Meet the volunteers
             et: Kohtu vabatahtlike abistajatega
             hu: Felajánlások
-            ru: pages.index.offers-link
+            ru: Знакомство с волонтерами
         offers-link-alt:
             en: Left door
             et: Vasak uks
             hu: Baloldali ajtó
-            ru: pages.index.offers-link-alt
+            ru: Левая дверь
         requests-link:
             en: Help those in need
             et: Aita abivajajaid
             hu: Segítségkérések
-            ru: pages.index.requests-link
+            ru: Помоги тем, кто нуждаются
         requests-link-alt:
             en: Right door
             et: Parem uks
             hu: Jobboldali ajtó
-            ru: pages.index.requests-link-alt
+            ru: Правая дверь
         slogan:
             en: "Isn't it easier together?"
             et: 'Koos on ju lihtsam!'
             hu: 'Együtt sokkal könnyebb!'
-            ru: pages.index.slogan
+            ru: 'Разве вместе не легче?'
         text:
             en: >
                 <h2>It's never been easier to give and get help</h2> <p>Helpific
@@ -390,281 +387,286 @@ pages:
                 emberekkel, akiknek segítségre van szüksége a mindennapokban.
                 </p> <p ng-if='info'>Jelenleg {{ info.help }} segítségkérésre
                 érkezett már válasz {{ info.users }} embertől.</p>
-            ru: pages.index.text
+            ru: >
+                <h2>Никогда прежде не было так просто помогать и получать
+                помощь!</h2> <p>Helpific объединяет помощников-добровольцев с теми,
+                кто нуждаются в помощи.</p> <p ng-if='info'>В настоящий момент у нас
+                {{ info.help }} просьб о помощи и {{ info.users }} активных
+                помощников-добровольцев.</p>
     messages:
         new-message:
             en: New message
             et: Uus sõnum
             hu: Új üzenet
-            ru: pages.messages.message
+            ru: Новое сообщение
         send:
             en: Send
             et: Saada
             hu: Küldés
-            ru: pages.messages.send
+            ru: Отправить
         title:
             en: Messages
             et: Sõnumid
             hu: Üzenetek
-            ru: pages.messages.title
+            ru: Сообщения
     partners:
         title:
             en: Partners
             et: Partnerid
             hu: Partnerek
-            ru: pages.partners.title
+            ru: Партнеры
     profile:
         about-me-tab:
             en: About me
             et: Minust
             hu: Magamról
-            ru: pages.profile.about-me-tab
+            ru: Обо мне
         about-me-text:
             en: Write something about you. What would you like people to know about you?
             et: Kirjuta midagi endast
             hu: Írj egy pár soros bemutatkozást. Mit szeretnél másoknak elmondani magadról?
-            ru: pages.profile.about-me-text
+            ru: Напиши что-нибудь о себе
         about-me-video:
             en: Video URL
             et: Video viide
             hu: A bemutatkozó videód linkje
-            ru: pages.profile.about-me-video
+            ru: Ссылка на видео
         add-new-offer:
             en: Add new help offer
             et: Lisa uus abipakkumine
             hu: Új felajánlás küldése
-            ru: pages.profile.add-new-offer
+            ru: Добавить новое предложение помощи
         add-new-request:
             en: Add new help request
             et: Lisa uus abisoov
             hu: Új segítségkérés küldése
-            ru: pages.profile.add-new-request
+            ru: Добавить новую просьбу о помощи
         address:
             en: Address
             et: Aadress
             hu: Cím
-            ru: pages.profile.address
+            ru: Адрес
         address-ph:
             en: e.g. 767 5th Avenue
             et: e.g. Tartu mnt. 1
             hu: pl. Kossuth utca 1.
-            ru: pages.profile.address-ph
+            ru: напр., Тартуское шоссе, 1
         city:
             en: City
             et: Linn
             hu: Település
-            ru: pages.profile.city
+            ru: Город
         city-ph:
             en: e.g. New York
             et: näit. Tallinn
             hu: 'pl: Budapest'
-            ru: pages.profile.city-ph
+            ru: напр., Таллинн
         country:
             en: Country
             et: Riik
             hu: Ország
-            ru: pages.profile.country
+            ru: Страна
         country-ph:
             en: e.g. United States
             et: näit. Eesti
             hu: pl. Magyarország
-            ru: pages.profile.country-ph
+            ru: напр., Эстония
         county:
             en: County
             et: Maakond
             hu: Megye
-            ru: pages.profile.county
+            ru: Уезд
         county-ph:
             en: e.g NY
             et: näit. Harjumaa
             hu: 'pl: Pest megye'
-            ru: pages.profile.county-ph
+            ru: напр., Харьюмаа
         delete-photo:
             en: Delete photo
             et: Kustuta pilt
             hu: Fotó törlése
-            ru: pages.profile.delete-photo
+            ru: Удалить фотографию
         email:
             en: E-mail
             et: E-post
             hu: E-mail
-            ru: pages.profile.email
+            ru: Э-почта
         email-ph:
             en: e.g. john@appleseed.com
             et: näit. juhan@õunaseeme.ee
             hu: pl. janos@telecom.hu
-            ru: pages.profile.email-ph
+            ru: напр., ivan@mail.ru
         forename:
             en: Forename
             et: Eesnimi
             hu: Keresztnév
-            ru: pages.profile.forename
+            ru: Имя
         forename-ph:
             en: e.g. John
             et: näit. Juhan
             hu: pl. Ferenc
-            ru: pages.profile.forename-ph
+            ru: напр., Иван
         language:
             en: Language
             et: Keel
             hu: Nyelv
-            ru: pages.profile.language
+            ru: Язык
         markdown-info:
             en: 'use <a href="https://en.wikipedia.org/wiki/Markdown#Example" target="_blank">markdown</a> for styling your text'
             et: 'teksti kujundamiseks kasuta <a href="https://en.wikipedia.org/wiki/Markdown#Example" target="_blank">markdowni</a>'
             hu: 'használhatod a <a href="https://en.wikipedia.org/wiki/Markdown#Example" target="_blank">markdown</a> rendszerét a szöveged formázására'
-            ru: pages.profile.markdown-info
+            ru: 'для оформления текста используй данный <a href="https://en.wikipedia.org/wiki/Markdown#Example" target="_blank">язык разметки</a>'
         me-help-you-tab:
             en: I can help others
             et: Aitan sind
             hu: Segítséget nyújtok
-            ru: pages.profile.me-help-you-tab
+            ru: Я могу помочь другим
         me-help-you-text:
             en: How can you help others? You do not have to fill it if you do not feel like it now.
             et: Kuidas sa saad teisi aidata?
             hu: Milyen módon tudsz segítséget nyújtani másoknak?
-            ru: pages.profile.me-help-you-text
+            ru: Как Ты можешь помочь другим?
         me-help-you-video:
             en: Video URL
             et: Video viide
             hu: Video URL
-            ru: pages.profile.me-help-you-video
+            ru: Ссылка на видео
         messages:
             en: Messages
             et: Sõnumid
             hu: Üzenetek
-            ru: pages.profile.messages
+            ru: Сообщения
         photo:
             en: Profile photo
             et: Profiilipilt
             hu: Profilkép
-            ru: pages.profile.photo
+            ru: Фотография профиля
         photo-upload:
             en: '{{ photo_upload }}% uploaded...'
             et: '{{ photo_upload }}% laaditud...'
             hu: '{{ photo_upload }}% feltöltve...'
-            ru: pages.profile.photo-upload
+            ru: '{{ photo_upload }}% загружено...'
         slogan:
             en: Slogan
             et: Slõugan
             hu: Szlogen
-            ru: pages.profile.slogan
+            ru: Слоган
         slogan-ph:
             en: "e.g. Isn't it easier together?"
             et: 'näit. Koos on ju lihtsam!'
             hu: 'Együtt könnyebb!'
-            ru: pages.profile.slogan-ph
+            ru: 'напр., Вместе проще!'
         surname:
             en: Surname
             et: Perenimi
             hu: Vezetéknév
-            ru: pages.profile.surname
+            ru: Фамилия
         surname-ph:
             en: e.g. Appleseed
             et: näit. Õunaseeme
             hu: pl. Kovács
-            ru: pages.profile.surname-ph
+            ru: напр., Иванов
         title:
             en: My profile
             et: Minu profiil
             hu: Az én profilom
-            ru: pages.profile.title
+            ru: Мой профиль
         video-info:
             en: 'we support only <a href="https://youtube.com" target="_blank">YouTube</a>, <a href="https://vimeo.com" target="_blank">Vimeo</a> and <a href="https://wistia.com" target="_blank">Wistia</a> urls'
             et: 'toetatud on ainult <a href="https://youtube.com" target="_blank">YouTube</a>, <a href="https://vimeo.com" target="_blank">Vimeo</a> ja <a href="https://wistia.com" target="_blank">Wistia</a> viited'
             hu: 'Jelenleg <a href="https://youtube.com" target="_blank">YouTube</a>, <a href="https://vimeo.com" target="_blank">Vimeo</a> és <a href="https://wistia.com" target="_blank">Wistia</a> videókat tölthetsz fel'
-            ru: pages.profile.video-info
+            ru: 'поддерживаются только ссылки на <a href="https://youtube.com" target="_blank">YouTube</a>, <a href="https://vimeo.com" target="_blank">Vimeo</a> и <a href="https://wistia.com" target="_blank">Wistia</a>'
         video-ph:
             en: 'näit. https://www.youtube.com/watch?v=QH2-TGUlwu4'
             et: 'e. g. https://www.youtube.com/watch?v=QH2-TGUlwu4'
             hu: 'pl.: https://www.youtube.com/watch?v=QH2-TGUlwu4'
-            ru: pages.profile.video-ph
+            ru: 'напр., https://www.youtube.com/watch?v=QH2-TGUlwu4'
         you-help-me-tab:
             en: I need help
             et: Vajan abi
             hu: Segítségre van szükségem
-            ru: pages.profile.you-help-me-tab
+            ru: Мне нужна помощь
         you-help-me-text:
             en: How can people help you? You can leave it empty if you are not searching for help through this site.
             et: Millist abi sa vajad?
             hu: Miben lehetnek mások segítségedre? Hagyd ezt a mezőt üresen ha jelenleg nincs szükséged segítségre.
-            ru: pages.profile.you-help-me-text
+            ru: Какая помощь Тебе нужна? Если помощь не нужна, оставь это поле пустым.
         you-help-me-video:
             en: Video URL
             et: Video viide
             hu: A bemutatkozó videó URL címe
-            ru: pages.profile.you-help-me-video
+            ru: Ссылка на видео
     sign-in:
         terms:
             en: '* if you sign in, you accept our <a href="terms">terms of use and privacy policy</a>'
             et: '* sisenedes nõustud meie <a href="terms">kasutaja- ja privaatsustingimustega</a>'
             hu: '* a belépéssel elfogadod a <a href="terms">Felhasználói Feltételeket</a>'
-            ru: pages.sign-in.terms
+            ru: '* используя сервис, Ты соглашаешься с <a href="terms">правилами пользования</a>'
         text:
             en: Please use your preferred identity provider to sign in...
             et: Sisenemiseks kasuta meelepärast identiteedipakkujat...
             hu: Válaszd ki a számodra megfelelő belépési módot...
-            ru: pages.sign-in.text
+            ru: Для входа используй подходящий сервис
         title:
             en: Sign in
             et: Sisene
             hu: Belépés
-            ru: pages.sign-in.title
+            ru: Войти
     team:
         title:
             en: Our Team
             et: Meie meeskond
             hu: A Helpific csapata
-            ru: pages.team.title
+            ru: Наша команда
     user:
         about-me-tab:
             en: About me
             et: Minust
             hu: Magamról
-            ru: pages.user.about-me-tab
+            ru: Обо мне
         donate:
             en: Donate
             et: Anneta
             hu: Adomány
-            ru: pages.user.donate
+            ru: Сделать пожертвование
         donate-info:
             en: 'For donation transfer money to Helpific MTÜ account. Transfer description must be "%s"'
             et: 'Annetus kanna Helpific MTÜ kontole. Makse selgitusse märgi kindlasti "%s"'
             hu: 'Amennyiben támogatást szeretnél átutalni a Helpific Egyesület számlaszámára megteheted. A közlemény rovatba írd "%s"'
-            ru: pages.user.donate-info
+            ru: 'Пожертвования следует переводить на банковский счет Helpific MTÜ. В пояснении обязательно укажите "%s"'
         help-offers:
             en: My help offers
             et: Minu abipakkumised
             hu: Felajánlásaim
-            ru: pages.user.help-offers
+            ru: Мои предложения помощи
         help-requests:
             en: My help requests
             et: Minu abisoovid
             hu: Segítségkéréseim
-            ru: pages.user.help-requests
+            ru: Мои просьбы о помощи
         me-help-you-tab:
             en: I can help others
             et: Aitan sind
             hu: Segítséget ajánlok
-            ru: pages.user.me-help-you-tab
+            ru: Я могу помочь другим
         send-message:
             en: Send message
             et: Saada sõnum
             hu: Üzenet küldése
-            ru: pages.user.send-message
+            ru: Отправить сообщение
         you-help-me-tab:
             en: I need help
             et: Vajan abi
             hu: Segítségre van szükségem
-            ru: pages.user.you-help-me-tab
+            ru: Мне нужна помощь
     users:
         count:
             en: "There are total {{ users.length }} users here <span ng-if='search_query'> - found {{ (users | filter:search_query).length }}</span>"
             et: "Kokku on meil {{ users.length }} kasutajat <span ng-if='search_query'> - leiti {{ (users | filter:search_query).length }}</span>"
             hu: "Összesen {{ users.length }} felhasználó van a rendszerben <span ng-if='search_query'> - találat {{ (users | filter:search_query).length }}</span>"
-            ru: pages.users.count
+            ru: "У нас в общей сложности {{ users.length }} участников <span ng-if='search_query'> - найдено {{ (users | filter:search_query).length }}</span>"
         title:
             en: Users
             et: Kasutajad
             hu: Tagok
-            ru: pages.users.title
+            ru: Участники
