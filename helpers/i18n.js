@@ -15,6 +15,12 @@ exports.configure = function(config) {
     i18n_config.locales = config.locales || ['en']
     i18n_config.defaultLocale = config.defaultLocale || 'en'
     i18n_config.updateFile = config.updateFile || false
+    i18n_config.countries = {
+        'ee': 'et',
+        'us': 'en',
+        'ru': 'ru',
+        'hu': 'hu'
+    }
 
     i18n_config.translations = {}
     if(fs.existsSync(i18n_config.file)) {
@@ -33,7 +39,7 @@ exports.init = function(req, res, next) {
             return res.redirect('/' + op.get(res, 'locals.user.lang'))
         } else {
             request.get({url: 'http://geoip.entu.eu/json/' + req.ip, json: true, timeout: 1000}, function(error, response, body) {
-                var path = op.get(body, 'country_code').toLowerCase() || i18n_config.defaultLocale
+                var path = op.get(i18n_config, ['countries', op.get(body, 'country_code').toLowerCase()]) || i18n_config.defaultLocale
                 return res.redirect('/' + path)
             })
         }
