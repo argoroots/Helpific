@@ -1,7 +1,8 @@
-var fs    = require('fs')
-var path  = require('path')
-var yaml  = require('js-yaml')
-var op    = require('object-path')
+var fs      = require('fs')
+var op      = require('object-path')
+var path    = require('path')
+var request = require('request')
+var yaml    = require('js-yaml')
 
 i18n_config = {}
 
@@ -12,7 +13,6 @@ exports.configure = function(config) {
 
     i18n_config.file = config.file || path.join(__dirname, 'locales.yaml')
     i18n_config.locales = config.locales || ['en']
-    i18n_config.redirectWrongLocale = config.redirectWrongLocale || true
     i18n_config.defaultLocale = config.defaultLocale || 'en'
     i18n_config.updateFile = config.updateFile || false
 
@@ -28,23 +28,33 @@ exports.configure = function(config) {
 
 
 exports.init = function(req, res, next) {
-    i18n_config.lang = req.path.split('/')[1] || i18n_config.defaultLocale
-
-    if(res.locals.user && req.path === '/') {
-        if(res.locals.user.lang) return res.redirect('/' + res.locals.user.lang)
-    }
-    if(i18n_config.redirectWrongLocale === true && req.path === '/') return res.redirect('/' + i18n_config.lang)
-    if(i18n_config.redirectWrongLocale === true && i18n_config.locales.indexOf(i18n_config.lang) === -1) {
+    if(req.path === '/') {
+        if(op.get(res, 'locals.user.lang')) {
+            return res.redirect('/' + op.get(res, 'locals.user.lang'))
+        } else {
+            request.get({url: 'http://geoip.entu.eu/json/' + req.ip, json: true, timeout: 1000}, function(error, response, body) {
+                var path = op.get(body, 'country_code').toLowerCase() || i18n_config.defaultLocale
+                return res.redirect('/' + path)
+            })
+        }
+    } else if(i18n_config.locales.indexOf(req.path.split('/')[1]) === -1) {
         var path = req.path.split('/')
-        path[1] = i18n_config.defaultLocale
-        return res.redirect(path.join('/'))
+        if(op.get(res, 'locals.user.lang')) {
+            path[1] = op.get(res, 'locals.user.lang')
+            return res.redirect(path.join('/'))
+        } else {
+            request.get({url: 'http://geoip.entu.eu/json/' + req.ip, json: true, timeout: 1000}, function(error, response, body) {
+                path[1] = op.get(body, 'country_code').toLowerCase() || i18n_config.defaultLocale
+                return res.redirect(path.join('/'))
+            })
+        }
+    } else {
+        res.locals.lang = i18n_config.lang = req.path.split('/')[1]
+        res.locals.locales = i18n_config.locales
+        res.locals.t = translate
+
+        next()
     }
-
-    res.locals.lang = i18n_config.lang
-    res.locals.locales = i18n_config.locales
-    res.locals.t = translate
-
-    next()
 }
 
 
