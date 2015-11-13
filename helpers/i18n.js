@@ -17,7 +17,6 @@ exports.configure = function(config) {
     i18n_config.updateFile = config.updateFile || false
     i18n_config.countries = {
         'ee': 'et',
-        'us': 'en',
         'ru': 'ru',
         'hu': 'hu'
     }
