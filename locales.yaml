@@ -343,17 +343,17 @@ pages:
             en: Sign in via Facebook or Google
             et: "Sisene Facebooki või Google'i kaudu"
             hu: Belépés Facebook vagy Google profillal
-            ru: Войти через Facebook или Google
+            ru: Войди через Facebook или Google
         bullet-2:
             en: Let us know what you can do or need
             et: Anna teada kuidas saad aidata või mida vajad
             hu: Küld el nekünk segítségkérésed vagy felajánlásod
-            ru: Дай знать, что Ты можешь предложить или в чем нуждаешься
+            ru: Напиши, какую помощь Ты можешь предложить или в чем нуждаешься
         bullet-3:
             en: Make your needs and deeds work
             et: pages.index.bullet-3
             hu: Vedd fel a kapcsolatot másokkal
-            ru: pages.index.bullet-3
+            ru: Найди применение своим возможностям или получай помощь от других!
         choose-way:
             en: Choose your way
             et: Vali oma tee
@@ -395,7 +395,7 @@ pages:
                 connects volunteers to those who need help with everyday
                 activities.</p> <p ng-if='info'>At the moment we have {{
                 info.help }} help requests fulfilled and {{ info.users }} active
-                voluteers.</p>
+                volunteers.</p>
             et: >
                 <h2>Kunagi varem pole abi osutamine ja saamine olnud nii
                 lihtne!</h2> <p>Helpific ühendab vabatahtlikud abistajad
@@ -409,7 +409,7 @@ pages:
                 </p> <p ng-if='info'>Jelenleg {{ info.help }} segítségkérésre
                 érkezett már válasz {{ info.users }} embertől.</p>
             ru: >
-                <h2>Никогда прежде не было так просто помогать и получать
+                <h2>Никогда прежде не было так легко помогать другим и получать
                 помощь!</h2> <p>Helpific объединяет помощников-добровольцев с теми,
                 кто нуждаются в помощи.</p> <p ng-if='info'>В настоящий момент у нас
                 {{ info.help }} просьб о помощи и {{ info.users }} активных
@@ -561,7 +561,7 @@ pages:
             en: I would like to receive information about Helpific
             et: Soovin saada Helpificu infot
             hu: pages.profile.send-newsletter
-            ru: pages.profile.send-newsletter            
+            ru: pages.profile.send-newsletter
         photo:
             en: Profile photo
             et: Profiilipilt
@@ -576,7 +576,7 @@ pages:
             en: Your profile info is saved automatically
             et: Sinu profiili info salvestub automaatselt
             hu: pages.profile.save-info
-            ru: pages.profile.save-info        
+            ru: pages.profile.save-info
         slogan:
             en: Slogan
             et: Slõugan
@@ -632,7 +632,7 @@ pages:
             en: '* if you sign in, you accept our <a href="terms">terms of use and privacy policy</a>'
             et: '* sisenedes nõustud meie <a href="terms">kasutaja- ja privaatsustingimustega</a>'
             hu: '* a belépéssel elfogadod a <a href="terms">Felhasználói Feltételeket</a>'
-            ru: '* используя сервис, Ты соглашаешься с <a href="terms">правилами пользования</a>'
+            ru: '* пользуясь сервисом, Ты соглашаешься с <a href="terms">правилами пользования</a>'
         text:
             en: Please use your preferred identity provider to sign in...
             et: Sisenemiseks kasuta meelepärast identiteedipakkujat...
