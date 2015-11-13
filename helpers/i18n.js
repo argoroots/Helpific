@@ -39,15 +39,8 @@ exports.init = function(req, res, next) {
         }
     } else if(i18n_config.locales.indexOf(req.path.split('/')[1]) === -1) {
         var path = req.path.split('/')
-        if(op.get(res, 'locals.user.lang')) {
-            path[1] = op.get(res, 'locals.user.lang')
-            return res.redirect(path.join('/'))
-        } else {
-            request.get({url: 'http://geoip.entu.eu/json/' + req.ip, json: true, timeout: 1000}, function(error, response, body) {
-                path[1] = op.get(body, 'country_code').toLowerCase() || i18n_config.defaultLocale
-                return res.redirect(path.join('/'))
-            })
-        }
+        path[1] = op.get(res, 'locals.user.lang') ? op.get(res, 'locals.user.lang') : i18n_config.defaultLocale
+        return res.redirect(path.join('/'))
     } else {
         res.locals.lang = i18n_config.lang = req.path.split('/')[1]
         res.locals.locales = i18n_config.locales
