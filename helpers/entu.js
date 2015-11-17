@@ -314,3 +314,23 @@ exports.get_user_session = function(params, callback) {
         callback(null, user)
     })
 }
+
+
+
+//Get user
+exports.get_user = function(params, callback) {
+    if(params.auth_id && params.auth_token) {
+        var headers = {'X-Auth-UserId': params.auth_id, 'X-Auth-Token': params.auth_token}
+    } else {
+        var headers = {}
+    }
+
+    var preparedUrl = APP_ENTU_URL + '/user'
+    log.debug('Try to execute URL ' + preparedUrl)
+    request.get({url: preparedUrl, headers: headers, strictSSL: true, json: true, timeout: 60000}, function(error, response, body) {
+        if(error) return callback(error)
+        if(response.statusCode !== 200 || !body.result) return callback(new Error(op.get(body, 'error', body)))
+
+        callback(null, op.get(body, 'result', null))
+    })
+}

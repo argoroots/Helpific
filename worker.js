@@ -1,15 +1,17 @@
 if(process.env.NEW_RELIC_LICENSE_KEY) require('newrelic')
 
-var express = require('express')
-var path    = require('path')
-var fs      = require('fs')
-var minify  = require('express-minify')
-var favicon = require('serve-favicon')
-var cookie  = require('cookie-parser')
-var random  = require('randomstring')
+var async   = require('async')
 var bparser = require('body-parser')
-var raven   = require('raven')
+var cookie  = require('cookie-parser')
+var express = require('express')
+var favicon = require('serve-favicon')
+var fs      = require('fs')
 var log4js  = require('log4js')
+var minify  = require('express-minify')
+var op       = require('object-path')
+var path    = require('path')
+var random  = require('randomstring')
+var raven   = require('raven')
 
 var i18n    = require('./helpers/i18n')
 var entu    = require('./helpers/entu')
@@ -115,26 +117,25 @@ var app = express()
         res.locals.path = req.path
         if(!req.signedCookies) next(null)
         if(req.signedCookies.auth_id && req.signedCookies.auth_token) {
-            res.locals.user = {
-                id: parseInt(req.signedCookies.auth_id),
-                token: req.signedCookies.auth_token
-            }
-            if(!res.locals.user.lang) {
-                entu.get_entity({
-                    id: res.locals.user.id,
-                    auth_id: res.locals.user.id,
-                    auth_token: res.locals.user.token
-                }, function(error, profile) {
-                    if(error) return next(error)
-
-                    res.locals.user.lang = profile.get('language.value') || APP_DEFAULT_LOCALE
-                    next(null)
-                })
-            }
+            entu.get_user({
+                auth_id: req.signedCookies.auth_id,
+                auth_token: req.signedCookies.auth_token
+            }, function(error, user) {
+                if(user) {
+                    res.locals.user = {
+                        id: parseInt(req.signedCookies.auth_id),
+                        token: req.signedCookies.auth_token,
+                        lang: op.get(user, 'person.language.values.0.value', APP_DEFAULT_LOCALE)
+                    }
+                } else {
+                    res.clearCookie('auth_id')
+                    res.clearCookie('auth_token')
+                }
+                next(null)
+            })
         } else {
             next(null)
         }
-
     })
 
     // initiate i18n
