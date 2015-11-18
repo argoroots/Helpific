@@ -7,7 +7,7 @@ var entu   = require('../helpers/entu')
 
 
 // Get requests/offers statuses JSON
-router.get('/json/statuses', function(req, res, next) {
+router.get('/json/statuses', function(req, res) {
     res.send([
         {status: 'active', label: res.locals.t('pages.help.status-active'), plural: res.locals.t('pages.help.status-active-plural')},
         {status: 'accepted', label: res.locals.t('pages.help.status-accepted'), plural: res.locals.t('pages.help.status-accepted-plural')},
@@ -73,7 +73,7 @@ router.get('/json/:type*?', function(req, res, next) {
 
 
 // Show requests/offers list
-router.get('/:type', function(req, res, next) {
+router.get('/:type', function(req, res) {
     if(req.params.type === 'requests') {
         var help_type = 'request'
     } else if(req.params.type === 'offers') {

@@ -57,7 +57,7 @@ angular.module('hlpfc', ['ngSanitize'])
             })
             .success(function(data) {
                 $scope.help = []
-                angular.forEach(data, function(value, key) {
+                angular.forEach(data, function(value) {
                     value.time.old = value.time.value
                     value.location.old = value.location.value
                     value.request.old = value.request.value
@@ -87,7 +87,7 @@ angular.module('hlpfc', ['ngSanitize'])
                     url    : '/' + LANGUAGE + '/help',
                     data   : data
                 })
-                .success(function(result) {
+                .success(function() {
                     $scope.new.time = null
                     $scope.new.location = null
                     $scope.new.request = null
@@ -263,7 +263,7 @@ angular.module('hlpfc', ['ngSanitize'])
                         $scope.$apply()
                     }, false)
 
-                    xhr.onreadystatechange = function(ev) {
+                    xhr.onreadystatechange = function() {
                         if(xhr.readyState != 4) return
                         if(xhr.status == 201) {
                             $scope.photo_upload = 100

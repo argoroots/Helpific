@@ -5,7 +5,7 @@ var entu   = require('../helpers/entu')
 
 
 // Show signin page
-router.get('/', function(req, res, next) {
+router.get('/', function(req, res) {
     res.render('signin')
 })
 
@@ -47,7 +47,7 @@ router.get('/done', function(req, res, next) {
 
 
 // Sign out
-router.get('/exit', function(req, res, next) {
+router.get('/exit', function(req, res) {
     res.clearCookie('auth_url')
     res.clearCookie('auth_state')
     res.clearCookie('auth_id')

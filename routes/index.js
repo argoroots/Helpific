@@ -20,7 +20,7 @@ function isTemplateExists(template) {
 
 
 // Show homepage
-router.get('/', function(req, res, next) {
+router.get('/', function(req, res) {
     res.render('index')
 })
 
@@ -95,7 +95,7 @@ router.get('/team', function(req, res, next) {
 
 
 // Show terms of service page
-router.get('/terms', function(req, res, next) {
+router.get('/terms', function(req, res) {
     var template = 'terms.' + res.locals.lang + '.jade'
     if(isTemplateExists(template)){
         res.render(template)
@@ -107,7 +107,7 @@ router.get('/terms', function(req, res, next) {
 
 
 // Show bb page
-router.get('/bb', function(req, res, next) {
+router.get('/bb', function(req, res) {
     var template = 'bb.' + res.locals.lang + '.jade'
     if(isTemplateExists(template)){
         res.render(template)

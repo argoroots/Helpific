@@ -1,6 +1,5 @@
 if(process.env.NEW_RELIC_LICENSE_KEY) require('newrelic')
 
-var async   = require('async')
 var bparser = require('body-parser')
 var cookie  = require('cookie-parser')
 var express = require('express')
@@ -66,7 +65,7 @@ var raven_client = new raven.Client({
 
 
 // start express app
-var app = express()
+express()
     // get correct client IP behind nginx
     .set('trust proxy', true)
 
@@ -97,7 +96,7 @@ var app = express()
     .use(favicon(path.join(__dirname, 'public', 'images', 'helpific-logo.ico')))
 
     // redirects
-    .use('/piiridetaelu', function(req, res, next) {
+    .use('/piiridetaelu', function(req, res) {
         res.redirect('/et/bb')
     })
 
@@ -154,7 +153,7 @@ var app = express()
     .use(raven.middleware.express.errorHandler(raven_client))
 
     // show 404
-    .use(function(req, res, next) {
+    .use(function(req, res) {
         res.render('error', {
             title: 404,
             message: '',
@@ -163,7 +162,7 @@ var app = express()
     })
 
     // show error
-    .use(function(err, req, res, next) {
+    .use(function(err, req, res) {
         log.error(err)
 
         res.render('error', {

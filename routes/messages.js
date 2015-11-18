@@ -8,7 +8,7 @@ var entu   = require('../helpers/entu')
 
 
 // Get conversations JSON
-router.get('/json', function(req, res, next) {
+router.get('/json', function(req, res) {
     if(!res.authenticate()) return
 
     moment.locale(res.locals.lang)
@@ -76,7 +76,7 @@ router.get('/json', function(req, res, next) {
 
 
 // Get conversation messages JSON
-router.get('/json/:id', function(req, res, next) {
+router.get('/json/:id', function(req, res) {
     if(!res.authenticate()) return
 
     moment.locale(res.locals.lang)
@@ -196,7 +196,7 @@ router.post('/:id', function(req, res, next) {
                 }
             }
         ],
-        function(err, results) {
+        function(err) {
             if(err) return next(err)
 
             var date = moment.utc().tz(APP_TIMEZONE).calendar()

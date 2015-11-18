@@ -57,8 +57,7 @@ exports.init = function(req, res, next) {
 
 
 
-exports.translate = translate
-function translate(key, text) {
+exports.translate = translate = function translate(key, text) {
     var value = op.get(i18n_config, 'translations.' + key + '.' + i18n_config.lang)
     if(!value && i18n_config.updateFile === true && i18n_config.locales.indexOf(i18n_config.lang) > -1) {
         op.set(i18n_config, 'translations.' + key + '.' + i18n_config.lang, key)

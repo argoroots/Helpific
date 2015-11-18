@@ -9,8 +9,6 @@ var entu   = require('../helpers/entu')
 router.get('/', function(req, res, next) {
     if(!res.authenticate()) return
 
-    var profile = null
-
     async.waterfall([
         function(callback) {
             entu.get_entity({
@@ -31,7 +29,7 @@ router.get('/', function(req, res, next) {
                 },
                 auth_id: res.locals.user.id,
                 auth_token: res.locals.user.token
-            }, function(error, response) {
+            }, function(error) {
                 if(error) return callback(error)
 
                 entu.get_entity({
@@ -51,7 +49,7 @@ router.get('/', function(req, res, next) {
                 url: res.locals.user.picture,
                 auth_id: res.locals.user.id,
                 auth_token: res.locals.user.token
-            }, function(error, response) {
+            }, function(error) {
                 if(error) return callback(error)
 
                 entu.get_entity({

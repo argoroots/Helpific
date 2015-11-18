@@ -51,7 +51,7 @@ router.get('/json', function(req, res, next) {
 
 
 // Show users list
-router.get('/', function(req, res, next) {
+router.get('/', function(req, res) {
     res.render('users')
 })
 
