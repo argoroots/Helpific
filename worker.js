@@ -8,7 +8,7 @@ var favicon = require('serve-favicon')
 var fs      = require('fs')
 var log4js  = require('log4js')
 var minify  = require('express-minify')
-var op       = require('object-path')
+var op      = require('object-path')
 var path    = require('path')
 var random  = require('randomstring')
 var raven   = require('raven')
@@ -125,6 +125,7 @@ var app = express()
                     res.locals.user = {
                         id: parseInt(req.signedCookies.auth_id),
                         token: req.signedCookies.auth_token,
+                        picture: op.get(user, 'picture'),
                         lang: op.get(user, 'person.language.values.0.value', APP_DEFAULT_LOCALE)
                     }
                 } else {

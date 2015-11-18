@@ -1,5 +1,5 @@
-var router = require('express').Router()
 var async  = require('async')
+var router = require('express').Router()
 
 var entu   = require('../helpers/entu')
 
@@ -9,12 +9,61 @@ var entu   = require('../helpers/entu')
 router.get('/', function(req, res, next) {
     if(!res.authenticate()) return
 
-    entu.get_entity({
-        id: res.locals.user.id,
-        auth_id: res.locals.user.id,
-        auth_token: res.locals.user.token
-    }, function(error, profile) {
-        if(error) return next(error)
+    var profile = null
+
+    async.waterfall([
+        function(callback) {
+            entu.get_entity({
+                id: res.locals.user.id,
+                auth_id: res.locals.user.id,
+                auth_token: res.locals.user.token
+            }, callback)
+        },
+        function(result, callback) {
+            if(result.has('newsletter')) return callback(null, result)
+
+            entu.edit({
+                id: res.locals.user.id,
+                definition: 'person',
+                data: {
+                    property: 'newsletter',
+                    value: true
+                },
+                auth_id: res.locals.user.id,
+                auth_token: res.locals.user.token
+            }, function(error, response) {
+                if(error) return callback(error)
+
+                entu.get_entity({
+                    id: res.locals.user.id,
+                    auth_id: res.locals.user.id,
+                    auth_token: res.locals.user.token
+                }, callback)
+            })
+        },
+        function(result, callback) {
+            if(result.has('photo') || !res.locals.user.picture) return callback(null, result)
+
+            entu.set_file_from_url({
+                id: res.locals.user.id,
+                definition: 'person',
+                property: 'photo',
+                url: res.locals.user.picture,
+                auth_id: res.locals.user.id,
+                auth_token: res.locals.user.token
+            }, function(error, response) {
+                if(error) return callback(error)
+
+                entu.get_entity({
+                    id: res.locals.user.id,
+                    auth_id: res.locals.user.id,
+                    auth_token: res.locals.user.token
+                }, callback)
+            })
+        },
+    ],
+    function(err, profile) {
+        if(err) return next(err)
 
         res.render('profile', {
             profile: profile

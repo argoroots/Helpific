@@ -196,6 +196,36 @@ exports.edit = function(params, callback) {
 
 
 
+//Set file from url
+exports.set_file_from_url = function(params, callback) {
+    var property = params.definition + '-' + params.property
+    var body = {
+        entity: params.id,
+        property: property,
+        url: params.url,
+        download: true
+    }
+
+    if(params.auth_id && params.auth_token) {
+        var headers = {'X-Auth-UserId': params.auth_id, 'X-Auth-Token': params.auth_token}
+        var qb = body
+    } else {
+        var headers = {}
+        var qb = sign_data(body)
+    }
+
+    var preparedUrl = APP_ENTU_URL + '/file/url'
+    log.debug('Try to execute URL ' + preparedUrl)
+    request.post({url: preparedUrl, headers: headers, body: qb, strictSSL: true, json: true, timeout: 60000}, function(error, response, body) {
+        if(error) return callback(error)
+        if(response.statusCode !== 200 || !body.result) return callback(new Error(op.get(body, 'error', body)))
+
+        callback(null, op.get(body, 'result.properties.' + property + '.0', null))
+    })
+}
+
+
+
 //Set entity rights
 exports.rights = function(params, callback) {
     var body = {
