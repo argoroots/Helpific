@@ -40,7 +40,7 @@ router.get('/json', function(req, res, next) {
                 if(conversations[person.reference].message_id > m.get('_id')) continue
             }
 
-            if(new_id_exists === false) new_id_exists = person.reference === parseInt(req.query.new_id)
+            if(new_id_exists === false) new_id_exists = person.reference === parseInt(req.query.new_id, 10)
 
             conversations[person.reference] = {
                 id: person.reference,
@@ -95,9 +95,9 @@ router.get('/json/:id', function(req, res, next) {
             var m = result[i]
 
             if(m.get('from-person.reference') === res.locals.user.id) {
-                if(m.get('to-person.reference') !== parseInt(req.params.id)) continue
+                if(m.get('to-person.reference') !== parseInt(req.params.id, 10)) continue
             } else if(m.get('to-person.reference') === res.locals.user.id) {
-                if(m.get('from-person.reference') !== parseInt(req.params.id)) continue
+                if(m.get('from-person.reference') !== parseInt(req.params.id, 10)) continue
             } else {
                 continue
             }

@@ -32,7 +32,7 @@ router.get('/json/:type*?', function(req, res, next) {
         var requests = []
         for(var i in results) {
             var r = results[i]
-            if(req.query.id && parseInt(req.query.id) !== r.get('person.reference')) continue
+            if(req.query.id && parseInt(req.query.id, 10) !== r.get('person.reference')) continue
             if(req.params.type && req.params.type !== r.get('type.value')) continue
             if(r.get('status.value') === 'canceled' && !res.locals.user) continue
             if(r.get('status.value') === 'canceled' && r.get('person.reference') !== res.locals.user.id) continue

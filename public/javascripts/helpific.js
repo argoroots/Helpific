@@ -182,7 +182,7 @@ angular.module('hlpfc', ['ngSanitize'])
 
         $scope.openConversation = function(id) {
             $scope.id = id
-            $scope.selected = parseInt(id)
+            $scope.selected = parseInt(id, 10)
             $scope.loading = true
 
             $http({
