@@ -28,9 +28,9 @@ block content
         .row
             if profile.has('me-help-you-video') || profile.has('me-help-you-photo') || profile.has('me-help-you-text') || profile.has('you-help-me-video') || profile.has('you-help-me-photo') || profile.has('you-help-me-text')
                 h2()= t('pages.user.about-me-tab')
-                if media_embed(profile.get('about-me-video.value'))
+                if mediaEmbed(profile.get('about-me-video.value'))
                     .embed-responsive.embed-responsive-16by9
-                        iframe.embed-responsive-item.col-xs-12(src=media_embed(profile.get('about-me-video.value')), allowtransparency='true', frameborder='0', scrolling='no', allowfullscreen, mozallowfullscreen, webkitallowfullscreen, oallowfullscreen, msallowfullscreen)
+                        iframe.embed-responsive-item.col-xs-12(src=mediaEmbed(profile.get('about-me-video.value')), allowtransparency='true', frameborder='0', scrolling='no', allowfullscreen, mozallowfullscreen, webkitallowfullscreen, oallowfullscreen, msallowfullscreen)
                     .spacer.col-xs-12
                 else if profile.has('about-me-photo')
                     .col-xs-12
@@ -42,9 +42,9 @@ block content
         .row
             if profile.has('me-help-you-video') || profile.has('me-help-you-photo') || profile.has('me-help-you-text')
                 h2()= t('pages.user.me-help-you-tab')
-                if media_embed(profile.get('me-help-you-video.value'))
+                if mediaEmbed(profile.get('me-help-you-video.value'))
                     .embed-responsive.embed-responsive-16by9
-                        iframe.embed-responsive-item.col-xs-12(src=media_embed(profile.get('me-help-you-video.value')), allowtransparency='true', frameborder='0', scrolling='no', allowfullscreen, mozallowfullscreen, webkitallowfullscreen, oallowfullscreen, msallowfullscreen)
+                        iframe.embed-responsive-item.col-xs-12(src=mediaEmbed(profile.get('me-help-you-video.value')), allowtransparency='true', frameborder='0', scrolling='no', allowfullscreen, mozallowfullscreen, webkitallowfullscreen, oallowfullscreen, msallowfullscreen)
                     .spacer.col-xs-12
                 else if profile.has('me-help-you-photo')
                     .col-xs-12
@@ -64,9 +64,9 @@ block content
             if profile.has('you-help-me-video') || profile.has('you-help-me-photo') || profile.has('you-help-me-text')
                 h2()= t('pages.user.you-help-me-tab')
 
-                if media_embed(profile.get('you-help-me-video.value'))
+                if mediaEmbed(profile.get('you-help-me-video.value'))
                     .embed-responsive.embed-responsive-16by9
-                        iframe.embed-responsive-item.col-xs-12(src=media_embed(profile.get('you-help-me-video.value')), allowtransparency='true', frameborder='0', scrolling='no', allowfullscreen, mozallowfullscreen, webkitallowfullscreen, oallowfullscreen, msallowfullscreen)
+                        iframe.embed-responsive-item.col-xs-12(src=mediaEmbed(profile.get('you-help-me-video.value')), allowtransparency='true', frameborder='0', scrolling='no', allowfullscreen, mozallowfullscreen, webkitallowfullscreen, oallowfullscreen, msallowfullscreen)
                     .spacer.col-xs-12
                 else if profile.has('you-help-me-photo')
                     .col-xs-12

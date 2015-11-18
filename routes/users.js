@@ -5,7 +5,7 @@ var entu   = require('../helpers/entu')
 
 
 // Convert media url to embeding url
-function media_embed(url) {
+function mediaEmbed(url) {
     if(!url) return null
 
     if(url.indexOf('youtu.be/') > -1) {
@@ -25,10 +25,10 @@ function media_embed(url) {
 
 // Get users JSON
 router.get('/json', function(req, res, next) {
-    entu.get_entities({
-        parent_entity_id: 615,
+    entu.getEntities({
+        parentEntityId: 615,
         definition: 'person',
-        full_object: true
+        fullObject: true
     }, function(error, profiles) {
         if(error) return next(error)
 
@@ -61,14 +61,14 @@ router.get('/', function(req, res) {
 router.get('/:id', function(req, res, next) {
     if(!req.params.id) res.redirect('/' + res.locals.lang + '/users')
 
-        entu.get_entity({
+        entu.getEntity({
             id: req.params.id
         }, function(error, profile) {
             if(error) return next(error)
 
             res.render('user', {
                 profile: profile,
-                media_embed: media_embed
+                mediaEmbed: mediaEmbed
             })
         })
 })

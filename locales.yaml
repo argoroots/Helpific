@@ -224,10 +224,10 @@ pages:
             hu: pl. Budapest
             ru: 'напр., Таллинн'
         offer-count:
-            en: "There are total {{ (help | filter:{type:type }).length }} help offers here <span ng-if='search_query || search_my'> - found {{ (help | filter:{status:s.status, type:type, my:search_my} | filter:search_query).length }}</span>"
-            et: "Kokku on meil {{ (help | filter:{type:type }).length }} abipakkumist <span ng-if='search_query || search_my'> - leiti {{ (help | filter:{status:s.status, type:type, my:search_my} | filter:search_query).length }}</span>"
-            hu: "Összesen {{ (help | filter:{type:type }).length }} felajánlás található a rendszerben <span ng-if='search_query || search_my'> - tal?lat {{ (help | filter:{status:s.status, type:type, my:search_my} | filter:search_query).length }}</span>"
-            ru: "У нас в общей сложности {{ (help | filter:{type:type }).length }} предложений помощи <span ng-if='search_query || search_my'> - найдено {{ (help | filter:{status:s.status, type:type, my:search_my} | filter:search_query).length }}</span>"
+            en: "There are total {{ (help | filter:{type:type }).length }} help offers here <span ng-if='search_query || searchMy'> - found {{ (help | filter:{status:s.status, type:type, my:searchMy} | filter:search_query).length }}</span>"
+            et: "Kokku on meil {{ (help | filter:{type:type }).length }} abipakkumist <span ng-if='search_query || searchMy'> - leiti {{ (help | filter:{status:s.status, type:type, my:searchMy} | filter:search_query).length }}</span>"
+            hu: "Összesen {{ (help | filter:{type:type }).length }} felajánlás található a rendszerben <span ng-if='search_query || searchMy'> - tal?lat {{ (help | filter:{status:s.status, type:type, my:searchMy} | filter:search_query).length }}</span>"
+            ru: "У нас в общей сложности {{ (help | filter:{type:type }).length }} предложений помощи <span ng-if='search_query || searchMy'> - найдено {{ (help | filter:{status:s.status, type:type, my:searchMy} | filter:search_query).length }}</span>"
         offer-request:
             en: Offer
             et: Pakkumine
@@ -259,10 +259,10 @@ pages:
             hu: Válasz
             ru: Ответить
         request-count:
-            en: "There are total {{ (help | filter:{type:type }).length }} help requests here <span ng-if='search_query || search_my'> - found {{ (help | filter:{status:s.status, type:type, my:search_my} | filter:search_query).length }}</span>"
-            et: "Kokku on meil {{ (help | filter:{type:type }).length }} abisoovi <span ng-if='search_query || search_my'> - leiti {{ (help | filter:{status:s.status, type:type, my:search_my} | filter:search_query).length }}</span>"
-            hu: "Összesen {{ (help | filter:{type:type }).length }} segítségkérés van a rendszerben <span ng-if='search_query || search_my'> - találat {{ (help | filter:{status:s.status, type:type, my:search_my} | filter:search_query).length }}</span>"
-            ru: "У нас в общей сложности {{ (help | filter:{type:type }).length }} просьб о помощи <span ng-if='search_query || search_my'> - найдено {{ (help | filter:{status:s.status, type:type, my:search_my} | filter:search_query).length }}</span>"
+            en: "There are total {{ (help | filter:{type:type }).length }} help requests here <span ng-if='search_query || searchMy'> - found {{ (help | filter:{status:s.status, type:type, my:searchMy} | filter:search_query).length }}</span>"
+            et: "Kokku on meil {{ (help | filter:{type:type }).length }} abisoovi <span ng-if='search_query || searchMy'> - leiti {{ (help | filter:{status:s.status, type:type, my:searchMy} | filter:search_query).length }}</span>"
+            hu: "Összesen {{ (help | filter:{type:type }).length }} segítségkérés van a rendszerben <span ng-if='search_query || searchMy'> - találat {{ (help | filter:{status:s.status, type:type, my:searchMy} | filter:search_query).length }}</span>"
+            ru: "У нас в общей сложности {{ (help | filter:{type:type }).length }} просьб о помощи <span ng-if='search_query || searchMy'> - найдено {{ (help | filter:{status:s.status, type:type, my:searchMy} | filter:search_query).length }}</span>"
         request-request:
             en: Request
             et: Soov
@@ -568,10 +568,10 @@ pages:
             hu: Profilkép
             ru: Фотография профиля
         photo-upload:
-            en: '{{ photo_upload }}% uploaded...'
-            et: '{{ photo_upload }}% laaditud...'
-            hu: '{{ photo_upload }}% feltöltve...'
-            ru: '{{ photo_upload }}% загружено...'
+            en: '{{ photoUploadPercent }}% uploaded...'
+            et: '{{ photoUploadPercent }}% laaditud...'
+            hu: '{{ photoUploadPercent }}% feltöltve...'
+            ru: '{{ photoUploadPercent }}% загружено...'
         save-info:
             en: Your profile info is saved automatically
             et: Sinu profiili info salvestub automaatselt

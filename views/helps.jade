@@ -1,7 +1,7 @@
 extends layout
 
 block vars
-    - title = t('pages.help.' + help_type + '-title')
+    - title = t('pages.help.' + helpType + '-title')
 
 block head
     script(src='/javascripts/date-et-EE.js')
@@ -17,19 +17,19 @@ block content
                     i.fa.fa-search
                 input#search-input.col-xs-10.text-center(type='search', placeholder='', ng-model='search_query' autofocus)
 
-            small.col-xs-12.text-center(ng-if='help')!= t('pages.help.' + help_type + '-count')
+            small.col-xs-12.text-center(ng-if='help')!= t('pages.help.' + helpType + '-count')
 
         if user
             .row.spacer
 
-            .row(ng-show='!add_new')
+            .row(ng-show='!addNew')
                 .checkbox.col-xs-6.col-sm-6.pull-left(ng-show='help')
                     label
-                        input(type='checkbox', ng-model='search_my')
-                        | #{ t('pages.help.only-my-' + help_type) }
+                        input(type='checkbox', ng-model='searchMy')
+                        | #{ t('pages.help.only-my-' + helpType) }
                 .col-xs-6.col-sm-6.text-right.pull-right
-                    a.btn.bg-red(ng-click='add_new = true')= t('pages.help.add-new-' + help_type)
-            .table(ng-show='add_new')
+                    a.btn.bg-red(ng-click='addNew = true')= t('pages.help.add-new-' + helpType)
+            .table(ng-show='addNew')
                 .row.bg-green-transparent
                     form
                         .form-group.narrow.col-xs-12.col-sm-3
@@ -41,22 +41,22 @@ block content
                             input.form-control(type='text', placeholder=t('pages.help.location-ph'), ng-model='new.location', ng-focus='location_new = true', ng-blur='location_new = false')
 
                         .form-group.narrow.col-xs-12.col-sm-6
-                            label.control-label(ng-class='{ "active": request_new }')= t('pages.help.' + help_type + '-request')
-                            input.form-control(type='text', placeholder=t('pages.help.' + help_type + '-request-ph'), ng-model='new.request', ng-focus='request_new = true', ng-blur='request_new = false')
+                            label.control-label(ng-class='{ "active": request_new }')= t('pages.help.' + helpType + '-request')
+                            input.form-control(type='text', placeholder=t('pages.help.' + helpType + '-request-ph'), ng-model='new.request', ng-focus='request_new = true', ng-blur='request_new = false')
                         .form-group.narrow.col-xs-10.col-sm-2.pull-right.text-right
                             label.control-label
-                            a.btn.bg-red.col-xs-12.text-center(ng-if='!adding', ng-click='Add("#{ help_type }", new)')= t('pages.help.save')
+                            a.btn.bg-red.col-xs-12.text-center(ng-if='!adding', ng-click='Add("#{ helpType }", new)')= t('pages.help.save')
                             a.btn.bg-red.col-xs-12.text-center(ng-if='adding', disabled)
                                 i.fa.fa-spinner.fa-pulse
                         .form-group.narrow.col-xs-2.pull-right.text-right
                             label.control-label
-                            a.btn.btn-link.text-right(ng-click='add_new = false')= t('pages.help.cancel')
+                            a.btn.btn-link.text-right(ng-click='addNew = false')= t('pages.help.cancel')
 
         .row(ng-repeat-start='s in statuses')
-            h2.col-xs-12(ng-if='(help | filter:{filter_status:s.status, type:type, filter_my:search_my} | filter:search_query).length > 0') {{ s.plural }}
+            h2.col-xs-12(ng-if='(help | filter:{filterStatus:s.status, type:type, filterMy:searchMy} | filter:search_query).length > 0') {{ s.plural }}
 
-        .table(ng-if='(help | filter:{filter_status:s.status, type:type} | filter:search_query).length > 0')
-            .row(ng-repeat='h in help | filter:{filter_status:s.status, type:type, filter_my:search_my} | filter:search_query | orderBy:["-time.sql", "-id"]', ng-class='{ "bg-green-transparent": h.editing }')
+        .table(ng-if='(help | filter:{filterStatus:s.status, type:type} | filter:search_query).length > 0')
+            .row(ng-repeat='h in help | filter:{filterStatus:s.status, type:type, filterMy:searchMy} | filter:search_query | orderBy:["-time.sql", "-id"]', ng-class='{ "bg-green-transparent": h.editing }')
 
                 div(ng-show='!h.editing')
                     a(ng-href='help/{{ h.type }}/{{ h.id }}')
@@ -77,8 +77,8 @@ block content
                         label.control-label(ng-class='{ "active": edit[$index].location }')= t('pages.help.location')
                         input.form-control(type='text', placeholder=t('pages.help.location-ph'), ng-model='h.location.value', ng-focus='edit[$index].location = true', ng-blur='edit[$index].location = false')
                     .form-group.narrow.col-xs-12.col-sm-6
-                        label.control-label(ng-class='{ "active": edit[$index].request }')= t('pages.help.' + help_type + '-request')
-                        input.form-control(type='text', placeholder=t('pages.help.' + help_type + '-request-ph'), ng-model='h.request.value', ng-focus='edit[$index].request = true', ng-blur='edit[$index].request = false')
+                        label.control-label(ng-class='{ "active": edit[$index].request }')= t('pages.help.' + helpType + '-request')
+                        input.form-control(type='text', placeholder=t('pages.help.' + helpType + '-request-ph'), ng-model='h.request.value', ng-focus='edit[$index].request = true', ng-blur='edit[$index].request = false')
                     .form-group.narrow.col-xs-12.col-sm-2
                         label.control-label(ng-class='{ "active": edit[$index].status }')= t('pages.help.status')
                         select.form-control(ng-options='s.status as s.label for s in statuses', ng-model='h.status.value', ng-focus='edit[$index].status = true', ng-blur='edit[$index].status = false')

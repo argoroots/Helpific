@@ -8,7 +8,7 @@ var sanitize = require('sanitize-html')
 
 
 
-var sign_data = function(data) {
+var signData = function(data) {
     data = data || {}
 
     if(!APP_ENTU_USER || !APP_ENTU_KEY) return data
@@ -31,13 +31,13 @@ var sign_data = function(data) {
 
 
 //Get entity from Entu
-exports.get_entity = get_entity = function(params, callback) {
+exports.getEntity = getEntity = function(params, callback) {
     if(params.auth_id && params.auth_token) {
         var headers = {'X-Auth-UserId': params.auth_id, 'X-Auth-Token': params.auth_token}
         var qs = {}
     } else {
         var headers = {}
-        var qs = sign_data()
+        var qs = signData()
     }
 
     var preparedUrl = APP_ENTU_URL + '/entity-' + params.id
@@ -91,7 +91,7 @@ exports.get_entity = get_entity = function(params, callback) {
 
 
 //Get entities by parent, definition or query
-exports.get_entities = function(params, callback) {
+exports.getEntities = function(params, callback) {
     var headers = {}
     var qs = {}
     if(params.definition) qs.definition = params.definition
@@ -100,11 +100,11 @@ exports.get_entities = function(params, callback) {
     if(params.auth_id && params.auth_token) {
         var headers = {'X-Auth-UserId': params.auth_id, 'X-Auth-Token': params.auth_token}
     } else {
-        var qs = sign_data(qs)
+        var qs = signData(qs)
     }
 
-    var url = params.parent_entity_id ? '/entity-' + params.parent_entity_id + '/childs' : '/entity'
-    var loop = params.parent_entity_id ? ['result', params.definition, 'entities'] : 'result'
+    var url = params.parentEntityId ? '/entity-' + params.parentEntityId + '/childs' : '/entity'
+    var loop = params.parentEntityId ? ['result', params.definition, 'entities'] : 'result'
 
     var preparedUrl = APP_ENTU_URL + url
     log.debug('Try to execute URL ' + preparedUrl)
@@ -114,8 +114,8 @@ exports.get_entities = function(params, callback) {
 
         var entities = []
         async.each(op.get(body, loop, []), function(e, callback) {
-            if(params.full_object === true) {
-                get_entity({
+            if(params.fullObject === true) {
+                getEntity({
                     id: e.id,
                     auth_id: params.auth_id,
                     auth_token: params.auth_token
@@ -154,10 +154,10 @@ exports.add = function(params, callback) {
         var qb = data
     } else {
         var headers = {}
-        var qb =sign_data(data)
+        var qb =signData(data)
     }
 
-    var preparedUrl = APP_ENTU_URL + '/entity-' + params.parent_entity_id
+    var preparedUrl = APP_ENTU_URL + '/entity-' + params.parentEntityId
     log.debug('Try to execute URL ' + preparedUrl)
     request.post({url: preparedUrl, headers: headers, body: qb, strictSSL: true, json: true, timeout: 60000}, function(error, response, body) {
         if(error) return callback(error)
@@ -180,7 +180,7 @@ exports.edit = function(params, callback) {
         var qb = body
     } else {
         var headers = {}
-        var qb = sign_data(body)
+        var qb = signData(body)
     }
 
     var preparedUrl = APP_ENTU_URL + '/entity-' + params.id
@@ -196,7 +196,7 @@ exports.edit = function(params, callback) {
 
 
 //Set file from url
-exports.set_file_from_url = function(params, callback) {
+exports.setFileFromUrl = function(params, callback) {
     var property = params.definition + '-' + params.property
     var body = {
         entity: params.id,
@@ -210,7 +210,7 @@ exports.set_file_from_url = function(params, callback) {
         var qb = body
     } else {
         var headers = {}
-        var qb = sign_data(body)
+        var qb = signData(body)
     }
 
     var preparedUrl = APP_ENTU_URL + '/file/url'
@@ -228,7 +228,7 @@ exports.set_file_from_url = function(params, callback) {
 //Set entity rights
 exports.rights = function(params, callback) {
     var body = {
-        entity: params.person_id,
+        entity: params.personId,
         right: params.right
     }
     if(params.auth_id && params.auth_token) {
@@ -236,7 +236,7 @@ exports.rights = function(params, callback) {
         var qb = body
     } else {
         var headers = {}
-        var qb = sign_data(body)
+        var qb = signData(body)
     }
 
     var preparedUrl = APP_ENTU_URL + '/entity-' + params.id + '/rights'
@@ -258,7 +258,7 @@ exports.file = function(params, callback) {
         var qb = params
     } else {
         var headers = {}
-        var qb = sign_data(params)
+        var qb = signData(params)
     }
 
     var preparedUrl = APP_ENTU_URL + '/file/s3'
@@ -287,7 +287,7 @@ exports.message = function(params, callback) {
         var qb = body
     } else {
         var headers = {}
-        var qb = sign_data(body)
+        var qb = signData(body)
     }
 
     var preparedUrl = APP_ENTU_URL + '/email'
@@ -303,7 +303,7 @@ exports.message = function(params, callback) {
 
 
 //Get signin url
-exports.get_signin_url = function(params, callback) {
+exports.getSigninUrl = function(params, callback) {
     var qb = {
         state: random.generate(16),
         redirect_url: params.redirect_url,
@@ -326,7 +326,7 @@ exports.get_signin_url = function(params, callback) {
 
 
 //Get user session
-exports.get_user_session = function(params, callback) {
+exports.getUserSession = function(params, callback) {
     var qb = {
         'state': params.state
     }
@@ -347,7 +347,7 @@ exports.get_user_session = function(params, callback) {
 
 
 //Get user
-exports.get_user = function(params, callback) {
+exports.getUser = function(params, callback) {
     if(params.auth_id && params.auth_token) {
         var headers = {'X-Auth-UserId': params.auth_id, 'X-Auth-Token': params.auth_token}
     } else {

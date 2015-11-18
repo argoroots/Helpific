@@ -13,15 +13,15 @@ router.get('/json', function(req, res) {
 
     moment.locale(res.locals.lang)
 
-    entu.get_entities({
+    entu.getEntities({
         definition: 'message',
         query: '.' + res.locals.user.id + '.',
-        full_object: true,
+        fullObject: true,
         auth_id: res.locals.user.id,
         auth_token: res.locals.user.token
     }, function(error, result) {
         var conversations = {}
-        var new_id_exists = false
+        var newIdExists = false
 
         for(var i in result) {
             var m = result[i]
@@ -37,25 +37,25 @@ router.get('/json', function(req, res) {
             }
 
             if(conversations[person.reference]) {
-                if(conversations[person.reference].message_id > m.get('_id')) continue
+                if(conversations[person.reference].messageId > m.get('_id')) continue
             }
 
-            if(new_id_exists === false) new_id_exists = person.reference === parseInt(req.query.new_id, 10)
+            if(newIdExists === false) newIdExists = person.reference === parseInt(req.query.new_id, 10)
 
             conversations[person.reference] = {
                 id: person.reference,
                 name: person.value,
                 picture: APP_ENTU_URL + '/entity-' + person.reference + '/picture',
                 date: m.get('_changed'),
-                relative_date: moment.utc(m.get('_changed')).tz(APP_TIMEZONE).fromNow(),
+                relativeDate: moment.utc(m.get('_changed')).tz(APP_TIMEZONE).fromNow(),
                 message: m.get('message.value'),
-                message_id: m.get('_id'),
+                messageId: m.get('_id'),
                 ordinal: m.get('_id')
             }
         }
 
-        if(req.query.new_id && !new_id_exists) {
-            entu.get_entity({
+        if(req.query.new_id && !newIdExists) {
+            entu.getEntity({
                 id: req.query.new_id
             }, function(error, person) {
                 conversations[person.get('_id')] = {
@@ -81,10 +81,10 @@ router.get('/json/:id', function(req, res) {
 
     moment.locale(res.locals.lang)
 
-    entu.get_entities({
+    entu.getEntities({
         definition: 'message',
         query: '.' + res.locals.user.id + '. .' + req.params.id + '.',
-        full_object: true,
+        fullObject: true,
         auth_id: res.locals.user.id,
         auth_token: res.locals.user.token
     }, function(error, result) {
@@ -103,17 +103,17 @@ router.get('/json/:id', function(req, res) {
             }
 
             var date = moment.utc(m.get('_changed')).tz(APP_TIMEZONE).calendar()
-            var relative_date = moment.utc(m.get('_changed')).tz(APP_TIMEZONE).fromNow()
-            days[relative_date] = {
+            var relativeDate = moment.utc(m.get('_changed')).tz(APP_TIMEZONE).fromNow()
+            days[relativeDate] = {
                 date: m.get('_created'),
-                relative_date: relative_date,
+                relativeDate: relativeDate,
                 ordinal: m.get('_id')
             }
             messages.push({
                 id: m.get('_id'),
                 person: m.get('from-person.reference'),
                 date: date,
-                relative_date: relative_date,
+                relativeDate: relativeDate,
                 message: m.get('message.value')
             })
         }
@@ -146,7 +146,7 @@ router.post('/:id', function(req, res, next) {
     properties.participants = 'from.' + res.locals.user.id + '.to.' + req.params.id + '.'
 
     entu.add({
-        parent_entity_id: APP_ENTU_USER,
+        parentEntityId: APP_ENTU_USER,
         definition: 'message',
         properties: properties
     }, function(error, new_id) {
@@ -156,26 +156,26 @@ router.post('/:id', function(req, res, next) {
             function(callback) {
                 entu.rights({
                     id: new_id,
-                    person_id: res.locals.user.id,
+                    personId: res.locals.user.id,
                     right: 'owner'
                 }, callback)
             },
             function(result, callback) {
                 entu.rights({
                     id: new_id,
-                    person_id: req.params.id,
+                    personId: req.params.id,
                     right: 'viewer'
                 }, callback)
             },
             function(result, callback) {
                 entu.rights({
                     id: new_id,
-                    person_id: APP_ENTU_USER,
+                    personId: APP_ENTU_USER,
                     right: ''
                 }, callback)
             },
             function(result, callback) {
-                entu.get_entity({
+                entu.getEntity({
                     id: req.params.id
                 }, callback)
             },
@@ -200,19 +200,19 @@ router.post('/:id', function(req, res, next) {
             if(err) return next(err)
 
             var date = moment.utc().tz(APP_TIMEZONE).calendar()
-            var relative_date = moment.utc().tz(APP_TIMEZONE).fromNow()
+            var relativeDate = moment.utc().tz(APP_TIMEZONE).fromNow()
             res.send({
                 day: {
                     date: date,
-                    relative_date: relative_date,
+                    relativeDate: relativeDate,
                     ordinal: new_id
                 },
                 message: {
                     person: res.locals.user.id,
                     date: date,
-                    relative_date: relative_date,
+                    relativeDate: relativeDate,
                     message: req.body.message,
-                    message_id: new_id
+                    messageId: new_id
                 }
             })
         })

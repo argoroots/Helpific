@@ -37,10 +37,10 @@ angular.module('hlpfc', ['ngSanitize'])
         if(PATH[3] === 'requests') $scope.type = 'request'
         if(PATH[3] === 'offers') $scope.type = 'offer'
         if(location.hash === '#add') {
-            $scope.add_new = true
-            $scope.search_my = true
+            $scope.addNew = true
+            $scope.searchMy = true
         } else if(location.hash === '#my') {
-            $scope.search_my = true
+            $scope.searchMy = true
         }
 
         $http({
@@ -92,7 +92,7 @@ angular.module('hlpfc', ['ngSanitize'])
                     $scope.new.location = null
                     $scope.new.request = null
                     $scope.adding = false
-                    $scope.add_new = false
+                    $scope.addNew = false
 
                     window.location.reload()
                 })
@@ -105,13 +105,13 @@ angular.module('hlpfc', ['ngSanitize'])
         $scope.Save = function(data) {
             $scope.saving = true
 
-            var post_data = {}
-            if(data.time.old != data.time.value) post_data.time = data.time
-            if(data.location.old != data.location.value) post_data.location = data.location
-            if(data.request.old != data.request.value) post_data.request = data.request
-            if(data.status.old != data.status.value) post_data.status = data.status
+            var postData = {}
+            if(data.time.old != data.time.value) postData.time = data.time
+            if(data.location.old != data.location.value) postData.location = data.location
+            if(data.request.old != data.request.value) postData.request = data.request
+            if(data.status.old != data.status.value) postData.status = data.status
 
-            angular.forEach(post_data, function(value, key) {
+            angular.forEach(postData, function(value, key) {
                 $http({
                         method : 'PUT',
                         url    : '/' + LANGUAGE + '/help/' + data.id,
@@ -126,7 +126,7 @@ angular.module('hlpfc', ['ngSanitize'])
                         data[key].value = result.value
                         data[key].old = result.value
 
-                        data.filter_status = data.status.value
+                        data.filterStatus = data.status.value
                         data.editing = false
                         $scope.saving = false
                     })
@@ -170,11 +170,11 @@ angular.module('hlpfc', ['ngSanitize'])
 // MESSAGES
     .controller('messagesCtrl', ['$scope', '$http', function($scope, $http) {
         $scope.id = PATH[3]
-        var id_param = $scope.id ? '?new_id=' + $scope.id : ''
+        var idParam = $scope.id ? '?new_id=' + $scope.id : ''
 
         $http({
                 method : 'GET',
-                url    : '/' + LANGUAGE + '/messages/json' + id_param
+                url    : '/' + LANGUAGE + '/messages/json' + idParam
             })
             .success(function(data) {
                 $scope.conversations = data
@@ -203,21 +203,21 @@ angular.module('hlpfc', ['ngSanitize'])
                     data   : { message: $scope.message }
                 })
                 .success(function(data) {
-                    var day_in_list = false
+                    var dayInList = false
                     for(i in $scope.messages.days) {
-                        if($scope.messages.days[i].relative_date === data.day.relative_date) {
-                            day_in_list = true
+                        if($scope.messages.days[i].relativeDate === data.day.relativeDate) {
+                            dayInList = true
                             break
                         }
                     }
                     for(i in $scope.conversations) {
                         if($scope.conversations[i].id === $scope.id) {
-                            $scope.conversations[i].relative_date = data.message.relative_date
-                            $scope.conversations[i].ordinal = data.message.message_id
+                            $scope.conversations[i].relativeDate = data.message.relativeDate
+                            $scope.conversations[i].ordinal = data.message.messageId
                             break
                         }
                     }
-                    if(!day_in_list) $scope.messages.days.push(data.day)
+                    if(!dayInList) $scope.messages.days.push(data.day)
 
                     $scope.messages.messages.push(data.message)
                     $scope.message = ''
@@ -259,19 +259,19 @@ angular.module('hlpfc', ['ngSanitize'])
 
                     xhr.upload.addEventListener('progress', function(ev) {
                         if(!ev.lengthComputable) return
-                        $scope.photo_upload = (ev.loaded * 100 / ev.total - 0.1).toFixed(1)
+                        $scope.photoUploadPercent = (ev.loaded * 100 / ev.total - 0.1).toFixed(1)
                         $scope.$apply()
                     }, false)
 
                     xhr.onreadystatechange = function() {
                         if(xhr.readyState != 4) return
                         if(xhr.status == 201) {
-                            $scope.photo_upload = 100
+                            $scope.photoUploadPercent = 100
                             $scope.$apply()
                             window.location.reload()
                         } else {
                             console.log(xhr)
-                            $scope.photo_upload = null
+                            $scope.photoUploadPercent = null
                             $scope.$apply()
                         }
                     }

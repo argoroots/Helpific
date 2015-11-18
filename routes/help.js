@@ -22,10 +22,10 @@ router.get('/json/statuses', function(req, res) {
 router.get('/json/:type*?', function(req, res, next) {
     moment.locale(res.locals.lang)
 
-    entu.get_entities({
+    entu.getEntities({
         definition: 'request',
         query: req.params.type ? req.params.type : '',
-        full_object: true
+        fullObject: true
     }, function(err, results) {
         if(err) return next(err)
 
@@ -61,8 +61,8 @@ router.get('/json/:type*?', function(req, res, next) {
                     id: r.get('request.id'),
                     value: r.get('request.value')
                 },
-                filter_status: r.get('status.value'),
-                filter_my: res.locals.user ? (res.locals.user.id === r.get('person.reference')) : 'null',
+                filterStatus: r.get('status.value'),
+                filterMy: res.locals.user ? (res.locals.user.id === r.get('person.reference')) : 'null',
             })
         }
 
@@ -75,9 +75,9 @@ router.get('/json/:type*?', function(req, res, next) {
 // Show requests/offers list
 router.get('/:type', function(req, res) {
     if(req.params.type === 'requests') {
-        var help_type = 'request'
+        var helpType = 'request'
     } else if(req.params.type === 'offers') {
-        var help_type = 'offer'
+        var helpType = 'offer'
     } else {
         res.redirect('/' + res.locals.lang + '/help/requests')
         return
@@ -85,7 +85,7 @@ router.get('/:type', function(req, res) {
 
     res.render('helps', {
         user_id: res.locals.user ? res.locals.user.id : null,
-        help_type: help_type
+        helpType: helpType
     })
 })
 
@@ -100,12 +100,12 @@ router.get('/:type/:id', function(req, res, next) {
 
     async.waterfall([
         function(callback) {
-            entu.get_entity({
+            entu.getEntity({
                 id: req.params.id
             }, callback)
         },
         function(help, callback) {
-            entu.get_entity({
+            entu.getEntity({
                 id: help.get('person.reference')
             }, function(error, profile) {
                 if(error) callback(error)
@@ -145,7 +145,7 @@ router.post('/', function(req, res, next) {
     async.series([
         function(callback) {
             entu.add({
-                parent_entity_id: APP_ENTU_USER,
+                parentEntityId: APP_ENTU_USER,
                 definition: 'request',
                 properties: properties
             }, function(error, id) {
@@ -158,14 +158,14 @@ router.post('/', function(req, res, next) {
             if(!res.locals.user) callback(null)
             entu.rights({
                 id: new_id,
-                person_id: res.locals.user.id,
+                personId: res.locals.user.id,
                 right: 'owner'
             }, callback)
         },
         function(callback) {
             entu.rights({
                 id: new_id,
-                person_id: APP_ENTU_USER,
+                personId: APP_ENTU_USER,
                 right: 'viewer'
             }, callback)
         },

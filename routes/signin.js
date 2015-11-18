@@ -18,7 +18,7 @@ router.get('/done', function(req, res, next) {
         return
     }
 
-    entu.get_user_session({
+    entu.getUserSession({
         auth_url: req.signedCookies.auth_url,
         state: req.signedCookies.auth_state
     }, function(error, user) {
@@ -29,7 +29,7 @@ router.get('/done', function(req, res, next) {
         res.cookie('auth_id', user.id, {signed:true, maxAge:1000*60*60*24*14})
         res.cookie('auth_token', user.token, {signed:true, maxAge:1000*60*60*24*14})
 
-        entu.get_entity({
+        entu.getEntity({
             id: user.id,
             auth_id: user.id,
             auth_token: user.token
@@ -67,7 +67,7 @@ router.get('/:provider', function(req, res, next) {
     res.clearCookie('auth_id')
     res.clearCookie('auth_token')
 
-    entu.get_signin_url({
+    entu.getSigninUrl({
         redirect_url: req.protocol + '://' + req.hostname + '/' + res.locals.lang + '/signin/done',
         provider: req.params.provider
     }, function(error, data) {

@@ -11,7 +11,7 @@ router.get('/', function(req, res, next) {
 
     async.waterfall([
         function(callback) {
-            entu.get_entity({
+            entu.getEntity({
                 id: res.locals.user.id,
                 auth_id: res.locals.user.id,
                 auth_token: res.locals.user.token
@@ -32,7 +32,7 @@ router.get('/', function(req, res, next) {
             }, function(error) {
                 if(error) return callback(error)
 
-                entu.get_entity({
+                entu.getEntity({
                     id: res.locals.user.id,
                     auth_id: res.locals.user.id,
                     auth_token: res.locals.user.token
@@ -42,7 +42,7 @@ router.get('/', function(req, res, next) {
         function(result, callback) {
             if(result.has('photo') || !res.locals.user.picture) return callback(null, result)
 
-            entu.set_file_from_url({
+            entu.setFileFromUrl({
                 id: res.locals.user.id,
                 definition: 'person',
                 property: 'photo',
@@ -52,7 +52,7 @@ router.get('/', function(req, res, next) {
             }, function(error) {
                 if(error) return callback(error)
 
-                entu.get_entity({
+                entu.getEntity({
                     id: res.locals.user.id,
                     auth_id: res.locals.user.id,
                     auth_token: res.locals.user.token
@@ -96,7 +96,7 @@ router.post('/photo', function(req, res, next) {
 
     async.waterfall([
         function(callback) {
-            entu.get_entity({
+            entu.getEntity({
                 id: res.locals.user.id,
                 auth_id: res.locals.user.id,
                 auth_token: res.locals.user.token

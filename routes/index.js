@@ -30,15 +30,15 @@ router.get('/', function(req, res) {
 router.get('/json', function(req, res, next) {
     async.parallel({
         help: function(callback) {
-            entu.get_entities({
+            entu.getEntities({
                 definition: 'request',
-                full_object: false
+                fullObject: false
             }, callback)
         },
         users: function(callback) {
-            entu.get_entities({
+            entu.getEntities({
                 definition: 'person',
-                full_object: false
+                fullObject: false
             }, callback)
         },
     },
@@ -56,9 +56,9 @@ router.get('/json', function(req, res, next) {
 
 // Show partners page
 router.get('/partners', function(req, res, next) {
-    entu.get_entities({
+    entu.getEntities({
         definition: 'partner',
-        full_object: true
+        fullObject: true
     }, function(error, partners) {
         if(error) return next(error)
 
@@ -72,10 +72,10 @@ router.get('/partners', function(req, res, next) {
 
 // Show team page
 router.get('/team', function(req, res, next) {
-    entu.get_entities({
-        parent_entity_id: 612,
+    entu.getEntities({
+        parentEntityId: 612,
         definition: 'person',
-        full_object: true
+        fullObject: true
     }, function(error, team) {
         if(error) return next(error)
 
@@ -129,7 +129,7 @@ router.post('/feedback', function(req, res, next) {
     async.series([
         function(callback) {
             entu.add({
-                parent_entity_id: APP_ENTU_USER,
+                parentEntityId: APP_ENTU_USER,
                 definition: 'feedback',
                 properties: properties
             }, function(error, id) {
@@ -142,7 +142,7 @@ router.post('/feedback', function(req, res, next) {
             if(res.locals.user) {
                 entu.rights({
                     id: new_id,
-                    person_id: res.locals.user.id,
+                    personId: res.locals.user.id,
                     right: 'owner'
                 }, callback)
             } else {
@@ -152,7 +152,7 @@ router.post('/feedback', function(req, res, next) {
         function(callback) {
             entu.rights({
                 id: new_id,
-                person_id: APP_ENTU_USER,
+                personId: APP_ENTU_USER,
                 right: ''
             }, callback)
         },

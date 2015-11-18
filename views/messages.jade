@@ -16,13 +16,13 @@ block content
                     .hidden-xs.hidden-sm.col-xs-8.col-md-9 {{ c.name }}
                         br
                         i.pull-right.fa.fa-spinner.fa-pulse(ng-show='selected === c.id && loading')
-                        small(ng-if='c.relative_date', title='{{ c.date }}') {{ c.relative_date }}
+                        small(ng-if='c.relativeDate', title='{{ c.date }}') {{ c.relativeDate }}
                 .row.conversation
 
             .message-list.col-xs-8.col-md-7.col-xs-offset-1(ng-show='selected && !loading')
                 .row(ng-repeat-start='d in messages.days | orderBy:"ordinal"')
-                    h5.col-xs-12.text-center {{ d.relative_date }}
-                .row(ng-repeat='m in messages.messages | filter:{ relative_date: d.relative_date } | orderBy:"id"')
+                    h5.col-xs-12.text-center {{ d.relativeDate }}
+                .row(ng-repeat='m in messages.messages | filter:{ relativeDate: d.relativeDate } | orderBy:"id"')
                     .message.bg-green-transparent.col-xs-11.col-sm-10.pull-left(ng-if='m.person !== #{ user.id }')
                         small.pull-left {{ m.date }}
                         br

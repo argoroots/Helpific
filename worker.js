@@ -54,7 +54,7 @@ i18n.configure({
 
 
 // initialize getsentry.com client
-var raven_client = new raven.Client({
+var ravenClient = new raven.Client({
     release: APP_VERSION,
     dataCallback: function(data) {
         delete data.request.env
@@ -74,7 +74,7 @@ express()
     .set('view engine', 'jade')
 
     // logs to getsentry.com - start
-    .use(raven.middleware.express.requestHandler(raven_client))
+    .use(raven.middleware.express.requestHandler(ravenClient))
 
     // cookies
     .use(cookie(APP_COOKIE_SECRET))
@@ -116,7 +116,7 @@ express()
         res.locals.path = req.path
         if(!req.signedCookies) next(null)
         if(req.signedCookies.auth_id && req.signedCookies.auth_token) {
-            entu.get_user({
+            entu.getUser({
                 auth_id: req.signedCookies.auth_id,
                 auth_token: req.signedCookies.auth_token
             }, function(error, user) {
@@ -150,7 +150,7 @@ express()
     .use('/:lang/users',    require('./routes/users'))
 
     // logs to getsentry.com - error
-    .use(raven.middleware.express.errorHandler(raven_client))
+    .use(raven.middleware.express.errorHandler(ravenClient))
 
     // show 404
     .use(function(req, res) {

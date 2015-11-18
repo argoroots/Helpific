@@ -25,11 +25,11 @@ block content
                     label.control-label(for='photo')= t('pages.profile.photo')
                     if profile.get('photo')
                         .row
-                            img.col-xs-12.col-sm-2(ng-show='!photo_upload', src=profile.get('photo.file'), alt=profile.get('photo.value'))
-                            a.col-xs-12.col-sm-2.text-left(ng-show='!photo_upload', ng-click='photoDelete(#{ profile.get("photo.id") })')= t('pages.profile.delete-photo')
-                    input.form-control.col-xs-12(ng-show='!photo_upload', type='file', custom-on-change='photoUpload')
+                            img.col-xs-12.col-sm-2(ng-show='!photoUploadPercent', src=profile.get('photo.file'), alt=profile.get('photo.value'))
+                            a.col-xs-12.col-sm-2.text-left(ng-show='!photoUploadPercent', ng-click='photoDelete(#{ profile.get("photo.id") })')= t('pages.profile.delete-photo')
+                    input.form-control.col-xs-12(ng-show='!photoUploadPercent', type='file', custom-on-change='photoUpload')
                     .row
-                        small.col-xs-12(ng-show='photo_upload')= t('pages.profile.photo-upload')
+                        small.col-xs-12(ng-show='photoUploadPercent')= t('pages.profile.photo-upload')
 
 
             .row
