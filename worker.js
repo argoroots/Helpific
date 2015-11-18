@@ -168,7 +168,7 @@ var app = express()
 
         res.render('error', {
             message: err.message,
-            error: APP_LOGLEVEL == 'debug' ? err : {}
+            error: APP_LOGLEVEL === 'debug' ? err : {}
         })
     })
 

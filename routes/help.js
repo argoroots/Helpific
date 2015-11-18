@@ -29,7 +29,7 @@ router.get('/json/:type*?', function(req, res, next) {
     }, function(err, results) {
         if(err) return next(err)
 
-        requests = []
+        var requests = []
         for(var i in results) {
             var r = results[i]
             if(req.query.id && parseInt(req.query.id) !== r.get('person.reference')) continue

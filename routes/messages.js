@@ -88,8 +88,8 @@ router.get('/json/:id', function(req, res, next) {
         auth_id: res.locals.user.id,
         auth_token: res.locals.user.token
     }, function(error, result) {
-        messages = []
-        days = {}
+        var messages = []
+        var days = {}
 
         for(var i in result) {
             var m = result[i]
