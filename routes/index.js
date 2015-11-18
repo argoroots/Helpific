@@ -13,7 +13,7 @@ function isTemplateExists(template) {
         var lstats = fs.lstatSync(filePath)
         return lstats.isFile()
     } catch (e) {
-        log.warn('Template ' + template + " does not exist")
+        log.warn('Template ' + template + ' does not exist')
         return false
     }
 }

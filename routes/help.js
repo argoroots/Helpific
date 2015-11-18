@@ -137,7 +137,7 @@ router.post('/', function(req, res, next) {
     properties.person = res.locals.user.id
 
     if(properties.time) {
-        if(properties.time.lenght === 10) properties.time + ' 00:00'
+        if(properties.time.lenght === 10) properties.time = properties.time + ' 00:00'
         properties.time = moment(properties.time, 'DD.MM.YYYY HH:mm').format('YYYY-MM-DD HH:mm')
     }
 
@@ -197,7 +197,7 @@ router.put('/:id', function(req, res, next) {
     if(!res.authenticate()) return
 
     if(req.body.property === 'time' && req.body.value) {
-        if(req.body.value.lenght === 10) req.body.value + ' 00:00'
+        if(req.body.value.lenght === 10) req.body.value = req.body.value + ' 00:00'
         req.body.value = moment(req.body.value, 'DD.MM.YYYY HH:mm').format('YYYY-MM-DD HH:mm')
     }
 

@@ -128,7 +128,7 @@ router.get('/json/:id', function(req, res) {
 
 
 // Show messages page
-router.get('/:id*?', function(req, res, next) {
+router.get('/:id*?', function(req, res) {
     if(!res.authenticate()) return
 
     res.render('messages')
@@ -143,7 +143,7 @@ router.post('/:id', function(req, res, next) {
     var properties = req.body
     properties['from-person'] = res.locals.user.id
     properties['to-person'] = req.params.id
-    properties['participants'] = 'from.' + res.locals.user.id + '.to.' + req.params.id + '.'
+    properties.participants = 'from.' + res.locals.user.id + '.to.' + req.params.id + '.'
 
     entu.add({
         parent_entity_id: APP_ENTU_USER,
