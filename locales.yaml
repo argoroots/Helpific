@@ -78,11 +78,11 @@ footer:
             </small>
 help:
     admin-email-message:
-        de: 'https://helpific.com/help/%s'
-        en: 'https://helpific.com/help/%s'
-        et: 'https://helpific.com/help/%s'
-        hu: 'https://helpific.com/help/%s'
-        ru: 'https://helpific.com/help/%s'
+        de: 'https://helpific.com/et/help/%s'
+        en: 'https://helpific.com/et/help/%s'
+        et: 'https://helpific.com/et/help/%s'
+        hu: 'https://helpific.com/et/help/%s'
+        ru: 'https://helpific.com/et/help/%s'
     admin-email-subject:
         de: Neue(s) Hilfsangebot/Anfrage
         en: Added new help request/offer
