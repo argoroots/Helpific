@@ -460,7 +460,7 @@ pages:
             en: Help those in need
             et: Aita abivajajaid
             hu: Segítségkérések
-            ru: Помоги тем, кто нуждаются
+            ru: Помоги тем, кто нуждается
         requests-link-alt:
             de: Rechte Tür
             en: Right door
@@ -501,7 +501,7 @@ pages:
             ru: >
                 <h2>Никогда прежде не было так легко помогать другим и получать
                 помощь!</h2> <p>Helpific объединяет помощников-добровольцев с теми,
-                кто нуждаются в помощи.</p> <p ng-if='info'>В настоящий момент у нас
+                кто нуждается в помощи.</p> <p ng-if='info'>В настоящий момент у нас
                 {{ info.help }} просьб о помощи и {{ info.users }} активных
                 помощников-добровольцев.</p>
     messages:
