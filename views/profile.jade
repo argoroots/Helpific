@@ -39,7 +39,7 @@ block content
 
                 .form-group.col-xs-12.col-sm-3
                     label.control-label(ng-class='{ "active": p.forename.edit }')= t('pages.profile.forename')
-                    input#forename.form-control(type='text', placeholder=t('pages.profile.forename-ph'), value=profile.get('forename.value'), data-value=profile.get('forename.value'), data-id=profile.get('forename.id'), ng-focus='p.forename.edit = true', ng-blur='p.forename.edit = false')
+                    input#forename.form-control(type='text', placeholder=t('pages.profile.forename-ph'), value=profile.get('forename.value'), data-value=profile.get('forename.value'), data-id=profile.get('forename.id'), ng-focus='p.forename.edit = true', ng-blur='p.forename.edit = false', ng-required='true')
 
                 .form-group.col-xs-12.col-sm-3
                     label.control-label(ng-class='{ "active": p.surname.edit }')= t('pages.profile.surname')
@@ -47,7 +47,7 @@ block content
 
                 .form-group.col-xs-12.col-sm-3
                     label.control-label(ng-class='{ "active": p.email.edit }')= t('pages.profile.email')
-                    input#email.form-control(type='text', placeholder=t('pages.profile.email-ph'), value=profile.get('email.value'), data-value=profile.get('email.value'), data-id=profile.get('email.id'), ng-focus='p.email.edit = true', ng-blur='p.email.edit = false')
+                    input#email.form-control(type='text', placeholder=t('pages.profile.email-ph'), value=profile.get('email.value'), data-value=profile.get('email.value'), data-id=profile.get('email.id'), ng-focus='p.email.edit = true', ng-blur='p.email.edit = false', ng-required='true')
 
                 .form-group.col-xs-12.col-sm-3
                     label.control-label(ng-class='{ "active": p.language.edit }')= t('pages.profile.language')

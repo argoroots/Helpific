@@ -59,14 +59,19 @@ html(lang=lang, ng-app='hlpfc')
                                 | #{ title }
                         .collapse.navbar-collapse(id='bs-example-navbar-collapse-1')
                             ul.nav.navbar-nav.navbar-right
-                                li
-                                    a(href='bb')= t('nav.bb')
+                                li.dropdown
+                                    a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false')
+                                        = t('nav.projects')
+                                    ul.dropdown-menu
+                                        li
+                                            a(href='bb')= t('nav.bb')
+
                                 li
                                     a(href='help/requests')= t('nav.requests')
                                 li
                                     a(href='help/offers')= t('nav.offers')
                                 li
-                                    a(href='users')= t('nav.users')
+                                    a(href='team')= t('nav.about')
                                 if user
                                     li.dropdown
                                         a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false')

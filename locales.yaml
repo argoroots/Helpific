@@ -144,6 +144,18 @@ message:
         hu: Új üzeneted érkezett a helpific.com-ra
         ru: Новое сообщение в helpific.com
 nav:
+    projects:
+        de: nav.projects
+        en: Projects
+        et: Projektid
+        hu: nav.projects
+        ru: Проекты
+    about:
+        de: nav.about
+        en: About
+        et: Meist
+        hu: nav.about
+        ru: О Нас
     bb:
         de: Jenseits von Grenzen
         en: Beyond Borders
