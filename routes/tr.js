@@ -4,8 +4,6 @@ var fs      = require('fs')
 var op      = require('object-path')
 var path    = require('path')
 
-var localeCopy = path.join(__dirname, '..', 'locales-copy.yaml');
-var doc = yaml.safeLoad(fs.readFileSync(localeCopy, 'utf8'))
 
 
 
@@ -29,9 +27,13 @@ router.get('/', function(req, res, next) {
 
 
     try {
-        for(var key in doc) {
-            var value = doc[key]
-            extracted(key, key, value)
+        var localeCopy = path.join(__dirname, '..', 'locales-copy.yaml');
+        if(fs.existsSync(localeCopy)) {
+            var doc = yaml.safeLoad(fs.readFileSync(localeCopy, 'utf8'))
+            for(var key in doc) {
+                var value = doc[key]
+                extracted(key, key, value)
+            }
         }
     } catch (e) {
         log.error(e)
@@ -49,18 +51,24 @@ router.post('/', function(req, res, next) {
     if(!res.authenticate()) return
     if(res.locals.user.id !== 918) return
 
-    var key = req.body.id;
-    var oldValue = op.get(doc, key);
-    var newValue = req.body.value;
+    var localeCopy = path.join(__dirname, '..', 'locales-copy.yaml');
+    if(fs.existsSync(localeCopy)) {
+        var doc = yaml.safeLoad(fs.readFileSync(localeCopy, 'utf8'))
+        var key = req.body.id;
+        var oldValue = op.get(doc, key);
+        var newValue = req.body.value;
 
-    if(oldValue !== newValue) {
-        op.set(doc, key, newValue)
-        fs.writeFile(localeCopy, yaml.safeDump(doc, { sortKeys: true, indent: 4 }), function(err) {
-            if(err) return console.log(err)
-            log.debug('Locales file saved to locales-copy.yaml')
-        })
+        if(oldValue !== newValue) {
+            op.set(doc, key, newValue)
+            fs.writeFile(localeCopy, yaml.safeDump(doc, { sortKeys: true, indent: 4 }), function(err) {
+                if(err) return console.log(err)
+                log.debug('Locales file saved to locales-copy.yaml')
+            })
+        }
+        log.debug('Old value was ' + oldValue + " , new value is " + newValue)
     }
-    log.debug('Old value was ' + oldValue + " , new value is " + newValue)
+
+    res.send()
 })
 
 

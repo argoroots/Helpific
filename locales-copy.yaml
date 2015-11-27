@@ -6,7 +6,7 @@ feedback:
         hu: 'https://helpific.entu.ee/entity/feedback/%s'
         ru: 'https://helpific.entu.ee/entity/feedback/%s'
     admin-email-subject:
-        de: Neues Feedback
+        de: sdfsdNeues Feedback
         en: Added new feedback
         et: Lisati uus tagasiside
         hu: feedback.admin-email-subject
@@ -144,12 +144,6 @@ message:
         hu: Új üzeneted érkezett a helpific.com-ra
         ru: Новое сообщение в helpific.com
 nav:
-    projects:
-        de: nav.projects
-        en: Projects
-        et: Projektid
-        hu: nav.projects
-        ru: Проекты
     about:
         de: nav.about
         en: About
@@ -205,6 +199,12 @@ nav:
         et: Partnerid
         hu: Partnerek
         ru: Партнеры
+    projects:
+        de: nav.projects
+        en: Projects
+        et: Projektid
+        hu: nav.projects
+        ru: Проекты
     requests:
         de: Anfragen
         en: Requests
@@ -303,7 +303,7 @@ pages:
             en: e.g. Will go to Nuustaku and got extra room
             et: näit. Lähen Nuustakule ja on üks vaba koht
             hu: pl. Budapestre megyek van egy szabad hely a kocsimban
-            ru: напр., еду на пляж и есть одно свободное место
+            ru: 'напр., еду на пляж и есть одно свободное место'
         offer-title:
             de: Hilfsangebote
             en: Help offers
@@ -345,7 +345,7 @@ pages:
             en: "e.g. I'll want to go to Nuustaku"
             et: näit. Soovin minna Nuustakule
             hu: pl. Budapestre akarok menni
-            ru: напр., хочу поехать на пляж
+            ru: 'напр., хочу поехать на пляж'
         request-title:
             de: Hilfsanfrage
             en: Help requests
@@ -436,13 +436,13 @@ pages:
             en: Let us know what you can do or need
             et: Anna teada kuidas saad aidata või mida vajad
             hu: Küld el nekünk segítségkérésed vagy felajánlásod
-            ru: Напиши, какую помощь Ты можешь предложить или в чем нуждаешься
+            ru: 'Напиши, какую помощь Ты можешь предложить или в чем нуждаешься'
         bullet-3:
             de: Werden Sie aktiv und treten Sie mit anderen in Kontakt.
             en: Make your needs and deeds work
             et: pages.index.bullet-3
             hu: Vedd fel a kapcsolatot másokkal
-            ru: Найди применение своим возможностям или получай помощь от других!
+            ru: 'Найди применение своим возможностям или получай помощь от других!'
         choose-way:
             de: Wähle deinen Weg
             en: Choose your way
@@ -472,7 +472,7 @@ pages:
             en: Help those in need
             et: Aita abivajajaid
             hu: Segítségkérések
-            ru: Помоги тем, кто нуждается
+            ru: 'Помоги тем, кто нуждается'
         requests-link-alt:
             de: Rechte Tür
             en: Right door
@@ -484,14 +484,14 @@ pages:
             en: "Isn't it easier together?"
             et: 'Koos on ju lihtsam!'
             hu: 'Együtt sokkal könnyebb!'
-            ru: 'Разве вместе не легче?'
+            ru: Разве вместе не легче?
         text:
             de: >
-                <h2>Es war noch nie einfacher, Hilfe zu geben und zu bekommen</h2>
-                <p>Helpific verbindet Freiwillige mit Menschen, welche Hilfe in
-                alltäglichen Aktivitäten benötigen.</p> <p ng-if='info'>Im Moment haben
-                wir {{ info.help }} Hilfsanfragen befriedigt und {{ info.users }} aktive
-                Freiwillige.</p>
+                <h2>Es war noch nie einfacher, Hilfe zu geben und zu
+                bekommen</h2> <p>Helpific verbindet Freiwillige mit Menschen,
+                welche Hilfe in alltäglichen Aktivitäten benötigen.</p> <p
+                ng-if='info'>Im Moment haben wir {{ info.help }} Hilfsanfragen
+                befriedigt und {{ info.users }} aktive Freiwillige.</p>
             en: >
                 <h2>It's never been easier to give and get help</h2> <p>Helpific
                 connects volunteers to those who need help with everyday
@@ -512,10 +512,10 @@ pages:
                 érkezett már válasz {{ info.users }} embertől.</p>
             ru: >
                 <h2>Никогда прежде не было так легко помогать другим и получать
-                помощь!</h2> <p>Helpific объединяет помощников-добровольцев с теми,
-                кто нуждается в помощи.</p> <p ng-if='info'>В настоящий момент у нас
-                {{ info.help }} просьб о помощи и {{ info.users }} активных
-                помощников-добровольцев.</p>
+                помощь!</h2> <p>Helpific объединяет помощников-добровольцев
+                с теми, кто нуждается в помощи.</p> <p ng-if='info'>В настоящий
+                момент у нас {{ info.help }} просьб о помощи и {{ info.users }}
+                активных помощников-добровольцев.</p>
     messages:
         new-message:
             de: Neue Nachricht
@@ -584,7 +584,7 @@ pages:
             en: e.g. 767 5th Avenue
             et: e.g. Tartu mnt. 1
             hu: pl. Kossuth utca 1.
-            ru: напр., Тартуское шоссе, 1
+            ru: 'напр., Тартуское шоссе, 1'
         city:
             de: Stadt
             en: City
@@ -596,7 +596,7 @@ pages:
             en: e.g. New York
             et: näit. Tallinn
             hu: 'pl: Budapest'
-            ru: напр., Таллинн
+            ru: 'напр., Таллинн'
         country:
             de: Land
             en: Country
@@ -608,7 +608,7 @@ pages:
             en: e.g. United States
             et: näit. Eesti
             hu: pl. Magyarország
-            ru: напр., Эстония
+            ru: 'напр., Эстония'
         county:
             de: Land
             en: County
@@ -620,7 +620,7 @@ pages:
             en: e.g NY
             et: näit. Harjumaa
             hu: 'pl: Pest megye'
-            ru: напр., Харьюмаа
+            ru: 'напр., Харьюмаа'
         delete-photo:
             de: Foto löschen
             en: Delete photo
@@ -638,7 +638,7 @@ pages:
             en: e.g. john@appleseed.com
             et: näit. juhan@õunaseeme.ee
             hu: pl. janos@telecom.hu
-            ru: напр., ivan@mail.ru
+            ru: 'напр., ivan@mail.ru'
         forename:
             de: Vorname
             en: Forename
@@ -650,7 +650,7 @@ pages:
             en: e.g. John
             et: näit. Juhan
             hu: pl. Ferenc
-            ru: напр., Иван
+            ru: 'напр., Иван'
         language:
             de: Sprache
             en: Language
@@ -734,7 +734,7 @@ pages:
             en: e.g. Appleseed
             et: näit. Õunaseeme
             hu: pl. Kovács
-            ru: напр., Иванов
+            ru: 'напр., Иванов'
         title:
             de: Mein Profil
             en: My profile
@@ -764,7 +764,7 @@ pages:
             en: How can people help you? You can leave it empty if you are not searching for help through this site.
             et: Millist abi sa vajad?
             hu: Miben lehetnek mások segítségedre? Hagyd ezt a mezőt üresen ha jelenleg nincs szükséged segítségre.
-            ru: Какая помощь Тебе нужна? Если помощь не нужна, оставь это поле пустым.
+            ru: 'Какая помощь Тебе нужна? Если помощь не нужна, оставь это поле пустым.'
         you-help-me-video:
             de: Video URL
             en: Video URL
