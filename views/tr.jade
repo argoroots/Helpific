@@ -11,8 +11,8 @@ block content
                             p= p.key
 
                         if p.key.indexOf(p.value) > -1
-                            .col-sm-8.bg-red
-                                input.form-control(value=p.value, data-id=p.key)
+                            .col-sm-8
+                                input.form-control.bg-red(value=p.value, data-id=p.key)
                         else
                             .col-sm-8
                                 input.form-control(value=p.value, data-id=p.key)
@@ -27,7 +27,7 @@ block content
                     value: input.val()
                 }
                 $.post('', postdata, function (data) {
-                    console.log(data)
+                    location.reload()
                 }).fail(console.log)
             }
         })

@@ -57,7 +57,7 @@ router.post('/', function(req, res, next) {
             log.debug('Locales file saved to locales-copy.yaml')
         })
     }
-    log.debug('Old value was' + oldValue + " , new value is " + newValue)
+    log.debug('Old value was ' + oldValue + " , new value is " + newValue)
 })
 
 
