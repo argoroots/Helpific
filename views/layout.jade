@@ -72,6 +72,13 @@ html(lang=lang, ng-app='hlpfc')
                                     a(href='help/offers')= t('nav.offers')
                                 li
                                     a(href='team')= t('nav.about')
+                                if lang == 'et'
+                                    li
+                                        a(href='http://vabatahtlik.helpific.com/', title="Blogspot")= t('nav.blog')
+                                else
+                                    li
+                                        a(href='http://volunteer.helpific.com/', title="Blogspot")= t('nav.blog')
+
                                 if user
                                     li.dropdown
                                         a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false')
@@ -141,7 +148,9 @@ html(lang=lang, ng-app='hlpfc')
                             i.fa.fa-facebook-square.fa-2x.social
                         a(href='https://www.twitter.com/helpific', target='_blank', title="Twitter")
                             i.fa.fa-twitter-square.fa-2x.social
-                        a(href='http://vabatahtlik.helpific.com/', target='_blank', title="Blogspot")
+                        a(href='http://vabatahtlik.helpific.com/', target='_blank', title="Blogspot Eesti")
+                            i.fa.fa-rss-square.fa-2x.social
+                        a(href='http://volunteer.helpific.com/', target='_blank', title="Blogspot English")
                             i.fa.fa-rss-square.fa-2x.social
                         a(href='http://www.enjoygram.com/tag/helpific', target='_blank', title="Instagram")
                             i.fa.fa-instagram.fa-2x.social

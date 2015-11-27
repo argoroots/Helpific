@@ -162,6 +162,12 @@ nav:
         et: Piirideta Elu
         hu: Túl a határokon
         ru: Жизнь Без Границ
+    blog:
+        de: nav.blog
+        en: Blog
+        et: Blogi
+        hu: nav.blog
+        ru: Блог
     me:
         messages:
             de: Nachrichten
@@ -309,7 +315,7 @@ pages:
             en: Offers
             et: Pakkumised
             hu: Felajánlások
-            ru: Предложения о помощи
+            ru: Предложения
         only-my-offer:
             de: Nur meine Hilfsangebote zeigen
             en: Show only my offers
