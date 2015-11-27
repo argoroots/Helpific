@@ -2,12 +2,14 @@ var router  = require('express').Router()
 var yaml    = require('js-yaml')
 var fs      = require('fs')
 var op      = require('object-path')
+var path    = require('path')
 
 // Show user own profile
 router.get('/', function(req, res, next) {
     if(!res.authenticate()) return
     if(res.locals.user.id !== 918) return
 
+    var localeCopy = path.join(__dirname, '..', 'locales-copy.yaml');
     var result = []
 
     function extracted(combinedKey, key, value) {
@@ -23,7 +25,7 @@ router.get('/', function(req, res, next) {
 
 
     try {
-        var doc = yaml.safeLoad(fs.readFileSync('locales-copy.yaml', 'utf8'))
+        var doc = yaml.safeLoad(fs.readFileSync(localeCopy, 'utf8'))
 
         for(var key in doc) {
             var value = doc[key]
@@ -45,7 +47,9 @@ router.post('/', function(req, res, next) {
     if(!res.authenticate()) return
     if(res.locals.user.id !== 918) return
 
-    var doc = yaml.safeLoad(fs.readFileSync('locales-copy.yaml', 'utf8'))
+    var localeCopy = path.join(__dirname, '..', 'locales-copy.yaml');
+
+    var doc = yaml.safeLoad(fs.readFileSync(localeCopy, 'utf8'))
     var key = req.body.id;
     var oldValue = op.get(doc, key);
     var newValue = req.body.value;
