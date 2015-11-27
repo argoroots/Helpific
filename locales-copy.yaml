@@ -9,8 +9,8 @@ feedback:
         de: Neues Feedback
         en: Added new feedback
         et: Lisati uus tagasiside
-        hu: help.admin-email-subject
-        ru: help.admin-email-subject
+        hu: feedback.admin-email-subject
+        ru: feedback.admin-email-subject
     email:
         de: E-Mail
         en: E-mail
