@@ -86,7 +86,7 @@ help:
     admin-email-subject:
         de: Neue(s) Hilfsangebot/Anfrage
         en: Added new help request/offer
-        et: Lisati uus abisoov/abipakkumine
+        et: Lisati uus soov/pakkumine
         hu: help.admin-email-subject
         ru: help.admin-email-subject
 locales:
@@ -172,7 +172,7 @@ nav:
         offers:
             de: Meine Angebote
             en: My offers
-            et: Minu abipakkumised
+            et: Minu pakkumised
             hu: Az én felajánlásaim
             ru: Мои предложения
         profile:
@@ -184,7 +184,7 @@ nav:
         requests:
             de: Meine Anfragen
             en: My requests
-            et: Minu abisoovid
+            et: Minu soovid
             hu: Segítségkéréseim
             ru: Мои просьбы
         sign-out:
@@ -196,9 +196,9 @@ nav:
     offers:
         de: Angebote
         en: Offers
-        et: Abipakkumised
+        et: Pakkumised
         hu: Felajánlások
-        ru: Предложения помощи
+        ru: Предложения
     partners:
         de: Partner
         en: Partners
@@ -208,7 +208,7 @@ nav:
     requests:
         de: Anfragen
         en: Requests
-        et: Abisoovid
+        et: Soovid
         hu: Segítségkérések
         ru: Просьбы
     sign-in:
@@ -252,16 +252,16 @@ pages:
     help:
         add-new-offer:
             de: Neues Hilsangebot hinzufügen
-            en: Add new help offer
-            et: Lisa uus abipakkumine
+            en: Add new offer
+            et: Lisa uus pakkumine
             hu: Új felajánlás hozzáadása
-            ru: Добавить новое предложение помощи
+            ru: Добавить новое предложение
         add-new-request:
             de: Neue Hilfsanfrage hinzufügen
-            en: Add new help request
-            et: Lisa uus abisoov
+            en: Add new request
+            et: Lisa uus soov
             hu: Új segítségkérés hozzáadása
-            ru: Добавить новую просьбу о помощи
+            ru: Добавить новую просьбу
         cancel:
             de: Löschen
             en: Cancel
@@ -288,10 +288,10 @@ pages:
             ru: 'напр., Таллинн'
         offer-count:
             de: "Insgesamt gibt es {{ (help | filter:{type:type }).length }} Hilfsangebote hier <span ng-if='search_query || search_my'> - found {{ (help | filter:{status:s.status, type:type, my:search_my} | filter:search_query).length }}</span>"
-            en: "There are total {{ (help | filter:{type:type }).length }} help offers here <span ng-if='search_query || searchMy'> - found {{ (help | filter:{status:s.status, type:type, my:searchMy} | filter:search_query).length }}</span>"
-            et: "Kokku on meil {{ (help | filter:{type:type }).length }} abipakkumist <span ng-if='search_query || searchMy'> - leiti {{ (help | filter:{status:s.status, type:type, my:searchMy} | filter:search_query).length }}</span>"
+            en: "There are total {{ (help | filter:{type:type }).length }} offers here <span ng-if='search_query || searchMy'> - found {{ (help | filter:{status:s.status, type:type, my:searchMy} | filter:search_query).length }}</span>"
+            et: "Kokku on meil {{ (help | filter:{type:type }).length }} pakkumist <span ng-if='search_query || searchMy'> - leiti {{ (help | filter:{status:s.status, type:type, my:searchMy} | filter:search_query).length }}</span>"
             hu: "Összesen {{ (help | filter:{type:type }).length }} felajánlás található a rendszerben <span ng-if='search_query || searchMy'> - tal?lat {{ (help | filter:{status:s.status, type:type, my:searchMy} | filter:search_query).length }}</span>"
-            ru: "У нас в общей сложности {{ (help | filter:{type:type }).length }} предложений помощи <span ng-if='search_query || searchMy'> - найдено {{ (help | filter:{status:s.status, type:type, my:searchMy} | filter:search_query).length }}</span>"
+            ru: "У нас в общей сложности {{ (help | filter:{type:type }).length }} предложений <span ng-if='search_query || searchMy'> - найдено {{ (help | filter:{status:s.status, type:type, my:searchMy} | filter:search_query).length }}</span>"
         offer-request:
             de: Angebote
             en: Offer
@@ -307,19 +307,19 @@ pages:
         offer-title:
             de: Hilfsangebote
             en: Help offers
-            et: Abipakkumised
+            et: Pakkumised
             hu: Felajánlások
             ru: Предложения о помощи
         only-my-offer:
             de: Nur meine Hilfsangebote zeigen
             en: Show only my help offers
-            et: Näita ainult minu abipakkumisi
+            et: Näita ainult minu pakkumisi
             hu: Csak az én felajánlásaim legyenek láthatóak
             ru: Показывать только мои предложения помощи
         only-my-request:
             de: Nur meine Hilfsanfragen zeigen
             en: Show only my help requests
-            et: Näita ainult minu abisoove
+            et: Näita ainult minu soove
             hu: Csak az én segítségkéréseim legyenek láthatóak
             ru: Показывать только мои просьбы о помощи
         reply:
@@ -330,10 +330,10 @@ pages:
             ru: Ответить
         request-count:
             de: "Es gibts insgesamt {{ (help | filter:{type:type }).length }} Hilfsanfragen hier <span ng-if='search_query || search_my'> - gefunden {{ (help | filter:{status:s.status, type:type, my:search_my} | filter:search_query).length }}</span>"
-            en: "There are total {{ (help | filter:{type:type }).length }} help requests here <span ng-if='search_query || searchMy'> - found {{ (help | filter:{status:s.status, type:type, my:searchMy} | filter:search_query).length }}</span>"
-            et: "Kokku on meil {{ (help | filter:{type:type }).length }} abisoovi <span ng-if='search_query || searchMy'> - leiti {{ (help | filter:{status:s.status, type:type, my:searchMy} | filter:search_query).length }}</span>"
+            en: "There are total {{ (help | filter:{type:type }).length }} requests here <span ng-if='search_query || searchMy'> - found {{ (help | filter:{status:s.status, type:type, my:searchMy} | filter:search_query).length }}</span>"
+            et: "Kokku on meil {{ (help | filter:{type:type }).length }} soovi <span ng-if='search_query || searchMy'> - leiti {{ (help | filter:{status:s.status, type:type, my:searchMy} | filter:search_query).length }}</span>"
             hu: "Összesen {{ (help | filter:{type:type }).length }} segítségkérés van a rendszerben <span ng-if='search_query || searchMy'> - találat {{ (help | filter:{status:s.status, type:type, my:searchMy} | filter:search_query).length }}</span>"
-            ru: "У нас в общей сложности {{ (help | filter:{type:type }).length }} просьб о помощи <span ng-if='search_query || searchMy'> - найдено {{ (help | filter:{status:s.status, type:type, my:searchMy} | filter:search_query).length }}</span>"
+            ru: "У нас в общей сложности {{ (help | filter:{type:type }).length }} просьб <span ng-if='search_query || searchMy'> - найдено {{ (help | filter:{status:s.status, type:type, my:searchMy} | filter:search_query).length }}</span>"
         request-request:
             de: Anfragen
             en: Request
@@ -349,9 +349,9 @@ pages:
         request-title:
             de: Hilfsanfrage
             en: Help requests
-            et: Abisoovid
+            et: Soovid
             hu: Segítségkérés
-            ru: Просьбы о помощи
+            ru: Просьбы
         save:
             de: Speichern
             en: Save
@@ -563,16 +563,16 @@ pages:
             ru: Ссылка на видео
         add-new-offer:
             de: Neues Hilfsangebot hinzufügen
-            en: Add new help offer
-            et: Lisa uus abipakkumine
+            en: Add new offer
+            et: Lisa uus pakkumine
             hu: Új felajánlás küldése
-            ru: Добавить новое предложение помощи
+            ru: Добавить новое предложение
         add-new-request:
             de: Neue Hilfsanfrage hinzufügen
-            en: Add new help request
-            et: Lisa uus abisoov
+            en: Add new request
+            et: Lisa uus soov
             hu: Új segítségkérés küldése
-            ru: Добавить новую просьбу о помощи
+            ru: Добавить новую просьбу
         address:
             de: Adresse
             en: Address
@@ -826,15 +826,15 @@ pages:
         help-offers:
             de: Meine Hilfsangebote
             en: My help offers
-            et: Minu abipakkumised
+            et: Minu pakkumised
             hu: Felajánlásaim
-            ru: Мои предложения помощи
+            ru: Мои предложения
         help-requests:
             de: Meine Hilfsanfragen
             en: My help requests
-            et: Minu abisoovid
+            et: Minu soovid
             hu: Segítségkéréseim
-            ru: Мои просьбы о помощи
+            ru: Мои просьбы
         me-help-you-tab:
             de: Ich kann anderen helfen
             en: I can help others
