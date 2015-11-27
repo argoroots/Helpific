@@ -4,12 +4,16 @@ var fs      = require('fs')
 var op      = require('object-path')
 var path    = require('path')
 
+var localeCopy = path.join(__dirname, '..', 'locales-copy.yaml');
+var doc = yaml.safeLoad(fs.readFileSync(localeCopy, 'utf8'))
+
+
+
 // Show user own profile
 router.get('/', function(req, res, next) {
     if(!res.authenticate()) return
     if(res.locals.user.id !== 918) return
 
-    var localeCopy = path.join(__dirname, '..', 'locales-copy.yaml');
     var result = []
 
     function extracted(combinedKey, key, value) {
@@ -25,8 +29,6 @@ router.get('/', function(req, res, next) {
 
 
     try {
-        var doc = yaml.safeLoad(fs.readFileSync(localeCopy, 'utf8'))
-
         for(var key in doc) {
             var value = doc[key]
             extracted(key, key, value)
@@ -47,16 +49,13 @@ router.post('/', function(req, res, next) {
     if(!res.authenticate()) return
     if(res.locals.user.id !== 918) return
 
-    var localeCopy = path.join(__dirname, '..', 'locales-copy.yaml');
-
-    var doc = yaml.safeLoad(fs.readFileSync(localeCopy, 'utf8'))
     var key = req.body.id;
     var oldValue = op.get(doc, key);
     var newValue = req.body.value;
 
     if(oldValue !== newValue) {
         op.set(doc, key, newValue)
-        fs.writeFile('locales-copy.yaml', yaml.safeDump(doc, { sortKeys: true, indent: 4 }), function(err) {
+        fs.writeFile(localeCopy, yaml.safeDump(doc, { sortKeys: true, indent: 4 }), function(err) {
             if(err) return console.log(err)
             log.debug('Locales file saved to locales-copy.yaml')
         })
