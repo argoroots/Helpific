@@ -50,6 +50,7 @@ exports.init = function(req, res, next) {
         res.locals.lang = i18nConfig.lang = req.path.split('/')[1]
         res.locals.locales = i18nConfig.locales
         res.locals.t = translate
+        res.locals.tt = getText
 
         next()
     }
@@ -72,5 +73,11 @@ exports.translate = translate = function translate(key, text) {
         var re = new RegExp('%s', 'g')
         value = value.replace(re, text)
     }
+    return value || key
+}
+
+
+exports.getText = getText = function getText(key) {
+    var value = op.get(i18nConfig, 'translations.' + key)
     return value || key
 }

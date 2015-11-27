@@ -1,0 +1,33 @@
+extends layout
+block vars
+    - title = t('pages.tr.title')
+block content
+    .container
+        form#translation-form
+            each p, i in result
+                .row
+                    .form-group
+                        .col-sm-4
+                            p= p.key
+
+                        if p.key.indexOf(p.value) > -1
+                            .col-sm-8.bg-red
+                                input.form-control(value=p.value, data-id=p.key)
+                        else
+                            .col-sm-8
+                                input.form-control(value=p.value, data-id=p.key)
+
+    script.
+        $('input').blur(function () {
+            input = $(this)
+            if (input.data('value') != input.val()) {
+                var postdata = {
+                    property: input.attr('id'),
+                    id: input.data('id'),
+                    value: input.val()
+                }
+                $.post('', postdata, function (data) {
+                    console.log(data)
+                }).fail(console.log)
+            }
+        })

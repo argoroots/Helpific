@@ -797,6 +797,13 @@ pages:
             et: Meie meeskond
             hu: A Helpific csapata
             ru: Наша команда
+    tr:
+        title:
+            de: Translations
+            en: Translations
+            et: Translations
+            hu: Translations
+            ru: Translations
     user:
         about-me-tab:
             de: Über mich

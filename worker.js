@@ -148,6 +148,7 @@ express()
     .use('/:lang/profile',  require('./routes/profile'))
     .use('/:lang/signin',   require('./routes/signin'))
     .use('/:lang/users',    require('./routes/users'))
+    .use('/:lang/tr',       require('./routes/tr'))
 
     // logs to getsentry.com - error
     .use(raven.middleware.express.errorHandler(ravenClient))
