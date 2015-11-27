@@ -306,19 +306,19 @@ pages:
             ru: напр., еду на пляж и есть одно свободное место
         offer-title:
             de: Hilfsangebote
-            en: Help offers
+            en: Offers
             et: Pakkumised
             hu: Felajánlások
             ru: Предложения о помощи
         only-my-offer:
             de: Nur meine Hilfsangebote zeigen
-            en: Show only my help offers
+            en: Show only my offers
             et: Näita ainult minu pakkumisi
             hu: Csak az én felajánlásaim legyenek láthatóak
             ru: Показывать только мои предложения помощи
         only-my-request:
             de: Nur meine Hilfsanfragen zeigen
-            en: Show only my help requests
+            en: Show only my requests
             et: Näita ainult minu soove
             hu: Csak az én segítségkéréseim legyenek láthatóak
             ru: Показывать только мои просьбы о помощи
@@ -348,7 +348,7 @@ pages:
             ru: напр., хочу поехать на пляж
         request-title:
             de: Hilfsanfrage
-            en: Help requests
+            en: Requests
             et: Soovid
             hu: Segítségkérés
             ru: Просьбы
@@ -496,7 +496,7 @@ pages:
                 <h2>It's never been easier to give and get help</h2> <p>Helpific
                 connects volunteers to those who need help with everyday
                 activities.</p> <p ng-if='info'>At the moment we have {{
-                info.help }} help requests fulfilled and {{ info.users }} active
+                info.help }} requests fulfilled and {{ info.users }} active
                 volunteers.</p>
             et: >
                 <h2>Kunagi varem pole abi osutamine ja saamine olnud nii
@@ -825,13 +825,13 @@ pages:
             ru: 'Пожертвования следует переводить на банковский счет Helpific MTÜ. В пояснении обязательно укажите "%s"'
         help-offers:
             de: Meine Hilfsangebote
-            en: My help offers
+            en: My offers
             et: Minu pakkumised
             hu: Felajánlásaim
             ru: Мои предложения
         help-requests:
             de: Meine Hilfsanfragen
-            en: My help requests
+            en: My requests
             et: Minu soovid
             hu: Segítségkéréseim
             ru: Мои просьбы
