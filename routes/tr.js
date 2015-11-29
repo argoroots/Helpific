@@ -6,13 +6,15 @@ var path    = require('path')
 
 
 
+var newLanguage = ['ko']
 
 // Show user own profile
 router.get('/', function(req, res, next) {
     if(!res.authenticate()) return
-    if(res.locals.user.id !== 918) return
+    //if(res.locals.user.id !== 918) return
 
     var result = []
+    var newLanguageResult = []
 
     function extracted(combinedKey, key, value) {
         if (typeof value === 'object' && typeof key === 'string') {
@@ -22,6 +24,9 @@ router.get('/', function(req, res, next) {
             }
         } else {
             result.push({key: combinedKey, value: value})
+            var lastIndex = combinedKey.lastIndexOf(".")
+            var newKey = combinedKey.substring(0, lastIndex)
+            newLanguageResult[newKey] = newKey
         }
     }
 
@@ -39,6 +44,33 @@ router.get('/', function(req, res, next) {
         log.error(e)
     }
 
+    for (var i in newLanguageResult){
+        for ( var u in newLanguage){
+            var found = false
+            var nlk = newLanguageResult[i] + '.' + newLanguage[u];
+            for( var e in result) {
+                if(result[e].key === nlk){
+                    found = true
+                }
+            }
+
+            if(!found){
+                result.push({key: nlk, value: ''})
+            }
+        }
+    }
+
+
+    function compare(a,b) {
+        if (a.key < b.key)
+            return -1;
+        if (a.key > b.key)
+            return 1;
+        return 0;
+    }
+
+    result.sort(compare);
+
     res.render('tr', {
         result: result
     })
@@ -49,7 +81,7 @@ router.get('/', function(req, res, next) {
 // Edit user profile
 router.post('/', function(req, res, next) {
     if(!res.authenticate()) return
-    if(res.locals.user.id !== 918) return
+    //if(res.locals.user.id !== 918) return
 
     var localeCopy = path.join(__dirname, '..', 'locales-copy.yaml');
     if(fs.existsSync(localeCopy)) {
