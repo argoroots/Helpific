@@ -1,10 +1,10 @@
 extends layout
 
 block vars
-    - title = profile.get('forename.value') + ' ' + profile.get('surname.value')
+    - title = profile.get('forename.value')
 
 block head
-    meta(property='og:title', content=profile.get('forename.value') + ' ' + profile.get('surname.value'))
+    meta(property='og:title', content=profile.get('forename.value'))
     meta(property='og:image', content=profile.get('_picture'))
     meta(property='og:description', content=help.get('request.value'))
 
@@ -18,7 +18,7 @@ block title
             .row
                 a(href='users/' + help.get('person.reference', ''))
                     h1.color-green.col-xs-12.text-center
-                        | #{profile.get('forename.value')} #{profile.get('surname.value')}
+                        | #{profile.get('forename.value')}
                 p.text-center
                     em= profile.get('slogan.value')
 
