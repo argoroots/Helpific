@@ -60,7 +60,7 @@ router.get('/json', function(req, res) {
             }, function(error, person) {
                 conversations[person.get('_id')] = {
                     id: person.get('_id'),
-                    name: person.get('forename.value') + ' ' + person.get('surname.value'),
+                    name: person.get('forename.value'),
                     picture: APP_ENTU_URL + '/entity-' + person.get('_id') + '/picture',
                     date: null,
                     ordinal: 'ZZZ'
