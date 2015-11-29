@@ -37,7 +37,7 @@ router.get('/json', function(req, res, next) {
             var p = profiles[i]
             users.push({
                 id: p.get('_id'),
-                name: p.get('forename.value', '') + ' ' + p.get('surname.value', ''),
+                name: p.get('forename.value', ''),
                 picture: p.get('_picture'),
                 slogan: p.get('slogan.value'),
                 location: p.has('town.value') && p.has('county.value') ? p.get('town.value') + ', ' + p.get('county.value') : p.get('town.value', '') + p.get('county.value', '')
