@@ -6,7 +6,7 @@ var path    = require('path')
 
 
 
-var newLanguage = ['en', 'et', 'ru', 'hu', 'de', 'ko', 'fi']
+var newLanguage = ['en', 'et', 'ru', 'hu', 'de', 'ko', 'fi', 'nl', 'cs', 'bg', 'ja', 'zh']
 
 // Show user own profile
 router.get('/', function(req, res, next) {
