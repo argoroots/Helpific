@@ -77,7 +77,7 @@ footer:
                 SWIFT/BIC: HABAEE2X (SWEDBANK AS)<br>
                 <a href="mailto:info@helpific.com">info@helpific.com</a>
             </small>
-        ko: footer.contact
+        ko: '<strong>HELPIFIC MTÜ</strong><br> <small>    Reg nr: 80380146<br>    계좌번호(IBAN): EE102200221061303677<br>    SWIFT/BIC: HABAEE2X (SWEDBANK AS)<br>    <a href="mailto:info@helpific.com">info@helpific.com</a></small>'
         ru: |
             <strong>HELPIFIC MTÜ</strong><br> <small>
                 Рег. нр.: 80380146<br>
@@ -129,12 +129,12 @@ locales:
         ko: Magyar
         ru: Magyar
     ko:
+        de: 한국어
         en: 한국어
         et: 한국어
         hu: 한국어
-        ru: 한국어
-        de: 한국어
         ko: 한국어
+        ru: 한국어
     ru:
         de: Русский
         en: Русский
@@ -165,7 +165,7 @@ message:
         en: New message in helpific.com
         et: "Uus sõnum helpific.com'is"
         hu: Új üzeneted érkezett a helpific.com-ra
-        ko: helpific.com에 새로운 메시지
+        ko: helpific.com에 새 메시지
         ru: Новое сообщение в helpific.com
 nav:
     about:
@@ -173,6 +173,7 @@ nav:
         en: About
         et: Meist
         hu: Magunkról
+        ko: 함께하는 사람들
         ru: О Нас
     bb:
         de: Jenseits von Grenzen
@@ -243,6 +244,7 @@ nav:
         en: Projects
         et: Projektid
         hu: Projektek
+        ko: 프로젝트
         ru: Проекты
     requests:
         de: Anfragen
@@ -329,14 +331,14 @@ pages:
             en: Location
             et: Asukoht
             hu: Helyszín
-            ko: '예: 서울, 용산구'
+            ko: 장소
             ru: Месторасположение
         location-ph:
             de: 'Bsp. Tallinn, Harjumaa'
             en: 'e.g. Tallinn, Harjumaa'
             et: 'näit. Tallinn, Harjumaa'
             hu: pl. Budapest
-            ko: 장소
+            ko: '예: 서울, 용산구'
             ru: 'напр., Таллинн'
         offer-count:
             de: "Insgesamt gibt es {{ (help | filter:{type:type }).length }} Hilfsangebote hier <span ng-if='search_query || search_my'> - found {{ (help | filter:{status:s.status, type:type, my:search_my} | filter:search_query).length }}</span>"
@@ -357,7 +359,7 @@ pages:
             en: e.g. Will go to Nuustaku and got extra room
             et: näit. Lähen Nuustakule ja on üks vaba koht
             hu: pl. Budapestre megyek van egy szabad hely a kocsimban
-            ko: '예: 서울에 가려는데 차에 빈 좌석이 2개 있습니다.'
+            ko: '예: 자가용으로 서울에 방문하는데 빈 좌석 2개를 공유할 수 있습니다.'
             ru: 'напр., еду на пляж и есть одно свободное место'
         offer-title:
             de: Hilfsangebote
@@ -519,7 +521,7 @@ pages:
             en: Make your needs and deeds work
             et: pages.index.bullet-3
             hu: Vedd fel a kapcsolatot másokkal
-            ko: 활동을 시작합니다.
+            ko: '활동을 시작합니다!'
             ru: 'Найди применение своим возможностям или получай помощь от других!'
         choose-way:
             de: Wähle deinen Weg
@@ -533,7 +535,7 @@ pages:
             en: How Helpific works?
             et: Kuidas Helpific töötab?
             hu: Hogyan működik a Helpific?
-            ko: 어떻게 Helpific을 이용하나요?
+            ko: Helpific을 어떻게 이용하나요?
             ru: Как устроен Helpific?
         offers-link:
             de: Freiwillige treffen
@@ -595,7 +597,7 @@ pages:
                 emberekkel, akiknek segítségre van szüksége a mindennapokban.
                 </p> <p ng-if='info'>Jelenleg {{ info.help }} segítségkérésre
                 érkezett már válasz {{ info.users }} embertől.</p>
-            ko: "<h2>도움을 주고받는 일은 어렵지 않습니다.</h2> <p>Helpific은 일상생활 속에서 도움이 필요한 사람들과 도움을 나눌 수 있는 사람들을 연결합니다. </p> <p ng-if='info'> 현재까지 우리는 {{ info.help }} 도움을 주고받았고 {{ info.users }} 활동 중인 봉사자들이 있습니다.</p>"
+            ko: "<h2>도움을 주고받는 일, 어렵지 않습니다.</h2> <p>Helpific은 일상 속에서 도움이 필요한 사람과 도움을 나눌 수 있는 사람을 연결합니다. </p> <p ng-if='info'> 현재까지 우리는  도움을 주고받았고  활동 중인 봉사자들이 있습니다.</p>"
             ru: >
                 <h2>Никогда прежде не было так легко помогать другим и получать
                 помощь!</h2> <p>Helpific объединяет помощников-добровольцев
@@ -645,7 +647,7 @@ pages:
             en: Write something about you. What would you like people to know about you?
             et: Kirjuta midagi endast
             hu: Írj egy pár soros bemutatkozást. Mit szeretnél másoknak elmondani magadról?
-            ko: 당신은 어떤 사람인가요?
+            ko: 당신은 어떤 사람인가요? 자유롭게 소개해 주세요.
             ru: Напиши что-нибудь о себе
         about-me-video:
             de: Video URL
@@ -806,7 +808,7 @@ pages:
             en: I would like to receive information about Helpific
             et: Soovin saada Helpificu infot
             hu: Feliratkozom a Helpific hírlevelére
-            ko: Helpfic으로 부터 정보를 받고싶습니다.
+            ko: Helpfic으로 부터 소식을 받고싶습니다.
             ru: pages.profile.send-newsletter
         photo:
             de: Profilbild
@@ -827,7 +829,7 @@ pages:
             en: Your profile info is saved automatically
             et: Sinu profiili info salvestub automaatselt
             hu: A profilbeállítások automatikusan mentésre kerülnek
-            ko: 당신의 프로필 정보는 자동저장 됩니다.
+            ko: 프로필 정보는 자동저장 됩니다.
             ru: pages.profile.save-info
         slogan:
             de: Slogan
