@@ -159,13 +159,13 @@ locales:
         ru: Русский
         zh: Русский
     zh:
-        de: China
-        en: China
-        et: China
-        hu: China
-        ko: China
-        ru: China
-        zh: China
+        de: Chinese
+        en: Chinese
+        et: Chinese
+        hu: Chinese
+        ko: Chinese
+        ru: Chinese
+        zh: Chinese
 message:
     email-message:
         de: >
