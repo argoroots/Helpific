@@ -159,13 +159,13 @@ locales:
         ru: Русский
         zh: Русский
     zh:
-        de: Chinese
-        en: Chinese
-        et: Chinese
-        hu: Chinese
-        ko: Chinese
-        ru: Chinese
-        zh: Chinese
+        de: 中文
+        en: 中文
+        et: 中文
+        hu: 中文
+        ko: 中文
+        ru: 中文
+        zh: 中文
 message:
     email-message:
         de: >
@@ -184,7 +184,7 @@ message:
         ru: >
             Привет!<br> <br> У тебя новое сообщение в Helpific:<br> <a
             href="https://helpific.com/en/messages/%s">helpific.com/en/messages/%s</a>
-        zh: '好!<br> <br> 你在Helpific上有新消息:<br> <a href="https://helpific.com/en/messages/%s">helpific.com/en/messages/%s</a>'
+        zh: '你好!<br> <br> 你在Helpific上有新消息:<br> <a href="https://helpific.com/en/messages/%s">helpific.com/en/messages/%s</a>'
     email-subject:
         de: Neue Nachricht in helpific.com
         en: New message in helpific.com
@@ -195,7 +195,7 @@ message:
         zh: helpific.com上的新消息
 nav:
     about:
-        de: nav.about
+        de: Über uns
         en: About
         et: Meist
         hu: Magunkról
@@ -211,7 +211,7 @@ nav:
         ru: Жизнь Без Границ
         zh: 大爱无疆
     blog:
-        de: nav.blog
+        de: Blog
         en: Blog
         et: Blogi
         hu: Blog
@@ -266,7 +266,7 @@ nav:
         hu: Felajánlások
         ko: 도움나눔
         ru: Предложения
-        zh: 帮助
+        zh: 提供帮助
     partners:
         de: Partner
         en: Partners
@@ -276,7 +276,7 @@ nav:
         ru: Партнеры
         zh: 合作伙伴
     projects:
-        de: nav.projects
+        de: Projekte
         en: Projects
         et: Projektid
         hu: Projektek
@@ -290,7 +290,7 @@ nav:
         hu: Segítségkérések
         ko: 도움요청
         ru: Просьбы
-        zh: 请求
+        zh: 发送请求
     sign-in:
         de: Anmelden
         en: Sign in
@@ -389,7 +389,7 @@ pages:
             hu: pl. Budapest
             ko: '예: 서울, 용산구'
             ru: 'напр., Таллинн'
-            zh: 例如，上海
+            zh: 比如，静安公园
         offer-count:
             de: "Insgesamt gibt es {{ (help | filter:{type:type }).length }} Hilfsangebote hier <span ng-if='search_query || search_my'> - found {{ (help | filter:{status:s.status, type:type, my:search_my} | filter:search_query).length }}</span>"
             en: "There are total {{ (help | filter:{type:type }).length }} offers here <span ng-if='search_query || searchMy'> - found {{ (help | filter:{status:s.status, type:type, my:searchMy} | filter:search_query).length }}</span>"
@@ -421,7 +421,7 @@ pages:
             hu: Felajánlások
             ko: 도움 나눔
             ru: Предложения
-            zh: 各种帮助
+            zh: 所有帮助
         only-my-offer:
             de: Nur meine Hilfsangebote zeigen
             en: Show only my offers
@@ -469,7 +469,7 @@ pages:
             hu: pl. Budapestre akarok menni
             ko: '예: 서울시 용산에 방문하고 싶습니다.'
             ru: 'напр., хочу поехать на пляж'
-            zh: 比如，我想去台北
+            zh: 比如，我想去医院
         request-title:
             de: Hilfsanfrage
             en: Requests
@@ -477,7 +477,7 @@ pages:
             hu: Segítségkérés
             ko: 도움 요청
             ru: Просьбы
-            zh: 各种请求
+            zh: 所有请求
         save:
             de: Speichern
             en: Save
@@ -517,7 +517,7 @@ pages:
             hu: Aktív
             ko: 활동중
             ru: Активный
-            zh: 活跃
+            zh: 活跃用户
         status-active-plural:
             de: Aktiv
             en: Active
@@ -573,7 +573,7 @@ pages:
             hu: "Pl. 04.08.2015 02:59'"
             ko: '예: 2015년 8월 4일 2시 59분'
             ru: 'напр., 04.08.2015 02:59'
-            zh: 比如，2015年8月4日2点59分
+            zh: 比如，2015年8月4日2点
     index:
         bullet-1:
             de: Einloggen mit Facebook oder Google
@@ -598,7 +598,7 @@ pages:
             hu: Vedd fel a kapcsolatot másokkal
             ko: '활동을 시작합니다!'
             ru: 'Найди применение своим возможностям или получай помощь от других!'
-            zh: 让你的行动变得更有价值
+            zh: 让你的想法成为现实
         choose-way:
             de: Wähle deinen Weg
             en: Choose your way
@@ -614,7 +614,7 @@ pages:
             hu: Hogyan működik a Helpific?
             ko: Helpific을 어떻게 이용하나요?
             ru: Как устроен Helpific?
-            zh: Helpfic是怎样运作的？
+            zh: 完成如下几步，即可开始你的Helpific发现之旅
         offers-link:
             de: Freiwillige treffen
             en: Meet the volunteers
@@ -638,7 +638,7 @@ pages:
             hu: Segítségkérések
             ko: 도움이 필요한 사람들을 도와주세요.
             ru: 'Помоги тем, кто нуждается'
-            zh: 帮助需要帮助的人
+            zh: 帮助有需要的人
         requests-link-alt:
             de: Rechte Tür
             en: Right door
@@ -687,7 +687,7 @@ pages:
                 с теми, кто нуждается в помощи.</p> <p ng-if='info'>В настоящий
                 момент у нас {{ info.help }} просьб о помощи и {{ info.users }}
                 активных помощников-добровольцев.</p>
-            zh: "<h2>获得帮助从未像现在这样简单</h2> <p>Helpfic把志愿者与那些需要得到日常帮助的人联系在了一起.</p> <p ng-if='info'>现在我们拥有乐于奉献，积极进取的向你提供帮助.</p>"
+            zh: "<h2>获得帮助从未像现在这样简单</h2> <p>Helpific把志愿者与那些有需要的人联系起来.</p> <p ng-if='info'>现在我们拥有一批乐于奉献，积极进取的志愿者向你提供帮助.</p>"
     messages:
         new-message:
             de: Neue Nachricht
@@ -738,7 +738,7 @@ pages:
             hu: Írj egy pár soros bemutatkozást. Mit szeretnél másoknak elmondani magadról?
             ko: 당신은 어떤 사람인가요? 자유롭게 소개해 주세요.
             ru: Напиши что-нибудь о себе
-            zh: 请写下关于你的东西，你想让别人了解到你的什么？
+            zh: 你想让别人了解到你什么？请写下来
         about-me-video:
             de: Video URL
             en: Video URL
@@ -786,7 +786,7 @@ pages:
             hu: Település
             ko: 시
             ru: Город
-            zh: 城市
+            zh: 市/县
         city-ph:
             de: z.B. Dresden
             en: e.g. New York
@@ -802,7 +802,7 @@ pages:
             hu: Ország
             ko: 국가명
             ru: Страна
-            zh: 国家
+            zh: 国家/地区
         country-ph:
             de: z.B. Deutschland
             en: e.g. United States
@@ -810,7 +810,7 @@ pages:
             hu: pl. Magyarország
             ko: '예: 한국'
             ru: 'напр., Эстония'
-            zh: 比如，中华人民共和国
+            zh: 比如，中国
         county:
             de: Land
             en: County
@@ -818,7 +818,7 @@ pages:
             hu: Megye
             ko: 시/도
             ru: Уезд
-            zh: ' 市，县'
+            zh: ' 省/直辖市/自治区/特别行政区'
         county-ph:
             de: z.B. Sachsen
             en: e.g NY
@@ -914,7 +914,7 @@ pages:
             hu: Üzenetek
             ko: 메시지
             ru: Сообщения
-            zh: 各种消息
+            zh: 所有消息
         newsletter:
             de: Ich möchte Neuigkeiten von Helpific erhalten.
             en: I would like to receive information about Helpific
@@ -946,7 +946,7 @@ pages:
             hu: A profilbeállítások automatikusan mentésre kerülnek
             ko: 프로필 정보는 자동저장 됩니다.
             ru: pages.profile.save-info
-            zh: 你的资料信息已自动保存
+            zh: 你的信息已自动保存
         slogan:
             de: Slogan
             en: Slogan
@@ -994,7 +994,7 @@ pages:
             hu: 'Jelenleg <a href="https://youtube.com" target="_blank">YouTube</a>, <a href="https://vimeo.com" target="_blank">Vimeo</a> és <a href="https://wistia.com" target="_blank">Wistia</a> videókat tölthetsz fel'
             ko: "<a href=\"https://youtube.com\" target=\"_blank\">YouTube</a>, <a href=\"https://vimeo.com\" target=\"_blank\">Vimeo</a> und <a href=\"https://wistia.com\" target=\"_blank\">Wistia</a> urls'만 지원 가능합니다."
             ru: 'поддерживаются только ссылки на <a href="https://youtube.com" target="_blank">YouTube</a>, <a href="https://vimeo.com" target="_blank">Vimeo</a> и <a href="https://wistia.com" target="_blank">Wistia</a>'
-            zh: '我们仅支持 <a href="https://youtube.com" target="_blank">YouTube</a>, <a href="https://vimeo.com" target="_blank">Vimeo</a> and <a href="https://wistia.com" target="_blank">Wistia</a> urls'
+            zh: '我们仅支持来自 <a href="https://youtube.com" target="_blank">YouTube</a>, <a href="https://vimeo.com" target="_blank">Vimeo</a> and <a href="https://wistia.com" target="_blank">Wistia</a> 的url'
         video-ph:
             de: 'z.B. https://www.youtube.com/watch?v=QH2-TGUlwu4'
             en: 'näit. https://www.youtube.com/watch?v=QH2-TGUlwu4'
@@ -1018,7 +1018,7 @@ pages:
             hu: Miben lehetnek mások segítségedre? Hagyd ezt a mezőt üresen ha jelenleg nincs szükséged segítségre.
             ko: '어떻게 사람들이 당신이 도울 수 있을까요? '
             ru: 'Какая помощь Тебе нужна? Если помощь не нужна, оставь это поле пустым.'
-            zh: 你希望人们怎样帮到你？如果你不是通过此网站寻求帮助的话，可以选择不填
+            zh: 你希望人们怎样帮到你？如果你不是通过此网站寻求帮助的话，可以跳过此项
         you-help-me-video:
             de: Video URL
             en: Video URL
@@ -1035,7 +1035,7 @@ pages:
             hu: '* a belépéssel elfogadod a <a href="terms">Felhasználói Feltételeket</a>'
             ko: '* 로그인시 <a href="terms">우리의 개인정보 보호정책을 사용을 수락하게됩니다.</a>'
             ru: '* пользуясь сервисом, Ты соглашаешься с <a href="terms">правилами пользования</a>'
-            zh: '* 如果你登陆此站，你需要遵守<a href="terms">我们的使用与隐私条款</a>'
+            zh: '* 如果你登陆此站，你需要遵守<a href="terms">使用与隐私条款</a>'
         text:
             de: 'Bitt nutzen Sie Ihren bevorzugten Internetanbieter, um sich anzumelden...'
             en: Please use your preferred identity provider to sign in...
@@ -1043,7 +1043,7 @@ pages:
             hu: Válaszd ki a számodra megfelelő belépési módot...
             ko: 원하는 ID를 사용하십시오.
             ru: Для входа используй подходящий сервис
-            zh: 请使用你喜欢的社交网站进行登陆
+            zh: 请使用你偏好的社交网站进行登陆
         title:
             de: Anmelden
             en: Sign in
@@ -1143,7 +1143,7 @@ pages:
             hu: "Összesen {{ users.length }} felhasználó van a rendszerben <span ng-if='search_query'> - találat {{ (users | filter:search_query).length }}</span>"
             ko: "전체 {{ users.length }} 사용자 <span ng-if='search_query'> - found {{ (users | filter:search_query).length }}</span>\""
             ru: "У нас в общей сложности {{ users.length }} участников <span ng-if='search_query'> - найдено {{ (users | filter:search_query).length }}</span>"
-            zh: "所有的请求都在这里<span ng-if='search_query || searchMy'> - 发现</span>"
+            zh: "所有的用户都在这里<span ng-if='search_query || searchMy'> - 发现</span>"
         title:
             de: Nutzer
             en: Users
