@@ -74,10 +74,10 @@ html(lang=lang, ng-app='hlpfc')
                                     a(href='team')= t('nav.about')
                                 if lang == 'et'
                                     li
-                                        a(href='http://vabatahtlik.helpific.com/', title="Blogspot")= t('nav.blog')
+                                        a(href='http://vabatahtlik.helpific.com/', title="Blogspot", target='_blank')= t('nav.blog')
                                 else
                                     li
-                                        a(href='http://volunteer.helpific.com/', title="Blogspot")= t('nav.blog')
+                                        a(href='http://volunteer.helpific.com/', title="Blogspot", target='_blank')= t('nav.blog')
 
                                 if user
                                     li.dropdown

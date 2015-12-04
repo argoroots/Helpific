@@ -77,7 +77,7 @@ angular.module('hlpfc', ['ngSanitize'])
 
         $scope.Add = function(type, data) {
             if(!type || !data) return
-            if(!data.time || !data.location || !data.request) return
+            if(!data.location || !data.request) return
 
             $scope.adding = true
             data.type = type
@@ -106,7 +106,6 @@ angular.module('hlpfc', ['ngSanitize'])
             $scope.saving = true
 
             var postData = {}
-            if(data.time.old != data.time.value) postData.time = data.time
             if(data.location.old != data.location.value) postData.location = data.location
             if(data.request.old != data.request.value) postData.request = data.request
             if(data.status.old != data.status.value) postData.status = data.status

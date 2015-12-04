@@ -33,10 +33,6 @@ block content
                 .row.bg-green-transparent
                     form
                         .form-group.narrow.col-xs-12.col-sm-3
-                            label.control-label(ng-class='{ "active": time_new }')= t('pages.help.time')
-                            input.form-control(type='text', placeholder=t('pages.help.time-ph'), ng-model='new.time', ng-focus='time_new = true', ng-blur='time_new = false; new.time = formatTime(new.time)')
-
-                        .form-group.narrow.col-xs-12.col-sm-3
                             label.control-label(ng-class='{ "active": location_new }')= t('pages.help.location')
                             input.form-control(type='text', placeholder=t('pages.help.location-ph'), ng-model='new.location', ng-focus='location_new = true', ng-blur='location_new = false')
 
@@ -68,11 +64,12 @@ block content
                     .col.col-xs-12.col-sm-6.col-md-7 {{ h.request.value }}
                     a.col.col-xs-12.col-sm-1.text-center(ng-if='h.person.reference != #{ user_id }', ng-href='messages/{{ h.person.reference }}')= t('pages.help.reply')
                     a.col.col-xs-12.col-sm-1.text-center(ng-if='h.person.reference == #{ user_id }', ng-click='h.editing = true')= t('pages.help.edit')
+                    .row.helps-time
+                        .col-xs-12.col-xs-offset-6.col-sm-12.col-sm-offset-9= t('pages.help.added')
+                            span &nbsp; {{ h.time.value }}
+
 
                 form(ng-show='h.editing')
-                    .form-group.narrow.col-xs-12.col-sm-2
-                        label.control-label(ng-class='{ "active": edit[$index].time }')= t('pages.help.time')
-                        input.form-control(type='text', placeholder=t('pages.help.time-ph'), ng-model='h.time.value', ng-focus='edit[$index].time = true', ng-blur='edit[$index].time = false; h.time.value = formatTime(h.time.value)')
                     .form-group.narrow.col-xs-12.col-sm-2
                         label.control-label(ng-class='{ "active": edit[$index].location }')= t('pages.help.location')
                         input.form-control(type='text', placeholder=t('pages.help.location-ph'), ng-model='h.location.value', ng-focus='edit[$index].location = true', ng-blur='edit[$index].location = false')

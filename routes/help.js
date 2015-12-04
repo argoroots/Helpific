@@ -136,10 +136,7 @@ router.post('/', function(req, res, next) {
     var properties = req.body
     properties.person = res.locals.user.id
 
-    if(properties.time) {
-        if(properties.time.lenght === 10) properties.time = properties.time + ' 00:00'
-        properties.time = moment(properties.time, 'DD.MM.YYYY HH:mm').format('YYYY-MM-DD HH:mm')
-    }
+    properties.time = moment(Date.now()).format('YYYY-MM-DD HH:mm')
 
     var new_id = null
     async.series([

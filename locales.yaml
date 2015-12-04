@@ -407,6 +407,15 @@ pages:
             ko: 도움요청 입력하기
             ru: Добавить новую просьбу
             zh: 增加新的请求
+        added:
+            de: pages.help.added
+            en: 'Added at:'
+            et: 'Lisamise aeg:'
+            hu: pages.help.added
+            ja: pages.help.added
+            ko: pages.help.added
+            ru: 'Время добавления:'
+            zh: pages.help.added
         cancel:
             de: Löschen
             en: Cancel
