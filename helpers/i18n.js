@@ -18,7 +18,11 @@ exports.configure = function(config) {
     i18nConfig.countries = {
         'ee': 'et',
         'ru': 'ru',
-        'hu': 'hu'
+        'hu': 'hu',
+        'de': 'de',
+        'kr': 'ko',
+        'jp': 'ja',
+        'cn': 'zh'
     }
 
     i18nConfig.translations = {}
