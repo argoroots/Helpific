@@ -42,7 +42,7 @@ exports.init = function(req, res, next) {
             return res.redirect('/' + op.get(res, 'locals.user.lang'))
         } else {
             request.get({url: 'http://geoip.entu.eu/json/' + req.ip, json: true, timeout: 1000}, function(error, response, body) {
-                var path = op.get(i18nConfig, ['countries', op.get(body, 'country_code').toLowerCase()]) || i18nConfig.defaultLocale
+                var path = op.get(i18nConfig, ['countries', op.get(body, 'country_code') ? op.get(body, 'country_code').toLowerCase() : null]) || i18nConfig.defaultLocale
                 return res.redirect('/' + path)
             })
         }
