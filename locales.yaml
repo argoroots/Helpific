@@ -15,6 +15,7 @@ feedback:
         hu: 'Új visszajelzés '
         ja: 新着フィードバック
         ko: 새 피드백 추가하기
+        nl: 'nieuwe feedback '
         ru: Добавлен новый отзыв
         zh: 新建反馈
     email:
@@ -24,6 +25,7 @@ feedback:
         hu: E-mail
         ja: メール
         ko: 이메일
+        nl: 'E-Mail '
         ru: Э-почта
         zh: 电子邮箱
     message:
@@ -33,6 +35,7 @@ feedback:
         hu: üzenet
         ja: メッセージ
         ko: 메시지
+        nl: 'Bericht '
         ru: Сообщение
         zh: 反馈信息
     send:
@@ -42,6 +45,7 @@ feedback:
         hu: Küldés
         ja: 送信
         ko: 전송
+        nl: 'sturen '
         ru: Отправить
         zh: 发送
     thanks:
@@ -51,6 +55,7 @@ feedback:
         hu: 'köszönjük!'
         ja: ありがとうございました！
         ko: '감사합니다!'
+        nl: 'Dankjewel '
         ru: 'Благодарим!'
         zh: 谢谢你！
     title:
@@ -60,6 +65,7 @@ feedback:
         hu: Visszajelzés küldése
         ja: フィードバックを送る
         ko: 제목
+        nl: 'Feedback sturen '
         ru: Отправить обратную связь
         zh: 发送反馈
 footer:
@@ -93,6 +99,7 @@ footer:
             </small>
         ja: '<strong>HELPIFIC MTÜ</strong><br> <small>    登録番号: 80380146<br>    口座番号(IBAN): EE102200221061303677<br>    SWIFT/BIC: HABAEE2X (SWEDBANK AS)<br>    <a href="mailto:info@helpific.com">info@helpific.com</a></small>'
         ko: '<strong>HELPIFIC MTÜ</strong><br> <small>    Reg nr: 80380146<br>    계좌번호(IBAN): EE102200221061303677<br>    SWIFT/BIC: HABAEE2X (SWEDBANK AS)<br>    <a href="mailto:info@helpific.com">info@helpific.com</a></small>'
+        nl: '<strong>HELPIFIC MTÜ</strong><br> <small>    Reg nr: 80380146<br>    IBAN: EE102200221061303677<br>    SWIFT/BIC: HABAEE2X (SWEDBANK AS)<br>    <a href="mailto:info@helpific.com">info@helpific.com</a></small>'
         ru: |
             <strong>HELPIFIC MTÜ</strong><br> <small>
                 Рег. нр.: 80380146<br>
@@ -108,6 +115,7 @@ help:
         hu: 'https://helpific.com/et/help/%s'
         ja: 'https://helpific.com/et/help/%s'
         ko: 'https://helpific.com/et/help/%s'
+        nl: 'https://helpific.com/et/hulp/%s'
         ru: 'https://helpific.com/et/help/%s'
         zh: 'https://helpific.com/et/help/%s'
     admin-email-subject:
@@ -117,6 +125,7 @@ help:
         hu: Új segítségkérés/felajánlás hozzáadása
         ja: 新着リクエスト／オファー
         ko: 도움 요청/나눔 입력하기
+        nl: Nieuwe hulpverzoek/ aanbod
         ru: help.admin-email-subject
         zh: 添加新的 请求/帮助
 locales:
@@ -127,6 +136,7 @@ locales:
         hu: Deutsch
         ja: Deutsch
         ko: Deutsch
+        nl: Deutsch
         ru: Deutsch
         zh: Deutsch
     en:
@@ -136,6 +146,7 @@ locales:
         hu: English
         ja: English
         ko: English
+        nl: English
         ru: English
         zh: English
     et:
@@ -145,6 +156,7 @@ locales:
         hu: Eesti keel
         ja: Eesti keel
         ko: Eesti keel
+        nl: Eesti keel
         ru: Eesti keel
         zh: Eesti keel
     hu:
@@ -154,6 +166,7 @@ locales:
         hu: Magyar
         ja: Magyar
         ko: Magyar
+        nl: Magyar
         ru: Magyar
         zh: Magyar
     ja:
@@ -163,6 +176,7 @@ locales:
         hu: Japanese
         ja: Japanese
         ko: Japanese
+        nl: Japanese
         ru: Japanese
         zh: Japanese
     ko:
@@ -172,6 +186,7 @@ locales:
         hu: 한국어
         ja: 한국어
         ko: 한국어
+        nl: 한국어
         ru: 한국어
         zh: 한국어
     ru:
@@ -181,6 +196,7 @@ locales:
         hu: Русский
         ja: Русский
         ko: Русский
+        nl: Русский
         ru: Русский
         zh: Русский
     zh:
@@ -191,6 +207,7 @@ locales:
         hu: 简体中文
         ja: 简体中文
         ko: 简体中文
+        nl: 简体中文
         ru: 简体中文
         zh: 简体中文
 message:
@@ -209,6 +226,7 @@ message:
             href="https://helpific.com/en/messages/%s">helpific.com/en/messages/%s</a>
         ja: 'こんにちは！<br> <br>Helpific上に新着メッセージが届いています。<br> <a href="https://helpific.com/en/messages/%s">helpific.com/en/messages/%s</a>'
         ko: '반갑습니다!<br> <br> Helpific에 새로운 메시지가 있습니다.:<br> <a href="https://helpific.com/en/messages/%s">helpific.com/en/messages/%s</a>'
+        nl: 'Hoi!<br> <br> jij heeft een nieuwe bericht in Helpific:<br> <a href="https://helpific.com/en/messages/%s">helpific.com/en/messages/%s</a>'
         ru: >
             Привет!<br> <br> У тебя новое сообщение в Helpific:<br> <a
             href="https://helpific.com/en/messages/%s">helpific.com/en/messages/%s</a>
@@ -220,6 +238,7 @@ message:
         hu: Új üzeneted érkezett a helpific.com-ra
         ja: Helpific上の新着メッセージ
         ko: helpific.com에 새 메시지
+        nl: nieuwe bericht in helpific.com
         ru: Новое сообщение в helpific.com
         zh: helpific.com上的新消息
 nav:
@@ -230,6 +249,7 @@ nav:
         hu: Magunkról
         ja: Helpificについて
         ko: 함께하는 사람들
+        nl: Over
         ru: О Нас
         zh: 关于我们
     bb:
@@ -239,6 +259,7 @@ nav:
         hu: Túl a határokon
         ja: 国境を越える
         ko: 국경을 뛰어넘어
+        nl: Buiten de Grenzen
         ru: Жизнь Без Границ
         zh: 大爱无疆
     blog:
@@ -248,6 +269,7 @@ nav:
         hu: Blog
         ja: ブログ
         ko: 블로그
+        nl: Blog
         ru: Блог
         zh: 博客
     me:
@@ -258,6 +280,7 @@ nav:
             hu: Üzenetek
             ja: メッセージ
             ko: 메시지
+            nl: Berichten
             ru: Сообщения
             zh: 消息
         offers:
@@ -267,6 +290,7 @@ nav:
             hu: Az én felajánlásaim
             ja: マイ オファー
             ko: 나의 나눔 목록
+            nl: Mijn aanbiedingen
             ru: Мои предложения
             zh: 我的帮助
         profile:
@@ -276,6 +300,7 @@ nav:
             hu: Profil szerkesztése
             ja: プロフィールを編集する
             ko: 프로필 편집
+            nl: Bewerk profiel
             ru: Редактировать профиль
             zh: 编辑资料
         requests:
@@ -285,6 +310,7 @@ nav:
             hu: Segítségkéréseim
             ja: マイ リクエスト
             ko: 나의 요청 목록
+            nl: Mijn aanvragen
             ru: Мои просьбы
             zh: 我的请求
         sign-out:
@@ -294,6 +320,7 @@ nav:
             hu: Kijelentkezés
             ja: ログアウト
             ko: 로그아웃
+            nl: Afmelden
             ru: Выйти
             zh: 注销
     offers:
@@ -303,6 +330,7 @@ nav:
         hu: Felajánlások
         ja: オファー
         ko: 도움나눔
+        nl: Aanbiedingen
         ru: Предложения
         zh: 提供帮助
     partners:
@@ -312,6 +340,7 @@ nav:
         hu: Partnerek
         ja: パートナー
         ko: 제휴
+        nl: Partner
         ru: Партнеры
         zh: 合作伙伴
     projects:
@@ -321,6 +350,7 @@ nav:
         hu: Projektek
         ja: プロジェクト
         ko: 프로젝트
+        nl: Project
         ru: Проекты
         zh: 项目
     requests:
@@ -330,6 +360,7 @@ nav:
         hu: Segítségkérések
         ja: リクエスト
         ko: 도움요청
+        nl: Aanvragen
         ru: Просьбы
         zh: 发送请求
     sign-in:
@@ -339,6 +370,7 @@ nav:
         hu: Bejelentkezés
         ja: ログイン
         ko: 로그인
+        nl: Aanmelden
         ru: Войти
         zh: 登陆
     team:
@@ -348,6 +380,7 @@ nav:
         hu: Team
         ja: チーム
         ko: 함께하는 사람들
+        nl: Team
         ru: Команда
         zh: 团队
     terms:
@@ -357,12 +390,14 @@ nav:
         hu: Felhasználói Feltételek
         ja: 利用規約
         ko: 이용약관
+        nl: Gebruiksvoorwaarden
         ru: Условия пользования
         zh: 条款
     toggle-navigation:
         de: Zum Menü
         en: Toggle navigation
         et: Ava menüü
+        fi: Ga naar het menu
         hu: Visszalépés a menübe
         ja: ナビゲーションを切り替える
         ko: 메뉴로 이동
@@ -375,6 +410,7 @@ nav:
         hu: Felhasználók
         ja: ユーザー
         ko: 사용자
+        nl: Gebruikers
         ru: Участники
         zh: 用户
 pages:
@@ -386,6 +422,7 @@ pages:
             hu: Hiba
             ja: エラー
             ko: 오류
+            nl: fout
             ru: Ошибка
             zh: 错误
     help:
@@ -393,6 +430,7 @@ pages:
             de: Neues Hilsangebot hinzufügen
             en: Add new offer
             et: Lisa uus pakkumine
+            fi: Nieuwe aanbieding toevoegen
             hu: Új felajánlás hozzáadása
             ja: 新しいオファーを追加する
             ko: 도움나눔 입력하기
@@ -405,6 +443,7 @@ pages:
             hu: Új segítségkérés hozzáadása
             ja: 新しいリクエストを追加する
             ko: 도움요청 입력하기
+            nl: nieuwe hulpverzoek toevoegen
             ru: Добавить новую просьбу
             zh: 增加新的请求
         added:
@@ -414,6 +453,7 @@ pages:
             hu: pages.help.added
             ja: pages.help.added
             ko: pages.help.added
+            nl: 'Toegevoegd op:'
             ru: 'Время добавления:'
             zh: pages.help.added
         cancel:
@@ -423,6 +463,7 @@ pages:
             hu: Mégse
             ja: 取り消し
             ko: 취소
+            nl: Annuleer
             ru: Отменить
             zh: 取消
         edit:
@@ -432,6 +473,7 @@ pages:
             hu: Szerkesztés
             ja: 編集
             ko: 편집
+            nl: Bewerk
             ru: Редактировать
             zh: 编辑
         location:
@@ -441,6 +483,7 @@ pages:
             hu: Helyszín
             ja: 場所
             ko: 장소
+            nl: plaats
             ru: Месторасположение
             zh: 地点
         location-ph:
@@ -450,6 +493,7 @@ pages:
             hu: pl. Budapest
             ja: 例：神奈川県横浜市
             ko: '예: 서울, 용산구'
+            nl: 'Bijv. Tallinn, Harjumaa'
             ru: 'напр., Таллинн'
             zh: 比如，万科城
         offer-count:
@@ -459,6 +503,7 @@ pages:
             hu: "Összesen {{ (help | filter:{type:type }).length }} felajánlás található a rendszerben <span ng-if='search_query || searchMy'> - tal?lat {{ (help | filter:{status:s.status, type:type, my:searchMy} | filter:search_query).length }}</span>"
             ja: "すべてのオファー <span ng-if='search_query || searchMy'> - 見つかりました </span>"
             ko: "전체 {{ (help | filter:{type:type }).length }} 도움 나눔이 있습니다. <span ng-if='search_query || search_my'> - found {{ (help | filter:{status:s.status, type:type, my:search_my} | filter:search_query).length }}</span>"
+            nl: "Er zijn totaal aanbiedingen hier <span ng-if='search_query || search_my'> - found </span>"
             ru: "У нас в общей сложности {{ (help | filter:{type:type }).length }} предложений <span ng-if='search_query || searchMy'> - найдено {{ (help | filter:{status:s.status, type:type, my:searchMy} | filter:search_query).length }}</span>"
             zh: "所有的帮助都在这里<span ng-if='search_query || searchMy'> - 发现</span>"
         offer-request:
@@ -468,6 +513,7 @@ pages:
             hu: Felajánlás
             ja: オファー
             ko: 나눔
+            nl: bieden
             ru: Предложение
             zh: 帮助
         offer-request-ph:
@@ -477,6 +523,7 @@ pages:
             hu: pl. Budapestre megyek van egy szabad hely a kocsimban
             ja: 例：東京駅に行きますが、1人分スペースが余っています。
             ko: '예: 자가용으로 서울에 방문하는데 빈 좌석 2개를 공유할 수 있습니다.'
+            nl: 'Bijv. zal gaan naar Nuustaka en krijg een extra kamer '
             ru: 'напр., еду на пляж и есть одно свободное место'
             zh: 比如，我可以去公园帮你遛狗
         offer-title:
@@ -486,6 +533,7 @@ pages:
             hu: Felajánlások
             ja: オファー
             ko: 도움 나눔
+            nl: Aanbiedingen
             ru: Предложения
             zh: 所有帮助
         only-my-offer:
@@ -495,6 +543,7 @@ pages:
             hu: Csak az én felajánlásaim legyenek láthatóak
             ja: 自分のオファーのみ表示する
             ko: 내 도움나눔만 보기
+            nl: Toon alleen mijn aanbiedingen
             ru: Показывать только мои предложения помощи
             zh: 只显示我提供的帮助
         only-my-request:
@@ -504,6 +553,7 @@ pages:
             hu: Csak az én segítségkéréseim legyenek láthatóak
             ja: 自分のリクエストのみ表示する
             ko: 내 도움요청만 보기
+            nl: Toon alleen mijn verzoeken
             ru: Показывать только мои просьбы о помощи
             zh: 只显示我发出的请求
         reply:
@@ -513,6 +563,7 @@ pages:
             hu: Válasz
             ja: 返信
             ko: 답변
+            nl: Antwoord
             ru: Ответить
             zh: 回复
         request-count:
@@ -522,6 +573,7 @@ pages:
             hu: "Összesen {{ (help | filter:{type:type }).length }} segítségkérés van a rendszerben <span ng-if='search_query || searchMy'> - találat {{ (help | filter:{status:s.status, type:type, my:searchMy} | filter:search_query).length }}</span>"
             ja: "全てのリクエスト　<span ng-if='search_query || searchMy'> - 見つかりました </span>"
             ko: "전체 {{ (help | filter:{type:type }).length }} 도움요청이 있습니다. <span ng-if='search_query || search_my'> - found {{ (help | filter:{status:s.status, type:type, my:search_my} | filter:search_query).length }}</span>"
+            nl: "Er zijn totaal verzoeken hier <span ng-if='search_query || searchMy'> - gevonden </span>"
             ru: "У нас в общей сложности {{ (help | filter:{type:type }).length }} просьб <span ng-if='search_query || searchMy'> - найдено {{ (help | filter:{status:s.status, type:type, my:searchMy} | filter:search_query).length }}</span>"
             zh: "所有的请求都在这里<span ng-if='search_query || searchMy'> - 发现</span>"
         request-request:
@@ -531,6 +583,7 @@ pages:
             hu: Segítségkérés
             ja: リクエスト
             ko: 요청
+            nl: Aanvraag
             ru: Просьба
             zh: 请求
         request-request-ph:
@@ -540,6 +593,7 @@ pages:
             hu: pl. Budapestre akarok menni
             ja: 例：東京駅に行きたいです。
             ko: '예: 서울시 용산에 방문하고 싶습니다.'
+            nl: bijv. Ik wil naar Nuustaku gaan
             ru: 'напр., хочу поехать на пляж'
             zh: 比如，我想找人帮我遛狗
         request-title:
@@ -549,6 +603,7 @@ pages:
             hu: Segítségkérés
             ja: リクエスト
             ko: 도움 요청
+            nl: Aanvragen
             ru: Просьбы
             zh: 所有请求
         save:
@@ -558,6 +613,7 @@ pages:
             hu: Mentés
             ja: 保存
             ko: 저장
+            nl: sparen
             ru: Сохранить
             zh: 保存
         status:
@@ -567,6 +623,7 @@ pages:
             hu: Státusz
             ja: ステータス
             ko: 지위
+            nl: Toestand
             ru: Статус
             zh: 状态
         status-accepted:
@@ -576,6 +633,7 @@ pages:
             hu: Elfogadva
             ja: 引き受けられました
             ko: 수락
+            nl: aanvaard
             ru: Принято
             zh: 已接受
         status-accepted-plural:
@@ -585,6 +643,7 @@ pages:
             hu: Elfogadva
             ja: 引き受けられました
             ko: 수락
+            nl: aanvaard
             ru: Приняты
             zh: 已接受
         status-active:
@@ -594,6 +653,7 @@ pages:
             hu: Aktív
             ja: 活動中
             ko: 활동중
+            nl: Actief
             ru: Активный
             zh: 活跃用户
         status-active-plural:
@@ -603,6 +663,7 @@ pages:
             hu: Aktív
             ja: 活動中
             ko: 활동중
+            nl: Actief
             ru: Активные
             zh: 活跃用户
         status-canceled:
@@ -612,6 +673,7 @@ pages:
             hu: Törölve
             ja: 取り消し
             ko: 취소됨
+            nl: geannuleerd
             ru: Отменен
             zh: 已取消
         status-canceled-plural:
@@ -621,6 +683,7 @@ pages:
             hu: Törölve
             ja: 取り消し
             ko: 취소됨
+            nl: geannuleerd
             ru: Отменены
             zh: 已取消
         status-done:
@@ -630,6 +693,7 @@ pages:
             hu: Lezárt
             ja: 完了
             ko: 완료
+            nl: Gedaan
             ru: Сделано
             zh: 已完成
         status-done-plural:
@@ -639,6 +703,7 @@ pages:
             hu: Lezárt
             ja: 完了
             ko: 완료
+            nl: Gedaan
             ru: Сделаны
             zh: 已完成
         time:
@@ -648,6 +713,7 @@ pages:
             hu: Dátum/ido
             ja: "日にち\b／時間"
             ko: 날짜/시간
+            nl: Datum/tijd
             ru: Дата/время
             zh: 日期/时间
         time-ph:
@@ -657,6 +723,7 @@ pages:
             hu: "Pl. 04.08.2015 02:59'"
             ja: 例：2015年8月4日2時59分
             ko: '예: 2015년 8월 4일 2시 59분'
+            nl: 'Bijv. 04.08.2015 02:59'
             ru: 'напр., 04.08.2015 02:59'
             zh: 比如，2015年8月4日14点
     index:
@@ -667,6 +734,7 @@ pages:
             hu: Belépés Facebook vagy Google profillal
             ja: Facebook、またはGoogleでログインする
             ko: 페이스북이나 구글 계정으로 로그인을 합니다.
+            nl: aanmelden met Facebook of Google
             ru: Войди через Facebook или Google
             zh: 用Facebook或Google账号登陆
         bullet-2:
@@ -676,6 +744,7 @@ pages:
             hu: Küld el nekünk segítségkérésed vagy felajánlásod
             ja: あなたが必要としてることやあなたが助けてあげられることを教えてください
             ko: '당신 나눌 수 있거나 필요로하는 일을 적습니다. '
+            nl: 'U laat het ons weten, wat u kunt doen of nodig hebt'
             ru: 'Напиши, какую помощь Ты можешь предложить или в чем нуждаешься'
             zh: 让我们知道你能做什么或者需要什么
         bullet-3:
@@ -685,6 +754,7 @@ pages:
             hu: Vedd fel a kapcsolatot másokkal
             ja: 活動を開始する
             ko: '활동을 시작합니다!'
+            nl: 'maak u '
             ru: 'Найди применение своим возможностям или получай помощь от других!'
             zh: 让你的想法成为现实
         choose-way:
@@ -694,6 +764,7 @@ pages:
             hu: Válassz az alábbi lehetőségek közül
             ja: あなたの道を選択してください
             ko: 당신의 경로를 선택하세요.
+            nl: Kies uw weg
             ru: Выбери свой путь
             zh: 选择你的方式
         how-it-works:
@@ -703,6 +774,7 @@ pages:
             hu: Hogyan működik a Helpific?
             ja: Helpificの仕組みは？
             ko: Helpific을 어떻게 이용하나요?
+            nl: Hoe werkt Helpific?
             ru: Как устроен Helpific?
             zh: 完成如下几步，即可开始你的Helpific发现之旅
         offers-link:
@@ -721,6 +793,7 @@ pages:
             hu: Baloldali ajtó
             ja: 左のドア
             ko: 왼쪽문
+            nl: linker deur
             ru: Левая дверь
             zh: 左边的门
         requests-link:
@@ -739,6 +812,7 @@ pages:
             hu: Jobboldali ajtó
             ja: 右のドア
             ko: 오른쪽문
+            nl: Rechter deur
             ru: Правая дверь
             zh: 右边的门
         slogan:
@@ -748,6 +822,7 @@ pages:
             hu: 'Együtt sokkal könnyebb!'
             ja: 一緒にやった方が簡単ではないですか？
             ko: '함께하는 일, 어렵지 않습니다!'
+            nl: 'samen is gemakkelijker!'
             ru: Разве вместе не легче?
             zh: 星多天空亮，人多智慧广
         text:
@@ -777,6 +852,7 @@ pages:
                 érkezett már válasz {{ info.users }} embertől.</p>
             ja: "<h2>これまで、誰かを助けることも誰かに助けを求めることもとても難しいことでした。</h2> <p>Helpificは毎日の生活で助けを必要としている人と、そこに手を差し伸べる優しい人をつなげます。</p> <p ng-if='info'>Helpific上では、現在すでにたくさんの心優しい人々が、困ってる人々を助けています。</p>"
             ko: "<h2>도움을 주고받는 일, 어렵지 않습니다.</h2> <p>Helpific은 일상 속에서 도움이 필요한 사람과 도움을 나눌 수 있는 사람을 연결합니다. </p> <p ng-if='info'> 현재까지 우리는  도움을 주고받았고  활동 중인 봉사자들이 있습니다.</p>"
+            nl: '<h2>'
             ru: >
                 <h2>Никогда прежде не было так легко помогать другим и получать
                 помощь!</h2> <p>Helpific объединяет помощников-добровольцев
@@ -792,6 +868,7 @@ pages:
             hu: Új üzenet
             ja: 新着メッセージ
             ko: 새 메시지
+            nl: Nieuwe Bericht
             ru: Новое сообщение
             zh: 新消息
         send:
@@ -801,6 +878,7 @@ pages:
             hu: Küldés
             ja: 送信
             ko: 전송
+            nl: Sturen
             ru: Отправить
             zh: 发送
         title:
@@ -810,6 +888,7 @@ pages:
             hu: Üzenetek
             ja: メッセージ
             ko: 메시지
+            nl: Berichten
             ru: Сообщения
             zh: 各种消息
     partners:
@@ -820,6 +899,7 @@ pages:
             hu: Partnerek
             ja: パートナー
             ko: 제휴
+            nl: Partner
             ru: Партнеры
             zh: 合作伙伴
     profile:
@@ -830,6 +910,7 @@ pages:
             hu: Magamról
             ja: あなたについて
             ko: 자기소개
+            nl: Over mij
             ru: Обо мне
             zh: 关于我
         about-me-text:
@@ -839,6 +920,7 @@ pages:
             hu: Írj egy pár soros bemutatkozást. Mit szeretnél másoknak elmondani magadról?
             ja: あなたはどんな人ですか？簡単な自己紹介を書いてください。
             ko: 당신은 어떤 사람인가요? 자유롭게 소개해 주세요.
+            nl: Shrijf iets over jou. Wat zou je willen dat mensen weten over je?
             ru: Напиши что-нибудь о себе
             zh: 你想让别人了解到你什么？请写下来
         about-me-video:
@@ -848,6 +930,7 @@ pages:
             hu: A bemutatkozó videód linkje
             ja: ビデオ URL
             ko: 비디오 URL
+            nl: Video URL
             ru: Ссылка на видео
             zh: 视频地址
         add-new-offer:
@@ -857,6 +940,7 @@ pages:
             hu: Új felajánlás küldése
             ja: 新しいオファーを追加する
             ko: 새 도움나눔 추가하기
+            nl: Nieuwe aanbiedingen toevoegen
             ru: Добавить новое предложение
             zh: 添加新的帮助
         add-new-request:
@@ -875,6 +959,7 @@ pages:
             hu: Cím
             ja: 住所
             ko: 주소
+            nl: Adres
             ru: Адрес
             zh: 地址
         address-ph:
@@ -893,6 +978,7 @@ pages:
             hu: Település
             ja: "\b市"
             ko: 시
+            nl: Stadt
             ru: Город
             zh: 市/县
         city-ph:
@@ -902,6 +988,7 @@ pages:
             hu: 'pl: Budapest'
             ja: 例：横浜市
             ko: '예: 서울'
+            nl: Bijv. Rotterdam
             ru: 'напр., Таллинн'
             zh: 比如，深圳市
         country:
@@ -911,6 +998,7 @@ pages:
             hu: Ország
             ja: 国
             ko: 국가명
+            nl: Land
             ru: Страна
             zh: 国家/地区
         country-ph:
@@ -920,6 +1008,7 @@ pages:
             hu: pl. Magyarország
             ja: 例：日本
             ko: '예: 한국'
+            nl: Bijv. Nederland
             ru: 'напр., Эстония'
             zh: 比如，中国
         county:
@@ -929,12 +1018,14 @@ pages:
             hu: Megye
             ja: 都道府県
             ko: 시/도
+            nl: Provincie
             ru: Уезд
             zh: ' 省/直辖市/自治区/特别行政区'
         county-ph:
             de: z.B. Sachsen
             en: e.g NY
             et: näit. Harjumaa
+            fi: Bijv. Brabant
             hu: 'pl: Pest megye'
             ja: 例：神奈川県
             ko: '예: 경기도'
@@ -947,6 +1038,7 @@ pages:
             hu: Fotó törlése
             ja: 写真を削除する
             ko: 사진 제거
+            nl: Foto verwijderen
             ru: Удалить фотографию
             zh: 删除照片
         email:
@@ -956,6 +1048,7 @@ pages:
             hu: E-mail
             ja: メール
             ko: 이메일
+            nl: E-mail
             ru: Э-почта
             zh: 电子邮箱
         email-ph:
@@ -965,6 +1058,7 @@ pages:
             hu: pl. janos@telecom.hu
             ja: 例：taro.yamada@softbank.ne.jp
             ko: '예: john@naver.com'
+            nl: 'Bijv, Jan@hotmail.com'
             ru: 'напр., ivan@mail.ru'
             zh: 比如，zhb1995824@163.com
         forename:
@@ -974,6 +1068,7 @@ pages:
             hu: Keresztnév
             ja: 名
             ko: 이름
+            nl: Voornaam
             ru: Имя
             zh: 名
         forename-ph:
@@ -983,6 +1078,7 @@ pages:
             hu: pl. Ferenc
             ja: 例：太郎
             ko: 길동
+            nl: Bijv. Jan
             ru: 'напр., Иван'
             zh: 比如，小明
         language:
@@ -992,6 +1088,7 @@ pages:
             hu: Nyelv
             ja: 言語
             ko: 언어
+            nl: Taal
             ru: Язык
             zh: 语言
         markdown-info:
@@ -1001,6 +1098,7 @@ pages:
             hu: 'használhatod a <a href="https://en.wikipedia.org/wiki/Markdown#Example" target="_blank">markdown</a> rendszerét a szöveged formázására'
             ja: 'テキスト形式の変更には<a href="https://en.wikipedia.org/wiki/Markdown#Example" target="_blank">Markdown</a>を使ってください。'
             ko: '사용하기 <a href="https://en.wikipedia.org/wiki/Markdown#Example" target="_blank">markdown</a> 텍스트 작성'
+            nl: 'Gebruik<a href="https://en.wikipedia.org/wiki/Markdown#Example" target="_blank">markdown</a>voor stying uw tekst'
             ru: 'для оформления текста используй данный <a href="https://en.wikipedia.org/wiki/Markdown#Example" target="_blank">язык разметки</a>'
             zh: '使用 <a href="https://en.wikipedia.org/wiki/Markdown#Example" target="_blank">markdown</a> 用来修饰你的文本'
         me-help-you-tab:
@@ -1010,6 +1108,7 @@ pages:
             hu: Segítséget nyújtok
             ja: 他の人を助けることができます
             ko: 나는 다른 사람을 도울 수 있습니다.
+            nl: IK kan anderen te helpen
             ru: Я могу помочь другим
             zh: 我可以帮助别人
         me-help-you-text:
@@ -1019,6 +1118,7 @@ pages:
             hu: Milyen módon tudsz segítséget nyújtani másoknak?
             ja: どのようにして他の人を助けることができますか？　もしも気分が乗らなければ今すぐに書く必要はありません。
             ko: 다른 사람을 어떻게 도울 수 있나요?
+            nl: 'Hoe kan u anderen te helpen? U moet niet nu te vullen, als u niet willen'
             ru: Как Ты можешь помочь другим?
             zh: 你会怎样帮助别人？如果不清楚可以选择不填此项.
         me-help-you-video:
@@ -1028,6 +1128,7 @@ pages:
             hu: Video URL
             ja: ビデオ URL
             ko: 비디오 URL
+            nl: Video URL
             ru: Ссылка на видео
             zh: 视频地址
         messages:
@@ -1037,6 +1138,7 @@ pages:
             hu: Üzenetek
             ja: メッセージ
             ko: 메시지
+            nl: Berichten
             ru: Сообщения
             zh: 所有消息
         newsletter:
@@ -1046,7 +1148,8 @@ pages:
             hu: Feliratkozom a Helpific hírlevelére
             ja: Helpificからの情報配信を希望します。
             ko: Helpfic으로 부터 소식을 받고싶습니다.
-            ru: pages.profile.send-newsletter
+            nl: Ik wil graag informatie ontvangen
+            ru: Хочу получать информацию от Helpific
             zh: 我希望收到关于Helpific的消息
         photo:
             de: Profilbild
@@ -1055,6 +1158,7 @@ pages:
             hu: Profilkép
             ja: プロフィール写真
             ko: 프로필 사진
+            nl: Profielfoto
             ru: Фотография профиля
             zh: 头像
         photo-upload:
@@ -1064,6 +1168,7 @@ pages:
             hu: '{{ photoUploadPercent }}% feltöltve...'
             ja: '{{ photoUploadPercent }}% アップロード中...'
             ko: '{{ photoUploadPercent }}% 업로드중...'
+            nl: '{{ photoUploadPercent }}% geupload'
             ru: '{{ photoUploadPercent }}% загружено...'
             zh: '{{ photoUploadPercent }}% 上传中......'
         save-info:
@@ -1073,6 +1178,7 @@ pages:
             hu: A profilbeállítások automatikusan mentésre kerülnek
             ja: プロフィールの情報は自動的に保存されます。
             ko: 프로필 정보는 자동저장 됩니다.
+            nl: Uw profiel informatie wordt automatisch opgeslagen
             ru: pages.profile.save-info
             zh: 你的信息已自动保存
         slogan:
@@ -1082,6 +1188,7 @@ pages:
             hu: Szlogen
             ja: スローガン
             ko: 좌우명
+            nl: Leuze
             ru: Слоган
             zh: 标语
         slogan-ph:
@@ -1091,6 +1198,7 @@ pages:
             hu: 'Együtt könnyebb!'
             ja: 例：一緒にやった方が簡単ではないですか？
             ko: '예: 함께하는 일, 어렵지 않습니다!'
+            nl: 'Bijv. Samen is gemakkelijker!'
             ru: 'напр., Вместе проще!'
             zh: 比如，星多天空亮，人多智慧广
         surname:
@@ -1100,6 +1208,7 @@ pages:
             hu: Vezetéknév
             ja: 姓
             ko: 성
+            nl: Achternaam
             ru: Фамилия
             zh: 姓
         surname-ph:

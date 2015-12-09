@@ -100,7 +100,7 @@ html(lang=lang, ng-app='hlpfc')
                                     li
                                         a(href='signin')= t('nav.sign-in')
                                     li.dropdown
-                                        a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false')= lang.toUpperCase()
+                                        a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false')= t('locales.' + lang.toLowerCase())
                                         ul.dropdown-menu
                                             each l in locales
                                                 li

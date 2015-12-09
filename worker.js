@@ -48,7 +48,16 @@ i18n.configure({
     locales: ['en', 'et', 'ru', 'hu', 'de', 'ko', 'zh', 'ja'],
     defaultLocale: APP_DEFAULT_LOCALE,
     file: path.join(__dirname, 'locales.yaml'),
-    updateFile: true
+    updateFile: true,
+    countries:  {
+        'ee': 'et',
+        'ru': 'ru',
+        'hu': 'hu',
+        'de': 'de',
+        'kr': 'ko',
+        'jp': 'ja',
+        'cn': 'zh'
+    }
 })
 
 

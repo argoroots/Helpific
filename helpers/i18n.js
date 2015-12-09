@@ -15,15 +15,7 @@ exports.configure = function(config) {
     i18nConfig.locales = config.locales || ['en']
     i18nConfig.defaultLocale = config.defaultLocale || 'en'
     i18nConfig.updateFile = config.updateFile || false
-    i18nConfig.countries = {
-        'ee': 'et',
-        'ru': 'ru',
-        'hu': 'hu',
-        'de': 'de',
-        'kr': 'ko',
-        'jp': 'ja',
-        'cn': 'zh'
-    }
+    i18nConfig.countries = config.countries || {}
 
     i18nConfig.translations = {}
     if(fs.existsSync(i18nConfig.file)) {
