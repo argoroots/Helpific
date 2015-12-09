@@ -4,8 +4,10 @@ feedback:
         en: 'https://helpific.entu.ee/entity/feedback/%s'
         et: 'https://helpific.entu.ee/entity/feedback/%s'
         hu: 'https://helpific.entu.ee/entity/feedback/%s'
+        it: 'https://helpific.entu.ee/entity/feedback/%s'
         ja: 'https://helpific.entu.ee/entity/feedback/%s'
         ko: 'https://helpific.entu.ee/entity/feedback/%s'
+        nl: 'https://helpific.entu.ee/entity/feedback/%s'
         ru: 'https://helpific.entu.ee/entity/feedback/%s'
         zh: 'https://helpific.entu.ee/entity/feedback/%s'
     admin-email-subject:
@@ -13,6 +15,7 @@ feedback:
         en: Added new feedback
         et: Lisati uus tagasiside
         hu: 'Új visszajelzés '
+        it: Nuovo feedback aggiunto
         ja: 新着フィードバック
         ko: 새 피드백 추가하기
         nl: 'nieuwe feedback '
@@ -23,6 +26,7 @@ feedback:
         en: E-mail
         et: E-post
         hu: E-mail
+        it: E-mail
         ja: メール
         ko: 이메일
         nl: 'E-Mail '
@@ -33,6 +37,7 @@ feedback:
         en: Message
         et: Teade
         hu: üzenet
+        it: Messaggio
         ja: メッセージ
         ko: 메시지
         nl: 'Bericht '
@@ -43,6 +48,7 @@ feedback:
         en: Send
         et: Saada
         hu: Küldés
+        it: Inviati
         ja: 送信
         ko: 전송
         nl: 'sturen '
@@ -53,6 +59,7 @@ feedback:
         en: 'Thank you!'
         et: 'Täname!'
         hu: 'köszönjük!'
+        it: 'Grazie!'
         ja: ありがとうございました！
         ko: '감사합니다!'
         nl: 'Dankjewel '
@@ -63,6 +70,7 @@ feedback:
         en: Send feedback
         et: Saada tagasiside
         hu: Visszajelzés küldése
+        it: Commenti
         ja: フィードバックを送る
         ko: 제목
         nl: 'Feedback sturen '
@@ -97,6 +105,7 @@ footer:
                 SWIFT/BIC: HABAEE2X (SWEDBANK AS)<br>
                 <a href="mailto:info@helpific.com">info@helpific.com</a>
             </small>
+        it: '<strong>HELPIFIC MTÜ</strong><br> <small>    Reg nr: 80380146<br>    Account: EE102200221061303677<br>    SWIFT/BIC: HABAEE2X (SWEDBANK AS)<br>    <a href="mailto:info@helpific.com">info@helpific.com</a></small>'
         ja: '<strong>HELPIFIC MTÜ</strong><br> <small>    登録番号: 80380146<br>    口座番号(IBAN): EE102200221061303677<br>    SWIFT/BIC: HABAEE2X (SWEDBANK AS)<br>    <a href="mailto:info@helpific.com">info@helpific.com</a></small>'
         ko: '<strong>HELPIFIC MTÜ</strong><br> <small>    Reg nr: 80380146<br>    계좌번호(IBAN): EE102200221061303677<br>    SWIFT/BIC: HABAEE2X (SWEDBANK AS)<br>    <a href="mailto:info@helpific.com">info@helpific.com</a></small>'
         nl: '<strong>HELPIFIC MTÜ</strong><br> <small>    Reg nr: 80380146<br>    IBAN: EE102200221061303677<br>    SWIFT/BIC: HABAEE2X (SWEDBANK AS)<br>    <a href="mailto:info@helpific.com">info@helpific.com</a></small>'
@@ -123,6 +132,7 @@ help:
         en: Added new help request/offer
         et: Lisati uus soov/pakkumine
         hu: Új segítségkérés/felajánlás hozzáadása
+        it: Nuova richiesta/offerta aggiunta
         ja: 新着リクエスト／オファー
         ko: 도움 요청/나눔 입력하기
         nl: Nieuwe hulpverzoek/ aanbod
@@ -134,6 +144,7 @@ locales:
         en: Deutsch
         et: Deutsch
         hu: Deutsch
+        it: Deutsch
         ja: Deutsch
         ko: Deutsch
         nl: Deutsch
@@ -144,6 +155,7 @@ locales:
         en: English
         et: English
         hu: English
+        it: English
         ja: English
         ko: English
         nl: English
@@ -154,6 +166,7 @@ locales:
         en: Eesti keel
         et: Eesti keel
         hu: Eesti keel
+        it: Eesti keel
         ja: Eesti keel
         ko: Eesti keel
         nl: Eesti keel
@@ -164,16 +177,29 @@ locales:
         en: Magyar
         et: Magyar
         hu: Magyar
+        it: Magyar
         ja: Magyar
         ko: Magyar
         nl: Magyar
         ru: Magyar
         zh: Magyar
+    it:
+        de: Italian
+        en: Italian
+        et: Italian
+        hu: Italian
+        it: Italian
+        ja: Italian
+        ko: Italian
+        nl: Italian
+        ru: Italian
+        zh: Italian
     ja:
         de: Japanese
         en: Japanese
         et: Japanese
         hu: Japanese
+        it: Japanese
         ja: Japanese
         ko: Japanese
         nl: Japanese
@@ -184,6 +210,7 @@ locales:
         en: 한국어
         et: 한국어
         hu: 한국어
+        it: 한국어
         ja: 한국어
         ko: 한국어
         nl: 한국어
@@ -194,6 +221,7 @@ locales:
         en: Русский
         et: Русский
         hu: Русский
+        it: Русский
         ja: Русский
         ko: Русский
         nl: Русский
@@ -205,6 +233,7 @@ locales:
         et: 简体中文
         fi: 简体中文
         hu: 简体中文
+        it: 简体中文
         ja: 简体中文
         ko: 简体中文
         nl: 简体中文
@@ -224,6 +253,7 @@ message:
         hu: >
             Szia!<br> <br> Új üzeneted érkezett a Helpific:<br> <a
             href="https://helpific.com/en/messages/%s">helpific.com/en/messages/%s</a>
+        it: 'Ciao!<br> <br> Hai un nuovo messaggio su Helpific:<br> <a href="https://helpific.com/en/messages/%s">helpific.com/en/messages/%s</a>'
         ja: 'こんにちは！<br> <br>Helpific上に新着メッセージが届いています。<br> <a href="https://helpific.com/en/messages/%s">helpific.com/en/messages/%s</a>'
         ko: '반갑습니다!<br> <br> Helpific에 새로운 메시지가 있습니다.:<br> <a href="https://helpific.com/en/messages/%s">helpific.com/en/messages/%s</a>'
         nl: 'Hoi!<br> <br> jij heeft een nieuwe bericht in Helpific:<br> <a href="https://helpific.com/en/messages/%s">helpific.com/en/messages/%s</a>'
@@ -236,6 +266,7 @@ message:
         en: New message in helpific.com
         et: "Uus sõnum helpific.com'is"
         hu: Új üzeneted érkezett a helpific.com-ra
+        it: Nuovo messaggio su helpific.com
         ja: Helpific上の新着メッセージ
         ko: helpific.com에 새 메시지
         nl: nieuwe bericht in helpific.com
@@ -247,6 +278,7 @@ nav:
         en: About
         et: Meist
         hu: Magunkról
+        it: Su Helpific
         ja: Helpificについて
         ko: 함께하는 사람들
         nl: Over
@@ -257,6 +289,7 @@ nav:
         en: Beyond Borders
         et: Piirideta Elu
         hu: Túl a határokon
+        it: Oltre i confini
         ja: 国境を越える
         ko: 국경을 뛰어넘어
         nl: Buiten de Grenzen
@@ -267,6 +300,7 @@ nav:
         en: Blog
         et: Blogi
         hu: Blog
+        it: Blog
         ja: ブログ
         ko: 블로그
         nl: Blog
@@ -278,6 +312,7 @@ nav:
             en: Messages
             et: Sõnumid
             hu: Üzenetek
+            it: Messaggi
             ja: メッセージ
             ko: 메시지
             nl: Berichten
@@ -288,6 +323,7 @@ nav:
             en: My offers
             et: Minu pakkumised
             hu: Az én felajánlásaim
+            it: Le mie offerte
             ja: マイ オファー
             ko: 나의 나눔 목록
             nl: Mijn aanbiedingen
@@ -298,6 +334,7 @@ nav:
             en: Edit profile
             et: Muuda profiili
             hu: Profil szerkesztése
+            it: Modifica profilo
             ja: プロフィールを編集する
             ko: 프로필 편집
             nl: Bewerk profiel
@@ -308,6 +345,7 @@ nav:
             en: My requests
             et: Minu soovid
             hu: Segítségkéréseim
+            it: Le mie richieste
             ja: マイ リクエスト
             ko: 나의 요청 목록
             nl: Mijn aanvragen
@@ -318,6 +356,7 @@ nav:
             en: Sign out
             et: Välju
             hu: Kijelentkezés
+            it: Esci
             ja: ログアウト
             ko: 로그아웃
             nl: Afmelden
@@ -328,6 +367,7 @@ nav:
         en: Offers
         et: Pakkumised
         hu: Felajánlások
+        it: Offerte
         ja: オファー
         ko: 도움나눔
         nl: Aanbiedingen
@@ -338,6 +378,7 @@ nav:
         en: Partners
         et: Partnerid
         hu: Partnerek
+        it: Partners
         ja: パートナー
         ko: 제휴
         nl: Partner
@@ -348,6 +389,7 @@ nav:
         en: Projects
         et: Projektid
         hu: Projektek
+        it: Progetti
         ja: プロジェクト
         ko: 프로젝트
         nl: Project
@@ -358,6 +400,7 @@ nav:
         en: Requests
         et: Soovid
         hu: Segítségkérések
+        it: Richieste
         ja: リクエスト
         ko: 도움요청
         nl: Aanvragen
@@ -368,6 +411,7 @@ nav:
         en: Sign in
         et: Sisene
         hu: Bejelentkezés
+        it: Sign in
         ja: ログイン
         ko: 로그인
         nl: Aanmelden
@@ -378,6 +422,7 @@ nav:
         en: Team
         et: Meeskond
         hu: Team
+        it: Team
         ja: チーム
         ko: 함께하는 사람들
         nl: Team
@@ -388,6 +433,7 @@ nav:
         en: Terms of Use
         et: Tingimused
         hu: Felhasználói Feltételek
+        it: "Condizioni d'uso"
         ja: 利用規約
         ko: 이용약관
         nl: Gebruiksvoorwaarden
@@ -399,6 +445,7 @@ nav:
         et: Ava menüü
         fi: Ga naar het menu
         hu: Visszalépés a menübe
+        it: Menù
         ja: ナビゲーションを切り替える
         ko: 메뉴로 이동
         ru: Открыть меню
@@ -408,6 +455,7 @@ nav:
         en: Users
         et: Kasutajad
         hu: Felhasználók
+        it: Utenti
         ja: ユーザー
         ko: 사용자
         nl: Gebruikers
@@ -420,6 +468,7 @@ pages:
             en: Error
             et: Viga
             hu: Hiba
+            it: Errore
             ja: エラー
             ko: 오류
             nl: fout
@@ -432,6 +481,7 @@ pages:
             et: Lisa uus pakkumine
             fi: Nieuwe aanbieding toevoegen
             hu: Új felajánlás hozzáadása
+            it: Aggiungi offerta
             ja: 新しいオファーを追加する
             ko: 도움나눔 입력하기
             ru: Добавить новое предложение
@@ -441,6 +491,7 @@ pages:
             en: Add new request
             et: Lisa uus soov
             hu: Új segítségkérés hozzáadása
+            it: Aggiungi richiesta
             ja: 新しいリクエストを追加する
             ko: 도움요청 입력하기
             nl: nieuwe hulpverzoek toevoegen
@@ -451,6 +502,7 @@ pages:
             en: 'Added at:'
             et: 'Lisamise aeg:'
             hu: pages.help.added
+            it: pages.help.added
             ja: pages.help.added
             ko: pages.help.added
             nl: 'Toegevoegd op:'
@@ -461,6 +513,7 @@ pages:
             en: Cancel
             et: Tühista
             hu: Mégse
+            it: Elimina
             ja: 取り消し
             ko: 취소
             nl: Annuleer
@@ -471,6 +524,7 @@ pages:
             en: Edit
             et: Muuda
             hu: Szerkesztés
+            it: Modifica
             ja: 編集
             ko: 편집
             nl: Bewerk
@@ -481,6 +535,7 @@ pages:
             en: Location
             et: Asukoht
             hu: Helyszín
+            it: Posizione
             ja: 場所
             ko: 장소
             nl: plaats
@@ -491,6 +546,7 @@ pages:
             en: 'e.g. Tallinn, Harjumaa'
             et: 'näit. Tallinn, Harjumaa'
             hu: pl. Budapest
+            it: 'a Roma, Italia'
             ja: 例：神奈川県横浜市
             ko: '예: 서울, 용산구'
             nl: 'Bijv. Tallinn, Harjumaa'
@@ -501,6 +557,7 @@ pages:
             en: "There are total {{ (help | filter:{type:type }).length }} offers here <span ng-if='search_query || searchMy'> - found {{ (help | filter:{status:s.status, type:type, my:searchMy} | filter:search_query).length }}</span>"
             et: "Kokku on meil {{ (help | filter:{type:type }).length }} pakkumist <span ng-if='search_query || searchMy'> - leiti {{ (help | filter:{status:s.status, type:type, my:searchMy} | filter:search_query).length }}</span>"
             hu: "Összesen {{ (help | filter:{type:type }).length }} felajánlás található a rendszerben <span ng-if='search_query || searchMy'> - tal?lat {{ (help | filter:{status:s.status, type:type, my:searchMy} | filter:search_query).length }}</span>"
+            it: "Tutte le offerte <span ng-if='search_query || searchMy'> - found </span>"
             ja: "すべてのオファー <span ng-if='search_query || searchMy'> - 見つかりました </span>"
             ko: "전체 {{ (help | filter:{type:type }).length }} 도움 나눔이 있습니다. <span ng-if='search_query || search_my'> - found {{ (help | filter:{status:s.status, type:type, my:search_my} | filter:search_query).length }}</span>"
             nl: "Er zijn totaal aanbiedingen hier <span ng-if='search_query || search_my'> - found </span>"
@@ -531,6 +588,7 @@ pages:
             en: Offers
             et: Pakkumised
             hu: Felajánlások
+            it: Offerta
             ja: オファー
             ko: 도움 나눔
             nl: Aanbiedingen
@@ -541,6 +599,7 @@ pages:
             en: Show only my offers
             et: Näita ainult minu pakkumisi
             hu: Csak az én felajánlásaim legyenek láthatóak
+            it: Mostra solo le mie offerte
             ja: 自分のオファーのみ表示する
             ko: 내 도움나눔만 보기
             nl: Toon alleen mijn aanbiedingen
@@ -551,6 +610,7 @@ pages:
             en: Show only my requests
             et: Näita ainult minu soove
             hu: Csak az én segítségkéréseim legyenek láthatóak
+            it: Mostra solo le mie richieste
             ja: 自分のリクエストのみ表示する
             ko: 내 도움요청만 보기
             nl: Toon alleen mijn verzoeken
@@ -561,6 +621,7 @@ pages:
             en: Reply
             et: Vasta
             hu: Válasz
+            it: Rispondi
             ja: 返信
             ko: 답변
             nl: Antwoord
@@ -571,6 +632,7 @@ pages:
             en: "There are total {{ (help | filter:{type:type }).length }} requests here <span ng-if='search_query || searchMy'> - found {{ (help | filter:{status:s.status, type:type, my:searchMy} | filter:search_query).length }}</span>"
             et: "Kokku on meil {{ (help | filter:{type:type }).length }} soovi <span ng-if='search_query || searchMy'> - leiti {{ (help | filter:{status:s.status, type:type, my:searchMy} | filter:search_query).length }}</span>"
             hu: "Összesen {{ (help | filter:{type:type }).length }} segítségkérés van a rendszerben <span ng-if='search_query || searchMy'> - találat {{ (help | filter:{status:s.status, type:type, my:searchMy} | filter:search_query).length }}</span>"
+            it: "Totale richieste <span ng-if='search_query || searchMy'> - found </span>"
             ja: "全てのリクエスト　<span ng-if='search_query || searchMy'> - 見つかりました </span>"
             ko: "전체 {{ (help | filter:{type:type }).length }} 도움요청이 있습니다. <span ng-if='search_query || search_my'> - found {{ (help | filter:{status:s.status, type:type, my:search_my} | filter:search_query).length }}</span>"
             nl: "Er zijn totaal verzoeken hier <span ng-if='search_query || searchMy'> - gevonden </span>"
@@ -581,6 +643,7 @@ pages:
             en: Request
             et: Soov
             hu: Segítségkérés
+            it: Richiesta
             ja: リクエスト
             ko: 요청
             nl: Aanvraag
@@ -591,6 +654,7 @@ pages:
             en: "e.g. I'll want to go to Nuustaku"
             et: näit. Soovin minna Nuustakule
             hu: pl. Budapestre akarok menni
+            it: es. Ho necessità di andare a Firenze
             ja: 例：東京駅に行きたいです。
             ko: '예: 서울시 용산에 방문하고 싶습니다.'
             nl: bijv. Ik wil naar Nuustaku gaan
@@ -601,6 +665,7 @@ pages:
             en: Requests
             et: Soovid
             hu: Segítségkérés
+            it: Richieste
             ja: リクエスト
             ko: 도움 요청
             nl: Aanvragen
@@ -611,6 +676,7 @@ pages:
             en: Save
             et: Salvesta
             hu: Mentés
+            it: Salva
             ja: 保存
             ko: 저장
             nl: sparen
@@ -621,6 +687,7 @@ pages:
             en: Status
             et: Staatus
             hu: Státusz
+            it: Status
             ja: ステータス
             ko: 지위
             nl: Toestand
@@ -631,6 +698,7 @@ pages:
             en: Accepted
             et: Vastuvõetud
             hu: Elfogadva
+            it: Accettata
             ja: 引き受けられました
             ko: 수락
             nl: aanvaard
@@ -641,6 +709,7 @@ pages:
             en: Accepted
             et: Vastuvõetud
             hu: Elfogadva
+            it: Accettata
             ja: 引き受けられました
             ko: 수락
             nl: aanvaard
@@ -651,6 +720,7 @@ pages:
             en: Active
             et: Aktiivne
             hu: Aktív
+            it: Attiva
             ja: 活動中
             ko: 활동중
             nl: Actief
@@ -661,6 +731,7 @@ pages:
             en: Active
             et: Aktiivsed
             hu: Aktív
+            it: Attiva
             ja: 活動中
             ko: 활동중
             nl: Actief
@@ -671,6 +742,7 @@ pages:
             en: Canceled
             et: Tühistatud
             hu: Törölve
+            it: Cancellata
             ja: 取り消し
             ko: 취소됨
             nl: geannuleerd
@@ -681,6 +753,7 @@ pages:
             en: Canceled
             et: Tühistatud
             hu: Törölve
+            it: Cancellata
             ja: 取り消し
             ko: 취소됨
             nl: geannuleerd
@@ -691,6 +764,7 @@ pages:
             en: Done
             et: Tehtud
             hu: Lezárt
+            it: Eseguita
             ja: 完了
             ko: 완료
             nl: Gedaan
@@ -701,6 +775,7 @@ pages:
             en: Done
             et: Tehtud
             hu: Lezárt
+            it: Eseguita
             ja: 完了
             ko: 완료
             nl: Gedaan
@@ -721,6 +796,7 @@ pages:
             en: 'e.g. 04.08.2015 02:59'
             et: 'näit. 04.08.2015 02:59'
             hu: "Pl. 04.08.2015 02:59'"
+            it: "es. 04.08.2015 02:59'"
             ja: 例：2015年8月4日2時59分
             ko: '예: 2015년 8월 4일 2시 59분'
             nl: 'Bijv. 04.08.2015 02:59'
@@ -732,6 +808,7 @@ pages:
             en: Sign in via Facebook or Google
             et: "Sisene Facebooki või Google'i kaudu"
             hu: Belépés Facebook vagy Google profillal
+            it: Registrati via Facebook o Google
             ja: Facebook、またはGoogleでログインする
             ko: 페이스북이나 구글 계정으로 로그인을 합니다.
             nl: aanmelden met Facebook of Google
@@ -742,6 +819,7 @@ pages:
             en: Let us know what you can do or need
             et: Anna teada kuidas saad aidata või mida vajad
             hu: Küld el nekünk segítségkérésed vagy felajánlásod
+            it: Facci sapere cosa necessiti o come puoi aiutare
             ja: あなたが必要としてることやあなたが助けてあげられることを教えてください
             ko: '당신 나눌 수 있거나 필요로하는 일을 적습니다. '
             nl: 'U laat het ons weten, wat u kunt doen of nodig hebt'
@@ -752,6 +830,7 @@ pages:
             en: Make your needs and deeds work
             et: pages.index.bullet-3
             hu: Vedd fel a kapcsolatot másokkal
+            it: Entra in contatto con gli altri
             ja: 活動を開始する
             ko: '활동을 시작합니다!'
             nl: 'maak u '
@@ -762,6 +841,7 @@ pages:
             en: Choose your way
             et: Vali oma tee
             hu: Válassz az alábbi lehetőségek közül
+            it: Scegli tra queste opzioni
             ja: あなたの道を選択してください
             ko: 당신의 경로를 선택하세요.
             nl: Kies uw weg
@@ -772,6 +852,7 @@ pages:
             en: How Helpific works?
             et: Kuidas Helpific töötab?
             hu: Hogyan működik a Helpific?
+            it: Come funziona Helpific?
             ja: Helpificの仕組みは？
             ko: Helpific을 어떻게 이용하나요?
             nl: Hoe werkt Helpific?
@@ -782,6 +863,7 @@ pages:
             en: Meet the volunteers
             et: Kohtu vabatahtlike abistajatega
             hu: Felajánlások
+            it: Incontra i volontari
             ja: ボランティアを探す
             ko: 봉사자들 만나기
             ru: Знакомство с волонтерами
@@ -791,6 +873,7 @@ pages:
             en: Left door
             et: Vasak uks
             hu: Baloldali ajtó
+            it: Sinistra
             ja: 左のドア
             ko: 왼쪽문
             nl: linker deur
@@ -801,6 +884,7 @@ pages:
             en: Help those in need
             et: Aita abivajajaid
             hu: Segítségkérések
+            it: Aiuta chi ha bisogno
             ja: 困ってる人を助けてあげてください
             ko: 도움이 필요한 사람들을 도와주세요.
             ru: 'Помоги тем, кто нуждается'
@@ -810,6 +894,7 @@ pages:
             en: Right door
             et: Parem uks
             hu: Jobboldali ajtó
+            it: Destra
             ja: 右のドア
             ko: 오른쪽문
             nl: Rechter deur
@@ -820,6 +905,7 @@ pages:
             en: "Isn't it easier together?"
             et: 'Koos on ju lihtsam!'
             hu: 'Együtt sokkal könnyebb!'
+            it: 'Insieme è più semplice!'
             ja: 一緒にやった方が簡単ではないですか？
             ko: '함께하는 일, 어렵지 않습니다!'
             nl: 'samen is gemakkelijker!'
@@ -850,6 +936,7 @@ pages:
                 emberekkel, akiknek segítségre van szüksége a mindennapokban.
                 </p> <p ng-if='info'>Jelenleg {{ info.help }} segítségkérésre
                 érkezett már válasz {{ info.users }} embertől.</p>
+            it: "<h2>Non è mai stato più semplice aiutare e ricevere aiuto</h2> <p>Helpific connette i volontari con coloro che necessitano aiuto per le faccende quotidiane</p> <p ng-if='info'>Al momento abbiamo volontari attivi e richieste già esaudite.</p>"
             ja: "<h2>これまで、誰かを助けることも誰かに助けを求めることもとても難しいことでした。</h2> <p>Helpificは毎日の生活で助けを必要としている人と、そこに手を差し伸べる優しい人をつなげます。</p> <p ng-if='info'>Helpific上では、現在すでにたくさんの心優しい人々が、困ってる人々を助けています。</p>"
             ko: "<h2>도움을 주고받는 일, 어렵지 않습니다.</h2> <p>Helpific은 일상 속에서 도움이 필요한 사람과 도움을 나눌 수 있는 사람을 연결합니다. </p> <p ng-if='info'> 현재까지 우리는  도움을 주고받았고  활동 중인 봉사자들이 있습니다.</p>"
             nl: '<h2>'
@@ -866,6 +953,7 @@ pages:
             en: New message
             et: Uus sõnum
             hu: Új üzenet
+            it: Nuovo messaggio
             ja: 新着メッセージ
             ko: 새 메시지
             nl: Nieuwe Bericht
@@ -876,6 +964,7 @@ pages:
             en: Send
             et: Saada
             hu: Küldés
+            it: Inviato
             ja: 送信
             ko: 전송
             nl: Sturen
@@ -886,6 +975,7 @@ pages:
             en: Messages
             et: Sõnumid
             hu: Üzenetek
+            it: Messaggi
             ja: メッセージ
             ko: 메시지
             nl: Berichten
@@ -897,6 +987,7 @@ pages:
             en: Partners
             et: Partnerid
             hu: Partnerek
+            it: Partners
             ja: パートナー
             ko: 제휴
             nl: Partner
@@ -908,6 +999,7 @@ pages:
             en: About me
             et: Minust
             hu: Magamról
+            it: 'Su '
             ja: あなたについて
             ko: 자기소개
             nl: Over mij
@@ -918,6 +1010,7 @@ pages:
             en: Write something about you. What would you like people to know about you?
             et: Kirjuta midagi endast
             hu: Írj egy pár soros bemutatkozást. Mit szeretnél másoknak elmondani magadról?
+            it: 'Scrivi qualcosa su di te. '
             ja: あなたはどんな人ですか？簡単な自己紹介を書いてください。
             ko: 당신은 어떤 사람인가요? 자유롭게 소개해 주세요.
             nl: Shrijf iets over jou. Wat zou je willen dat mensen weten over je?
@@ -928,6 +1021,7 @@ pages:
             en: Video URL
             et: Video viide
             hu: A bemutatkozó videód linkje
+            it: Video URL
             ja: ビデオ URL
             ko: 비디오 URL
             nl: Video URL
@@ -938,6 +1032,7 @@ pages:
             en: Add new offer
             et: Lisa uus pakkumine
             hu: Új felajánlás küldése
+            it: Aggiungi nuova offerta
             ja: 新しいオファーを追加する
             ko: 새 도움나눔 추가하기
             nl: Nieuwe aanbiedingen toevoegen
@@ -948,6 +1043,7 @@ pages:
             en: Add new request
             et: Lisa uus soov
             hu: Új segítségkérés küldése
+            it: Aggiungi nuova richiesta
             ja: 新しいリクエストを追加する
             ko: 새 도움요청 추가하기
             ru: Добавить новую просьбу
@@ -957,6 +1053,7 @@ pages:
             en: Address
             et: Aadress
             hu: Cím
+            it: Indirizzo
             ja: 住所
             ko: 주소
             nl: Adres
@@ -967,6 +1064,7 @@ pages:
             en: e.g. 767 5th Avenue
             et: e.g. Tartu mnt. 1
             hu: pl. Kossuth utca 1.
+            it: es. via Roma 13
             ja: 例：中区港町x-x
             ko: '예: 도봉구 859-19'
             ru: 'напр., Тартуское шоссе, 1'
@@ -976,6 +1074,7 @@ pages:
             en: City
             et: Linn
             hu: Település
+            it: Città
             ja: "\b市"
             ko: 시
             nl: Stadt
@@ -986,6 +1085,7 @@ pages:
             en: e.g. New York
             et: näit. Tallinn
             hu: 'pl: Budapest'
+            it: 'es: Roma'
             ja: 例：横浜市
             ko: '예: 서울'
             nl: Bijv. Rotterdam
@@ -996,6 +1096,7 @@ pages:
             en: Country
             et: Riik
             hu: Ország
+            it: Nazione
             ja: 国
             ko: 국가명
             nl: Land
@@ -1006,6 +1107,7 @@ pages:
             en: e.g. United States
             et: näit. Eesti
             hu: pl. Magyarország
+            it: es. Italia
             ja: 例：日本
             ko: '예: 한국'
             nl: Bijv. Nederland
@@ -1016,6 +1118,7 @@ pages:
             en: County
             et: Maakond
             hu: Megye
+            it: Provincia
             ja: 都道府県
             ko: 시/도
             nl: Provincie
@@ -1027,6 +1130,7 @@ pages:
             et: näit. Harjumaa
             fi: Bijv. Brabant
             hu: 'pl: Pest megye'
+            it: 'es: MI'
             ja: 例：神奈川県
             ko: '예: 경기도'
             ru: 'напр., Харьюмаа'
@@ -1036,6 +1140,7 @@ pages:
             en: Delete photo
             et: Kustuta pilt
             hu: Fotó törlése
+            it: Elimina foto
             ja: 写真を削除する
             ko: 사진 제거
             nl: Foto verwijderen
@@ -1046,6 +1151,7 @@ pages:
             en: E-mail
             et: E-post
             hu: E-mail
+            it: E-mail
             ja: メール
             ko: 이메일
             nl: E-mail
@@ -1066,6 +1172,7 @@ pages:
             en: Forename
             et: Eesnimi
             hu: Keresztnév
+            it: Nome
             ja: 名
             ko: 이름
             nl: Voornaam
@@ -1076,6 +1183,7 @@ pages:
             en: e.g. John
             et: näit. Juhan
             hu: pl. Ferenc
+            it: es. Marco
             ja: 例：太郎
             ko: 길동
             nl: Bijv. Jan
@@ -1086,6 +1194,7 @@ pages:
             en: Language
             et: Keel
             hu: Nyelv
+            it: Lingua
             ja: 言語
             ko: 언어
             nl: Taal
@@ -1096,6 +1205,7 @@ pages:
             en: 'use <a href="https://en.wikipedia.org/wiki/Markdown#Example" target="_blank">markdown</a> for styling your text'
             et: 'teksti kujundamiseks kasuta <a href="https://en.wikipedia.org/wiki/Markdown#Example" target="_blank">markdowni</a>'
             hu: 'használhatod a <a href="https://en.wikipedia.org/wiki/Markdown#Example" target="_blank">markdown</a> rendszerét a szöveged formázására'
+            it: 'use <a href="https://en.wikipedia.org/wiki/Markdown#Example" target="_blank">markdown</a> for styling your text'
             ja: 'テキスト形式の変更には<a href="https://en.wikipedia.org/wiki/Markdown#Example" target="_blank">Markdown</a>を使ってください。'
             ko: '사용하기 <a href="https://en.wikipedia.org/wiki/Markdown#Example" target="_blank">markdown</a> 텍스트 작성'
             nl: 'Gebruik<a href="https://en.wikipedia.org/wiki/Markdown#Example" target="_blank">markdown</a>voor stying uw tekst'
@@ -1106,6 +1216,7 @@ pages:
             en: I can help others
             et: Aitan sind
             hu: Segítséget nyújtok
+            it: Posso aiutare
             ja: 他の人を助けることができます
             ko: 나는 다른 사람을 도울 수 있습니다.
             nl: IK kan anderen te helpen
@@ -1227,6 +1338,7 @@ pages:
             hu: Az én profilom
             ja: マイプロフィール
             ko: 내 프로필
+            nl: Mijn profiel
             ru: Мой профиль
             zh: 我的资料
         video-info:
@@ -1236,6 +1348,7 @@ pages:
             hu: 'Jelenleg <a href="https://youtube.com" target="_blank">YouTube</a>, <a href="https://vimeo.com" target="_blank">Vimeo</a> és <a href="https://wistia.com" target="_blank">Wistia</a> videókat tölthetsz fel'
             ja: '<a href="https://youtube.com" target="_blank">YouTube</a>と<a href="https://vimeo.com" target="_blank">Vimeo</a>、<a href="https://wistia.com" target="_blank">Wistia</a>にのみ対応しています。'
             ko: "<a href=\"https://youtube.com\" target=\"_blank\">YouTube</a>, <a href=\"https://vimeo.com\" target=\"_blank\">Vimeo</a> und <a href=\"https://wistia.com\" target=\"_blank\">Wistia</a> urls'만 지원 가능합니다."
+            nl: 'We steunen alleen <a href="https://youtube.com" target="_blank">YouTube</a>, <a href="https://vimeo.com" target="_blank">Vimeo</a> and <a href="https://wistia.com" target="_blank">Wistia</a> urls'
             ru: 'поддерживаются только ссылки на <a href="https://youtube.com" target="_blank">YouTube</a>, <a href="https://vimeo.com" target="_blank">Vimeo</a> и <a href="https://wistia.com" target="_blank">Wistia</a>'
             zh: '我们仅支持来自 <a href="https://youtube.com" target="_blank">YouTube</a>, <a href="https://vimeo.com" target="_blank">Vimeo</a> and <a href="https://wistia.com" target="_blank">Wistia</a> 的url'
         video-ph:
@@ -1245,6 +1358,7 @@ pages:
             hu: 'pl.: https://www.youtube.com/watch?v=QH2-TGUlwu4'
             ja: '例：https://www.youtube.com/watch?v=QH2-TGUlwu4'
             ko: '예: https://www.youtube.com/watch?v=QH2-TGUlwu4'
+            nl: 'Bijv. https://www.youtube.com/watch?v=QH2-TGUlwu4'
             ru: 'напр., https://www.youtube.com/watch?v=QH2-TGUlwu4'
             zh: '比如，https://www.youtube.com/watch?v=QH2-TGUlwu4'
         you-help-me-tab:
@@ -1254,6 +1368,7 @@ pages:
             hu: Segítségre van szükségem
             ja: 助けを必要としています
             ko: 도움이 필요합니다.
+            nl: Ik heb hulp nodig
             ru: Мне нужна помощь
             zh: 我需要帮助
         you-help-me-text:
@@ -1272,6 +1387,7 @@ pages:
             hu: A bemutatkozó videó URL címe
             ja: ビデオ URL
             ko: 비디오 URL
+            nl: Video URL
             ru: Ссылка на видео
             zh: 视频地址
     sign-in:
@@ -1357,6 +1473,7 @@ pages:
             hu: Felajánlásaim
             ja: 私のオファー
             ko: 내 도움나눔
+            nl: Mijn aanbiedingen
             ru: Мои предложения
             zh: 我提供的帮助
         help-requests:
@@ -1366,6 +1483,7 @@ pages:
             hu: Segítségkéréseim
             ja: 私のリクエスト
             ko: 내 도움 요청
+            nl: MIjn verzoeken
             ru: Мои просьбы
             zh: 我发出的请求
         me-help-you-tab:
@@ -1375,6 +1493,7 @@ pages:
             hu: Segítséget ajánlok
             ja: 私は他の人を助けることができます
             ko: '다른 사람을 도울 수 있습니다. '
+            nl: Ik kan anderen te helpen
             ru: Я могу помочь другим
             zh: 我可以帮助别人
         send-message:
@@ -1384,6 +1503,7 @@ pages:
             hu: Üzenet küldése
             ja: メッセージを送る
             ko: 메시지 전송
+            nl: Bericht sturen
             ru: Отправить сообщение
             zh: 发送消息
         you-help-me-tab:
@@ -1393,6 +1513,7 @@ pages:
             hu: Segítségre van szükségem
             ja: 私は助けを必要としています。
             ko: 도움이 필요합니다.
+            nl: ik heb hulp nodig
             ru: Мне нужна помощь
             zh: 我需要帮助
     users:
@@ -1403,6 +1524,7 @@ pages:
             hu: "Összesen {{ users.length }} felhasználó van a rendszerben <span ng-if='search_query'> - találat {{ (users | filter:search_query).length }}</span>"
             ja: "全ユーザー　<span ng-if='search_query'> - found </span>"
             ko: "전체 {{ users.length }} 사용자 <span ng-if='search_query'> - found {{ (users | filter:search_query).length }}</span>\""
+            nl: Er zijn totaal gebruikers hier
             ru: "У нас в общей сложности {{ users.length }} участников <span ng-if='search_query'> - найдено {{ (users | filter:search_query).length }}</span>"
             zh: "所有的用户都在这里<span ng-if='search_query || searchMy'> - 发现</span>"
         title:
@@ -1412,5 +1534,6 @@ pages:
             hu: Tagok
             ja: ユーザー
             ko: 사용자
+            nl: Gebruikers
             ru: Участники
             zh: 用户
