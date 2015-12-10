@@ -45,7 +45,7 @@ fs.existsSync(APP_CACHE_DIR) || fs.mkdirSync(APP_CACHE_DIR)
 
 // Configure i18n
 i18n.configure({
-    locales: ['en', 'et', 'ru', 'hu', 'de', 'ko', 'zh', 'ja'],
+    locales: ['en', 'et', 'ru', 'hu', 'de', 'ko', 'zh', 'ja', 'it'],
     defaultLocale: APP_DEFAULT_LOCALE,
     file: path.join(__dirname, 'locales.yaml'),
     updateFile: true,
@@ -56,7 +56,8 @@ i18n.configure({
         'de': 'de',
         'kr': 'ko',
         'jp': 'ja',
-        'cn': 'zh'
+        'cn': 'zh',
+        'it': 'it'
     }
 })
 
