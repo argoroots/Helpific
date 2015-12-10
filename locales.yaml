@@ -18,7 +18,7 @@ feedback:
         it: Nuovo feedback aggiunto
         ja: 新着フィードバック
         ko: 새 피드백 추가하기
-        nl: 'nieuwe feedback '
+        nl: 'Nieuwe feedback '
         ru: Добавлен новый отзыв
         zh: 新建反馈
     email:
@@ -51,7 +51,7 @@ feedback:
         it: Inviati
         ja: 送信
         ko: 전송
-        nl: 'sturen '
+        nl: 'Sturen '
         ru: Отправить
         zh: 发送
     thanks:
@@ -62,7 +62,7 @@ feedback:
         it: 'Grazie!'
         ja: ありがとうございました！
         ko: '감사합니다!'
-        nl: 'Dankjewel '
+        nl: 'Dankuwel '
         ru: 'Благодарим!'
         zh: 谢谢你！
     title:
@@ -105,7 +105,7 @@ footer:
                 SWIFT/BIC: HABAEE2X (SWEDBANK AS)<br>
                 <a href="mailto:info@helpific.com">info@helpific.com</a>
             </small>
-        it: '<strong>HELPIFIC MTÜ</strong><br> <small>    Reg nr: 80380146<br>    Account: EE102200221061303677<br>    SWIFT/BIC: HABAEE2X (SWEDBANK AS)<br>    <a href="mailto:info@helpific.com">info@helpific.com</a></small>'
+        it: '<strong>HELPIFIC MTÜ</strong><br> <small>    Reg nr: 80380146<br>    Conto: EE102200221061303677<br>    SWIFT/BIC: HABAEE2X (SWEDBANK AS)<br>    <a href="mailto:info@helpific.com">info@helpific.com</a></small>'
         ja: '<strong>HELPIFIC MTÜ</strong><br> <small>    登録番号: 80380146<br>    口座番号(IBAN): EE102200221061303677<br>    SWIFT/BIC: HABAEE2X (SWEDBANK AS)<br>    <a href="mailto:info@helpific.com">info@helpific.com</a></small>'
         ko: '<strong>HELPIFIC MTÜ</strong><br> <small>    Reg nr: 80380146<br>    계좌번호(IBAN): EE102200221061303677<br>    SWIFT/BIC: HABAEE2X (SWEDBANK AS)<br>    <a href="mailto:info@helpific.com">info@helpific.com</a></small>'
         nl: '<strong>HELPIFIC MTÜ</strong><br> <small>    Reg nr: 80380146<br>    IBAN: EE102200221061303677<br>    SWIFT/BIC: HABAEE2X (SWEDBANK AS)<br>    <a href="mailto:info@helpific.com">info@helpific.com</a></small>'
@@ -122,6 +122,7 @@ help:
         en: 'https://helpific.com/et/help/%s'
         et: 'https://helpific.com/et/help/%s'
         hu: 'https://helpific.com/et/help/%s'
+        it: 'https://helpific.com/et/help/%s'
         ja: 'https://helpific.com/et/help/%s'
         ko: 'https://helpific.com/et/help/%s'
         nl: 'https://helpific.com/et/hulp/%s'
@@ -135,7 +136,7 @@ help:
         it: Nuova richiesta/offerta aggiunta
         ja: 新着リクエスト／オファー
         ko: 도움 요청/나눔 입력하기
-        nl: Nieuwe hulpverzoek/ aanbod
+        nl: Nieuwe hulpverzoek/ bieden
         ru: help.admin-email-subject
         zh: 添加新的 请求/帮助
 locales:
@@ -256,7 +257,7 @@ message:
         it: 'Ciao!<br> <br> Hai un nuovo messaggio su Helpific:<br> <a href="https://helpific.com/en/messages/%s">helpific.com/en/messages/%s</a>'
         ja: 'こんにちは！<br> <br>Helpific上に新着メッセージが届いています。<br> <a href="https://helpific.com/en/messages/%s">helpific.com/en/messages/%s</a>'
         ko: '반갑습니다!<br> <br> Helpific에 새로운 메시지가 있습니다.:<br> <a href="https://helpific.com/en/messages/%s">helpific.com/en/messages/%s</a>'
-        nl: 'Hoi!<br> <br> jij heeft een nieuwe bericht in Helpific:<br> <a href="https://helpific.com/en/messages/%s">helpific.com/en/messages/%s</a>'
+        nl: 'Hoi!<br> <br> U heeft een nieuwe bericht in Helpific:<br> <a href="https://helpific.com/en/messages/%s">helpific.com/en/messages/%s</a>'
         ru: >
             Привет!<br> <br> У тебя новое сообщение в Helpific:<br> <a
             href="https://helpific.com/en/messages/%s">helpific.com/en/messages/%s</a>
@@ -269,7 +270,7 @@ message:
         it: Nuovo messaggio su helpific.com
         ja: Helpific上の新着メッセージ
         ko: helpific.com에 새 메시지
-        nl: nieuwe bericht in helpific.com
+        nl: Nieuwe bericht in helpific.com
         ru: Новое сообщение в helpific.com
         zh: helpific.com上的新消息
 nav:
@@ -281,7 +282,7 @@ nav:
         it: Su Helpific
         ja: Helpificについて
         ko: 함께하는 사람들
-        nl: Over
+        nl: Over mij
         ru: О Нас
         zh: 关于我们
     bb:
@@ -348,7 +349,7 @@ nav:
             it: Le mie richieste
             ja: マイ リクエスト
             ko: 나의 요청 목록
-            nl: Mijn aanvragen
+            nl: Mijn verzoeken
             ru: Мои просьбы
             zh: 我的请求
         sign-out:
@@ -494,7 +495,7 @@ pages:
             it: Aggiungi richiesta
             ja: 新しいリクエストを追加する
             ko: 도움요청 입력하기
-            nl: nieuwe hulpverzoek toevoegen
+            nl: Nieuwe hulpverzoek toevoegen
             ru: Добавить новую просьбу
             zh: 增加新的请求
         added:
@@ -538,7 +539,7 @@ pages:
             it: Posizione
             ja: 場所
             ko: 장소
-            nl: plaats
+            nl: Plaats
             ru: Месторасположение
             zh: 地点
         location-ph:
@@ -570,7 +571,7 @@ pages:
             hu: Felajánlás
             ja: オファー
             ko: 나눔
-            nl: bieden
+            nl: Bieden
             ru: Предложение
             zh: 帮助
         offer-request-ph:
@@ -580,7 +581,7 @@ pages:
             hu: pl. Budapestre megyek van egy szabad hely a kocsimban
             ja: 例：東京駅に行きますが、1人分スペースが余っています。
             ko: '예: 자가용으로 서울에 방문하는데 빈 좌석 2개를 공유할 수 있습니다.'
-            nl: 'Bijv. zal gaan naar Nuustaka en krijg een extra kamer '
+            nl: 'Bijv. Zal naar Nuustaka gaan en krijg een extra kamer '
             ru: 'напр., еду на пляж и есть одно свободное место'
             zh: 比如，我可以去公园帮你遛狗
         offer-title:
@@ -668,7 +669,7 @@ pages:
             it: Richieste
             ja: リクエスト
             ko: 도움 요청
-            nl: Aanvragen
+            nl: Verzoeken
             ru: Просьбы
             zh: 所有请求
         save:
@@ -679,7 +680,7 @@ pages:
             it: Salva
             ja: 保存
             ko: 저장
-            nl: sparen
+            nl: Sparen
             ru: Сохранить
             zh: 保存
         status:
@@ -811,7 +812,7 @@ pages:
             it: Registrati via Facebook o Google
             ja: Facebook、またはGoogleでログインする
             ko: 페이스북이나 구글 계정으로 로그인을 합니다.
-            nl: aanmelden met Facebook of Google
+            nl: Aanmelden met Facebook of Google
             ru: Войди через Facebook или Google
             zh: 用Facebook或Google账号登陆
         bullet-2:
@@ -822,7 +823,7 @@ pages:
             it: Facci sapere cosa necessiti o come puoi aiutare
             ja: あなたが必要としてることやあなたが助けてあげられることを教えてください
             ko: '당신 나눌 수 있거나 필요로하는 일을 적습니다. '
-            nl: 'U laat het ons weten, wat u kunt doen of nodig hebt'
+            nl: 'U laat ons weten, wat u kan doen of wat u nodig hebt'
             ru: 'Напиши, какую помощь Ты можешь предложить или в чем нуждаешься'
             zh: 让我们知道你能做什么或者需要什么
         bullet-3:
@@ -833,7 +834,7 @@ pages:
             it: Entra in contatto con gli altri
             ja: 活動を開始する
             ko: '활동을 시작합니다!'
-            nl: 'maak u '
+            nl: Maak u behoeftes en daden werken
             ru: 'Найди применение своим возможностям или получай помощь от других!'
             zh: 让你的想法成为现实
         choose-way:
@@ -866,6 +867,7 @@ pages:
             it: Incontra i volontari
             ja: ボランティアを探す
             ko: 봉사자들 만나기
+            nl: Vrijwilligers ontmoeten
             ru: Знакомство с волонтерами
             zh: 与志愿者见面
         offers-link-alt:
@@ -887,6 +889,7 @@ pages:
             it: Aiuta chi ha bisogno
             ja: 困ってる人を助けてあげてください
             ko: 도움이 필요한 사람들을 도와주세요.
+            nl: Helpen die in nood
             ru: 'Помоги тем, кто нуждается'
             zh: 帮助有需要的人
         requests-link-alt:
@@ -939,7 +942,7 @@ pages:
             it: "<h2>Non è mai stato più semplice aiutare e ricevere aiuto</h2> <p>Helpific connette i volontari con coloro che necessitano aiuto per le faccende quotidiane</p> <p ng-if='info'>Al momento abbiamo volontari attivi e richieste già esaudite.</p>"
             ja: "<h2>これまで、誰かを助けることも誰かに助けを求めることもとても難しいことでした。</h2> <p>Helpificは毎日の生活で助けを必要としている人と、そこに手を差し伸べる優しい人をつなげます。</p> <p ng-if='info'>Helpific上では、現在すでにたくさんの心優しい人々が、困ってる人々を助けています。</p>"
             ko: "<h2>도움을 주고받는 일, 어렵지 않습니다.</h2> <p>Helpific은 일상 속에서 도움이 필요한 사람과 도움을 나눌 수 있는 사람을 연결합니다. </p> <p ng-if='info'> 현재까지 우리는  도움을 주고받았고  활동 중인 봉사자들이 있습니다.</p>"
-            nl: '<h2>'
+            nl: '<h2>Het is nooit gemakkelijker geweest om hulp to geven of te krijgen</h2> <p>Helpific verbindt vrijwilligers met mensen, wie hebben hulp met alledaagse activiteiten nodig</h2> <p> Momenteel, hebben wir verzoeken voldaan en actief vrijwilligers'
             ru: >
                 <h2>Никогда прежде не было так легко помогать другим и получать
                 помощь!</h2> <p>Helpific объединяет помощников-добровольцев
@@ -998,6 +1001,7 @@ pages:
             de: Über mich
             en: About me
             et: Minust
+            fi: Su di me
             hu: Magamról
             it: 'Su '
             ja: あなたについて
@@ -1013,7 +1017,7 @@ pages:
             it: 'Scrivi qualcosa su di te. '
             ja: あなたはどんな人ですか？簡単な自己紹介を書いてください。
             ko: 당신은 어떤 사람인가요? 자유롭게 소개해 주세요.
-            nl: Shrijf iets over jou. Wat zou je willen dat mensen weten over je?
+            nl: Shrijv iets over u. Wat zou u willen dat mensen weten over u?
             ru: Напиши что-нибудь о себе
             zh: 你想让别人了解到你什么？请写下来
         about-me-video:
@@ -1046,6 +1050,7 @@ pages:
             it: Aggiungi nuova richiesta
             ja: 新しいリクエストを追加する
             ko: 새 도움요청 추가하기
+            nl: Nieuwe verzoek toevoegen
             ru: Добавить новую просьбу
             zh: 添加新的请求
         address:
@@ -1067,6 +1072,7 @@ pages:
             it: es. via Roma 13
             ja: 例：中区港町x-x
             ko: '예: 도봉구 859-19'
+            nl: Bijv. Joseph Hollmanstraat 30
             ru: 'напр., Тартуское шоссе, 1'
             zh: 比如，福田区深南大道2012号
         city:
@@ -1162,6 +1168,7 @@ pages:
             en: e.g. john@appleseed.com
             et: näit. juhan@õunaseeme.ee
             hu: pl. janos@telecom.hu
+            it: es. marco@telecom.it
             ja: 例：taro.yamada@softbank.ne.jp
             ko: '예: john@naver.com'
             nl: 'Bijv, Jan@hotmail.com'
@@ -1227,6 +1234,7 @@ pages:
             en: How can you help others? You do not have to fill it if you do not feel like it now.
             et: Kuidas sa saad teisi aidata?
             hu: Milyen módon tudsz segítséget nyújtani másoknak?
+            it: Puoi aiutare?
             ja: どのようにして他の人を助けることができますか？　もしも気分が乗らなければ今すぐに書く必要はありません。
             ko: 다른 사람을 어떻게 도울 수 있나요?
             nl: 'Hoe kan u anderen te helpen? U moet niet nu te vullen, als u niet willen'
@@ -1237,6 +1245,7 @@ pages:
             en: Video URL
             et: Video viide
             hu: Video URL
+            it: Video URL
             ja: ビデオ URL
             ko: 비디오 URL
             nl: Video URL
@@ -1247,6 +1256,7 @@ pages:
             en: Messages
             et: Sõnumid
             hu: Üzenetek
+            it: Messaggi
             ja: メッセージ
             ko: 메시지
             nl: Berichten
@@ -1257,6 +1267,7 @@ pages:
             en: I would like to receive information about Helpific
             et: Soovin saada Helpificu infot
             hu: Feliratkozom a Helpific hírlevelére
+            it: Vorrei ottenere informazioni circa Helpific
             ja: Helpificからの情報配信を希望します。
             ko: Helpfic으로 부터 소식을 받고싶습니다.
             nl: Ik wil graag informatie ontvangen
@@ -1267,6 +1278,7 @@ pages:
             en: Profile photo
             et: Profiilipilt
             hu: Profilkép
+            it: Foto profilo
             ja: プロフィール写真
             ko: 프로필 사진
             nl: Profielfoto
@@ -1277,6 +1289,7 @@ pages:
             en: '{{ photoUploadPercent }}% uploaded...'
             et: '{{ photoUploadPercent }}% laaditud...'
             hu: '{{ photoUploadPercent }}% feltöltve...'
+            it: '{{ photoUploadPercent }}% caricamento'
             ja: '{{ photoUploadPercent }}% アップロード中...'
             ko: '{{ photoUploadPercent }}% 업로드중...'
             nl: '{{ photoUploadPercent }}% geupload'
@@ -1287,6 +1300,7 @@ pages:
             en: Your profile info is saved automatically
             et: Sinu profiili info salvestub automaatselt
             hu: A profilbeállítások automatikusan mentésre kerülnek
+            it: Le tue informazioni profilo si salvano automaticamente
             ja: プロフィールの情報は自動的に保存されます。
             ko: 프로필 정보는 자동저장 됩니다.
             nl: Uw profiel informatie wordt automatisch opgeslagen
@@ -1297,6 +1311,7 @@ pages:
             en: Slogan
             et: Slõugan
             hu: Szlogen
+            it: Slogan
             ja: スローガン
             ko: 좌우명
             nl: Leuze
@@ -1307,6 +1322,7 @@ pages:
             en: "e.g. Isn't it easier together?"
             et: 'näit. Koos on ju lihtsam!'
             hu: 'Együtt könnyebb!'
+            it: Insieme è più semplice
             ja: 例：一緒にやった方が簡単ではないですか？
             ko: '예: 함께하는 일, 어렵지 않습니다!'
             nl: 'Bijv. Samen is gemakkelijker!'
@@ -1317,6 +1333,7 @@ pages:
             en: Surname
             et: Perenimi
             hu: Vezetéknév
+            it: Cognome
             ja: 姓
             ko: 성
             nl: Achternaam
@@ -1327,8 +1344,10 @@ pages:
             en: e.g. Appleseed
             et: näit. Õunaseeme
             hu: pl. Kovács
+            it: 'es: Rossi'
             ja: 例：山田
             ko: '예: 홍'
+            nl: Bijv. Bakker
             ru: 'напр., Иванов'
             zh: 比如，赵
         title:
@@ -1336,6 +1355,7 @@ pages:
             en: My profile
             et: Minu profiil
             hu: Az én profilom
+            it: Il mio profilo
             ja: マイプロフィール
             ko: 내 프로필
             nl: Mijn profiel
@@ -1346,6 +1366,7 @@ pages:
             en: 'we support only <a href="https://youtube.com" target="_blank">YouTube</a>, <a href="https://vimeo.com" target="_blank">Vimeo</a> and <a href="https://wistia.com" target="_blank">Wistia</a> urls'
             et: 'toetatud on ainult <a href="https://youtube.com" target="_blank">YouTube</a>, <a href="https://vimeo.com" target="_blank">Vimeo</a> ja <a href="https://wistia.com" target="_blank">Wistia</a> viited'
             hu: 'Jelenleg <a href="https://youtube.com" target="_blank">YouTube</a>, <a href="https://vimeo.com" target="_blank">Vimeo</a> és <a href="https://wistia.com" target="_blank">Wistia</a> videókat tölthetsz fel'
+            it: 'we support only <a href="https://youtube.com" target="_blank">YouTube</a>, <a href="https://vimeo.com" target="_blank">Vimeo</a> and <a href="https://wistia.com" target="_blank">Wistia</a> urls'
             ja: '<a href="https://youtube.com" target="_blank">YouTube</a>と<a href="https://vimeo.com" target="_blank">Vimeo</a>、<a href="https://wistia.com" target="_blank">Wistia</a>にのみ対応しています。'
             ko: "<a href=\"https://youtube.com\" target=\"_blank\">YouTube</a>, <a href=\"https://vimeo.com\" target=\"_blank\">Vimeo</a> und <a href=\"https://wistia.com\" target=\"_blank\">Wistia</a> urls'만 지원 가능합니다."
             nl: 'We steunen alleen <a href="https://youtube.com" target="_blank">YouTube</a>, <a href="https://vimeo.com" target="_blank">Vimeo</a> and <a href="https://wistia.com" target="_blank">Wistia</a> urls'
@@ -1356,6 +1377,7 @@ pages:
             en: 'näit. https://www.youtube.com/watch?v=QH2-TGUlwu4'
             et: 'e. g. https://www.youtube.com/watch?v=QH2-TGUlwu4'
             hu: 'pl.: https://www.youtube.com/watch?v=QH2-TGUlwu4'
+            it: 'es. https://www.youtube.com/watch?v=QH2-TGUlwu4'
             ja: '例：https://www.youtube.com/watch?v=QH2-TGUlwu4'
             ko: '예: https://www.youtube.com/watch?v=QH2-TGUlwu4'
             nl: 'Bijv. https://www.youtube.com/watch?v=QH2-TGUlwu4'
@@ -1366,6 +1388,7 @@ pages:
             en: I need help
             et: Vajan abi
             hu: Segítségre van szükségem
+            it: Ho bisogno di aiuto
             ja: 助けを必要としています
             ko: 도움이 필요합니다.
             nl: Ik heb hulp nodig
@@ -1376,8 +1399,10 @@ pages:
             en: How can people help you? You can leave it empty if you are not searching for help through this site.
             et: Millist abi sa vajad?
             hu: Miben lehetnek mások segítségedre? Hagyd ezt a mezőt üresen ha jelenleg nincs szükséged segítségre.
+            it: Come possiamo aiutarti?
             ja: どのような助けを必要としていますか？　もし助けを求めているのでないのならば、空欄のままにしてください。
             ko: '어떻게 사람들이 당신이 도울 수 있을까요? '
+            nl: Hoe kunnen mensen u helpen? U kunt het leeg laten als u geen help zoekt via deze site
             ru: 'Какая помощь Тебе нужна? Если помощь не нужна, оставь это поле пустым.'
             zh: 你希望人们怎样帮到你？如果你不是通过此网站寻求帮助的话，可以跳过此项
         you-help-me-video:
@@ -1385,6 +1410,7 @@ pages:
             en: Video URL
             et: Video viide
             hu: A bemutatkozó videó URL címe
+            it: Video URL
             ja: ビデオ URL
             ko: 비디오 URL
             nl: Video URL
@@ -1396,8 +1422,10 @@ pages:
             en: '* if you sign in, you accept our <a href="terms">terms of use and privacy policy</a>'
             et: '* sisenedes nõustud meie <a href="terms">kasutaja- ja privaatsustingimustega</a>'
             hu: '* a belépéssel elfogadod a <a href="terms">Felhasználói Feltételeket</a>'
+            it: '* Registrandoti, accetti  <a href="terms">terms of use and privacy policy</a>'
             ja: 'ログインするとHelpificの<a href="terms">利用規約とプライバシーポリシー</a>に同意したことになります。'
             ko: '* 로그인시 <a href="terms">우리의 개인정보 보호정책을 사용을 수락하게됩니다.</a>'
+            nl: 'Als u zich aanmeldt, accepteert u onze<a href="terms">gebruiksvoorwaarden en het privacybeleid</a>'
             ru: '* пользуясь сервисом, Ты соглашаешься с <a href="terms">правилами пользования</a>'
             zh: '* 如果你登陆此站，你需要遵守<a href="terms">使用与隐私条款</a>'
         text:
@@ -1405,8 +1433,10 @@ pages:
             en: Please use your preferred identity provider to sign in...
             et: Sisenemiseks kasuta meelepärast identiteedipakkujat...
             hu: Válaszd ki a számodra megfelelő belépési módot...
+            it: Puoi utilizzare il tuo provider preferito per registrarti
             ja: 希望のアカウントでログインしてください
             ko: 원하는 ID를 사용하십시오.
+            nl: Gebruik u favoriete ideintity provider om in te loggen
             ru: Для входа используй подходящий сервис
             zh: 请使用你偏好的社交网站进行登陆
         title:
@@ -1414,8 +1444,10 @@ pages:
             en: Sign in
             et: Sisene
             hu: Belépés
+            it: Accedi
             ja: ログイン
             ko: 로그인
+            nl: Aanmelden
             ru: Войти
             zh: 登陆
     team:
@@ -1424,8 +1456,10 @@ pages:
             en: Our Team
             et: Meie meeskond
             hu: A Helpific csapata
+            it: Il nostro team
             ja: 私たちのチーム
             ko: 함께하는 사람들
+            nl: Ons Team
             ru: Наша команда
             zh: 我们的团队
     tr:
@@ -1434,8 +1468,10 @@ pages:
             en: Translations
             et: Translations
             hu: Translations
+            it: Translations
             ja: Translations
             ko: Translations
+            nl: Translations
             ru: Translations
             zh: 翻译
     user:
@@ -1444,8 +1480,10 @@ pages:
             en: About me
             et: Minust
             hu: Magamról
+            it: Su di me
             ja: 私について
             ko: 자기소개
+            nl: Over mij
             ru: Обо мне
             zh: 关于我
         donate:
@@ -1453,8 +1491,10 @@ pages:
             en: Donate
             et: Anneta
             hu: Adomány
+            it: Donate
             ja: 寄付する
             ko: 기부
+            nl: Schenken
             ru: Сделать пожертвование
             zh: 捐助
         donate-info:
@@ -1462,8 +1502,10 @@ pages:
             en: 'For donation transfer money to Helpific MTÜ account. Transfer description must be "%s"'
             et: 'Annetus kanna Helpific MTÜ kontole. Makse selgitusse märgi kindlasti "%s"'
             hu: 'Amennyiben támogatást szeretnél átutalni a Helpific Egyesület számlaszámára megteheted. A közlemény rovatba írd "%s"'
+            it: 'Per le donazioni utilizzare il conto Helpific. '
             ja: '寄付をする方はHelpific MTÜの口座に送金してください。　"%s"'
             ko: '기부를 원하시면, MTÃœ계좌로 송금해주세요. "%s"'
+            nl: 'Voor donatie overmaken naar Helpific MTÜ account. Transfer omschriving moet zijn "%s"'
             ru: 'Пожертвования следует переводить на банковский счет Helpific MTÜ. В пояснении обязательно укажите "%s"'
             zh: '如您要向我们的项目提供资金支持，转账描述须为"%s"'
         help-offers:
@@ -1471,6 +1513,7 @@ pages:
             en: My offers
             et: Minu pakkumised
             hu: Felajánlásaim
+            it: Le mie offerte
             ja: 私のオファー
             ko: 내 도움나눔
             nl: Mijn aanbiedingen
@@ -1481,6 +1524,7 @@ pages:
             en: My requests
             et: Minu soovid
             hu: Segítségkéréseim
+            it: Le mie richieste
             ja: 私のリクエスト
             ko: 내 도움 요청
             nl: MIjn verzoeken
@@ -1491,6 +1535,7 @@ pages:
             en: I can help others
             et: Aitan sind
             hu: Segítséget ajánlok
+            it: Posso aiutare chi ha bisogno
             ja: 私は他の人を助けることができます
             ko: '다른 사람을 도울 수 있습니다. '
             nl: Ik kan anderen te helpen
@@ -1501,6 +1546,7 @@ pages:
             en: Send message
             et: Saada sõnum
             hu: Üzenet küldése
+            it: Invia messaggio
             ja: メッセージを送る
             ko: 메시지 전송
             nl: Bericht sturen
@@ -1511,6 +1557,7 @@ pages:
             en: I need help
             et: Vajan abi
             hu: Segítségre van szükségem
+            it: Necessito aiuto
             ja: 私は助けを必要としています。
             ko: 도움이 필요합니다.
             nl: ik heb hulp nodig
@@ -1522,6 +1569,7 @@ pages:
             en: "There are total {{ users.length }} users here <span ng-if='search_query'> - found {{ (users | filter:search_query).length }}</span>"
             et: "Kokku on meil {{ users.length }} kasutajat <span ng-if='search_query'> - leiti {{ (users | filter:search_query).length }}</span>"
             hu: "Összesen {{ users.length }} felhasználó van a rendszerben <span ng-if='search_query'> - találat {{ (users | filter:search_query).length }}</span>"
+            it: "Totale utenti <span ng-if='search_query'> - found </span>"
             ja: "全ユーザー　<span ng-if='search_query'> - found </span>"
             ko: "전체 {{ users.length }} 사용자 <span ng-if='search_query'> - found {{ (users | filter:search_query).length }}</span>\""
             nl: Er zijn totaal gebruikers hier
@@ -1532,6 +1580,7 @@ pages:
             en: Users
             et: Kasutajad
             hu: Tagok
+            it: Utenti
             ja: ユーザー
             ko: 사용자
             nl: Gebruikers
