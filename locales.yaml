@@ -639,6 +639,14 @@ pages:
             nl: "Er zijn totaal verzoeken hier <span ng-if='search_query || searchMy'> - gevonden </span>"
             ru: "У нас в общей сложности {{ (help | filter:{type:type }).length }} просьб <span ng-if='search_query || searchMy'> - найдено {{ (help | filter:{status:s.status, type:type, my:searchMy} | filter:search_query).length }}</span>"
             zh: "所有的请求都在这里<span ng-if='search_query || searchMy'> - 发现</span>"
+        request-country:
+            et: pages.help.request-country
+        request-monetization:
+            et: pages.help.request-monetization
+        request-price:
+            et: pages.help.request-price
+        request-price-ph:
+            et: pages.help.request-price-ph
         request-request:
             de: Anfragen
             en: Request
@@ -672,6 +680,8 @@ pages:
             nl: Verzoeken
             ru: Просьбы
             zh: 所有请求
+        request-type:
+            et: pages.help.request-type
         save:
             de: Speichern
             en: Save
@@ -829,7 +839,7 @@ pages:
         bullet-3:
             de: Werden Sie aktiv und treten Sie mit anderen in Kontakt.
             en: Make your needs and deeds work
-            et: pages.index.bullet-3
+            et: Tegutse, millal soovid!
             hu: Vedd fel a kapcsolatot másokkal
             it: Entra in contatto con gli altri
             ja: 活動を開始する
