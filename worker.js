@@ -123,6 +123,7 @@ express()
 
         }
 
+        res.locals.showFeedback = true
         res.locals.path = req.path
         if(!req.signedCookies) next(null)
         if(req.signedCookies.auth_id && req.signedCookies.auth_token) {

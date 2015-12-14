@@ -131,6 +131,7 @@ router.get('/json/:id', function(req, res) {
 router.get('/:id*?', function(req, res) {
     if(!res.authenticate()) return
 
+    res.locals.showFeedback = false
     res.render('messages')
 })
 

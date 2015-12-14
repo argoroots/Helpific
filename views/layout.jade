@@ -114,23 +114,24 @@ html(lang=lang, ng-app='hlpfc')
 
                 block content
 
-        .container
-            .row
-                i#feedback-open.fa.fa-envelope.fa-3x(title=t('feedback.title'))
-                form#feedback.hidden.col-xs-12.col-sm-6.col-md-5
-                    #feedback-form
-                        i#feedback-close.fa.fa-times-circle.fa-2x
-                        h2.text-center= t('feedback.title')
-                        if !user
+        if showFeedback
+            .container
+                .row
+                    i#feedback-open.fa.fa-envelope.fa-3x(title=t('feedback.title'))
+                    form#feedback.hidden.col-xs-12.col-sm-6.col-md-5
+                        #feedback-form
+                            i#feedback-close.fa.fa-times-circle.fa-2x
+                            h2.text-center= t('feedback.title')
+                            if !user
+                                .form-group.col-xs-12
+                                    label.control-label(for='feedback-email')= t('feedback.email')
+                                    input#feedback-email.form-control(type='email')
                             .form-group.col-xs-12
-                                label.control-label(for='feedback-email')= t('feedback.email')
-                                input#feedback-email.form-control(type='email')
-                        .form-group.col-xs-12
-                            label.control-label(for='feedback-message')= t('feedback.message')
-                            textarea#feedback-message.form-control(rows=4)
-                        a#feedback-send.col-xs-12.text-center(href='javascript:void(0)')= t('feedback.send')
-                    #feedback-ok.hidden.text-center
-                        h2.text-center= t('feedback.thanks')
+                                label.control-label(for='feedback-message')= t('feedback.message')
+                                textarea#feedback-message.form-control(rows=4)
+                            a#feedback-send.col-xs-12.text-center(href='javascript:void(0)')= t('feedback.send')
+                        #feedback-ok.hidden.text-center
+                            h2.text-center= t('feedback.thanks')
 
         footer.container-fluid
             .container
@@ -184,35 +185,37 @@ html(lang=lang, ng-app='hlpfc')
                 }
             })
 
-            $('#feedback-open').click(function() {
-                $('#feedback-open').addClass('hidden')
-                $('#feedback').removeClass('hidden')
-            })
+        if showFeedback
+            script.
+                $('#feedback-open').click(function() {
+                    $('#feedback-open').addClass('hidden')
+                    $('#feedback').removeClass('hidden')
+                })
 
-            $('#feedback-close').click(function() {
-                $('#feedback').addClass('hidden')
-                $('#feedback-open').removeClass('hidden')
-            })
+                $('#feedback-close').click(function() {
+                    $('#feedback').addClass('hidden')
+                    $('#feedback-open').removeClass('hidden')
+                })
 
-            $('#feedback-send').click(function() {
-                if($('#feedback-message').val()) {
-                    $('#feedback-form').addClass('hidden')
-                    $('#feedback-ok').removeClass('hidden')
-                    var postdata = {
-                        'from-email': $('#feedback-email').val(),
-                        message: $('#feedback-message').val()
+                $('#feedback-send').click(function() {
+                    if($('#feedback-message').val()) {
+                        $('#feedback-form').addClass('hidden')
+                        $('#feedback-ok').removeClass('hidden')
+                        var postdata = {
+                            'from-email': $('#feedback-email').val(),
+                            message: $('#feedback-message').val()
+                        }
+                        $.post('feedback', postdata, function(data) {
+                            console.log(data)
+                        }).fail(console.log)
+                        setTimeout(function() {
+                            $('#feedback-message').val('')
+                            $('#feedback-ok').addClass('hidden')
+                            $('#feedback-form').removeClass('hidden')
+                            $('#feedback').addClass('hidden')
+                            $('#feedback-open').removeClass('hidden')
+                        }, 1500)
+                    } else {
+                        $('#feedback-message').focus()
                     }
-                    $.post('feedback', postdata, function(data) {
-                        console.log(data)
-                    }).fail(console.log)
-                    setTimeout(function() {
-                        $('#feedback-message').val('')
-                        $('#feedback-ok').addClass('hidden')
-                        $('#feedback-form').removeClass('hidden')
-                        $('#feedback').addClass('hidden')
-                        $('#feedback-open').removeClass('hidden')
-                    }, 1500)
-                } else {
-                    $('#feedback-message').focus()
-                }
-            })
+                })
