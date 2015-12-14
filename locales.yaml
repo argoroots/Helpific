@@ -3,6 +3,7 @@ feedback:
         de: 'https://helpific.entu.ee/entity/feedback/%s'
         en: 'https://helpific.entu.ee/entity/feedback/%s'
         et: 'https://helpific.entu.ee/entity/feedback/%s'
+        fi: 'https://helpific.entu.ee/entity/feedback/%s'
         hu: 'https://helpific.entu.ee/entity/feedback/%s'
         it: 'https://helpific.entu.ee/entity/feedback/%s'
         ja: 'https://helpific.entu.ee/entity/feedback/%s'
@@ -14,6 +15,7 @@ feedback:
         de: Neues Feedback
         en: Added new feedback
         et: Lisati uus tagasiside
+        fi: Lisää uusi palaute
         hu: 'Új visszajelzés '
         it: Nuovo feedback aggiunto
         ja: 新着フィードバック
@@ -25,6 +27,7 @@ feedback:
         de: E-Mail
         en: E-mail
         et: E-post
+        fi: Sähköposti
         hu: E-mail
         it: E-mail
         ja: メール
@@ -36,6 +39,7 @@ feedback:
         de: Nachricht
         en: Message
         et: Teade
+        fi: Viesti
         hu: üzenet
         it: Messaggio
         ja: メッセージ
@@ -47,6 +51,7 @@ feedback:
         de: senden
         en: Send
         et: Saada
+        fi: Lähetä
         hu: Küldés
         it: Inviati
         ja: 送信
@@ -58,6 +63,7 @@ feedback:
         de: 'Dankeschön!'
         en: 'Thank you!'
         et: 'Täname!'
+        fi: 'Kiitos!'
         hu: 'köszönjük!'
         it: 'Grazie!'
         ja: ありがとうございました！
@@ -69,6 +75,7 @@ feedback:
         de: Feedback senden
         en: Send feedback
         et: Saada tagasiside
+        fi: Lähetä palautetta
         hu: Visszajelzés küldése
         it: Commenti
         ja: フィードバックを送る
@@ -98,6 +105,7 @@ footer:
                 Konto: EE102200221061303677<br>
                 <a href="mailto:info@helpific.com">info@helpific.com</a>
             </small>
+        fi: '<strong>HELPIFIC MTÜ</strong><br> <small>    Reg nr: 80380146<br>    Tili: EE102200221061303677<br>    <a href="mailto:info@helpific.com">info@helpific.com</a></small>'
         hu: |
             <strong>HELPIFIC MTÜ</strong><br> <small>
                 Reg nr: 80380146<br>
@@ -121,6 +129,7 @@ help:
         de: 'https://helpific.com/et/help/%s'
         en: 'https://helpific.com/et/help/%s'
         et: 'https://helpific.com/et/help/%s'
+        fi: 'https://helpific.com/et/help/%s'
         hu: 'https://helpific.com/et/help/%s'
         it: 'https://helpific.com/et/help/%s'
         ja: 'https://helpific.com/et/help/%s'
@@ -132,6 +141,7 @@ help:
         de: Neue(s) Hilfsangebot/Anfrage
         en: Added new help request/offer
         et: Lisati uus soov/pakkumine
+        fi: Lisää uusi avunpyyntö/tarjous
         hu: Új segítségkérés/felajánlás hozzáadása
         it: Nuova richiesta/offerta aggiunta
         ja: 新着リクエスト／オファー
@@ -144,6 +154,7 @@ locales:
         de: Deutsch
         en: Deutsch
         et: Deutsch
+        fi: Deutsch
         hu: Deutsch
         it: Deutsch
         ja: Deutsch
@@ -155,6 +166,7 @@ locales:
         de: English
         en: English
         et: English
+        fi: English
         hu: English
         it: English
         ja: English
@@ -166,6 +178,7 @@ locales:
         de: Eesti keel
         en: Eesti keel
         et: Eesti keel
+        fi: Eesti keel
         hu: Eesti keel
         it: Eesti keel
         ja: Eesti keel
@@ -173,10 +186,23 @@ locales:
         nl: Eesti keel
         ru: Eesti keel
         zh: Eesti keel
+    fi:
+        de: Finnish
+        en: Finnish
+        et: Finnish
+        fi: Finnish
+        hu: Finnish
+        it: Finnish
+        ja: Finnish
+        ko: Finnish
+        nl: Finnish
+        ru: Finnish
+        zh: Finnish
     hu:
         de: Magyar
         en: Magyar
         et: Magyar
+        fi: Magyar
         hu: Magyar
         it: Magyar
         ja: Magyar
@@ -188,6 +214,7 @@ locales:
         de: Italian
         en: Italian
         et: Italian
+        fi: Italian
         hu: Italian
         it: Italian
         ja: Italian
@@ -196,20 +223,22 @@ locales:
         ru: Italian
         zh: Italian
     ja:
-        de: Japanese
-        en: Japanese
-        et: Japanese
-        hu: Japanese
-        it: Japanese
-        ja: Japanese
-        ko: Japanese
-        nl: Japanese
-        ru: Japanese
-        zh: Japanese
+        de: 日本語
+        en: 日本語
+        et: 日本語
+        fi: 日本語
+        hu: 日本語
+        it: 日本語
+        ja: 日本語
+        ko: 日本語
+        nl: 日本語
+        ru: 日本語
+        zh: 日本語
     ko:
         de: 한국어
         en: 한국어
         et: 한국어
+        fi: 한국어
         hu: 한국어
         it: 한국어
         ja: 한국어
@@ -221,6 +250,7 @@ locales:
         de: Русский
         en: Русский
         et: Русский
+        fi: Русский
         hu: Русский
         it: Русский
         ja: Русский
@@ -251,6 +281,7 @@ message:
         et: >
             Hei!<br> <br> Sulle on sõnum Helpific'is:<br> <a
             href="https://helpific.com/en/messages/%s">helpific.com/en/messages/%s</a>
+        fi: "Hei!<br> <br> Sinulle on uusi viesti Helpific'issä:<br> <a href=\"https://helpific.com/en/messages/%s\">helpific.com/en/messages/%s</a>"
         hu: >
             Szia!<br> <br> Új üzeneted érkezett a Helpific:<br> <a
             href="https://helpific.com/en/messages/%s">helpific.com/en/messages/%s</a>
@@ -266,6 +297,7 @@ message:
         de: Neue Nachricht in helpific.com
         en: New message in helpific.com
         et: "Uus sõnum helpific.com'is"
+        fi: "Uusi viesti helpific.com'issa"
         hu: Új üzeneted érkezett a helpific.com-ra
         it: Nuovo messaggio su helpific.com
         ja: Helpific上の新着メッセージ
@@ -278,6 +310,7 @@ nav:
         de: Über uns
         en: About
         et: Meist
+        fi: Meistä
         hu: Magunkról
         it: Su Helpific
         ja: Helpificについて
@@ -291,7 +324,7 @@ nav:
         et: Piirideta Elu
         hu: Túl a határokon
         it: Oltre i confini
-        ja: 国境を越える
+        ja: 国境を越えて
         ko: 국경을 뛰어넘어
         nl: Buiten de Grenzen
         ru: Жизнь Без Границ
@@ -515,7 +548,7 @@ pages:
             et: Tühista
             hu: Mégse
             it: Elimina
-            ja: 取り消し
+            ja: 取消
             ko: 취소
             nl: Annuleer
             ru: Отменить
@@ -639,14 +672,6 @@ pages:
             nl: "Er zijn totaal verzoeken hier <span ng-if='search_query || searchMy'> - gevonden </span>"
             ru: "У нас в общей сложности {{ (help | filter:{type:type }).length }} просьб <span ng-if='search_query || searchMy'> - найдено {{ (help | filter:{status:s.status, type:type, my:searchMy} | filter:search_query).length }}</span>"
             zh: "所有的请求都在这里<span ng-if='search_query || searchMy'> - 发现</span>"
-        request-country:
-            et: pages.help.request-country
-        request-monetization:
-            et: pages.help.request-monetization
-        request-price:
-            et: pages.help.request-price
-        request-price-ph:
-            et: pages.help.request-price-ph
         request-request:
             de: Anfragen
             en: Request
@@ -680,8 +705,6 @@ pages:
             nl: Verzoeken
             ru: Просьбы
             zh: 所有请求
-        request-type:
-            et: pages.help.request-type
         save:
             de: Speichern
             en: Save
@@ -732,7 +755,7 @@ pages:
             et: Aktiivne
             hu: Aktív
             it: Attiva
-            ja: 活動中
+            ja: 返事を待っています
             ko: 활동중
             nl: Actief
             ru: Активный
@@ -743,7 +766,7 @@ pages:
             et: Aktiivsed
             hu: Aktív
             it: Attiva
-            ja: 活動中
+            ja: 返事を待っています
             ko: 활동중
             nl: Actief
             ru: Активные
@@ -754,7 +777,7 @@ pages:
             et: Tühistatud
             hu: Törölve
             it: Cancellata
-            ja: 取り消し
+            ja: 取消
             ko: 취소됨
             nl: geannuleerd
             ru: Отменен
@@ -765,7 +788,7 @@ pages:
             et: Tühistatud
             hu: Törölve
             it: Cancellata
-            ja: 取り消し
+            ja: 取消
             ko: 취소됨
             nl: geannuleerd
             ru: Отменены
@@ -776,7 +799,7 @@ pages:
             et: Tehtud
             hu: Lezárt
             it: Eseguita
-            ja: 完了
+            ja: ありがとうございました
             ko: 완료
             nl: Gedaan
             ru: Сделано
@@ -787,7 +810,7 @@ pages:
             et: Tehtud
             hu: Lezárt
             it: Eseguita
-            ja: 完了
+            ja: ありがとうございました
             ko: 완료
             nl: Gedaan
             ru: Сделаны
@@ -820,9 +843,9 @@ pages:
             et: "Sisene Facebooki või Google'i kaudu"
             hu: Belépés Facebook vagy Google profillal
             it: Registrati via Facebook o Google
-            ja: Facebook、またはGoogleでログインする
+            ja: Facebook、またはGoogleでログイン
             ko: 페이스북이나 구글 계정으로 로그인을 합니다.
-            nl: Aanmelden met Facebook of Google
+            nl: Log in via Facebook of Google
             ru: Войди через Facebook или Google
             zh: 用Facebook或Google账号登陆
         bullet-2:
@@ -833,7 +856,7 @@ pages:
             it: Facci sapere cosa necessiti o come puoi aiutare
             ja: あなたが必要としてることやあなたが助けてあげられることを教えてください
             ko: '당신 나눌 수 있거나 필요로하는 일을 적습니다. '
-            nl: 'U laat ons weten, wat u kan doen of wat u nodig hebt'
+            nl: 'Laat ons weten, wat u kan doen of nodig hebt'
             ru: 'Напиши, какую помощь Ты можешь предложить или в чем нуждаешься'
             zh: 让我们知道你能做什么或者需要什么
         bullet-3:
@@ -842,9 +865,9 @@ pages:
             et: Tegutse, millal soovid!
             hu: Vedd fel a kapcsolatot másokkal
             it: Entra in contatto con gli altri
-            ja: 活動を開始する
+            ja: 助け合いを始めましょう
             ko: '활동을 시작합니다!'
-            nl: Maak u behoeftes en daden werken
+            nl: Maak u benodigheden en daden werken
             ru: 'Найди применение своим возможностям или получай помощь от других!'
             zh: 让你的想法成为现实
         choose-way:
@@ -853,7 +876,7 @@ pages:
             et: Vali oma tee
             hu: Válassz az alábbi lehetőségek közül
             it: Scegli tra queste opzioni
-            ja: あなたの道を選択してください
+            ja: あなたはどちらですか？
             ko: 당신의 경로를 선택하세요.
             nl: Kies uw weg
             ru: Выбери свой путь
@@ -864,7 +887,7 @@ pages:
             et: Kuidas Helpific töötab?
             hu: Hogyan működik a Helpific?
             it: Come funziona Helpific?
-            ja: Helpificの仕組みは？
+            ja: Helpificの仕組み
             ko: Helpific을 어떻게 이용하나요?
             nl: Hoe werkt Helpific?
             ru: Как устроен Helpific?
@@ -875,9 +898,9 @@ pages:
             et: Kohtu vabatahtlike abistajatega
             hu: Felajánlások
             it: Incontra i volontari
-            ja: ボランティアを探す
+            ja: 助けてくれる人を探す
             ko: 봉사자들 만나기
-            nl: Vrijwilligers ontmoeten
+            nl: Vrijwiligers ontmoeten
             ru: Знакомство с волонтерами
             zh: 与志愿者见面
         offers-link-alt:
@@ -897,7 +920,7 @@ pages:
             et: Aita abivajajaid
             hu: Segítségkérések
             it: Aiuta chi ha bisogno
-            ja: 困ってる人を助けてあげてください
+            ja: 困ってる人を助けてあげる
             ko: 도움이 필요한 사람들을 도와주세요.
             nl: Helpen die in nood
             ru: 'Помоги тем, кто нуждается'
@@ -919,7 +942,7 @@ pages:
             et: 'Koos on ju lihtsam!'
             hu: 'Együtt sokkal könnyebb!'
             it: 'Insieme è più semplice!'
-            ja: 一緒にやった方が簡単ではないですか？
+            ja: 一人より、誰かと一緒に
             ko: '함께하는 일, 어렵지 않습니다!'
             nl: 'samen is gemakkelijker!'
             ru: Разве вместе не легче?
@@ -950,9 +973,9 @@ pages:
                 </p> <p ng-if='info'>Jelenleg {{ info.help }} segítségkérésre
                 érkezett már válasz {{ info.users }} embertől.</p>
             it: "<h2>Non è mai stato più semplice aiutare e ricevere aiuto</h2> <p>Helpific connette i volontari con coloro che necessitano aiuto per le faccende quotidiane</p> <p ng-if='info'>Al momento abbiamo volontari attivi e richieste già esaudite.</p>"
-            ja: "<h2>これまで、誰かを助けることも誰かに助けを求めることもとても難しいことでした。</h2> <p>Helpificは毎日の生活で助けを必要としている人と、そこに手を差し伸べる優しい人をつなげます。</p> <p ng-if='info'>Helpific上では、現在すでにたくさんの心優しい人々が、困ってる人々を助けています。</p>"
+            ja: "<h2>誰かを助けたり、誰かに助けをお願いするのって難しいと思っていませんか？</h2> <p>Helpificは毎日の生活で助けを必要としている人と、そこに手を差し伸べる優しい人をつなげます。</p> <p ng-if='info'>Helpific上では、すでにたくさんの心優しい人々が、困ってる人々を助けています。あなたも始めませんか？</p>"
             ko: "<h2>도움을 주고받는 일, 어렵지 않습니다.</h2> <p>Helpific은 일상 속에서 도움이 필요한 사람과 도움을 나눌 수 있는 사람을 연결합니다. </p> <p ng-if='info'> 현재까지 우리는  도움을 주고받았고  활동 중인 봉사자들이 있습니다.</p>"
-            nl: '<h2>Het is nooit gemakkelijker geweest om hulp to geven of te krijgen</h2> <p>Helpific verbindt vrijwilligers met mensen, wie hebben hulp met alledaagse activiteiten nodig</h2> <p> Momenteel, hebben wir verzoeken voldaan en actief vrijwilligers'
+            nl: '<h2>Het is nooit gemakkelijker geweest om hulp to geven en te krijgen</h2> <p>Helpific verbindt vrijwiligers met hen die hulp nodig hebben met hun dagelijkse activiteiten</h2> <p> We hebben op het moment verzoeken voldaan en actieve vrijwiligers'
             ru: >
                 <h2>Никогда прежде не было так легко помогать другим и получать
                 помощь!</h2> <p>Helpific объединяет помощников-добровольцев
@@ -1014,7 +1037,7 @@ pages:
             fi: Su di me
             hu: Magamról
             it: 'Su '
-            ja: あなたについて
+            ja: あなたのことを教えてください
             ko: 자기소개
             nl: Over mij
             ru: Обо мне
@@ -1025,7 +1048,7 @@ pages:
             et: Kirjuta midagi endast
             hu: Írj egy pár soros bemutatkozást. Mit szeretnél másoknak elmondani magadról?
             it: 'Scrivi qualcosa su di te. '
-            ja: あなたはどんな人ですか？簡単な自己紹介を書いてください。
+            ja: あなたはどんな人ですか？　簡単に自己紹介を書いてみましょう。
             ko: 당신은 어떤 사람인가요? 자유롭게 소개해 주세요.
             nl: Shrijv iets over u. Wat zou u willen dat mensen weten over u?
             ru: Напиши что-нибудь о себе
@@ -1333,9 +1356,9 @@ pages:
             et: 'näit. Koos on ju lihtsam!'
             hu: 'Együtt könnyebb!'
             it: Insieme è più semplice
-            ja: 例：一緒にやった方が簡単ではないですか？
+            ja: 例：一人より、誰かと一緒に
             ko: '예: 함께하는 일, 어렵지 않습니다!'
-            nl: 'Bijv. Samen is gemakkelijker!'
+            nl: Bijv. Is het niet gemakkelijker samen?
             ru: 'напр., Вместе проще!'
             zh: 比如，星多天空亮，人多智慧广
         surname:
@@ -1467,7 +1490,7 @@ pages:
             et: Meie meeskond
             hu: A Helpific csapata
             it: Il nostro team
-            ja: 私たちのチーム
+            ja: チーム
             ko: 함께하는 사람들
             nl: Ons Team
             ru: Наша команда
@@ -1524,7 +1547,7 @@ pages:
             et: Minu pakkumised
             hu: Felajánlásaim
             it: Le mie offerte
-            ja: 私のオファー
+            ja: マイ オファー
             ko: 내 도움나눔
             nl: Mijn aanbiedingen
             ru: Мои предложения
@@ -1535,7 +1558,7 @@ pages:
             et: Minu soovid
             hu: Segítségkéréseim
             it: Le mie richieste
-            ja: 私のリクエスト
+            ja: マイ リクエスト
             ko: 내 도움 요청
             nl: MIjn verzoeken
             ru: Мои просьбы
