@@ -11,14 +11,14 @@ block content
 
         .row
             .col-xs-12.text-center
-                a(href='signin/facebook', title='Facebook')
+                p#terms-label!= t('pages.sign-in.terms')
+        .row
+            .col-xs-12.text-center
+                a(href='signin/facebook', title='Facebook', aria-label= t('pages.sign-in.facebook'), aria-labelledby="terms-label")
                     i.signin.fa.fa-facebook-square.fa-5x(style='color:#3b5998')
 
-                a(href='signin/google', title='Google')
+                a(href='signin/google', title='Google', aria-label= t('pages.sign-in.google'), aria-labelledby="terms-label")
                     i.signin.fa.fa-google-plus-square.fa-5x(style='color:#dd4b39')
 
         .row.spacer
 
-        .row
-            .col-xs-12.text-center
-                p!= t('pages.sign-in.terms')

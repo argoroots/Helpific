@@ -862,7 +862,7 @@ pages:
         bullet-3:
             de: Werden Sie aktiv und treten Sie mit anderen in Kontakt.
             en: Make your needs and deeds work
-            et: Tegutse, millal soovid!
+            et: 'Tegutse, millal soovid!'
             hu: Vedd fel a kapcsolatot másokkal
             it: Entra in contatto con gli altri
             ja: 助け合いを始めましょう
@@ -1450,6 +1450,12 @@ pages:
             ru: Ссылка на видео
             zh: 视频地址
     sign-in:
+        facebook:
+            en: Login over Facebook
+            et: Logi sisse Facebooki kaudu
+        google:
+            en: Login over Google plus
+            et: Logi sisse Google plussi kaudu
         terms:
             de: '* Wenn Sie sich anmelden, akzeptieren Sie unsere<a href="terms">Nutungsbedingungen und Datenschutzrichtlinien</a>'
             en: '* if you sign in, you accept our <a href="terms">terms of use and privacy policy</a>'
