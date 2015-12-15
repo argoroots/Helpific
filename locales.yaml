@@ -322,6 +322,7 @@ nav:
         de: Jenseits von Grenzen
         en: Beyond Borders
         et: Piirideta Elu
+        fi: Rajojen takana
         hu: Túl a határokon
         it: Oltre i confini
         ja: 国境を越えて
@@ -333,6 +334,7 @@ nav:
         de: Blog
         en: Blog
         et: Blogi
+        fi: Blogi
         hu: Blog
         it: Blog
         ja: ブログ
@@ -345,6 +347,7 @@ nav:
             de: Nachrichten
             en: Messages
             et: Sõnumid
+            fi: Viestit
             hu: Üzenetek
             it: Messaggi
             ja: メッセージ
@@ -356,6 +359,7 @@ nav:
             de: Meine Angebote
             en: My offers
             et: Minu pakkumised
+            fi: Minun tarjoukseni
             hu: Az én felajánlásaim
             it: Le mie offerte
             ja: マイ オファー
@@ -367,6 +371,7 @@ nav:
             de: Profil bearbeiten
             en: Edit profile
             et: Muuda profiili
+            fi: Muokkaa profiilia
             hu: Profil szerkesztése
             it: Modifica profilo
             ja: プロフィールを編集する
@@ -378,6 +383,7 @@ nav:
             de: Meine Anfragen
             en: My requests
             et: Minu soovid
+            fi: Minun pyyntöni
             hu: Segítségkéréseim
             it: Le mie richieste
             ja: マイ リクエスト
@@ -389,6 +395,7 @@ nav:
             de: Abmelden
             en: Sign out
             et: Välju
+            fi: Kirjaudu ulos
             hu: Kijelentkezés
             it: Esci
             ja: ログアウト
@@ -400,6 +407,7 @@ nav:
         de: Angebote
         en: Offers
         et: Pakkumised
+        fi: Tarjoukset
         hu: Felajánlások
         it: Offerte
         ja: オファー
@@ -411,6 +419,7 @@ nav:
         de: Partner
         en: Partners
         et: Partnerid
+        fi: Partnerit
         hu: Partnerek
         it: Partners
         ja: パートナー
@@ -422,6 +431,7 @@ nav:
         de: Projekte
         en: Projects
         et: Projektid
+        fi: Projektit
         hu: Projektek
         it: Progetti
         ja: プロジェクト
@@ -433,6 +443,7 @@ nav:
         de: Anfragen
         en: Requests
         et: Soovid
+        fi: Pyynnöt
         hu: Segítségkérések
         it: Richieste
         ja: リクエスト
@@ -444,6 +455,7 @@ nav:
         de: Anmelden
         en: Sign in
         et: Sisene
+        fi: Kirjaudu sisään
         hu: Bejelentkezés
         it: Sign in
         ja: ログイン
@@ -455,6 +467,7 @@ nav:
         de: Team
         en: Team
         et: Meeskond
+        fi: Tiimi
         hu: Team
         it: Team
         ja: チーム
@@ -466,6 +479,7 @@ nav:
         de: Nutzungsbedingungen
         en: Terms of Use
         et: Tingimused
+        fi: Käyttöehdot
         hu: Felhasználói Feltételek
         it: "Condizioni d'uso"
         ja: 利用規約
@@ -477,7 +491,6 @@ nav:
         de: Zum Menü
         en: Toggle navigation
         et: Ava menüü
-        fi: Ga naar het menu
         hu: Visszalépés a menübe
         it: Menù
         ja: ナビゲーションを切り替える
@@ -488,6 +501,7 @@ nav:
         de: Nutzer
         en: Users
         et: Kasutajad
+        fi: Käyttäjät
         hu: Felhasználók
         it: Utenti
         ja: ユーザー
@@ -501,6 +515,7 @@ pages:
             de: Störung
             en: Error
             et: Viga
+            fi: Virhe
             hu: Hiba
             it: Errore
             ja: エラー
@@ -513,7 +528,7 @@ pages:
             de: Neues Hilsangebot hinzufügen
             en: Add new offer
             et: Lisa uus pakkumine
-            fi: Nieuwe aanbieding toevoegen
+            fi: Lisää uusi tarjous
             hu: Új felajánlás hozzáadása
             it: Aggiungi offerta
             ja: 新しいオファーを追加する
@@ -524,6 +539,7 @@ pages:
             de: Neue Hilfsanfrage hinzufügen
             en: Add new request
             et: Lisa uus soov
+            fi: Lisää uusi pyyntö
             hu: Új segítségkérés hozzáadása
             it: Aggiungi richiesta
             ja: 新しいリクエストを追加する
@@ -535,6 +551,7 @@ pages:
             de: pages.help.added
             en: 'Added at:'
             et: 'Lisamise aeg:'
+            fi: 'Lisätty ajalla:'
             hu: pages.help.added
             it: pages.help.added
             ja: pages.help.added
@@ -546,6 +563,7 @@ pages:
             de: Löschen
             en: Cancel
             et: Tühista
+            fi: Peruuta
             hu: Mégse
             it: Elimina
             ja: 取消
@@ -557,6 +575,7 @@ pages:
             de: Bearbeiten
             en: Edit
             et: Muuda
+            fi: Muuta
             hu: Szerkesztés
             it: Modifica
             ja: 編集
@@ -568,6 +587,7 @@ pages:
             de: Standort
             en: Location
             et: Asukoht
+            fi: Sijainti
             hu: Helyszín
             it: Posizione
             ja: 場所
@@ -579,6 +599,7 @@ pages:
             de: 'Bsp. Tallinn, Harjumaa'
             en: 'e.g. Tallinn, Harjumaa'
             et: 'näit. Tallinn, Harjumaa'
+            fi: 'esim. Tallinn, Harjumaa'
             hu: pl. Budapest
             it: 'a Roma, Italia'
             ja: 例：神奈川県横浜市
@@ -590,6 +611,7 @@ pages:
             de: "Insgesamt gibt es {{ (help | filter:{type:type }).length }} Hilfsangebote hier <span ng-if='search_query || search_my'> - found {{ (help | filter:{status:s.status, type:type, my:search_my} | filter:search_query).length }}</span>"
             en: "There are total {{ (help | filter:{type:type }).length }} offers here <span ng-if='search_query || searchMy'> - found {{ (help | filter:{status:s.status, type:type, my:searchMy} | filter:search_query).length }}</span>"
             et: "Kokku on meil {{ (help | filter:{type:type }).length }} pakkumist <span ng-if='search_query || searchMy'> - leiti {{ (help | filter:{status:s.status, type:type, my:searchMy} | filter:search_query).length }}</span>"
+            fi: "Täällä ovat kaikki tarjoukset <span ng-if='search_query || searchMy'> - leiti </span>"
             hu: "Összesen {{ (help | filter:{type:type }).length }} felajánlás található a rendszerben <span ng-if='search_query || searchMy'> - tal?lat {{ (help | filter:{status:s.status, type:type, my:searchMy} | filter:search_query).length }}</span>"
             it: "Tutte le offerte <span ng-if='search_query || searchMy'> - found </span>"
             ja: "すべてのオファー <span ng-if='search_query || searchMy'> - 見つかりました </span>"
@@ -611,6 +633,7 @@ pages:
             de: z.B. Nach Nuustaku gehen und einen extra Raum bekommen
             en: e.g. Will go to Nuustaku and got extra room
             et: näit. Lähen Nuustakule ja on üks vaba koht
+            fi: esim. Lähde Nuustakuun ja saa lisähuone
             hu: pl. Budapestre megyek van egy szabad hely a kocsimban
             ja: 例：東京駅に行きますが、1人分スペースが余っています。
             ko: '예: 자가용으로 서울에 방문하는데 빈 좌석 2개를 공유할 수 있습니다.'
@@ -621,6 +644,7 @@ pages:
             de: Hilfsangebote
             en: Offers
             et: Pakkumised
+            fi: Tarjoukset
             hu: Felajánlások
             it: Offerta
             ja: オファー
@@ -632,6 +656,7 @@ pages:
             de: Nur meine Hilfsangebote zeigen
             en: Show only my offers
             et: Näita ainult minu pakkumisi
+            fi: Näytä vain minun tarjoukseni
             hu: Csak az én felajánlásaim legyenek láthatóak
             it: Mostra solo le mie offerte
             ja: 自分のオファーのみ表示する
@@ -643,6 +668,7 @@ pages:
             de: Nur meine Hilfsanfragen zeigen
             en: Show only my requests
             et: Näita ainult minu soove
+            fi: Näytä vain minun pyyntöni
             hu: Csak az én segítségkéréseim legyenek láthatóak
             it: Mostra solo le mie richieste
             ja: 自分のリクエストのみ表示する
@@ -654,6 +680,7 @@ pages:
             de: Antworten
             en: Reply
             et: Vasta
+            fi: Vastaa
             hu: Válasz
             it: Rispondi
             ja: 返信
@@ -665,6 +692,7 @@ pages:
             de: "Es gibts insgesamt {{ (help | filter:{type:type }).length }} Hilfsanfragen hier <span ng-if='search_query || search_my'> - gefunden {{ (help | filter:{status:s.status, type:type, my:search_my} | filter:search_query).length }}</span>"
             en: "There are total {{ (help | filter:{type:type }).length }} requests here <span ng-if='search_query || searchMy'> - found {{ (help | filter:{status:s.status, type:type, my:searchMy} | filter:search_query).length }}</span>"
             et: "Kokku on meil {{ (help | filter:{type:type }).length }} soovi <span ng-if='search_query || searchMy'> - leiti {{ (help | filter:{status:s.status, type:type, my:searchMy} | filter:search_query).length }}</span>"
+            fi: "Kaikki pyynnöt ovat täällä <span ng-if='search_query || searchMy'> - leiti </span>"
             hu: "Összesen {{ (help | filter:{type:type }).length }} segítségkérés van a rendszerben <span ng-if='search_query || searchMy'> - találat {{ (help | filter:{status:s.status, type:type, my:searchMy} | filter:search_query).length }}</span>"
             it: "Totale richieste <span ng-if='search_query || searchMy'> - found </span>"
             ja: "全てのリクエスト　<span ng-if='search_query || searchMy'> - 見つかりました </span>"
@@ -676,6 +704,7 @@ pages:
             de: Anfragen
             en: Request
             et: Soov
+            fi: Pyyntö
             hu: Segítségkérés
             it: Richiesta
             ja: リクエスト
@@ -687,6 +716,7 @@ pages:
             de: Bsp. Ich möchte nach Nuustaku gehen.
             en: "e.g. I'll want to go to Nuustaku"
             et: näit. Soovin minna Nuustakule
+            fi: esim. Tahdon mennä Nuustakuun
             hu: pl. Budapestre akarok menni
             it: es. Ho necessità di andare a Firenze
             ja: 例：東京駅に行きたいです。
@@ -698,6 +728,7 @@ pages:
             de: Hilfsanfrage
             en: Requests
             et: Soovid
+            fi: Pyynnöt
             hu: Segítségkérés
             it: Richieste
             ja: リクエスト
@@ -709,6 +740,7 @@ pages:
             de: Speichern
             en: Save
             et: Salvesta
+            fi: Tallenna
             hu: Mentés
             it: Salva
             ja: 保存
