@@ -118,6 +118,17 @@ router.get('/bb', function(req, res) {
 })
 
 
+// Show about page
+router.get('/about', function(req, res) {
+    var template = 'about.' + res.locals.lang + '.jade'
+    if(isTemplateExists(template)){
+        res.render(template)
+    } else {
+        res.render('about.et.jade')
+    }
+
+})
+
 
 // Send feedback
 router.post('/feedback', function(req, res, next) {
