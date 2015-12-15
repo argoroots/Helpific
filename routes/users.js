@@ -54,6 +54,8 @@ router.get('/json', function(req, res, next) {
 
 // Show users list
 router.get('/', function(req, res) {
+    if(!res.authenticate()) return
+
     res.render('users')
 })
 
