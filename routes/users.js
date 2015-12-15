@@ -25,6 +25,8 @@ function mediaEmbed(url) {
 
 // Get users JSON
 router.get('/json', function(req, res, next) {
+    if(!res.authenticate()) return
+
     entu.getEntities({
         parentEntityId: 615,
         definition: 'person',
@@ -59,6 +61,8 @@ router.get('/', function(req, res) {
 
 // Show user profile
 router.get('/:id', function(req, res, next) {
+    if(!res.authenticate()) return
+
     if(!req.params.id) res.redirect('/' + res.locals.lang + '/users')
 
         entu.getEntity({

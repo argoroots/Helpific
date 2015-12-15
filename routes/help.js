@@ -20,6 +20,8 @@ router.get('/json/statuses', function(req, res) {
 
 // Get requests/offers JSON
 router.get('/json/:type*?', function(req, res, next) {
+    if(!res.authenticate()) return
+
     moment.locale(res.locals.lang)
 
     entu.getEntities({
@@ -74,6 +76,8 @@ router.get('/json/:type*?', function(req, res, next) {
 
 // Show requests/offers list
 router.get('/:type', function(req, res) {
+    if(!res.authenticate()) return
+
     if(req.params.type === 'requests') {
         var helpType = 'request'
     } else if(req.params.type === 'offers') {
@@ -93,6 +97,8 @@ router.get('/:type', function(req, res) {
 
 // Show request/offer
 router.get('/:type/:id', function(req, res, next) {
+    if(!res.authenticate()) return
+
     if(req.params.type !== 'request' && req.params.type !== 'offer') {
         res.redirect('/' + res.locals.lang + '/help/requests')
         return
