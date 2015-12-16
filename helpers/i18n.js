@@ -33,7 +33,7 @@ exports.init = function(req, res, next) {
         if(op.get(res, 'locals.user.lang')) {
             return res.redirect('/' + op.get(res, 'locals.user.lang'))
         } else {
-            request.get({url: 'http://geoip.entu.eu/json/' + req.ip, json: true, timeout: 1000}, function(error, response, body) {
+            request.get({url: 'https://geoip.entu.eu/json/' + req.ip, strictSSL: true, json: true, timeout: 1000}, function(error, response, body) {
                 var path = op.get(i18nConfig, ['countries', op.get(body, 'country_code') ? op.get(body, 'country_code').toLowerCase() : null]) || i18nConfig.defaultLocale
                 return res.redirect('/' + path)
             })
