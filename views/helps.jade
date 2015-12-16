@@ -69,7 +69,7 @@ block content
                     a.col.col-xs-12.col-sm-1.text-center(ng-if='h.person.reference == #{ user_id }', ng-click='h.editing = true')= t('pages.help.edit')
                     .row.helps-time
                         .col-xs-12.col-xs-offset-6.col-sm-12.col-sm-offset-9(ng-if='h.price.value > 0')= t('pages.help.' + helpType + '-price')
-                            span :&nbsp; {{ h.price.value }}
+                            span :&nbsp; {{ h.price.value }} &euro;
                         .col-xs-12.col-xs-offset-6.col-sm-12.col-sm-offset-9= t('pages.help.added')
                             span &nbsp; {{ h.time.value }}
 
