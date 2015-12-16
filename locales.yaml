@@ -620,8 +620,10 @@ pages:
             ru: "У нас в общей сложности {{ (help | filter:{type:type }).length }} предложений <span ng-if='search_query || searchMy'> - найдено {{ (help | filter:{status:s.status, type:type, my:searchMy} | filter:search_query).length }}</span>"
             zh: "所有的帮助都在这里<span ng-if='search_query || searchMy'> - 发现</span>"
         offer-price:
+            en: Service price (€)
             et: Teenuse hind (€)
         offer-price-ph:
+            en: e.g. 10
             et: näit. 10
         offer-request:
             de: Angebote
@@ -705,8 +707,10 @@ pages:
             ru: "У нас в общей сложности {{ (help | filter:{type:type }).length }} просьб <span ng-if='search_query || searchMy'> - найдено {{ (help | filter:{status:s.status, type:type, my:searchMy} | filter:search_query).length }}</span>"
             zh: "所有的请求都在这里<span ng-if='search_query || searchMy'> - 发现</span>"
         request-price:
+            en: Agree to pay (€)
             et: Hind olen nõus maksta (€)
         request-price-ph:
+            en: e.g. 10
             et: näit. 10
         request-request:
             de: Anfragen
