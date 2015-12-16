@@ -62,6 +62,7 @@ angular.module('hlpfc', ['ngSanitize'])
                     value.location.old = value.location.value
                     value.request.old = value.request.value
                     value.status.old = value.status.value
+                    value.price.old = value.price.value = Number(value.price.value)
                     $scope.help.push(value)
                 })
             })
@@ -91,6 +92,7 @@ angular.module('hlpfc', ['ngSanitize'])
                     $scope.new.time = null
                     $scope.new.location = null
                     $scope.new.request = null
+                    $scope.new.price = null
                     $scope.adding = false
                     $scope.addNew = false
 
@@ -109,6 +111,7 @@ angular.module('hlpfc', ['ngSanitize'])
             if(data.location.old != data.location.value) postData.location = data.location
             if(data.request.old != data.request.value) postData.request = data.request
             if(data.status.old != data.status.value) postData.status = data.status
+            if(data.price.old != data.price.value) postData.price = data.price
 
             angular.forEach(postData, function(value, key) {
                 $http({

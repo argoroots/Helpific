@@ -39,6 +39,9 @@ block content
                         .form-group.narrow.col-xs-12.col-sm-6
                             label.control-label(ng-class='{ "active": request_new }')= t('pages.help.' + helpType + '-request')
                             input.form-control(type='text', placeholder=t('pages.help.' + helpType + '-request-ph'), ng-model='new.request', ng-focus='request_new = true', ng-blur='request_new = false')
+                        .form-group.narrow.col-xs-12.col-sm-3
+                            label.control-label(ng-class='{ "active": price_new }')= t('pages.help.' + helpType + '-price')
+                            input.form-control(type='number', placeholder=t('pages.help.' + helpType + '-price-ph'), ng-model='new.price', ng-focus='price_new = true', ng-blur='price_new = false')
                         .form-group.narrow.col-xs-10.col-sm-2.pull-right.text-right
                             label.control-label
                             a.btn.bg-red.col-xs-12.text-center(ng-if='!adding', ng-click='Add("#{ helpType }", new)')= t('pages.help.save')
@@ -65,17 +68,22 @@ block content
                     a.col.col-xs-12.col-sm-1.text-center(ng-if='h.person.reference != #{ user_id }', ng-href='messages/{{ h.person.reference }}')= t('pages.help.reply')
                     a.col.col-xs-12.col-sm-1.text-center(ng-if='h.person.reference == #{ user_id }', ng-click='h.editing = true')= t('pages.help.edit')
                     .row.helps-time
+                        .col-xs-12.col-xs-offset-6.col-sm-12.col-sm-offset-9(ng-if='h.price.value > 0')= t('pages.help.' + helpType + '-price')
+                            span :&nbsp; {{ h.price.value }}
                         .col-xs-12.col-xs-offset-6.col-sm-12.col-sm-offset-9= t('pages.help.added')
                             span &nbsp; {{ h.time.value }}
 
 
                 form(ng-show='h.editing')
-                    .form-group.narrow.col-xs-12.col-sm-2
+                    .form-group.narrow.col-xs-12.col-sm-6
                         label.control-label(ng-class='{ "active": edit[$index].location }')= t('pages.help.location')
                         input.form-control(type='text', placeholder=t('pages.help.location-ph'), ng-model='h.location.value', ng-focus='edit[$index].location = true', ng-blur='edit[$index].location = false')
                     .form-group.narrow.col-xs-12.col-sm-6
                         label.control-label(ng-class='{ "active": edit[$index].request }')= t('pages.help.' + helpType + '-request')
                         input.form-control(type='text', placeholder=t('pages.help.' + helpType + '-request-ph'), ng-model='h.request.value', ng-focus='edit[$index].request = true', ng-blur='edit[$index].request = false')
+                    .form-group.narrow.col-xs-12.col-sm-6
+                        label.control-label(ng-class='{ "active": edit[$index].price }')= t('pages.help.' + helpType + '-price')
+                        input.form-control(type='number', placeholder=t('pages.help.' + helpType + '-price-ph'), ng-model='h.price.value', ng-focus='edit[$index].price = true', ng-blur='edit[$index].price = false')
                     .form-group.narrow.col-xs-12.col-sm-2
                         label.control-label(ng-class='{ "active": edit[$index].status }')= t('pages.help.status')
                         select.form-control(ng-options='s.status as s.label for s in statuses', ng-model='h.status.value', ng-focus='edit[$index].status = true', ng-blur='edit[$index].status = false')

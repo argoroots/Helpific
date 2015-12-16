@@ -59,6 +59,10 @@ router.get('/json/:type*?', function(req, res, next) {
                     id: r.get('status.id'),
                     value: r.get('status.value')
                 },
+                price: {
+                    id: r.get('price.id'),
+                    value: r.get('price.value')
+                },
                 request: {
                     id: r.get('request.id'),
                     value: r.get('request.value')
