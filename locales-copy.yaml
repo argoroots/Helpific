@@ -622,9 +622,11 @@ pages:
         offer-price:
             en: Service price (€)
             et: Teenuse hind (€)
+            ru: Цена услуги (€)
         offer-price-ph:
             en: e.g. 10
             et: näit. 10
+            ru: например 10
         offer-request:
             de: Angebote
             en: Offer
@@ -709,9 +711,11 @@ pages:
         request-price:
             en: Agree to pay (€)
             et: Hind olen nõus maksta (€)
+            ru: Готов заплатить (€)
         request-price-ph:
             en: e.g. 10
             et: näit. 10
+            ru: например 10
         request-request:
             de: Anfragen
             en: Request
