@@ -52,6 +52,9 @@ block content
                     .spacer.col-xs-12
                 .col-xs-12.text-justify!= profile.get('me-help-you-text.md')
 
+            .row(ng-show='!help')
+                .col-xs-12.text-center
+                    i.fa.fa-spinner.fa-pulse.fa-2x
             h2.col-xs-12(ng-if='(help | filter:{type:"offer"}).length > 0')= t('pages.user.help-offers')
             .table(ng-if='(help | filter:{type:"offer"}).length > 0')
                 .row(ng-repeat='h in help | filter:{type:"offer"} | orderBy:["-time.value","-id"]')
@@ -75,6 +78,10 @@ block content
                 .col-xs-12.text-justify!= profile.get('you-help-me-text.md')
                 h2.col-xs-12= t('pages.user.donate')
                 p.col-xs-12= t('pages.user.donate-info', title)
+
+            .row(ng-show='!help')
+                .col-xs-12.text-center
+                    i.fa.fa-spinner.fa-pulse.fa-2x
 
             h2.col-xs-12(ng-if='(help | filter:{type:"request"}).length > 0')= t('pages.user.help-requests')
             .table(ng-if='(help | filter:{type:"request"}).length > 0')
