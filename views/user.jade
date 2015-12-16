@@ -26,7 +26,7 @@ block title
 block content
     .container(ng-controller='userCtrl')
         .row
-            if profile.has('me-help-you-video') || profile.has('me-help-you-photo') || profile.has('me-help-you-text') || profile.has('you-help-me-video') || profile.has('you-help-me-photo') || profile.has('you-help-me-text')
+            if profile.has('about-me-video') || profile.has('about-me-photo') || profile.has('about-me-text')
                 h2()= t('pages.user.about-me-tab')
                 if mediaEmbed(profile.get('about-me-video.value'))
                     .embed-responsive.embed-responsive-16by9
@@ -51,19 +51,19 @@ block content
                         .profile-photo(style='background-image: url(' + profile.get('me-help-you-photo.file', '') + ')')
                     .spacer.col-xs-12
                 .col-xs-12.text-justify!= profile.get('me-help-you-text.md')
-                h2.col-xs-12(ng-if='(help | filter:{type:"offer"}).length > 0')= t('pages.user.help-offers')
-                .table(ng-if='(help | filter:{type:"offer"}).length > 0')
-                    .row(ng-repeat='h in help | filter:{type:"offer"} | orderBy:["-time.value","-id"]')
-                        .col-xs-12
-                            .col.col-xs-12.col-sm-3
-                                div
-                                em {{ h.location.value }}
-                            .col.col-xs-12.col-sm-9 {{ h.request.value }}
+
+            h2.col-xs-12(ng-if='(help | filter:{type:"offer"}).length > 0')= t('pages.user.help-offers')
+            .table(ng-if='(help | filter:{type:"offer"}).length > 0')
+                .row(ng-repeat='h in help | filter:{type:"offer"} | orderBy:["-time.value","-id"]')
+                    .col-xs-12
+                        .col.col-xs-12.col-sm-3
+                            div
+                            em {{ h.location.value }}
+                        .col.col-xs-12.col-sm-9 {{ h.request.value }}
 
         .row
             if profile.has('you-help-me-video') || profile.has('you-help-me-photo') || profile.has('you-help-me-text')
                 h2()= t('pages.user.you-help-me-tab')
-
                 if mediaEmbed(profile.get('you-help-me-video.value'))
                     .embed-responsive.embed-responsive-16by9
                         iframe.embed-responsive-item.col-xs-12(src=mediaEmbed(profile.get('you-help-me-video.value')), allowtransparency='true', frameborder='0', scrolling='no', allowfullscreen, mozallowfullscreen, webkitallowfullscreen, oallowfullscreen, msallowfullscreen)
@@ -73,17 +73,16 @@ block content
                         .profile-photo(style='background-image: url(' + profile.get('you-help-me-photo.file', '') + ')')
                     .spacer.col-xs-12
                 .col-xs-12.text-justify!= profile.get('you-help-me-text.md')
-
                 h2.col-xs-12= t('pages.user.donate')
                 p.col-xs-12= t('pages.user.donate-info', title)
 
-                h2.col-xs-12(ng-if='(help | filter:{type:"request"}).length > 0')= t('pages.user.help-requests')
-                .table(ng-if='(help | filter:{type:"request"}).length > 0')
-                    .row(ng-repeat='h in help | filter:{type:"request"} | orderBy:["-time.value","-id"]')
-                        .col-xs-12
-                            .col.col-xs-12.col-sm-3
-                                div
-                                em {{ h.location.value }}
-                            .col.col-xs-12.col-sm-9 {{ h.request.value }}
+            h2.col-xs-12(ng-if='(help | filter:{type:"request"}).length > 0')= t('pages.user.help-requests')
+            .table(ng-if='(help | filter:{type:"request"}).length > 0')
+                .row(ng-repeat='h in help | filter:{type:"request"} | orderBy:["-time.value","-id"]')
+                    .col-xs-12
+                        .col.col-xs-12.col-sm-3
+                            div
+                            em {{ h.location.value }}
+                        .col.col-xs-12.col-sm-9 {{ h.request.value }}
 
         .row.spacer
