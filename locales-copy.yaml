@@ -624,6 +624,11 @@ pages:
             et: Teenuse hind (€) (Mitte kohustuslik)
             hu: A szolgáltatás díja (€) (Választható)
             ru: Цена услуги (€) (Необязательно)
+        offer-price:
+            en: Service price
+            et: Teenuse hind
+            hu: A szolgáltatás díja
+            ru: Цена услуги
         offer-price-ph:
             en: e.g. 10
             et: näit. 10
@@ -715,6 +720,11 @@ pages:
             et: Hind olen nõus maksma (€) (Mitte kohustuslik)
             hu: Ajánlott ár (€) (Választható)
             ru: Готов заплатить (€) (Необязательно)
+        request-price-list:
+            en: Agree to pay
+            et: Hind olen nõus maksma
+            hu: Ajánlott ár
+            ru: Готов заплатить
         request-price-ph:
             en: e.g. 10
             et: näit. 10

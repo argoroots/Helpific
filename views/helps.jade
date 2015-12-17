@@ -67,10 +67,11 @@ block content
                     .col.col-xs-12.col-sm-6.col-md-7 {{ h.request.value }}
                     a.col.col-xs-12.col-sm-1.text-center(ng-if='h.person.reference != #{ user_id }', ng-href='messages/{{ h.person.reference }}')= t('pages.help.reply')
                     a.col.col-xs-12.col-sm-1.text-center(ng-if='h.person.reference == #{ user_id }', ng-click='h.editing = true')= t('pages.help.edit')
-                    .row.helps-time
-                        .col-xs-12.col-xs-offset-6.col-sm-12.col-sm-offset-9(ng-if='h.price.value > 0')= t('pages.help.' + helpType + '-price')
-                            span :&nbsp; {{ h.price.value }} &euro;
-                        .col-xs-12.col-xs-offset-6.col-sm-12.col-sm-offset-9= t('pages.help.added')
+                    .row
+                        .col-xs-12.col-xs-offset-6.col-sm-12.col-sm-offset-9(ng-if='h.price.value > 0')= t('pages.help.' + helpType + '-price-list')
+                            span.color-green :&nbsp;
+                                strong {{ h.price.value }} &euro;
+                        .col-xs-12.col-xs-offset-6.col-sm-12.col-sm-offset-9.helps-time= t('pages.help.added')
                             span &nbsp; {{ h.time.value }}
 
 
