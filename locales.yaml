@@ -624,7 +624,7 @@ pages:
             et: Teenuse hind (€) (Mitte kohustuslik)
             hu: A szolgáltatás díja (€) (Választható)
             ru: Цена услуги (€) (Необязательно)
-        offer-price:
+        offer-price-list:
             en: Service price
             et: Teenuse hind
             hu: A szolgáltatás díja
