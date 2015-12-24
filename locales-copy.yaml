@@ -121,6 +121,7 @@ footer:
             <strong>HELPIFIC MTÜ</strong><br> <small>
                 Рег. нр.: 80380146<br>
                 Счет: EE102200221061303677<br>
+                SWIFT/BIC: HABAEE2X (SWEDBANK AS)<br>
                 <a href="mailto:info@helpific.com">info@helpific.com</a>
             </small>
         zh: '<strong>HELPIFIC MTÜ</strong><br> <small>    Reg nr: 80380146<br>    银行账号: EE102200221061303677<br>    SWIFT/BIC: HABAEE2X (SWEDBANK AS)<br>    <a href="mailto:info@helpific.com">info@helpific.com</a></small>'
@@ -147,7 +148,7 @@ help:
         ja: 新着リクエスト／オファー
         ko: 도움 요청/나눔 입력하기
         nl: Nieuwe hulpverzoek/ bieden
-        ru: help.admin-email-subject
+        ru: Добавлена новая просьба о помощи
         zh: 添加新的 请求/帮助
 locales:
     de:
@@ -625,18 +626,21 @@ pages:
             fi: 'Palvelun hinta (€) (Vapaavalintainen) '
             hu: A szolgáltatás díja (€) (Választható)
             ru: Цена услуги (€) (Необязательно)
+            zh: 服务费用（当地货币）（可选）
         offer-price-list:
             en: Service price
             et: Teenuse hind
             fi: Palvelun hinta
             hu: A szolgáltatás díja
             ru: Цена услуги
+            zh: 服务费用
         offer-price-ph:
             en: e.g. 10
             et: näit. 10
             fi: esim. 10
             hu: pl. 10
             ru: например 10
+            zh: 比如，1元
         offer-request:
             de: Angebote
             en: Offer
@@ -725,18 +729,21 @@ pages:
             fi: Suostun maksamaan hinnan (€) (Valinnainen)
             hu: Ajánlott ár (€) (Választható)
             ru: Готов заплатить (€) (Необязательно)
+            zh: 愿意支付（当地货币）（可选）
         request-price-list:
             en: Agree to pay
             et: Hind olen nõus maksma
             fi: Suostun maksamaan hinnan
             hu: Ajánlott ár
             ru: Готов заплатить
+            zh: 愿意支付
         request-price-ph:
             en: e.g. 10
             et: näit. 10
             fi: esim. 10
             hu: pl. 10
             ru: например 10
+            zh: 比如，一元
         request-request:
             de: Anfragen
             en: Request
@@ -1585,10 +1592,12 @@ pages:
             en: Login over Facebook
             et: Logi sisse Facebooki kaudu
             fi: Kirjaudu sisään Facebookin kautta
+            ru: Войти через Facebook
         google:
             en: Login over Google plus
             et: Logi sisse Google plussi kaudu
             fi: Kirjaudu sisään Google plussan kautta
+            ru: Войти через Google Plus
         terms:
             de: '* Wenn Sie sich anmelden, akzeptieren Sie unsere<a href="terms">Nutungsbedingungen und Datenschutzrichtlinien</a>'
             en: '* if you sign in, you accept our <a href="terms">terms of use and privacy policy</a>'
