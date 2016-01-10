@@ -30,6 +30,7 @@ router.get('/done', function(req, res, next) {
         res.cookie('auth_token', user.token, {signed:true, maxAge:1000*60*60*24*14})
 
         entu.getEntity({
+            definition: 'person',
             id: user.id,
             auth_id: user.id,
             auth_token: user.token

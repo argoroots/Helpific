@@ -68,6 +68,7 @@ router.get('/:id', function(req, res, next) {
     if(!req.params.id) res.redirect('/' + res.locals.lang + '/users')
 
         entu.getEntity({
+            definition: 'person',
             id: req.params.id
         }, function(error, profile) {
             if(error) return next(error)

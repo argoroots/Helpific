@@ -12,6 +12,7 @@ router.get('/', function(req, res, next) {
     async.waterfall([
         function(callback) {
             entu.getEntity({
+                definition: 'person',
                 id: res.locals.user.id,
                 auth_id: res.locals.user.id,
                 auth_token: res.locals.user.token
@@ -33,6 +34,7 @@ router.get('/', function(req, res, next) {
                 if(error) return callback(error)
 
                 entu.getEntity({
+                    definition: 'person',
                     id: res.locals.user.id,
                     auth_id: res.locals.user.id,
                     auth_token: res.locals.user.token
@@ -53,6 +55,7 @@ router.get('/', function(req, res, next) {
                 if(error) return callback(error)
 
                 entu.getEntity({
+                    definition: 'person',
                     id: res.locals.user.id,
                     auth_id: res.locals.user.id,
                     auth_token: res.locals.user.token
@@ -97,6 +100,7 @@ router.post('/photo', function(req, res, next) {
     async.waterfall([
         function(callback) {
             entu.getEntity({
+                definition: 'person',
                 id: res.locals.user.id,
                 auth_id: res.locals.user.id,
                 auth_token: res.locals.user.token

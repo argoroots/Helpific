@@ -56,6 +56,7 @@ router.get('/json', function(req, res) {
 
         if(req.query.new_id && !newIdExists) {
             entu.getEntity({
+                definition: 'message',
                 id: req.query.new_id
             }, function(error, person) {
                 conversations[person.get('_id')] = {
@@ -177,6 +178,7 @@ router.post('/:id', function(req, res, next) {
             },
             function(result, callback) {
                 entu.getEntity({
+                    definition: 'message',
                     id: req.params.id
                 }, callback)
             },

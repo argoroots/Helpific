@@ -111,11 +111,13 @@ router.get('/:type/:id', function(req, res, next) {
     async.waterfall([
         function(callback) {
             entu.getEntity({
+                definition: 'request',
                 id: req.params.id
             }, callback)
         },
         function(help, callback) {
             entu.getEntity({
+                definition: 'person',
                 id: help.get('person.reference')
             }, function(error, profile) {
                 if(error) callback(error)
