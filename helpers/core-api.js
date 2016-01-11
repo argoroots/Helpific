@@ -119,7 +119,7 @@ getUser = function(params, callback) {
         log.debug('------------- Status code ' + response.statusCode)
         if(response.statusCode !== 200 || !body) return callback(new Error(op.get(body, 'error', body)))
 
-        log.debug('------------- Body ' + body)
+        log.debug('------------- Body ' + JSON.stringify(body))
         callback(null, op(body))
     })
 }
