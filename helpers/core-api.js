@@ -121,7 +121,19 @@ getUser = function(params, callback) {
         if(response.statusCode !== 200 || !body) return callback(new Error(op.get(body, 'error', body)))
 
         log.debug('------------- Body ' + JSON.stringify(body))
-        callback(null, op(body))
+
+        var result = {}
+        for (var key in body) {
+            if (body.hasOwnProperty(key)) {
+                result[key] = {
+                        id: 0,
+                        value: body[key]
+                }
+            }
+        }
+
+        log.debug('------------- Body ' + JSON.stringify(result))
+        callback(null, op(result))
     })
 }
 
@@ -296,9 +308,9 @@ exports.add = function(params, callback) {
 
 //Edit entity
 exports.edit = function(params, callback) {
-    var property = params.definition + '-' + op.get(params.data, 'property')
+    var property = op.get(params.data, 'property')
     var body = {}
-    body[op.get(params.data, 'id') ? property + '.' + op.get(params.data, 'id') : property] = op.get(params.data, 'value', '')
+    body[property] = op.get(params.data, 'value', '')
 
 
     var repository = ''
@@ -309,13 +321,21 @@ exports.edit = function(params, callback) {
     }
     var headers = {}
 
+    log.debug('params ' + JSON.stringify(params))
     var preparedUrl = APP_CORE_URL + '/api/' + repository + '/' + params.id
-    log.debug('Try to execute URL ' + preparedUrl)
-    request.put({url: preparedUrl, headers: headers, body: body, strictSSL: true, json: true, timeout: 60000}, function(error, response, body) {
+    log.debug('edit Try to execute URL ' + preparedUrl + ' body ' + JSON.stringify(body) + ' property = ' + property)
+    request.patch({url: preparedUrl, headers: headers, body: body, strictSSL: true, json: true, timeout: 60000}, function(error, response, body) {
         if(error) return callback(error)
-        if(response.statusCode !== 201 || !body.result) return callback(new Error(op.get(body, 'error', body)))
+        log.debug('response.statusCode  = ' + response.statusCode  + ' body = ' + JSON.stringify(body))
+        if(response.statusCode !== 200 || !body) return callback(new Error(op.get(body, 'error', body)))
 
-        callback(null, op.get(body, 'result.properties.' + property + '.0', null))
+
+        data = {
+            value: op.get(body, property, null)
+
+        }
+        log.debug(data)
+        callback(null, data)
     })
 }
 
@@ -384,7 +404,6 @@ exports.getUser = function(params, callback) {
         if(error) return callback(error)
         if(response.statusCode !== 200 || !body.result) return callback(new Error(op.get(body, 'error', body)))
 
-        log.debug(body)
         callback(null, op.get(body, 'result', null))
     })
 }
