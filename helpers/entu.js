@@ -323,17 +323,23 @@ exports.getSigninUrl = function(params, callback) {
         provider: params.provider
     }
     var preparedUrl = APP_ENTU_URL + '/user/auth'
-    log.debug('Try to execute URL ' + preparedUrl)
+    log.debug('Try to execute URL ' + preparedUrl + ' qb = ' + JSON.stringify(qb))
+
+    //core_api.getSigninUrl(params, callback)
+
+
     request.post({url: preparedUrl, body: qb, strictSSL: true, json: true, timeout: 60000}, function(error, response, body) {
         if(error) return callback(error)
         if(response.statusCode !== 200) return callback(new Error(op.get(body, 'error', body)))
 
+        log.debug(JSON.stringify(body))
         var data = {}
         data.state = op.get(body, 'result.state', null)
         data.auth_url = op.get(body, 'result.auth_url', null)
 
         callback(null, data)
     })
+
 }
 
 
@@ -344,10 +350,14 @@ exports.getUserSession = function(params, callback) {
         'state': params.state
     }
     var preparedUrl = params.auth_url
-    log.debug('Try to execute URL ' + preparedUrl)
+    log.debug('getUserSession Try to execute URL ' + preparedUrl + ' qb ' + JSON.stringify(qb))
+
     request.post({url: preparedUrl, body: qb, strictSSL: true, json: true, timeout: 60000}, function(error, response, body) {
         if(error) return callback(error)
         if(response.statusCode !== 200 || !body.result) return callback(new Error(op.get(body, 'error', body)))
+
+
+        log.debug("user " + JSON.stringify(body))
 
         var user = {}
         user.id = op.get(body, 'result.user.id', null)

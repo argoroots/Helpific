@@ -32,7 +32,7 @@ APP_DEFAULT_LOCALE  = process.env.DEFAULT_LOCALE || 'en'
 APP_TIMEZONE        = process.env.TIMEZONE || 'Europe/Tallinn'
 APP_ADMIN_EMAILS    = process.env.ADMIN_EMAILS
 APP_FEEDBACK_EMAILS = process.env.FEEDBACK_EMAILS
-APP_CORE_URL        = process.env.CORE_URL || 'http://flexbuy.eu:8080/api'
+APP_CORE_URL        = process.env.CORE_URL || 'http://flexbuy.eu:8080'
 
 
 // start logging

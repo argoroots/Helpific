@@ -24,6 +24,8 @@ router.get('/done', function(req, res, next) {
     }, function(error, user) {
         if(error) return next(error)
 
+        log.debug('signup done ' + JSON.stringify(user))
+
         res.clearCookie('auth_url')
         res.clearCookie('auth_state')
         res.cookie('auth_id', user.id, {signed:true, maxAge:1000*60*60*24*14})
@@ -69,10 +71,14 @@ router.get('/:provider', function(req, res, next) {
     res.clearCookie('auth_token')
 
     entu.getSigninUrl({
-        redirect_url: req.protocol + '://' + req.hostname + '/' + res.locals.lang + '/signin/done',
+        redirect_url: req.protocol + '://' + req.hostname + (req.port !== undefined && req.port != '80' && req.port != '443' ? ':' + req.port : '')  + '/' + res.locals.lang + '/signin/done',
         provider: req.params.provider
     }, function(error, data) {
         if(error) return next(error)
+
+
+        log.debug("YOHOHO ===== "  + JSON.stringify(data))
+
 
         res.cookie('auth_url', data.auth_url, {signed:true, maxAge:1000*60*10})
         res.cookie('auth_state', data.state, {signed:true, maxAge:1000*60*10})
