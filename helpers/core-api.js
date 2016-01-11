@@ -351,3 +351,27 @@ exports.getSigninUrl = function(params, callback) {
         callback(null, data)
     })
 }
+
+
+//Get user session
+exports.getUserSession = function(params, callback) {
+    var qb = {
+        'state': params.state
+    }
+    var preparedUrl = params.auth_url
+    log.debug('getUserSession Try to execute URL ' + preparedUrl + ' qb ' + JSON.stringify(qb))
+
+    request.post({url: preparedUrl, body: qb, strictSSL: true, json: true, timeout: 60000}, function(error, response, body) {
+        if(error) return callback(error)
+        if(response.statusCode !== 200 || !body.result) return callback(new Error(op.get(body, 'error', body)))
+
+
+        log.debug("user " + JSON.stringify(body))
+
+        var user = {}
+        user.id = op.get(body, 'result.userObj.id', null)
+        user.token = op.get(body, 'result.userObj.session_key', null)
+
+        callback(null, user)
+    })
+}

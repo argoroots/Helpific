@@ -352,6 +352,9 @@ exports.getUserSession = function(params, callback) {
     var preparedUrl = params.auth_url
     log.debug('getUserSession Try to execute URL ' + preparedUrl + ' qb ' + JSON.stringify(qb))
 
+    core_api.getUserSession(params, callback)
+
+    /*
     request.post({url: preparedUrl, body: qb, strictSSL: true, json: true, timeout: 60000}, function(error, response, body) {
         if(error) return callback(error)
         if(response.statusCode !== 200 || !body.result) return callback(new Error(op.get(body, 'error', body)))
@@ -365,6 +368,7 @@ exports.getUserSession = function(params, callback) {
 
         callback(null, user)
     })
+    */
 }
 
 
