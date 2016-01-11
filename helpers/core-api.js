@@ -117,15 +117,10 @@ getUser = function(params, callback) {
         log.debug('------------- Error ' + error)
         if(error) return callback(error)
         log.debug('------------- Status code ' + response.statusCode)
-        if(response.statusCode !== 200 || !body._embedded) return callback(new Error(op.get(body, 'error', body)))
+        if(response.statusCode !== 200 || !body) return callback(new Error(op.get(body, 'error', body)))
 
-        log.debug('------------- Body ' + body._embedded)
-        var entities = []
-        body._embedded['persons'].forEach(function(entry) {
-            entities.push(entry)
-        });
-
-        callback(null, entities)
+        log.debug('------------- Body ' + body)
+        callback(null, op(body))
     })
 }
 
