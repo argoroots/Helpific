@@ -70,8 +70,10 @@ router.get('/:provider', function(req, res, next) {
     res.clearCookie('auth_id')
     res.clearCookie('auth_token')
 
+    var port = (req.port !== 'undefined' && req.port !== '80' && req.port !== '443') ? ':' + req.port : '';
+
     entu.getSigninUrl({
-        redirect_url: req.protocol + '://' + req.hostname + (req.port !== undefined && req.port != '80' && req.port != '443' ? ':' + req.port : '')  + '/' + res.locals.lang + '/signin/done',
+        redirect_url: req.protocol + '://' + req.hostname + port + '/' + res.locals.lang + '/signin/done',
         provider: req.params.provider
     }, function(error, data) {
         if(error) return next(error)
