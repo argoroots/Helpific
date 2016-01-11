@@ -1,9 +1,5 @@
 var router = require('express').Router()
-
 var entu   = require('../helpers/entu')
-
-var core_api = require('../helpers/core-api')
-
 
 // Show signin page
 router.get('/', function(req, res) {
@@ -82,9 +78,7 @@ router.get('/:provider', function(req, res, next) {
     }, function(error, data) {
         if(error) return next(error)
 
-
-        log.debug("YOHOHO ===== "  + JSON.stringify(data))
-
+        log.debug("getSigninUrl result ===== "  + JSON.stringify(data))
 
         res.cookie('auth_url', data.auth_url, {signed:true, maxAge:1000*60*10})
         res.cookie('auth_state', data.state, {signed:true, maxAge:1000*60*10})

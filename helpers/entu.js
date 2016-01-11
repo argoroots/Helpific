@@ -32,18 +32,18 @@ var signData = function(data) {
 
 //Get entity from Entu
 exports.getEntity = getEntity = function(params, callback) {
-    if(params.auth_id && params.auth_token) {
-        var headers = {'X-Auth-UserId': params.auth_id, 'X-Auth-Token': params.auth_token}
-        var qs = {}
-    } else {
-        var headers = {}
-        var qs = signData()
-    }
-
-
     if(core_api.active){
         core_api.getEntity(params, params.definition, callback)
     } else {
+
+        if(params.auth_id && params.auth_token) {
+            var headers = {'X-Auth-UserId': params.auth_id, 'X-Auth-Token': params.auth_token}
+            var qs = {}
+        } else {
+            var headers = {}
+            var qs = signData()
+        }
+
         var preparedUrl = APP_ENTU_URL + '/entity-' + params.id
         log.debug('Try to execute URL ' + preparedUrl + ' query ' + JSON.stringify(qs))
 
@@ -101,6 +101,8 @@ exports.getEntity = getEntity = function(params, callback) {
 
 //Get entities by parent, definition or query
 exports.getEntities = function(params, callback) {
+    log.debug("getEntities before")
+
     var headers = {}
     var qs = {}
     if(params.definition) qs.definition = params.definition
@@ -119,7 +121,7 @@ exports.getEntities = function(params, callback) {
         core_api.getEntities(params, qs, callback)
     } else {
         var preparedUrl = APP_ENTU_URL + url
-        log.debug('Try to execute URL ' + preparedUrl + ' query ' + JSON.stringify(qs))
+        log.debug('getEntities Try to execute URL ' + preparedUrl + ' query ' + JSON.stringify(qs))
 
         request.get({url: preparedUrl, headers: headers, qs: qs, strictSSL: true, json: true, timeout: 60000}, function(error, response, body) {
             if(error) return callback(error)
@@ -177,7 +179,7 @@ exports.add = function(params, callback) {
         core_api.add(params, callback)
     } else {
         var preparedUrl = APP_ENTU_URL + '/entity-' + params.parentEntityId
-        log.debug('Try to execute URL ' + preparedUrl)
+        log.debug('add Try to execute URL ' + preparedUrl)
 
         request.post({url: preparedUrl, headers: headers, body: qb, strictSSL: true, json: true, timeout: 60000}, function(error, response, body) {
          if(error) return callback(error)
@@ -209,7 +211,7 @@ exports.edit = function(params, callback) {
         core_api.edit(params, callback)
     } else {
         var preparedUrl = APP_ENTU_URL + '/entity-' + params.id
-        log.debug('Try to execute URL ' + preparedUrl)
+        log.debug('edit Try to execute URL ' + preparedUrl)
 
         request.put({url: preparedUrl, headers: headers, body: qb, strictSSL: true, json: true, timeout: 60000}, function(error, response, body) {
          if(error) return callback(error)
@@ -242,7 +244,7 @@ exports.setFileFromUrl = function(params, callback) {
     }
 
     var preparedUrl = APP_ENTU_URL + '/file/url'
-    log.debug('Try to execute URL ' + preparedUrl)
+    log.debug('setFileFromUrl Try to execute URL ' + preparedUrl)
     request.post({url: preparedUrl, headers: headers, body: qb, strictSSL: true, json: true, timeout: 60000}, function(error, response, body) {
         if(error) return callback(error)
         if(response.statusCode !== 200 || !body.result) return callback(new Error(op.get(body, 'error', body)))
@@ -268,7 +270,7 @@ exports.rights = function(params, callback) {
     }
 
     var preparedUrl = APP_ENTU_URL + '/entity-' + params.id + '/rights'
-    log.debug('Try to execute URL ' + preparedUrl)
+    log.debug('rights Try to execute URL ' + preparedUrl)
     request.post({url: preparedUrl, headers: headers, body: qb, strictSSL: true, json: true, timeout: 60000}, function(error, response, body) {
         if(error) return callback(error)
         if(response.statusCode !== 200) return callback(new Error(op.get(body, 'error', body)))
@@ -290,7 +292,7 @@ exports.file = function(params, callback) {
     }
 
     var preparedUrl = APP_ENTU_URL + '/file/s3'
-    log.debug('Try to execute URL ' + preparedUrl)
+    log.debug('file Try to execute URL ' + preparedUrl)
     request.post({url: preparedUrl, headers: headers, body: qb, strictSSL: true, json: true, timeout: 60000}, function(error, response, body) {
         if(error) return callback(error)
         if(response.statusCode !== 200 || !body.result) return callback(new Error(op.get(body, 'error', body)))
@@ -319,7 +321,7 @@ exports.message = function(params, callback) {
     }
 
     var preparedUrl = APP_ENTU_URL + '/email'
-    log.debug('Try to execute URL ' + preparedUrl)
+    log.debug('message Try to execute URL ' + preparedUrl)
     request.post({url: preparedUrl, headers: headers, body: qb, strictSSL: true, json: true, timeout: 60000}, function(error, response, body) {
         if(error) return callback(error)
         if(response.statusCode !== 200) return callback(new Error(op.get(body, 'error', body)))
@@ -342,7 +344,7 @@ exports.getSigninUrl = function(params, callback) {
         core_api.getSigninUrl(params, callback)
     } else {
         var preparedUrl = APP_ENTU_URL + '/user/auth'
-        log.debug('Try to execute URL ' + preparedUrl + ' qb = ' + JSON.stringify(qb))
+        log.debug('getSigninUrl Try to execute URL ' + preparedUrl + ' qb = ' + JSON.stringify(qb))
 
         request.post({url: preparedUrl, body: qb, strictSSL: true, json: true, timeout: 60000}, function(error, response, body) {
             if(error) return callback(error)
@@ -411,7 +413,6 @@ exports.getUser = function(params, callback) {
             if(error) return callback(error)
             if(response.statusCode !== 200 || !body.result) return callback(new Error(op.get(body, 'error', body)))
 
-            log.debug(body)
             callback(null, op.get(body, 'result', null))
         })
     }
