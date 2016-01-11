@@ -2,6 +2,7 @@ var router = require('express').Router()
 
 var entu   = require('../helpers/entu')
 
+var core_api = require('../helpers/core-api')
 
 
 // Show signin page
@@ -72,6 +73,7 @@ router.get('/:provider', function(req, res, next) {
     res.clearCookie('auth_id')
     res.clearCookie('auth_token')
 
+    //var port = ''
     var port = ':8088'
 
     entu.getSigninUrl({

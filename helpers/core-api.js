@@ -6,6 +6,7 @@ var random   = require('randomstring')
 var request  = require('request')
 var sanitize = require('sanitize-html')
 
+exports.active = true
 
 getRequests = function(params, callback) {
     log.debug('Request list asked')
@@ -365,5 +366,25 @@ exports.getUserSession = function(params, callback) {
         user.token = op.get(body, 'result.userObj.session_key', null)
 
         callback(null, user)
+    })
+}
+
+
+//Get user
+exports.getUser = function(params, callback) {
+    if(params.auth_id && params.auth_token) {
+        var headers = {'X-Auth-UserId': params.auth_id, 'X-Auth-Token': params.auth_token}
+    } else {
+        var headers = {}
+    }
+
+    var preparedUrl = APP_CORE_URL + '/user'
+    log.debug('Try to execute URL ' + preparedUrl)
+    request.get({url: preparedUrl, headers: headers, strictSSL: true, json: true, timeout: 60000}, function(error, response, body) {
+        if(error) return callback(error)
+        if(response.statusCode !== 200 || !body.result) return callback(new Error(op.get(body, 'error', body)))
+
+        log.debug(body)
+        callback(null, op.get(body, 'result', null))
     })
 }
