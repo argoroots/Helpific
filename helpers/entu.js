@@ -322,8 +322,8 @@ exports.getSigninUrl = function(params, callback) {
         redirect_url: params.redirect_url,
         provider: params.provider
     }
-    var preparedUrl = APP_ENTU_URL + '/user/auth'
-    log.debug('Try to execute URL ' + preparedUrl + ' qb = ' + JSON.stringify(qb))
+    //var preparedUrl = APP_ENTU_URL + '/user/auth'
+    //log.debug('Try to execute URL ' + preparedUrl + ' qb = ' + JSON.stringify(qb))
 
     core_api.getSigninUrl(params, callback)
 
