@@ -9,6 +9,8 @@ var entu   = require('../helpers/entu')
 router.get('/', function(req, res, next) {
     if(!res.authenticate()) return
 
+    log.debug('after auth check')
+
     async.waterfall([
         function(callback) {
             entu.getEntity({
