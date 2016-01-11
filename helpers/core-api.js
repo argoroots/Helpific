@@ -253,10 +253,7 @@ exports.getEntity = getEntity = function(params, definition, callback) {
             log.debug('------------- Data ' + JSON.stringify(entities))
         })
     } else if(definition == 'person') {
-        getUser(params, function(errors, entities) {
-            log.debug('------------- Errors ' + errors)
-            log.debug('------------- Data ' + JSON.stringify(entities))
-        })
+        getUser(params, callback)
     } else if(definition == 'message') {
         getMessage(params, function(errors, entities) {
             log.debug('------------- Errors ' + errors)

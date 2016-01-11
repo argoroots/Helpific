@@ -45,6 +45,7 @@ exports.getEntity = getEntity = function(params, callback) {
 
     core_api.getEntity(params, params.definition, callback)
 
+    /*
     request.get({url: preparedUrl, headers: headers, qs: qs, strictSSL: true, json: true, timeout: 60000}, function(error, response, body) {
         if(error) return callback(error)
         if(response.statusCode !== 200 || !body.result) return callback(new Error(op.get(body, 'error', body)))
@@ -89,6 +90,7 @@ exports.getEntity = getEntity = function(params, callback) {
         log.debug('entity = ' + JSON.stringify(entity))
         callback(null, op(entity))
     })
+    */
 }
 
 
