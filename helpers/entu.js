@@ -325,9 +325,9 @@ exports.getSigninUrl = function(params, callback) {
     var preparedUrl = APP_ENTU_URL + '/user/auth'
     log.debug('Try to execute URL ' + preparedUrl + ' qb = ' + JSON.stringify(qb))
 
-    //core_api.getSigninUrl(params, callback)
+    core_api.getSigninUrl(params, callback)
 
-
+    /*
     request.post({url: preparedUrl, body: qb, strictSSL: true, json: true, timeout: 60000}, function(error, response, body) {
         if(error) return callback(error)
         if(response.statusCode !== 200) return callback(new Error(op.get(body, 'error', body)))
@@ -339,7 +339,7 @@ exports.getSigninUrl = function(params, callback) {
 
         callback(null, data)
     })
-
+    */
 }
 
 
