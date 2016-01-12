@@ -121,11 +121,33 @@ router.get('/bb', function(req, res) {
 // Show about page
 router.get('/about', function(req, res) {
     var template = 'about.' + res.locals.lang + '.jade'
-    if(isTemplateExists(template)){
-        res.render(template)
-    } else {
-        res.render('about.et.jade')
-    }
+
+
+    async.parallel({
+            partners: function(callback) {
+                entu.getEntities({
+                    definition: 'partner',
+                    fullObject: true
+                }, callback)
+            },
+            team: function(callback) {
+                entu.getEntities({
+                    parentEntityId: 612,
+                    definition: 'person',
+                    fullObject: true
+                }, callback)
+            }
+        },
+        function(err, results) {
+            if(err) return next(err)
+
+            log.debug(results)
+            if(isTemplateExists(template)){
+                res.render(template, results)
+            } else {
+                res.render('about.et.jade', results)
+            }
+        })
 
 })
 
