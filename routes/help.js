@@ -3,6 +3,7 @@ var async  = require('async')
 var moment = require('moment-timezone')
 
 var entu   = require('../helpers/entu')
+var core_api = require('../helpers/core-api')
 
 
 
@@ -44,7 +45,7 @@ router.get('/json/:type*?', function(req, res, next) {
                 person: {
                     reference: r.get('person.reference'),
                     name: r.get('person.value'),
-                    picture: APP_ENTU_URL + '/entity-' + r.get('person.reference') + '/picture',
+                    picture: entu.getPictureUrl(r.get('person.reference'))
                 },
                 time: {
                     id: r.get('time.id'),
@@ -148,7 +149,11 @@ router.post('/', function(req, res, next) {
     var properties = req.body
     properties.person = res.locals.user.id
 
-    properties.time = moment(Date.now()).format('YYYY-MM-DD HH:mm')
+    if(core_api.active){
+        properties.time = moment(Date.now()).format('YYYY-MM-DDTHH:mm:ss.SSSZ')
+    } else {
+        properties.time = moment(Date.now()).format('YYYY-MM-DD HH:mm')
+    }
 
     var new_id = null
     async.series([

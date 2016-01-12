@@ -45,7 +45,7 @@ router.get('/json', function(req, res) {
             conversations[person.reference] = {
                 id: person.reference,
                 name: person.value,
-                picture: APP_ENTU_URL + '/entity-' + person.reference + '/picture',
+                picture: entu.getPictureUrl(person.reference),
                 date: m.get('_changed'),
                 relativeDate: moment.utc(m.get('_changed')).tz(APP_TIMEZONE).fromNow(),
                 message: m.get('message.value'),
@@ -62,7 +62,7 @@ router.get('/json', function(req, res) {
                 conversations[person.get('_id')] = {
                     id: person.get('_id'),
                     name: person.get('forename.value'),
-                    picture: APP_ENTU_URL + '/entity-' + person.get('_id') + '/picture',
+                    picture: entu.getPictureUrl(person.get('_id')),
                     date: null,
                     ordinal: 'ZZZ'
                 }

@@ -32,6 +32,7 @@ var signData = function(data) {
 
 //Get entity from Entu
 exports.getEntity = getEntity = function(params, callback) {
+
     if(core_api.active){
         core_api.getEntity(params, callback)
     } else {
@@ -155,29 +156,38 @@ exports.getEntities = function(params, callback) {
 
 }
 
+// compose picture URL
+exports.getPictureUrl = function(reference) {
+    if(core_api.active){
+        return core_api.getPictureUrl(reference)
+    } else {
+        return APP_ENTU_URL + '/entity-' + reference + '/picture'
+    }
+}
 
 
 //Add entity
 exports.add = function(params, callback) {
-    var data = {
-        definition: params.definition
-    }
-
-    for(p in params.properties) {
-        data[params.definition + '-' + p] = params.properties[p]
-    }
-
-    if(params.auth_id && params.auth_token) {
-        var headers = {'X-Auth-UserId': params.auth_id, 'X-Auth-Token': params.auth_token}
-        var qb = data
-    } else {
-        var headers = {}
-        var qb =signData(data)
-    }
 
     if(core_api.active){
         core_api.add(params, callback)
     } else {
+        var data = {
+            definition: params.definition
+        }
+
+        for(p in params.properties) {
+            data[params.definition + '-' + p] = params.properties[p]
+        }
+
+        if(params.auth_id && params.auth_token) {
+            var headers = {'X-Auth-UserId': params.auth_id, 'X-Auth-Token': params.auth_token}
+            var qb = data
+        } else {
+            var headers = {}
+            var qb =signData(data)
+        }
+
         var preparedUrl = APP_ENTU_URL + '/entity-' + params.parentEntityId
         log.debug('add Try to execute URL ' + preparedUrl)
 
@@ -194,22 +204,22 @@ exports.add = function(params, callback) {
 
 //Edit entity
 exports.edit = function(params, callback) {
-    var property = params.definition + '-' + op.get(params.data, 'property')
-    var body = {}
-    body[op.get(params.data, 'id') ? property + '.' + op.get(params.data, 'id') : property] = op.get(params.data, 'value', '')
-
-    if(params.auth_id && params.auth_token) {
-        var headers = {'X-Auth-UserId': params.auth_id, 'X-Auth-Token': params.auth_token}
-        var qb = body
-    } else {
-        var headers = {}
-        var qb = signData(body)
-    }
-
 
     if(core_api.active) {
         core_api.edit(params, callback)
     } else {
+        var property = params.definition + '-' + op.get(params.data, 'property')
+        var body = {}
+        body[op.get(params.data, 'id') ? property + '.' + op.get(params.data, 'id') : property] = op.get(params.data, 'value', '')
+
+        if(params.auth_id && params.auth_token) {
+            var headers = {'X-Auth-UserId': params.auth_id, 'X-Auth-Token': params.auth_token}
+            var qb = body
+        } else {
+            var headers = {}
+            var qb = signData(body)
+        }
+
         var preparedUrl = APP_ENTU_URL + '/entity-' + params.id
         log.debug('edit Try to execute URL ' + preparedUrl)
 
@@ -339,15 +349,16 @@ exports.message = function(params, callback) {
 
 //Get signin url
 exports.getSigninUrl = function(params, callback) {
-    var qb = {
-        state: random.generate(16),
-        redirect_url: params.redirect_url,
-        provider: params.provider
-    }
 
     if(core_api.active){
         core_api.getSigninUrl(params, callback)
     } else {
+        var qb = {
+            state: random.generate(16),
+            redirect_url: params.redirect_url,
+            provider: params.provider
+        }
+
         var preparedUrl = APP_ENTU_URL + '/user/auth'
         log.debug('getSigninUrl Try to execute URL ' + preparedUrl + ' qb = ' + JSON.stringify(qb))
 
@@ -369,13 +380,13 @@ exports.getSigninUrl = function(params, callback) {
 
 //Get user session
 exports.getUserSession = function(params, callback) {
-    var qb = {
-        'state': params.state
-    }
 
     if(core_api.active){
         core_api.getUserSession(params, callback)
     } else {
+        var qb = {
+            'state': params.state
+        }
         var preparedUrl = params.auth_url
         log.debug('getUserSession Try to execute URL ' + preparedUrl + ' qb ' + JSON.stringify(qb))
 
@@ -401,16 +412,15 @@ exports.getUserSession = function(params, callback) {
 
 //Get user
 exports.getUser = function(params, callback) {
-    if(params.auth_id && params.auth_token) {
-        var headers = {'X-Auth-UserId': params.auth_id, 'X-Auth-Token': params.auth_token}
-    } else {
-        var headers = {}
-    }
-
 
     if(core_api.active){
         core_api.getUser(params, callback)
     } else {
+        if(params.auth_id && params.auth_token) {
+            var headers = {'X-Auth-UserId': params.auth_id, 'X-Auth-Token': params.auth_token}
+        } else {
+            var headers = {}
+        }
         var preparedUrl = APP_ENTU_URL + '/user'
         log.debug('Try to execute URL ' + preparedUrl + " headers " + JSON.stringify(headers))
 

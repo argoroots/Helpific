@@ -447,3 +447,8 @@ exports.getUser = function(params, callback) {
         callback(null, op.get(body, 'result', null))
     })
 }
+
+// compore picture URL
+exports.getPictureUrl = function(reference) {
+    return APP_CORE_URL + '/user/' + reference + '/picture'
+}
