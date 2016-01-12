@@ -22,292 +22,272 @@ color-gray-dark = #585858
 color-gray-light = #ededed
 color-gray-transparent = rgba(88, 88, 88, 0.5)
 
-
-
 html
-    height 100%
-
-
+  height 100%
 
 body
-    height 100%
-    color color-gray-dark
-    font-family 'Raleway', sans-serif
-    font-size 16px
-    letter-spacing 1px
-
-
+  height 100%
+  color color-gray-dark
+  font-family 'Raleway', sans-serif
+  font-size 16px
+  letter-spacing 1px
 
 #wrap
-    min-height 100%
-
-
+  min-height 100%
 
 #main
-    overflow auto
-    padding-bottom footer-height /* this needs to be bigger than footer height*/
+  overflow auto
+  padding-bottom footer-height
 
-
+/* this needs to be bigger than footer height*/
 
 .navbar
+  min-height header-height
+  background color-white-transparent
+  border none
+
+  .navbar-header
     min-height header-height
-    background color-white-transparent
+
+    .navbar-brand
+      display block
+      height header-height !important
+      overflow hidden
+      white-space nowrap
+      color color-helpific-green
+      font-size 37px
+      text-overflow ellipsis !important
+      letter-spacing -1px !important
+
+      img
+        padding-top 5px
+        padding-right 10px
+        height header-height - 35px !important
+
+  .navbar-collapse
+    max-height 600px
     border none
 
-    .navbar-header
-        min-height header-height
+  .navbar-toggle
+    margin-top 33px
+    border none
 
-        .navbar-brand
-            display block
-            height header-height !important
-            overflow hidden
-            white-space nowrap
-            color color-helpific-green
-            font-size 37px
-            text-overflow ellipsis !important
-            letter-spacing -1px !important
+  .navbar-nav
+    li
+      a
+        padding-top 0px
+        padding-bottom 0px
+        line-height header-height
+        text-decoration none
 
-            img
-                padding-top 5px
-                padding-right 10px
-                height header-height - 35px !important
+        &:hover
+          text-decoration underline
 
+    .dropdown
+      font-size 20px
 
-    .navbar-collapse
-        max-height 600px
-        border none
+    .dropdown-menu
+      margin-top -30px !important
+      margin-right 10px !important
+      padding 0px
+      background color-white
+      border 1px solid color-gray-light
+      border-top 1px solid color-gray-light
+      border-radius 3px
+      box-shadow none
 
-    .navbar-toggle
-        margin-top 33px
-        border none
+      li
+        a
+          line-height 40px !important
 
-    .navbar-nav
-        li
-            a
-                padding-top 0px
-                padding-bottom 0px
-                line-height header-height
-                text-decoration none
+          &:hover
+            text-decoration none
+            background color-gray-light !important
 
-                &:hover
-                    text-decoration underline
+      .divider
+        margin 0px !important
+        background-color color-gray-light !important
 
-        .dropdown
-            font-size 20px
-
-        .dropdown-menu
-            margin-top -30px !important
-            margin-right 10px !important
-            padding 0px
-            background color-white
-            border 1px solid color-gray-light
-            border-top 1px solid color-gray-light
-            border-radius 3px
-            box-shadow none
-
-            li
-                a
-                    line-height 40px !important
-
-                    &:hover
-                        text-decoration none
-                        background color-gray-light !important
-
-            .divider
-                margin 0px !important
-                background-color color-gray-light !important
-
-        .open
-            a
-                background none !important
+    .open
+      a
+        background none !important
 
 .navbar-border
-    border-bottom 1px solid color-gray-light
+  border-bottom 1px solid color-gray-light
 
 @media (max-width: 767px)
-    .navbar-brand
-        width 80%
+  .navbar-brand
+    width 80%
 
 @media (min-width: 768px) and (max-width: 992px)
-    .navbar-brand
-        width 660px
+  .navbar-brand
+    width 660px
 
 @media (min-width: 992px) and (max-width: 1199px)
-    .navbar-brand
-        width 420px
+  .navbar-brand
+    width 420px
 
 @media (min-width: 1200px) and (max-width: 1399px)
-    .navbar-brand
-        width 220px
+  .navbar-brand
+    width 220px
 
 @media (min-width: 1400px)
-    .navbar-brand
-        width 420px
+  .navbar-brand
+    width 420px
 
 @media (max-width: 1199px)
-    .navbar-header
+  .navbar-header
+    float none
+
+  .navbar-text
+    float none
+    margin 15px 0
+
+  .navbar-toggle
+    display block
+
+  .navbar-collapse.collapse
+    display none !important
+
+  .navbar-collapse.collapse.in
+    display block !important
+
+  .navbar
+    min-height header-height-xs
+
+    .navbar-nav
+      min-height 100%
+      float none !important
+      margin 0px -15px
+      border-bottom 1px solid color-gray-light !important
+
+      li
         float none
 
-    .navbar-text
-        float none
-        margin 15px 0
+        a
+          line-height 20px
+          padding-top 0px !important
+          padding-bottom 0px !important
+          line-height header-height-xs
+          text-align center
 
-    .navbar-toggle
+      .dropdown-toggle
+        display none
+
+      .dropdown-menu
         display block
+        position static
+        float none
+        margin-top 0px !important
+        margin-right 0px !important
+        background none
+        border none !important
+        border-top 1px solid color-gray-light !important
+        border-bottom 1px solid color-gray-light !important
 
-    .navbar-collapse.collapse
-        display none !important
+        .divider
+          display none
 
-    .navbar-collapse.collapse.in
-        display block !important
-
-    .navbar
-        min-height header-height-xs
-
-        .navbar-nav
-            min-height 100%
-            float none !important
-            margin 0px -15px
-            border-bottom 1px solid color-gray-light !important
-
-            li
-                float none
-
-                a
-                    line-height 20px
-                    padding-top 0px !important
-                    padding-bottom 0px !important
-                    line-height header-height-xs
-                    text-align center
-
-            .dropdown-toggle
-                display none
-
-            .dropdown-menu
-                display block
-                position static
-                float none
-                margin-top 0px !important
-                margin-right 0px !important
-                background none
-                border none !important
-                border-top 1px solid color-gray-light !important
-                border-bottom 1px solid color-gray-light !important
-
-                .divider
-                    display none
-
-    .collapsing
-        overflow hidden !important
-
-
+  .collapsing
+    overflow hidden !important
 
 #title
-    margin-top header-height + 50px
-    margin-bottom 100px
-
-
+  margin-top header-height + 50px
+  margin-bottom 100px
 
 #cover
-    padding-top 280px
-    color color-white
-    background-image url('/images/tom.jpg')
-    background-position center top
-    background-size cover
-    background-repeat no-repeat
-    height 550px
-    font-size 40px
-    font-weight bold
-    text-align center
-    text-shadow 0px 0px 10px color-gray-transparent
-    vertical-align middle
-    text-transform uppercase
-
-
+  padding-top 280px
+  color color-white
+  background-image url('/images/tom.jpg')
+  background-position center top
+  background-size cover
+  background-repeat no-repeat
+  height 550px
+  font-size 40px
+  font-weight bold
+  text-align center
+  text-shadow 0px 0px 10px color-gray-transparent
+  vertical-align middle
+  text-transform uppercase
 
 #scroll-down
-    position fixed
-    bottom 0px
-    width 100%
-    text-align center
-    color color-gray-transparent
-
-
+  position fixed
+  bottom 0px
+  width 100%
+  text-align center
+  color color-gray-transparent
 
 #feedback-open
-    z-index 1000
-    position fixed
-    bottom 20px
-    right 20px
-    color color-helpific-red
-    text-shadow 0px 0px 10px color-gray-transparent
-    cursor pointer
+  z-index 1000
+  position fixed
+  bottom 20px
+  right 20px
+  color color-helpific-red
+  text-shadow 0px 0px 10px color-gray-transparent
+  cursor pointer
 
 #feedback-close
-    margin -10px -30px 0px -5px
-    float left
-    cursor pointer
+  margin -10px -30px 0px -5px
+  float left
+  cursor pointer
 
 #feedback
-    z-index 1000
-    position fixed
-    bottom 20px
-    right 20px
-    max-width 500px
+  z-index 1000
+  position fixed
+  bottom 20px
+  right 20px
+  max-width 500px
+  color color-white
+  background-color color-helpific-red
+  border-radius 6px
+  box-shadow 0px 0px 10px color-gray-transparent
+
+  h2
+    margin 20px
+    padding 0px
     color color-white
-    background-color color-helpific-red
-    border-radius 6px
-    box-shadow 0px 0px 10px color-gray-transparent
 
-    h2
-        margin 20px
-        padding 0px
-        color color-white
+  label
+    margin-top 0px !important
 
-    label
-        margin-top 0px !important
+  input
+  textarea
+    border none !important
 
-    input
-    textarea
-        border none !important
+    &:focus
+      border none !important
+      outline 0px
 
-        &:focus
-            border none !important
-            outline 0px
-
-    a
-        margin-top 10px
-        margin-bottom 20px
-        color color-white
-        font-weight bold
+  a
+    margin-top 10px
+    margin-bottom 20px
+    color color-white
+    font-weight bold
 
 @media (max-width: 768px)
-    #feedback
-        margin 0px
-        bottom 0px
-        left 0px
-        right 0px
-        max-width none
-        border-radius 0px
-
-
-
+  #feedback
+    margin 0px
+    bottom 0px
+    left 0px
+    right 0px
+    max-width none
+    border-radius 0px
 
 footer
-    position relative
-    margin-top footer-height * -1 /* negative value of footer height */
-    height footer-height
-    clear both
-    padding-top 20px
-    background-color color-gray-light
-    overflow hidden
+  position relative
+  margin-top footer-height * -1 /* negative value of footer height */
+  height footer-height
+  clear both
+  padding-top 20px
+  background-color color-gray-light
+  overflow hidden
 
-    .social
-        margin 20px 3px
-        color color-gray
+  .social
+    margin 20px 3px
+    color color-gray
 
-    .social:hover
-        color color-gray-dark
+  .social:hover
+    color color-gray-dark
 
 @media (max-width: 767px)
   footer
@@ -318,406 +298,363 @@ footer
       text-align left
 
 a
+  color color-helpific-red
+  text-decoration none
+  outline: 0
+
+  &:hover
     color color-helpific-red
-    text-decoration none
-    outline: 0
-
-    &:hover
-        color color-helpific-red
-        text-decoration underline
-
-
+    text-decoration underline
 
 h1
-    color color-helpific-green
-    font-size 64px
-    line-height 64px
+  color color-helpific-green
+  font-size 64px
+  line-height 64px
+  font-weight normal
+  height auto
+  letter-spacing -3px
+
+  span
+    font-size 32px
+    line-height 32px
     font-weight normal
     height auto
-    letter-spacing -3px
-
-    span
-        font-size 32px
-        line-height 32px
-        font-weight normal
-        height auto
-        letter-spacing 0px
-
-
+    letter-spacing 0px
 
 h2
-    margin-top 40px
-    margin-bottom 20px
-    color color-helpific-green
-    font-size 32px
-    font-weight normal
-    height auto
-    letter-spacing 0px
-
-
+  margin-top 40px
+  margin-bottom 20px
+  color color-helpific-green
+  font-size 32px
+  font-weight normal
+  height auto
+  letter-spacing 0px
 
 h3
-    margin-top 0px
-    color color-gray-dark
-    font-size 20px
-    font-weight bold
-    height auto
-    letter-spacing 0px
-
-
+  margin-top 0px
+  color color-gray-dark
+  font-size 20px
+  font-weight bold
+  height auto
+  letter-spacing 0px
 
 pre
-    padding 0px
-    background none
-    border none
-
-
+  padding 0px
+  background none
+  border none
 
 .jumbotron
-    background none
-
-
+  background none
 
 .bullet
-    display block
-    margin 0px auto 20px auto
-    height 80px
-    width 80px
-    border-radius 40px
-    color color-white
-    background-color color-helpific-red
-    font-family helvetica
-    font-size 50px
-    line-height 80px
-
-
+  display block
+  margin 0px auto 20px auto
+  height 80px
+  width 80px
+  border-radius 40px
+  color color-white
+  background-color color-helpific-red
+  font-family helvetica
+  font-size 50px
+  line-height 80px
 
 .color-white
-    color color-white
+  color color-white
+
 .color-red
-    color color-helpific-red
+  color color-helpific-red
+
 .color-green
-    color color-helpific-green
+  color color-helpific-green
+
 .color-yellow
-    color color-helpific-yellow
-
-
+  color color-helpific-yellow
 
 .bg-red
-    color color-white
-    background-color color-helpific-red
+  color color-white
+  background-color color-helpific-red
+
 .bg-green
-    color color-white
-    background-color color-helpific-green
+  color color-white
+  background-color color-helpific-green
+
 .bg-yellow
-    color color-white
-    background-color color-helpific-yellow
-
-
+  color color-white
+  background-color color-helpific-yellow
 
 .bg-red-transparent
-    background-color color-helpific-red-transparent !important
+  background-color color-helpific-red-transparent !important
+
 .bg-green-transparent
-    background-color color-helpific-green-transparent !important
+  background-color color-helpific-green-transparent !important
+
 .bg-yellow-transparent
-    background-color color-helpific-yellow-transparent !important
-
-
+  background-color color-helpific-yellow-transparent !important
 
 .border-red
-    border 1px solid color-helpific-red
+  border 1px solid color-helpific-red
+
 .border-green
-    border 1px solid color-helpific-green
+  border 1px solid color-helpific-green
+
 .border-yellow
-    border 1px solid color-helpific-yellow
-
-
+  border 1px solid color-helpific-yellow
 
 #search
-    margin-top 0px
-    margin-bottom 40px
+  margin-top 0px
+  margin-bottom 40px
 
-    .form-group
-        border-bottom 1px solid color-helpific-green
+  .form-group
+    border-bottom 1px solid color-helpific-green
 
-    label
-        padding 0px
-        z-index 10
+  label
+    padding 0px
+    z-index 10
 
-        i
-            color color-helpific-green
-            font-size 25px
+    i
+      color color-helpific-green
+      font-size 25px
 
-    input
-        margin-bottom 5px
-        padding 0px
-        color color-helpific-green
-        border none
-        outline none
-        font-weight normal
-
-
+  input
+    margin-bottom 5px
+    padding 0px
+    color color-helpific-green
+    border none
+    outline none
+    font-weight normal
 
 .profile-tab
-    margin-bottom 20px
-    padding-top 25px
-    padding-bottom 25px
-    color color-white
-    font-size 20px
-    text-decoration none
-    text-align center
-    white-space nowrap
-    border-top solid 15px white
-    border-bottom solid 5px white
-    cursor pointer
+  margin-bottom 20px
+  padding-top 25px
+  padding-bottom 25px
+  color color-white
+  font-size 20px
+  text-decoration none
+  text-align center
+  white-space nowrap
+  border-top solid 15px white
+  border-bottom solid 5px white
+  cursor pointer
 
-    &:hover, &:active, &:focus
-        border-radius 0px
-        color color-white
-        text-decoration none
+  &:hover, &:active, &:focus
+    border-radius 0px
+    color color-white
+    text-decoration none
 
 .profile-tab.active
-    padding-top 40px
-    padding-bottom 30px
-    border-top none
-    border-bottom none
-
-
+  padding-top 40px
+  padding-bottom 30px
+  border-top none
+  border-bottom none
 
 .profile-photo
-    background-position center center
-    background-size cover
-    height 300px
+  background-position center center
+  background-size cover
+  height 300px
 
 @media (min-width: 768px) and (max-width: 992px)
-    .profile-photo
-        height 400px
+  .profile-photo
+    height 400px
 
 @media (min-width: 992px) and (max-width: 1199px)
-    .profile-photo
-        height 500px
+  .profile-photo
+    height 500px
 
 @media (min-width: 1200px)
-    .profile-photo
-        height 600px
-
-
+  .profile-photo
+    height 600px
 
 .spacer
-    height 100px
-
-
+  height 100px
 
 i.signin
-    margin 20px
-
-
+  margin 20px
 
 .btn
-    border none
-    border-radius 4px
-    text-decoration none
+  border none
+  border-radius 4px
+  text-decoration none
 
 .btn-lg
-    padding-top 25px
-    padding-bottom 25px
-    font-weight bold
-    text-transform uppercase
-
-
-
+  padding-top 25px
+  padding-bottom 25px
+  font-weight bold
+  text-transform uppercase
 
 .form-group
-    margin-top 30px
+  margin-top 30px
+  margin-bottom 5px
+
+  label
+    display block
+    text-transform uppercase
+    font-weight normal
+
+  .active
+    color color-helpific-green
+    font-weight bold
+
+  select
+    border-color color-gray-dark
+    outline none
+    box-shadow none
+
+    &:focus
+      outline none
+      border-color color-helpific-green
+      outline 0px
+
+  input
+  textarea
+    padding 5px 1px
+    border-radius 4px
+    border 1px solid color-gray-light
+    border-bottom 1px solid color-gray-dark
+    outline none
+    box-shadow none
+    font-size 18px
+
+    &:focus
+      border-bottom solid 2px color-helpific-green
+      outline 0px
+      box-shadow none
+
+    &[type=file]
+      border none
+      color white
+
+    &[readonly]
+      background-color white
+
+  button
+    margin-top 100px
+
+  &.narrow
+    margin-top 5px
     margin-bottom 5px
 
     label
-        display block
-        text-transform uppercase
-        font-weight normal
-
-    .active
-        color color-helpific-green
-        font-weight bold
-
-    select
-        border-color color-gray-dark
-        outline none
-        box-shadow none
-
-        &:focus
-            outline none
-            border-color color-helpific-green
-            outline 0px
+      margin-top 0px
+      font-size 12px !important
 
     input
-    textarea
-        padding 5px 1px
-        border-radius 4px
-        border 1px solid color-gray-light
-        border-bottom 1px solid color-gray-dark
-        outline none
-        box-shadow none
-        font-size 18px
+      border none
 
-        &:focus
-            border-bottom solid 2px color-helpific-green
-            outline 0px
-            box-shadow none
-
-        &[type=file]
-            border none
-            color white
-
-        &[readonly]
-            background-color white
-
-    button
-        margin-top 100px
-
-    &.narrow
-        margin-top 5px
-        margin-bottom 5px
-
-        label
-            margin-top 0px
-            font-size 12px !important
-
-        input
-            border none
-
-            &:focus
-                border-bottom solid 2px color-helpific-green
-
-
+      &:focus
+        border-bottom solid 2px color-helpific-green
 
 .editor-toolbar
 .CodeMirror
-    border-radius 0px !important
-    border-left none !important
-    border-right none !important
+  border-radius 0px !important
+  border-left none !important
+  border-right none !important
 
 .CodeMirror
-    border-bottom 1px solid color-gray-dark !important
+  border-bottom 1px solid color-gray-dark !important
 
 .CodeMirror-focus
-    border-bottom solid 2px color-helpific-green !important
-
-
+  border-bottom solid 2px color-helpific-green !important
 
 .table
-    .row
-        margin-top 0px
-        margin-bottom 0px
-        padding-top 10px
-        padding-bottom 10px
-        border-bottom 1px solid color-gray-light
+  .row
+    margin-top 0px
+    margin-bottom 0px
+    padding-top 10px
+    padding-bottom 10px
+    border-bottom 1px solid color-gray-light
 
-        &:last-child
-            border-bottom none
-
-
+    &:last-child
+      border-bottom none
 
 .conversation
-    padding 10px 0px
-    cursor pointer
-    border 1px solid color-white
-    border-right 1px solid color-helpific-red
-    border-top-left-radius 70px
-    border-bottom-left-radius 70px
+  padding 10px 0px
+  cursor pointer
+  border 1px solid color-white
+  border-right 1px solid color-helpific-red
+  border-top-left-radius 70px
+  border-bottom-left-radius 70px
 
 .conversation.selected
-    border 1px solid color-helpific-red
-    border-right 1px solid color-white
+  border 1px solid color-helpific-red
+  border-right 1px solid color-white
 
 .message-list
-    h5
-        margin-top 20px
-        color color-gray !important
-
+  h5
+    margin-top 20px
+    color color-gray !important
 
 @media (max-width: 768px)
-    .conversation-list
-        border none
+  .conversation-list
+    border none
 
-    .conversation.selected
-        border-left none
-        border-radius 0px
-
-
+  .conversation.selected
+    border-left none
+    border-radius 0px
 
 .message
-    margin-top 10px
-    margin-bottom 10px
-    padding-top 5px
-    padding-bottom 5px
-    border-radius 10px
+  margin-top 10px
+  margin-bottom 10px
+  padding-top 5px
+  padding-bottom 5px
+  border-radius 10px
 
-    small
-        color color-gray
-
-
+  small
+    color color-gray
 
 #message-form
-    textarea
-        border-radius 0px
-        border 1px solid color-helpific-red
-        outline none
-        box-shadow none
-        font-size 18px
+  textarea
+    border-radius 0px
+    border 1px solid color-helpific-red
+    outline none
+    box-shadow none
+    font-size 18px
 
-        &:focus
-            outline 0px
+    &:focus
+      outline 0px
 
-        &[readonly]
-            background-color white
-
+    &[readonly]
+      background-color white
 
 #btn-add
-    margin-top 30px
-    font-size 50px
-    color color-helpific-green
+  margin-top 30px
+  font-size 50px
+  color color-helpific-green
 
-    span
-        display block
-        font-size 14px
-        line-height 14px
-
-
+  span
+    display block
+    font-size 14px
+    line-height 14px
 
 #tos
-    ol
-        display table
-        padding-top 0px
-        padding-bottom 20px
-        padding-left 0px
-        counter-reset section
-        list-style-type none
+  ol
+    display table
+    padding-top 0px
+    padding-bottom 20px
+    padding-left 0px
+    counter-reset section
+    list-style-type none
 
-    li
-        display table-row
+  li
+    display table-row
 
-        &:before
-            display table-cell
-            padding-right 5px
-            counter-increment section
-            content counters(section, ".") " "
-
+    &:before
+      display table-cell
+      padding-right 5px
+      counter-increment section
+      content counters(section, ".") " "
 
 @media (min-width: 1400px)
-    .container
-        width: 1370px
-
-
+  .container
+    width: 1370px
 
 .user-block
-    width 50%
-    display inline-block
-    height 250px
+  width 50%
+  display inline-block
+  height 250px
 
 .user-block
-    img
-        width 150px
+  img
+    width 150px
 
 @media (max-width: 992px)
   .user-block
@@ -729,13 +666,59 @@ i.signin
     img
       width 120px
 
-
 #profile-form .photo-block
   width 150px
 
 .button-block
   padding 10px
   display inline-block
-  
+
 .helps-time
   color: #C5C5C5
+
+h3.about
+  padding: 15px 0 0 0
+
+img.about-images
+  max-width: 200px
+  padding-top: 30px
+
+.col-md-4 .inner
+  padding-top: 110px
+
+.col-md-4 .inner-block
+  min-height: 2100px
+  background: red
+
+.inner-block ul
+  margin: 0
+  padding: 0
+
+.inner-block li
+  display: block
+  padding: 5px 0
+  text-align: center
+
+i.icon
+  color: #579390
+  font-size: 22px
+  padding: 30px 0 15px 0
+
+.last-words h2
+  margin-top: 40px
+  margin-bottom: 30px
+  color: #585858
+  font-size: 20px
+  font-weight: bold
+  height: auto
+  letter-spacing: 0
+
+.last-words ul
+  margin: 30px auto
+  padding: 0
+  text-align: center
+
+.last-words li
+  display: inline-block
+  padding: 5px 20px 0px 0px
+  text-align: center
