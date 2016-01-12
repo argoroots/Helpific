@@ -8,39 +8,6 @@ var sanitize = require('sanitize-html')
 
 exports.active = true
 
-getRequests = function(params, callback) {
-    log.debug('Request list asked')
-
-    var headers = {}
-    var qs = {}
-    if(params.definition) qs.definition = params.definition
-    if(params.query) qs.query = params.query
-    if(params.fromPersonId) qs.fromPersonId = params.fromPersonId
-    if(params.toPersonId) qs.toPersonId = params.toPersonId
-
-    var url = 'requests'
-
-    var preparedUrl = APP_CORE_URL + '/api/' + url
-    log.debug('------------- getRequests Try to execute URL ' + preparedUrl + ' qs ' + JSON.stringify(qs))
-    request.get({url: preparedUrl, headers: headers, qs: qs, strictSSL: true, json: true, timeout: 60000}, function(error, response, body) {
-
-        log.debug('------------- Error ' + error)
-        if(error) return callback(error)
-        log.debug('------------- Status code ' + response.statusCode)
-        if(response.statusCode !== 200 || !body._embedded) return callback(new Error(op.get(body, 'error', body)))
-
-        log.debug('------------- Body ' + body._embedded)
-
-        var entities = []
-        body._embedded['requests'].forEach(function(entry) {
-            entities.push(entry)
-        });
-
-        callback(null, entities)
-    })
-}
-
-
 getRequest = function(params, callback) {
     var headers = {}
     var qs = {}
@@ -49,7 +16,7 @@ getRequest = function(params, callback) {
     if(params.fromPersonId) qs.fromPersonId = params.fromPersonId
     if(params.toPersonId) qs.toPersonId = params.toPersonId
 
-    var url = 'request/' + params.id
+    var url = 'requests/' + params.id
 
     var preparedUrl = APP_CORE_URL + '/api/' + url
     log.debug('------------- Try to execute URL ' + preparedUrl + ' qs ' + JSON.stringify(qs))
@@ -58,15 +25,23 @@ getRequest = function(params, callback) {
         log.debug('------------- Error ' + error)
         if(error) return callback(error)
         log.debug('------------- Status code ' + response.statusCode)
-        if(response.statusCode !== 200 || !body._embedded) return callback(new Error(op.get(body, 'error', body)))
+        if(response.statusCode !== 200 || !body) return callback(new Error(op.get(body, 'error', body)))
 
-        log.debug('------------- Body ' + body._embedded)
-        var entities = []
-        body._embedded['request'].forEach(function(entry) {
-            entities.push(entry)
-        });
+        log.debug('------------- Body ' + JSON.stringify(body))
 
-        callback(null, entities)
+        var result = {}
+        for (var key in body) {
+            if (body.hasOwnProperty(key)) {
+                result[key] = {
+                    id: 0,
+                    value: body[key]
+                }
+            }
+        }
+
+        log.debug('------------- Body ' + JSON.stringify(result))
+        callback(null, op(result))
+
     })
 }
 
@@ -229,16 +204,89 @@ getMessage = function(params, callback) {
 }
 
 
+
+
+
+//Get entity
+exports.getEntity = getEntity = function(params, callback) {
+    log.debug('------------- getEntity Try to execute definition ' + params.definition)
+
+    if(params.definition == 'request') {
+        getRequest(params, callback)
+    } else if(params.definition == 'person') {
+        getUser(params, callback)
+    } else if(params.definition == 'message') {
+        getMessage(params, callback)
+    }
+}
+
+exports.getRequests = getRequests = function(params, callback) {
+    log.debug('Request list asked')
+
+    var headers = {}
+    var qs = {}
+    if(params.definition) qs.definition = params.definition
+    if(params.query) qs.query = params.query
+    if(params.fromPersonId) qs.fromPersonId = params.fromPersonId
+    if(params.toPersonId) qs.toPersonId = params.toPersonId
+
+    var url = 'requests'
+
+    var preparedUrl = APP_CORE_URL + '/api/' + url
+    log.debug('------------- getRequests Try to execute URL ' + preparedUrl + ' qs ' + JSON.stringify(qs))
+    request.get({url: preparedUrl, headers: headers, qs: qs, strictSSL: true, json: true, timeout: 60000}, function(error, response, body) {
+
+        log.debug('------------- Error ' + error)
+        if(error) return callback(error)
+        log.debug('------------- Status code ' + response.statusCode)
+        if(response.statusCode !== 200 || !body._embedded) return callback(new Error(op.get(body, 'error', body)))
+
+
+        var entities = []
+        body._embedded['requests'].forEach(function(entry) {
+            entities.push(entry)
+        });
+
+        log.debug('------------- Body ' + JSON.stringify(entities))
+
+        var result = []
+        async.each(entities, function(e, callback) {
+            if(params.fullObject === true) {
+                getEntity({
+                        definition: params.definition,
+                        id: e.genId,
+                        auth_id: params.auth_id,
+                        auth_token: params.auth_token
+                    }, function(error, entity) {
+
+                        log.debug("ent " + JSON.stringify(error) + " entity " + JSON.stringify(entity))
+                        if(error) return callback(error)
+
+
+                        result.push(entity)
+                        callback()
+                    })
+            } else {
+                result.push(op(e))
+                callback()
+            }
+        }, function(error) {
+            if(error) return callback(error)
+
+            callback(null, result)
+        })
+
+    })
+}
+
+
 //Get entity
 exports.getEntities = getEntities = function(params, qs, callback) {
     log.debug('------------- getEntities Try to execute query ' + JSON.stringify(qs))
 
     if(qs.definition == 'request') {
         log.debug("------------- request")
-        getRequests(params, function(errors, entities) {
-            log.debug('------------- Errors ' + errors)
-            log.debug('------------- Data ' + JSON.stringify(entities))
-        })
+        getRequests(params, callback)
     } else if(qs.definition == 'person') {
         log.debug("------------- person")
         getUsers(params, function(errors, entities) {
@@ -255,51 +303,43 @@ exports.getEntities = getEntities = function(params, qs, callback) {
     }
 }
 
-
-//Get entity
-exports.getEntity = getEntity = function(params, definition, callback) {
-    log.debug('------------- getEntity Try to execute definition ' + definition)
-
-    if(definition == 'request') {
-        getRequest(params, function(errors, entities) {
-            log.debug('------------- Errors ' + errors)
-            log.debug('------------- Data ' + JSON.stringify(entities))
-        })
-    } else if(definition == 'person') {
-        getUser(params, callback)
-    } else if(definition == 'message') {
-        getMessage(params, function(errors, entities) {
-            log.debug('------------- Errors ' + errors)
-            log.debug('------------- Data ' + JSON.stringify(entities))
-        })
-    }
-}
-
 //Add entity
 exports.add = function(params, callback) {
-    var data = {
+    var preparedData = {
         definition: params.definition
     }
-
     for(p in params.properties) {
-        data[params.definition + '-' + p] = params.properties[p]
+        preparedData[params.definition + '-' + p] = params.properties[p]
     }
 
     var repository = ''
-    if(params.definition == 'person'){
-        repository = 'persons'
-    } else if (params.definition == 'message') {
+    var data = {}
+    if (params.definition == 'message') {
         repository = 'messages'
+    } else if (params.definition == 'request') {
+        repository = 'requests'
+        data.type = preparedData['request-type']
+        data.time = preparedData['request-time']
+        data.location = preparedData['request-location']
+        data.price = preparedData['request-price']
+        data.request = preparedData['request-request']
+        data.country = ''
+        data.category = ''
+        data.status = 'active'
+    } else if (params.definition == 'feedback') {
+        repository = 'feedbacks'
     }
+
     var headers = {}
 
     var preparedUrl = APP_CORE_URL + '/api/' + repository
 
-    log.debug('Try to execute URL ' + preparedUrl + ' params ' + JSON.stringify(params))
+    log.debug('Try to execute URL ' + preparedUrl + ' params ' + JSON.stringify(data))
 
     request.post({url: preparedUrl, headers: headers, body: data, strictSSL: true, json: true, timeout: 60000}, function(error, response, body) {
+        log.debug("body " + JSON.stringify(body) + " statusCode = " + response.statusCode)
         if(error) return callback(error)
-        if(response.statusCode !== 201 || !body.result) return callback(new Error(op.get(body, 'error', body)))
+        if(response.statusCode !== 201 || !body) return callback(new Error(op.get(body, 'error', body)))
 
         callback(null, op.get(body, 'result.id', null))
     })

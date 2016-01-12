@@ -1,6 +1,6 @@
 var path     = require('path')
 var cluster  = require('cluster')
-var cpuCount = require('os').cpus().length
+var cpuCount = 1 //require('os').cpus().length
 var log4js   = require('log4js')
 var log      = log4js.getLogger()
 

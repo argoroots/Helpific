@@ -33,7 +33,7 @@ var signData = function(data) {
 //Get entity from Entu
 exports.getEntity = getEntity = function(params, callback) {
     if(core_api.active){
-        core_api.getEntity(params, params.definition, callback)
+        core_api.getEntity(params, callback)
     } else {
 
         if(params.auth_id && params.auth_token) {
@@ -257,6 +257,11 @@ exports.setFileFromUrl = function(params, callback) {
 
 //Set entity rights
 exports.rights = function(params, callback) {
+
+    if(core_api.active) {
+        return
+    }
+
     var body = {
         entity: params.personId,
         right: params.right
