@@ -328,6 +328,21 @@ exports.add = function(params, callback) {
         data.status = 'active'
     } else if (params.definition == 'feedback') {
         repository = 'feedbacks'
+    } else if (params.definition == 'person') {
+        repository = 'persons'
+
+        data.forename = preparedData['person-forename']
+        data.surname = preparedData['person-surname']
+        data.county = preparedData['person-county']
+        data.email = preparedData['person-email']
+        data.town = preparedData['person-town']
+        data.slogan = preparedData['person-slogan']
+        data.language = preparedData['person-language']
+        data.country = preparedData['person-country']
+        data.address = preparedData['person-address']
+        data.newsletter = preparedData['person-newsletter']
+        data.aboutMeText = preparedData['person-aboutMeText']
+        data.aboutMeVideo = preparedData['person-aboutMeVideo']
     }
 
     var headers = {}
@@ -337,7 +352,7 @@ exports.add = function(params, callback) {
     log.debug('Try to execute URL ' + preparedUrl + ' params ' + JSON.stringify(data))
 
     request.post({url: preparedUrl, headers: headers, body: data, strictSSL: true, json: true, timeout: 60000}, function(error, response, body) {
-        log.debug("body " + JSON.stringify(body) + " statusCode = " + response.statusCode)
+        log.debug("body " + JSON.stringify(body) + " statusCode = " + response !== undefined ?response.statusCode:'undefined')
         if(error) return callback(error)
         if(response.statusCode !== 201 || !body) return callback(new Error(op.get(body, 'error', body)))
 
