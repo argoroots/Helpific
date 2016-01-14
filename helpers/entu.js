@@ -269,7 +269,7 @@ exports.setFileFromUrl = function(params, callback) {
 exports.rights = function(params, callback) {
 
     if(core_api.active) {
-        return
+        callback(null)
     }
 
     var body = {

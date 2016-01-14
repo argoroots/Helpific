@@ -88,6 +88,7 @@ async.parallel({
                 properties.newsletter = p1.get('newsletter.value')
                 properties.aboutMeText = p1.get('about-me-text.value')
                 properties.aboutMeVideo = p1.get('about-me-video.value')
+                properties.entuId = personId
 
                 log.debug(JSON.stringify(properties))
 
@@ -100,6 +101,7 @@ async.parallel({
                 })
             }
 
+            /*
             for (o in results.requests) {
                 var p2 = results.requests[o]
 
@@ -110,7 +112,9 @@ async.parallel({
                     log.debug("person " + personId + " has request " + requestId)
                 }
             }
+            */
 
+            /*
             for (u in results.messages) {
                 var p3 = results.messages[u]
 
@@ -122,6 +126,7 @@ async.parallel({
                 }
 
             }
+            */
 
         }
     })
