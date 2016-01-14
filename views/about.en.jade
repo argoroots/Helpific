@@ -7,9 +7,8 @@ block content
             .col-xs-12
                 .text-center(style='padding: 20px;')
                     p
-                        | Helpific on veebipõhine tugikeskkond, mis aitab erivajadustega inimestel leida vabatahtlikke
-                        | abistajaid ning tellida isikliku abistaja teenust. Helpific on inimeselt inimesele lahendus,
-                        | aidates luua tugevamaid kogukondi.
+                        | Helpific on veebipõhine tugikeskkond, mille kaudu erivajadustega inimesed saavad tellida vabatahtlikke abistajaid või tasulisi teenuseid.
+                        | Helpific on inimeselt inimesele lahendus, aidates luua tugevamaid kogukondi.
     .row.spacer
     div(style='background: #e6e6e6')
         .container
@@ -95,26 +94,25 @@ block content
                                     i.fa.fa-rocket.icon
                                     h3.about Missioon
                                     p
-                                        | Tagada ja hoida iga inimese eneseväärikus, et elus ei jääks midagi puude
-                                        | tõttu tegemata ning anda vabatahtlike kaasamisega panus tugevamate
-                                        | kogukondade ja targa ühiskonna kujunemisse.
+                                        | Helpificu missioon on edendada
+                                        | erivajadustega inimeste iseseisvat elu ja
+                                        | panustada tugevamate kogukondade kujundamisse.
                             .col-md-4
                                 .inner-block(style='background: #fff;padding: 20px;min-height: 300px;')
                                     i.fa.fa-thumb-tack.icon
                                     h3.about Visioon
                                     p
-                                        | Helpific on aastaks 2020 parim ja suurim platvorm Euroopas, kus
-                                        | erivajadustega inimesed saavad palgata isiklikku abistajat.
+                                        | Helpific on parim ja suurim tugikeskkond Euroopas aastaks 2020,
+                                        | mille kaudu erivajadustega inimesed saavad osta teenuseid ja
+                                        | leida vabatahtlikke, et elada iseseisvat elu.
                             .col-md-4
                                 .inner-block(style='background: #fff;padding: 20px;min-height: 300px;')
                                     i.fa.fa-heart.icon
                                     h3.about Väärtused
                                     p
                                         ul
-                                            li Austus
-                                            li
-                                                | * Vastutus/kompetentsus/
-                                                | usaldusväärsus
+                                            li * Austus
+                                            li * Vastutus
                                             li * Innovatsioon
             .row.spacer
     .container
@@ -125,7 +123,7 @@ block content
         .row.spacer
             each p, i in partners
                 .col-xs-6.col-sm-3
-                    a(href=p.get('url.value'), target='_blank')
+                    a(href=p.get('url.value'), target='_blank', title=p.get('note.value'))
                         img.col-xs-9.col-sm-9.col-md-9(src=p.get('photo.file'), alt=p.get('name.value'), style='margin-bottom:20px')
         .row.spacer
     .container.last-words
@@ -134,11 +132,11 @@ block content
             h2.text-center LÕPETUSEKS
             .row.spacer
             p
-                | Oleme Vabatahtliku Tegevuse Võrgustiku  liige ning liitunud Mitmekesisuse Kokkuleppega .
+                | Oleme Vabatahtliku Tegevuse Võrgustiku liige ning liitunud Mitmekesisuse Kokkuleppega.
                 | Lisaks arendame aktiivselt koostööd kohalike ja rahvusvaheliste avalike institutsioonide,
-                | valitsusväliste organisatsioonide ja ettevõtjatega. Helpificu on tunnustatud Eesti Kurtide Liidu  poolt
+                | valitsusväliste organisatsioonide ja ettevõtjatega. Helpificu on tunnustatud Eesti Kurtide Liidu poolt
                 | kommunikatsioonilise ja kultuurilise juurdepääsetavuse silmapaistva toetamise eest.
-           .row.spacer
+        .row.spacer
         .row(style='text-align:center')
-           img(src='/images/about/vorgustik_rgb.jpg', style='width: 80%')
-           .row.spacer
+            img(src='/images/about/vorgustik_rgb.jpg', style='width: 80%')
+            .row.spacer
