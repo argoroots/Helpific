@@ -186,6 +186,7 @@ router.post('/:id', function(req, res, next) {
                 if(profile.has('email.value')) {
                     entu.message({
                             to: profile.get('email.value'),
+                            from: APP_ADMIN_EMAILS,
                             subject: res.locals.t('message.email-subject'),
                             message: res.locals.t('message.email-message', res.locals.user.id),
                             tag: 'message',
