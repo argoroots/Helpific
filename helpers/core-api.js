@@ -35,6 +35,24 @@ function extracted(entities, params, callback) {
     })
 }
 
+getRequestOwnerReference = function(params, callback){
+    var headers = {}
+    var qs = {}
+    if(params.definition) qs.definition = params.definition
+    if(params.query) qs.query = params.query
+
+    var url = 'requests/' + params.id + '/person'
+    var preparedUrl = APP_CORE_URL + '/api/' + url
+
+    request.get({url: preparedUrl, headers: headers, qs: qs, strictSSL: true, json: true, timeout: 60000}, function(error, response, body) {
+        if (error) return callback(error)
+        if (response.statusCode !== 200 || !body) return callback(new Error(op.get(body, 'error', body)))
+
+        log.debug(body)
+        return callback(op(body))
+    })
+}
+
 
 getRequest = function(params, callback) {
     var headers = {}
@@ -77,8 +95,24 @@ getRequest = function(params, callback) {
                 }
             }
 
-            log.debug('------------- Body ' + JSON.stringify(result))
-            callback(null, op(result))
+            if(body.hasOwnProperty('genId')){
+                getRequestOwnerReference({
+                        id: body['genId']
+                    }, function(data){
+                        result['person'] = {
+                            id: 0,
+                            reference: data.get('genId'),
+                            value: data.get('forename')
+                        }
+
+                        callback(null, op(result))
+
+                    })
+
+            } else {
+                callback(null, op(result))
+            }
+
         }
     })
 }
