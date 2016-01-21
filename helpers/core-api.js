@@ -41,35 +41,45 @@ getRequest = function(params, callback) {
     var qs = {}
     if(params.definition) qs.definition = params.definition
     if(params.query) qs.query = params.query
-    if(params.fromPersonId) qs.fromPersonId = params.fromPersonId
-    if(params.toPersonId) qs.toPersonId = params.toPersonId
 
     var url = 'requests/' + params.id
+    if(params.migra) {
+        url = 'requests/search/findByEntuId?entuId=' + params.id
+    }
 
     var preparedUrl = APP_CORE_URL + '/api/' + url
     log.debug('------------- Try to execute URL ' + preparedUrl + ' qs ' + JSON.stringify(qs))
     request.get({url: preparedUrl, headers: headers, qs: qs, strictSSL: true, json: true, timeout: 60000}, function(error, response, body) {
 
-        log.debug('------------- Error ' + error)
+        log.debug('------------- getRequest Error ' + error + ' on ' + preparedUrl)
         if(error) return callback(error)
-        log.debug('------------- Status code ' + response.statusCode)
+        log.debug('------------- getRequest Status code ' + response.statusCode + ' on ' + preparedUrl)
         if(response.statusCode !== 200 || !body) return callback(new Error(op.get(body, 'error', body)))
 
-        log.debug('------------- Body ' + JSON.stringify(body))
+        log.debug('------------- getRequest Body ' + JSON.stringify(body))
 
-        var result = {}
-        for (var key in body) {
-            if (body.hasOwnProperty(key)) {
-                result[key] = {
-                    id: 0,
-                    value: body[key]
+        if(params.migra){
+            var entities = []
+            body._embedded['requests'].forEach(function(entry) {
+                entities.push(entry)
+            });
+
+            log.debug(JSON.stringify(entities))
+            extracted(entities, params, callback);
+        } else {
+            var result = {}
+            for (var key in body) {
+                if (body.hasOwnProperty(key)) {
+                    result[key] = {
+                        id: 0,
+                        value: body[key]
+                    }
                 }
             }
+
+            log.debug('------------- Body ' + JSON.stringify(result))
+            callback(null, op(result))
         }
-
-        log.debug('------------- Body ' + JSON.stringify(result))
-        callback(null, op(result))
-
     })
 }
 
@@ -84,15 +94,15 @@ getMessage = function(params, callback) {
     var url = 'message/' + params.id
 
     var preparedUrl = APP_CORE_URL + '/api/' + url
-    log.debug('------------- Try to execute URL ' + preparedUrl + ' qs ' + JSON.stringify(qs))
+    log.debug('------------- getMessage Try to execute URL ' + preparedUrl + ' qs ' + JSON.stringify(qs))
     request.get({url: preparedUrl, headers: headers, qs: qs, strictSSL: true, json: true, timeout: 60000}, function(error, response, body) {
 
         log.debug('------------- Error ' + error)
         if(error) return callback(error)
-        log.debug('------------- Status code ' + response.statusCode)
+        log.debug('------------- getMessage Status code ' + response.statusCode)
         if(response.statusCode !== 200 || !body._embedded) return callback(new Error(op.get(body, 'error', body)))
 
-        log.debug('------------- Body ' + body._embedded)
+        log.debug('------------- getMessage Body ' + body._embedded)
         var entities = []
         body._embedded['message'].forEach(function(entry) {
             entities.push(entry)
@@ -107,34 +117,47 @@ getUser = function(params, callback) {
     var qs = {}
     if(params.definition) qs.definition = params.definition
     if(params.query) qs.query = params.query
-    if(params.fromPersonId) qs.fromPersonId = params.fromPersonId
-    if(params.toPersonId) qs.toPersonId = params.toPersonId
+
 
     var url = 'persons/' + params.id
+    if(params.migra) {
+        url = 'persons/search/findByEntuId?entuId=' + params.id
+    }
 
     var preparedUrl = APP_CORE_URL + '/api/' + url
-    log.debug('------------- Try to execute URL ' + preparedUrl + ' qs ' + JSON.stringify(qs))
+    log.debug('------------- getUser Try to execute URL ' + preparedUrl + ' qs ' + JSON.stringify(qs))
     request.get({url: preparedUrl, headers: headers, qs: qs, strictSSL: true, json: true, timeout: 60000}, function(error, response, body) {
-
-        log.debug('------------- Error ' + error)
         if(error) return callback(error)
-        log.debug('------------- Status code ' + response.statusCode)
         if(response.statusCode !== 200 || !body) return callback(new Error(op.get(body, 'error', body)))
 
-        log.debug('------------- Body ' + JSON.stringify(body))
+        if(params.migra){
+            var entities = []
+            body._embedded['persons'].forEach(function(entry) {
+                entities.push(entry)
+            });
 
-        var result = {}
-        for (var key in body) {
-            if (body.hasOwnProperty(key)) {
-                result[key] = {
+            log.debug(JSON.stringify(entities))
+            extracted(entities, params, callback);
+        } else {
+            var result = {}
+            for (var key in body) {
+                if (body.hasOwnProperty(key)) {
+                    result[key] = {
                         id: 0,
                         value: body[key]
+                    }
+
+                    if(key == 'aboutMeText') {
+                        result['about-me-text'] = {
+                            id: 0,
+                            value: body[key]
+                        }
+                    }
                 }
             }
-        }
 
-        log.debug('------------- Body ' + JSON.stringify(result))
-        callback(null, op(result))
+            callback(null, op(result))
+        }
     })
 }
 
@@ -153,12 +176,12 @@ getUsers = function(params, callback) {
     log.debug('------------- getUsers Try to execute URL ' + preparedUrl + ' qs ' + JSON.stringify(qs))
     request.get({url: preparedUrl, headers: headers, qs: qs, strictSSL: true, json: true, timeout: 60000}, function(error, response, body) {
 
-        log.debug('------------- Error ' + error)
+        log.debug('------------- getUsers Error ' + error)
         if(error) return callback(error)
-        log.debug('------------- Status code ' + response.statusCode)
+        log.debug('------------- getUsers Status code ' + response.statusCode)
         if(response.statusCode !== 200 || !body._embedded) return callback(new Error(op.get(body, 'error', body)))
 
-        log.debug('------------- Body ' + body._embedded)
+        log.debug('------------- getUsers Body ' + body._embedded)
         var entities = []
         body._embedded['persons'].forEach(function(entry) {
             entities.push(entry)
@@ -175,21 +198,19 @@ getCountries = function(repository, params, callback) {
     var qs = {}
     if(params.definition) qs.definition = params.definition
     if(params.query) qs.query = params.query
-    if(params.fromPersonId) qs.fromPersonId = params.fromPersonId
-    if(params.toPersonId) qs.toPersonId = params.toPersonId
 
     var url = 'countries'
 
     var preparedUrl = APP_CORE_URL + '/api/' + url
-    log.debug('------------- Try to execute URL ' + preparedUrl + ' qs ' + JSON.stringify(qs))
+    log.debug('------------- getCountries Try to execute URL ' + preparedUrl + ' qs ' + JSON.stringify(qs))
     request.get({url: preparedUrl, headers: headers, qs: qs, strictSSL: true, json: true, timeout: 60000}, function(error, response, body) {
 
-        log.debug('------------- Error ' + error)
+        log.debug('------------- getCountries Error ' + error)
         if(error) return callback(error)
-        log.debug('------------- Status code ' + response.statusCode)
+        log.debug('------------- getCountries Status code ' + response.statusCode)
         if(response.statusCode !== 200 || !body._embedded) return callback(new Error(op.get(body, 'error', body)))
 
-        log.debug('------------- Body ' + body._embedded)
+        log.debug('------------- getCountries Body ' + body._embedded)
         var entities = []
         body._embedded[repository].forEach(function(entry) {
             entities.push(entry)
@@ -215,12 +236,12 @@ getMessages = function(params, callback) {
     log.debug('------------- getMessages Try to execute URL ' + preparedUrl + ' qs ' + JSON.stringify(qs))
     request.get({url: preparedUrl, headers: headers, qs: qs, strictSSL: true, json: true, timeout: 60000}, function(error, response, body) {
 
-        log.debug('------------- Error ' + error)
+        log.debug('------------- getMessages Error ' + error)
         if(error) return callback(error)
-        log.debug('------------- Status code ' + response.statusCode)
+        log.debug('------------- getMessages Status code ' + response.statusCode)
         if(response.statusCode !== 200 || !body._embedded) return callback(new Error(op.get(body, 'error', body)))
 
-        log.debug('------------- Body ' + body._embedded)
+        log.debug('------------- getMessages Body ' + body._embedded)
         var entities = []
         body._embedded['messages'].forEach(function(entry) {
             entities.push(entry)
@@ -248,8 +269,6 @@ exports.getRequests = getRequests = function(params, callback) {
     var qs = {}
     if(params.definition) qs.definition = params.definition
     if(params.query) qs.query = params.query
-    if(params.fromPersonId) qs.fromPersonId = params.fromPersonId
-    if(params.toPersonId) qs.toPersonId = params.toPersonId
 
     var url = 'requests'
 
@@ -257,9 +276,9 @@ exports.getRequests = getRequests = function(params, callback) {
     log.debug('------------- getRequests Try to execute URL ' + preparedUrl + ' qs ' + JSON.stringify(qs))
     request.get({url: preparedUrl, headers: headers, qs: qs, strictSSL: true, json: true, timeout: 60000}, function(error, response, body) {
 
-        log.debug('------------- Error ' + error)
+        log.debug('------------- getRequests Error ' + error)
         if(error) return callback(error)
-        log.debug('------------- Status code ' + response.statusCode)
+        log.debug('------------- getRequests Status code ' + response.statusCode)
         if(response.statusCode !== 200 || !body._embedded) return callback(new Error(op.get(body, 'error', body)))
 
 
@@ -296,9 +315,12 @@ exports.add = function(params, callback) {
     var repository = ''
     var data = {}
     if (params.definition == 'message') {
-        repository = 'messages'
+        repository = '/api/messages'
+
+
+
     } else if (params.definition == 'request') {
-        repository = 'requests'
+        repository = '/requests/add'
         data.type = preparedData['request-type']
         data.time = preparedData['request-time']
         data.location = preparedData['request-location']
@@ -306,11 +328,16 @@ exports.add = function(params, callback) {
         data.request = preparedData['request-request']
         data.country = ''
         data.category = ''
-        data.status = 'active'
+        data.status = preparedData['request-status']
+        data.entuId = preparedData['request-entuId']
+        data.person = {id: preparedData['request-personId']}
     } else if (params.definition == 'feedback') {
-        repository = 'feedbacks'
+        repository = '/api/feedbacks'
+
+
+
     } else if (params.definition == 'person') {
-        repository = 'persons'
+        repository = '/api/persons'
 
         data.forename = preparedData['person-forename']
         data.surname = preparedData['person-surname']
@@ -329,12 +356,11 @@ exports.add = function(params, callback) {
 
     var headers = {}
 
-    var preparedUrl = APP_CORE_URL + '/api/' + repository
+    var preparedUrl = APP_CORE_URL + repository
 
     log.debug('add Try to execute URL ' + preparedUrl + ' params ' + JSON.stringify(data))
 
     request.post({url: preparedUrl, headers: headers, body: data, strictSSL: true, json: true, timeout: 60000}, function(error, response, body) {
-        log.debug("body " + JSON.stringify(body))
         if(error) return callback(error)
         if(response.statusCode !== 201 || !body) return callback(new Error(op.get(body, 'error', body)))
 
@@ -353,6 +379,10 @@ exports.edit = function(params, callback) {
     var repository = ''
     if(params.definition == 'person'){
         repository = 'persons'
+        if(body['about-me-text']){
+            body['aboutMeText'] = body['about-me-text']
+            property = 'aboutMeText'
+        }
     } else if (params.definition == 'message') {
         repository = 'messages'
     }
@@ -448,4 +478,50 @@ exports.getUser = function(params, callback) {
 // compore picture URL
 exports.getPictureUrl = function(reference) {
     return APP_CORE_URL + '/user/' + reference + '/picture'
+}
+
+exports.file = function(params, callback){
+    if(params.auth_id && params.auth_token) {
+        var headers = {'X-Auth-UserId': params.auth_id, 'X-Auth-Token': params.auth_token}
+    } else {
+        var headers = {}
+    }
+
+    var preparedUrl = APP_CORE_URL + '/file'
+    log.debug('file Try to execute URL ' + preparedUrl)
+    request.post({url: preparedUrl, headers: headers, body: params, strictSSL: true, json: true, timeout: 60000}, function(error, response, body) {
+        if(error) return callback(error)
+        if(response.statusCode !== 200 || !body.result) return callback(new Error(op.get(body, 'error', body)))
+
+        callback(null, op.get(body, 'result', null))
+    })
+
+}
+
+exports.message = function(params, callback) {
+
+    var body = {
+        to: params.to,
+        from: params.from,
+        subject: params.subject,
+        message: params.message,
+        html: true,
+        tag: params.tag
+    }
+
+    if(params.auth_id && params.auth_token) {
+        var headers = {'X-Auth-UserId': params.auth_id, 'X-Auth-Token': params.auth_token}
+    } else {
+        var headers = {}
+    }
+
+    var preparedUrl = APP_CORE_URL + '/email'
+
+    request.post({url: preparedUrl, headers: headers, body: body, strictSSL: true, json: true, timeout: 60000}, function(error, response, body) {
+        if(error) return callback(error)
+        if(response.statusCode !== 200) return callback(new Error(op.get(body, 'error', body)))
+
+        callback(null, body)
+    })
+
 }
