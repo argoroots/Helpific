@@ -333,6 +333,7 @@ exports.message = function(params, callback) {
     } else {
         var body = {
             to: params.to,
+            from: params.from,
             subject: params.subject,
             message: params.message,
             html: true,
