@@ -612,14 +612,14 @@ pages:
             de: "Insgesamt gibt es {{ (help | filter:{type:type }).length }} Hilfsangebote hier <span ng-if='search_query || search_my'> - found {{ (help | filter:{status:s.status, type:type, my:search_my} | filter:search_query).length }}</span>"
             en: "There are total {{ (help | filter:{type:type }).length }} offers here <span ng-if='search_query || searchMy'> - found {{ (help | filter:{status:s.status, type:type, my:searchMy} | filter:search_query).length }}</span>"
             et: "Kokku on meil {{ (help | filter:{type:type }).length }} pakkumist <span ng-if='search_query || searchMy'> - leiti {{ (help | filter:{status:s.status, type:type, my:searchMy} | filter:search_query).length }}</span>"
-            fi: "Täällä ovat kaikki tarjoukset <span ng-if='search_query || searchMy'> - leiti </span>"
+            fi: "Täällä ovat kaikki {{ (help | filter:{type:type }).length }} tarjoukset <span ng-if='search_query || searchMy'> - leiti {{ (help | filter:{status:s.status, type:type, my:search_my} | filter:search_query).length }}</span>"
             hu: "Összesen {{ (help | filter:{type:type }).length }} felajánlás található a rendszerben <span ng-if='search_query || searchMy'> - tal?lat {{ (help | filter:{status:s.status, type:type, my:searchMy} | filter:search_query).length }}</span>"
-            it: "Tutte le offerte <span ng-if='search_query || searchMy'> - found </span>"
-            ja: "すべてのオファー <span ng-if='search_query || searchMy'> - 見つかりました </span>"
+            it: "Tutte le {{ (help | filter:{type:type }).length }} offerte <span ng-if='search_query || searchMy'> - found {{ (help | filter:{status:s.status, type:type, my:search_my} | filter:search_query).length }}</span>"
+            ja: "すべてのオファ {{ (help | filter:{type:type }).length }} ー <span ng-if='search_query || searchMy'> - 見つかりました {{ (help | filter:{status:s.status, type:type, my:search_my} | filter:search_query).length }}</span>"
             ko: "전체 {{ (help | filter:{type:type }).length }} 도움 나눔이 있습니다. <span ng-if='search_query || search_my'> - found {{ (help | filter:{status:s.status, type:type, my:search_my} | filter:search_query).length }}</span>"
-            nl: "Er zijn totaal aanbiedingen hier <span ng-if='search_query || search_my'> - found </span>"
+            nl: "Er zijn totaal {{ (help | filter:{type:type }).length }} aanbiedingen hier <span ng-if='search_query || search_my'> - found {{ (help | filter:{status:s.status, type:type, my:search_my} | filter:search_query).length }}</span>"
             ru: "У нас в общей сложности {{ (help | filter:{type:type }).length }} предложений <span ng-if='search_query || searchMy'> - найдено {{ (help | filter:{status:s.status, type:type, my:searchMy} | filter:search_query).length }}</span>"
-            zh: "所有的帮助都在这里<span ng-if='search_query || searchMy'> - 发现</span>"
+            zh: "所有的帮助都在这里 {{ (help | filter:{type:type }).length }} <span ng-if='search_query || searchMy'> - 发现 {{ (help | filter:{status:s.status, type:type, my:search_my} | filter:search_query).length }}</span>"
         offer-price:
             en: Service price (€) (Optional)
             et: Teenuse hind (€) (Mitte kohustuslik)
@@ -715,14 +715,14 @@ pages:
             de: "Es gibts insgesamt {{ (help | filter:{type:type }).length }} Hilfsanfragen hier <span ng-if='search_query || search_my'> - gefunden {{ (help | filter:{status:s.status, type:type, my:search_my} | filter:search_query).length }}</span>"
             en: "There are total {{ (help | filter:{type:type }).length }} requests here <span ng-if='search_query || searchMy'> - found {{ (help | filter:{status:s.status, type:type, my:searchMy} | filter:search_query).length }}</span>"
             et: "Kokku on meil {{ (help | filter:{type:type }).length }} soovi <span ng-if='search_query || searchMy'> - leiti {{ (help | filter:{status:s.status, type:type, my:searchMy} | filter:search_query).length }}</span>"
-            fi: "Kaikki pyynnöt ovat täällä <span ng-if='search_query || searchMy'> - leiti </span>"
+            fi: "Kaikki pyynnöt {{ (help | filter:{type:type }).length }} ovat täällä <span ng-if='search_query || searchMy'> - leiti {{ (help | filter:{status:s.status, type:type, my:searchMy} | filter:search_query).length }}</span>"
             hu: "Összesen {{ (help | filter:{type:type }).length }} segítségkérés van a rendszerben <span ng-if='search_query || searchMy'> - találat {{ (help | filter:{status:s.status, type:type, my:searchMy} | filter:search_query).length }}</span>"
-            it: "Totale richieste <span ng-if='search_query || searchMy'> - found </span>"
-            ja: "全てのリクエスト　<span ng-if='search_query || searchMy'> - 見つかりました </span>"
+            it: "Totale {{ (help | filter:{type:type }).length }} richieste <span ng-if='search_query || searchMy'> - found {{ (help | filter:{status:s.status, type:type, my:searchMy} | filter:search_query).length }}</span>"
+            ja: "全てのリクエスト {{ (help | filter:{type:type }).length }}　<span ng-if='search_query || searchMy'> - 見つかりました {{ (help | filter:{status:s.status, type:type, my:searchMy} | filter:search_query).length }}</span>"
             ko: "전체 {{ (help | filter:{type:type }).length }} 도움요청이 있습니다. <span ng-if='search_query || search_my'> - found {{ (help | filter:{status:s.status, type:type, my:search_my} | filter:search_query).length }}</span>"
-            nl: "Er zijn totaal verzoeken hier <span ng-if='search_query || searchMy'> - gevonden </span>"
+            nl: "Er zijn totaal {{ (help | filter:{type:type }).length }} verzoeken hier <span ng-if='search_query || searchMy'> - gevonden {{ (help | filter:{status:s.status, type:type, my:searchMy} | filter:search_query).length }}</span>"
             ru: "У нас в общей сложности {{ (help | filter:{type:type }).length }} просьб <span ng-if='search_query || searchMy'> - найдено {{ (help | filter:{status:s.status, type:type, my:searchMy} | filter:search_query).length }}</span>"
-            zh: "所有的请求都在这里<span ng-if='search_query || searchMy'> - 发现</span>"
+            zh: "所有的请求都在这里 {{ (help | filter:{type:type }).length }} <span ng-if='search_query || searchMy'> - 发现 {{ (help | filter:{status:s.status, type:type, my:searchMy} | filter:search_query).length }}</span>"
         request-price:
             en: Agree to pay (€) (Optional)
             et: Hind olen nõus maksma (€) (Mitte kohustuslik)
@@ -1052,18 +1052,24 @@ pages:
                 ng-if='info'>Im Moment haben wir {{ info.help }} Hilfsanfragen
                 befriedigt und {{ info.users }} aktive Freiwillige.</p>
             en: >
-                <h2>It's never been easier to give and get help</h2> <p>Helpific
-                connects volunteers to those who need help with everyday
-                activities.</p> <p ng-if='info'>At the moment we have {{
-                info.help }} requests fulfilled and {{ info.users }} active
-                volunteers.</p>
+                <h2>It's never been easier to give and get help</h2> <p>Helpific connects people with
+                special needs who need help with everyday activities to people
+                who want to help them.</p> <p ng-if='info'>At the moment we have {{
+                info.help }} requests fulfilled and {{ info.users }}
+                users.</p>
             et: >
                 <h2>Kunagi varem pole abi osutamine ja saamine olnud nii
-                lihtne!</h2> <p>Helpific ühendab vabatahtlikud abistajad
-                erivajadustega abivajajatega.</p> <p ng-if='info'>Hetkel on meil
+                lihtne!</h2> <p>Helpific ühendab erivajadustega inimesed,
+                kes vajavad abi igapäevastes tegevustes, inimestega,
+                kes soovivad neid abistada.</p> <p ng-if='info'>Hetkel on meil
                 {{ info.help }} täidetud abisoovi ja {{ info.users }} aktiivset
-                vabatahtlikku abistajat.</p>
-            fi: "<h2>Ikinä ei ole ollut helpompaa antaa ja saada apua!</h2> <p>Helpific yhdistää vapaaehtoiset niille, jotka tarvitsevat apua arkipäiväisissä askareissa.</p> <p ng-if='info'>Tähän asti pyynnöt ovat täyttyneet ja meillä on aktiivisia jäseniä.</p>"
+                kasutajat.</p>
+            fi: >
+                <h2>Ikinä ei ole ollut helpompaa antaa ja saada apua!
+                </h2> <p>Helpific yhdistää vapaaehtoiset niille, jotka tarvitsevat apua
+                arkipäiväisissä askareissa.</p> <p ng-if='info'>Tähän asti
+                pyynnöt {{ info.help }} ovat täyttyneet ja {{ info.users }} meillä on
+                aktiivisia jäseniä.</p>"
             hu: >
                 <h2>Sosem volt még ilyen egyszerű segítséget kérni és
                 nyújtani</h2> <p>A Helpific önkénteseket köt össze olyan

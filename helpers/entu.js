@@ -277,6 +277,7 @@ exports.file = function(params, callback) {
 exports.message = function(params, callback) {
     var body = {
         to: params.to,
+        from: params.from,
         subject: params.subject,
         message: params.message,
         html: true,
