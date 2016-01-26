@@ -49,7 +49,7 @@ getRequestOwnerReference = function(params, callback){
         if (response.statusCode !== 200 || !body) return callback(new Error(op.get(body, 'error', body)))
 
         log.debug(body)
-        return callback(op(body))
+        return callback(null, op(body))
     })
 }
 
@@ -69,12 +69,8 @@ getRequest = function(params, callback) {
     log.debug('------------- Try to execute URL ' + preparedUrl + ' qs ' + JSON.stringify(qs))
     request.get({url: preparedUrl, headers: headers, qs: qs, strictSSL: true, json: true, timeout: 60000}, function(error, response, body) {
 
-        log.debug('------------- getRequest Error ' + error + ' on ' + preparedUrl)
         if(error) return callback(error)
-        log.debug('------------- getRequest Status code ' + response.statusCode + ' on ' + preparedUrl)
         if(response.statusCode !== 200 || !body) return callback(new Error(op.get(body, 'error', body)))
-
-        log.debug('------------- getRequest Body ' + JSON.stringify(body))
 
         if(params.migra){
             var entities = []
@@ -82,7 +78,6 @@ getRequest = function(params, callback) {
                 entities.push(entry)
             });
 
-            log.debug(JSON.stringify(entities))
             extracted(entities, params, callback);
         } else {
             var result = {}
@@ -98,12 +93,14 @@ getRequest = function(params, callback) {
             if(body.hasOwnProperty('genId')){
                 getRequestOwnerReference({
                         id: body['genId']
-                    }, function(data){
+                    }, function(error, data){
+                        if(error) return callback(error)
                         result['person'] = {
                             id: 0,
                             reference: data.get('genId'),
                             value: data.get('forename')
                         }
+                        result['_id'] = body['genId']
 
                         callback(null, op(result))
 
@@ -125,24 +122,98 @@ getMessage = function(params, callback) {
     if(params.fromPersonId) qs.fromPersonId = params.fromPersonId
     if(params.toPersonId) qs.toPersonId = params.toPersonId
 
-    var url = 'message/' + params.id
+    var url = 'messages/' + params.id
 
     var preparedUrl = APP_CORE_URL + '/api/' + url
     log.debug('------------- getMessage Try to execute URL ' + preparedUrl + ' qs ' + JSON.stringify(qs))
     request.get({url: preparedUrl, headers: headers, qs: qs, strictSSL: true, json: true, timeout: 60000}, function(error, response, body) {
 
-        log.debug('------------- Error ' + error)
         if(error) return callback(error)
-        log.debug('------------- getMessage Status code ' + response.statusCode)
-        if(response.statusCode !== 200 || !body._embedded) return callback(new Error(op.get(body, 'error', body)))
+        if(response.statusCode !== 200 || !body) return callback(new Error(op.get(body, 'error', body)))
 
-        log.debug('------------- getMessage Body ' + body._embedded)
-        var entities = []
-        body._embedded['message'].forEach(function(entry) {
-            entities.push(entry)
-        });
+        log.debug('------------- getMessage Body ' + body._embedded + ' params.migra ' + params.migra)
+        if(params.migra) {
+            var entities = []
+            body._embedded['messages'].forEach(function (entry) {
+                entities.push(entry)
+            });
+            callback(null, entities)
+        } else {
 
-        callback(null, entities)
+            var result = {}
+            for (var key in body) {
+                if (body.hasOwnProperty(key)) {
+                    result[key] = {
+                        id: 0,
+                        value: body[key]
+                    }
+
+                    if(key == 'genId') {
+                        result._id = body[key]
+                    }
+
+                    if(key == 'fromPersonId') {
+                        result['from-person'] = {
+                            reference: body[key]
+                        }
+                    }
+
+                    if(key == 'toPersonId') {
+                        result['to-person'] = {
+                            reference: body[key]
+                        }
+                    }
+
+                    if(key == 'synum') {
+                        result['message'] = {
+                            id: 0,
+                            value: body[key]
+                        }
+                    }
+                }
+            }
+
+            if(body.hasOwnProperty('fromPersonId') && body.hasOwnProperty('toPersonId')){
+
+                async.parallel({
+                        fromPerson: function(callback) {
+                            getEntity({
+                                definition: 'person',
+                                id: body['fromPersonId']
+                            }, callback)
+                        },
+                        toPerson: function(callback) {
+                            getEntity({
+                                definition: 'person',
+                                id: body['toPersonId']
+                            }, callback)
+                        }
+                    },
+                    function(err, data) {
+                        if(err) return next(err)
+
+                        result['from-person'] = {
+                            reference: data.fromPerson.get('_id'),
+                            value: data.fromPerson.get('forename.value')
+                        }
+
+                        result['to-person'] = {
+                            reference: data.toPerson.get('_id'),
+                            value: data.toPerson.get('forename.value')
+                        }
+
+                        log.debug(JSON.stringify(result))
+
+                        callback(null, op(result))
+                    })
+
+
+
+            } else {
+                callback(null, op(result))
+            }
+        }
+
     })
 }
 
@@ -186,6 +257,10 @@ getUser = function(params, callback) {
                             id: 0,
                             value: body[key]
                         }
+                    }
+
+                    if(key == 'genId') {
+                        result._id = body[key]
                     }
                 }
             }
@@ -261,21 +336,24 @@ getMessages = function(params, callback) {
     var qs = {}
     if(params.definition) qs.definition = params.definition
     if(params.query) qs.query = params.query
-    if(params.fromPersonId) qs.fromPersonId = params.fromPersonId
-    if(params.toPersonId) qs.toPersonId = params.toPersonId
+    if(params.userId) {
+        qs.fromPersonId = params.userId
+        qs.toPersonId = params.userId
+    } else {
+        if(params.fromPersonId) qs.fromPersonId = params.fromPersonId
+        if(params.toPersonId) qs.toPersonId = params.toPersonId
+    }
+
 
     var url = 'messages/search/findByFromPersonIdOrToPersonId'
 
     var preparedUrl = APP_CORE_URL + '/api/' + url
-    log.debug('------------- getMessages Try to execute URL ' + preparedUrl + ' qs ' + JSON.stringify(qs))
+    log.debug('------------- getMessages Try to execute URL ' + preparedUrl + ' qs ' + JSON.stringify(params))
     request.get({url: preparedUrl, headers: headers, qs: qs, strictSSL: true, json: true, timeout: 60000}, function(error, response, body) {
 
-        log.debug('------------- getMessages Error ' + error)
         if(error) return callback(error)
-        log.debug('------------- getMessages Status code ' + response.statusCode)
         if(response.statusCode !== 200 || !body._embedded) return callback(new Error(op.get(body, 'error', body)))
 
-        log.debug('------------- getMessages Body ' + body._embedded)
         var entities = []
         body._embedded['messages'].forEach(function(entry) {
             entities.push(entry)
@@ -334,6 +412,8 @@ exports.getEntities = getEntities = function(params, qs, callback) {
         getUsers(params, callback)
     } else if(qs.definition == 'message') {
         getMessages(params, callback)
+    } else if (qs.definition == 'partner') {
+        callback(null, [])
     }
 }
 
@@ -351,6 +431,10 @@ exports.add = function(params, callback) {
     if (params.definition == 'message') {
         repository = '/api/messages'
 
+        data.fromPersonId = preparedData['message-from-person']
+        data.toPersonId = preparedData['message-to-person']
+        data.synum = preparedData['message-message']
+        data.entuId = preparedData['message-entuId']
 
 
     } else if (params.definition == 'request') {

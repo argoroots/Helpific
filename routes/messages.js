@@ -18,7 +18,8 @@ router.get('/json', function(req, res) {
         query: '.' + res.locals.user.id + '.',
         fullObject: true,
         auth_id: res.locals.user.id,
-        auth_token: res.locals.user.token
+        auth_token: res.locals.user.token,
+        userId: res.locals.user.id
     }, function(error, result) {
         var conversations = {}
         var newIdExists = false
@@ -56,7 +57,7 @@ router.get('/json', function(req, res) {
 
         if(req.query.new_id && !newIdExists) {
             entu.getEntity({
-                definition: 'message',
+                definition: 'person',
                 id: req.query.new_id
             }, function(error, person) {
                 conversations[person.get('_id')] = {
@@ -87,7 +88,9 @@ router.get('/json/:id', function(req, res) {
         query: '.' + res.locals.user.id + '. .' + req.params.id + '.',
         fullObject: true,
         auth_id: res.locals.user.id,
-        auth_token: res.locals.user.token
+        auth_token: res.locals.user.token,
+        fromPersonId: res.locals.user.id,
+        toPersonId: req.params.id
     }, function(error, result) {
         var messages = []
         var days = {}
@@ -178,7 +181,7 @@ router.post('/:id', function(req, res, next) {
             },
             function(result, callback) {
                 entu.getEntity({
-                    definition: 'message',
+                    definition: 'person',
                     id: req.params.id
                 }, callback)
             },
