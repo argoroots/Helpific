@@ -119,7 +119,7 @@ router.get('/bb', function(req, res) {
 
 
 // Show ngo-info page
-router.get('/mittetulundusuhingu-info', function(req, res) {
+router.get('/mittetulundusuhing-info', function(req, res) {
     var template = 'ngo-info.' + res.locals.lang + '.jade'
     if(isTemplateExists(template)){
         res.render(template)
