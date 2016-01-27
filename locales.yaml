@@ -404,6 +404,18 @@ nav:
             nl: Afmelden
             ru: Выйти
             zh: 注销
+    ngo-info:
+        de: nav.ngo-info
+        en: NGO information
+        et: MTÜ informatsioon
+        fi: nav.ngo-info
+        hu: nav.ngo-info
+        it: nav.ngo-info
+        ja: nav.ngo-info
+        ko: nav.ngo-info
+        nl: nav.ngo-info
+        ru: nav.ngo-info
+        zh: nav.ngo-info
     offers:
         de: Angebote
         en: Offers
