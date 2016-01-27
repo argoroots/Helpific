@@ -71,7 +71,7 @@ html(lang=lang, ng-app='hlpfc')
                                 li
                                     a(href='help/offers')= t('nav.offers')
                                 li
-                                    a(href='team')= t('nav.about')
+                                    a(href='about')= t('nav.about')
                                 if lang == 'et'
                                     li
                                         a(href='http://vabatahtlik.helpific.com/', title="Blogspot", target='_blank')= t('nav.blog')
@@ -138,11 +138,15 @@ html(lang=lang, ng-app='hlpfc')
                 .row
                     .col-xs-12.col-sm-6!= t('footer.contact')
                     .links.col-xs-12.col-sm-6.text-right
+                        a(href='about')= t('nav.about')
+                        br
                         a(href='team')= t('nav.team')
                         br
                         a(href='partners')= t('nav.partners')
                         br
                         a(href='terms')= t('nav.terms')
+                        br
+                        a(href='ngo-info')= t('nav.ngo-info')
                 .row
                     .col-xs-12.text-center
                         a(href='https://www.facebook.com/Helpific', target='_blank', title="Facebook", aria-label="Facebook")

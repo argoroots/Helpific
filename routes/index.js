@@ -118,6 +118,18 @@ router.get('/bb', function(req, res) {
 })
 
 
+// Show ngo-info page
+router.get('/ngo-info', function(req, res) {
+    var template = 'ngo-info.' + res.locals.lang + '.jade'
+    if(isTemplateExists(template)){
+        res.render(template)
+    } else {
+        res.render('ngo-info.et.jade')
+    }
+
+})
+
+
 // Show about page
 router.get('/about', function(req, res) {
     var template = 'about.' + res.locals.lang + '.jade'
