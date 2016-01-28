@@ -9,7 +9,9 @@ block content
             .row
                 img.col-xs-3.col-sm-3.col-md-2.img-circle(src=p.get('_picture'), alt=p.get('forename.value'), class=(i % 2 == 0) ? 'pull-left' : 'pull-right', style='margin-bottom:20px')
                 .col-xs-12.col-md-8(class=(i % 2 == 0) ? '' : 'text-right col-md-offset-2')
-                    h3= p.get('forename.value', '')
+                    h3
+                        span.goto(id=p.get('forename.value').toLowerCase())
+                        = p.get('forename.value', '')
                     if p.has('about-me-text')
                         .text-justify!= p.get('about-me-text.md')
                     p
