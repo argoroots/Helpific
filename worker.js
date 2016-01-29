@@ -36,8 +36,12 @@ APP_CORE_URL        = process.env.CORE_URL || 'http://flexbuy.eu:8080'
 APP_SIGNIN_PORT     = process.env.SIGNIN_PORT || 443
 
 
+log4js.loadAppender('file');
+log4js.addAppender(log4js.appenders.file('/var/log/helpific/helpific.log'), 'all');
+
+
 // start logging
-log = log4js.getLogger()
+log = log4js.getLogger('all')
 log.setLevel(APP_LOGLEVEL)
 
 
