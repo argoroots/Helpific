@@ -74,7 +74,7 @@ block content
 
                 .form-group.col-xs-12.col-sm-8
                     label.control-label(ng-class='{ "active": p.newsletter.edit }')= t('pages.profile.newsletter')
-                    input#newsletter(type='checkbox', checked=(profile.get('newsletter.value') === 'True' ? 'checked' : undefined) data-value=profile.get('newsletter.value'), data-id=profile.get('newsletter.id'), ng-focus='p.newsletter.edit = true', ng-blur='p.newsletter.edit = false')
+                    input#newsletter(type='checkbox', checked=(profile.get('newsletter.value') === 'True' || profile.get('newsletter.value') === true ? 'checked' : undefined) data-value=profile.get('newsletter.value'), data-id=profile.get('newsletter.id'), ng-focus='p.newsletter.edit = true', ng-blur='p.newsletter.edit = false')
 
             .row.text-center
                 .col-xs-12
@@ -137,7 +137,7 @@ block content
             })
         })
 
-        $('input').blur(function() {
+        $('input[type!="checkbox"]').blur(function() {
             input = $(this)
             if(input.data('value') != input.val()) {
                 var postdata = {
@@ -155,18 +155,16 @@ block content
 
         $('input[type="checkbox"]').change(function() {
             input = $(this)
-            if(input.data('value') != input.is(':checked')) {
-                var postdata = {
-                    property: input.attr('id'),
-                    id: input.data('id'),
-                    value: input.is(':checked')
-                }
-                $.post('', postdata, function(data) {
-                    input.val(data.value)
-                    input.data('id', data.id)
-                    input.data('value', data.value)
-                }).fail(console.log)
+            var postdata = {
+                property: input.attr('id'),
+                id: input.data('id'),
+                value: input.is(':checked') ? true : false
             }
+            $.post('', postdata, function(data) {
+                input.val(data.value)
+                input.data('id', data.id)
+                input.data('value', data.value)
+            }).fail(console.log)
         })
 
         $('select').change(function() {

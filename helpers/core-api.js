@@ -259,6 +259,14 @@ getUser = function(params, callback) {
                         }
                     }
 
+
+                    if(key == 'aboutMeVideo') {
+                        result['about-me-video'] = {
+                            id: 0,
+                            value: body[key]
+                        }
+                    }
+
                     if(key == 'genId') {
                         result._id = body[key]
                     }
@@ -501,6 +509,15 @@ exports.edit = function(params, callback) {
             body['aboutMeText'] = body['about-me-text']
             property = 'aboutMeText'
         }
+        if(body['about-me-video']){
+            body['aboutMeVideo'] = body['about-me-video']
+            property = 'aboutMeVideo'
+        }
+        if(body['newsletter'] && body['newsletter'] != 'true') {
+            body['newsletter'] = 'false';
+        }
+
+
     } else if (params.definition == 'message') {
         repository = 'messages'
     }
