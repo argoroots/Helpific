@@ -623,7 +623,7 @@ exports.file = function(params, callback){
     }
 
     var preparedUrl = APP_CORE_URL + '/file'
-    log.debug('file Try to execute URL ' + preparedUrl)
+    log.debug('file Try to execute URL ' + preparedUrl + ' params = ' + JSON.stringify(params))
     request.post({url: preparedUrl, headers: headers, body: params, strictSSL: true, json: true, timeout: 60000}, function(error, response, body) {
         if(error) return callback(error)
         if(response.statusCode !== 200 || !body.result) return callback(new Error(op.get(body, 'error', body)))

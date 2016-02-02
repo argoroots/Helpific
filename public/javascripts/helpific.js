@@ -254,32 +254,60 @@ angular.module('hlpfc', ['ngSanitize'])
                     var form = new FormData()
                     var xhr  = new XMLHttpRequest()
 
-                    for(var i in data.s3.data) {
-                        form.append(i, data.s3.data[i])
-                    }
-                    form.append('file', file)
+                    if(data.type === 'local'){
+                        form.append('file', file)
 
-                    xhr.upload.addEventListener('progress', function(ev) {
-                        if(!ev.lengthComputable) return
-                        $scope.photoUploadPercent = (ev.loaded * 100 / ev.total - 0.1).toFixed(1)
-                        $scope.$apply()
-                    }, false)
+                        xhr.upload.addEventListener('progress', function(ev) {
+                            if(!ev.lengthComputable) return
+                            $scope.photoUploadPercent = (ev.loaded * 100 / ev.total - 0.1).toFixed(1)
+                            $scope.$apply()
+                        }, false)
 
-                    xhr.onreadystatechange = function() {
-                        if(xhr.readyState != 4) return
-                        if(xhr.status == 201) {
-                            $scope.photoUploadPercent = 100
-                            $scope.$apply()
-                            window.location.reload()
-                        } else {
-                            console.log(xhr)
-                            $scope.photoUploadPercent = null
-                            $scope.$apply()
+                        xhr.onreadystatechange = function() {
+                            if(xhr.readyState != 4) return
+                            if(xhr.status == 201) {
+                                $scope.photoUploadPercent = 100
+                                $scope.$apply()
+                                window.location.reload()
+                            } else {
+                                console.log(xhr)
+                                $scope.photoUploadPercent = null
+                                $scope.$apply()
+                            }
                         }
-                    }
 
-                    xhr.open('POST', data.s3.url, true)
-                    xhr.send(form)
+                        xhr.open('POST', data.url, true)
+                        xhr.send(form)
+
+                    } else {
+
+                        for(var i in data.s3.data) {
+                            form.append(i, data.s3.data[i])
+                        }
+                        form.append('file', file)
+
+                        xhr.upload.addEventListener('progress', function(ev) {
+                            if(!ev.lengthComputable) return
+                            $scope.photoUploadPercent = (ev.loaded * 100 / ev.total - 0.1).toFixed(1)
+                            $scope.$apply()
+                        }, false)
+
+                        xhr.onreadystatechange = function() {
+                            if(xhr.readyState != 4) return
+                            if(xhr.status == 201) {
+                                $scope.photoUploadPercent = 100
+                                $scope.$apply()
+                                window.location.reload()
+                            } else {
+                                console.log(xhr)
+                                $scope.photoUploadPercent = null
+                                $scope.$apply()
+                            }
+                        }
+
+                        xhr.open('POST', data.s3.url, true)
+                        xhr.send(form)
+                    }
                 })
                 .error(function(data) {
                     console.log(data)
