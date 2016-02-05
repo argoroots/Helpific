@@ -213,6 +213,19 @@ locales:
         nl: Suomi
         ru: Suomi
         zh: Suomi
+    fi:
+        de: Français
+        en: Français
+        et: Français
+        fi: Français
+        fr: Français
+        hu: Français
+        it: Français
+        ja: Français
+        ko: Français
+        nl: Français
+        ru: Français
+        zh: Français
     hu:
         de: Magyar
         en: Magyar
@@ -439,6 +452,7 @@ nav:
         en: NGO information
         et: MTÜ informatsioon
         fi: nav.ngo-info
+        fr: nav.ngo-info
         hu: nav.ngo-info
         it: nav.ngo-info
         ja: nav.ngo-info
@@ -1043,7 +1057,7 @@ pages:
             en: Make your needs and deeds work
             et: 'Tegutse, millal soovid!'
             fi: Saa tarpeesi ja tekosi toimimaan
-            fr: Entrez en contact avec les autres
+            fr: Offrez votre aide
             hu: Vedd fel a kapcsolatot másokkal
             it: Entra in contatto con gli altri
             ja: 助け合いを始めましょう
@@ -1056,6 +1070,7 @@ pages:
             en: Choose your way
             et: Vali oma tee
             fi: Valitse oma tiesi
+            fr: Faites votre choix
             hu: Válassz az alábbi lehetőségek közül
             it: Scegli tra queste opzioni
             ja: あなたはどちらですか？
@@ -1149,24 +1164,23 @@ pages:
                 ng-if='info'>Im Moment haben wir {{ info.help }} Hilfsanfragen
                 befriedigt und {{ info.users }} aktive Freiwillige.</p>
             en: >
-                <h2>It's never been easier to give and get help</h2> <p>Helpific connects people with
-                special needs who need help with everyday activities to people
-                who want to help them.</p> <p ng-if='info'>At the moment we have {{
-                info.help }} requests fulfilled and {{ info.users }}
-                users.</p>
+                <h2>It's never been easier to give and get help</h2> <p>Helpific
+                connects people with special needs who need help with everyday
+                activities to people who want to help them.</p> <p
+                ng-if='info'>At the moment we have {{ info.help }} requests
+                fulfilled and {{ info.users }} users.</p>
             et: >
                 <h2>Kunagi varem pole abi osutamine ja saamine olnud nii
-                lihtne!</h2> <p>Helpific ühendab erivajadustega inimesed,
-                kes vajavad abi igapäevastes tegevustes, inimestega,
-                kes soovivad neid abistada.</p> <p ng-if='info'>Hetkel on meil
-                {{ info.help }} täidetud abisoovi ja {{ info.users }} aktiivset
-                kasutajat.</p>
+                lihtne!</h2> <p>Helpific ühendab erivajadustega inimesed, kes
+                vajavad abi igapäevastes tegevustes, inimestega, kes soovivad
+                neid abistada.</p> <p ng-if='info'>Hetkel on meil {{ info.help }}
+                täidetud abisoovi ja {{ info.users }} aktiivset kasutajat.</p>
             fi: >
-                <h2>Ikinä ei ole ollut helpompaa antaa ja saada apua!
-                </h2> <p>Helpific yhdistää vapaaehtoiset niille, jotka tarvitsevat apua
+                <h2>Ikinä ei ole ollut helpompaa antaa ja saada apua! </h2>
+                <p>Helpific yhdistää vapaaehtoiset niille, jotka tarvitsevat apua
                 arkipäiväisissä askareissa.</p> <p ng-if='info'>Tähän asti
-                pyynnöt {{ info.help }} ovat täyttyneet ja {{ info.users }} meillä on
-                aktiivisia jäseniä.</p>"
+                pyynnöt {{ info.help }} ovat täyttyneet ja {{ info.users }}
+                meillä on aktiivisia jäseniä.</p>"
             fr: "<h2>Cela n'a jamais été aussi simple d'aider et de se faire aider</h2> <p>Helpific connecte les personnes ayant des besoins spéciaux pour leurs activités quotidiennes activities avec ceux qui souhaitent les aider</p> <p ng-if='info'>Pour l'instant, nous avons des demandes et des utilisateurs</p>"
             hu: >
                 <h2>Sosem volt még ilyen egyszerű segítséget kérni és
@@ -1845,7 +1859,7 @@ pages:
             en: 'For donation transfer money to Helpific MTÜ account. Transfer description must be "%s"'
             et: 'Annetus kanna Helpific MTÜ kontole. Makse selgitusse märgi kindlasti "%s"'
             fi: 'Siirrä rahalahjoitus  Helpific MTÜ tilille. Maksu selityksen täytyy olla "%s"'
-            fr: "Pour faire un don par transfert d'argent sur le compte de Helpific. Le montant du transfert doit être de \"%s\""
+            fr: "Faire un don par transfert d'argent sur le compte de Helpific. Le montant du transfert doit être de \"%s\""
             hu: 'Amennyiben támogatást szeretnél átutalni a Helpific Egyesület számlaszámára megteheted. A közlemény rovatba írd "%s"'
             it: 'Per le donazioni utilizzare il conto Helpific. '
             ja: '寄付をする方はHelpific MTÜの口座に送金してください。　"%s"'
