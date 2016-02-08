@@ -13,6 +13,7 @@ feedback:
         ru: 'https://helpific.entu.ee/entity/feedback/%s'
         zh: 'https://helpific.entu.ee/entity/feedback/%s'
     admin-email-subject:
+        cs: Přidat zpětnou vazbu (Feedback)
         de: Neues Feedback
         en: Added new feedback
         et: Lisati uus tagasiside
@@ -26,6 +27,7 @@ feedback:
         ru: Добавлен новый отзыв
         zh: 新建反馈
     email:
+        cs: E-mail
         de: E-Mail
         en: E-mail
         et: E-post
@@ -39,6 +41,7 @@ feedback:
         ru: Э-почта
         zh: 电子邮箱
     message:
+        cs: Zpráva
         de: Nachricht
         en: Message
         et: Teade
@@ -52,6 +55,7 @@ feedback:
         ru: Сообщение
         zh: 反馈信息
     send:
+        cs: Odeslat zprávu
         de: Senden
         en: Send
         et: Saada
@@ -65,6 +69,7 @@ feedback:
         ru: Отправить
         zh: 发送
     thanks:
+        cs: 'Děkujeme Vám!'
         de: 'Dankeschön!'
         en: 'Thank you!'
         et: 'Täname!'
@@ -78,6 +83,7 @@ feedback:
         ru: 'Благодарим!'
         zh: 谢谢你！
     title:
+        cs: Odeslat zpětnou vazbu (Feedback)
         de: Feedback senden
         en: Send feedback
         et: Saada tagasiside
@@ -92,6 +98,7 @@ feedback:
         zh: 发送反馈
 footer:
     contact:
+        cs: '<strong>HELPIFIC MTÜ</strong><br> <small>    Reg nr: 80380146<br>    Číslo účtu (IBAN): EE102200221061303677<br>    SWIFT/BIC: HABAEE2X (SWEDBANK AS)<br>    <a href="mailto:info@helpific.com">info@helpific.com</a></small>'
         de: |
             <strong>HELPIFIC MTÜ</strong><br> <small>
                 Reg nr: 80380146<br>
@@ -148,6 +155,7 @@ help:
         ru: 'https://helpific.com/et/help/%s'
         zh: 'https://helpific.com/et/help/%s'
     admin-email-subject:
+        cs: Požádat o pomoc/ Nabídnout pomoc
         de: Neue(s) Hilfsangebot/Anfrage
         en: Added new help request/offer
         et: Lisati uus soov/pakkumine
@@ -162,6 +170,7 @@ help:
         zh: 添加新的 请求/帮助
 locales:
     de:
+        cs: Deutsch (Německy)
         de: Deutsch
         en: Deutsch
         et: Deutsch
@@ -175,6 +184,7 @@ locales:
         ru: Deutsch
         zh: Deutsch
     en:
+        cs: English (Anglicky)
         de: English
         en: English
         et: English
@@ -188,6 +198,7 @@ locales:
         ru: English
         zh: English
     et:
+        cs: Eesti keel (Estonsky)
         de: Eesti keel
         en: Eesti keel
         et: Eesti keel
@@ -201,6 +212,7 @@ locales:
         ru: Eesti keel
         zh: Eesti keel
     fi:
+        cs: Suomi (Finsky)
         de: Suomi
         en: Suomi
         et: Suomi
@@ -214,6 +226,7 @@ locales:
         ru: Suomi
         zh: Suomi
     fr:
+        cs: 'Français (Francouzsky) '
         de: Français
         en: Français
         et: Français
@@ -227,6 +240,7 @@ locales:
         ru: Français
         zh: Français
     hu:
+        cs: Magyar (Maďarsky)
         de: Magyar
         en: Magyar
         et: Magyar
@@ -240,6 +254,7 @@ locales:
         ru: Magyar
         zh: Magyar
     it:
+        cs: Italian (Italsky)
         de: Italian
         en: Italian
         et: Italian
@@ -253,6 +268,7 @@ locales:
         ru: Italian
         zh: Italian
     ja:
+        cs: 日本語 (Japonsky)
         de: 日本語
         en: 日本語
         et: 日本語
@@ -266,6 +282,7 @@ locales:
         ru: 日本語
         zh: 日本語
     ko:
+        cs: 한국어 (Korejsky)
         de: 한국어
         en: 한국어
         et: 한국어
@@ -279,6 +296,7 @@ locales:
         ru: 한국어
         zh: 한국어
     ru:
+        cs: Русский (Rusky)
         de: Русский
         en: Русский
         et: Русский
@@ -292,6 +310,7 @@ locales:
         ru: Русский
         zh: Русский
     zh:
+        cs: 简体中文 (Čínsky)
         de: 简体中文
         en: 简体中文
         et: 简体中文
@@ -306,6 +325,7 @@ locales:
         zh: 简体中文
 message:
     email-message:
+        cs: 'Dobrý den!<br> <br> Máte novou zprávu od Helpific:<br> <a href="https://helpific.com/en/messages/%s">helpific.com/en/messages/%s</a>'
         de: >
             Hallo!<br> <br> Sie haben eine neue Nachricht in Helpific:<br> <a
             href="https://helpific.com/en/messages/%s">helpific.com/en/messages/%s</a>
@@ -329,6 +349,7 @@ message:
             href="https://helpific.com/en/messages/%s">helpific.com/en/messages/%s</a>
         zh: '你好!<br> <br> 你在Helpific上有新消息:<br> <a href="https://helpific.com/en/messages/%s">helpific.com/en/messages/%s</a>'
     email-subject:
+        cs: Nová zpráva na helpific.com
         de: Neue Nachricht in helpific.com
         en: New message in helpific.com
         et: "Uus sõnum helpific.com'is"
@@ -343,6 +364,7 @@ message:
         zh: helpific.com上的新消息
 nav:
     about:
+        cs: O nás.
         de: Über uns
         en: About
         et: Meist
@@ -356,6 +378,7 @@ nav:
         ru: О Нас
         zh: 关于我们
     bb:
+        cs: Život bez hranic
         de: Jenseits von Grenzen
         en: Beyond Borders
         et: Piirideta Elu
@@ -369,6 +392,7 @@ nav:
         ru: Жизнь Без Границ
         zh: 大爱无疆
     blog:
+        cs: Blog
         de: Blog
         en: Blog
         et: Blogi
@@ -383,6 +407,7 @@ nav:
         zh: 博客
     me:
         messages:
+            cs: Zprávy
             de: Nachrichten
             en: Messages
             et: Sõnumid
@@ -396,6 +421,7 @@ nav:
             ru: Сообщения
             zh: 消息
         offers:
+            cs: Moje nabídky
             de: Meine Angebote
             en: My offers
             et: Minu pakkumised
@@ -409,6 +435,7 @@ nav:
             ru: Мои предложения
             zh: 我的帮助
         profile:
+            cs: Upravit profil
             de: Profil bearbeiten
             en: Edit profile
             et: Muuda profiili
@@ -422,6 +449,7 @@ nav:
             ru: Редактировать профиль
             zh: 编辑资料
         requests:
+            cs: Moje žádosti o pomoc
             de: Meine Anfragen
             en: My requests
             et: Minu soovid
@@ -435,6 +463,7 @@ nav:
             ru: Мои просьбы
             zh: 我的请求
         sign-out:
+            cs: Odhlásit
             de: Abmelden
             en: Sign out
             et: Välju
@@ -448,6 +477,7 @@ nav:
             ru: Выйти
             zh: 注销
     ngo-info:
+        cs: Informace o neziskové organizaci
         de: nav.ngo-info
         en: NGO information
         et: MTÜ informatsioon
@@ -461,6 +491,7 @@ nav:
         ru: nav.ngo-info
         zh: nav.ngo-info
     offers:
+        cs: Nabídky
         de: Angebote
         en: Offers
         et: Pakkumised
@@ -474,6 +505,7 @@ nav:
         ru: Предложения
         zh: 提供帮助
     partners:
+        cs: 'Partneři '
         de: Partner
         en: Partners
         et: Partnerid
@@ -487,6 +519,7 @@ nav:
         ru: Партнеры
         zh: 合作伙伴
     projects:
+        cs: Projekty
         de: Projekte
         en: Projects
         et: Projektid
@@ -500,6 +533,7 @@ nav:
         ru: Проекты
         zh: 项目
     requests:
+        cs: Žádosti
         de: Anfragen
         en: Requests
         et: Soovid
@@ -513,6 +547,7 @@ nav:
         ru: Просьбы
         zh: 发送请求
     sign-in:
+        cs: Přihlásit se
         de: Anmelden
         en: Sign in
         et: Sisene
@@ -526,6 +561,7 @@ nav:
         ru: Войти
         zh: 登陆
     team:
+        cs: Náš tým
         de: Team
         en: Team
         et: Meeskond
@@ -539,6 +575,7 @@ nav:
         ru: Команда
         zh: 团队
     terms:
+        cs: Podmínky použití
         de: Nutzungsbedingungen
         en: Terms of Use
         et: Tingimused
@@ -552,6 +589,7 @@ nav:
         ru: Условия пользования
         zh: 条款
     toggle-navigation:
+        cs: Zpět do menu
         de: Zum Menü
         en: Toggle navigation
         et: Ava menüü
@@ -563,6 +601,7 @@ nav:
         ru: Открыть меню
         zh: 导航栏
     users:
+        cs: Uživatelé
         de: Nutzer
         en: Users
         et: Kasutajad
@@ -578,6 +617,7 @@ nav:
 pages:
     error:
         title:
+            cs: 'Chyba :(!'
             de: Störung
             en: Error
             et: Viga
@@ -592,6 +632,7 @@ pages:
             zh: 错误
     help:
         add-new-offer:
+            cs: Přidat novou nabídku pomoci
             de: Neues Hilsangebot hinzufügen
             en: Add new offer
             et: Lisa uus pakkumine
@@ -604,6 +645,7 @@ pages:
             ru: Добавить новое предложение
             zh: 增加新的帮助
         add-new-request:
+            cs: Přidat novou žádost o pomoc
             de: Neue Hilfsanfrage hinzufügen
             en: Add new request
             et: Lisa uus soov
@@ -617,6 +659,7 @@ pages:
             ru: Добавить новую просьбу
             zh: 增加新的请求
         added:
+            cs: Přidáno
             de: pages.help.added
             en: 'Added at:'
             et: 'Lisamise aeg:'
@@ -630,6 +673,7 @@ pages:
             ru: 'Время добавления:'
             zh: pages.help.added
         cancel:
+            cs: Zrušit
             de: Löschen
             en: Cancel
             et: Tühista
@@ -643,6 +687,7 @@ pages:
             ru: Отменить
             zh: 取消
         edit:
+            cs: Upravit
             de: Bearbeiten
             en: Edit
             et: Muuda
@@ -656,6 +701,7 @@ pages:
             ru: Редактировать
             zh: 编辑
         location:
+            cs: Místo
             de: Standort
             en: Location
             et: Asukoht
@@ -669,6 +715,7 @@ pages:
             ru: Месторасположение
             zh: 地点
         location-ph:
+            cs: 'Např. Brno, Jihomoravský kraj '
             de: 'Bsp. Tallinn, Harjumaa'
             en: 'e.g. Tallinn, Harjumaa'
             et: 'näit. Tallinn, Harjumaa'
@@ -682,6 +729,7 @@ pages:
             ru: 'напр., Таллинн'
             zh: 比如，万科城
         offer-count:
+            cs: "Počet nabídek  <span ng-if='search_query || searchMy'> - nalezeno </span>"
             de: "Insgesamt gibt es {{ (help | filter:{type:type }).length }} Hilfsangebote hier <span ng-if='search_query || search_my'> - found {{ (help | filter:{status:s.status, type:type, my:search_my} | filter:search_query).length }}</span>"
             en: "There are total {{ (help | filter:{type:type }).length }} offers here <span ng-if='search_query || searchMy'> - found {{ (help | filter:{status:s.status, type:type, my:searchMy} | filter:search_query).length }}</span>"
             et: "Kokku on meil {{ (help | filter:{type:type }).length }} pakkumist <span ng-if='search_query || searchMy'> - leiti {{ (help | filter:{status:s.status, type:type, my:searchMy} | filter:search_query).length }}</span>"
@@ -695,6 +743,7 @@ pages:
             ru: "У нас в общей сложности {{ (help | filter:{type:type }).length }} предложений <span ng-if='search_query || searchMy'> - найдено {{ (help | filter:{status:s.status, type:type, my:searchMy} | filter:search_query).length }}</span>"
             zh: "所有的帮助都在这里 {{ (help | filter:{type:type }).length }} <span ng-if='search_query || searchMy'> - 发现 {{ (help | filter:{status:s.status, type:type, my:search_my} | filter:search_query).length }}</span>"
         offer-price:
+            cs: Cena za službu €) (nepovinné)
             en: Service price (€) (Optional)
             et: Teenuse hind (€) (Mitte kohustuslik)
             fi: 'Palvelun hinta (€) (Vapaavalintainen) '
@@ -703,6 +752,7 @@ pages:
             ru: Цена услуги (€) (Необязательно)
             zh: 服务费用（当地货币）（可选）
         offer-price-list:
+            cs: 'Cena '
             en: Service price
             et: Teenuse hind
             fi: Palvelun hinta
@@ -711,6 +761,7 @@ pages:
             ru: Цена услуги
             zh: 服务费用
         offer-price-ph:
+            cs: 'Např. 10 '
             en: e.g. 10
             et: näit. 10
             fi: esim. 10
@@ -719,6 +770,7 @@ pages:
             ru: например 10
             zh: 比如，1元
         offer-request:
+            cs: Nabídka
             de: Angebote
             en: Offer
             et: Pakkumine
@@ -731,6 +783,7 @@ pages:
             ru: Предложение
             zh: 帮助
         offer-request-ph:
+            cs: Např. jedu do Prahy mám volné místo
             de: z.B. Nach Nuustaku gehen und einen extra Raum bekommen
             en: e.g. Will go to Nuustaku and got extra room
             et: näit. Lähen Nuustakule ja on üks vaba koht
@@ -743,6 +796,7 @@ pages:
             ru: 'напр., еду на пляж и есть одно свободное место'
             zh: 比如，我可以去公园帮你遛狗
         offer-title:
+            cs: Nabídky pomoci
             de: Hilfsangebote
             en: Offers
             et: Pakkumised
@@ -756,6 +810,7 @@ pages:
             ru: Предложения
             zh: 所有帮助
         only-my-offer:
+            cs: 'Ukázat pouze mé nabídky '
             de: Nur meine Hilfsangebote zeigen
             en: Show only my offers
             et: Näita ainult minu pakkumisi
@@ -769,6 +824,7 @@ pages:
             ru: Показывать только мои предложения помощи
             zh: 只显示我提供的帮助
         only-my-request:
+            cs: Ukázat pouze mé žádosti
             de: Nur meine Hilfsanfragen zeigen
             en: Show only my requests
             et: Näita ainult minu soove
@@ -782,6 +838,7 @@ pages:
             ru: Показывать только мои просьбы о помощи
             zh: 只显示我发出的请求
         reply:
+            cs: Odpovědět
             de: Antworten
             en: Reply
             et: Vasta
@@ -795,6 +852,7 @@ pages:
             ru: Ответить
             zh: 回复
         request-count:
+            cs: "Celkový počet nabídek <span ng-if='search_query || searchMy'> - Nalezeno </span>"
             de: "Es gibts insgesamt {{ (help | filter:{type:type }).length }} Hilfsanfragen hier <span ng-if='search_query || search_my'> - gefunden {{ (help | filter:{status:s.status, type:type, my:search_my} | filter:search_query).length }}</span>"
             en: "There are total {{ (help | filter:{type:type }).length }} requests here <span ng-if='search_query || searchMy'> - found {{ (help | filter:{status:s.status, type:type, my:searchMy} | filter:search_query).length }}</span>"
             et: "Kokku on meil {{ (help | filter:{type:type }).length }} soovi <span ng-if='search_query || searchMy'> - leiti {{ (help | filter:{status:s.status, type:type, my:searchMy} | filter:search_query).length }}</span>"
@@ -808,6 +866,7 @@ pages:
             ru: "У нас в общей сложности {{ (help | filter:{type:type }).length }} просьб <span ng-if='search_query || searchMy'> - найдено {{ (help | filter:{status:s.status, type:type, my:searchMy} | filter:search_query).length }}</span>"
             zh: "所有的请求都在这里 {{ (help | filter:{type:type }).length }} <span ng-if='search_query || searchMy'> - 发现 {{ (help | filter:{status:s.status, type:type, my:searchMy} | filter:search_query).length }}</span>"
         request-price:
+            cs: Jsem ochoten zaplatit (€) (volitelné)
             en: Agree to pay (€) (Optional)
             et: Hind olen nõus maksma (€) (Mitte kohustuslik)
             fi: Suostun maksamaan hinnan (€) (Valinnainen)
@@ -816,6 +875,7 @@ pages:
             ru: Готов заплатить (€) (Необязательно)
             zh: 愿意支付（当地货币）（可选）
         request-price-list:
+            cs: Zaplatit
             en: Agree to pay
             et: Hind olen nõus maksma
             fi: Suostun maksamaan hinnan
@@ -824,6 +884,7 @@ pages:
             ru: Готов заплатить
             zh: 愿意支付
         request-price-ph:
+            cs: Např. 10
             en: e.g. 10
             et: näit. 10
             fi: esim. 10
@@ -832,6 +893,7 @@ pages:
             ru: например 10
             zh: 比如，一元
         request-request:
+            cs: Zažádat
             de: Anfragen
             en: Request
             et: Soov
@@ -845,6 +907,7 @@ pages:
             ru: Просьба
             zh: 请求
         request-request-ph:
+            cs: Např. Potřebuji se dostat do Kotěhůlek
             de: Bsp. Ich möchte nach Berlin gehen.
             en: "e.g. I'll want to go to London"
             et: näit. Soovin minna Nuustakule
@@ -858,6 +921,7 @@ pages:
             ru: 'напр., хочу поехать на пляж'
             zh: 比如，我想找人帮我遛狗
         request-title:
+            cs: Žádosti
             de: Hilfsanfrage
             en: Requests
             et: Soovid
@@ -871,6 +935,7 @@ pages:
             ru: Просьбы
             zh: 所有请求
         save:
+            cs: Uložit
             de: Speichern
             en: Save
             et: Salvesta
@@ -884,6 +949,7 @@ pages:
             ru: Сохранить
             zh: 保存
         status:
+            cs: Status
             de: Status
             en: Status
             et: Staatus
@@ -897,6 +963,7 @@ pages:
             ru: Статус
             zh: 状态
         status-accepted:
+            cs: Schváleno
             de: Akzeptiert
             en: Accepted
             et: Vastuvõetud
@@ -910,6 +977,7 @@ pages:
             ru: Принято
             zh: 已接受
         status-accepted-plural:
+            cs: 'Schváleno '
             de: Akzeptiert
             en: Accepted
             et: Vastuvõetud
@@ -923,6 +991,7 @@ pages:
             ru: Приняты
             zh: 已接受
         status-active:
+            cs: 'Aktivní '
             de: Aktiv
             en: Active
             et: Aktiivne
@@ -936,6 +1005,7 @@ pages:
             ru: Активный
             zh: 活跃用户
         status-active-plural:
+            cs: 'Aktivní '
             de: Aktiv
             en: Active
             et: Aktiivsed
@@ -949,6 +1019,7 @@ pages:
             ru: Активные
             zh: 活跃用户
         status-canceled:
+            cs: Zrušeno
             de: Gelöscht
             en: Canceled
             et: Tühistatud
@@ -962,6 +1033,7 @@ pages:
             ru: Отменен
             zh: 已取消
         status-canceled-plural:
+            cs: Zrušeno
             de: Gelöscht
             en: Canceled
             et: Tühistatud
@@ -975,6 +1047,7 @@ pages:
             ru: Отменены
             zh: 已取消
         status-done:
+            cs: 'Hotovo!'
             de: Erledigt
             en: Done
             et: Tehtud
@@ -988,6 +1061,7 @@ pages:
             ru: Сделано
             zh: 已完成
         status-done-plural:
+            cs: 'Hotovo!'
             de: Erledigt
             en: Done
             et: Tehtud
@@ -1001,6 +1075,7 @@ pages:
             ru: Сделаны
             zh: 已完成
         time:
+            cs: Datum/čas
             de: Datum/Zeit
             en: Date/time
             et: Kuupäev/kellaaeg
@@ -1013,6 +1088,7 @@ pages:
             ru: Дата/время
             zh: 日期/时间
         time-ph:
+            cs: 'Např. 08.02.2016 12:41'
             de: 'z.B. 04.08.2015 02:59'
             en: 'e.g. 04.08.2015 02:59'
             et: 'näit. 04.08.2015 02:59'
@@ -1027,6 +1103,7 @@ pages:
             zh: 比如，2015年8月4日14点
     index:
         bullet-1:
+            cs: Připojit se přes Facebook nebo Google
             de: Einloggen mit Facebook oder Google
             en: Sign in via Facebook or Google
             et: "Sisene Facebooki või Google'i kaudu"
@@ -1040,6 +1117,7 @@ pages:
             ru: Войди через Facebook или Google
             zh: 用Facebook或Google账号登陆
         bullet-2:
+            cs: Povězte nám co umíte nebo s čím potřebujete pomoci
             de: 'Lass Sie uns wissen, was Sie können oder brauchen.'
             en: Let us know what you can do or need
             et: Anna teada kuidas saad aidata või mida vajad
@@ -1053,6 +1131,7 @@ pages:
             ru: 'Напиши, какую помощь Ты можешь предложить или в чем нуждаешься'
             zh: 让我们知道你能做什么或者需要什么
         bullet-3:
+            cs: 'Ukažte své dovednosti a naplňte své potřeby!'
             de: Werden Sie aktiv und treten Sie mit anderen in Kontakt.
             en: Make your needs and deeds work
             et: 'Tegutse, millal soovid!'
@@ -1066,6 +1145,7 @@ pages:
             ru: 'Найди применение своим возможностям или получай помощь от других!'
             zh: 让你的想法成为现实
         choose-way:
+            cs: Jděte vlastní cestou
             de: Wähle deinen Weg
             en: Choose your way
             et: Vali oma tee
@@ -1079,6 +1159,7 @@ pages:
             ru: Выбери свой путь
             zh: 选择你的方式
         how-it-works:
+            cs: Jak funguje Helpific?
             de: Wie funktioniert Helpific?
             en: How Helpific works?
             et: Kuidas Helpific töötab?
@@ -1092,6 +1173,7 @@ pages:
             ru: Как устроен Helpific?
             zh: 完成如下几步，即可开始你的Helpific发现之旅
         offers-link:
+            cs: Seznamte se s dobrovolníky
             de: Freiwillige treffen
             en: Meet the volunteers
             et: Kohtu vabatahtlike abistajatega
@@ -1105,6 +1187,7 @@ pages:
             ru: Знакомство с волонтерами
             zh: 与志愿者见面
         offers-link-alt:
+            cs: Levé dveře
             de: Linke Tür
             en: Left door
             et: Vasak uks
