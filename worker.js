@@ -122,8 +122,6 @@ express()
     // set defaults for views
     .use(function(req, res, next) {
         res.authenticate = function() {
-            log.debug('res.locals.user = ' + res.locals.user)
-
             if(!res.locals.user) {
                 res.cookie('redirect_url', '/' + res.locals.path.split('/').slice(2).join('/'), {signed:true, maxAge:1000*60*60})
                 res.redirect('/' + res.locals.lang + '/signin')
