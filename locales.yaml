@@ -1,5 +1,6 @@
 feedback:
     admin-email-message:
+        cs: 'https://helpific.entu.ee/entity/feedback/%s'
         de: 'https://helpific.entu.ee/entity/feedback/%s'
         en: 'https://helpific.entu.ee/entity/feedback/%s'
         et: 'https://helpific.entu.ee/entity/feedback/%s'
@@ -1201,6 +1202,7 @@ pages:
             ru: Левая дверь
             zh: 左边的门
         requests-link:
+            cs: Pomozte těm kteří to potřebují
             de: Helfen Sie Menschen in Not
             en: Help those in need
             et: Aita abivajajaid
@@ -1214,6 +1216,7 @@ pages:
             ru: 'Помоги тем, кто нуждается'
             zh: 帮助有需要的人
         requests-link-alt:
+            cs: Pravé dveře
             de: Rechte Tür
             en: Right door
             et: Parem uks
@@ -1227,6 +1230,7 @@ pages:
             ru: Правая дверь
             zh: 右边的门
         slogan:
+            cs: Není to jednodušší společně?
             de: 'Gemeinsam ist es einfach!'
             en: "Isn't it easier together?"
             et: 'Koos on ju lihtsam!'
@@ -1240,6 +1244,7 @@ pages:
             ru: Разве вместе не легче?
             zh: 星多天空亮，人多智慧广
         text:
+            cs: "<h2>Nikdy nebylo snazší pomáhat, nebo dostat pomoc </h2> <p>Helpific spojuje lidi se speciálními potřebami s lidmi co jim chtějí pomoci s každodenními aktivitami .</p> <p ng-if='info'>Nyní jsme splnili požadavků  a máme uživatelů.</p>"
             de: >
                 <h2>Es war noch nie einfacher, Hilfe zu geben und zu
                 bekommen</h2> <p>Helpific verbindet Freiwillige mit Menschen,
@@ -1284,6 +1289,7 @@ pages:
             zh: "<h2>获得帮助从未像现在这样简单</h2> <p>Helpific把志愿者与那些有需要的人联系起来.</p> <p ng-if='info'>现在我们拥有一批乐于奉献，积极进取的志愿者向你提供帮助.</p>"
     messages:
         new-message:
+            cs: Nová zpráva
             de: Neue Nachricht
             en: New message
             et: Uus sõnum
@@ -1297,6 +1303,7 @@ pages:
             ru: Новое сообщение
             zh: 新消息
         send:
+            cs: Odeslat
             de: Senden
             en: Send
             et: Saada
@@ -1310,6 +1317,7 @@ pages:
             ru: Отправить
             zh: 发送
         title:
+            cs: Zprávy
             de: Nachrichten
             en: Messages
             et: Sõnumid
@@ -1324,6 +1332,7 @@ pages:
             zh: 各种消息
     partners:
         title:
+            cs: Partneři
             de: Partner
             en: Partners
             et: Partnerid
@@ -1338,6 +1347,7 @@ pages:
             zh: 合作伙伴
     profile:
         about-me-tab:
+            cs: O mně
             de: Über mich
             en: About me
             et: Minust
@@ -1351,6 +1361,7 @@ pages:
             ru: Обо мне
             zh: 关于我
         about-me-text:
+            cs: 'Napište co byste chtěli, aby o vás lidé věděli.'
             de: Schreiben Sie etwas über Sich. Was sollten Menschen über Sie wissen?
             en: Write something about you. What would you like people to know about you?
             et: Kirjuta midagi endast
@@ -1364,6 +1375,7 @@ pages:
             ru: Напиши что-нибудь о себе
             zh: 你想让别人了解到你什么？请写下来
         about-me-video:
+            cs: Odkaz k videu
             de: Video URL
             en: Video URL
             et: Video viide
@@ -1377,6 +1389,7 @@ pages:
             ru: Ссылка на видео
             zh: 视频地址
         add-new-offer:
+            cs: Přidat novu nabídku.
             de: Neues Hilfsangebot hinzufügen
             en: Add new offer
             et: Lisa uus pakkumine
@@ -1390,6 +1403,7 @@ pages:
             ru: Добавить новое предложение
             zh: 添加新的帮助
         add-new-request:
+            cs: Přidat novou žádost o pomoc.
             de: Neue Hilfsanfrage hinzufügen
             en: Add new request
             et: Lisa uus soov
@@ -1403,6 +1417,7 @@ pages:
             ru: Добавить новую просьбу
             zh: 添加新的请求
         address:
+            cs: Adresa
             de: Adresse
             en: Address
             et: Aadress
@@ -1416,6 +1431,7 @@ pages:
             ru: Адрес
             zh: 地址
         address-ph:
+            cs: Např. Sokolovská 37
             de: z.B. Leipziger Str. 12
             en: e.g. 767 5th Avenue
             et: e.g. Tartu mnt. 1
@@ -1429,6 +1445,7 @@ pages:
             ru: 'напр., Тартуское шоссе, 1'
             zh: 比如，福田区深南大道2012号
         city:
+            cs: Město
             de: Stadt
             en: City
             et: Linn
@@ -1442,6 +1459,7 @@ pages:
             ru: Город
             zh: 市/县
         city-ph:
+            cs: Např. Praha
             de: z.B. Dresden
             en: e.g. New York
             et: näit. Tallinn
@@ -1455,6 +1473,7 @@ pages:
             ru: 'напр., Таллинн'
             zh: 比如，深圳市
         country:
+            cs: 'Země '
             de: Land
             en: Country
             et: Riik
@@ -1468,6 +1487,7 @@ pages:
             ru: Страна
             zh: 国家/地区
         country-ph:
+            cs: Např. Česká Republika
             de: z.B. Deutschland
             en: e.g. United States
             et: näit. Eesti
@@ -1481,6 +1501,7 @@ pages:
             ru: 'напр., Эстония'
             zh: 比如，中国
         county:
+            cs: Kraj
             de: Land
             en: County
             et: Maakond
@@ -1494,6 +1515,7 @@ pages:
             ru: Уезд
             zh: ' 省/直辖市/自治区/特别行政区'
         county-ph:
+            cs: Např. Jihomoravský kraj
             de: z.B. Sachsen
             en: e.g NY
             et: näit. Harjumaa
@@ -1506,6 +1528,7 @@ pages:
             ru: 'напр., Харьюмаа'
             zh: 比如，广东省
         delete-photo:
+            cs: Odstranit fotku
             de: Foto löschen
             en: Delete photo
             et: Kustuta pilt
@@ -1519,6 +1542,7 @@ pages:
             ru: Удалить фотографию
             zh: 删除照片
         email:
+            cs: E-mail
             de: E-Mail
             en: E-mail
             et: E-post
@@ -1532,6 +1556,7 @@ pages:
             ru: Э-почта
             zh: 电子邮箱
         email-ph:
+            cs: Např. jan.jablko@seznam.cz
             de: z.B. john@appleseed.com
             en: e.g. john@appleseed.com
             et: näit. juhan@õunaseeme.ee
@@ -1545,6 +1570,7 @@ pages:
             ru: 'напр., ivan@mail.ru'
             zh: 比如，zhb1995824@163.com
         forename:
+            cs: Jméno
             de: Vorname
             en: Forename
             et: Eesnimi
@@ -1558,6 +1584,7 @@ pages:
             ru: Имя
             zh: 名
         forename-ph:
+            cs: Např. Jan
             de: z.B. John
             en: e.g. John
             et: näit. Juhan
@@ -1571,6 +1598,7 @@ pages:
             ru: 'напр., Иван'
             zh: 比如，小明
         language:
+            cs: Jazyk
             de: Sprache
             en: Language
             et: Keel
@@ -1584,6 +1612,7 @@ pages:
             ru: Язык
             zh: 语言
         markdown-info:
+            cs: 'Pro formátování textu použijte <a href="https://en.wikipedia.org/wiki/Markdown#Example" target="_blank">markdown</a>'
             de: 'Design verwenden <a href="https://en.wikipedia.org/wiki/Markdown#Example" target="_blank">markdown</a> um deinen Text zu gestalten'
             en: 'use <a href="https://en.wikipedia.org/wiki/Markdown#Example" target="_blank">markdown</a> for styling your text'
             et: 'teksti kujundamiseks kasuta <a href="https://en.wikipedia.org/wiki/Markdown#Example" target="_blank">markdowni</a>'
@@ -1597,6 +1626,7 @@ pages:
             ru: 'для оформления текста используй данный <a href="https://en.wikipedia.org/wiki/Markdown#Example" target="_blank">язык разметки</a>'
             zh: '使用 <a href="https://en.wikipedia.org/wiki/Markdown#Example" target="_blank">markdown</a> 用来修饰你的文本'
         me-help-you-tab:
+            cs: Pomohu druhým.
             de: Ich kann anderen helfen
             en: I can help others
             et: Aitan sind
@@ -1610,6 +1640,7 @@ pages:
             ru: Я могу помочь другим
             zh: 我可以帮助别人
         me-help-you-text:
+            cs: Jak mohu pomoci druhým?
             de: Wie können Sie anderen helfen? Sie müssen es nicht jetzt sofort ausfüllen.
             en: How can you help others? You do not have to fill it if you do not feel like it now.
             et: Kuidas sa saad teisi aidata?
@@ -1623,6 +1654,7 @@ pages:
             ru: Как Ты можешь помочь другим?
             zh: 你会怎样帮助别人？如果不清楚可以选择不填此项.
         me-help-you-video:
+            cs: Odkaz k videu
             de: Video URL
             en: Video URL
             et: Video viide
@@ -1636,6 +1668,7 @@ pages:
             ru: Ссылка на видео
             zh: 视频地址
         messages:
+            cs: Zprávy
             de: Nachrichten
             en: Messages
             et: Sõnumid
@@ -1649,6 +1682,7 @@ pages:
             ru: Сообщения
             zh: 所有消息
         newsletter:
+            cs: Chtěl/chtěla bych dostávat informace o Helpific.
             de: Ich möchte Neuigkeiten von Helpific erhalten.
             en: I would like to receive information about Helpific
             et: Soovin saada Helpificu infot
@@ -1662,6 +1696,7 @@ pages:
             ru: Хочу получать информацию от Helpific
             zh: 我希望收到关于Helpific的消息
         photo:
+            cs: Profilová fotka
             de: Profilbild
             en: Profile photo
             et: Profiilipilt
@@ -1675,6 +1710,7 @@ pages:
             ru: Фотография профиля
             zh: 头像
         photo-upload:
+            cs: '%nahráno'
             de: '{{ photoUploadPercent }}% hochladen...'
             en: '{{ photoUploadPercent }}% uploaded...'
             et: '{{ photoUploadPercent }}% laaditud...'
@@ -1688,6 +1724,7 @@ pages:
             ru: '{{ photoUploadPercent }}% загружено...'
             zh: '{{ photoUploadPercent }}% 上传中......'
         save-info:
+            cs: Informace na vašem profilu se ukládají automaticky
             de: Deine Profilinformationen werden automatisch gespeichert.
             en: Your profile info is saved automatically
             et: Sinu profiili info salvestub automaatselt
@@ -1701,6 +1738,7 @@ pages:
             ru: pages.profile.save-info
             zh: 你的信息已自动保存
         slogan:
+            cs: Slogan
             de: Slogan
             en: Slogan
             et: Slõugan
@@ -1714,6 +1752,7 @@ pages:
             ru: Слоган
             zh: 标语
         slogan-ph:
+            cs: Např. Není to jednodušší společně?
             de: 'z.B. Gemeinsam ist es einfach!'
             en: "e.g. Isn't it easier together?"
             et: 'näit. Koos on ju lihtsam!'
@@ -1727,6 +1766,7 @@ pages:
             ru: 'напр., Вместе проще!'
             zh: 比如，星多天空亮，人多智慧广
         surname:
+            cs: Příjmení
             de: Nachname
             en: Surname
             et: Perenimi
@@ -1740,6 +1780,7 @@ pages:
             ru: Фамилия
             zh: 姓
         surname-ph:
+            cs: Např. Novák
             de: z.B. Schneider
             en: e.g. Appleseed
             et: näit. Õunaseeme
@@ -1753,6 +1794,7 @@ pages:
             ru: 'напр., Иванов'
             zh: 比如，赵
         title:
+            cs: Můj profil
             de: Mein Profil
             en: My profile
             et: Minu profiil
@@ -1766,6 +1808,7 @@ pages:
             ru: Мой профиль
             zh: 我的资料
         video-info:
+            cs: 'Podporujeme <a href="https://youtube.com" target="_blank">YouTube</a>, <a href="https://vimeo.com" target="_blank">Vimeo</a> and <a href="https://wistia.com" target="_blank">Wistia</a> urls'
             de: 'Wir unterstützen nur <a href="https://youtube.com" target="_blank">YouTube</a>, <a href="https://vimeo.com" target="_blank">Vimeo</a> und <a href="https://wistia.com" target="_blank">Wistia</a> urls'
             en: 'we support only <a href="https://youtube.com" target="_blank">YouTube</a>, <a href="https://vimeo.com" target="_blank">Vimeo</a> and <a href="https://wistia.com" target="_blank">Wistia</a> urls'
             et: 'toetatud on ainult <a href="https://youtube.com" target="_blank">YouTube</a>, <a href="https://vimeo.com" target="_blank">Vimeo</a> ja <a href="https://wistia.com" target="_blank">Wistia</a> viited'
@@ -1779,6 +1822,7 @@ pages:
             ru: 'поддерживаются только ссылки на <a href="https://youtube.com" target="_blank">YouTube</a>, <a href="https://vimeo.com" target="_blank">Vimeo</a> и <a href="https://wistia.com" target="_blank">Wistia</a>'
             zh: '我们仅支持来自 <a href="https://youtube.com" target="_blank">YouTube</a>, <a href="https://vimeo.com" target="_blank">Vimeo</a> and <a href="https://wistia.com" target="_blank">Wistia</a> 的url'
         video-ph:
+            cs: 'Např. https://www.youtube.com/watch?v=QH2-TGUlwu4'
             de: 'z.B. https://www.youtube.com/watch?v=QH2-TGUlwu4'
             en: 'näit. https://www.youtube.com/watch?v=QH2-TGUlwu4'
             et: 'e. g. https://www.youtube.com/watch?v=QH2-TGUlwu4'
@@ -1792,6 +1836,7 @@ pages:
             ru: 'напр., https://www.youtube.com/watch?v=QH2-TGUlwu4'
             zh: '比如，https://www.youtube.com/watch?v=QH2-TGUlwu4'
         you-help-me-tab:
+            cs: 'Potřebuji pomoci '
             de: Ich brauche Hilfe
             en: I need help
             et: Vajan abi
@@ -1805,6 +1850,7 @@ pages:
             ru: Мне нужна помощь
             zh: 我需要帮助
         you-help-me-text:
+            cs: Jak Vám mohou lidé pomoci. Nemusíte vyplňovat pokud nehledáte pomoc.
             de: 'Wir können Menschen Ihnen helfen? Sie können es frei lassen, wenn Sie keine Hilfe über diese Website suchen.'
             en: How can people help you? You can leave it empty if you are not searching for help through this site.
             et: Millist abi sa vajad?
@@ -1818,6 +1864,7 @@ pages:
             ru: 'Какая помощь Тебе нужна? Если помощь не нужна, оставь это поле пустым.'
             zh: 你希望人们怎样帮到你？如果你不是通过此网站寻求帮助的话，可以跳过此项
         you-help-me-video:
+            cs: Odkaz videa
             de: Video URL
             en: Video URL
             et: Video viide
@@ -1832,12 +1879,14 @@ pages:
             zh: 视频地址
     sign-in:
         facebook:
+            cs: Připojit přes Facebook
             en: Login over Facebook
             et: Logi sisse Facebooki kaudu
             fi: Kirjaudu sisään Facebookin kautta
             fr: Connection par Facebook
             ru: Войти через Facebook
         google:
+            cs: Připojit přes Google+
             en: Login over Google plus
             et: Logi sisse Google plussi kaudu
             fi: Kirjaudu sisään Google plussan kautta
@@ -1857,6 +1906,7 @@ pages:
             ru: '* пользуясь сервисом, Ты соглашаешься с <a href="terms">правилами пользования</a>'
             zh: '* 如果你登陆此站，你需要遵守<a href="terms">使用与隐私条款</a>'
         text:
+            cs: Použijte jednu z následujících možností k přihlášení.
             de: 'Bitt nutzen Sie Ihren bevorzugten Internetanbieter, um sich anzumelden...'
             en: Please use your preferred identity provider to sign in...
             et: Sisenemiseks kasuta meelepärast identiteedipakkujat...
@@ -1870,6 +1920,7 @@ pages:
             ru: Для входа используй подходящий сервис
             zh: 请使用你偏好的社交网站进行登陆
         title:
+            cs: Přihlásit se
             de: Anmelden
             en: Sign in
             et: Sisene
@@ -1884,6 +1935,7 @@ pages:
             zh: 登陆
     team:
         title:
+            cs: Náš tým
             de: Unser Team
             en: Our Team
             et: Meie meeskond
@@ -1898,6 +1950,7 @@ pages:
             zh: 我们的团队
     tr:
         title:
+            cs: Překlady
             de: Translations
             en: Translations
             et: Translations
@@ -1912,6 +1965,7 @@ pages:
             zh: 翻译
     user:
         about-me-tab:
+            cs: O mně
             de: Über mich
             en: About me
             et: Minust
@@ -1925,6 +1979,7 @@ pages:
             ru: Обо мне
             zh: 关于我
         donate:
+            cs: Darovat
             de: Spenden
             en: Donate
             et: Anneta
@@ -1938,6 +1993,7 @@ pages:
             ru: Сделать пожертвование
             zh: 捐助
         donate-info:
+            cs: 'V případě darování dobrovolného příspěvku převeďte peníze na účet "Helpific MTÜ". Popis transakce musí být vyplněn "%s"'
             de: 'Für Spenden Überweisung an Helpific MTÃœ account. Spendenbescheinigung notwendig"%s"'
             en: 'For donation transfer money to Helpific MTÜ account. Transfer description must be "%s"'
             et: 'Annetus kanna Helpific MTÜ kontole. Makse selgitusse märgi kindlasti "%s"'
@@ -1951,6 +2007,7 @@ pages:
             ru: 'Пожертвования следует переводить на банковский счет Helpific MTÜ. В пояснении обязательно укажите "%s"'
             zh: '如您要向我们的项目提供资金支持，转账描述须为"%s"'
         help-offers:
+            cs: Moje nabídky pomoci.
             de: Meine Hilfsangebote
             en: My offers
             et: Minu pakkumised
@@ -1964,6 +2021,7 @@ pages:
             ru: Мои предложения
             zh: 我提供的帮助
         help-requests:
+            cs: Moje žádosti o pomoc
             de: Meine Hilfsanfragen
             en: My requests
             et: Minu soovid
@@ -1977,6 +2035,7 @@ pages:
             ru: Мои просьбы
             zh: 我发出的请求
         me-help-you-tab:
+            cs: Takto mohu pomoci ostatním.
             de: Ich kann anderen helfen
             en: I can help others
             et: Aitan sind
@@ -1990,6 +2049,7 @@ pages:
             ru: Я могу помочь другим
             zh: 我可以帮助别人
         send-message:
+            cs: Odeslat zprávu
             de: Nachricht senden
             en: Send message
             et: Saada sõnum
@@ -2003,6 +2063,7 @@ pages:
             ru: Отправить сообщение
             zh: 发送消息
         you-help-me-tab:
+            cs: Potřebuji pomoci
             de: Ich brauche Hilfe
             en: I need help
             et: Vajan abi
@@ -2017,6 +2078,7 @@ pages:
             zh: 我需要帮助
     users:
         count:
+            cs: "Aktuální počet uživatelů <span ng-if='search_query'> - nalezeno </span>"
             de: "Insgesamt haben wir {{ users.length }} Nutzer hier <span ng-if='search_query'> - gefunden {{ (users | filter:search_query).length }}</span>"
             en: "There are total {{ users.length }} users here <span ng-if='search_query'> - found {{ (users | filter:search_query).length }}</span>"
             et: "Kokku on meil {{ users.length }} kasutajat <span ng-if='search_query'> - leiti {{ (users | filter:search_query).length }}</span>"
@@ -2030,6 +2092,7 @@ pages:
             ru: "У нас в общей сложности {{ users.length }} участников <span ng-if='search_query'> - найдено {{ (users | filter:search_query).length }}</span>"
             zh: "所有的用户都在这里<span ng-if='search_query || searchMy'> - 发现</span>"
         title:
+            cs: Uživatelé
             de: Nutzer
             en: Users
             et: Kasutajad
