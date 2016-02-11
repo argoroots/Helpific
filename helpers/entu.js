@@ -120,6 +120,8 @@ exports.getEntities = function(params, callback) {
     var url = params.parentEntityId ? '/entity-' + params.parentEntityId + '/childs' : '/entity'
     var loop = params.parentEntityId ? ['result', params.definition, 'entities'] : 'result'
 
+    log.debug("url = " + url)
+    log.debug("loop = " + loop)
     if(core_api.active){
         core_api.getEntities(params, qs, callback)
     } else {

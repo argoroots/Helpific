@@ -255,7 +255,8 @@ getUser = function(params, callback) {
                     if(key == 'aboutMeText') {
                         result['about-me-text'] = {
                             id: 0,
-                            value: body[key]
+                            value: sanitize(body[key]),
+                            md: md(sanitize(body[key]))
                         }
                     }
 
@@ -269,6 +270,7 @@ getUser = function(params, callback) {
 
                     if(key == 'genId') {
                         result._id = body[key]
+                        result._picture = getPictureUrl(body[key])
                     }
                 }
             }
@@ -611,7 +613,7 @@ exports.getUser = function(params, callback) {
 }
 
 // compore picture URL
-exports.getPictureUrl = function(reference) {
+exports.getPictureUrl = getPictureUrl = function(reference) {
     return APP_CORE_URL + '/user/' + reference + '/picture'
 }
 
