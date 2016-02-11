@@ -170,6 +170,20 @@ help:
         ru: Добавлена новая просьба о помощи
         zh: 添加新的 请求/帮助
 locales:
+    cs:
+        cs: Čeština
+        de: Čeština
+        en: Čeština
+        et: Čeština
+        fi: Čeština
+        fr: Čeština
+        hu: Čeština
+        it: Čeština
+        ja: Čeština
+        ko: Čeština
+        nl: Čeština
+        ru: Čeština
+        zh: Čeština
     de:
         cs: Deutsch (Německy)
         de: Deutsch
