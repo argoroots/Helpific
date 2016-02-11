@@ -1907,6 +1907,7 @@ pages:
             fr: Connection avec Google plus
             ru: Войти через Google Plus
         terms:
+            cs: pages.sign-in.terms
             de: '* Wenn Sie sich anmelden, akzeptieren Sie unsere<a href="terms">Nutungsbedingungen und Datenschutzrichtlinien</a>'
             en: '* if you sign in, you accept our <a href="terms">terms of use and privacy policy</a>'
             et: '* sisenedes nõustud meie <a href="terms">kasutaja- ja privaatsustingimustega</a>'
