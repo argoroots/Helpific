@@ -112,6 +112,22 @@ express()
         res.redirect('/et/bb')
     })
 
+    // redirects
+    .use('/positiivse-suhtumise-arendamine', function(req, res) {
+        res.redirect('/et/pad')
+    })
+
+    // redirects
+    .use('/positive-attitude-development', function(req, res) {
+        res.redirect('/en/pad')
+    })
+
+
+    // redirects
+    .use('/razvitie-pozitivnogo-otnoshenija', function(req, res) {
+        res.redirect('/ru/pad')
+    })
+
     // set defaults for views
     .use(function(req, res, next) {
         res.authenticate = function() {
