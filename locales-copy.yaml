@@ -478,7 +478,7 @@ nav:
             ru: Мои просьбы
             zh: 我的请求
         sign-out:
-            cs: Odhlásit
+            cs: Odhlásit se
             de: Abmelden
             en: Sign out
             et: Välju
@@ -519,6 +519,10 @@ nav:
         nl: Aanbiedingen
         ru: Предложения
         zh: 提供帮助
+    pad:
+        en: Positive Attitude Development
+        et: Positiivse Suhtumise Arendamine
+        ru: Развитие позитивного отношения
     partners:
         cs: 'Partneři '
         de: Partner
@@ -548,7 +552,7 @@ nav:
         ru: Проекты
         zh: 项目
     requests:
-        cs: Žádosti
+        cs: Žádosti o pomoc
         de: Anfragen
         en: Requests
         et: Soovid
@@ -1118,7 +1122,7 @@ pages:
             zh: 比如，2015年8月4日14点
     index:
         bullet-1:
-            cs: Připojit se přes Facebook nebo Google
+            cs: Připojite se přes Facebook nebo Google
             de: Einloggen mit Facebook oder Google
             en: Sign in via Facebook or Google
             et: "Sisene Facebooki või Google'i kaudu"
@@ -1146,7 +1150,7 @@ pages:
             ru: 'Напиши, какую помощь Ты можешь предложить или в чем нуждаешься'
             zh: 让我们知道你能做什么或者需要什么
         bullet-3:
-            cs: 'Ukažte své dovednosti a naplňte své potřeby!'
+            cs: 'Ukažte své dovednosti a získejte pomoc s Vašimi potřebami!'
             de: Werden Sie aktiv und treten Sie mit anderen in Kontakt.
             en: Make your needs and deeds work
             et: 'Tegutse, millal soovid!'
@@ -1244,7 +1248,7 @@ pages:
             ru: Правая дверь
             zh: 右边的门
         slogan:
-            cs: Není to jednodušší společně?
+            cs: 'Některé věci je lepší dělat společně!'
             de: 'Gemeinsam ist es einfach!'
             en: "Isn't it easier together?"
             et: 'Koos on ju lihtsam!'
@@ -1258,7 +1262,7 @@ pages:
             ru: Разве вместе не легче?
             zh: 星多天空亮，人多智慧广
         text:
-            cs: "<h2>Nikdy nebylo snazší pomáhat, nebo dostat pomoc </h2> <p>Helpific spojuje lidi se speciálními potřebami s lidmi co jim chtějí pomoci s každodenními aktivitami .</p> <p ng-if='info'>Nyní jsme splnili požadavků  a máme uživatelů.</p>"
+            cs: "<h2>Nikdy nebylo snazší pomáhat, nebo získat pomoc </h2> <p>Helpific spojuje lidi se speciálními potřebami s lidmi co jim chtějí pomoci s každodenními aktivitami.</p> <p ng-if='info'>Nyní jsme splnili požadavků  a máme uživatelů.</p>"
             de: >
                 <h2>Es war noch nie einfacher, Hilfe zu geben und zu
                 bekommen</h2> <p>Helpific verbindet Freiwillige mit Menschen,
