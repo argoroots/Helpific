@@ -66,6 +66,8 @@ html(lang=lang, ng-app='hlpfc')
                                     ul.dropdown-menu
                                         li
                                             a(href='bb')= t('nav.bb')
+                                        li
+                                            a(href='pad')= t('nav.pad')
 
                                 li
                                     a(href='help/requests')= t('nav.requests')
@@ -112,6 +114,8 @@ html(lang=lang, ng-app='hlpfc')
                             if title
                                 .row
                                     h1.col-xs-12.text-center= title
+                                    if sub_title
+                                        h2.col-xs-12.text-center= sub_title
 
                 block content
 
