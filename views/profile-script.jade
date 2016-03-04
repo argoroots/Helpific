@@ -1,0 +1,82 @@
+script.
+    var md = {}
+    $('textarea').each(function () {
+        var input = $(this)
+        var id = input.attr('id')
+        md[id] = new SimpleMDE({
+            element: document.getElementById(id),
+            status: false,
+            spellChecker: false
+        })
+        md[id].render()
+        md[id].codemirror.on('focus', function () {
+            $("label[for='" + id + "']").addClass('active')
+            $('.CodeMirror').addClass('CodeMirror-focus')
+        })
+        md[id].codemirror.on('blur', function () {
+            $("label[for='" + id + "']").removeClass('active')
+            $('.CodeMirror').removeClass('CodeMirror-focus')
+            var value = md[id].value()
+            if (input.data('value') != value) {
+                var postdata = {
+                    property: input.attr('id'),
+                    id: input.data('id'),
+                    value: value
+                }
+                $.post('', postdata, function (data) {
+                    input.val(data.value)
+                    input.data('id', data.id)
+                    input.data('value', data.value)
+                }).fail(console.log)
+            }
+        })
+    })
+    $('input').blur(function () {
+        input = $(this)
+        if (input.data('value') != input.val()) {
+            input.removeClass('border-red-important')
+            if (input.attr('required') && input.val() == '') {
+                input.addClass('border-red-important')
+                return
+            }
+            var postdata = {
+                property: input.attr('id'),
+                id: input.data('id'),
+                value: input.val()
+            }
+            $.post('', postdata, function (data) {
+                input.val(data.value)
+                input.data('id', data.id)
+                input.data('value', data.value)
+            }).fail(console.log)
+        }
+    })
+    $('input[type="checkbox"]').change(function () {
+        input = $(this)
+        if (input.data('value') != input.is(':checked')) {
+            var postdata = {
+                property: input.attr('id'),
+                id: input.data('id'),
+                value: input.is(':checked')
+            }
+            $.post('', postdata, function (data) {
+                input.val(data.value)
+                input.data('id', data.id)
+                input.data('value', data.value)
+            }).fail(console.log)
+        }
+    })
+    $('select').change(function () {
+        input = $(this)
+        var postdata = {
+            property: input.attr('id'),
+            id: input.data('id'),
+            value: input.val()
+        }
+        $.post('', postdata, function (data) {
+            input.val(data.value)
+            input.data('id', data.id)
+            input.data('value', data.value)
+            location.href = '/' + data.value + '#{ path.substring(3) }'
+        }).fail(console.log)
+    })

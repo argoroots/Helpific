@@ -77,6 +77,13 @@ var ravenClient = new raven.Client({
 
 
 // start express app
+function isProfileAcceptable(user) {
+    return (op.get(user, 'person.properties.forename.values.0.value', '').length > 0 &&
+    op.get(user, 'person.properties.email.values.0.value', '').length > 0 &&
+    op.get(user, 'person.properties.town.values.0.value', '').length > 0 &&
+    op.get(user, 'person.properties.country.values.0.value', '').length > 0);
+}
+
 express()
     // get correct client IP behind nginx
     .set('trust proxy', true)
@@ -136,9 +143,18 @@ express()
                 res.redirect('/' + res.locals.lang + '/signin')
                 return false
             } else {
-                return true
+                var path = res.locals.path.split('/').slice(2).join('/');
+                if(path == 'contact' || path == 'profile'){
+                    return true
+                } else {
+                    console.log(JSON.stringify(res.locals.user))
+                    if(res.locals.user.profileAcceptable) {
+                        return true
+                    } else {
+                        res.redirect('/' + res.locals.lang + '/contact')
+                    }
+                }
             }
-
         }
 
         res.locals.showFeedback = true
@@ -154,7 +170,8 @@ express()
                         id: parseInt(req.signedCookies.auth_id, 10),
                         token: req.signedCookies.auth_token,
                         picture: op.get(user, 'picture'),
-                        lang: op.get(user, 'person.language.values.0.value', APP_DEFAULT_LOCALE)
+                        lang: op.get(user, 'person.language.values.0.value', APP_DEFAULT_LOCALE),
+                        profileAcceptable: isProfileAcceptable(user)
                     }
                 } else {
                     res.clearCookie('auth_id')
@@ -175,6 +192,7 @@ express()
     .use('/:lang/help',     require('./routes/help'))
     .use('/:lang/messages', require('./routes/messages'))
     .use('/:lang/profile',  require('./routes/profile'))
+    .use('/:lang/contact',  require('./routes/contact'))
     .use('/:lang/signin',   require('./routes/signin'))
     .use('/:lang/users',    require('./routes/users'))
     .use('/:lang/tr',       require('./routes/tr'))

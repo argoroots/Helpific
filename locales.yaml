@@ -1982,6 +1982,10 @@ pages:
             nl: Translations
             ru: Translations
             zh: 翻译
+    update-contact:
+        title:
+            en: Please update your contact details
+            et: Palun uuenda oma kontakt andmed
     user:
         about-me-tab:
             cs: O mně
