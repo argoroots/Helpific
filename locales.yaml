@@ -498,7 +498,7 @@ nav:
         et: MTÜ informatsioon
         fi: nav.ngo-info
         fr: nav.ngo-info
-        hu: nav.ngo-info
+        hu: Szervezeti információ
         it: nav.ngo-info
         ja: nav.ngo-info
         ko: nav.ngo-info
@@ -522,6 +522,7 @@ nav:
     pad:
         en: Positive Attitude Development
         et: Positiivse Suhtumise Arendamine
+        hu: Pozitív Attitüd Fejlesztése
         ru: Развитие позитивного отношения
     partners:
         cs: 'Partneři '
@@ -1902,6 +1903,7 @@ pages:
             et: Logi sisse Facebooki kaudu
             fi: Kirjaudu sisään Facebookin kautta
             fr: Connection par Facebook
+            hu: Bejelentkezés a Facebook segítségével
             ru: Войти через Facebook
         google:
             cs: Připojit přes Google+
@@ -1909,6 +1911,7 @@ pages:
             et: Logi sisse Google plussi kaudu
             fi: Kirjaudu sisään Google plussan kautta
             fr: Connection avec Google plus
+            hu: Bejelentkezés a Google plus segítségével
             ru: Войти через Google Plus
         terms:
             cs: '* Registrací, přijímáte podmínky požívání <a href="terms"> a zásady ochrany soukromí </a>'
@@ -1975,7 +1978,7 @@ pages:
             et: Translations
             fi: Translations
             fr: Traductions
-            hu: Translations
+            hu: Fordítások
             it: Translations
             ja: Translations
             ko: Translations
@@ -1985,7 +1988,8 @@ pages:
     update-contact:
         title:
             en: Please update your contact details
-            et: Palun uuenda oma kontakt andmed
+            et: Palun uuendge oma kontaktandmeid
+            hu: Kérlek add meg az elérhetőségeidet
     user:
         about-me-tab:
             cs: O mně
