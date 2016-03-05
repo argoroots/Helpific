@@ -31,6 +31,21 @@ script.
             }
         })
     })
+    $(window).load(function(){
+        $("input").each(function () {
+            var input = $(this)
+            var label = $('label[for="'+$(this).attr('id')+'"]');
+
+            input.removeClass('border-red-important')
+            label.removeClass('color-red')
+            if (input.attr('required') && input.val() == '') {
+                input.addClass('border-red-important')
+                label.addClass('color-red')
+            }
+        });
+    })
+
+
     $('input').blur(function () {
         input = $(this)
         if (input.data('value') != input.val()) {
