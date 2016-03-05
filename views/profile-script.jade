@@ -47,11 +47,15 @@ script.
 
 
     $('input').blur(function () {
-        input = $(this)
+        var input = $(this)
+        var label = $('label[for="'+$(this).attr('id')+'"]');
+
         if (input.data('value') != input.val()) {
             input.removeClass('border-red-important')
+            label.removeClass('color-red')
             if (input.attr('required') && input.val() == '') {
                 input.addClass('border-red-important')
+                label.addClass('color-red')
                 return
             }
             var postdata = {
