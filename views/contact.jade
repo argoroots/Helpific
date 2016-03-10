@@ -39,4 +39,17 @@ block content
 
             .row.spacer
 
+            .row.text-center
+                button#saveBtn.btn.btn-success= t('pages.profile.save-btn')
+
+            .row.spacer
+
         include ./profile-script
+        script.
+            $('#saveBtn').click(function (e) {
+                e.preventDefault();
+                $.smkAlert({
+                    text: 'Saved',
+                    type: 'success'
+                });
+            });
