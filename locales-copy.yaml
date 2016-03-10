@@ -7,6 +7,7 @@ feedback:
         fi: 'https://helpific.entu.ee/entity/feedback/%s'
         fr: 'https://helpific.entu.ee/entity/feedback/%s'
         hu: 'https://helpific.entu.ee/entity/feedback/%s'
+        id: 'https://helpific.entu.ee/entity/feedback/%s'
         it: 'https://helpific.entu.ee/entity/feedback/%s'
         ja: 'https://helpific.entu.ee/entity/feedback/%s'
         ko: 'https://helpific.entu.ee/entity/feedback/%s'
@@ -21,6 +22,7 @@ feedback:
         fi: Lisää uusi palaute
         fr: Derniers commentaires
         hu: 'Új visszajelzés '
+        id: 'https://helpific.entu.ee/entity/feedback/%s'
         it: Nuovo feedback aggiunto
         ja: 新着フィードバック
         ko: 새 피드백 추가하기
@@ -143,6 +145,7 @@ footer:
         zh: '<strong>HELPIFIC MTÜ</strong><br> <small>    Reg nr: 80380146<br>    银行账号: EE102200221061303677<br>    SWIFT/BIC: HABAEE2X (SWEDBANK AS)<br>    <a href="mailto:info@helpific.com">info@helpific.com</a></small>'
 help:
     admin-email-message:
+        cs: 'https://helpific.com/et/help/%s'
         de: 'https://helpific.com/et/help/%s'
         en: 'https://helpific.com/et/help/%s'
         et: 'https://helpific.com/et/help/%s'
@@ -379,7 +382,7 @@ message:
         zh: helpific.com上的新消息
 nav:
     about:
-        cs: O nás.
+        cs: O nás
         de: Über uns
         en: About
         et: Meist
@@ -520,10 +523,18 @@ nav:
         ru: Предложения
         zh: 提供帮助
     pad:
+        cs: nav.pad
+        de: nav.pad
         en: Positive Attitude Development
         et: Positiivse Suhtumise Arendamine
+        fi: nav.pad
+        fr: nav.pad
         hu: Pozitív Attitüd Fejlesztése
+        it: nav.pad
+        ja: nav.pad
+        ko: nav.pad
         ru: Развитие позитивного отношения
+        zh: nav.pad
     partners:
         cs: 'Partneři '
         de: Partner
@@ -613,6 +624,7 @@ nav:
         de: Zum Menü
         en: Toggle navigation
         et: Ava menüü
+        fi: nav.toggle-navigation
         fr: Menu
         hu: Visszalépés a menübe
         it: Menù
@@ -773,6 +785,7 @@ pages:
             zh: 服务费用（当地货币）（可选）
         offer-price-list:
             cs: 'Cena '
+            de: Preis
             en: Service price
             et: Teenuse hind
             fi: Palvelun hinta
@@ -1138,7 +1151,7 @@ pages:
             zh: 用Facebook或Google账号登陆
         bullet-2:
             cs: Povězte nám co umíte nebo s čím potřebujete pomoci
-            de: 'Lass Sie uns wissen, was Sie können oder brauchen.'
+            de: 'Lassen Sie uns wissen, was Sie können oder brauchen.'
             en: Let us know what you can do or need
             et: Anna teada kuidas saad aidata või mida vajad
             fi: Kerro meille mitä voit tehdä tai tarvitset
@@ -1435,6 +1448,19 @@ pages:
             nl: Nieuwe verzoek toevoegen
             ru: Добавить новую просьбу
             zh: 添加新的请求
+        additional-info-title:
+            cs: pages.profile.additional-info-title
+            de: pages.profile.additional-info-title
+            en: ADDITIONAL INFORMATION
+            et: pages.profile.additional-info-title
+            fi: pages.profile.additional-info-title
+            fr: pages.profile.additional-info-title
+            hu: pages.profile.additional-info-title
+            it: pages.profile.additional-info-title
+            ja: pages.profile.additional-info-title
+            ko: pages.profile.additional-info-title
+            ru: pages.profile.additional-info-title
+            zh: pages.profile.additional-info-title
         address:
             cs: Adresa
             de: Adresse
@@ -1463,6 +1489,19 @@ pages:
             nl: Bijv. Joseph Hollmanstraat 30
             ru: 'напр., Тартуское шоссе, 1'
             zh: 比如，福田区深南大道2012号
+        address-text:
+            cs: pages.profile.address-text
+            de: pages.profile.address-text
+            en: 'In case you are seeking for help normally at the same address, you can type it in here, to save you time later. We will not share it public.'
+            et: pages.profile.address-text
+            fi: pages.profile.address-text
+            fr: pages.profile.address-text
+            hu: pages.profile.address-text
+            it: pages.profile.address-text
+            ja: pages.profile.address-text
+            ko: pages.profile.address-text
+            ru: pages.profile.address-text
+            zh: pages.profile.address-text
         city:
             cs: Město
             de: Stadt
@@ -1588,6 +1627,32 @@ pages:
             nl: 'Bijv, Jan@hotmail.com'
             ru: 'напр., ivan@mail.ru'
             zh: 比如，zhb1995824@163.com
+        email-text:
+            cs: pages.profile.email-text
+            de: pages.profile.email-text
+            en: 'We will not share your contacts with anyone unless you tell us so. Your contacts will be used only if we need to let you know something important, or to say thank you!'
+            et: pages.profile.email-text
+            fi: pages.profile.email-text
+            fr: pages.profile.email-text
+            hu: pages.profile.email-text
+            it: pages.profile.email-text
+            ja: pages.profile.email-text
+            ko: pages.profile.email-text
+            ru: pages.profile.email-text
+            zh: pages.profile.email-text
+        first-second-name-text:
+            cs: pages.profile.first-second-name-text
+            de: pages.profile.first-second-name-text
+            en: 'We will only use your first name when displaying posts, but knowing your full name will help us creata a safer platform'
+            et: pages.profile.first-second-name-text
+            fi: pages.profile.first-second-name-text
+            fr: pages.profile.first-second-name-text
+            hu: pages.profile.first-second-name-text
+            it: pages.profile.first-second-name-text
+            ja: pages.profile.first-second-name-text
+            ko: pages.profile.first-second-name-text
+            ru: pages.profile.first-second-name-text
+            zh: pages.profile.first-second-name-text
         forename:
             cs: Jméno
             de: Vorname
@@ -1630,6 +1695,32 @@ pages:
             nl: Taal
             ru: Язык
             zh: 语言
+        location-text:
+            cs: pages.profile.location-text
+            de: pages.profile.location-text
+            en: Knowing where you are located helps us connect people faster
+            et: pages.profile.location-text
+            fi: pages.profile.location-text
+            fr: pages.profile.location-text
+            hu: pages.profile.location-text
+            it: pages.profile.location-text
+            ja: pages.profile.location-text
+            ko: pages.profile.location-text
+            ru: pages.profile.location-text
+            zh: pages.profile.location-text
+        main-info-title:
+            cs: pages.profile.main-info-title
+            de: pages.profile.main-info-title
+            en: MAIN INFORMATION
+            et: pages.profile.main-info-title
+            fi: pages.profile.main-info-title
+            fr: pages.profile.main-info-title
+            hu: pages.profile.main-info-title
+            it: pages.profile.main-info-title
+            ja: pages.profile.main-info-title
+            ko: pages.profile.main-info-title
+            ru: pages.profile.main-info-title
+            zh: pages.profile.main-info-title
         markdown-info:
             cs: 'Pro formátování textu použijte <a href="https://en.wikipedia.org/wiki/Markdown#Example" target="_blank">markdown</a>'
             de: 'Design verwenden <a href="https://en.wikipedia.org/wiki/Markdown#Example" target="_blank">markdown</a> um deinen Text zu gestalten'
@@ -1728,6 +1819,19 @@ pages:
             nl: Profielfoto
             ru: Фотография профиля
             zh: 头像
+        photo-text:
+            cs: pages.profile.photo-text
+            de: pages.profile.photo-text
+            en: "<strong>Profile picture</strong> makes your profile a lot more trustworthy. Wouldn't you want to know who the person is, who you will help you or who you are going to help?"
+            et: pages.profile.photo-text
+            fi: pages.profile.photo-text
+            fr: pages.profile.photo-text
+            hu: pages.profile.photo-text
+            it: pages.profile.photo-text
+            ja: pages.profile.photo-text
+            ko: pages.profile.photo-text
+            ru: pages.profile.photo-text
+            zh: pages.profile.photo-text
         photo-upload:
             cs: '%nahráno'
             de: '{{ photoUploadPercent }}% hochladen...'
@@ -1742,6 +1846,19 @@ pages:
             nl: '{{ photoUploadPercent }}% geupload'
             ru: '{{ photoUploadPercent }}% загружено...'
             zh: '{{ photoUploadPercent }}% 上传中......'
+        save-btn:
+            cs: pages.profile.save-btn
+            de: pages.profile.save-btn
+            en: Save profile
+            et: pages.profile.save-btn
+            fi: pages.profile.save-btn
+            fr: pages.profile.save-btn
+            hu: pages.profile.save-btn
+            it: pages.profile.save-btn
+            ja: pages.profile.save-btn
+            ko: pages.profile.save-btn
+            ru: pages.profile.save-btn
+            zh: pages.profile.save-btn
         save-info:
             cs: Informace na vašem profilu se ukládají automaticky
             de: Deine Profilinformationen werden automatisch gespeichert.
@@ -1854,6 +1971,19 @@ pages:
             nl: 'Bijv. https://www.youtube.com/watch?v=QH2-TGUlwu4'
             ru: 'напр., https://www.youtube.com/watch?v=QH2-TGUlwu4'
             zh: '比如，https://www.youtube.com/watch?v=QH2-TGUlwu4'
+        visibility-text:
+            cs: pages.profile.visibility-text
+            de: pages.profile.visibility-text
+            en: 'This information will be visible to other logged in users!  Please let us all know a little more about you.'
+            et: pages.profile.visibility-text
+            fi: pages.profile.visibility-text
+            fr: pages.profile.visibility-text
+            hu: pages.profile.visibility-text
+            it: pages.profile.visibility-text
+            ja: pages.profile.visibility-text
+            ko: pages.profile.visibility-text
+            ru: pages.profile.visibility-text
+            zh: pages.profile.visibility-text
         you-help-me-tab:
             cs: 'Potřebuji pomoci '
             de: Ich brauche Hilfe
@@ -1904,6 +2034,7 @@ pages:
             fi: Kirjaudu sisään Facebookin kautta
             fr: Connection par Facebook
             hu: Bejelentkezés a Facebook segítségével
+            it: pages.sign-in.facebook
             ru: Войти через Facebook
         google:
             cs: Připojit přes Google+
@@ -1912,6 +2043,7 @@ pages:
             fi: Kirjaudu sisään Google plussan kautta
             fr: Connection avec Google plus
             hu: Bejelentkezés a Google plus segítségével
+            it: pages.sign-in.google
             ru: Войти через Google Plus
         terms:
             cs: '* Registrací, přijímáte podmínky požívání <a href="terms"> a zásady ochrany soukromí </a>'
@@ -1988,7 +2120,7 @@ pages:
     update-contact:
         title:
             en: Please update your contact details
-            et: Palun uuendge oma kontaktandmeid
+            et: Palun uuendage oma kontaktandmeid
             hu: Kérlek add meg az elérhetőségeidet
     user:
         about-me-tab:
