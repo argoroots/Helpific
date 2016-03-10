@@ -7,6 +7,7 @@ feedback:
         fi: 'https://helpific.entu.ee/entity/feedback/%s'
         fr: 'https://helpific.entu.ee/entity/feedback/%s'
         hu: 'https://helpific.entu.ee/entity/feedback/%s'
+        id: 'https://helpific.entu.ee/entity/feedback/%s'
         it: 'https://helpific.entu.ee/entity/feedback/%s'
         ja: 'https://helpific.entu.ee/entity/feedback/%s'
         ko: 'https://helpific.entu.ee/entity/feedback/%s'
@@ -21,6 +22,7 @@ feedback:
         fi: Lisää uusi palaute
         fr: Derniers commentaires
         hu: 'Új visszajelzés '
+        id: 'https://helpific.entu.ee/entity/feedback/%s'
         it: Nuovo feedback aggiunto
         ja: 新着フィードバック
         ko: 새 피드백 추가하기
@@ -143,6 +145,7 @@ footer:
         zh: '<strong>HELPIFIC MTÜ</strong><br> <small>    Reg nr: 80380146<br>    银行账号: EE102200221061303677<br>    SWIFT/BIC: HABAEE2X (SWEDBANK AS)<br>    <a href="mailto:info@helpific.com">info@helpific.com</a></small>'
 help:
     admin-email-message:
+        cs: 'https://helpific.com/et/help/%s'
         de: 'https://helpific.com/et/help/%s'
         en: 'https://helpific.com/et/help/%s'
         et: 'https://helpific.com/et/help/%s'
@@ -379,7 +382,7 @@ message:
         zh: helpific.com上的新消息
 nav:
     about:
-        cs: O nás.
+        cs: O nás
         de: Über uns
         en: About
         et: Meist
@@ -782,6 +785,7 @@ pages:
             zh: 服务费用（当地货币）（可选）
         offer-price-list:
             cs: 'Cena '
+            de: Preis
             en: Service price
             et: Teenuse hind
             fi: Palvelun hinta
@@ -1147,7 +1151,7 @@ pages:
             zh: 用Facebook或Google账号登陆
         bullet-2:
             cs: Povězte nám co umíte nebo s čím potřebujete pomoci
-            de: 'Lass Sie uns wissen, was Sie können oder brauchen.'
+            de: 'Lassen Sie uns wissen, was Sie können oder brauchen.'
             en: Let us know what you can do or need
             et: Anna teada kuidas saad aidata või mida vajad
             fi: Kerro meille mitä voit tehdä tai tarvitset
@@ -2116,7 +2120,7 @@ pages:
     update-contact:
         title:
             en: Please update your contact details
-            et: Palun uuendge oma kontaktandmeid
+            et: Palun uuendage oma kontaktandmeid
             hu: Kérlek add meg az elérhetőségeidet
     user:
         about-me-tab:
