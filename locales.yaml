@@ -1452,14 +1452,14 @@ pages:
             cs: pages.profile.additional-info-title
             de: pages.profile.additional-info-title
             en: ADDITIONAL INFORMATION
-            et: pages.profile.additional-info-title
+            et: LISAINFORMATSIOON
             fi: pages.profile.additional-info-title
             fr: pages.profile.additional-info-title
             hu: pages.profile.additional-info-title
             it: pages.profile.additional-info-title
             ja: pages.profile.additional-info-title
             ko: pages.profile.additional-info-title
-            ru: pages.profile.additional-info-title
+            ru: ДОПОЛНИТЕЛЬНАЯ ИНФОРМАЦИЯ
             zh: pages.profile.additional-info-title
         address:
             cs: Adresa
@@ -1699,27 +1699,27 @@ pages:
             cs: pages.profile.location-text
             de: pages.profile.location-text
             en: Knowing where you are located helps us connect people faster
-            et: pages.profile.location-text
+            et: 'Kui teame sinu asukohta, siis saame kiiremini ühendada inimesi'
             fi: pages.profile.location-text
             fr: pages.profile.location-text
             hu: pages.profile.location-text
             it: pages.profile.location-text
             ja: pages.profile.location-text
             ko: pages.profile.location-text
-            ru: pages.profile.location-text
+            ru: 'Если мы будем знать твое месторасположение, то сможем быстрее и качественнее находить людям помощь'
             zh: pages.profile.location-text
         main-info-title:
             cs: pages.profile.main-info-title
             de: pages.profile.main-info-title
             en: MAIN INFORMATION
-            et: pages.profile.main-info-title
+            et: PÕHIINFORMATSIOON
             fi: pages.profile.main-info-title
             fr: pages.profile.main-info-title
             hu: pages.profile.main-info-title
             it: pages.profile.main-info-title
             ja: pages.profile.main-info-title
             ko: pages.profile.main-info-title
-            ru: pages.profile.main-info-title
+            ru: ОСНОВНАЯ ИНФОРМАЦИЯ
             zh: pages.profile.main-info-title
         markdown-info:
             cs: 'Pro formátování textu použijte <a href="https://en.wikipedia.org/wiki/Markdown#Example" target="_blank">markdown</a>'
@@ -1850,14 +1850,14 @@ pages:
             cs: pages.profile.save-btn
             de: pages.profile.save-btn
             en: Save profile
-            et: pages.profile.save-btn
+            et: Salvesta profiil
             fi: pages.profile.save-btn
             fr: pages.profile.save-btn
             hu: pages.profile.save-btn
             it: pages.profile.save-btn
             ja: pages.profile.save-btn
             ko: pages.profile.save-btn
-            ru: pages.profile.save-btn
+            ru: Сохрани профиль
             zh: pages.profile.save-btn
         save-info:
             cs: Informace na vašem profilu se ukládají automaticky
@@ -1871,7 +1871,7 @@ pages:
             ja: プロフィールの情報は自動的に保存されます。
             ko: 프로필 정보는 자동저장 됩니다.
             nl: Uw profiel informatie wordt automatisch opgeslagen
-            ru: pages.profile.save-info
+            ru: Информация твоего профиля сохраняется автоматически
             zh: 你的信息已自动保存
         slogan:
             cs: Slogan
@@ -1975,14 +1975,14 @@ pages:
             cs: pages.profile.visibility-text
             de: pages.profile.visibility-text
             en: 'This information will be visible to other logged in users!  Please let us all know a little more about you.'
-            et: pages.profile.visibility-text
+            et: 'See informatsioon on nähtav teistele sisselogitud kasutajatele! Palun, kirjuta natuke rohkem informatsiooni endast.'
             fi: pages.profile.visibility-text
             fr: pages.profile.visibility-text
             hu: pages.profile.visibility-text
             it: pages.profile.visibility-text
             ja: pages.profile.visibility-text
             ko: pages.profile.visibility-text
-            ru: pages.profile.visibility-text
+            ru: 'Эта информация будет видна другим пользователям! Пожалуйста, расскажи о себе больше.'
             zh: pages.profile.visibility-text
         you-help-me-tab:
             cs: 'Potřebuji pomoci '
@@ -2122,6 +2122,7 @@ pages:
             en: Please update your contact details
             et: Palun uuendage oma kontaktandmeid
             hu: Kérlek add meg az elérhetőségeidet
+            ru: 'Пожалуйста, обнови свои контактные данные'
     user:
         about-me-tab:
             cs: O mně
