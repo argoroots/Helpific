@@ -1,0 +1,55 @@
+extends layout
+block vars
+    - title = t('pages.update-contact.title')
+
+block content
+    .container
+        form#profile-form
+            .row
+                .col-sm-8.col-sm-offset-2
+                    .form-group
+                        label.control-label(ng-class='{ "active": p.forename.edit }', for='forename')= ('*' + t('pages.profile.forename'))
+                        input#forename.form-control(type='text', placeholder=t('pages.profile.forename-ph'),
+                        value=profile.get('forename.value'), data-value=profile.get('forename.value'),
+                        data-id=profile.get('forename.id'), ng-focus='p.forename.edit = true', ng-blur='p.forename.edit = false', ng-required='true', required)
+                .col-sm-8.col-sm-offset-2
+                    .form-group
+                        label.control-label(ng-class='{ "active": p.surname.edit }', for='surname')= t('pages.profile.surname')
+                        input#surname.form-control(type='text', placeholder=t('pages.profile.surname-ph'),
+                        value=profile.get('surname.value'), data-value=profile.get('surname.value'),
+                        data-id=profile.get('surname.id'), ng-focus='p.surname.edit = true', ng-blur='p.surname.edit = false')
+                .col-sm-8.col-sm-offset-2
+                    .form-group
+                        label.control-label(ng-class='{ "active": p.email.edit }', for='email')= ('*' + t('pages.profile.email'))
+                        input#email.form-control(type='email', placeholder=t('pages.profile.email-ph'),
+                        value=profile.get('email.value'), data-value=profile.get('email.value'),
+                        data-id=profile.get('email.id'), ng-focus='p.email.edit = true', ng-blur='p.email.edit = false', ng-required='true', required)
+                .col-sm-8.col-sm-offset-2
+                    .form-group
+                        label.control-label(ng-class='{ "active": p.town.edit }', for='town')= ('*' + t('pages.profile.city'))
+                        input#town.form-control(type='text', placeholder=t('pages.profile.city-ph'),
+                        value=profile.get('town.value'), data-value=profile.get('town.value'),
+                        data-id=profile.get('town.id'), ng-focus='p.town.edit = true', ng-blur='p.town.edit = false', ng-required='true', required)
+                .col-sm-8.col-sm-offset-2
+                    .form-group
+                        label.control-label(ng-class='{ "active": p.country.edit }', for='country')= ('*' + t('pages.profile.country'))
+                        input#country.form-control(type='text', placeholder=t('pages.profile.country-ph'),
+                        value=profile.get('country.value'), data-value=profile.get('country.value'),
+                        data-id=profile.get('country.id'), ng-focus='p.country.edit = true', ng-blur='p.country.edit = false', ng-required='true', required)
+
+            .row.spacer
+
+            .row.text-center
+                button#saveBtn.btn.btn-success= t('pages.profile.save-btn')
+
+            .row.spacer
+
+        include ./profile-script
+        script.
+            $('#saveBtn').click(function (e) {
+                e.preventDefault();
+                $.smkAlert({
+                    text: 'Saved',
+                    type: 'success'
+                });
+            });

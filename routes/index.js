@@ -117,6 +117,16 @@ router.get('/bb', function(req, res) {
 
 })
 
+router.get('/pad-konkurss', function(req, res) {
+    var template = 'pad-konkurss.' + res.locals.lang + '.jade'
+    if(isTemplateExists(template)){
+        res.render(template)
+    } else {
+        res.render('pad-konkurss.et.jade')
+    }
+
+})
+
 
 router.get('/pad', function(req, res) {
     var template = 'pad.' + res.locals.lang + '.jade'
