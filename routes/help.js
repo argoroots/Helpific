@@ -151,6 +151,7 @@ router.post('/', function(req, res, next) {
 
     if(core_api.active){
         properties.time = moment(Date.now()).format('YYYY-MM-DDTHH:mm:ss.SSSZ')
+        properties.status = 'active'
     } else {
         properties.time = moment(Date.now()).format('YYYY-MM-DD HH:mm')
     }

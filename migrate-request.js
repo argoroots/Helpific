@@ -87,7 +87,7 @@ function migrateRequest(p1, callback) {
                     properties.country = p1.get('country.value')
                     properties.category = p1.get('category.value')
                     properties.status = p1.get('status.value')
-                    properties.personId = result[0].get('genId')
+                    properties.person = result[0].get('genId')
                     properties.entuId = requestId
 
                     core_api.add({

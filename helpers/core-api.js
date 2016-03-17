@@ -458,7 +458,7 @@ exports.add = function(params, callback) {
         data.category = ''
         data.status = preparedData['request-status']
         data.entuId = preparedData['request-entuId']
-        data.person = {id: preparedData['request-personId']}
+        data.person = {id: preparedData['request-person']}
     } else if (params.definition == 'feedback') {
         repository = '/api/feedbacks'
 
