@@ -444,6 +444,8 @@ exports.getUser = function(params, callback) {
             if(error) return callback(error)
             if(response.statusCode !== 200 || !body.result) return callback(new Error(op.get(body, 'error', body)))
 
+            log.debug(JSON.stringify(body))
+
             callback(null, op.get(body, 'result', null))
         })
     }

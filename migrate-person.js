@@ -28,7 +28,7 @@ var entu    = require('./helpers/entu')
 core_api.active = false
 
 
-for(page = 1; page < 200; page++){
+for(page = 1; page < 300; page++){
     migratePesonsBathc(page, function(data){
         log.debug(data)
     })
