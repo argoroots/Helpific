@@ -85,7 +85,11 @@ var ravenClient = new raven.Client({
 
 // start express app
 function isProfileAcceptable(user) {
-    return (op.get(user, 'person.properties.forename.values.0.value', '').length > 0 &&
+    return (op.get(user, 'person.properties.forename.values.0.value', '') != null &&
+    op.get(user, 'person.properties.email.values.0.value', '') != null &&
+    op.get(user, 'person.properties.town.values.0.value', '') != null &&
+    op.get(user, 'person.properties.country.values.0.value', '') != null &&
+    op.get(user, 'person.properties.forename.values.0.value', '').length > 0 &&
     op.get(user, 'person.properties.email.values.0.value', '').length > 0 &&
     op.get(user, 'person.properties.town.values.0.value', '').length > 0 &&
     op.get(user, 'person.properties.country.values.0.value', '').length > 0);
@@ -150,7 +154,9 @@ express()
                 res.redirect('/' + res.locals.lang + '/signin')
                 return false
             } else {
+
                 var path = res.locals.path.split('/').slice(2).join('/');
+                log.debug('path = ' + path)
                 if(path == 'contact' || path == 'profile'){
                     return true
                 } else {

@@ -9,7 +9,11 @@ var entu   = require('../helpers/entu')
 router.get('/', function(req, res, next) {
     if (!res.authenticate()) return
 
+    log.debug('res.locals.user.id' + res.locals.user.id)
+    log.debug('res.locals.user.token' + res.locals.user.token)
+
     entu.getEntity({
+        definition: 'person',
         id: res.locals.user.id,
         auth_id: res.locals.user.id,
         auth_token: res.locals.user.token

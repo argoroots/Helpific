@@ -610,7 +610,29 @@ exports.getUser = function(params, callback) {
 
         log.debug(JSON.stringify(body))
 
-        callback(null, op.get(body, 'result', null))
+        var user = {
+            person: {
+                language: {
+                    values: [{value: op.get(body, 'result.language', '')}]
+                } ,
+                properties: {
+                    forename: {
+                        values: [{value: op.get(body, 'result.forename', '')}]
+                    } ,
+                    email: {
+                        values: [{value: op.get(body, 'result.email', '')}]
+                    },
+                    town: {
+                        values: [{value: op.get(body, 'result.town', '')}]
+                    },
+                    country: {
+                        values: [{value: op.get(body, 'result.country', '')}]
+                    }
+                }
+            }
+        }
+
+        callback(null, user)
     })
 }
 
