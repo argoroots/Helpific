@@ -496,18 +496,18 @@ nav:
             zh: 注销
     ngo-info:
         cs: Informace o neziskové organizaci
-        de: nav.ngo-info
+        de: NGO Informationen
         en: NGO information
         et: MTÜ informatsioon
-        fi: nav.ngo-info
+        fi: Kansalaisjärjestöinformaatio
         fr: nav.ngo-info
         hu: Szervezeti információ
         it: nav.ngo-info
         ja: nav.ngo-info
         ko: nav.ngo-info
         nl: nav.ngo-info
-        ru: nav.ngo-info
-        zh: nav.ngo-info
+        ru: Информация недоходного объединения
+        zh: 非政府组织信息
     offers:
         cs: Nabídky
         de: Angebote
@@ -524,17 +524,17 @@ nav:
         zh: 提供帮助
     pad:
         cs: nav.pad
-        de: nav.pad
+        de: ' Entwicklung einer Positiven Einstellung'
         en: Positive Attitude Development
         et: Positiivse Suhtumise Arendamine
-        fi: nav.pad
+        fi: Positiivisen Asenteen Kehittäminen
         fr: nav.pad
         hu: Pozitív Attitüd Fejlesztése
         it: nav.pad
         ja: nav.pad
         ko: nav.pad
-        ru: Развитие позитивного отношения
-        zh: nav.pad
+        ru: Позитивное Развитие Отношений
+        zh: 积极的态度发展
     partners:
         cs: 'Partneři '
         de: Partner
@@ -624,7 +624,7 @@ nav:
         de: Zum Menü
         en: Toggle navigation
         et: Ava menüü
-        fi: nav.toggle-navigation
+        fi: Valikon avaaminen
         fr: Menu
         hu: Visszalépés a menübe
         it: Menù
@@ -692,7 +692,7 @@ pages:
             zh: 增加新的请求
         added:
             cs: Přidáno
-            de: pages.help.added
+            de: 'Hinzugefügt am:'
             en: 'Added at:'
             et: 'Lisamise aeg:'
             fi: 'Lisätty ajalla:'
@@ -703,7 +703,7 @@ pages:
             ko: pages.help.added
             nl: 'Toegevoegd op:'
             ru: 'Время добавления:'
-            zh: pages.help.added
+            zh: 添加到
         cancel:
             cs: Zrušit
             de: Löschen
@@ -747,19 +747,19 @@ pages:
             ru: Месторасположение
             zh: 地点
         location-ph:
-            cs: 'Např. Brno, Jihomoravský kraj '
-            de: 'Bsp. Tallinn, Harjumaa'
-            en: 'e.g. Tallinn, Harjumaa'
+            cs: 'pl. Budapest, Pécs'
+            de: 'z.B.: Linz, Oberösterreich'
+            en: 'e.g. London, city of London'
             et: 'näit. Tallinn, Harjumaa'
-            fi: 'esim. Tallinn, Harjumaa'
-            fr: 'ex. Tallinn, Harjumaa'
+            fi: 'esim. Lahti, Päijät-Häme'
+            fr: 'ex. Dauphiné, Grenoble'
             hu: pl. Budapest
             it: 'a Roma, Italia'
             ja: 例：神奈川県横浜市
             ko: '예: 서울, 용산구'
-            nl: 'Bijv. Tallinn, Harjumaa'
-            ru: 'напр., Таллинн'
-            zh: 比如，万科城
+            nl: Bijv.
+            ru: 'К примеру Санкт-Петербург, Ленинградская область'
+            zh: ' 例如：杭州，浙江'
         offer-count:
             cs: "Počet nabídek  <span ng-if='search_query || searchMy'> - nalezeno </span>"
             de: "Insgesamt gibt es {{ (help | filter:{type:type }).length }} Hilfsangebote hier <span ng-if='search_query || search_my'> - found {{ (help | filter:{status:s.status, type:type, my:search_my} | filter:search_query).length }}</span>"
@@ -776,6 +776,7 @@ pages:
             zh: "所有的帮助都在这里 {{ (help | filter:{type:type }).length }} <span ng-if='search_query || searchMy'> - 发现 {{ (help | filter:{status:s.status, type:type, my:search_my} | filter:search_query).length }}</span>"
         offer-price:
             cs: Cena za službu €) (nepovinné)
+            de: Service Preis (€) (freiwillig)
             en: Service price (€) (Optional)
             et: Teenuse hind (€) (Mitte kohustuslik)
             fi: 'Palvelun hinta (€) (Vapaavalintainen) '
@@ -795,6 +796,7 @@ pages:
             zh: 服务费用
         offer-price-ph:
             cs: 'Např. 10 '
+            de: 'z.B.: 10'
             en: e.g. 10
             et: näit. 10
             fi: esim. 10
@@ -817,17 +819,17 @@ pages:
             zh: 帮助
         offer-request-ph:
             cs: Např. jedu do Prahy mám volné místo
-            de: z.B. Nach Nuustaku gehen und einen extra Raum bekommen
-            en: e.g. Will go to Nuustaku and got extra room
-            et: näit. Lähen Nuustakule ja on üks vaba koht
-            fi: esim. Lähde Nuustakuun ja saa lisähuoneen
+            de: 'z.B.: Fahre nach Wien und habe noch Platz in meinem Auto'
+            en: e.g. Will go to London and have extra room in my car
+            et: näit. Lähen Nuustakule ja autos on üks vaba koht
+            fi: 'esim. Menen Lahteen, ja minulla on paikka vapaana autossa'
             fr: "ex. Je vais à Nuustaku et j'ai une place disponible"
             hu: pl. Budapestre megyek van egy szabad hely a kocsimban
             ja: 例：東京駅に行きますが、1人分スペースが余っています。
             ko: '예: 자가용으로 서울에 방문하는데 빈 좌석 2개를 공유할 수 있습니다.'
             nl: 'Bijv. Zal naar Nuustaka gaan en krijg een extra kamer '
-            ru: 'напр., еду на пляж и есть одно свободное место'
-            zh: 比如，我可以去公园帮你遛狗
+            ru: Иду в Эрмитаж и есть один лишний билет
+            zh: 例如：即将要去宾馆，我的车里有额外的空间
         offer-title:
             cs: Nabídky pomoci
             de: Hilfsangebote
@@ -901,7 +903,7 @@ pages:
         request-price:
             cs: Jsem ochoten zaplatit (€) (volitelné)
             en: Agree to pay (€) (Optional)
-            et: Hind olen nõus maksma (€) (Mitte kohustuslik)
+            et: Olen nõus maksma (€) (Mitte kohustuslik)
             fi: Suostun maksamaan hinnan (€) (Valinnainen)
             fr: Accepte de payer (€) (Optionnel)
             hu: Ajánlott ár (€) (Választható)
@@ -909,8 +911,9 @@ pages:
             zh: 愿意支付（当地货币）（可选）
         request-price-list:
             cs: Zaplatit
+            de: 'Stimme zu, um zu zahlen'
             en: Agree to pay
-            et: Hind olen nõus maksma
+            et: Olen nõus maksma
             fi: Suostun maksamaan hinnan
             fr: Accepte de payer
             hu: Ajánlott ár
@@ -1124,7 +1127,7 @@ pages:
             cs: 'Např. 08.02.2016 12:41'
             de: 'z.B. 04.08.2015 02:59'
             en: 'e.g. 04.08.2015 02:59'
-            et: 'näit. 04.08.2015 02:59'
+            et: 'näit. 04.08.2015 16:00'
             fi: 'esim. 04.08.2015 02:59'
             fr: 'ex. 04.08.2015 02:59'
             hu: "Pl. 04.08.2015 02:59'"
@@ -1265,7 +1268,7 @@ pages:
             cs: 'Některé věci je lepší dělat společně!'
             de: 'Gemeinsam ist es einfach!'
             en: "Isn't it easier together?"
-            et: 'Koos on ju lihtsam!'
+            et: 'Koos on lihtsam!'
             fi: Eikö yhdessä ole helpompaa?
             fr: "N'est ce pas plus simple ensemble?"
             hu: 'Együtt sokkal könnyebb!'
@@ -1449,18 +1452,18 @@ pages:
             ru: Добавить новую просьбу
             zh: 添加新的请求
         additional-info-title:
-            cs: pages.profile.additional-info-title
-            de: pages.profile.additional-info-title
+            cs: DALŠÍ INFORMACE
+            de: Zusätzliche Informationen
             en: ADDITIONAL INFORMATION
             et: LISAINFORMATSIOON
-            fi: pages.profile.additional-info-title
-            fr: pages.profile.additional-info-title
-            hu: pages.profile.additional-info-title
-            it: pages.profile.additional-info-title
+            fi: Lisätiedot
+            fr: Information complémentaire
+            hu: További információk
+            it: INFORMAZIONI ADDIZIONALI
             ja: pages.profile.additional-info-title
             ko: pages.profile.additional-info-title
             ru: ДОПОЛНИТЕЛЬНАЯ ИНФОРМАЦИЯ
-            zh: pages.profile.additional-info-title
+            zh: 附加信息
         address:
             cs: Adresa
             de: Adresse
@@ -1493,7 +1496,7 @@ pages:
             cs: pages.profile.address-text
             de: pages.profile.address-text
             en: 'In case you are seeking for help normally at the same address, you can type it in here, to save you time later. We will not share it public.'
-            et: pages.profile.address-text
+            et: 'Juhul, kui otsite tavapäraselt abi samal aadressil, võite selle siia kirjutada, et hiljem aega säästa. Me ei avalikusta seda.'
             fi: pages.profile.address-text
             fr: pages.profile.address-text
             hu: pages.profile.address-text
@@ -1578,12 +1581,12 @@ pages:
             en: e.g NY
             et: näit. Harjumaa
             fi: esim. Pirkanmaa
-            fr: ex. Paris
+            fr: ex. Île-de-France
             hu: 'pl: Pest megye'
             it: 'es: MI'
             ja: 例：神奈川県
             ko: '예: 경기도'
-            ru: 'напр., Харьюмаа'
+            ru: 'напр., Ленинградская область'
             zh: 比如，广东省
         delete-photo:
             cs: Odstranit fotku
@@ -1628,31 +1631,31 @@ pages:
             ru: 'напр., ivan@mail.ru'
             zh: 比如，zhb1995824@163.com
         email-text:
-            cs: pages.profile.email-text
-            de: pages.profile.email-text
+            cs: 'Vaše osobní údaje nebudou sdíleny. Využijeme je jen v případě pokud Vám budeme muset sdělit něco velice důležitého, nebo poděkovat.'
+            de: 'Wir werden deine Kontaktdaten mit niemanden teilen, außer du bist damit einverstanden. Dein Kontakt wird nur dazu verwendet, um dir über wichtige Informationen Bescheid zu sagen, oder um Danke zu sagen!'
             en: 'We will not share your contacts with anyone unless you tell us so. Your contacts will be used only if we need to let you know something important, or to say thank you!'
-            et: pages.profile.email-text
-            fi: pages.profile.email-text
+            et: 'Me ei jaga ilma Teie loata Teie kontaktandmeid kellelegi. Kasutame Teie kontaktandmeid ainult juhul, kui peame Teile midagi olulist teatama või et Teid tänada!'
+            fi: 'Emme jaa yhteystietojasi kenenkään kanssa, ellet pyydä meitä tekemään niin. Yhteystietojasi tullaan käyttämään ainoastaan, mikäli meidän tulee tiedottaa sinulle jostakin tärkeästä asiasta tai kiittää sinua!'
             fr: pages.profile.email-text
-            hu: pages.profile.email-text
-            it: pages.profile.email-text
+            hu: 'Az elérhetőségeidet a beleegyezésed nélkül nem osztjuk meg senkivel. Azokat csak abban az esetben használjuk, amikor tájékoztatni szeretnénk téged valamiről vagy köszönetet szeretnénk mondani.'
+            it: 'Non condivideremo il tuo contatto con nessuno, a meno che tu non lo voglia. Il tuo contatto verrà utilizzato solo per farti sapere qualcosa di importante e per ringraziarti.'
             ja: pages.profile.email-text
             ko: pages.profile.email-text
-            ru: pages.profile.email-text
-            zh: pages.profile.email-text
+            ru: Мы не делимся вашими личными данными без вашего разрешения. Используем ваши личные данные только тогда когда хотим сообщить вам что-то важное или поблагодорить вас.
+            zh: 我们不会将公开您的联系方式除非您希望我们这么做。您的联系信息只会用于重要信息通知，或者想对您说谢谢。
         first-second-name-text:
-            cs: pages.profile.first-second-name-text
-            de: pages.profile.first-second-name-text
-            en: 'We will only use your first name when displaying posts, but knowing your full name will help us creata a safer platform'
-            et: pages.profile.first-second-name-text
-            fi: pages.profile.first-second-name-text
-            fr: pages.profile.first-second-name-text
-            hu: pages.profile.first-second-name-text
-            it: pages.profile.first-second-name-text
+            cs: 'U vašich příspěvků, bude zobrazeno jen vaše křestní jméno. Celé jméno pomůže udržovat bezpečí v rámci platformy Helpific.'
+            de: 'Wir werden nur deinen Vornamen verwenden, wenn du etwas schreibst, aber deinen vollständigen Namen zu wissen, hilft uns eine sicherere Plattform zu schaffen.'
+            en: 'We will only use your first name when displaying posts, but knowing your full name will help us creata a safer platform.'
+            et: 'Kasutame postituste tegemisel ainult Teie eesnime, aga täisnime teadmine aitab meil luua turvalisemat platvormi.'
+            fi: Käytämme ainoastaan etunimeäsi näytäessämme postit. Koko nimesi tietäminen auttaa kuitenkin meitä luomaan turvallisemman alustan.
+            fr: Nous utiliserons uniquement votre nom de famille lorsque nous posterons quelque chose mais sachez que votre prénom nous aidera a créer une plateforme plus sécurisée.
+            hu: 'A bejegyzéseidnél csak a keresztneved jelenik majd meg, de nekünk segít ha tudjuk a teljes neved, hogy egy biztonságosabb felületet tudjunk kialakítani.'
+            it: 'Utilizzeremo solo il tuo nome quando mostreremo i posts, ma sapere il tuo cognome ci aiuterà a creare una piattaforma più sicura.'
             ja: pages.profile.first-second-name-text
             ko: pages.profile.first-second-name-text
-            ru: pages.profile.first-second-name-text
-            zh: pages.profile.first-second-name-text
+            ru: 'Используем в объявлениях только ваше имя. Но знание польного имени поможет нам создать более безопастную платформу. '
+            zh: 我们知道您的全名，但显示帖子的时候不会显示您的姓氏，这样有助于建立一个更安全的平台。
         forename:
             cs: Jméno
             de: Vorname
@@ -1682,45 +1685,45 @@ pages:
             ru: 'напр., Иван'
             zh: 比如，小明
         language:
-            cs: Jazyk
-            de: Sprache
-            en: Language
-            et: Keel
-            fi: Kieli
-            fr: Langue
-            hu: Nyelv
-            it: Lingua
+            cs: Výchozí jazyk
+            de: Bevorzugte Sprache
+            en: Preferred language
+            et: Eelistatud keel
+            fi: Ensisijainen kieli
+            fr: Langue préférée
+            hu: Megjelenítési nyelv
+            it: Lingua preferita
             ja: 言語
             ko: 언어
             nl: Taal
-            ru: Язык
-            zh: 语言
+            ru: Язык по умолчанию
+            zh: 首选语言
         location-text:
-            cs: pages.profile.location-text
-            de: pages.profile.location-text
-            en: Knowing where you are located helps us connect people faster
-            et: 'Kui teame sinu asukohta, siis saame kiiremini ühendada inimesi'
-            fi: pages.profile.location-text
-            fr: pages.profile.location-text
-            hu: pages.profile.location-text
-            it: pages.profile.location-text
+            cs: 'Když budeme vědět, kde jste, bude snažší spojit vás s jinými lidmi.'
+            de: 'Zu wissen wo du dich befindest, hilft uns dich schneller mit anderen Personen zu verbinden.'
+            en: Knowing where you are located helps us connect people faster.
+            et: 'Kui teame Teie asukohta, saame inimesi kiiremini kokku viia.'
+            fi: Sijaintisi tietäminen auttaa meitä yhdistämään ihmisiä nopeammin.
+            fr: Savoir ou vous êtes localisé nous aidera a connecter les gens plus rapidement.
+            hu: Ha ismerjük a tartózkodási helyed az segít nekünk összekapcsolni téged másokkal.
+            it: Conoscere la tua posizione ci aiuterà a connetterti più velocemente con le persone.
             ja: pages.profile.location-text
             ko: pages.profile.location-text
-            ru: 'Если мы будем знать твое месторасположение, то сможем быстрее и качественнее находить людям помощь'
-            zh: pages.profile.location-text
+            ru: Если мы знаем ваше место жительство то это поможет нам быстрее связатся с людьми.
+            zh: 了解您的所在位置有益于我们更快的联系他人.
         main-info-title:
-            cs: pages.profile.main-info-title
-            de: pages.profile.main-info-title
+            cs: HLAVNÍ INFORMACE
+            de: Hauptinformationen
             en: MAIN INFORMATION
             et: PÕHIINFORMATSIOON
-            fi: pages.profile.main-info-title
-            fr: pages.profile.main-info-title
-            hu: pages.profile.main-info-title
-            it: pages.profile.main-info-title
+            fi: Pääasialliset tiedot
+            fr: Information principale
+            hu: Főbb adatok
+            it: INFORMAZIONI PRINCIPALI
             ja: pages.profile.main-info-title
             ko: pages.profile.main-info-title
             ru: ОСНОВНАЯ ИНФОРМАЦИЯ
-            zh: pages.profile.main-info-title
+            zh: 主要信息
         markdown-info:
             cs: 'Pro formátování textu použijte <a href="https://en.wikipedia.org/wiki/Markdown#Example" target="_blank">markdown</a>'
             de: 'Design verwenden <a href="https://en.wikipedia.org/wiki/Markdown#Example" target="_blank">markdown</a> um deinen Text zu gestalten'
@@ -1793,18 +1796,24 @@ pages:
             zh: 所有消息
         newsletter:
             cs: Chtěl/chtěla bych dostávat informace o Helpific.
-            de: Ich möchte Neuigkeiten von Helpific erhalten.
-            en: I would like to receive information about Helpific
-            et: Soovin saada Helpificu infot
-            fi: "Haluan saada tietoa Helpfic'stä"
-            fr: "J'aimerais recevoir des informations à propos de Helpific"
-            hu: Feliratkozom a Helpific hírlevelére
-            it: Vorrei ottenere informazioni circa Helpific
+            de: Ich erlaube Helpific mir Newsletter zuzuschicken.
+            en: I allow Helpific to send me newsletter.
+            et: Luban Helpificul saata mulle uudiskirju.
+            fi: Sallin Helpificin lähettää minulle uutiskirjeen.
+            fr: "Autoriser Helpiific a m'envoyer la newsletter."
+            hu: 'Engedélyezem a Helpific-nek, hogy hírlevelet küldjön nekem.'
+            it: Autorizzo Helpific ad inviarmi la newsletter.
             ja: Helpificからの情報配信を希望します。
             ko: Helpfic으로 부터 소식을 받고싶습니다.
             nl: Ik wil graag informatie ontvangen
-            ru: Хочу получать информацию от Helpific
-            zh: 我希望收到关于Helpific的消息
+            ru: Разрешаю присылать мне информационные письма Helpific.
+            zh: 我允许Helpific给我发送订阅邮件.
+        phone:
+            en: Phone
+            et: Telefoni number
+            ru: Телефон
+        phone-ph:
+            ru: pages.profile.phone-ph
         photo:
             cs: Profilová fotka
             de: Profilbild
@@ -1820,18 +1829,19 @@ pages:
             ru: Фотография профиля
             zh: 头像
         photo-text:
-            cs: pages.profile.photo-text
-            de: pages.profile.photo-text
+            cs: '<strong>Profilový obrázek</strong>, dělá váš profil důvěryhodnější. Víte kdo vám pomůže nebo komu budete pomáhat.'
+            de: '<strong>Profilbilder</strong> machen dein Profil viel glaubwürdiger. Würdest du nicht auch gerne wissen wollen, wie die Person aussieht, die dir helfen wird bzw. der du helfen möchtest?'
             en: "<strong>Profile picture</strong> makes your profile a lot more trustworthy. Wouldn't you want to know who the person is, who you will help you or who you are going to help?"
-            et: pages.profile.photo-text
-            fi: pages.profile.photo-text
-            fr: pages.profile.photo-text
-            hu: pages.profile.photo-text
-            it: pages.profile.photo-text
-            ja: pages.profile.photo-text
-            ko: pages.profile.photo-text
-            ru: pages.profile.photo-text
-            zh: pages.profile.photo-text
+            et: '<strong>Profiilipilt</strong> muudab Teie profiili palju usaldusväärsemaks. Kas Te ei sooviks teada, kes on see inimene, kes Teid aitab või keda Teie aitate?'
+            fi: '<strong>Profiilikuva</strong> tekee profiilistasi paljon luotettavamman. Etkö haluaisi tietää, kuka on se henkilö, joka tulee auttamaan Sinua tai jota Sinä tulet auttamaan? '
+            fr: '<strong>Votre photo de profile</strong> aide a vous reconnaitre. Ne voudriez vous pas connaitre la personne a qui vous avez affaire? qui vous allez aider?'
+            hu: '<strong>Profil kép</strong> hozzáadásával a profilod megbízhatóbb benyomást kelt. Te nem szeretnéd tudni ki az az ember, aki segíteni fog neked vagy akinek te fogsz segítséget nyújtani?'
+            it: '<strong>La foto rende il tuo profilo</strong> più credibile e serio. Non ti piacerebbe sapere chi è la persona che aiuterai o che ti aiuterà? '
+            ja: '<strong>Profile picture</strong>'
+            ko: '<strong>Profile picture</strong>'
+            nl: '<strong>Profile picture</strong>'
+            ru: '<strong>Фотография в профиле</strong> сделает вас более доверительным. Вы бы не хотели знать, кто вам помогает или кому помогаете вы?'
+            zh: 上传个人照片会使您的个人资料更可信哦。难道你不想知道你想要帮助或者帮助你的人是谁，长什么样吗?
         photo-upload:
             cs: '%nahráno'
             de: '{{ photoUploadPercent }}% hochladen...'
@@ -1847,18 +1857,18 @@ pages:
             ru: '{{ photoUploadPercent }}% загружено...'
             zh: '{{ photoUploadPercent }}% 上传中......'
         save-btn:
-            cs: pages.profile.save-btn
-            de: pages.profile.save-btn
+            cs: ULOŽIT PROFIL
+            de: Profil sichern
             en: Save profile
             et: Salvesta profiil
-            fi: pages.profile.save-btn
-            fr: pages.profile.save-btn
-            hu: pages.profile.save-btn
-            it: pages.profile.save-btn
+            fi: Tallenna profiili
+            fr: Sauvegarder profile
+            hu: Adatlap mentése
+            it: SALVA PROFILO
             ja: pages.profile.save-btn
             ko: pages.profile.save-btn
             ru: Сохрани профиль
-            zh: pages.profile.save-btn
+            zh: 保存个人资料
         save-info:
             cs: Informace na vašem profilu se ukládají automaticky
             de: Deine Profilinformationen werden automatisch gespeichert.
@@ -1947,7 +1957,7 @@ pages:
             cs: 'Podporujeme <a href="https://youtube.com" target="_blank">YouTube</a>, <a href="https://vimeo.com" target="_blank">Vimeo</a> and <a href="https://wistia.com" target="_blank">Wistia</a> urls'
             de: 'Wir unterstützen nur <a href="https://youtube.com" target="_blank">YouTube</a>, <a href="https://vimeo.com" target="_blank">Vimeo</a> und <a href="https://wistia.com" target="_blank">Wistia</a> urls'
             en: 'we support only <a href="https://youtube.com" target="_blank">YouTube</a>, <a href="https://vimeo.com" target="_blank">Vimeo</a> and <a href="https://wistia.com" target="_blank">Wistia</a> urls'
-            et: 'toetatud on ainult <a href="https://youtube.com" target="_blank">YouTube</a>, <a href="https://vimeo.com" target="_blank">Vimeo</a> ja <a href="https://wistia.com" target="_blank">Wistia</a> viited'
+            et: 'Toetatud on ainult <a href="https://youtube.com" target="_blank">YouTube</a>, <a href="https://vimeo.com" target="_blank">Vimeo</a> ja <a href="https://wistia.com" target="_blank">Wistia</a> viited'
             fi: 'Tuemme vain <a href="https://youtube.com" target="_blank">YouTube</a>, <a href="https://vimeo.com" target="_blank">Vimeo</a> ja <a href="https://wistia.com" target="_blank">Wistia</a> viitteitä'
             fr: 'Nous soutenons seulement <a href="https://youtube.com" target="_blank">YouTube</a>, <a href="https://vimeo.com" target="_blank">Vimeo</a> and <a href="https://wistia.com" target="_blank">Wistia</a> urls'
             hu: 'Jelenleg <a href="https://youtube.com" target="_blank">YouTube</a>, <a href="https://vimeo.com" target="_blank">Vimeo</a> és <a href="https://wistia.com" target="_blank">Wistia</a> videókat tölthetsz fel'
@@ -1960,8 +1970,8 @@ pages:
         video-ph:
             cs: 'Např. https://www.youtube.com/watch?v=QH2-TGUlwu4'
             de: 'z.B. https://www.youtube.com/watch?v=QH2-TGUlwu4'
-            en: 'näit. https://www.youtube.com/watch?v=QH2-TGUlwu4'
-            et: 'e. g. https://www.youtube.com/watch?v=QH2-TGUlwu4'
+            en: 'e.g. https://www.youtube.com/watch?v=QH2-TGUlwu4'
+            et: 'näit. https://www.youtube.com/watch?v=QH2-TGUlwu4'
             fi: 'esim. https://www.youtube.com/watch?v=QH2-TGUlwu4'
             fr: 'ex. https://www.youtube.com/watch?v=QH2-TGUlwu4'
             hu: 'pl.: https://www.youtube.com/watch?v=QH2-TGUlwu4'
@@ -1972,18 +1982,18 @@ pages:
             ru: 'напр., https://www.youtube.com/watch?v=QH2-TGUlwu4'
             zh: '比如，https://www.youtube.com/watch?v=QH2-TGUlwu4'
         visibility-text:
-            cs: pages.profile.visibility-text
-            de: pages.profile.visibility-text
+            cs: 'Tyto informace budou viditelné pro ostatní připojené uživatele. Něco málo nám o sobě napište!'
+            de: 'Diese Information wird für andere User sichtbar sein! Bitte erzähl uns mehr über dich.'
             en: 'This information will be visible to other logged in users!  Please let us all know a little more about you.'
             et: 'See informatsioon on nähtav teistele sisselogitud kasutajatele! Palun, kirjuta natuke rohkem informatsiooni endast.'
-            fi: pages.profile.visibility-text
-            fr: pages.profile.visibility-text
-            hu: pages.profile.visibility-text
-            it: pages.profile.visibility-text
+            fi: 'Tämä tieto tulee näkymään muille kirjautuneille käyttäjille! Kerrothan meille kaikille tässä hieman lisää itsestäsi.'
+            fr: Cette information sera vue uniquement par les utilisateurs connectés.
+            hu: 'Ez az információ látható lesz a többi regisztrált felhasználó számára! Kérünk segíts, hogy picit többet megtudhassunk rólad!'
+            it: 'Queste informazioni saranno visibile agli utenti connessi! Faccia sapere qualcosa di te.'
             ja: pages.profile.visibility-text
             ko: pages.profile.visibility-text
-            ru: 'Эта информация будет видна другим пользователям! Пожалуйста, расскажи о себе больше.'
-            zh: pages.profile.visibility-text
+            ru: Эта информация видна другим пользовательям которые вошли на сайт.
+            zh: 这个信息是对他人可见的！请让我们了解你的更多信息。.
         you-help-me-tab:
             cs: 'Potřebuji pomoci '
             de: Ich brauche Hilfe
@@ -2029,6 +2039,7 @@ pages:
     sign-in:
         facebook:
             cs: Připojit přes Facebook
+            de: Über Facebook anmelden
             en: Login over Facebook
             et: Logi sisse Facebooki kaudu
             fi: Kirjaudu sisään Facebookin kautta
@@ -2036,23 +2047,26 @@ pages:
             hu: Bejelentkezés a Facebook segítségével
             it: pages.sign-in.facebook
             ru: Войти через Facebook
+            zh: 用Facebook登录
         google:
             cs: Připojit přes Google+
+            de: Über Google plus anmelden
             en: Login over Google plus
-            et: Logi sisse Google plussi kaudu
+            et: Logi sisse Google+ kaudu
             fi: Kirjaudu sisään Google plussan kautta
             fr: Connection avec Google plus
             hu: Bejelentkezés a Google plus segítségével
             it: pages.sign-in.google
             ru: Войти через Google Plus
+            zh: 用Google+登录
         terms:
             cs: '* Registrací, přijímáte podmínky požívání <a href="terms"> a zásady ochrany soukromí </a>'
             de: '* Wenn Sie sich anmelden, akzeptieren Sie unsere<a href="terms">Nutungsbedingungen und Datenschutzrichtlinien</a>'
-            en: '* if you sign in, you accept our <a href="terms">terms of use and privacy policy</a>'
-            et: '* sisenedes nõustud meie <a href="terms">kasutaja- ja privaatsustingimustega</a>'
+            en: '* If you sign in, you accept our <a href="terms">terms of use and privacy policy</a>'
+            et: '* Sisenedes nõustud meie <a href="terms">kasutaja- ja privaatsustingimustega</a>'
             fi: '* Jos kirjaudut sisään hyväksyt meidän <a href="terms">käyttö-ja yksityisyyskäyttöehdot</a>'
-            fr: "* si vous vous inscrivez, vous acceptez nos <a href=\"terms\">conditions d'utilisation et notre politique de confidentialité</a>"
-            hu: '* a belépéssel elfogadod a <a href="terms">Felhasználói Feltételeket</a>'
+            fr: "* Si vous vous inscrivez, vous acceptez nos <a href=\"terms\">conditions d'utilisation et notre politique de confidentialité</a>"
+            hu: '* A belépéssel elfogadod a <a href="terms">Felhasználói Feltételeket</a>'
             it: '* Registrandoti, accetti  <a href="terms">terms of use and privacy policy</a>'
             ja: '* ログインするとHelpificの<a href="terms">利用規約とプライバシーポリシー</a>に同意したことになります。'
             ko: '* 로그인시 <a href="terms">우리의 개인정보 보호정책을 사용을 수락하게됩니다.</a>'
@@ -2107,7 +2121,7 @@ pages:
             cs: Překlady
             de: Translations
             en: Translations
-            et: Translations
+            et: Tõlked
             fi: Translations
             fr: Traductions
             hu: Fordítások
@@ -2119,10 +2133,13 @@ pages:
             zh: 翻译
     update-contact:
         title:
+            de: Bitte aktualisiere deine Kontaktinformationen
             en: Please update your contact details
             et: Palun uuendage oma kontaktandmeid
+            fi: 'Päivitä yhteystietosi, kiitos'
             hu: Kérlek add meg az elérhetőségeidet
             ru: 'Пожалуйста, обнови свои контактные данные'
+            zh: 请更新您的详细联系信息
     user:
         about-me-tab:
             cs: O mně
