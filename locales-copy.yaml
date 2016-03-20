@@ -1808,6 +1808,12 @@ pages:
             nl: Ik wil graag informatie ontvangen
             ru: Разрешаю присылать мне информационные письма Helpific.
             zh: 我允许Helpific给我发送订阅邮件.
+        phone:
+            en: Phone
+            et: Telefoni number
+            ru: Телефон
+        phone-ph:
+            ru: pages.profile.phone-ph
         photo:
             cs: Profilová fotka
             de: Profilbild

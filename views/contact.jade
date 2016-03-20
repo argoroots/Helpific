@@ -26,6 +26,12 @@ block content
                         data-id=profile.get('email.id'), ng-focus='p.email.edit = true', ng-blur='p.email.edit = false', ng-required='true', required)
                 .col-sm-8.col-sm-offset-2
                     .form-group
+                        label.control-label(ng-class='{ "active": p.phone.edit }', for='phone')= t('pages.profile.phone')
+                        input#phone.form-control(type='text', placeholder=t('pages.profile.phone-ph'),
+                        value=profile.get('phone.value'), data-value=profile.get('phone.value'),
+                        data-id=profile.get('phone.id'), ng-focus='p.phone.edit = true', ng-blur='p.phone.edit = false')
+                .col-sm-8.col-sm-offset-2
+                    .form-group
                         label.control-label(ng-class='{ "active": p.town.edit }', for='town')= ('*' + t('pages.profile.city'))
                         input#town.form-control(type='text', placeholder=t('pages.profile.city-ph'),
                         value=profile.get('town.value'), data-value=profile.get('town.value'),
