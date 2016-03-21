@@ -1236,6 +1236,10 @@ pages:
             nl: linker deur
             ru: Левая дверь
             zh: 左边的门
+        pad-title:
+            en: Competition in PAD project
+            et: Konkurs PSA projektis
+            ru: Конкурс в проекте Р.П.О
         requests-link:
             cs: Pomozte těm kteří to potřebují
             de: Helfen Sie Menschen in Not
@@ -1322,6 +1326,10 @@ pages:
                 момент у нас {{ info.help }} просьб о помощи и {{ info.users }}
                 активных помощников-добровольцев.</p>
             zh: "<h2>获得帮助从未像现在这样简单</h2> <p>Helpific把志愿者与那些有需要的人联系起来.</p> <p ng-if='info'>现在我们拥有一批乐于奉献，积极进取的志愿者向你提供帮助.</p>"
+        twitter-title:
+            en: Twitter posts
+            et: Postitused Twitteris
+            ru: Сообщения в Twitter
     messages:
         new-message:
             cs: Nová zpráva
@@ -1483,7 +1491,7 @@ pages:
             de: z.B. Leipziger Str. 12
             en: e.g. 767 5th Avenue
             et: e.g. Tartu mnt. 1
-            fi: esim. Tartu mnt. 1
+            fi: esim. Esimerkkitie 8
             fr: ex. 28 rue des Lilas
             hu: pl. Kossuth utca 1.
             it: es. via Roma 13
@@ -1503,7 +1511,7 @@ pages:
             it: pages.profile.address-text
             ja: pages.profile.address-text
             ko: pages.profile.address-text
-            ru: pages.profile.address-text
+            ru: 'Если вы ищите помощь по тому же адресу то можете его сюда написать, что бы потом сэкономить время. Мы не афишируем его.'
             zh: pages.profile.address-text
         city:
             cs: Město

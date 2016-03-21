@@ -13,15 +13,24 @@ block content
     .container(ng-controller='indexCtrl')
         .row.spacer
 
-        .col-md-6.col-xs-12
-            .row
-                .jumbotron.col-xs-12.text-center!= t('pages.index.text')
+            .col-md-6.col-xs-12
+                .row
+                    .jumbotron.col-xs-12.text-center!= t('pages.index.text')
 
-        .col-md-6.col-xs-12
-            .row
-                .jumbotron.col-xs-12.text-center
-                    <a class="twitter-timeline" href="https://twitter.com/Helpific" data-widget-id="670246404569309185" width="520" height="300" data-chrome="nofooter noheader">Tweets by @Helpific</a>
-                    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+                    .jumbotron.col-xs-12.text-center
+                        h2= t('pages.index.twitter-title')
+                        <a class="twitter-timeline" href="https://twitter.com/Helpific" data-widget-id="670246404569309185" width="520" height="300" data-chrome="nofooter noheader">Tweets by @Helpific</a>
+                        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+
+            .col-md-6.col-xs-12
+                .row
+                    .jumbotron.col-xs-12.text-center
+                        h2= t('pages.index.pad-title')
+                        a(href='pad')
+                            img.jumbotron.img-responsive(src='/images/pad/konkurs.jpg')
+
+
 
         .row.text-center
             h2.col-xs-12= t('pages.index.how-it-works')
