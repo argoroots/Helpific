@@ -480,6 +480,7 @@ exports.add = function(params, callback) {
         data.aboutMeText = preparedData['person-aboutMeText']
         data.aboutMeVideo = preparedData['person-aboutMeVideo']
         data.entuId = preparedData['person-entuId']
+        data.phone = preparedData['person-phone']
     }
 
     var headers = {}

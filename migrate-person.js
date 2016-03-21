@@ -83,6 +83,7 @@ function migratePerson(p1, callback) {
             properties.aboutMeText = p1.get('about-me-text.value')
             properties.aboutMeVideo = p1.get('about-me-video.value')
             properties.entuId = personId
+            properties.phone = p1.get('phone.value')
 
 
             core_api.add({
