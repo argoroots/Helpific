@@ -1491,7 +1491,7 @@ pages:
             de: z.B. Leipziger Str. 12
             en: e.g. 767 5th Avenue
             et: e.g. Tartu mnt. 1
-            fi: esim. Tartu mnt. 1
+            fi: esim. Esimerkkitie 8
             fr: ex. 28 rue des Lilas
             hu: pl. Kossuth utca 1.
             it: es. via Roma 13
@@ -1511,7 +1511,7 @@ pages:
             it: pages.profile.address-text
             ja: pages.profile.address-text
             ko: pages.profile.address-text
-            ru: pages.profile.address-text
+            ru: 'Если вы ищите помощь по тому же адресу то можете его сюда написать, что бы потом сэкономить время. Мы не афишируем его.'
             zh: pages.profile.address-text
         city:
             cs: Město
