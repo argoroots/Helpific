@@ -24,6 +24,7 @@ docker run -d \
     --env="COOKIE_SECRET=" \
     --env="ADMIN_EMAILS=" \
     --env="FEEDBACK_EMAILS=" \
+    --env="CORE_URL=http://core.helpific.ee:8080" \
     --env="NEW_RELIC_APP_NAME=helpific" \
     --env="NEW_RELIC_LICENSE_KEY=" \
     --env="NEW_RELIC_LOG=stdout" \
