@@ -1249,7 +1249,7 @@ pages:
             zh: 左边的门
         pad-title:
             en: Competition in PAD project
-            et: Konkurs PSA projektis
+            et: Konkurss PSA projektis
             ru: Конкурс в проекте Р.П.О
         requests-link:
             cs: Pomozte těm kteří to potřebují
@@ -1746,16 +1746,16 @@ pages:
         markdown-info:
             cs: 'Pro formátování textu použijte <a href="https://en.wikipedia.org/wiki/Markdown#Example" target="_blank">markdown</a>'
             de: 'Design verwenden <a href="https://en.wikipedia.org/wiki/Markdown#Example" target="_blank">markdown</a> um deinen Text zu gestalten'
-            en: 'use <a href="https://en.wikipedia.org/wiki/Markdown#Example" target="_blank">markdown</a> for styling your text'
-            et: 'teksti kujundamiseks kasuta <a href="https://en.wikipedia.org/wiki/Markdown#Example" target="_blank">markdowni</a>'
+            en: 'Use <a href="https://en.wikipedia.org/wiki/Markdown#Example" target="_blank">markdown</a> for styling your text'
+            et: 'Teksti kujundamiseks kasuta <a href="https://en.wikipedia.org/wiki/Markdown#Example" target="_blank">markdowni</a>'
             fi: 'Tekstin muokkaamiseen <a href="https://en.wikipedia.org/wiki/Markdown#Example" target="_blank">markdown</a>'
-            fr: 'use <a href="https://en.wikipedia.org/wiki/Markdown#Example" target="_blank">markdown</a> for styling your text'
-            hu: 'használhatod a <a href="https://en.wikipedia.org/wiki/Markdown#Example" target="_blank">markdown</a> rendszerét a szöveged formázására'
-            it: 'use <a href="https://en.wikipedia.org/wiki/Markdown#Example" target="_blank">markdown</a> for styling your text'
+            fr: 'Use <a href="https://en.wikipedia.org/wiki/Markdown#Example" target="_blank">markdown</a> for styling your text'
+            hu: 'Használhatod a <a href="https://en.wikipedia.org/wiki/Markdown#Example" target="_blank">markdown</a> rendszerét a szöveged formázására'
+            it: 'Use <a href="https://en.wikipedia.org/wiki/Markdown#Example" target="_blank">markdown</a> for styling your text'
             ja: 'テキスト形式の変更には<a href="https://en.wikipedia.org/wiki/Markdown#Example" target="_blank">Markdown</a>を使ってください。'
             ko: '사용하기 <a href="https://en.wikipedia.org/wiki/Markdown#Example" target="_blank">markdown</a> 텍스트 작성'
             nl: 'Gebruik<a href="https://en.wikipedia.org/wiki/Markdown#Example" target="_blank">markdown</a>voor stying uw tekst'
-            ru: 'для оформления текста используй данный <a href="https://en.wikipedia.org/wiki/Markdown#Example" target="_blank">язык разметки</a>'
+            ru: 'Для оформления текста используй данный <a href="https://en.wikipedia.org/wiki/Markdown#Example" target="_blank">язык разметки</a>'
             zh: '使用 <a href="https://en.wikipedia.org/wiki/Markdown#Example" target="_blank">markdown</a> 用来修饰你的文本'
         me-help-you-tab:
             cs: Pomohu druhým.
@@ -1814,19 +1814,19 @@ pages:
             ru: Сообщения
             zh: 所有消息
         newsletter:
-            cs: Chtěl/chtěla bych dostávat informace o Helpific.
-            de: Ich erlaube Helpific mir Newsletter zuzuschicken.
-            en: I allow Helpific to send me newsletter.
-            et: Luban Helpificul saata mulle uudiskirju.
-            fi: Sallin Helpificin lähettää minulle uutiskirjeen.
-            fr: "Autoriser Helpiific a m'envoyer la newsletter."
-            hu: 'Engedélyezem a Helpific-nek, hogy hírlevelet küldjön nekem.'
-            it: Autorizzo Helpific ad inviarmi la newsletter.
+            cs: Chtěl/chtěla bych dostávat informace o Helpific
+            de: Ich erlaube Helpific mir Newsletter zuzuschicken
+            en: I allow Helpific to send me newsletter
+            et: Luban Helpificul saata mulle uudiskirju
+            fi: Sallin Helpificin lähettää minulle uutiskirjeen
+            fr: "Autoriser Helpiific a m'envoyer la newsletter"
+            hu: 'Engedélyezem a Helpific-nek, hogy hírlevelet küldjön nekem'
+            it: Autorizzo Helpific ad inviarmi la newsletter
             ja: Helpificからの情報配信を希望します。
             ko: Helpfic으로 부터 소식을 받고싶습니다.
             nl: Ik wil graag informatie ontvangen
-            ru: Разрешаю присылать мне информационные письма Helpific.
-            zh: 我允许Helpific给我发送订阅邮件.
+            ru: Разрешаю присылать мне информационные письма Helpific
+            zh: 我允许Helpific给我发送订阅邮件
         phone:
             en: Phone
             et: Telefoni number
