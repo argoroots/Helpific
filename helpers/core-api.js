@@ -6,7 +6,7 @@ var random   = require('randomstring')
 var request  = require('request')
 var sanitize = require('sanitize-html')
 
-exports.active = true
+exports.active = false
 
 
 function extracted(entities, params, callback) {
@@ -679,7 +679,11 @@ exports.message = function(params, callback) {
 
     var preparedUrl = APP_CORE_URL + '/email'
 
+    log.debug('preparedUrl = ' + preparedUrl + ' with boyd' + JSON.stringify(body))
+
     request.post({url: preparedUrl, headers: headers, body: body, strictSSL: true, json: true, timeout: 60000}, function(error, response, body) {
+        log.debug('error = ' + JSON.stringify(error))
+        log.debug('body = ' + JSON.stringify(body))
         if(error) return callback(error)
         if(response.statusCode !== 200) return callback(new Error(op.get(body, 'error', body)))
 

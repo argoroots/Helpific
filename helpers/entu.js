@@ -330,35 +330,7 @@ exports.file = function(params, callback) {
 
 //Send message
 exports.message = function(params, callback) {
-    if(core_api.active){
-        core_api.message(params, callback)
-    } else {
-        var body = {
-            to: params.to,
-            from: params.from,
-            subject: params.subject,
-            message: params.message,
-            html: true,
-            tag: params.tag
-        }
-
-        if(params.auth_id && params.auth_token) {
-            var headers = {'X-Auth-UserId': params.auth_id, 'X-Auth-Token': params.auth_token}
-            var qb = body
-        } else {
-            var headers = {}
-            var qb = signData(body)
-        }
-
-        var preparedUrl = APP_ENTU_URL + '/email'
-        log.debug('message Try to execute URL ' + preparedUrl)
-        request.post({url: preparedUrl, headers: headers, body: qb, strictSSL: true, json: true, timeout: 60000}, function(error, response, body) {
-            if(error) return callback(error)
-            if(response.statusCode !== 200) return callback(new Error(op.get(body, 'error', body)))
-
-            callback(null, body)
-        })
-    }
+    core_api.message(params, callback)
 }
 
 
