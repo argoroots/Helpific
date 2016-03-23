@@ -3,6 +3,7 @@ var op      = require('object-path')
 var path    = require('path')
 var request = require('request')
 var yaml    = require('js-yaml')
+var locale  = require('locale')
 
 i18nConfig = {}
 
@@ -16,6 +17,7 @@ exports.configure = function(config) {
     i18nConfig.defaultLocale = config.defaultLocale || 'en'
     i18nConfig.updateFile = config.updateFile || false
     i18nConfig.countries = config.countries || {}
+    i18nConfig.supported = new locale.Locales(config.locales || ['en'])
 
     i18nConfig.translations = {}
     if(fs.existsSync(i18nConfig.file)) {
@@ -29,18 +31,26 @@ exports.configure = function(config) {
 
 
 exports.init = function(req, res, next) {
+
+    var browserLocales = new locale.Locales(req.headers["accept-language"])
+    var bestLocale = browserLocales.best(i18nConfig.supported) || i18nConfig.defaultLocale
+    log.debug(   "You asked for: " + req.headers["accept-language"] + "\n" +
+        "We support: " + i18nConfig.supported + "\n" +
+        "Our default is: " + locale.Locale["default"] + "\n" +
+        "The best match is: " + bestLocale + "\n")
+
     if(req.path === '/') {
         if(op.get(res, 'locals.user.lang')) {
             return res.redirect('/' + op.get(res, 'locals.user.lang'))
         } else {
             request.get({url: 'https://geoip.entu.eu/json/' + req.ip, strictSSL: true, json: true, timeout: 1000}, function(error, response, body) {
-                var path = op.get(i18nConfig, ['countries', op.get(body, 'country_code') ? op.get(body, 'country_code').toLowerCase() : null]) || i18nConfig.defaultLocale
+                var path = op.get(i18nConfig, ['countries', op.get(body, 'country_code') ? op.get(body, 'country_code').toLowerCase() : null]) || bestLocale
                 return res.redirect('/' + path)
             })
         }
     } else if(i18nConfig.locales.indexOf(req.path.split('/')[1]) === -1) {
         var path = req.path.split('/')
-        path[1] = op.get(res, 'locals.user.lang') ? op.get(res, 'locals.user.lang') : i18nConfig.defaultLocale
+        path[1] = op.get(res, 'locals.user.lang') ? op.get(res, 'locals.user.lang') : bestLocale
         return res.redirect(path.join('/'))
     } else {
         res.locals.lang = i18nConfig.lang = req.path.split('/')[1]

@@ -28,7 +28,7 @@ APP_ENTU_URL        = process.env.ENTU_URL || 'https://helpific.entu.ee/api2'
 APP_ENTU_USER       = process.env.ENTU_USER
 APP_ENTU_KEY        = process.env.ENTU_KEY
 APP_SENTRY          = process.env.SENTRY_DSN
-APP_DEFAULT_LOCALE  = process.env.DEFAULT_LOCALE || 'et'
+APP_DEFAULT_LOCALE  = process.env.DEFAULT_LOCALE || 'en'
 APP_TIMEZONE        = process.env.TIMEZONE || 'Europe/Tallinn'
 APP_ADMIN_EMAILS    = process.env.ADMIN_EMAILS
 APP_FEEDBACK_EMAILS = process.env.FEEDBACK_EMAILS
@@ -160,7 +160,7 @@ express()
                 if(path == 'contact' || path == 'profile'){
                     return true
                 } else {
-                    console.log(JSON.stringify(res.locals.user))
+                    log.debug(JSON.stringify(res.locals.user))
                     if(res.locals.user.profileAcceptable) {
                         return true
                     } else {
