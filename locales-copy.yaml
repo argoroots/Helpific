@@ -396,14 +396,14 @@ nav:
         ru: О Нас
         zh: 关于我们
     bb:
-        cs: Život bez hranic
+        cs: Život bez Hranic
         de: Jenseits von Grenzen
         en: Beyond Borders
         et: Piirideta Elu
-        fi: Rajojen takana
-        fr: Au delà des frontières
-        hu: Túl a határokon
-        it: Oltre i confini
+        fi: Rajojen Takana
+        fr: Au Delà des Frontières
+        hu: Túl a Határokon
+        it: Oltre i Confini
         ja: 国境を越えて
         ko: 국경을 뛰어넘어
         nl: Buiten de Grenzen
@@ -1833,16 +1833,16 @@ pages:
         phone:
             cs: Telefoní číslo
             de: Telefonnummer
-            en: Phone
+            en: Phone number
             et: Telefoni number
             fi: Puhelinnumero
-            fr: Téléphone
-            hu: Telefon
-            it: Telefono
+            fr: Numéro de téléphone
+            hu: Telefonszám
+            it: Numero di telefono
             ja: 電話番号
             ko: 전화 번호
-            nl: Telefoon
-            ru: Телефон
+            nl: Telefoonnummer
+            ru: Номер телефона
             zh: 电话
         phone-ph:
             en: e.g. 5565xxxx
@@ -1891,14 +1891,14 @@ pages:
             ru: '{{ photoUploadPercent }}% загружено...'
             zh: '{{ photoUploadPercent }}% 上传中......'
         save-btn:
-            cs: ULOŽIT PROFIL
+            cs: Uložit profil
             de: Profil sichern
             en: Save profile
             et: Salvesta profiil
             fi: Tallenna profiili
             fr: Sauvegarder profile
             hu: Adatlap mentése
-            it: SALVA PROFILO
+            it: Salva profilo
             ja: 保存プロフィール
             ko: 저장 프로필
             nl: Profiel opslaan
