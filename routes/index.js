@@ -75,7 +75,8 @@ router.get('/team', function(req, res, next) {
     entu.getEntities({
         parentEntityId: 612,
         definition: 'person',
-        fullObject: true
+        fullObject: true,
+        teamMember: true
     }, function(error, team) {
         if(error) return next(error)
 
@@ -160,14 +161,15 @@ router.get('/about', function(req, res) {
             partners: function(callback) {
                 entu.getEntities({
                     definition: 'partner',
-                    fullObject: true
+                    fullObject: false
                 }, callback)
             },
             team: function(callback) {
                 entu.getEntities({
                     parentEntityId: 612,
                     definition: 'person',
-                    fullObject: true
+                    fullObject: true,
+                    teamMember: true
                 }, callback)
             }
         },

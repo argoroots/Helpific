@@ -1,20 +1,20 @@
 if(process.env.NEW_RELIC_LICENSE_KEY) require('newrelic')
 
-var bparser = require('body-parser')
-var cookie  = require('cookie-parser')
-var express = require('express')
-var favicon = require('serve-favicon')
-var fs      = require('fs')
-var log4js  = require('log4js')
-var minify  = require('express-minify')
-var op      = require('object-path')
-var path    = require('path')
-var random  = require('randomstring')
-var raven   = require('raven')
+var bparser  = require('body-parser')
+var cookie   = require('cookie-parser')
+var express  = require('express')
+var favicon  = require('serve-favicon')
+var fs       = require('fs')
+var log4js   = require('log4js')
+var minify   = require('express-minify')
+var op       = require('object-path')
+var path     = require('path')
+var random   = require('randomstring')
+var raven    = require('raven')
 
-var i18n    = require('./helpers/i18n')
+var i18n     = require('./helpers/i18n')
 var core_api = require('./helpers/core-api')
-var entu    = require('./helpers/entu')
+var entu     = require('./helpers/entu')
 
 
 

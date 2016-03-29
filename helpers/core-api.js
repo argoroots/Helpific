@@ -6,7 +6,7 @@ var random   = require('randomstring')
 var request  = require('request')
 var sanitize = require('sanitize-html')
 
-exports.active = false
+exports.active = true
 
 
 function extracted(entities, params, callback) {
@@ -51,6 +51,77 @@ getRequestOwnerReference = function(params, callback){
         log.debug(body)
         return callback(null, op(body))
     })
+}
+
+getPartner = function(params, callback) {
+    var headers = {}
+    var qs = {}
+    if(params.definition) qs.definition = params.definition
+    if(params.query) qs.query = params.query
+
+    var url = 'partners/' + params.id
+
+    var preparedUrl = APP_CORE_URL + '/api/' + url
+    log.debug('------------- Try to execute URL ' + preparedUrl + ' qs ' + JSON.stringify(qs))
+    request.get({url: preparedUrl, headers: headers, qs: qs, strictSSL: true, json: true, timeout: 60000}, function(error, response, body) {
+
+        if(error) return callback(error)
+        if(response.statusCode !== 200 || !body) return callback(new Error(op.get(body, 'error', body)))
+
+        if(params.migra){
+            var entities = []
+            body._embedded['partners'].forEach(function(entry) {
+                entities.push(entry)
+            });
+
+            extracted(entities, params, callback);
+        } else {
+            var result = {}
+            for (var key in body) {
+                if (body.hasOwnProperty(key)) {
+                    result[key] = {
+                        id: 0,
+                        value: body[key]
+                    }
+
+                    if(key == 'nimi') {
+                        result['name'] = {
+                            id: 0,
+                            value: body[key]
+                        }
+                    }
+
+                    if(key == 'link') {
+                        result['url'] = {
+                            id: 0,
+                            value: body[key]
+                        }
+                    }
+
+                    if(key == 'tekst') {
+                        result['note'] = {
+                            id: 0,
+                            value: body[key]
+                        }
+                    }
+
+                    if(key == 'logoPath') {
+                        result['photo'] = {
+                            id: 0,
+                            file: APP_CORE_URL + body[key]
+                        }
+                    }
+                }
+            }
+
+            log.debug(JSON.stringify(result))
+
+            callback(null, op(result))
+
+        }
+    })
+
+
 }
 
 
@@ -290,6 +361,9 @@ getUsers = function(params, callback) {
     if(params.toPersonId) qs.toPersonId = params.toPersonId
 
     var url = 'persons'
+    if(params.teamMember){
+        url = 'persons/search/findByTeamMember?teamMember=1'
+    }
 
     var preparedUrl = APP_CORE_URL + '/api/' + url
     log.debug('------------- getUsers Try to execute URL ' + preparedUrl + ' qs ' + JSON.stringify(qs))
@@ -302,9 +376,11 @@ getUsers = function(params, callback) {
 
         log.debug('------------- getUsers Body ' + body._embedded)
         var entities = []
-        body._embedded['persons'].forEach(function(entry) {
-            entities.push(entry)
-        });
+        if(body._embedded['persons']){
+            body._embedded['persons'].forEach(function(entry) {
+                entities.push(entry)
+            });
+        }
 
         extracted(entities, params, callback);
     })
@@ -381,6 +457,8 @@ exports.getEntity = getEntity = function(params, callback) {
         getUser(params, callback)
     } else if(params.definition == 'message') {
         getMessage(params, callback)
+    } else if (params.definition == 'partner') {
+        getPartner(params, callback)
     }
 }
 
@@ -414,6 +492,46 @@ exports.getRequests = getRequests = function(params, callback) {
 }
 
 
+exports.getPartners = getPartners = function(params, callback) {
+
+    log.debug('Partners list asked')
+
+    var headers = {}
+    var qs = {}
+    if(params.definition) qs.definition = params.definition
+    if(params.query) qs.query = params.query
+
+    var url = 'partners'
+
+    var preparedUrl = APP_CORE_URL + '/api/' + url
+    log.debug('------------- getPartners Try to execute URL ' + preparedUrl + ' qs ' + JSON.stringify(qs))
+    request.get({url: preparedUrl, headers: headers, qs: qs, strictSSL: true, json: true, timeout: 60000}, function(error, response, body) {
+
+        log.debug('------------- getPartners Error ' + error)
+        if(error) return callback(error)
+        log.debug('------------- getPartners Status code ' + response.statusCode)
+        if(response.statusCode !== 200 || !body._embedded) return callback(new Error(op.get(body, 'error', body)))
+
+
+        var entities = []
+        body._embedded['partners'].forEach(function(entry) {
+
+            var partner = {
+                genId: op.get(entry, 'genId', ''),
+                url: {value: op.get(entry, 'link', '')},
+                name: {value: op.get(entry, 'nimi', '')},
+                note: {value: op.get(entry, 'tekst', '')},
+                photo: {file: APP_CORE_URL + op.get(entry, 'logoPath', '')}
+            }
+
+            entities.push(partner)
+        });
+
+        extracted(entities, params, callback);
+    })
+
+}
+
 //Get entity
 exports.getEntities = getEntities = function(params, qs, callback) {
     if(qs.definition == 'request') {
@@ -423,7 +541,7 @@ exports.getEntities = getEntities = function(params, qs, callback) {
     } else if(qs.definition == 'message') {
         getMessages(params, callback)
     } else if (qs.definition == 'partner') {
-        callback(null, [])
+        getPartners(params, callback)
     }
 }
 
