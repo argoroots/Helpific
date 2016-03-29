@@ -346,6 +346,13 @@ getUser = function(params, callback) {
                 }
             }
 
+            result['photo'] = {
+                id: 0,
+                value: result._picture,
+                file: result._picture
+            }
+
+            log.debug('getUser result = ' + JSON.stringify(result))
             callback(null, op(result))
         }
     })
@@ -670,7 +677,7 @@ exports.getSigninUrl = function(params, callback) {
         redirect_url: params.redirect_url,
         provider: params.provider
     }
-    var preparedUrl = APP_CORE_URL + '/user/auth'
+    var preparedUrl = APP_AUTH_CORE_URL + '/user/auth'
     log.debug('Try to execute URL ' + preparedUrl + ' qb ' + JSON.stringify(qb))
     request.post({url: preparedUrl, body: qb, strictSSL: true, json: true, timeout: 60000}, function(error, response, body) {
         if(error) return callback(error)
@@ -721,7 +728,7 @@ exports.getUser = function(params, callback) {
         var headers = {}
     }
 
-    var preparedUrl = APP_CORE_URL + '/user'
+    var preparedUrl = APP_AUTH_CORE_URL + '/user'
     log.debug('Try to execute URL ' + preparedUrl)
     request.get({url: preparedUrl, headers: headers, strictSSL: true, json: true, timeout: 60000}, function(error, response, body) {
         if(error) return callback(error)
@@ -773,6 +780,8 @@ exports.file = function(params, callback){
         if(error) return callback(error)
         if(response.statusCode !== 200 || !body.result) return callback(new Error(op.get(body, 'error', body)))
 
+
+        log.debug(JSON.stringify(body))
         callback(null, op.get(body, 'result', null))
     })
 

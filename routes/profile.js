@@ -2,7 +2,7 @@ var async  = require('async')
 var router = require('express').Router()
 
 var entu   = require('../helpers/entu')
-
+var core_api = require('../helpers/core-api')
 
 
 // Show user own profile
@@ -111,16 +111,20 @@ router.post('/photo', function(req, res, next) {
         function(user, callback) {
             if(!user.has('photo')) return callback(null, {})
 
-            entu.edit({
-                id: res.locals.user.id,
-                definition: 'person',
-                data: {
-                    property: 'photo',
-                    id: user.get('photo.id')
-                },
-                auth_id: res.locals.user.id,
-                auth_token: res.locals.user.token
-            }, callback)
+            if(!core_api.active) {
+                entu.edit({
+                    id: res.locals.user.id,
+                    definition: 'person',
+                    data: {
+                        property: 'photo',
+                        id: user.get('photo.id')
+                    },
+                    auth_id: res.locals.user.id,
+                    auth_token: res.locals.user.token
+                }, callback)
+            } else {
+                callback(null, {})
+            }
         },
         function(x, callback) {
             entu.file({

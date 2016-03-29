@@ -46,7 +46,7 @@ script.
     })
 
 
-    $('input').blur(function () {
+    $('input[type!="checkbox"][type!="file"]').blur(function () {
         var input = $(this)
         var label = $('label[for="'+$(this).attr('id')+'"]');
 
