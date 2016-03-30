@@ -26,7 +26,7 @@ var lupus = require('lupus');
 
 core_api.active = false
 
-lupus(0, 100, function(n) {
+lupus(1, 100, function(n) {
     migrateMessagesBathc(n, function(data){
         log.debug('END with : ' + JSON.stringify(data))
     })
@@ -39,7 +39,7 @@ function migrateMessagesBathc(page, callback){
                 entu.getEntities({
                     definition: 'message',
                     fullObject: true,
-                    limit: 10,
+                    limit: 25,
                     page: page
                 }, callback)
             }
@@ -65,7 +65,7 @@ function migrateMessage(p1, callback) {
         id: messageId,
         migra: true
     }, function (error, result) {
-        if(error) return log.error(err)
+        if(error) return log.error(error)
         if (!result || Object.keys(result).length === 0) {
 
 
@@ -83,7 +83,7 @@ function migrateMessage(p1, callback) {
                             id: p1.get('to-person.reference'),
                             migra: true
                         }, callback)
-                    },
+                    }
                 },
                 function(err, results) {
                     if(err) return log.error(err)
@@ -107,6 +107,8 @@ function migrateMessage(p1, callback) {
                             log.debug('ADD RESULT : ' + result)
                         })
 
+                    } else {
+                        log.error('not going to add ' + messageId)
                     }
                     callback({
                         messageId: messageId,
