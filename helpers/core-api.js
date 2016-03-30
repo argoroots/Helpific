@@ -427,18 +427,19 @@ getMessages = function(params, callback) {
 
     var headers = {}
     var qs = {}
+    var url = ''
+
+
     if(params.definition) qs.definition = params.definition
     if(params.query) qs.query = params.query
     if(params.userId) {
-        qs.fromPersonId = params.userId
-        qs.toPersonId = params.userId
+        qs.userId = params.userId
+        url = 'messages/search/getAllConversations'
     } else {
         if(params.fromPersonId) qs.fromPersonId = params.fromPersonId
         if(params.toPersonId) qs.toPersonId = params.toPersonId
+        var url = 'messages/search/getConversationWith'
     }
-
-
-    var url = 'messages/search/findByFromPersonIdOrToPersonId'
 
     var preparedUrl = APP_CORE_URL + '/api/' + url
     log.debug('------------- getMessages Try to execute URL ' + preparedUrl + ' qs ' + JSON.stringify(params))
@@ -648,6 +649,8 @@ exports.edit = function(params, callback) {
 
     } else if (params.definition == 'message') {
         repository = 'messages'
+    } else if (params.definition == 'request') {
+        repository = 'requests'
     }
     var headers = {}
 
