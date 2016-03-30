@@ -8,6 +8,8 @@ var sanitize = require('sanitize-html')
 var core_api = require('./core-api')
 
 
+var defaultTimeout = 120000
+
 var signData = function(data) {
     data = data || {}
 
@@ -48,7 +50,7 @@ exports.getEntity = getEntity = function(params, callback) {
         var preparedUrl = APP_ENTU_URL + '/entity-' + params.id
         log.debug('Try to execute URL ' + preparedUrl + ' query ' + JSON.stringify(qs))
 
-        request.get({url: preparedUrl, headers: headers, qs: qs, strictSSL: true, json: true, timeout: 60000}, function(error, response, body) {
+        request.get({url: preparedUrl, headers: headers, qs: qs, strictSSL: true, json: true, timeout: defaultTimeout}, function(error, response, body) {
             if(error) return callback(error)
             if(response.statusCode !== 200 || !body.result) return callback(new Error(op.get(body, 'error', body)))
 
@@ -128,7 +130,7 @@ exports.getEntities = function(params, callback) {
         var preparedUrl = APP_ENTU_URL + url
         log.debug('getEntities Try to execute URL ' + preparedUrl + ' query ' + JSON.stringify(qs))
 
-        request.get({url: preparedUrl, headers: headers, qs: qs, strictSSL: true, json: true, timeout: 60000}, function(error, response, body) {
+        request.get({url: preparedUrl, headers: headers, qs: qs, strictSSL: true, json: true, timeout: defaultTimeout}, function(error, response, body) {
             if(error) return callback(error)
             if(response.statusCode !== 200 || !body.result) return callback(new Error(op.get(body, 'error', body)))
 
@@ -195,7 +197,7 @@ exports.add = function(params, callback) {
         var preparedUrl = APP_ENTU_URL + '/entity-' + params.parentEntityId
         log.debug('add Try to execute URL ' + preparedUrl)
 
-        request.post({url: preparedUrl, headers: headers, body: qb, strictSSL: true, json: true, timeout: 60000}, function(error, response, body) {
+        request.post({url: preparedUrl, headers: headers, body: qb, strictSSL: true, json: true, timeout: defaultTimeout}, function(error, response, body) {
          if(error) return callback(error)
          if(response.statusCode !== 201 || !body.result) return callback(new Error(op.get(body, 'error', body)))
 
@@ -227,7 +229,7 @@ exports.edit = function(params, callback) {
         var preparedUrl = APP_ENTU_URL + '/entity-' + params.id
         log.debug('edit Try to execute URL ' + preparedUrl)
 
-        request.put({url: preparedUrl, headers: headers, body: qb, strictSSL: true, json: true, timeout: 60000}, function(error, response, body) {
+        request.put({url: preparedUrl, headers: headers, body: qb, strictSSL: true, json: true, timeout: defaultTimeout}, function(error, response, body) {
          if(error) return callback(error)
          if(response.statusCode !== 201 || !body.result) return callback(new Error(op.get(body, 'error', body)))
 
@@ -259,7 +261,7 @@ exports.setFileFromUrl = function(params, callback) {
 
     var preparedUrl = APP_ENTU_URL + '/file/url'
     log.debug('setFileFromUrl Try to execute URL ' + preparedUrl)
-    request.post({url: preparedUrl, headers: headers, body: qb, strictSSL: true, json: true, timeout: 60000}, function(error, response, body) {
+    request.post({url: preparedUrl, headers: headers, body: qb, strictSSL: true, json: true, timeout: defaultTimeout}, function(error, response, body) {
         if(error) return callback(error)
         if(response.statusCode !== 200 || !body.result) return callback(new Error(op.get(body, 'error', body)))
 
@@ -289,7 +291,7 @@ exports.rights = function(params, callback) {
 
         var preparedUrl = APP_ENTU_URL + '/entity-' + params.id + '/rights'
         log.debug('rights Try to execute URL ' + preparedUrl)
-        request.post({url: preparedUrl, headers: headers, body: qb, strictSSL: true, json: true, timeout: 60000}, function(error, response, body) {
+        request.post({url: preparedUrl, headers: headers, body: qb, strictSSL: true, json: true, timeout: defaultTimeout}, function(error, response, body) {
             if(error) return callback(error)
             if(response.statusCode !== 200) return callback(new Error(op.get(body, 'error', body)))
 
@@ -317,7 +319,7 @@ exports.file = function(params, callback) {
 
         var preparedUrl = APP_ENTU_URL + '/file/s3'
         log.debug('file Try to execute URL ' + preparedUrl)
-        request.post({url: preparedUrl, headers: headers, body: qb, strictSSL: true, json: true, timeout: 60000}, function(error, response, body) {
+        request.post({url: preparedUrl, headers: headers, body: qb, strictSSL: true, json: true, timeout: defaultTimeout}, function(error, response, body) {
             if(error) return callback(error)
             if(response.statusCode !== 200 || !body.result) return callback(new Error(op.get(body, 'error', body)))
 
@@ -351,7 +353,7 @@ exports.getSigninUrl = function(params, callback) {
         var preparedUrl = APP_ENTU_URL + '/user/auth'
         log.debug('getSigninUrl Try to execute URL ' + preparedUrl + ' qb = ' + JSON.stringify(qb))
 
-        request.post({url: preparedUrl, body: qb, strictSSL: true, json: true, timeout: 60000}, function(error, response, body) {
+        request.post({url: preparedUrl, body: qb, strictSSL: true, json: true, timeout: defaultTimeout}, function(error, response, body) {
             if(error) return callback(error)
             if(response.statusCode !== 200) return callback(new Error(op.get(body, 'error', body)))
 
@@ -379,7 +381,7 @@ exports.getUserSession = function(params, callback) {
         var preparedUrl = params.auth_url
         log.debug('getUserSession Try to execute URL ' + preparedUrl + ' qb ' + JSON.stringify(qb))
 
-        request.post({url: preparedUrl, body: qb, strictSSL: true, json: true, timeout: 60000}, function(error, response, body) {
+        request.post({url: preparedUrl, body: qb, strictSSL: true, json: true, timeout: defaultTimeout}, function(error, response, body) {
             if(error) return callback(error)
             if(response.statusCode !== 200 || !body.result) return callback(new Error(op.get(body, 'error', body)))
 
@@ -413,7 +415,7 @@ exports.getUser = function(params, callback) {
         var preparedUrl = APP_ENTU_URL + '/user'
         log.debug('Try to execute URL ' + preparedUrl + " headers " + JSON.stringify(headers))
 
-        request.get({url: preparedUrl, headers: headers, strictSSL: true, json: true, timeout: 60000}, function(error, response, body) {
+        request.get({url: preparedUrl, headers: headers, strictSSL: true, json: true, timeout: defaultTimeout}, function(error, response, body) {
             if(error) return callback(error)
             if(response.statusCode !== 200 || !body.result) return callback(new Error(op.get(body, 'error', body)))
 

@@ -20,20 +20,17 @@ log.setLevel(APP_LOGLEVEL)
 
 
 var async  = require('async')
-var sleep  = require('sleep')
 var core_api = require('./helpers/core-api')
 var entu    = require('./helpers/entu')
-
-var moment = require('moment-timezone')
+var lupus = require('lupus');
 
 core_api.active = false
 
-
-for(page = 1; page < 10; page++){
-    migrateMessagesBathc(page, function(data){
-        log.debug(data)
+lupus(0, 100, function(n) {
+    migrateMessagesBathc(n, function(data){
+        log.debug('END with : ' + JSON.stringify(data))
     })
-}
+});
 
 
 function migrateMessagesBathc(page, callback){
@@ -42,7 +39,7 @@ function migrateMessagesBathc(page, callback){
                 entu.getEntities({
                     definition: 'message',
                     fullObject: true,
-                    limit: 25,
+                    limit: 10,
                     page: page
                 }, callback)
             }
@@ -68,6 +65,7 @@ function migrateMessage(p1, callback) {
         id: messageId,
         migra: true
     }, function (error, result) {
+        if(error) return log.error(err)
         if (!result || Object.keys(result).length === 0) {
 
 
@@ -90,9 +88,8 @@ function migrateMessage(p1, callback) {
                 function(err, results) {
                     if(err) return log.error(err)
 
-                    log.debug(JSON.stringify(error))
-                    log.debug(JSON.stringify(results.f1))
-                    log.debug(JSON.stringify(results.t1))
+                    log.debug('From person : ' + JSON.stringify(results.f1))
+                    log.debug('To person : ' + JSON.stringify(results.t1))
 
                     if(results.f1 && results.f1[0] && results.t1 && results.t1[0]) {
                         var properties = {}
@@ -106,8 +103,8 @@ function migrateMessage(p1, callback) {
                             definition: 'message',
                             properties: properties
                         }, function (error, result) {
-                            log.debug(error)
-                            log.debug(result)
+                            log.debug('ADD ERROR : ' + error)
+                            log.debug('ADD RESULT : ' + result)
                         })
 
                     }

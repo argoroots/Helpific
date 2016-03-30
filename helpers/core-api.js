@@ -6,6 +6,8 @@ var random   = require('randomstring')
 var request  = require('request')
 var sanitize = require('sanitize-html')
 
+var defaultTimeout = 120000
+
 exports.active = true
 
 
@@ -44,7 +46,7 @@ getRequestOwnerReference = function(params, callback){
     var url = 'requests/' + params.id + '/person'
     var preparedUrl = APP_CORE_URL + '/api/' + url
 
-    request.get({url: preparedUrl, headers: headers, qs: qs, strictSSL: true, json: true, timeout: 60000}, function(error, response, body) {
+    request.get({url: preparedUrl, headers: headers, qs: qs, strictSSL: true, json: true, timeout: defaultTimeout}, function(error, response, body) {
         if (error) return callback(error)
         if (response.statusCode !== 200 || !body) return callback(new Error(op.get(body, 'error', body)))
 
@@ -63,7 +65,7 @@ getPartner = function(params, callback) {
 
     var preparedUrl = APP_CORE_URL + '/api/' + url
     log.debug('------------- Try to execute URL ' + preparedUrl + ' qs ' + JSON.stringify(qs))
-    request.get({url: preparedUrl, headers: headers, qs: qs, strictSSL: true, json: true, timeout: 60000}, function(error, response, body) {
+    request.get({url: preparedUrl, headers: headers, qs: qs, strictSSL: true, json: true, timeout: defaultTimeout}, function(error, response, body) {
 
         if(error) return callback(error)
         if(response.statusCode !== 200 || !body) return callback(new Error(op.get(body, 'error', body)))
@@ -138,7 +140,7 @@ getRequest = function(params, callback) {
 
     var preparedUrl = APP_CORE_URL + '/api/' + url
     log.debug('------------- Try to execute URL ' + preparedUrl + ' qs ' + JSON.stringify(qs))
-    request.get({url: preparedUrl, headers: headers, qs: qs, strictSSL: true, json: true, timeout: 60000}, function(error, response, body) {
+    request.get({url: preparedUrl, headers: headers, qs: qs, strictSSL: true, json: true, timeout: defaultTimeout}, function(error, response, body) {
 
         if(error) return callback(error)
         if(response.statusCode !== 200 || !body) return callback(new Error(op.get(body, 'error', body)))
@@ -194,20 +196,24 @@ getMessage = function(params, callback) {
     if(params.toPersonId) qs.toPersonId = params.toPersonId
 
     var url = 'messages/' + params.id
+    if(params.migra) {
+        url = 'messages/search/findByEntuId?entuId=' + params.id
+    }
 
     var preparedUrl = APP_CORE_URL + '/api/' + url
     log.debug('------------- getMessage Try to execute URL ' + preparedUrl + ' qs ' + JSON.stringify(qs))
-    request.get({url: preparedUrl, headers: headers, qs: qs, strictSSL: true, json: true, timeout: 60000}, function(error, response, body) {
+    request.get({url: preparedUrl, headers: headers, qs: qs, strictSSL: true, json: true, timeout: defaultTimeout}, function(error, response, body) {
 
         if(error) return callback(error)
         if(response.statusCode !== 200 || !body) return callback(new Error(op.get(body, 'error', body)))
 
-        log.debug('------------- getMessage Body ' + body._embedded + ' params.migra ' + params.migra)
         if(params.migra) {
             var entities = []
-            body._embedded['messages'].forEach(function (entry) {
-                entities.push(entry)
-            });
+            if(body._embedded['messages']){
+                body._embedded['messages'].forEach(function (entry) {
+                    entities.push(entry)
+                });
+            }
             callback(null, entities)
         } else {
 
@@ -302,7 +308,7 @@ getUser = function(params, callback) {
 
     var preparedUrl = APP_CORE_URL + '/api/' + url
     log.debug('------------- getUser Try to execute URL ' + preparedUrl + ' qs ' + JSON.stringify(qs))
-    request.get({url: preparedUrl, headers: headers, qs: qs, strictSSL: true, json: true, timeout: 60000}, function(error, response, body) {
+    request.get({url: preparedUrl, headers: headers, qs: qs, strictSSL: true, json: true, timeout: defaultTimeout}, function(error, response, body) {
         if(error) return callback(error)
         if(response.statusCode !== 200 || !body) return callback(new Error(op.get(body, 'error', body)))
 
@@ -374,7 +380,7 @@ getUsers = function(params, callback) {
 
     var preparedUrl = APP_CORE_URL + '/api/' + url
     log.debug('------------- getUsers Try to execute URL ' + preparedUrl + ' qs ' + JSON.stringify(qs))
-    request.get({url: preparedUrl, headers: headers, qs: qs, strictSSL: true, json: true, timeout: 60000}, function(error, response, body) {
+    request.get({url: preparedUrl, headers: headers, qs: qs, strictSSL: true, json: true, timeout: defaultTimeout}, function(error, response, body) {
 
         log.debug('------------- getUsers Error ' + error)
         if(error) return callback(error)
@@ -405,7 +411,7 @@ getCountries = function(repository, params, callback) {
 
     var preparedUrl = APP_CORE_URL + '/api/' + url
     log.debug('------------- getCountries Try to execute URL ' + preparedUrl + ' qs ' + JSON.stringify(qs))
-    request.get({url: preparedUrl, headers: headers, qs: qs, strictSSL: true, json: true, timeout: 60000}, function(error, response, body) {
+    request.get({url: preparedUrl, headers: headers, qs: qs, strictSSL: true, json: true, timeout: defaultTimeout}, function(error, response, body) {
 
         log.debug('------------- getCountries Error ' + error)
         if(error) return callback(error)
@@ -443,7 +449,7 @@ getMessages = function(params, callback) {
 
     var preparedUrl = APP_CORE_URL + '/api/' + url
     log.debug('------------- getMessages Try to execute URL ' + preparedUrl + ' qs ' + JSON.stringify(params))
-    request.get({url: preparedUrl, headers: headers, qs: qs, strictSSL: true, json: true, timeout: 60000}, function(error, response, body) {
+    request.get({url: preparedUrl, headers: headers, qs: qs, strictSSL: true, json: true, timeout: defaultTimeout}, function(error, response, body) {
 
         if(error) return callback(error)
         if(response.statusCode !== 200 || !body._embedded) return callback(new Error(op.get(body, 'error', body)))
@@ -482,7 +488,7 @@ exports.getRequests = getRequests = function(params, callback) {
 
     var preparedUrl = APP_CORE_URL + '/api/' + url
     log.debug('------------- getRequests Try to execute URL ' + preparedUrl + ' qs ' + JSON.stringify(qs))
-    request.get({url: preparedUrl, headers: headers, qs: qs, strictSSL: true, json: true, timeout: 60000}, function(error, response, body) {
+    request.get({url: preparedUrl, headers: headers, qs: qs, strictSSL: true, json: true, timeout: defaultTimeout}, function(error, response, body) {
 
         log.debug('------------- getRequests Error ' + error)
         if(error) return callback(error)
@@ -513,7 +519,7 @@ exports.getPartners = getPartners = function(params, callback) {
 
     var preparedUrl = APP_CORE_URL + '/api/' + url
     log.debug('------------- getPartners Try to execute URL ' + preparedUrl + ' qs ' + JSON.stringify(qs))
-    request.get({url: preparedUrl, headers: headers, qs: qs, strictSSL: true, json: true, timeout: 60000}, function(error, response, body) {
+    request.get({url: preparedUrl, headers: headers, qs: qs, strictSSL: true, json: true, timeout: defaultTimeout}, function(error, response, body) {
 
         log.debug('------------- getPartners Error ' + error)
         if(error) return callback(error)
@@ -615,7 +621,7 @@ exports.add = function(params, callback) {
 
     log.debug('add Try to execute URL ' + preparedUrl + ' params ' + JSON.stringify(data))
 
-    request.post({url: preparedUrl, headers: headers, body: data, strictSSL: true, json: true, timeout: 60000}, function(error, response, body) {
+    request.post({url: preparedUrl, headers: headers, body: data, strictSSL: true, json: true, timeout: defaultTimeout}, function(error, response, body) {
         if(error) return callback(error)
         if(response.statusCode !== 201 || !body) return callback(new Error(op.get(body, 'error', body)))
 
@@ -657,7 +663,7 @@ exports.edit = function(params, callback) {
     log.debug('params ' + JSON.stringify(params))
     var preparedUrl = APP_CORE_URL + '/api/' + repository + '/' + params.id
     log.debug('edit Try to execute URL ' + preparedUrl + ' body ' + JSON.stringify(body) + ' property = ' + property)
-    request.patch({url: preparedUrl, headers: headers, body: body, strictSSL: true, json: true, timeout: 60000}, function(error, response, body) {
+    request.patch({url: preparedUrl, headers: headers, body: body, strictSSL: true, json: true, timeout: defaultTimeout}, function(error, response, body) {
         if(error) return callback(error)
         log.debug('response.statusCode  = ' + response.statusCode  + ' body = ' + JSON.stringify(body))
         if(response.statusCode !== 200 || !body) return callback(new Error(op.get(body, 'error', body)))
@@ -682,7 +688,7 @@ exports.getSigninUrl = function(params, callback) {
     }
     var preparedUrl = APP_AUTH_CORE_URL + '/user/auth'
     log.debug('Try to execute URL ' + preparedUrl + ' qb ' + JSON.stringify(qb))
-    request.post({url: preparedUrl, body: qb, strictSSL: true, json: true, timeout: 60000}, function(error, response, body) {
+    request.post({url: preparedUrl, body: qb, strictSSL: true, json: true, timeout: defaultTimeout}, function(error, response, body) {
         if(error) return callback(error)
         if(response.statusCode !== 200) return callback(new Error(op.get(body, 'error', body)))
 
@@ -707,7 +713,7 @@ exports.getUserSession = function(params, callback) {
     var preparedUrl = params.auth_url
     log.debug('getUserSession Try to execute URL ' + preparedUrl + ' qb ' + JSON.stringify(qb))
 
-    request.post({url: preparedUrl, body: qb, strictSSL: true, json: true, timeout: 60000}, function(error, response, body) {
+    request.post({url: preparedUrl, body: qb, strictSSL: true, json: true, timeout: defaultTimeout}, function(error, response, body) {
         if(error) return callback(error)
         if(response.statusCode !== 200 || !body.result) return callback(new Error(op.get(body, 'error', body)))
 
@@ -733,7 +739,7 @@ exports.getUser = function(params, callback) {
 
     var preparedUrl = APP_AUTH_CORE_URL + '/user'
     log.debug('Try to execute URL ' + preparedUrl)
-    request.get({url: preparedUrl, headers: headers, strictSSL: true, json: true, timeout: 60000}, function(error, response, body) {
+    request.get({url: preparedUrl, headers: headers, strictSSL: true, json: true, timeout: defaultTimeout}, function(error, response, body) {
         if(error) return callback(error)
         if(response.statusCode !== 200 || !body.result) return callback(new Error(op.get(body, 'error', body)))
 
@@ -779,7 +785,7 @@ exports.file = function(params, callback){
 
     var preparedUrl = APP_CORE_URL + '/file'
     log.debug('file Try to execute URL ' + preparedUrl + ' params = ' + JSON.stringify(params))
-    request.post({url: preparedUrl, headers: headers, body: params, strictSSL: true, json: true, timeout: 60000}, function(error, response, body) {
+    request.post({url: preparedUrl, headers: headers, body: params, strictSSL: true, json: true, timeout: defaultTimeout}, function(error, response, body) {
         if(error) return callback(error)
         if(response.statusCode !== 200 || !body.result) return callback(new Error(op.get(body, 'error', body)))
 
@@ -811,7 +817,7 @@ exports.message = function(params, callback) {
 
     log.debug('preparedUrl = ' + preparedUrl + ' with boyd' + JSON.stringify(body))
 
-    request.post({url: preparedUrl, headers: headers, body: body, strictSSL: true, json: true, timeout: 60000}, function(error, response, body) {
+    request.post({url: preparedUrl, headers: headers, body: body, strictSSL: true, json: true, timeout: defaultTimeout}, function(error, response, body) {
         log.debug('error = ' + JSON.stringify(error))
         log.debug('body = ' + JSON.stringify(body))
         if(error) return callback(error)

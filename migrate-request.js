@@ -20,7 +20,6 @@ log.setLevel(APP_LOGLEVEL)
 
 
 var async  = require('async')
-var sleep  = require('sleep')
 var core_api = require('./helpers/core-api')
 var entu    = require('./helpers/entu')
 

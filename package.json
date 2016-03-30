@@ -42,6 +42,7 @@
         "serve-favicon": "2.x",
         "stylus": "0.x",
         "underscore": "1.x",
-        "locale": "0.x"
+        "locale": "0.x",
+        "lupus": "0.x"
     }
 }

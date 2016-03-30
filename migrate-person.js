@@ -20,7 +20,6 @@ log.setLevel(APP_LOGLEVEL)
 
 
 var async  = require('async')
-var sleep  = require('sleep')
 var core_api = require('./helpers/core-api')
 var entu    = require('./helpers/entu')
 
@@ -28,7 +27,7 @@ var entu    = require('./helpers/entu')
 core_api.active = false
 
 
-for(page = 1; page < 300; page++){
+for(page = 1; page < 45; page++){
     migratePesonsBathc(page, function(data){
         log.debug(data)
     })
