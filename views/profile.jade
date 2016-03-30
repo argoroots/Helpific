@@ -58,7 +58,8 @@ block content
 
                     .form-group
                         label.control-label(ng-class='{ "active": p.newsletter.edit }')= t('pages.profile.newsletter')
-                        input#newsletter(type='checkbox', checked=(profile.get('newsletter.value') === 'True' ? 'checked' : undefined) data-value=profile.get('newsletter.value'),
+                        input#newsletter(type='checkbox', checked=profile.get('newsletter.value') ? 'checked' : undefined,
+                        value=profile.get('newsletter.value') ? 'true' : 'false', data-value=profile.get('newsletter.value') ? 'true' : 'false',
                         data-id=profile.get('newsletter.id'), ng-focus='p.newsletter.edit = true', ng-blur='p.newsletter.edit = false')
 
 
