@@ -238,6 +238,10 @@ getMessage = function(params, callback) {
                         result._id = body[key]
                     }
 
+                    if(key == 'created') {
+                        result._changed = body[key]
+                    }
+
                     if(key == 'fromPersonId') {
                         result['from-person'] = {
                             reference: body[key]
@@ -586,6 +590,7 @@ exports.add = function(params, callback) {
         data.toPersonId = preparedData['message-to-person']
         data.synum = preparedData['message-message']
         data.entuId = preparedData['message-entuId']
+        data.created = preparedData['message-created']
 
 
     } else if (params.definition == 'request') {

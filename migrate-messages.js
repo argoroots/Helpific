@@ -23,6 +23,7 @@ var async  = require('async')
 var core_api = require('./helpers/core-api')
 var entu    = require('./helpers/entu')
 var lupus = require('lupus');
+var moment = require('moment-timezone')
 
 core_api.active = false
 
@@ -98,6 +99,7 @@ function migrateMessage(p1, callback) {
                         properties['to-person'] = results.t1[0].get('genId')
                         properties.message = p1.get('message.value')
                         properties.entuId = messageId
+                        properties.created = moment(p1.get('_changed')).format('YYYY-MM-DDTHH:mm:ss.SSSZ')
 
                         core_api.add({
                             definition: 'message',

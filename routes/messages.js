@@ -148,6 +148,7 @@ router.post('/:id', function(req, res, next) {
     var properties = req.body
     properties['from-person'] = res.locals.user.id
     properties['to-person'] = req.params.id
+    properties['created'] = moment(Date.now()).format('YYYY-MM-DDTHH:mm:ss.SSSZ')
     properties.participants = 'from.' + res.locals.user.id + '.to.' + req.params.id + '.'
 
     entu.add({
