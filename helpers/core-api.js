@@ -796,6 +796,33 @@ exports.file = function(params, callback){
 
 }
 
+exports.migratePicture = function (params, callback){
+    var body = {
+        entuID: params.entuID,
+        pictureUrl: params.pictureUrl,
+    }
+
+    if(params.auth_id && params.auth_token) {
+        var headers = {'X-Auth-UserId': params.auth_id, 'X-Auth-Token': params.auth_token}
+    } else {
+        var headers = {}
+    }
+
+    var preparedUrl = APP_CORE_URL + '/migratePicture'
+
+    log.debug('preparedUrl = ' + preparedUrl + ' with boyd' + JSON.stringify(body))
+
+    request.post({url: preparedUrl, headers: headers, body: body, strictSSL: true, json: true, timeout: defaultTimeout}, function(error, response, body) {
+        log.debug('error = ' + JSON.stringify(error))
+        log.debug('body = ' + JSON.stringify(body))
+        if(error) return callback(error)
+        if(response.statusCode !== 200) return callback(new Error(op.get(body, 'error', body)))
+
+        callback(null, body)
+    })
+}
+
+
 exports.message = function(params, callback) {
 
     var body = {
