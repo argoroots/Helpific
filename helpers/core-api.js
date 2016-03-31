@@ -6,6 +6,8 @@ var random   = require('randomstring')
 var request  = require('request')
 var sanitize = require('sanitize-html')
 
+var moment = require('moment-timezone')
+
 var defaultTimeout = 120000
 
 exports.active = true
@@ -159,6 +161,13 @@ getRequest = function(params, callback) {
                     result[key] = {
                         id: 0,
                         value: body[key]
+                    }
+
+                    if(key == 'time') {
+                        result['time'] = {
+                            id: 0,
+                            value: moment(body[key]).format('YYYY-MM-DD HH:mm:ss')
+                        }
                     }
                 }
             }
