@@ -17,8 +17,4 @@ block content
                     if p.has('about-me-video.value')
                         p
                             a(href=p.get('about-me-video.value'), target='new')= p.get('about-me-video.value')
-                    p
-                        a(href='mailto:'+p.get('email.value', ''))= p.get('email.value')
-                    p
-                        a(href='tel:'+p.get('phone.value', ''))= p.get('phone.value')
             .row.spacer
