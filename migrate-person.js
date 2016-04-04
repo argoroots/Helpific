@@ -22,16 +22,17 @@ log.setLevel(APP_LOGLEVEL)
 var async  = require('async')
 var core_api = require('./helpers/core-api')
 var entu    = require('./helpers/entu')
+var lupus = require('lupus')
 
 
 core_api.active = false
 
 
-for(page = 1; page < 45; page++){
-    migratePesonsBathc(page, function(data){
+lupus(1, 45, function(n) {
+    migratePesonsBathc(n, function(data){
         log.debug(data)
     })
-}
+})
 
 
 function migratePesonsBathc(page, callback){

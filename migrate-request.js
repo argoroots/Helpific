@@ -22,17 +22,17 @@ log.setLevel(APP_LOGLEVEL)
 var async  = require('async')
 var core_api = require('./helpers/core-api')
 var entu    = require('./helpers/entu')
-
+var lupus = require('lupus')
 var moment = require('moment-timezone')
 
 core_api.active = false
 
 
-for(page = 1; page < 10; page++){
-    migrateRequestsBathc(page, function(data){
+lupus(1, 100, function(n) {
+    migrateRequestsBathc(n, function(data){
         log.debug(data)
     })
-}
+})
 
 
 function migrateRequestsBathc(page, callback){

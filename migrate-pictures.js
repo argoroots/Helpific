@@ -22,7 +22,7 @@ log.setLevel(APP_LOGLEVEL)
 var async  = require('async')
 var core_api = require('./helpers/core-api')
 var entu    = require('./helpers/entu')
-var lupus = require('lupus');
+var lupus = require('lupus')
 
 
 core_api.active = false
