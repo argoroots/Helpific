@@ -68,8 +68,19 @@ html(lang=lang, ng-app='hlpfc')
                                     ul.dropdown-menu
                                         li
                                             a(href='bb')= t('nav.bb')
-                                        li
-                                            a(href='pad')= t('nav.pad')
+
+                                        if lang == 'et'
+                                            li
+                                                a(href='http://est.helpific.com/')= t('nav.pad')
+                                        else if lang == 'ru'
+                                            li
+                                                a(href='http://rus.helpific.com/')= t('nav.pad')
+                                        else if lang == 'fi'
+                                            li
+                                                a(href='http://fin.helpific.com/')= t('nav.pad')
+                                        else
+                                            li
+                                                a(href='http://eng.helpific.com/')= t('nav.pad')
 
                                 li
                                     a(href='help/requests')= t('nav.requests')
