@@ -1270,6 +1270,7 @@ pages:
         pad-title:
             en: Competition in PAD project
             et: Konkurss PSA projektis
+            fi: pages.index.pad-title
             ru: Конкурс в проекте Р.П.О
         requests-link:
             cs: Pomozte těm kteří to potřebují
@@ -1340,6 +1341,7 @@ pages:
         twitter-title:
             en: Twitter posts
             et: Postitused Twitteris
+            fi: pages.index.twitter-title
             ru: Сообщения в Twitter
     messages:
         new-message:
