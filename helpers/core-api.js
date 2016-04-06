@@ -112,7 +112,7 @@ getPartner = function(params, callback) {
                     if(key == 'logoPath') {
                         result['photo'] = {
                             id: 0,
-                            file: APP_CORE_URL + body[key]
+                            file: APP_AUTH_CORE_URL + body[key]
                         }
                     }
                 }
@@ -548,7 +548,7 @@ exports.getPartners = getPartners = function(params, callback) {
                 url: {value: op.get(entry, 'link', '')},
                 name: {value: op.get(entry, 'nimi', '')},
                 note: {value: op.get(entry, 'tekst', '')},
-                photo: {file: APP_CORE_URL + op.get(entry, 'logoPath', '')}
+                photo: {file: APP_AUTH_CORE_URL + op.get(entry, 'logoPath', '')}
             }
 
             entities.push(partner)
@@ -631,7 +631,7 @@ exports.add = function(params, callback) {
 
     var headers = {}
 
-    var preparedUrl = APP_CORE_URL + repository
+    var preparedUrl = APP_AUTH_CORE_URL + repository
 
     log.debug('add Try to execute URL ' + preparedUrl + ' params ' + JSON.stringify(data))
 
@@ -787,7 +787,7 @@ exports.getUser = function(params, callback) {
 
 // compore picture URL
 exports.getPictureUrl = getPictureUrl = function(reference) {
-    return APP_CORE_URL + '/user/' + reference + '/picture'
+    return APP_AUTH_CORE_URL + '/user/' + reference + '/picture'
 }
 
 exports.file = function(params, callback){
@@ -797,7 +797,7 @@ exports.file = function(params, callback){
         var headers = {}
     }
 
-    var preparedUrl = APP_CORE_URL + '/file'
+    var preparedUrl = APP_AUTH_CORE_URL + '/file'
     log.debug('file Try to execute URL ' + preparedUrl + ' params = ' + JSON.stringify(params))
     request.post({url: preparedUrl, headers: headers, body: params, strictSSL: true, json: true, timeout: defaultTimeout}, function(error, response, body) {
         if(error) return callback(error)
@@ -822,7 +822,7 @@ exports.migratePicture = function (params, callback){
         var headers = {}
     }
 
-    var preparedUrl = APP_CORE_URL + '/migratePicture'
+    var preparedUrl = APP_AUTH_CORE_URL + '/migratePicture'
 
     log.debug('preparedUrl = ' + preparedUrl + ' with boyd' + JSON.stringify(body))
 
@@ -854,7 +854,7 @@ exports.message = function(params, callback) {
         var headers = {}
     }
 
-    var preparedUrl = APP_CORE_URL + '/email'
+    var preparedUrl = APP_AUTH_CORE_URL + '/email'
 
     log.debug('preparedUrl = ' + preparedUrl + ' with boyd' + JSON.stringify(body))
 
