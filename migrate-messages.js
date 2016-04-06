@@ -28,7 +28,7 @@ var moment = require('moment-timezone')
 
 core_api.active = false
 
-lupus(10, 20, function(n) {
+lupus(1, 40, function(n) {
     migrateMessagesBathc(n, function(data){
         log.debug('END with : ' + JSON.stringify(data))
     })
