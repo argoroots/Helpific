@@ -108,7 +108,8 @@ router.get('/json/:id', function(req, res) {
 
             var date = moment.utc(m.get('_changed')).tz(APP_TIMEZONE).calendar()
             var relativeDate = moment.utc(m.get('_changed')).tz(APP_TIMEZONE).fromNow()
-            var sort = moment.utc(m.get('_changed')).format('YYYYMMDDhhmmss')
+            var sort = moment.utc(m.get('_changed')).format('YYYYMMDDHHmmss')
+
             days[relativeDate] = {
                 date: m.get('_created'),
                 relativeDate: relativeDate,
