@@ -12,6 +12,7 @@ APP_TIMEZONE        = process.env.TIMEZONE || 'Europe/Tallinn'
 APP_ADMIN_EMAILS    = process.env.ADMIN_EMAILS
 APP_FEEDBACK_EMAILS = process.env.FEEDBACK_EMAILS
 APP_CORE_URL        = process.env.CORE_URL || 'http://core.helpific.ee:8080'
+APP_AUTH_CORE_URL   = process.env.AUTH_CORE_URL || 'http://core.helpific.ee:9000'
 
 
 // start logging
@@ -28,9 +29,9 @@ var lupus = require('lupus')
 core_api.active = false
 
 
-lupus(1, 45, function(n) {
+lupus(1, 50, function(n) {
     migratePesonsBathc(n, function(data){
-        log.debug(data)
+        log.debug('migratePersonsBatch result = ' + data)
     })
 })
 
@@ -90,8 +91,8 @@ function migratePerson(p1, callback) {
                 definition: 'person',
                 properties: properties
             }, function (error, result) {
-                log.debug(error)
-                log.debug(result)
+                log.debug('Error = ' + error)
+                log.debug('Result = ' + result)
             })
         }
 

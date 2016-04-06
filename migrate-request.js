@@ -12,6 +12,7 @@ APP_TIMEZONE        = process.env.TIMEZONE || 'Europe/Tallinn'
 APP_ADMIN_EMAILS    = process.env.ADMIN_EMAILS
 APP_FEEDBACK_EMAILS = process.env.FEEDBACK_EMAILS
 APP_CORE_URL        = process.env.CORE_URL || 'http://core.helpific.ee:8080'
+APP_AUTH_CORE_URL   = process.env.AUTH_CORE_URL || 'http://core.helpific.ee:9000'
 
 
 // start logging
@@ -28,7 +29,7 @@ var moment = require('moment-timezone')
 core_api.active = false
 
 
-lupus(1, 100, function(n) {
+lupus(1, 40, function(n) {
     migrateRequestsBathc(n, function(data){
         log.debug(data)
     })
