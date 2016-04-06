@@ -22,7 +22,7 @@ block content
             .message-list.col-xs-8.col-md-7.col-xs-offset-1(ng-show='selected && !loading')
                 .row(ng-repeat-start='d in messages.days | orderBy:"ordinal"')
                     h5.col-xs-12.text-center {{ d.relativeDate }}
-                .row(ng-repeat='m in messages.messages | filter:{ relativeDate: d.relativeDate } | orderBy:"id"')
+                .row(ng-repeat='m in messages.messages | filter:{ relativeDate: d.relativeDate } | orderBy:"sort"')
                     .message.bg-green-transparent.col-xs-11.col-sm-10.pull-left(ng-if='m.person !== #{ user.id }')
                         small.pull-left {{ m.date }}
                         br

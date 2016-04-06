@@ -108,17 +108,19 @@ router.get('/json/:id', function(req, res) {
 
             var date = moment.utc(m.get('_changed')).tz(APP_TIMEZONE).calendar()
             var relativeDate = moment.utc(m.get('_changed')).tz(APP_TIMEZONE).fromNow()
+            var sort = moment.utc(m.get('_changed')).format('YYYYMMDDhhmmss')
             days[relativeDate] = {
                 date: m.get('_created'),
                 relativeDate: relativeDate,
-                ordinal: m.get('_id')
+                ordinal: sort // m.get('_id')
             }
             messages.push({
                 id: m.get('_id'),
                 person: m.get('from-person.reference'),
                 date: date,
                 relativeDate: relativeDate,
-                message: m.get('message.value')
+                message: m.get('message.value'),
+                sort: sort
             })
         }
 
