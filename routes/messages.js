@@ -212,18 +212,20 @@ router.post('/:id', function(req, res, next) {
 
             var date = moment.utc().tz(APP_TIMEZONE).calendar()
             var relativeDate = moment.utc().tz(APP_TIMEZONE).fromNow()
+            var sort = moment.utc().format('YYYYMMDDHHmmss')
             res.send({
                 day: {
                     date: date,
                     relativeDate: relativeDate,
-                    ordinal: new_id
+                    ordinal: sort //new_id
                 },
                 message: {
                     person: res.locals.user.id,
                     date: date,
                     relativeDate: relativeDate,
                     message: req.body.message,
-                    messageId: new_id
+                    messageId: new_id,
+                    sort: sort
                 }
             })
         })
