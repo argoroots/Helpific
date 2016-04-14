@@ -611,6 +611,7 @@ exports.add = function(params, callback) {
         data.saatjaPersonId = preparedData['feedback-from-person']
         data.saatjaEmail = preparedData['feedback-from-email']
         data.message = preparedData['feedback-message']
+        data.created = preparedData['feedback-created']
 
 
     } else if (params.definition == 'person') {

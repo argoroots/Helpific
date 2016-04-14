@@ -192,6 +192,7 @@ router.post('/feedback', function(req, res, next) {
     var properties = req.body
 
     if(res.locals.user) properties['from-person'] = res.locals.user.id
+    properties['created'] = moment(Date.now()).format('YYYY-MM-DDTHH:mm:ss.SSSZ')
 
     var new_id = null
     async.series([
