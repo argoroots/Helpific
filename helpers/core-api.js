@@ -608,6 +608,9 @@ exports.add = function(params, callback) {
     } else if (params.definition == 'feedback') {
         repository = '/api/feedbacks'
 
+        data.saatjaPersonId = preparedData['feedback-from-person']
+        data.saatjaEmail = preparedData['feedback-from-email']
+        data.message = preparedData['feedback-message']
 
 
     } else if (params.definition == 'person') {
