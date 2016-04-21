@@ -2,6 +2,7 @@ feedback:
     admin-email-message:
         cs: 'https://helpific.entu.ee/entity/feedback/%s'
         de: 'https://helpific.entu.ee/entity/feedback/%s'
+        el: 'https://helpific.entu.ee/entity/feedback/%s'
         en: 'https://helpific.entu.ee/entity/feedback/%s'
         et: 'https://helpific.entu.ee/entity/feedback/%s'
         fi: 'https://helpific.entu.ee/entity/feedback/%s'
@@ -11,6 +12,8 @@ feedback:
         it: 'https://helpific.entu.ee/entity/feedback/%s'
         ja: 'https://helpific.entu.ee/entity/feedback/%s'
         ko: 'https://helpific.entu.ee/entity/feedback/%s'
+        lt: 'https://helpific.entu.ee/entity/feedback/%s'
+        lv: 'https://helpific.entu.ee/entity/feedback/%s'
         nl: 'https://helpific.entu.ee/entity/feedback/%s'
         ru: 'https://helpific.entu.ee/entity/feedback/%s'
         zh: 'https://helpific.entu.ee/entity/feedback/%s'
@@ -32,6 +35,7 @@ feedback:
     email:
         cs: E-mail
         de: E-Mail
+        el: E-mail
         en: E-mail
         et: E-post
         fi: Sähköposti
@@ -40,6 +44,7 @@ feedback:
         it: E-mail
         ja: メール
         ko: 이메일
+        lv: E-pasts
         nl: 'E-Mail '
         ru: Э-почта
         zh: 电子邮箱
@@ -54,6 +59,7 @@ feedback:
         it: Messaggio
         ja: メッセージ
         ko: 메시지
+        lv: Vēstules
         nl: 'Bericht '
         ru: Сообщение
         zh: 反馈信息
@@ -68,6 +74,7 @@ feedback:
         it: Inviati
         ja: 送信
         ko: 전송
+        lv: Sūtīt
         nl: 'Sturen '
         ru: Отправить
         zh: 发送
@@ -82,6 +89,7 @@ feedback:
         it: 'Grazie!'
         ja: ありがとうございました！
         ko: '감사합니다!'
+        lv: 'Paldies! '
         nl: 'Dankuwel '
         ru: 'Благодарим!'
         zh: 谢谢你！
@@ -147,6 +155,7 @@ help:
     admin-email-message:
         cs: 'https://helpific.com/et/help/%s'
         de: 'https://helpific.com/et/help/%s'
+        el: 'https://helpific.com/et/help/%s'
         en: 'https://helpific.com/et/help/%s'
         et: 'https://helpific.com/et/help/%s'
         fi: 'https://helpific.com/et/help/%s'
@@ -176,6 +185,7 @@ locales:
     cs:
         cs: Čeština
         de: Čeština
+        el: Čeština
         en: Čeština
         et: Čeština
         fi: Čeština
@@ -198,6 +208,7 @@ locales:
         it: Deutsch
         ja: Deutsch
         ko: Deutsch
+        lt: Deutsch
         nl: Deutsch
         ru: Deutsch
         zh: Deutsch
@@ -212,12 +223,14 @@ locales:
         it: English
         ja: English
         ko: English
+        lt: English
         nl: English
         ru: English
         zh: English
     et:
         cs: Eesti keel
         de: Eesti keel
+        el: Eesti keel
         en: Eesti keel
         et: Eesti keel
         fi: Eesti keel
@@ -226,12 +239,14 @@ locales:
         it: Eesti keel
         ja: Eesti keel
         ko: Eesti keel
+        lt: Eesti keel
         nl: Eesti keel
         ru: Eesti keel
         zh: Eesti keel
     fi:
         cs: Suomi
         de: Suomi
+        el: Suomi
         en: Suomi
         et: Suomi
         fi: Suomi
@@ -246,6 +261,7 @@ locales:
     fr:
         cs: Français
         de: Français
+        el: Français
         en: Français
         et: Français
         fi: Français
@@ -260,6 +276,7 @@ locales:
     hu:
         cs: Magyar
         de: Magyar
+        el: Magyar
         en: Magyar
         et: Magyar
         fi: Magyar
@@ -274,6 +291,7 @@ locales:
     it:
         cs: Italian
         de: Italian
+        el: Italian
         en: Italian
         et: Italian
         fi: Italian
@@ -288,6 +306,7 @@ locales:
     ja:
         cs: 日本語
         de: 日本語
+        el: 日本語
         en: 日本語
         et: 日本語
         fi: 日本語
@@ -302,6 +321,7 @@ locales:
     ko:
         cs: 한국어
         de: 한국어
+        el: 한국어
         en: 한국어
         et: 한국어
         fi: 한국어
@@ -310,12 +330,14 @@ locales:
         it: 한국어
         ja: 한국어
         ko: 한국어
+        lv: 한국어
         nl: 한국어
         ru: 한국어
         zh: 한국어
     ru:
         cs: Русский
         de: Русский
+        el: Русский
         en: Русский
         et: Русский
         fi: Русский
@@ -324,12 +346,14 @@ locales:
         it: Русский
         ja: Русский
         ko: Русский
+        lv: Русский
         nl: Русский
         ru: Русский
         zh: Русский
     zh:
         cs: 简体中文
         de: 简体中文
+        el: 简体中文
         en: 简体中文
         et: 简体中文
         fi: 简体中文
@@ -361,6 +385,7 @@ message:
         it: 'Ciao!<br> <br> Hai un nuovo messaggio su Helpific:<br> <a href="https://helpific.com/en/messages/%s">helpific.com/en/messages/%s</a>'
         ja: 'こんにちは！<br> <br>Helpific上に新着メッセージが届いています。<br> <a href="https://helpific.com/en/messages/%s">helpific.com/en/messages/%s</a>'
         ko: '반갑습니다!<br> <br> Helpific에 새로운 메시지가 있습니다.:<br> <a href="https://helpific.com/en/messages/%s">helpific.com/en/messages/%s</a>'
+        lv: 'Hei!<br> <br> Tev ir jauna vēstule Helpific:<br> <a href="https://helpific.com/en/messages/%s">helpific.com/en/messages/%s</a>'
         nl: 'Hoi!<br> <br> U heeft een nieuwe bericht in Helpific:<br> <a href="https://helpific.com/en/messages/%s">helpific.com/en/messages/%s</a>'
         ru: >
             Привет!<br> <br> У тебя новое сообщение в Helpific:<br> <a
@@ -392,6 +417,7 @@ nav:
         it: Su Helpific
         ja: Helpificについて
         ko: 함께하는 사람들
+        lv: Par mums
         nl: Over mij
         ru: О Нас
         zh: 关于我们
@@ -420,6 +446,7 @@ nav:
         it: Blog
         ja: ブログ
         ko: 블로그
+        lv: Blogs
         nl: Blog
         ru: Блог
         zh: 博客
@@ -435,6 +462,7 @@ nav:
             it: Messaggi
             ja: メッセージ
             ko: 메시지
+            lv: Vēstules
             nl: Berichten
             ru: Сообщения
             zh: 消息
@@ -449,6 +477,7 @@ nav:
             it: Le mie offerte
             ja: マイ オファー
             ko: 나의 나눔 목록
+            lv: Mani piedāvājumi
             nl: Mijn aanbiedingen
             ru: Мои предложения
             zh: 我的帮助
@@ -491,6 +520,7 @@ nav:
             it: Esci
             ja: ログアウト
             ko: 로그아웃
+            lv: Iziet
             nl: Afmelden
             ru: Выйти
             zh: 注销
@@ -525,6 +555,7 @@ nav:
     pad:
         cs: Vývoj k Pozitivnímu Postoji
         de: ' Entwicklung einer Positiven Einstellung'
+        el: Ανάπτυξη Θετικής Στάσης
         en: Positive Attitude Development
         et: Positiivse Suhtumise Arendamine
         fi: Positiivisen Asenteen Kehittäminen
@@ -622,6 +653,7 @@ nav:
     toggle-navigation:
         cs: Zpět do menu
         de: Zum Menü
+        el: Μπάρα πλοήγησης
         en: Toggle navigation
         et: Ava menüü
         fi: Valikon avaaminen
@@ -695,6 +727,7 @@ pages:
         added:
             cs: 'Přidáno:'
             de: 'Hinzugefügt am:'
+            el: 'Προστέθηκε στις:'
             en: 'Added at:'
             et: 'Lisamise aeg:'
             fi: 'Lisätty ajalla:'
@@ -751,6 +784,7 @@ pages:
         location-ph:
             cs: 'Např. Brno, Jihomoravský kraj'
             de: 'z.B. Linz, Oberösterreich'
+            el: 'πχ. Ήπειρος, Μακεδονία, Κυκλάδες, Ιόνιο, Στερεά Ελλάδα'
             en: 'e.g. London, City of London'
             et: 'nt. Tallinn, Harjumaa'
             fi: 'esim. Lahti, Päijät-Häme'
@@ -779,6 +813,7 @@ pages:
         offer-price:
             cs: Cena za službu (€) (Nepovinné)
             de: Service Preis (€) (Freiwillig)
+            el: Τιμή υπηρεσίας (€) (Προαιρετικό)
             en: Service price (€) (Not obligatory)
             et: Teenuse hind (€) (Mitte kohustuslik)
             fi: 'Palvelun hinta (€) (Vapaavalintainen) '
@@ -793,6 +828,7 @@ pages:
         offer-price-list:
             cs: 'Cena '
             de: Preis
+            el: Τιμή υπηρεσίας
             en: Service price
             et: Teenuse hind
             fi: Palvelun hinta
@@ -807,6 +843,7 @@ pages:
         offer-price-ph:
             cs: 'např. 10 '
             de: z.B. 10
+            el: πχ. 10
             en: e.g. 10
             et: nt. 10
             fi: esim. 10
@@ -835,6 +872,7 @@ pages:
         offer-request-ph:
             cs: např. Jedu do Prahy mám volné místo
             de: z.B. Fahre nach Wien und habe noch Platz in meinem Auto
+            el: πχ. Θα πάω στη Θεσσαλονίκη και έχω χώρο στο αυτοκίνητο για όποιον θέλει να πάει κι εκείνος στον ίδιο προορισμό
             en: e.g. Will go to London and have extra room in my car
             et: nt. Lähen Nuustakule ja autos on üks vaba koht
             fi: 'esim. Menen Lahteen, ja minulla on paikka vapaana autossa'
@@ -919,6 +957,7 @@ pages:
         request-price:
             cs: Jsem ochoten zaplatit (€) (Volitelné)
             de: 'Stimme zu, um zu zahlen (€) (Freiwillig)'
+            el: Συμγωνία πληρωμής (€) (Προαιρετικό)
             en: Agree to pay (€) (Not obligatory)
             et: Olen nõus maksma (€) (Mitte kohustuslik)
             fi: Suostun maksamaan hinnan (€) (Valinnainen)
@@ -933,6 +972,7 @@ pages:
         request-price-list:
             cs: Zaplatit
             de: 'Stimme zu, um zu zahlen'
+            el: Συμφωνία πληρωμής
             en: Agree to pay
             et: Olen nõus maksma
             fi: Suostun maksamaan hinnan
@@ -1475,6 +1515,7 @@ pages:
         additional-info-title:
             cs: DALŠÍ INFORMACE
             de: Zusätzliche Informationen
+            el: ΠΡΟΣΘΕΤΕΣ ΠΛΗΡΟΦΟΡΙΕΣ
             en: ADDITIONAL INFORMATION
             et: LISAINFORMATSIOON
             fi: Lisätiedot
@@ -1489,6 +1530,7 @@ pages:
         address:
             cs: Adresa
             de: Adresse
+            el: Διεύθυνση
             en: Address
             et: Aadress
             fi: Osoite
@@ -1503,6 +1545,7 @@ pages:
         address-ph:
             cs: např. Sokolovská 37
             de: z.B. Leipziger Str. 12
+            el: 'πχ. Βασιλέως Κωνσταντίνου 32, Αθήνα'
             en: e.g. 767 5th Avenue
             et: nt. Tartu mnt. 1
             fi: esim. Esimerkkitie 8
@@ -1517,6 +1560,7 @@ pages:
         address-text:
             cs: 'Pokud budete využívat pomoci na stejné adrese, můžete ji napsat sem pro ušetření času. Nebude veřejně zobrazena.'
             de: 'Für den Fall, dass du meistens für die selbe Adresse Hilfe suchst, kannst du diese hier speichern, um später Zeit zu sparen. Wir werden diese nicht veröffentlichen.'
+            el: 'Σε περίπτωση που ψάχνετε για βοήθεια στην ίδια διεύθυνση, μπορείτε να την πληκτρολογήσετε εδώ, για να κερδίσετε χρόνο αργότερα. Δεν θα κοινοποιηθεί δημοσίως'
             en: 'In case you are seeking for help normally at the same address, you can type it in here, to save you time later. We will not share it public.'
             et: 'Juhul, kui otsite tavapäraselt abi samal aadressil, võite selle siia kirjutada, et hiljem aega säästa. Me ei avalikusta seda.'
             fi: 'Mikäli etsit apua yleensä tiettyyn samaan osoitteeseen, voit kirjoittaa osoitteen tähän säästääksesi aikaasi myöhemmin. Emme jaa osoitetta julkisesti.'
@@ -1530,6 +1574,7 @@ pages:
         city:
             cs: Město
             de: Stadt
+            el: Πόλη
             en: City
             et: Linn
             fi: Kaupunki
@@ -1558,6 +1603,7 @@ pages:
         country:
             cs: 'Země '
             de: Land
+            el: Χώρα
             en: Country
             et: Riik
             fi: Maa
@@ -1586,6 +1632,7 @@ pages:
         county:
             cs: Kraj
             de: Land
+            el: Περιοχή
             en: County
             et: Maakond
             fi: Maakunta
@@ -1655,6 +1702,7 @@ pages:
         email-text:
             cs: 'Vaše osobní údaje nebudou sdíleny. Využijeme je jen v případě pokud Vám budeme muset sdělit něco velice důležitého, nebo poděkovat.'
             de: 'Wir werden deine Kontaktdaten mit niemanden teilen, außer du bist damit einverstanden. Dein Kontakt wird nur dazu verwendet, um dir über wichtige Informationen Bescheid zu sagen, oder um Danke zu sagen!'
+            el: 'Οι επαφές σας δε θα εμφανίζονται σε άλλους, παραμόνο αν το επιλέξετε. Οι επαφές σας θα χρησιμοποιηθούν μόνο αν πρέπει να σας γνωστοποιηθεί κάτι σημαντικό ή να σας ευχαριστήσουμε.'
             en: 'We will not share your contacts with anyone unless you tell us so. Your contacts will be used only if we need to let you know something important, or to say thank you!'
             et: 'Me ei jaga ilma Teie loata Teie kontaktandmeid kellelegi. Kasutame Teie kontaktandmeid ainult juhul, kui peame Teile midagi olulist teatama või et Teid tänada!'
             fi: 'Emme jaa yhteystietojasi kenenkään kanssa, ellet pyydä meitä tekemään niin. Yhteystietojasi tullaan käyttämään ainoastaan, mikäli meidän tulee tiedottaa sinulle jostakin tärkeästä asiasta tai kiittää sinua!'
@@ -1668,6 +1716,7 @@ pages:
         first-second-name-text:
             cs: 'U vašich příspěvků, bude zobrazeno jen vaše křestní jméno. Celé jméno pomůže udržovat bezpečí v rámci platformy Helpific.'
             de: 'Wir werden nur deinen Vornamen verwenden, wenn du etwas schreibst, aber deinen vollständigen Namen zu wissen, hilft uns eine sicherere Plattform zu schaffen.'
+            el: 'Θα χρησιμοποιηούμε μόνο το όνομά σας όταν θα κάνετε ποστ, αλλά γνωρίζοντας το πλήρες ονοματεπώνυμό σας θα μας βοηθήσει να δημιουργήσουμε μια ασφαλέστερη πλατφόρμα.'
             en: 'We will only use your first name when displaying posts, but knowing your full name will help us creata a safer platform.'
             et: 'Kasutame postituste tegemisel ainult Teie eesnime, aga täisnime teadmine aitab meil luua turvalisemat platvormi.'
             fi: Käytämme ainoastaan etunimeäsi näytäessämme postit. Koko nimesi tietäminen auttaa kuitenkin meitä luomaan turvallisemman alustan.
@@ -1681,6 +1730,7 @@ pages:
         forename:
             cs: Jméno
             de: Vorname
+            el: Όνομα
             en: Forename
             et: Eesnimi
             fi: Etunimi
@@ -1709,6 +1759,7 @@ pages:
         language:
             cs: Výchozí jazyk
             de: Bevorzugte Sprache
+            el: Γλώσσα προτίμησης
             en: Preferred language
             et: Eelistatud keel
             fi: Ensisijainen kieli
@@ -1723,6 +1774,7 @@ pages:
         location-text:
             cs: 'Když budeme vědět, kde jste, bude snažší spojit vás s jinými lidmi.'
             de: 'Zu wissen wo du dich befindest, hilft uns dich schneller mit anderen Personen zu verbinden.'
+            el: Γνωρίζοντας πού βρίσκεστε μας βοηθάει να έρθετε σε επικοινωνία με άλλους ανθρώπους γρηγορότερα.
             en: Knowing where you are located helps us connect people faster.
             et: 'Kui teame Teie asukohta, saame inimesi kiiremini kokku viia.'
             fi: Sijaintisi tietäminen auttaa meitä yhdistämään ihmisiä nopeammin.
@@ -1737,6 +1789,7 @@ pages:
         main-info-title:
             cs: HLAVNÍ INFORMACE
             de: Hauptinformationen
+            el: ΒΑΣΙΚΕΣ ΠΛΗΡΟΦΟΡΙΕΣ
             en: MAIN INFORMATION
             et: PÕHIINFORMATSIOON
             fi: Pääasialliset tiedot
@@ -1821,6 +1874,7 @@ pages:
         newsletter:
             cs: Dostávat informace o Helpific
             de: Ich erlaube Helpific mir Newsletter zuzuschicken
+            el: Αποδέχομαι το Helpific να μου στέλει newsletter
             en: I allow Helpific to send me newsletter
             et: Luban Helpificul saata mulle uudiskirju
             fi: Sallin Helpificin lähettää minulle uutiskirjeen
@@ -1835,6 +1889,7 @@ pages:
         phone:
             cs: Telefoní číslo
             de: Telefonnummer
+            el: Τηλέφωνο
             en: Phone number
             et: Telefoni number
             fi: Puhelinnumero
@@ -1867,6 +1922,7 @@ pages:
         photo-text:
             cs: '<strong>Profilový obrázek</strong>, dělá váš profil důvěryhodnější. Víte kdo vám pomůže nebo komu budete pomáhat.'
             de: '<strong>Profilbilder</strong> machen dein Profil viel glaubwürdiger. Würdest du nicht auch gerne wissen wollen, wie die Person aussieht, die dir helfen wird bzw. der du helfen möchtest?'
+            el: '<strong>Η φωτογραφία προφίλ</strong> σας κάνει το προφίλ σας πιο έμπιστο. Δε θα θέλατε να ξέρετε ποιο είναι αυτό το άτομο, ποιον θα βοηθήσετε ή ποιον πρόκειται να βοηθήσετε.'
             en: "<strong>Profile picture</strong> makes your profile a lot more trustworthy. Wouldn't you want to know who the person is, who you will help you or who you are going to help?"
             et: '<strong>Profiilipilt</strong> muudab Teie profiili palju usaldusväärsemaks. Kas Te ei sooviks teada, kes on see inimene, kes Teid aitab või keda Teie aitate?'
             fi: '<strong>Profiilikuva</strong> tekee profiilistasi paljon luotettavamman. Etkö haluaisi tietää, kuka on se henkilö, joka tulee auttamaan Sinua tai jota Sinä tulet auttamaan? '
@@ -1895,6 +1951,7 @@ pages:
         save-btn:
             cs: Uložit profil
             de: Profil sichern
+            el: Αποθηκευση προφιλ
             en: Save profile
             et: Salvesta profiil
             fi: Tallenna profiili
@@ -1951,6 +2008,7 @@ pages:
         surname:
             cs: Příjmení
             de: Nachname
+            el: Επώνυμο
             en: Surname
             et: Perenimi
             fi: Sukunimi
@@ -1979,6 +2037,7 @@ pages:
         title:
             cs: Můj profil
             de: Mein Profil
+            el: Το προφίλ μου
             en: My profile
             et: Minu profiil
             fi: Minun profiilini
@@ -2021,6 +2080,7 @@ pages:
         visibility-text:
             cs: 'Tyto informace budou viditelné pro ostatní připojené uživatele. Něco málo nám o sobě napište!'
             de: 'Diese Information wird für andere User sichtbar sein! Bitte erzähl uns mehr über dich.'
+            el: 'Αυτή η πληροφορία θα είναι ορατή σε άλλους χρήστες που θα είναι συνδεδεμένοι! Παρακαλούμε αφήστε μας να γνωρίζουμε περισσότερα για εσάς.'
             en: 'This information will be visible to other logged in users!  Please let us all know a little more about you.'
             et: 'See informatsioon on nähtav teistele sisselogitud kasutajatele! Palun, kirjuta natuke rohkem informatsiooni endast.'
             fi: 'Tämä tieto tulee näkymään muille kirjautuneille käyttäjille! Kerrothan meille kaikille tässä hieman lisää itsestäsi.'
@@ -2077,6 +2137,7 @@ pages:
         facebook:
             cs: Připojit přes Facebook
             de: Über Facebook anmelden
+            el: Σύνδεση μέσω Facebook
             en: Login over Facebook
             et: Logi sisse Facebooki kaudu
             fi: Kirjaudu sisään Facebookin kautta
@@ -2091,6 +2152,7 @@ pages:
         google:
             cs: Připojit přes Google+
             de: Über Google+ anmelden
+            el: ' Σύνδεση μέσω Google+'
             en: Login over Google+
             et: Logi sisse Google+ kaudu
             fi: Kirjaudu sisään Google+ kautta
@@ -2178,6 +2240,7 @@ pages:
         title:
             cs: Prosím aktualizujte své kontaktní údaje
             de: Bitte aktualisiere deine Kontaktinformationen
+            el: Παρακαλώ ενημερώστε τις πληροφορίες επικοινωνίας σας
             en: Please update your contact details
             et: Palun uuendage oma kontaktandmeid
             fi: 'Päivitä yhteystietosi, kiitos'
