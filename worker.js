@@ -49,7 +49,14 @@ log.setLevel(APP_LOGLEVEL)
 // ensure cache directory exists
 fs.existsSync(APP_CACHE_DIR) || fs.mkdirSync(APP_CACHE_DIR)
 
-
+// This will add the well-known CAs
+// to `https.globalAgent.options.ca`
+require('ssl-root-cas/latest')
+    .inject()
+    .addFile(__dirname + '/ssl-ca/AddTrustExternalCARoot.crt')
+    .addFile(__dirname + '/ssl-ca/COMODORSAAddTrustCA.crt')
+    .addFile(__dirname + '/ssl-ca/COMODORSADomainValidationSecureServerCA.crt')
+;
 
 // Configure i18n
 i18n.configure({
