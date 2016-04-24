@@ -559,6 +559,55 @@ exports.getPartners = getPartners = function(params, callback) {
 
 }
 
+
+exports.getRequestsCounts = getRequestsCounts = function(params, callback) {
+    log.debug('Request count asked')
+
+    var headers = {}
+    var qs = {}
+    if(params.definition) qs.definition = params.definition
+    if(params.query) qs.query = params.query
+
+    var preparedUrl = APP_AUTH_CORE_URL + '/requestsCount'
+    log.debug('------------- getRequestsCounts Try to execute URL ' + preparedUrl + ' qs ' + JSON.stringify(qs))
+    request.get({url: preparedUrl, headers: headers, qs: qs, strictSSL: true, json: true, timeout: defaultTimeout}, function(error, response, body) {
+
+        log.debug('------------- getRequestsCounts Error ' + error)
+        if(error) return callback(error)
+        log.debug('------------- getRequestsCounts Status code ' + response.statusCode)
+        if(response.statusCode !== 200 || !body) return callback(new Error(op.get(body, 'error', body)))
+
+
+        log.debug(JSON.stringify(op.get(body, 'result', null)))
+        callback(null, op.get(body, 'result', null))
+    })
+}
+
+exports.getPersonsCounts = getPersonsCounts = function(params, callback) {
+    log.debug('Request count asked')
+
+    var headers = {}
+    var qs = {}
+    if(params.definition) qs.definition = params.definition
+    if(params.query) qs.query = params.query
+
+    var url = 'requests'
+
+    var preparedUrl = APP_AUTH_CORE_URL + '/personsCount'
+    log.debug('------------- getPersonsCounts Try to execute URL ' + preparedUrl + ' qs ' + JSON.stringify(qs))
+    request.get({url: preparedUrl, headers: headers, qs: qs, strictSSL: true, json: true, timeout: defaultTimeout}, function(error, response, body) {
+
+        log.debug('------------- getPersonsCounts Error ' + error)
+        if(error) return callback(error)
+        log.debug('------------- getPersonsCounts Status code ' + response.statusCode)
+        if(response.statusCode !== 200 || !body) return callback(new Error(op.get(body, 'error', body)))
+
+
+        log.debug(JSON.stringify(op.get(body, 'result', null)))
+        callback(null, op.get(body, 'result', null))
+    })
+}
+
 //Get entity
 exports.getEntities = getEntities = function(params, qs, callback) {
     if(qs.definition == 'request') {

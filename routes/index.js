@@ -6,6 +6,7 @@ var path   = require('path')
 var moment = require('moment-timezone')
 
 var entu   = require('../helpers/entu')
+var core_api = require('../helpers/core-api')
 
 
 function isTemplateExists(template) {
@@ -32,13 +33,13 @@ router.get('/', function(req, res) {
 router.get('/json', function(req, res, next) {
     async.parallel({
         help: function(callback) {
-            entu.getEntities({
+            core_api.getRequestsCounts({
                 definition: 'request',
                 fullObject: false
             }, callback)
         },
         users: function(callback) {
-            entu.getEntities({
+            core_api.getPersonsCounts({
                 definition: 'person',
                 fullObject: false
             }, callback)
@@ -48,8 +49,8 @@ router.get('/json', function(req, res, next) {
         if(err) return next(err)
 
         res.send({
-            help: results.help.length,
-            users: results.users.length
+            help: results.help,
+            users: results.users
         })
     })
 })
