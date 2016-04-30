@@ -662,7 +662,7 @@ nav:
         en: NGO information
         et: MTÜ informatsioon
         fi: Kansalaisjärjestöinformaatio
-        fr: L'information des ONG
+        fr: Information ONG
         hu: Szervezeti információ
         it: Informazioni ONG
         ja: NGO情報
@@ -696,7 +696,7 @@ nav:
         en: Positive Attitude Development
         et: Positiivse Suhtumise Arendamine
         fi: Positiivisen Asenteen Kehittäminen
-        fr: Attitude Développement Positif
+        fr: Attitude de Développement Positive
         hu: Pozitív Attitüd Fejlesztése
         id: ''
         it: Sviluppo di Un'atteggiamento Positivo
@@ -818,7 +818,7 @@ nav:
         en: Toggle navigation
         et: Ava menüü
         fi: Valikko
-        fr: Menu
+        fr: Basculer la navigation
         hu: Visszalépés a menübe
         it: Menù
         ja: ナビゲーションを切り替える
@@ -970,7 +970,7 @@ pages:
         location-ph:
             cs: 'Např. Brno, Jihomoravský kraj'
             de: 'z.B. Linz, Oberösterreich'
-            el: 'πχ. Ήπειρος, Μακεδονία, Κυκλάδες, Ιόνιο, Στερεά Ελλάδα'
+            el: 'πχ. Αθήνα, Ελλάδα'
             en: 'e.g. London, City of London'
             et: 'nt. Tallinn, Harjumaa'
             fi: 'esim. Lahti, Päijät-Häme'
@@ -994,8 +994,8 @@ pages:
                 found {{ (help | filter:{status:s.status, type:type,
                 my:search_my} | filter:search_query).length }}</span>
             el: >-
-                Σύνολο των προσφορών εδώ <span ng-if='search_query || searchMy'>
-                - found </span>
+                Σύνολο των  προσφορών εδώ <span ng-if='search_query ||
+                searchMy'> - found </span>
             en: >-
                 There are total {{ (help | filter:{type:type }).length }} offers
                 here <span ng-if='search_query || searchMy'> - found {{ (help |
@@ -1012,7 +1012,7 @@ pages:
                 (help | filter:{status:s.status, type:type, my:search_my} |
                 filter:search_query).length }}</span>
             fr: >-
-                Nombre total d'offres ici <span ng-if='search_query ||
+                Nombre total  d'offres ici <span ng-if='search_query ||
                 searchMy'> - found </span>
             hu: >-
                 Összesen {{ (help | filter:{type:type }).length }} felajánlás
@@ -1035,10 +1035,10 @@ pages:
                 filter:{status:s.status, type:type, my:search_my} |
                 filter:search_query).length }}</span>
             lt: >-
-                Visus pasiūlymus galite rasti čia <span ng-if='search_query ||
+                Visus  pasiūlymus galite rasti čia <span ng-if='search_query ||
                 searchMy'> - found </span>
             lv: >-
-                Šobrīd kopā ir  piedāvājumi <span ng-if='search_query ||
+                Šobrīd  kopā ir piedāvājumi <span ng-if='search_query ||
                 searchMy'> - found </span>
             nl: >-
                 Er zijn totaal {{ (help | filter:{type:type }).length }}
@@ -1062,7 +1062,7 @@ pages:
             en: Service price (€) (Not obligatory)
             et: Teenuse hind (€) (Mitte kohustuslik)
             fi: 'Palvelun hinta (€) (Vapaavalintainen) '
-            fr: Prix du service (€) (Optionnel)
+            fr: Prix du service (€) (Pas nécessaire)
             hu: A szolgáltatás díja (€) (Választható)
             it: Prezzo del servizio (€) (Non obbligatorio)
             ja: サービス価格（€）（必須ではありません）
@@ -1118,6 +1118,7 @@ pages:
             it: Offerta
             ja: オファー
             ko: 나눔
+            lt: Pasiūlymai
             lv: Piedāvājums
             nl: Aanbieden
             ru: Предложение
@@ -1125,17 +1126,18 @@ pages:
         offer-request-ph:
             cs: např. Jedu do Prahy mám volné místo
             de: z.B. Fahre nach Wien und habe noch Platz in meinem Auto
-            el: >-
-                πχ. Θα πάω στη Θεσσαλονίκη και έχω χώρο στο αυτοκίνητο για
-                όποιον θέλει να πάει κι εκείνος στον ίδιο προορισμό
+            el: πχ. Θα πάω στη Θεσσαλονίκη και έχω έξτρα χώρο στο αυτοκίνητο
             en: e.g. Will go to London and have extra room in my car
             et: nt. Lähen Nuustakule ja autos on üks vaba koht
             fi: 'esim. Menen Lahteen, ja minulla on paikka vapaana autossa'
-            fr: ex. Je vais à Lyon et j'ai une place disponible
+            fr: >-
+                Par exemple: nous allons à Paris et nous avons une place
+                disponible dans notre voiture
             hu: pl. Budapestre megyek van egy szabad hely a kocsimban
             it: 'es: Andrò a Firenze ed ho un posto extra in auto'
             ja: 例：東京駅に行きますが、1人分スペースが余っています
             ko: '예: 자가용으로 서울에 방문하는데 빈 좌석 2개를 공유할 수 있습니다'
+            lt: Pvz. Keliauju į Vilnių ir turiu laisvą vietą automobilyje
             lv: piem. Dodos uz Rīgu un man ir brīva vieta mašīnā
             nl: bijv. Gaat naar Amsterdam en hebben extra ruimte in mijn auto
             ru: напр. Еду в Царское село и есть одно свободное место в машине
@@ -1152,6 +1154,7 @@ pages:
             it: Offerta
             ja: オファー
             ko: 도움 나눔
+            lt: Pasiūlymai
             lv: Piedāvājumi
             nl: Aanbiedingen
             ru: Предложения
@@ -1168,6 +1171,7 @@ pages:
             it: Mostra solo le mie offerte
             ja: 自分のオファーのみ表示する
             ko: 내 도움나눔만 보기
+            lt: Rodyti tik mano pasiūlymus
             lv: Rādīt tikai manus piedāvājumus
             nl: Toon alleen mijn aanbiedingen
             ru: Показывать только мои предложения помощи
@@ -1184,6 +1188,7 @@ pages:
             it: Mostra solo le mie richieste
             ja: 自分のリクエストのみ表示する
             ko: 내 도움요청만 보기
+            lt: Rodyti tik mano prašymus
             lv: Rādīt tikai manus vaicājumus
             nl: Toon alleen mijn verzoeken
             ru: Показывать только мои просьбы о помощи
@@ -1200,6 +1205,7 @@ pages:
             it: Rispondi
             ja: 返信
             ko: 답변
+            lt: Atsakymas
             lv: Atbildēt
             nl: Antwoord
             ru: Ответить
@@ -1258,6 +1264,9 @@ pages:
                 ng-if='search_query || search_my'> - found {{ (help |
                 filter:{status:s.status, type:type, my:search_my} |
                 filter:search_query).length }}</span>
+            lt: >-
+                Visus prašymus rasite čia <span ng-if='search_query ||
+                searchMy'> - found </span>
             lv: >-
                 Kopā šeit ir  vaicājumi <span ng-if='search_query || searchMy'>
                 - found </span>
@@ -1283,11 +1292,12 @@ pages:
             en: Agree to pay (€) (Not obligatory)
             et: Olen nõus maksma (€) (Mitte kohustuslik)
             fi: Suostun maksamaan hinnan (€) (Valinnainen)
-            fr: Accepte de payer (€) (Optionnel)
+            fr: D'accord pour payer (€) (Pas nécessaire)
             hu: Ajánlott ár (€) (Választható)
             it: Disposto a pagare (€) (Non obbligatorio)
             ja: 支払うことを（必須ではない）に同意
             ko: 지불 (의무 없음) 동의
+            lt: Sutinku sumokėti (€) (Neprivaloma)
             lv: Piekrītu maksāt (€) (Nav obligāti)
             nl: Ermee akkoord te betalen (€) (niet verplicht)
             ru: Готов заплатить (€) (Необязательно)
@@ -1299,11 +1309,12 @@ pages:
             en: Agree to pay
             et: Olen nõus maksma
             fi: Suostun maksamaan hinnan
-            fr: Accepte de payer
+            fr: D'accord pour payer
             hu: Ajánlott ár
             it: Disposto a pagare
             ja: 支払うことに同意するものとし
             ko: 지불 할 것에 동의합니다
+            lt: Sutinku sumokėti
             lv: Piekrītu maksāt
             nl: akkoord om te betalen
             ru: Готов заплатить
@@ -1320,6 +1331,7 @@ pages:
             it: es. 10
             ja: 例10
             ko: 예 (10)
+            lt: pvz. 10
             lv: piem. 10
             nl: bijv. 10
             ru: напр. 10
@@ -1336,6 +1348,7 @@ pages:
             it: Richiesta
             ja: リクエスト
             ko: 요청
+            lt: Prašymas
             lv: Vaicāt
             nl: Aanvraag
             ru: Просьба
@@ -1343,7 +1356,7 @@ pages:
         request-request-ph:
             cs: např. Potřebuji se dostat do Kotěhůlek
             de: z.B. Ich möchte nach Berlin gehen
-            el: π.χ. Θα ήθελα να πάω στο Λονδίνο
+            el: π.χ. Θα ήθελα να πάω στην Κόρινθο
             en: e.g. I'll want to go to London
             et: nt. Soovin minna Nuustakule
             fi: esim. Tahdon mennä Lahteen
@@ -1352,6 +1365,7 @@ pages:
             it: es. Ho necessità di andare a Firenze
             ja: 例：東京駅に行きたいです。
             ko: '예: 서울시 용산에 방문하고 싶습니다.'
+            lt: pvz. Aš noriu nuvykti į Palangą
             lv: piem. Vēlos aizbraukt uz jūru.
             nl: bijv. Ik wil naar Nuustaku gaan
             ru: напр. Хочу поехать на пляж
@@ -1368,6 +1382,7 @@ pages:
             it: Richieste
             ja: リクエスト
             ko: 도움 요청
+            lt: Prašymai
             lv: Vaicājumi
             nl: Verzoeken
             ru: Просьбы
@@ -1384,6 +1399,7 @@ pages:
             it: Salva
             ja: 保存
             ko: 저장
+            lt: Išsaugoti
             lv: Saglabāt
             nl: Opslaan
             ru: Сохранить
@@ -1400,6 +1416,7 @@ pages:
             it: Status
             ja: ステータス
             ko: 지위
+            lt: Statusas
             lv: Statuss
             nl: Status
             ru: Статус
@@ -1416,6 +1433,7 @@ pages:
             it: Accettata
             ja: 引き受けられました
             ko: 수락
+            lt: Priimta
             lv: Akceptēts
             nl: Aanvaard
             ru: Принято
@@ -1432,6 +1450,7 @@ pages:
             it: Accettata
             ja: 引き受けられました
             ko: 수락
+            lt: Priimta
             lv: Akceptēti
             nl: Aanvaard
             ru: Приняты
@@ -1448,6 +1467,7 @@ pages:
             it: Attiva
             ja: 返事を待っています
             ko: 활동중
+            lt: Aktyvus
             lv: Aktīvs
             nl: Actief
             ru: Активный
@@ -1464,6 +1484,7 @@ pages:
             it: Attiva
             ja: 返事を待っています
             ko: 활동중
+            lt: Aktyvus
             lv: Aktīvi
             nl: Actief
             ru: Активные
@@ -1480,6 +1501,7 @@ pages:
             it: Cancellata
             ja: 取消
             ko: 취소됨
+            lt: Atmesta
             lv: Atcelts
             nl: Geannuleerd
             ru: Отменен
@@ -1496,6 +1518,7 @@ pages:
             it: Cancellata
             ja: 取消
             ko: 취소됨
+            lt: Atmesta
             lv: Atcelti
             nl: Geannuleerd
             ru: Отменены
@@ -1512,6 +1535,7 @@ pages:
             it: Eseguita
             ja: ありがとうございました
             ko: 완료
+            lt: Baigta
             lv: Gatavs
             nl: Klaar
             ru: Сделано
@@ -1528,6 +1552,7 @@ pages:
             it: Eseguita
             ja: ありがとうございました
             ko: 완료
+            lt: Baigta
             lv: Gatavi
             nl: Klaar
             ru: Сделаны
@@ -1579,6 +1604,7 @@ pages:
             it: Registrati via Facebook o Google
             ja: Facebook、またはGoogleでログイン
             ko: 페이스북이나 구글 계정으로 로그인을 합니다.
+            lt: Registruotis per Facebook arba Google+
             lv: Reģistrēties ar Facebook vai Google+
             nl: Log in via Facebook of Google
             ru: Войди через Facebook или Google
@@ -1599,6 +1625,7 @@ pages:
             it: Facci sapere cosa necessiti o come puoi aiutare
             ja: あなたが必要としてることやあなたが助けてあげられることを教えてください
             ko: 당신 나눌 수 있거나 필요로하는 일을 적습니다
+            lt: 'Leiskite mums žinoti, ką jūs galite, arba ko jums reikia'
             lv: 'Pastāsti mums, ko tu vari darīt vai kas ir nepieciešams'
             nl: 'Laat ons weten, wat u kan doen of nodig hebt'
             ru: 'Напиши, какую помощь Ты можешь предложить или в чем нуждаешься'
@@ -1615,6 +1642,7 @@ pages:
             it: Entra in contatto con gli altri
             ja: 助け合いを始めましょう
             ko: 활동을 시작합니다!
+            lt: Leiskite savo darbams ir poreikiams veikti
             lv: Lieciet Jūsu vajadzībām un darbiem piepildīties
             nl: Laat uw noden en daden werken
             ru: Действуй когда хочешь
@@ -1631,6 +1659,7 @@ pages:
             it: Scegli tra queste opzioni
             ja: あなたはどちらですか？
             ko: 당신의 경로를 선택하세요
+            lt: Pasirinkite būdą
             lv: Izvēlies savu ceļu
             nl: Kies uw weg
             ru: Выбери свой путь
@@ -1638,7 +1667,7 @@ pages:
         how-it-works:
             cs: Jak funguje Helpific?
             de: Wie funktioniert Helpific?
-            el: Πώς λειτουργεί το Helpific;
+            el: Πώς λειτουργεί το Helpific?
             en: How Helpific works?
             et: Kuidas Helpific töötab?
             fi: Kuinka Helpfic toimii?
@@ -1664,6 +1693,7 @@ pages:
             it: Incontra i volontari
             ja: 助けてくれる人を探す
             ko: 봉사자들 만나기
+            lt: Susitikite su savanoriais
             lv: Iepazīsties ar brīvprātīgajiem!
             nl: Vrijwiligers ontmoeten
             ru: Знакомство с волонтерами
@@ -1680,6 +1710,7 @@ pages:
             it: Sinistra
             ja: 左のドア
             ko: 왼쪽문
+            lt: Durys kairėje
             lv: Durvis pa kreisi
             nl: linker deur
             ru: Левая дверь
@@ -1689,6 +1720,7 @@ pages:
             en: Competition in PAD project
             et: Konkurss PSA projektis
             fi: pages.index.pad-title
+            lt: Konkursas PAD projekte
             lv: Konkurss P.A.V. projektā
             nl: Competitie in P.A.D Project
             ru: Конкурс в проекте Р.П.О
@@ -1704,6 +1736,7 @@ pages:
             it: Aiuta chi ha bisogno
             ja: 困ってる人を助けてあげる
             ko: 도움이 필요한 사람들을 도와주세요.
+            lt: Pagalba skurstantiems
             lv: 'Palīdzēt tiem, kam nepieciešams'
             nl: Help hulpbehoevenden
             ru: 'Помоги тем, кто нуждается'
@@ -1720,6 +1753,7 @@ pages:
             it: Destra
             ja: 右のドア
             ko: 오른쪽문
+            lt: Teisingos durys
             lv: Durvis pa labi
             nl: Rechter deur
             ru: Правая дверь
@@ -1727,7 +1761,7 @@ pages:
         slogan:
             cs: Některé věci je lepší dělat společně!
             de: Gemeinsam ist es einfach!
-            el: Δεν είναι ευκολότερα μαζί;
+            el: Δεν είναι ευκολότερα μαζί?
             en: Isn't it easier together?
             et: Koos on lihtsam!
             fi: Eikö yhdessä ole helpompaa?
@@ -1759,7 +1793,7 @@ pages:
                 βοήθεια.</h2> <p>Helpific συνδέει ανθρώπους με ειδικές ανάγκες
                 που χρειάζονται βοήθεια για καθημερινές δραστηριότητες με
                 ανθρώπους που θέλουν να τους βοηθήσουν.</p> <p ng-if='info'>Αυτή
-                τη στιγμή έχουμε εκπληρωμένα αιτήματα και χρήστες.</p>
+                τη στιγμή  έχουμε εκπληρωμένα αιτήματα και  χρήστες.</p>
             en: >-
                 <h2>It's never been easier to give and get help.</h2>
                 <p>Helpific connects people with special needs who need help
@@ -1811,13 +1845,13 @@ pages:
                 <h2>Dar niekada nebuvo taip lengva duoti ir gauti</h2>
                 <p>Helpific jungia žmones, kiekvieną dieną turinčiais
                 specialiųjų poreikių ir žmones, kurie nori jiems padėti.</p> <p
-                ng-if='info'>Šiuo metu mes turime prašymų ir vartotojų</p>
+                ng-if='info'>Šiuo metu mes turime  prašymų ir  vartotojų</p>
             lv: >-
                 <h2>Nekad nav bijis vienkāršāk dot un saņemt palīdzību.</h2>
                 <p>Helpific savieno cilvēkus ar īpašām vajadzībām, kuriem
                 nepieciešama palīdzība ikdienas aktivitātēs ar cilvēkiem, kas
                 vēlas viņiem palīdzēt.</p> <p ng-if='info'>Šobrīd mums ir
-                izpildīti vaicājumi un lietotāju.</p>
+                izpildīti  vaicājumi un  lietotāju.</p>
             nl: >-
                 <h2>Het is nooit gemakkelijker geweest om hulp to geven en te
                 krijgen.</h2> <p>Helpific verbindt vrijwiligers met hen die hulp
@@ -2004,7 +2038,7 @@ pages:
             en: ADDITIONAL INFORMATION
             et: LISAINFORMATSIOON
             fi: Lisätiedot
-            fr: Information complémentaire
+            fr: Informations complémentaires
             hu: További információk
             it: INFORMAZIONI ADDIZIONALI
             ja: 追加情報
@@ -2026,6 +2060,7 @@ pages:
             it: Indirizzo
             ja: 住所
             ko: 주소
+            lt: Adresas
             lv: Adrese
             nl: Adres
             ru: Адрес
@@ -2042,6 +2077,7 @@ pages:
             it: es. via Roma 13
             ja: 例：中区港町x-x
             ko: '예: 도봉구 859-19'
+            lt: pvz. Vokiečių g. 17
             lv: piem. Brīvības iela 10
             nl: Bijv. Joseph Hollmanstraat 30
             ru: 'напр. Улица Пушкина, 50'
@@ -2069,7 +2105,10 @@ pages:
                 Mikäli etsit apua yleensä tiettyyn samaan osoitteeseen, voit
                 kirjoittaa osoitteen tähän säästääksesi aikaasi myöhemmin. Emme
                 jaa osoitetta julkisesti.
-            fr: ''
+            fr: >-
+                Au cas où vous chercheriez de l'aide pour la même adresse, vous
+                pouvez l'enregistrer ici. Cela vous fera gagner du temps pour
+                une echerche ultérieur. Cette information ne sera pas partagée. 
             hu: >-
                 Abban az esetben ha általában ugyanazon a helyszínen lesz
                 szükséged segítségre akkor ide írd be és ezzel később időt
@@ -2080,6 +2119,10 @@ pages:
                 condivideremo a terzi.
             ja: pages.profile
             ko: pages.profile
+            lt: >-
+                Jeigu ieškote nuolatinės pagalbos tuo pačiu adresu, galite jį
+                įrašyti čia siekdami vėliau sutaupyti laiko. Viešai šios
+                informacijos neskelbsime.
             lv: >-
                 Gadījumos, ka tu meklē palīdzību tajā pašā adresē, Tu vari
                 ierakstīt to šeit, lai vēlāk ietaupītu laiku. Mēs to izpaudīsim
@@ -2140,6 +2183,7 @@ pages:
             it: Nazione
             ja: 国
             ko: 국가명
+            lt: Šalis
             lv: Valsts
             nl: Land
             ru: Страна
@@ -2156,6 +2200,7 @@ pages:
             it: es. Italia
             ja: 例：日本
             ko: '예: 한국'
+            lt: pvz. Lietuva
             lv: piem. Latvija
             nl: bijv. Nederland
             ru: ' напр. Россия'
@@ -2172,6 +2217,7 @@ pages:
             it: Provincia
             ja: 都道府県
             ko: 시/도
+            lt: Regionas
             lv: Apgabals
             nl: Provincie
             ru: Уезд
@@ -2188,6 +2234,7 @@ pages:
             it: 'es: MI'
             ja: 例：神奈川県
             ko: '예: 경기도'
+            lt: pvz. Aukštaitija
             lv: piem. Garkalnes novads
             nl: bijv. Oost-Vlaanderen
             ru: напр. Ленинградская область
@@ -2204,6 +2251,7 @@ pages:
             it: Elimina foto
             ja: 写真を削除する
             ko: 사진 제거
+            lt: Ištrinti nuotrauką
             lv: Dzēst fotogrāfiju
             nl: Foto verwijderen
             ru: Удалить фотографию
@@ -2211,7 +2259,7 @@ pages:
         email:
             cs: E-mail
             de: E-Mail
-            el: Ηλεκτρονικό ταχυδρομίο
+            el: Ηλεκτρονικό ταχυδρομείο
             en: E-mail
             et: E-post
             fi: Sähköposti
@@ -2220,6 +2268,7 @@ pages:
             it: E-mail
             ja: メール
             ko: 이메일
+            lt: El. paštas
             lv: E-pasts
             nl: E-mail
             ru: Э-почта
@@ -2236,6 +2285,7 @@ pages:
             it: es. marco@telecom.it
             ja: 例：taro.yamada@softbank.ne.jp
             ko: '예: john@naver.com'
+            lt: pvz. eimutis@gmail.com
             lv: piem. john@appleseed.com
             nl: 'bijv, Jan@hotmail.com'
             ru: напр. ivan@mail.ru
@@ -2279,6 +2329,10 @@ pages:
                 sapere qualcosa di importante e per ringraziarti.
             ja: pages.profile.email-text
             ko: pages.profile.email-text
+            lt: >-
+                Mes neviešinsime jūsų kontaktinės informacijos, jei jūs to
+                nepageidausite. Ši informacija mums bus reikalinga siekiant jums
+                pranešti ką nors svarbaus arba pasakyti Ačiū!
             lv: >-
                 Mēs neizpaudīsim Tavu kontaktinformāciju, ja vien Tu to
                 nejautāsi mums. Tava kontaktinformācija tiks izmantota tikai
@@ -2316,9 +2370,9 @@ pages:
                 tietäminen auttaa kuitenkin meitä luomaan turvallisemman
                 alustan.
             fr: >-
-                Nous utiliserons uniquement votre nom de famille lorsque nous
-                posterons quelque chose mais sachez que votre prénom nous aidera
-                a créer une plateforme plus sécurisée.
+                Nous ne partagerons pas votre contact sauf si vous l'autorisez.
+                Nous vous contacterons uniquement pour vous faire parvenir une
+                information importante ou pour vous remercier!
             hu: >-
                 A bejegyzéseidnél csak a keresztneved jelenik majd meg, de
                 nekünk segít ha tudjuk a teljes neved, hogy egy biztonságosabb
@@ -2329,6 +2383,9 @@ pages:
                 sicura.
             ja: pages.profile.first-second-name-text
             ko: pages.profile.first-second-name-text
+            lt: >-
+                Skelbimuose bus matomas tik jūsų vardas, tačiau norime žinoti
+                jūsų pavardę siekdami sukurti saugesnę platformą.
             lv: >-
                 Attēlojot ierakstus, mēs izmantosim tikai Tavu pirmo vārdu, bet
                 būtu noderīgi zināt arī uzvārdu, lai radītu platformu drošāku.
@@ -2352,6 +2409,7 @@ pages:
             it: Nome
             ja: 名
             ko: 이름
+            lt: Vardas
             lv: Vārds
             nl: Voornaam
             ru: Имя
@@ -2368,6 +2426,7 @@ pages:
             it: es. Marco
             ja: 例：太郎
             ko: 길동
+            lt: Pvz. Jonas
             lv: piem. Jānis
             nl: Bijv. Jan
             ru: напр. Иван
@@ -2384,6 +2443,7 @@ pages:
             it: Lingua preferita
             ja: 言語
             ko: 언어
+            lt: Pageidaujama kalba
             lv: Izvēlētā valoda
             nl: Taal
             ru: Язык по умолчанию
@@ -2414,6 +2474,7 @@ pages:
                 velocemente con le persone.
             ja: pages.profile.location-text
             ko: pages.profile.location-text
+            lt: 'Žinojimas, kur esate, padės žmonėms lengviau jus surasti'
             lv: 'Norādot savu atrašanās vietu, Tu palīdzi mums ātrāk '
             nl: >-
                 Als je je locatie weten, kunnen we samen de mensen sneller te
@@ -2434,6 +2495,7 @@ pages:
             it: INFORMAZIONI PRINCIPALI
             ja: 主要な情報
             ko: 주요 정보
+            lt: PAGRINDINĖ INFORMACIJA
             lv: GALVENĀ INFORMĀCIJA
             nl: Belangrijkste kenmerken
             ru: ОСНОВНАЯ ИНФОРМАЦИЯ
@@ -2482,6 +2544,10 @@ pages:
             ko: >-
                 사용하기 <a href="https://en.wikipedia.org/wiki/Markdown#Example"
                 target="_blank">Markdown</a> 텍스트 작성.
+            lt: >-
+                Naudokite <a
+                href="https://en.wikipedia.org/wiki/Markdown#Example"
+                target="_blank">Markdown</a> savo teksto stilizavimui.
             lv: >-
                 Lieto <a href="https://en.wikipedia.org/wiki/Markdown#Example"
                 target="_blank">Markdown</a> lai formatētu tekstu.
@@ -2504,6 +2570,7 @@ pages:
             it: Posso aiutare
             ja: 他の人を助けることができます
             ko: 나는 다른 사람을 도울 수 있습니다
+            lt: Aš galiu padėti kitiems
             lv: Es varu palīdzēt citiem
             nl: Ik kan anderen helpen
             ru: Я могу помочь другим
@@ -2514,7 +2581,7 @@ pages:
                 Wie können Sie anderen helfen? Sie müssen es nicht jetzt sofort
                 ausfüllen.
             el: >-
-                Πώς μπορείτε να βοηθήσετε άλλους; Δεν είστε υποχρεωμένοι να το
+                Πώς μπορείτε να βοηθήσετε άλλους? Δεν είστε υποχρεωμένοι να το
                 συμπληρώσετε εάν δε θέλετε τώρα.
             en: >-
                 How can you help others? You do not have to fill it if you do
@@ -2530,6 +2597,7 @@ pages:
             it: Puoi aiutare?
             ja: どのようにして他の人を助けることができますか？　もしも気分が乗らなければ今すぐに書く必要はありません。
             ko: 다른 사람을 어떻게 도울 수 있나요?
+            lt: Kuo aš galiu padėti kitiems? Šio laukelio užpildyti neprivalote.
             lv: >-
                 Kā tu vari palīdzēt citiem? Tu vari neaizpildīt šo aili šobrīd,
                 ja nevēlies. 
@@ -2550,6 +2618,7 @@ pages:
             it: Video URL
             ja: ビデオ URL
             ko: 비디오 URL
+            lt: Video URL
             lv: Video URL
             nl: Video URL
             ru: Ссылка на видео
@@ -2566,6 +2635,7 @@ pages:
             it: Messaggi
             ja: メッセージ
             ko: 메시지
+            lt: Žinutės
             lv: Vēstules
             nl: Berichten
             ru: Сообщения
@@ -2582,6 +2652,7 @@ pages:
             it: Autorizzo Helpific ad inviarmi la newsletter
             ja: Helpificからの情報配信を希望します
             ko: Helpfic으로 부터 소식을 받고싶습니다
+            lt: 'Sutinku, kad Helpific siųstų savo naujienlaiškius'
             lv: 'Es atļauju Helpific sūtīt man informatīvas vēstules. '
             nl: Ik wil graag informatie ontvangen
             ru: Разрешаю присылать мне бюллетень Helpific
@@ -2598,6 +2669,7 @@ pages:
             it: Numero di telefono
             ja: 電話番号
             ko: 전화 번호
+            lt: Telefono numeris
             lv: Telefona numurs
             nl: Telefoonnummer
             ru: Номер телефона
@@ -2607,6 +2679,7 @@ pages:
             en: e.g. 5565xxxx
             et: nt. 5565xxxx
             fi: esim. +358
+            lt: pvz. +3706xxxxxx
             lv: piem. 2222xxxx
             ru: напр. 5565xxxx
         photo:
@@ -2666,6 +2739,10 @@ pages:
                 che ti aiuterà?
             ja: ''
             ko: ''
+            lt: >-
+                <strong>Profilio nuotrauka</strong> padės jums atrodyti
+                patikimiau. Argi jūs nenorėtumėte pamatyti asmens, kuris nori
+                jūsų pagalbos ar nori padėti jums?
             lv: >-
                 <strong>Profila bilde</strong> padara Tevi uzticamāku. Vai Tu
                 nevēlētos zināt, kas ir persona, kurai Tu palīdzēsi vai Tev
@@ -2688,6 +2765,7 @@ pages:
             it: '{{ photoUploadPercent }}% caricamento'
             ja: '{{ photoUploadPercent }}% アップロード中...'
             ko: '{{ photoUploadPercent }}% 업로드중...'
+            lt: '% įkelta...'
             lv: '% augšupielādēti...'
             nl: '{{ photoUploadPercent }}% geupload'
             ru: '{{ photoUploadPercent }}% загружено...'
@@ -2723,6 +2801,7 @@ pages:
             it: Le tue informazioni profilo si salvano automaticamente
             ja: プロフィールの情報は自動的に保存されます
             ko: 프로필 정보는 자동저장 됩니다
+            lt: Jūsų profilis yra išsaugomas automatiškai
             lv: Jūsu profila informācija tiek saglabāta automātiski
             nl: Uw profiel informatie wordt automatisch opgeslagen
             ru: Информация твоего профиля сохраняется автоматически
@@ -2739,6 +2818,7 @@ pages:
             it: Slogan
             ja: スローガン
             ko: 좌우명
+            lt: Šūkis
             lv: Sauklis
             nl: Leuze
             ru: Слоган
@@ -2772,6 +2852,7 @@ pages:
             it: Cognome
             ja: 姓
             ko: 성
+            lt: Pavardė
             lv: Uzvārds
             nl: Achternaam
             ru: Фамилия
@@ -2788,6 +2869,7 @@ pages:
             it: 'es: Rossi'
             ja: 例：山田
             ko: '예: 홍'
+            lt: pvz. Gedminas
             lv: piem. Kalniņš
             nl: bijv. Bakker
             ru: напр. Иванов
@@ -2804,6 +2886,7 @@ pages:
             it: Il mio profilo
             ja: マイプロフィール
             ko: 내 프로필
+            lt: Mano profilis
             lv: Mans profils
             nl: Mijn profiel
             ru: Мой профиль
@@ -2917,7 +3000,7 @@ pages:
                 συνδεδεμένοι! Παρακαλούμε αφήστε μας να γνωρίζουμε περισσότερα
                 για εσάς.
             en: >-
-                This information will be visible to other logged in users! 
+                This information will be visible to other logged in users!
                 Please let us all know a little more about you.
             et: >-
                 See informatsioon on nähtav teistele sisselogitud kasutajatele!
@@ -2927,7 +3010,8 @@ pages:
                 Kerrothan meille kaikille tässä hieman lisää itsestäsi.
             fr: >-
                 Cette information sera vue uniquement par les utilisateurs
-                connectés.
+                connectés.  Vous pouvez également nous en dire un peu plus à
+                propos de vous.
             hu: >-
                 Ez az információ látható lesz a többi regisztrált felhasználó
                 számára! Kérünk segíts, hogy picit többet megtudhassunk rólad!
@@ -2936,6 +3020,9 @@ pages:
                 Faccia sapere qualcosa di te.
             ja: pages.profile.visibility-text
             ko: pages.profile.visibility-text
+            lt: >-
+                Ši informacija bus rodoma tik registruotiems vartotojams!
+                Papasakokite apie save daugiau.
             lv: >-
                 Šī informācija būs redzama citiem reģistrētiem lietotājiem! Ļauj
                 mums uzzināt vairāk par Tevi!
@@ -2955,6 +3042,7 @@ pages:
             it: Ho bisogno di aiuto
             ja: 助けを必要としています
             ko: 도움이 필요합니다
+            lt: Man reikia pagalbos
             lv: Man nepieciešama palīdzība
             nl: Ik heb hulp nodig
             ru: Мне нужна помощь
@@ -2986,6 +3074,9 @@ pages:
             it: Come possiamo aiutarti?
             ja: どのような助けを必要としていますか？　もし助けを求めているのでないのならば、空欄のままにしてください。
             ko: '어떻게 사람들이 당신이 도울 수 있을까요? '
+            lt: >-
+                Kaip žmonės gali jums padėti? Jei neieškote pagalbos, šį laukelį
+                galite palikti tuščią.
             lv: >-
                 Kā citi var palīdzēt Tev? Tu vari atstāt šo lauku tukšu, ja
                 nemeklē palīdzību. 
@@ -3008,6 +3099,7 @@ pages:
             it: Video URL
             ja: ビデオ URL
             ko: 비디오 URL
+            lt: Video URL
             lv: Video URL
             nl: Video URL
             ru: Ссылка на видео
@@ -3020,7 +3112,7 @@ pages:
             en: Login over Facebook
             et: Logi sisse Facebooki kaudu
             fi: Kirjaudu sisään Facebookin kautta
-            fr: Connection par Facebook
+            fr: S'identifier avec Facebook
             hu: Bejelentkezés a Facebook segítségével
             it: Accesso con Facebook
             ja: Facebookの上でログイン
@@ -3037,11 +3129,12 @@ pages:
             en: Login over Google+
             et: Logi sisse Google+ kaudu
             fi: Kirjaudu sisään Google+ kautta
-            fr: Connection avec Google+
+            fr: S'identifier avec Google+
             hu: Bejelentkezés a Google+ segítségével
             it: Accesso con Google+
             ja: Google+にオーバーログイン
             ko: Google+를 통해 로그인
+            lt: Registruotis naudojantis Google+
             lv: Ieiet izmantojot Google+
             nl: Inloggen via Google+
             ru: Войти через Google+
@@ -3054,7 +3147,7 @@ pages:
                 * Wenn Sie sich anmelden, akzeptieren Sie unsere <a
                 href="terms">Nutungsbedingungen und Datenschutzrichtlinien</a>
             el: >-
-                *Εάν εγγραφείτε, αποδέχεστε τους όρους χρήσης <a
+                * Εάν εγγραφείτε, αποδέχεστε τους όρους χρήσης <a
                 href="terms">terms of use and privacy policy</a>
             en: >-
                 * If you sign in, you accept our <a href="terms">terms of use
@@ -3079,6 +3172,7 @@ pages:
                 * ログインするとHelpificの <a href="terms">利用規約とプライバシーポリシー</a>
                 に同意したことになります
             ko: '* 로그인시 <a href="terms">우리의 개인정보 보호정책을 사용을 수락하게됩니다</a>'
+            lt: '*Užsiregistravę sutinkate su naudojimosi sąlygomis*'
             lv: >-
                 * Reģistrējoties, Tu pieņem <a href="terms">lietošanas
                 noteikumus un konfidencialitātes politiku</a>
@@ -3094,7 +3188,7 @@ pages:
             de: >-
                 Bitt nutzen Sie Ihren bevorzugten Internetanbieter, um sich
                 anzumelden...
-            el: 'Παρακαλούμε χρησιμοποιείστε '
+            el: Παρακαλούμε χρησιμοποιείστε...
             en: Please use your preferred identity provider to sign in...
             et: Sisenemiseks kasuta meelepärast identiteedipakkujat...
             fi: >-
@@ -3115,6 +3209,7 @@ pages:
         title:
             cs: Přihlásit se
             de: Anmelden
+            el: Εγγραφή
             en: Sign in
             et: Sisene
             fi: Kirjaudu sisään
@@ -3132,6 +3227,7 @@ pages:
         title:
             cs: Náš tým
             de: Unser Team
+            el: Η ομάδα μας
             en: Our Team
             et: Meie meeskond
             fi: Meidän tiimi
@@ -3140,6 +3236,7 @@ pages:
             it: Il nostro team
             ja: チーム
             ko: 함께하는 사람들
+            lt: Mūsų komanda
             lv: Mūsu komanda
             nl: Ons Team
             ru: Наша команда
@@ -3148,6 +3245,7 @@ pages:
         title:
             cs: Překlady
             de: Translations
+            el: Μεταφράσεις
             en: Translations
             et: Tõlked
             fi: Translations
@@ -3156,6 +3254,7 @@ pages:
             it: Translations
             ja: Translations
             ko: Translations
+            lt: Vertimai
             lv: Tulkojumi
             nl: Translations
             ru: Translations
@@ -3168,11 +3267,12 @@ pages:
             en: Please update your contact details
             et: Palun uuendage oma kontaktandmeid
             fi: 'Päivitä yhteystietosi, kiitos'
-            fr: S'il vous plaît mettre à jour vos détails de contact
+            fr: Merci de mettre à jour vos données de contact
             hu: Kérlek add meg az elérhetőségeidet
             it: Per favore aggiorna le tue informazioni di contatto
             ja: ご連絡先の詳細を更新してください
             ko: 연락처 정보를 업데이트하세요
+            lt: Prašome užpildyti savo kontaktinius duomenis
             lv: 'Lūdzu, atjauniniet savu kontaktinformāciju'
             nl: Werk uw contactgegevens
             ru: 'Пожалуйста, обнови свои контактные данные'
@@ -3181,6 +3281,7 @@ pages:
         about-me-tab:
             cs: O mně
             de: Über mich
+            el: Σχετικά με εμένα
             en: About me
             et: Minust
             fi: Minusta
@@ -3189,6 +3290,7 @@ pages:
             it: Su di me
             ja: 私について
             ko: 자기소개
+            lt: Apie mane
             lv: Par mani
             nl: Over mij
             ru: Обо мне
@@ -3196,6 +3298,7 @@ pages:
         donate:
             cs: Darovat
             de: Spenden
+            el: Δωρεά
             en: Donate
             et: Anneta
             fi: Lahjoita
@@ -3204,6 +3307,7 @@ pages:
             it: Donate
             ja: 寄付する
             ko: 기부
+            lt: Paremti
             lv: Ziedot
             nl: Schenken
             ru: Сделать пожертвование
@@ -3215,6 +3319,9 @@ pages:
             de: >-
                 Für Spenden Überweisung an Helpific account.
                 Spendenbescheinigung notwendig "%s"
+            el: >-
+                Μεταφορά χρημάτων στο λογαριασμό Helpific για δωρεές. Το ύψος
+                της μεταφοράς πρέπει να είναι σε "%s"
             en: >-
                 For donation transfer money to Helpific account. Transfer
                 description must be "%s"
@@ -3233,6 +3340,9 @@ pages:
             it: Per le donazioni utilizzare il conto Helpific "%s"
             ja: 寄付をする方はHelpificの口座に送金してください "%s"
             ko: '기부를 원하시면, Helpific계좌로 송금해주세요 "%s"'
+            lt: >-
+                Paramą galite pervesti į Helpific sąskaitą. Mokėjimo aprašymas
+                turi būti "%s"
             lv: >-
                 Ziedot var pārskaitot naudu uz Helpific kontu. Pārskaitījuma
                 aprakstam jābūt "%s"
@@ -3246,6 +3356,7 @@ pages:
         help-offers:
             cs: Moje nabídky pomoci.
             de: Meine Hilfsangebote
+            el: Οι προσφορές μου
             en: My offers
             et: Minu pakkumised
             fi: Minun tarjoukseni
@@ -3262,6 +3373,7 @@ pages:
         help-requests:
             cs: Moje žádosti o pomoc
             de: Meine Hilfsanfragen
+            el: Τα αιτήματά μου
             en: My requests
             et: Minu soovid
             fi: Minun pyyntöni
@@ -3270,6 +3382,7 @@ pages:
             it: Le mie richieste
             ja: マイ リクエスト
             ko: 내 도움 요청
+            lt: Mano prašymai
             lv: Mani vaicājumi
             nl: MIjn verzoeken
             ru: Мои просьбы
@@ -3277,6 +3390,7 @@ pages:
         me-help-you-tab:
             cs: Takto mohu pomoci ostatním
             de: Ich kann anderen helfen
+            el: Μπορώ να βοηθήσω και άλλους
             en: I can help others
             et: Aitan sind
             fi: Minä voin auttaa muita
@@ -3285,6 +3399,7 @@ pages:
             it: Posso aiutare chi ha bisogno
             ja: 私は他の人を助けることができます
             ko: '다른 사람을 도울 수 있습니다. '
+            lt: Aš galiu padėti kitiems
             lv: Es varu palīdzēt citiem
             nl: Ik kan anderen te helpen
             ru: Я могу помочь другим
@@ -3292,6 +3407,7 @@ pages:
         send-message:
             cs: Odeslat zprávu
             de: Nachricht senden
+            el: Αποστολή μηνύματος
             en: Send message
             et: Saada sõnum
             fi: Lähetä viesti
@@ -3300,6 +3416,7 @@ pages:
             it: Invia messaggio
             ja: メッセージを送る
             ko: 메시지 전송
+            lt: Siųsti žinutę
             lv: Sūtīt vēstuli
             nl: Bericht sturen
             ru: Отправить сообщение
@@ -3307,6 +3424,7 @@ pages:
         you-help-me-tab:
             cs: Potřebuji pomoci
             de: Ich brauche Hilfe
+            el: Χρειάζομαι βοήθεια
             en: I need help
             et: Vajan abi
             fi: Minä tarvitsen apua
@@ -3315,6 +3433,7 @@ pages:
             it: Necessito aiuto
             ja: 私は助けを必要としています
             ko: 도움이 필요합니다
+            lt: Man reikalinga pagalba
             lv: Man nepieciešama palīdzība
             nl: ik heb hulp nodig
             ru: Мне нужна помощь
@@ -3326,6 +3445,7 @@ pages:
                 Insgesamt haben wir {{ users.length }} Nutzer hier <span
                 ng-if='search_query'> - gefunden {{ (users |
                 filter:search_query).length }}</span>
+            el: Όλοι οι χρήστες εδώ <span ng-if='search_query'> - found </span>
             en: >-
                 There are total {{ users.length }} users here <span
                 ng-if='search_query'> - found {{ (users |
@@ -3368,6 +3488,7 @@ pages:
         title:
             cs: Uživatelé
             de: Nutzer
+            el: Χρήστες
             en: Users
             et: Kasutajad
             fi: Käyttäjät

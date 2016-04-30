@@ -78,7 +78,6 @@ router.get('/', function(req, res, next) {
 })
 
 
-// Edit user profile
 router.post('/', function(req, res, next) {
     if(!res.authenticate()) return
     //if(res.locals.user.id !== 918) return
