@@ -394,21 +394,21 @@ locales:
         ru: 한국어
         zh: 한국어
     lt:
-        cs: Leedu
-        de: Leedu
-        el: Leedu
-        en: Leedu
-        et: Leedu
-        lt: locales.lt
-        lv: locales.lt
+        cs: Lietuva
+        de: Lietuva
+        el: Lietuva
+        en: Lietuva
+        et: Lietuva
+        lt: Lietuva
+        lv: Lietuva
     lv:
-        cs: Läti
-        de: Läti
-        el: Läti
-        en: Läti
-        et: Läti
-        lt: locales.lv
-        lv: locales.lv
+        cs: Latvija
+        de: Latvija
+        el: Latvija
+        en: Latvija
+        et: Latvija
+        lt: Latvija
+        lv: Latvija
     ru:
         cs: Русский
         de: Русский
