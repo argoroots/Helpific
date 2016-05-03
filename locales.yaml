@@ -406,6 +406,14 @@ locales:
         et: Latvija
         lt: Latvija
         lv: Latvija
+    nl:
+        cs: Dutch
+        de: Dutch
+        el: Dutch
+        en: Dutch
+        et: Dutch
+        fi: Dutch
+        nl: Dutch
     ru:
         cs: Русский
         de: Русский
