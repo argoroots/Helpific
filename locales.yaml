@@ -2,6 +2,7 @@ feedback:
     admin-email-message:
         cs: 'https://helpific.entu.ee/entity/feedback/%s'
         de: 'https://helpific.entu.ee/entity/feedback/%s'
+        el: 'https://helpific.entu.ee/entity/feedback/%s'
         en: 'https://helpific.entu.ee/entity/feedback/%s'
         et: 'https://helpific.entu.ee/entity/feedback/%s'
         fi: 'https://helpific.entu.ee/entity/feedback/%s'
@@ -11,27 +12,33 @@ feedback:
         it: 'https://helpific.entu.ee/entity/feedback/%s'
         ja: 'https://helpific.entu.ee/entity/feedback/%s'
         ko: 'https://helpific.entu.ee/entity/feedback/%s'
+        lt: 'https://helpific.entu.ee/entity/feedback/%s'
+        lv: 'https://helpific.entu.ee/entity/feedback/%s'
         nl: 'https://helpific.entu.ee/entity/feedback/%s'
         ru: 'https://helpific.entu.ee/entity/feedback/%s'
         zh: 'https://helpific.entu.ee/entity/feedback/%s'
     admin-email-subject:
         cs: Přidat zpětnou vazbu (Feedback)
         de: Neues Feedback
+        el: Προστέθηκε νέo Feedback
         en: Added new feedback
         et: Lisati uus tagasiside
-        fi: Lisää uusi palaute
+        fi: Uusi palaute vastaanotettu
         fr: Derniers commentaires
         hu: 'Új visszajelzés '
         id: ''
         it: Nuovo feedback aggiunto
         ja: 新着フィードバック
         ko: 새 피드백 추가하기
+        lt: Pridėti naują atsiliepimą
+        lv: Pievienota jauna atsauksme
         nl: 'Nieuwe feedback '
         ru: Добавлен новый отзыв
         zh: 新建反馈
     email:
         cs: E-mail
         de: E-Mail
+        el: E-mail
         en: E-mail
         et: E-post
         fi: Sähköposti
@@ -40,12 +47,15 @@ feedback:
         it: E-mail
         ja: メール
         ko: 이메일
+        lt: El. paštas
+        lv: E-pasts
         nl: 'E-Mail '
         ru: Э-почта
         zh: 电子邮箱
     message:
         cs: Zpráva
         de: Nachricht
+        el: Μήνυμα
         en: Message
         et: Teade
         fi: Viesti
@@ -54,12 +64,15 @@ feedback:
         it: Messaggio
         ja: メッセージ
         ko: 메시지
+        lt: Žinutė
+        lv: Vēstules
         nl: 'Bericht '
         ru: Сообщение
         zh: 反馈信息
     send:
         cs: Odeslat zprávu
         de: Senden
+        el: Αποστολή
         en: Send
         et: Saada
         fi: Lähetä
@@ -68,12 +81,15 @@ feedback:
         it: Inviati
         ja: 送信
         ko: 전송
+        lt: Siųsti
+        lv: Sūtīt
         nl: 'Sturen '
         ru: Отправить
         zh: 发送
     thanks:
         cs: 'Děkujeme Vám!'
         de: 'Dankeschön!'
+        el: Ευχαριστώ
         en: 'Thank you!'
         et: 'Täname!'
         fi: 'Kiitos!'
@@ -82,12 +98,15 @@ feedback:
         it: 'Grazie!'
         ja: ありがとうございました！
         ko: '감사합니다!'
+        lt: 'Ačiū!'
+        lv: 'Paldies! '
         nl: 'Dankuwel '
         ru: 'Благодарим!'
         zh: 谢谢你！
     title:
         cs: Odeslat zpětnou vazbu (Feedback)
         de: Feedback senden
+        el: Αποστολή feedback
         en: Send feedback
         et: Saada tagasiside
         fi: Lähetä palautetta
@@ -96,6 +115,8 @@ feedback:
         it: Commenti
         ja: フィードバックを送る
         ko: 제목
+        lt: Siųsti atsiliepimą
+        lv: Nosūtīt atsauksmi
         nl: 'Feedback sturen '
         ru: Отправить обратную связь
         zh: 发送反馈
@@ -109,6 +130,7 @@ footer:
                 SWIFT/BIC: HABAEE2X (SWEDBANK AS)<br>
                 <a href="mailto:info@helpific.com">info@helpific.com</a>
             </small>
+        el: '<strong>HELPIFIC MTÜ</strong><br> <small>    Reg nr: 80380146<br>    Λογαριασμός: EE102200221061303677<br>    SWIFT/BIC: HABAEE2X (SWEDBANK AS)<br>    <a href="mailto:info@helpific.com">info@helpific.com</a></small>'
         en: |
             <strong>HELPIFIC MTÜ</strong><br> <small>
                 Reg nr: 80380146<br>
@@ -134,6 +156,8 @@ footer:
         it: '<strong>HELPIFIC MTÜ</strong><br> <small>    Reg nr: 80380146<br>    Conto: EE102200221061303677<br>    SWIFT/BIC: HABAEE2X (SWEDBANK AS)<br>    <a href="mailto:info@helpific.com">info@helpific.com</a></small>'
         ja: '<strong>HELPIFIC MTÜ</strong><br> <small>    登録番号: 80380146<br>    口座番号(IBAN): EE102200221061303677<br>    SWIFT/BIC: HABAEE2X (SWEDBANK AS)<br>    <a href="mailto:info@helpific.com">info@helpific.com</a></small>'
         ko: '<strong>HELPIFIC MTÜ</strong><br> <small>    Reg nr: 80380146<br>    계좌번호(IBAN): EE102200221061303677<br>    SWIFT/BIC: HABAEE2X (SWEDBANK AS)<br>    <a href="mailto:info@helpific.com">info@helpific.com</a></small>'
+        lt: '<strong>HELPIFIC MTÜ</strong><br> <small>    Reg nr: 80380146<br>    Sąskaita: EE102200221061303677<br>    SWIFT/BIC: HABAEE2X (SWEDBANK AS)<br>    <a href="mailto:info@helpific.com">info@helpific.com</a></small>'
+        lv: '<strong>HELPIFIC MTÜ</strong><br> <small>    Reģ. nr: 80380146<br>    Konts: EE102200221061303677<br>    SWIFT/BIC: HABAEE2X (SWEDBANK AS)<br>    <a href="mailto:info@helpific.com">info@helpific.com</a></small>'
         nl: '<strong>HELPIFIC MTÜ</strong><br> <small>    Reg nr: 80380146<br>    IBAN: EE102200221061303677<br>    SWIFT/BIC: HABAEE2X (SWEDBANK AS)<br>    <a href="mailto:info@helpific.com">info@helpific.com</a></small>'
         ru: |
             <strong>HELPIFIC MTÜ</strong><br> <small>
@@ -147,6 +171,7 @@ help:
     admin-email-message:
         cs: 'https://helpific.com/et/help/%s'
         de: 'https://helpific.com/et/help/%s'
+        el: 'https://helpific.com/et/help/%s'
         en: 'https://helpific.com/et/help/%s'
         et: 'https://helpific.com/et/help/%s'
         fi: 'https://helpific.com/et/help/%s'
@@ -155,12 +180,15 @@ help:
         it: 'https://helpific.com/et/help/%s'
         ja: 'https://helpific.com/et/help/%s'
         ko: 'https://helpific.com/et/help/%s'
+        lt: 'https://helpific.com/et/help/%s'
+        lv: 'https://helpific.com/et/help/%s'
         nl: 'https://helpific.com/et/hulp/%s'
         ru: 'https://helpific.com/et/help/%s'
         zh: 'https://helpific.com/et/help/%s'
     admin-email-subject:
         cs: Požádat o pomoc/Nabídnout pomoc
         de: Neue Hilfsangebot/Anfrage
+        el: Προστέθηκε νέο έτοιμα/προσφορά βοήθειας
         en: Added new help request/offer
         et: Lisati uus soov/pakkumine
         fi: Lisää uusi avunpyyntö/tarjous
@@ -169,13 +197,16 @@ help:
         it: Nuova richiesta/offerta aggiunta
         ja: 新着リクエスト／オファー
         ko: 도움 요청/나눔 입력하기
-        nl: Nieuwe hulpverzoek/bieden
+        lt: Pridėtas naujas pagalbos prašymas/pasiūlymas
+        lv: Pievienots jauns palīdzības lūgums/piedāvājums
+        nl: Nieuw hulpverzoek/aanbieding toegevoegd
         ru: Добавлена новая просьба/помощь
         zh: 添加新的 请求/帮助
 locales:
     cs:
         cs: Čeština
         de: Čeština
+        el: Čeština
         en: Čeština
         et: Čeština
         fi: Čeština
@@ -184,12 +215,15 @@ locales:
         it: Čeština
         ja: Čeština
         ko: Čeština
+        lt: Čeština
+        lv: Čeština
         nl: Čeština
         ru: Čeština
         zh: Čeština
     de:
         cs: Deutsch
         de: Deutsch
+        el: Deutsch
         en: Deutsch
         et: Deutsch
         fi: Deutsch
@@ -198,12 +232,32 @@ locales:
         it: Deutsch
         ja: Deutsch
         ko: Deutsch
+        lt: Deutsch
+        lv: Deutsch
         nl: Deutsch
         ru: Deutsch
         zh: Deutsch
+    el:
+        cs: Kreeka
+        de: Kreeka
+        el: Kreeka
+        en: Kreeka
+        et: Kreeka
+        fi: Kreeka
+        fr: Kreeka
+        hu: Kreeka
+        it: Kreeka
+        ja: Kreeka
+        ko: Kreeka
+        lt: Kreeka
+        lv: Kreeka
+        nl: Kreeka
+        ru: Kreeka
+        zh: Kreeka
     en:
         cs: English
         de: English
+        el: English
         en: English
         et: English
         fi: English
@@ -212,12 +266,15 @@ locales:
         it: English
         ja: English
         ko: English
+        lt: English
+        lv: English
         nl: English
         ru: English
         zh: English
     et:
         cs: Eesti keel
         de: Eesti keel
+        el: Eesti keel
         en: Eesti keel
         et: Eesti keel
         fi: Eesti keel
@@ -226,12 +283,15 @@ locales:
         it: Eesti keel
         ja: Eesti keel
         ko: Eesti keel
+        lt: Eesti keel
+        lv: Eesti keel
         nl: Eesti keel
         ru: Eesti keel
         zh: Eesti keel
     fi:
         cs: Suomi
         de: Suomi
+        el: Suomi
         en: Suomi
         et: Suomi
         fi: Suomi
@@ -240,12 +300,15 @@ locales:
         it: Suomi
         ja: Suomi
         ko: Suomi
+        lt: Suomi
+        lv: Suomi
         nl: Suomi
         ru: Suomi
         zh: Suomi
     fr:
         cs: Français
         de: Français
+        el: Français
         en: Français
         et: Français
         fi: Français
@@ -254,12 +317,15 @@ locales:
         it: Français
         ja: Français
         ko: Français
+        lt: Français
+        lv: Français
         nl: Français
         ru: Français
         zh: Français
     hu:
         cs: Magyar
         de: Magyar
+        el: Magyar
         en: Magyar
         et: Magyar
         fi: Magyar
@@ -268,12 +334,15 @@ locales:
         it: Magyar
         ja: Magyar
         ko: Magyar
+        lt: Magyar
+        lv: Magyar
         nl: Magyar
         ru: Magyar
         zh: Magyar
     it:
         cs: Italian
         de: Italian
+        el: Italian
         en: Italian
         et: Italian
         fi: Italian
@@ -282,12 +351,15 @@ locales:
         it: Italian
         ja: Italian
         ko: Italian
+        lt: Italian
+        lv: Italian
         nl: Italian
         ru: Italian
         zh: Italian
     ja:
         cs: 日本語
         de: 日本語
+        el: 日本語
         en: 日本語
         et: 日本語
         fi: 日本語
@@ -296,12 +368,15 @@ locales:
         it: 日本語
         ja: 日本語
         ko: 日本語
+        lt: 日本語
+        lv: 日本語
         nl: 日本語
         ru: 日本語
         zh: 日本語
     ko:
         cs: 한국어
         de: 한국어
+        el: 한국어
         en: 한국어
         et: 한국어
         fi: 한국어
@@ -310,12 +385,31 @@ locales:
         it: 한국어
         ja: 한국어
         ko: 한국어
+        lt: 한국어
+        lv: 한국어
         nl: 한국어
         ru: 한국어
         zh: 한국어
+    lt:
+        cs: Leedu
+        de: Leedu
+        el: Leedu
+        en: Leedu
+        et: Leedu
+        lt: locales.lt
+        lv: locales.lt
+    lv:
+        cs: Läti
+        de: Läti
+        el: Läti
+        en: Läti
+        et: Läti
+        lt: locales.lv
+        lv: locales.lv
     ru:
         cs: Русский
         de: Русский
+        el: Русский
         en: Русский
         et: Русский
         fi: Русский
@@ -324,12 +418,15 @@ locales:
         it: Русский
         ja: Русский
         ko: Русский
+        lt: Русский
+        lv: Русский
         nl: Русский
         ru: Русский
         zh: Русский
     zh:
         cs: 简体中文
         de: 简体中文
+        el: 简体中文
         en: 简体中文
         et: 简体中文
         fi: 简体中文
@@ -338,6 +435,8 @@ locales:
         it: 简体中文
         ja: 简体中文
         ko: 简体中文
+        lt: 简体中文
+        lv: 简体中文
         nl: 简体中文
         ru: 简体中文
         zh: 简体中文
@@ -347,6 +446,7 @@ message:
         de: >
             Hallo!<br> <br> Sie haben eine neue Nachricht in Helpific:<br> <a
             href="https://helpific.com/en/messages/%s">helpific.com/en/messages/%s</a>
+        el: 'Hi!<br> <br> Έχετε νέο μήνυμα στο Helpific:<br> <a href="https://helpific.com/en/messages/%s">helpific.com/en/messages/%s</a>'
         en: >
             Hi!<br> <br> You have new message in Helpific:<br> <a
             href="https://helpific.com/en/messages/%s">helpific.com/en/messages/%s</a>
@@ -361,7 +461,9 @@ message:
         it: 'Ciao!<br> <br> Hai un nuovo messaggio su Helpific:<br> <a href="https://helpific.com/en/messages/%s">helpific.com/en/messages/%s</a>'
         ja: 'こんにちは！<br> <br>Helpific上に新着メッセージが届いています。<br> <a href="https://helpific.com/en/messages/%s">helpific.com/en/messages/%s</a>'
         ko: '반갑습니다!<br> <br> Helpific에 새로운 메시지가 있습니다.:<br> <a href="https://helpific.com/en/messages/%s">helpific.com/en/messages/%s</a>'
-        nl: 'Hoi!<br> <br> U heeft een nieuwe bericht in Helpific:<br> <a href="https://helpific.com/en/messages/%s">helpific.com/en/messages/%s</a>'
+        lt: 'Sveiki!<br> <br> Jūs turite naują Helpific žinutę:<br> <a href="https://helpific.com/en/messages/%s">helpific.com/en/messages/%s</a>'
+        lv: 'Hei!<br> <br> Tev ir jauna vēstule Helpific:<br> <a href="https://helpific.com/en/messages/%s">helpific.com/en/messages/%s</a>'
+        nl: 'Hoi!<br> <br> U heeft een nieuw bericht in Helpific:<br> <a href="https://helpific.com/en/messages/%s">helpific.com/en/messages/%s</a>'
         ru: >
             Привет!<br> <br> У тебя новое сообщение в Helpific:<br> <a
             href="https://helpific.com/en/messages/%s">helpific.com/en/messages/%s</a>
@@ -369,6 +471,7 @@ message:
     email-subject:
         cs: Nová zpráva na helpific.com
         de: Neue Nachricht in helpific.com
+        el: Νέο μήνυμα στο helpific.com
         en: New message in helpific.com
         et: "Uus sõnum helpific.com'is"
         fi: "Uusi viesti helpific.com'issa"
@@ -377,13 +480,16 @@ message:
         it: Nuovo messaggio su helpific.com
         ja: Helpific上の新着メッセージ
         ko: helpific.com에 새 메시지
-        nl: Nieuwe bericht in helpific.com
+        lt: Nauja žinutė tinklalapyje helpific.com
+        lv: Jauna vēstule helpific.com
+        nl: Nieuw bericht in helpific.com
         ru: Новое сообщение в helpific.com
         zh: helpific.com上的新消息
 nav:
     about:
         cs: O nás
         de: Über uns
+        el: Σχετικά
         en: About
         et: Meist
         fi: Meistä
@@ -392,12 +498,15 @@ nav:
         it: Su Helpific
         ja: Helpificについて
         ko: 함께하는 사람들
+        lt: Apie
+        lv: Par mums
         nl: Over mij
         ru: О Нас
         zh: 关于我们
     bb:
         cs: Život bez Hranic
         de: Jenseits von Grenzen
+        el: Πέρα από τα σύνορα
         en: Beyond Borders
         et: Piirideta Elu
         fi: Rajojen Takana
@@ -406,12 +515,15 @@ nav:
         it: Oltre i Confini
         ja: 国境を越えて
         ko: 국경을 뛰어넘어
+        lt: Už sienų
+        lv: Pāri robežām
         nl: Buiten de Grenzen
         ru: Жизнь Без Границ
         zh: 大爱无疆
     blog:
         cs: Blog
         de: Blog
+        el: Blog
         en: Blog
         et: Blogi
         fi: Blogi
@@ -420,6 +532,8 @@ nav:
         it: Blog
         ja: ブログ
         ko: 블로그
+        lt: Tinklaraštis
+        lv: Blogs
         nl: Blog
         ru: Блог
         zh: 博客
@@ -427,6 +541,7 @@ nav:
         messages:
             cs: Zprávy
             de: Nachrichten
+            el: Μηνύματα
             en: Messages
             et: Sõnumid
             fi: Viestit
@@ -435,12 +550,15 @@ nav:
             it: Messaggi
             ja: メッセージ
             ko: 메시지
+            lt: Žinutės
+            lv: Vēstules
             nl: Berichten
             ru: Сообщения
             zh: 消息
         offers:
             cs: Moje nabídky
             de: Meine Angebote
+            el: Οι προσφορές μου
             en: My offers
             et: Minu pakkumised
             fi: Minun tarjoukseni
@@ -449,12 +567,15 @@ nav:
             it: Le mie offerte
             ja: マイ オファー
             ko: 나의 나눔 목록
+            lt: Mano pasiūlymai
+            lv: Mani piedāvājumi
             nl: Mijn aanbiedingen
             ru: Мои предложения
             zh: 我的帮助
         profile:
             cs: Upravit profil
             de: Profil bearbeiten
+            el: Επεξεργασία προφίλ
             en: Edit profile
             et: Muuda profiili
             fi: Muokkaa profiilia
@@ -463,12 +584,15 @@ nav:
             it: Modifica profilo
             ja: プロフィールを編集する
             ko: 프로필 편집
+            lt: Redaguoti profilį
+            lv: Labot profilu
             nl: Bewerk profiel
             ru: Редактировать профиль
             zh: 编辑资料
         requests:
             cs: Moje žádosti o pomoc
             de: Meine Anfragen
+            el: Τα αιτήματά μου
             en: My requests
             et: Minu soovid
             fi: Minun pyyntöni
@@ -477,12 +601,15 @@ nav:
             it: Le mie richieste
             ja: マイ リクエスト
             ko: 나의 요청 목록
+            lt: Mano prašymai
+            lv: Mani lūgumi
             nl: Mijn verzoeken
             ru: Мои просьбы
             zh: 我的请求
         sign-out:
             cs: Odhlásit se
             de: Abmelden
+            el: Αποσύνδεση
             en: Sign out
             et: Välju
             fi: Kirjaudu ulos
@@ -491,26 +618,32 @@ nav:
             it: Esci
             ja: ログアウト
             ko: 로그아웃
+            lt: Atsijungti
+            lv: Iziet
             nl: Afmelden
             ru: Выйти
             zh: 注销
     ngo-info:
         cs: Informace o neziskové organizaci
         de: NGO Informationen
+        el: Πληροφορίες για τη ΜΚΟ
         en: NGO information
         et: MTÜ informatsioon
         fi: Kansalaisjärjestöinformaatio
-        fr: "L'information des ONG"
+        fr: Information ONG
         hu: Szervezeti információ
         it: Informazioni ONG
         ja: NGO情報
         ko: NGO 정보
-        nl: nav.ngo-info
+        lt: NVO informacija
+        lv: NVO informācija
+        nl: NGO informatie
         ru: Информация недоходного объединения
         zh: 非政府组织信息
     offers:
         cs: Nabídky
         de: Angebote
+        el: Προσφορές
         en: Offers
         et: Pakkumised
         fi: Tarjoukset
@@ -519,53 +652,69 @@ nav:
         it: Offerte
         ja: オファー
         ko: 도움나눔
+        lt: Pasiūlymai
+        lv: Piedāvājumi
         nl: Aanbiedingen
         ru: Предложения
         zh: 提供帮助
     pad:
         cs: Vývoj k Pozitivnímu Postoji
         de: ' Entwicklung einer Positiven Einstellung'
+        el: Ανάπτυξη Θετικής Στάσης
         en: Positive Attitude Development
         et: Positiivse Suhtumise Arendamine
         fi: Positiivisen Asenteen Kehittäminen
-        fr: Attitude Développement Positif
+        fr: Attitude de Développement Positive
         hu: Pozitív Attitüd Fejlesztése
+        id: ''
         it: "Sviluppo di Un'atteggiamento Positivo"
         ja: 積極的な態度を開発
         ko: 긍정적 인 태도 개발
+        lt: Teigiamo požiūrio plėtra
+        lv: Pozitīvas attieksmes veidošana
+        nl: Positieve attitudeontwikkeling
         ru: Позитивное Развитие Отношений
         zh: 积极的态度发展
     partners:
         cs: 'Partneři '
         de: Partner
+        el: Συνεργάτες
         en: Partners
         et: Partnerid
         fi: Partnerit
         fr: Partenaires
         hu: Partnerek
+        id: ''
         it: Partners
         ja: パートナー
         ko: 제휴
+        lt: Partneriai
+        lv: Partneri
         nl: Partner
         ru: Партнеры
         zh: 合作伙伴
     projects:
         cs: Projekty
         de: Projekte
+        el: Προγράμματα
         en: Projects
         et: Projektid
         fi: Projektit
         fr: Projets
         hu: Projektek
+        id: ''
         it: Progetti
         ja: プロジェクト
         ko: 프로젝트
-        nl: Project
+        lt: Projektai
+        lv: Projektit
+        nl: Projecten
         ru: Проекты
         zh: 项目
     requests:
         cs: Žádosti o pomoc
         de: Anfragen
+        el: Αιτήματα
         en: Requests
         et: Soovid
         fi: Pyynnöt
@@ -574,12 +723,15 @@ nav:
         it: Richieste
         ja: リクエスト
         ko: 도움요청
+        lt: Prašymai
+        lv: Lūgumi
         nl: Aanvragen
         ru: Просьбы
         zh: 发送请求
     sign-in:
         cs: Přihlásit se
         de: Anmelden
+        el: Εγγραφή
         en: Sign in
         et: Sisene
         fi: Kirjaudu sisään
@@ -588,12 +740,15 @@ nav:
         it: Sign in
         ja: ログイン
         ko: 로그인
+        lt: Registruotis
+        lv: Ienākt
         nl: Aanmelden
         ru: Войти
         zh: 登陆
     team:
         cs: Náš tým
         de: Team
+        el: Η ομάδα
         en: Team
         et: Meeskond
         fi: Tiimi
@@ -602,12 +757,15 @@ nav:
         it: Team
         ja: チーム
         ko: 함께하는 사람들
+        lt: Komanda
+        lv: Komanda
         nl: Team
         ru: Команда
         zh: 团队
     terms:
         cs: Podmínky použití
         de: Nutzungsbedingungen
+        el: Όροι χρήσης
         en: Terms of Use
         et: Tingimused
         fi: Käyttöehdot
@@ -616,26 +774,32 @@ nav:
         it: "Condizioni d'uso"
         ja: 利用規約
         ko: 이용약관
+        lt: Naudojimosi sąlygos
+        lv: Noteikumi
         nl: Gebruiksvoorwaarden
         ru: Условия пользования
         zh: 条款
     toggle-navigation:
         cs: Zpět do menu
         de: Zum Menü
+        el: Μπάρα πλοήγησης
         en: Toggle navigation
         et: Ava menüü
-        fi: Valikon avaaminen
-        fr: Menu
+        fi: Valikko
+        fr: Basculer la navigation
         hu: Visszalépés a menübe
         it: Menù
         ja: ナビゲーションを切り替える
         ko: 메뉴로 이동
+        lt: Meniu
+        lv: Atvērt izvēlni
         nl: Toggle navigatie
         ru: Открыть меню
         zh: 导航栏
     users:
         cs: Uživatelé
         de: Nutzer
+        el: Χρήστες
         en: Users
         et: Kasutajad
         fi: Käyttäjät
@@ -644,6 +808,8 @@ nav:
         it: Utenti
         ja: ユーザー
         ko: 사용자
+        lt: Vartotojai
+        lv: Lietotāji
         nl: Gebruikers
         ru: Участники
         zh: 用户
@@ -652,6 +818,7 @@ pages:
         title:
             cs: Chyba
             de: Störung
+            el: Λάθος
             en: Error
             et: Viga
             fi: Virhe
@@ -660,6 +827,8 @@ pages:
             it: Errore
             ja: エラー
             ko: 오류
+            lt: Klaida
+            lv: Kļūda
             nl: fout
             ru: Ошибка
             zh: 错误
@@ -667,6 +836,7 @@ pages:
         add-new-offer:
             cs: Přidat novou nabídku pomoci
             de: Neues Hilsangebot hinzufügen
+            el: Προσθήκη νέας προσφοράς
             en: Add new offer
             et: Lisa uus pakkumine
             fi: Lisää uusi tarjous
@@ -675,12 +845,15 @@ pages:
             it: Aggiungi offerta
             ja: 新しいオファーを追加する
             ko: 도움나눔 입력하기
-            nl: Voeg een nieuwe aanbieding
+            lt: Pridėti naują pasiūlymą
+            lv: Pievienot jaunu piedāvājumu
+            nl: Voeg een nieuwe aanbieding toe
             ru: Добавить новое предложение
             zh: 增加新的帮助
         add-new-request:
             cs: Přidat novou žádost o pomoc
             de: Neue Hilfsanfrage hinzufügen
+            el: Προσθήκη νέας προσφοράς
             en: Add new request
             et: Lisa uus soov
             fi: Lisää uusi pyyntö
@@ -689,12 +862,15 @@ pages:
             it: Aggiungi richiesta
             ja: 新しいリクエストを追加する
             ko: 도움요청 입력하기
-            nl: Nieuwe hulpverzoek toevoegen
+            lt: Pridėti naują prašymą
+            lv: Pievienot jaunu lūgumu
+            nl: Nieuw hulpverzoek toevoegen
             ru: Добавить новую просьбу
             zh: 增加新的请求
         added:
             cs: 'Přidáno:'
             de: 'Hinzugefügt am:'
+            el: 'Προστέθηκε στις:'
             en: 'Added at:'
             et: 'Lisamise aeg:'
             fi: 'Lisätty ajalla:'
@@ -703,12 +879,15 @@ pages:
             it: 'Inserito il:'
             ja: 時間が追加されました：
             ko: '시간 추가 :'
+            lt: 'Pridėta:'
+            lv: 'Pievienots:'
             nl: 'Toegevoegd op:'
             ru: 'Время добавления:'
             zh: 添加到
         cancel:
             cs: Zrušit
             de: Löschen
+            el: Ακύρωση
             en: Cancel
             et: Tühista
             fi: Peruuta
@@ -717,12 +896,15 @@ pages:
             it: Elimina
             ja: 取消
             ko: 취소
+            lt: Atšaukti
+            lv: Atcelt
             nl: Annuleer
             ru: Отменить
             zh: 取消
         edit:
             cs: Upravit
             de: Bearbeiten
+            el: Επεξεργασία
             en: Edit
             et: Muuda
             fi: Muuta
@@ -731,12 +913,15 @@ pages:
             it: Modifica
             ja: 編集
             ko: 편집
+            lt: Redaguoti
+            lv: Labot
             nl: Bewerk
             ru: Редактировать
             zh: 编辑
         location:
             cs: Místo
             de: Standort
+            el: Τοποθεσία
             en: Location
             et: Asukoht
             fi: Sijainti
@@ -745,12 +930,15 @@ pages:
             it: Posizione
             ja: 場所
             ko: 장소
+            lt: Vietovė
+            lv: Vieta
             nl: Plaats
             ru: Месторасположение
             zh: 地点
         location-ph:
             cs: 'Např. Brno, Jihomoravský kraj'
             de: 'z.B. Linz, Oberösterreich'
+            el: 'πχ. Αθήνα, Ελλάδα'
             en: 'e.g. London, City of London'
             et: 'nt. Tallinn, Harjumaa'
             fi: 'esim. Lahti, Päijät-Häme'
@@ -759,40 +947,49 @@ pages:
             it: 'es. Roma, Italia'
             ja: 例：神奈川県横浜市
             ko: '예: 서울, 용산구'
-            nl: ''
+            lt: 'pvz. Vilnius, Lietuva.'
+            lv: 'piem. Rīga, Latvija'
+            nl: 'bijv. Gent, Oost-Vlaanderen'
             ru: 'напр. Санкт-Петербург, Ленинградская область'
             zh: ' 例如：杭州，浙江'
         offer-count:
-            cs: "Počet nabídek  <span ng-if='search_query || searchMy'> - nalezeno </span>"
+            cs: "Počet nabídek  <span ng-if='search_query || searchMy'> - nalezeno {{ (help | filter:{status:s.status, type:type, my:search_my} | filter:search_query).length }}</span>"
             de: "Insgesamt gibt es {{ (help | filter:{type:type }).length }} Hilfsangebote hier <span ng-if='search_query || search_my'> - found {{ (help | filter:{status:s.status, type:type, my:search_my} | filter:search_query).length }}</span>"
+            el: "Σύνολο των  προσφορών εδώ <span ng-if='search_query || searchMy'> - found {{ (help | filter:{status:s.status, type:type, my:search_my} | filter:search_query).length }}</span>"
             en: "There are total {{ (help | filter:{type:type }).length }} offers here <span ng-if='search_query || searchMy'> - found {{ (help | filter:{status:s.status, type:type, my:searchMy} | filter:search_query).length }}</span>"
             et: "Kokku on meil {{ (help | filter:{type:type }).length }} pakkumist <span ng-if='search_query || searchMy'> - leiti {{ (help | filter:{status:s.status, type:type, my:searchMy} | filter:search_query).length }}</span>"
             fi: "Täällä ovat kaikki {{ (help | filter:{type:type }).length }} tarjoukset <span ng-if='search_query || searchMy'> - leiti {{ (help | filter:{status:s.status, type:type, my:search_my} | filter:search_query).length }}</span>"
-            fr: "Nombre total d'offres ici <span ng-if='search_query || searchMy'> - found </span>"
+            fr: "Nombre total  d'offres ici <span ng-if='search_query || searchMy'> - found {{ (help | filter:{status:s.status, type:type, my:search_my} | filter:search_query).length }}</span>"
             hu: "Összesen {{ (help | filter:{type:type }).length }} felajánlás található a rendszerben <span ng-if='search_query || searchMy'> - tal?lat {{ (help | filter:{status:s.status, type:type, my:searchMy} | filter:search_query).length }}</span>"
             it: "Tutte le {{ (help | filter:{type:type }).length }} offerte <span ng-if='search_query || searchMy'> - found {{ (help | filter:{status:s.status, type:type, my:search_my} | filter:search_query).length }}</span>"
             ja: "すべてのオファ {{ (help | filter:{type:type }).length }} ー <span ng-if='search_query || searchMy'> - 見つかりました {{ (help | filter:{status:s.status, type:type, my:search_my} | filter:search_query).length }}</span>"
             ko: "전체 {{ (help | filter:{type:type }).length }} 도움 나눔이 있습니다. <span ng-if='search_query || search_my'> - found {{ (help | filter:{status:s.status, type:type, my:search_my} | filter:search_query).length }}</span>"
+            lt: "Visus  pasiūlymus galite rasti čia <span ng-if='search_query || searchMy'> - found {{ (help | filter:{status:s.status, type:type, my:search_my} | filter:search_query).length }}</span>"
+            lv: "Šobrīd  kopā ir piedāvājumi <span ng-if='search_query || searchMy'> - found {{ (help | filter:{status:s.status, type:type, my:search_my} | filter:search_query).length }}</span>"
             nl: "Er zijn totaal {{ (help | filter:{type:type }).length }} aanbiedingen hier <span ng-if='search_query || search_my'> - found {{ (help | filter:{status:s.status, type:type, my:search_my} | filter:search_query).length }}</span>"
             ru: "У нас в общей сложности {{ (help | filter:{type:type }).length }} предложений <span ng-if='search_query || searchMy'> - найдено {{ (help | filter:{status:s.status, type:type, my:searchMy} | filter:search_query).length }}</span>"
             zh: "所有的帮助都在这里 {{ (help | filter:{type:type }).length }} <span ng-if='search_query || searchMy'> - 发现 {{ (help | filter:{status:s.status, type:type, my:search_my} | filter:search_query).length }}</span>"
         offer-price:
             cs: Cena za službu (€) (Nepovinné)
             de: Service Preis (€) (Freiwillig)
+            el: Τιμή υπηρεσίας (€) (Προαιρετικό)
             en: Service price (€) (Not obligatory)
             et: Teenuse hind (€) (Mitte kohustuslik)
             fi: 'Palvelun hinta (€) (Vapaavalintainen) '
-            fr: Prix du service (€) (Optionnel)
+            fr: Prix du service (€) (Pas nécessaire)
             hu: A szolgáltatás díja (€) (Választható)
             it: Prezzo del servizio (€) (Non obbligatorio)
             ja: サービス価格（€）（必須ではありません）
             ko: 서비스 가격 (€) (의무 없음)
+            lt: Paslaugos kaina (€) (Neprivaloma)
+            lv: Pakalpojuma cena (€) (Nav obligāta)
             nl: Dienst prijs (€) (Niet verplicht)
             ru: Цена услуги (€) (Необязательно)
             zh: 服务费用（当地货币）（可选）
         offer-price-list:
             cs: 'Cena '
             de: Preis
+            el: Τιμή υπηρεσίας
             en: Service price
             et: Teenuse hind
             fi: Palvelun hinta
@@ -801,12 +998,15 @@ pages:
             it: Prezzo del servizio
             ja: サービス価格
             ko: 서비스 가격
+            lt: Paslaugos kaina
+            lv: Pakalpojuma cena
             nl: Serviceprijs
             ru: Цена услуги
             zh: 服务费用
         offer-price-ph:
             cs: 'např. 10 '
             de: z.B. 10
+            el: πχ. 10
             en: e.g. 10
             et: nt. 10
             fi: esim. 10
@@ -815,12 +1015,15 @@ pages:
             it: es. 10
             ja: 例10
             ko: 예 (10)
+            lt: pvz. 10
+            lv: piem. 10
             nl: bijv. 10
             ru: напр. 10
             zh: 比如，1元
         offer-request:
             cs: Nabídka
             de: Angebote
+            el: Προσφορά
             en: Offer
             et: Pakkumine
             fi: Tarjous
@@ -829,26 +1032,32 @@ pages:
             it: Offerta
             ja: オファー
             ko: 나눔
-            nl: Bieden
+            lt: Pasiūlymai
+            lv: Piedāvājums
+            nl: Aanbieden
             ru: Предложение
             zh: 帮助
         offer-request-ph:
             cs: např. Jedu do Prahy mám volné místo
             de: z.B. Fahre nach Wien und habe noch Platz in meinem Auto
+            el: πχ. Θα πάω στη Θεσσαλονίκη και έχω έξτρα χώρο στο αυτοκίνητο
             en: e.g. Will go to London and have extra room in my car
             et: nt. Lähen Nuustakule ja autos on üks vaba koht
             fi: 'esim. Menen Lahteen, ja minulla on paikka vapaana autossa'
-            fr: "ex. Je vais à Lyon et j'ai une place disponible"
+            fr: 'Par exemple: nous allons à Paris et nous avons une place disponible dans notre voiture'
             hu: pl. Budapestre megyek van egy szabad hely a kocsimban
             it: 'es: Andrò a Firenze ed ho un posto extra in auto'
             ja: 例：東京駅に行きますが、1人分スペースが余っています
             ko: '예: 자가용으로 서울에 방문하는데 빈 좌석 2개를 공유할 수 있습니다'
+            lt: pvz. Keliauju į Vilnių ir turiu laisvą vietą automobilyje
+            lv: piem. Dodos uz Rīgu un man ir brīva vieta mašīnā
             nl: bijv. Gaat naar Amsterdam en hebben extra ruimte in mijn auto
             ru: напр. Еду в Царское село и есть одно свободное место в машине
             zh: 例如：即将要去宾馆，我的车里有额外的空间
         offer-title:
             cs: Nabídky pomoci
             de: Hilfsangebote
+            el: Προσφορές
             en: Offers
             et: Pakkumised
             fi: Tarjoukset
@@ -857,12 +1066,15 @@ pages:
             it: Offerta
             ja: オファー
             ko: 도움 나눔
+            lt: Pasiūlymai
+            lv: Piedāvājumi
             nl: Aanbiedingen
             ru: Предложения
             zh: 所有帮助
         only-my-offer:
             cs: 'Ukázat pouze mé nabídky '
             de: Nur meine Hilfsangebote zeigen
+            el: Εμφάνιση μόνο των προσφορών μου
             en: Show only my offers
             et: Näita ainult minu pakkumisi
             fi: Näytä vain minun tarjoukseni
@@ -871,12 +1083,15 @@ pages:
             it: Mostra solo le mie offerte
             ja: 自分のオファーのみ表示する
             ko: 내 도움나눔만 보기
+            lt: Rodyti tik mano pasiūlymus
+            lv: Rādīt tikai manus piedāvājumus
             nl: Toon alleen mijn aanbiedingen
             ru: Показывать только мои предложения помощи
             zh: 只显示我提供的帮助
         only-my-request:
             cs: Ukázat pouze mé žádosti
             de: Nur meine Hilfsanfragen zeigen
+            el: Εμφάνιση μόνο των αιτημάτων μου
             en: Show only my requests
             et: Näita ainult minu soove
             fi: Näytä vain minun pyyntöni
@@ -885,12 +1100,15 @@ pages:
             it: Mostra solo le mie richieste
             ja: 自分のリクエストのみ表示する
             ko: 내 도움요청만 보기
+            lt: Rodyti tik mano prašymus
+            lv: Rādīt tikai manus lūgumus
             nl: Toon alleen mijn verzoeken
             ru: Показывать только мои просьбы о помощи
             zh: 只显示我发出的请求
         reply:
             cs: Odpovědět
             de: Antworten
+            el: Απάντηση
             en: Reply
             et: Vasta
             fi: Vastaa
@@ -899,12 +1117,15 @@ pages:
             it: Rispondi
             ja: 返信
             ko: 답변
+            lt: Atsakymas
+            lv: Atbildēt
             nl: Antwoord
             ru: Ответить
             zh: 回复
         request-count:
             cs: "Celkový počet {{ (help | filter:{type:type }).length }} nabídek <span ng-if='search_query || searchMy'> - Nalezeno {{ (help | filter:{status:s.status, type:type, my:searchMy} | filter:search_query).length }}</span>"
             de: "Es gibts insgesamt {{ (help | filter:{type:type }).length }} Hilfsanfragen hier <span ng-if='search_query || search_my'> - gefunden {{ (help | filter:{status:s.status, type:type, my:search_my} | filter:search_query).length }}</span>"
+            el: "Σύνολο των αιτημάτων εδώ<span ng-if='search_query || searchMy'> - found </span>"
             en: "There are total {{ (help | filter:{type:type }).length }} requests here <span ng-if='search_query || searchMy'> - found {{ (help | filter:{status:s.status, type:type, my:searchMy} | filter:search_query).length }}</span>"
             et: "Kokku on meil {{ (help | filter:{type:type }).length }} soovi <span ng-if='search_query || searchMy'> - leiti {{ (help | filter:{status:s.status, type:type, my:searchMy} | filter:search_query).length }}</span>"
             fi: "Kaikki pyynnöt {{ (help | filter:{type:type }).length }} ovat täällä <span ng-if='search_query || searchMy'> - leiti {{ (help | filter:{status:s.status, type:type, my:searchMy} | filter:search_query).length }}</span>"
@@ -913,40 +1134,49 @@ pages:
             it: "Totale {{ (help | filter:{type:type }).length }} richieste <span ng-if='search_query || searchMy'> - found {{ (help | filter:{status:s.status, type:type, my:searchMy} | filter:search_query).length }}</span>"
             ja: "全てのリクエスト {{ (help | filter:{type:type }).length }}　<span ng-if='search_query || searchMy'> - 見つかりました {{ (help | filter:{status:s.status, type:type, my:searchMy} | filter:search_query).length }}</span>"
             ko: "전체 {{ (help | filter:{type:type }).length }} 도움요청이 있습니다. <span ng-if='search_query || search_my'> - found {{ (help | filter:{status:s.status, type:type, my:search_my} | filter:search_query).length }}</span>"
+            lt: "Visus prašymus rasite čia <span ng-if='search_query || searchMy'> - found </span>"
+            lv: "Kopā šeit ir  lūgumi <span ng-if='search_query || searchMy'> - found </span>"
             nl: "Er zijn totaal {{ (help | filter:{type:type }).length }} verzoeken hier <span ng-if='search_query || searchMy'> - gevonden {{ (help | filter:{status:s.status, type:type, my:searchMy} | filter:search_query).length }}</span>"
             ru: "У нас в общей сложности {{ (help | filter:{type:type }).length }} просьб <span ng-if='search_query || searchMy'> - найдено {{ (help | filter:{status:s.status, type:type, my:searchMy} | filter:search_query).length }}</span>"
             zh: "所有的请求都在这里 {{ (help | filter:{type:type }).length }} <span ng-if='search_query || searchMy'> - 发现 {{ (help | filter:{status:s.status, type:type, my:searchMy} | filter:search_query).length }}</span>"
         request-price:
             cs: Jsem ochoten zaplatit (€) (Volitelné)
             de: 'Stimme zu, um zu zahlen (€) (Freiwillig)'
+            el: Συμφωνία πληρωμής (€) (Προαιρετικό)
             en: Agree to pay (€) (Not obligatory)
             et: Olen nõus maksma (€) (Mitte kohustuslik)
             fi: Suostun maksamaan hinnan (€) (Valinnainen)
-            fr: Accepte de payer (€) (Optionnel)
+            fr: "D'accord pour payer (€) (Pas nécessaire)"
             hu: Ajánlott ár (€) (Választható)
             it: Disposto a pagare (€) (Non obbligatorio)
             ja: 支払うことを（必須ではない）に同意
             ko: 지불 (의무 없음) 동의
+            lt: Sutinku sumokėti (€) (Neprivaloma)
+            lv: Piekrītu maksāt (€) (Nav obligāti)
             nl: Ermee akkoord te betalen (€) (niet verplicht)
             ru: Готов заплатить (€) (Необязательно)
             zh: 愿意支付（当地货币）（可选）
         request-price-list:
             cs: Zaplatit
             de: 'Stimme zu, um zu zahlen'
+            el: Συμφωνία πληρωμής
             en: Agree to pay
             et: Olen nõus maksma
             fi: Suostun maksamaan hinnan
-            fr: Accepte de payer
+            fr: "D'accord pour payer"
             hu: Ajánlott ár
             it: Disposto a pagare
             ja: 支払うことに同意するものとし
             ko: 지불 할 것에 동의합니다
-            nl: Het eens te betalen
+            lt: Sutinku sumokėti
+            lv: Piekrītu maksāt
+            nl: akkoord om te betalen
             ru: Готов заплатить
             zh: 愿意支付
         request-price-ph:
             cs: např. 10
             de: z.B. 10
+            el: π.χ. 10
             en: e.g. 10
             et: nt. 10
             fi: esim. 10
@@ -955,12 +1185,15 @@ pages:
             it: es. 10
             ja: 例10
             ko: 예 (10)
+            lt: pvz. 10
+            lv: piem. 10
             nl: bijv. 10
             ru: напр. 10
             zh: 比如，一元
         request-request:
             cs: Zažádat
             de: Anfragen
+            el: Αίτημα
             en: Request
             et: Soov
             fi: Pyyntö
@@ -969,12 +1202,15 @@ pages:
             it: Richiesta
             ja: リクエスト
             ko: 요청
+            lt: Prašymas
+            lv: Lūgt
             nl: Aanvraag
             ru: Просьба
             zh: 请求
         request-request-ph:
             cs: např. Potřebuji se dostat do Kotěhůlek
             de: z.B. Ich möchte nach Berlin gehen
+            el: π.χ. Θα ήθελα να πάω στην Κόρινθο
             en: "e.g. I'll want to go to London"
             et: nt. Soovin minna Nuustakule
             fi: esim. Tahdon mennä Lahteen
@@ -983,12 +1219,15 @@ pages:
             it: es. Ho necessità di andare a Firenze
             ja: 例：東京駅に行きたいです。
             ko: '예: 서울시 용산에 방문하고 싶습니다.'
+            lt: pvz. Aš noriu nuvykti į Palangą
+            lv: piem. Vēlos aizbraukt uz jūru.
             nl: bijv. Ik wil naar Nuustaku gaan
             ru: напр. Хочу поехать на пляж
             zh: 比如，我想找人帮我遛狗
         request-title:
             cs: Žádosti
             de: Hilfsanfrage
+            el: Αιτήματα
             en: Requests
             et: Soovid
             fi: Pyynnöt
@@ -997,12 +1236,15 @@ pages:
             it: Richieste
             ja: リクエスト
             ko: 도움 요청
+            lt: Prašymai
+            lv: Lūgumi
             nl: Verzoeken
             ru: Просьбы
             zh: 所有请求
         save:
             cs: Uložit
             de: Speichern
+            el: Αποθήκευση
             en: Save
             et: Salvesta
             fi: Tallenna
@@ -1011,12 +1253,15 @@ pages:
             it: Salva
             ja: 保存
             ko: 저장
-            nl: Sparen
+            lt: Išsaugoti
+            lv: Saglabāt
+            nl: Opslaan
             ru: Сохранить
             zh: 保存
         status:
             cs: Status
             de: Status
+            el: Κατάσταση
             en: Status
             et: Staatus
             fi: Status
@@ -1025,12 +1270,15 @@ pages:
             it: Status
             ja: ステータス
             ko: 지위
-            nl: Toestand
+            lt: Statusas
+            lv: Statuss
+            nl: Status
             ru: Статус
             zh: 状态
         status-accepted:
             cs: Schváleno
             de: Akzeptiert
+            el: Αποδεκτό
             en: Accepted
             et: Vastuvõetud
             fi: Hyväksytty
@@ -1039,12 +1287,15 @@ pages:
             it: Accettata
             ja: 引き受けられました
             ko: 수락
+            lt: Priimta
+            lv: Akceptēts
             nl: Aanvaard
             ru: Принято
             zh: 已接受
         status-accepted-plural:
             cs: 'Schváleno '
             de: Akzeptiert
+            el: Αποδεκτό
             en: Accepted
             et: Vastuvõetud
             fi: Hyväksytty
@@ -1053,12 +1304,15 @@ pages:
             it: Accettata
             ja: 引き受けられました
             ko: 수락
+            lt: Priimta
+            lv: Akceptēti
             nl: Aanvaard
             ru: Приняты
             zh: 已接受
         status-active:
             cs: 'Aktivní '
             de: Aktiv
+            el: Ενεργός
             en: Active
             et: Aktiivne
             fi: Aktiivinen
@@ -1067,12 +1321,15 @@ pages:
             it: Attiva
             ja: 返事を待っています
             ko: 활동중
+            lt: Aktyvus
+            lv: Aktīvs
             nl: Actief
             ru: Активный
             zh: 活跃用户
         status-active-plural:
             cs: 'Aktivní '
             de: Aktiv
+            el: Ενεργός
             en: Active
             et: Aktiivsed
             fi: Aktiivinen
@@ -1081,12 +1338,15 @@ pages:
             it: Attiva
             ja: 返事を待っています
             ko: 활동중
+            lt: Aktyvus
+            lv: Aktīvi
             nl: Actief
             ru: Активные
             zh: 活跃用户
         status-canceled:
             cs: Zrušeno
             de: Gelöscht
+            el: Ακυρώθηκε
             en: Canceled
             et: Tühistatud
             fi: Peruutettu
@@ -1095,12 +1355,15 @@ pages:
             it: Cancellata
             ja: 取消
             ko: 취소됨
+            lt: Atmesta
+            lv: Atcelts
             nl: Geannuleerd
             ru: Отменен
             zh: 已取消
         status-canceled-plural:
             cs: Zrušeno
             de: Gelöscht
+            el: Ακυρώθηκε
             en: Canceled
             et: Tühistatud
             fi: Peruutettu
@@ -1109,12 +1372,15 @@ pages:
             it: Cancellata
             ja: 取消
             ko: 취소됨
+            lt: Atmesta
+            lv: Atcelti
             nl: Geannuleerd
             ru: Отменены
             zh: 已取消
         status-done:
             cs: Hotovo
             de: Erledigt
+            el: Ολοκληρώθηκε
             en: Done
             et: Tehtud
             fi: Tehty
@@ -1123,12 +1389,15 @@ pages:
             it: Eseguita
             ja: ありがとうございました
             ko: 완료
-            nl: Gedaan
+            lt: Baigta
+            lv: Gatavs
+            nl: Klaar
             ru: Сделано
             zh: 已完成
         status-done-plural:
             cs: Hotovo
             de: Erledigt
+            el: Ολοκληρώθηκε
             en: Done
             et: Tehtud
             fi: Tehty
@@ -1137,12 +1406,15 @@ pages:
             it: Eseguita
             ja: ありがとうございました
             ko: 완료
-            nl: Gedaan
+            lt: Baigta
+            lv: Gatavi
+            nl: Klaar
             ru: Сделаны
             zh: 已完成
         time:
             cs: Datum/čas
             de: Datum/zeit
+            el: Ημερομηνία/Ώρα
             en: Date/time
             et: Kuupäev/kellaaeg
             fi: Päivämäärä/kellonaika
@@ -1151,12 +1423,15 @@ pages:
             it: Appuntamento
             ja: "日にち\b／時間"
             ko: 날짜/시간
+            lt: Data/laikas
+            lv: Datums/laiks
             nl: Datum/tijd
             ru: Дата/время
             zh: 日期/时间
         time-ph:
             cs: 'např. 08.10.2016 17:00'
             de: 'z.B. 08.10.2016 17:00'
+            el: 'π.χ. 08.10.2016 17:00'
             en: 'e.g. 08.10.2016 17:00'
             et: 'nt. 08.10.2016 17:00'
             fi: 'esim. 08.10.2016 17:00'
@@ -1165,6 +1440,8 @@ pages:
             it: "es. 08.10.2016 17:00'"
             ja: 例：2016年8月4日14時00分
             ko: '예: 2016년 8월 4일 14시 00분'
+            lt: 'pvz. 08.10.2016 17:00'
+            lv: 'piem. 08.10.2016 17:00'
             nl: 'bijv. 08.10.2016 17:00'
             ru: 'напр. 08.10.2016 17:00'
             zh: 比如，2016年8月4日14点
@@ -1172,6 +1449,7 @@ pages:
         bullet-1:
             cs: Připojite se přes Facebook nebo Google
             de: Einloggen mit Facebook oder Google
+            el: Σύνδεση μέσω Facebook ή Google
             en: Sign in via Facebook or Google
             et: "Sisene Facebooki või Google'i kaudu"
             fi: Kirjaudu sisään Facebookin tai Googlen kautta
@@ -1180,12 +1458,15 @@ pages:
             it: Registrati via Facebook o Google
             ja: Facebook、またはGoogleでログイン
             ko: 페이스북이나 구글 계정으로 로그인을 합니다.
+            lt: Registruotis per Facebook arba Google+
+            lv: Reģistrēties ar Facebook vai Google+
             nl: Log in via Facebook of Google
             ru: Войди через Facebook или Google
             zh: 用Facebook或Google账号登陆
         bullet-2:
             cs: Povězte nám co umíte nebo s čím potřebujete pomoci
             de: 'Lassen Sie uns wissen, was Sie können oder brauche'
+            el: Ενημερώστε μας για αυτό που μπορείτε να κάνετε ή για αυτό που έχετε ανάγκη
             en: Let us know what you can do or need
             et: 'Anna teada, kuidas saad aidata või mida vajad'
             fi: Kerro meille mitä voit tehdä tai tarvitset
@@ -1194,12 +1475,15 @@ pages:
             it: Facci sapere cosa necessiti o come puoi aiutare
             ja: あなたが必要としてることやあなたが助けてあげられることを教えてください
             ko: 당신 나눌 수 있거나 필요로하는 일을 적습니다
+            lt: 'Leiskite mums žinoti, ką jūs galite, arba ko jums reikia'
+            lv: 'Pastāsti mums, ko tu vari darīt vai kas ir nepieciešams'
             nl: 'Laat ons weten, wat u kan doen of nodig hebt'
             ru: 'Напиши, какую помощь Ты можешь предложить или в чем нуждаешься'
             zh: 让我们知道你能做什么或者需要什么
         bullet-3:
             cs: 'Ukažte své dovednosti a získejte pomoc s Vašimi potřebami!'
             de: Werden Sie aktiv und treten Sie mit anderen in Kontakt
+            el: Προσφέρετε τη βοήθειά σας
             en: Make your needs and deeds work
             et: 'Tegutse, millal soovid!'
             fi: Saa tarpeesi ja tekosi toimimaan
@@ -1208,12 +1492,15 @@ pages:
             it: Entra in contatto con gli altri
             ja: 助け合いを始めましょう
             ko: '활동을 시작합니다!'
-            nl: Maak u benodigheden en daden werken
+            lt: Leiskite savo darbams ir poreikiams veikti
+            lv: Lieciet Jūsu vajadzībām un darbiem piepildīties
+            nl: Laat uw noden en daden werken
             ru: Действуй когда хочешь
             zh: 让你的想法成为现实
         choose-way:
             cs: Jděte vlastní cestou
             de: Wähle deinen Weg
+            el: Διαλέξτε το δρόμο σας
             en: Choose your way
             et: Vali oma tee
             fi: Valitse oma tiesi
@@ -1222,12 +1509,15 @@ pages:
             it: Scegli tra queste opzioni
             ja: あなたはどちらですか？
             ko: 당신의 경로를 선택하세요
+            lt: Pasirinkite būdą
+            lv: Izvēlies savu ceļu
             nl: Kies uw weg
             ru: Выбери свой путь
             zh: 选择你的方式
         how-it-works:
             cs: Jak funguje Helpific?
             de: Wie funktioniert Helpific?
+            el: Πώς λειτουργεί το Helpific?
             en: How Helpific works?
             et: Kuidas Helpific töötab?
             fi: Kuinka Helpfic toimii?
@@ -1236,12 +1526,15 @@ pages:
             it: Come funziona Helpific?
             ja: Helpificの仕組み
             ko: Helpific을 어떻게 이용하나요?
+            lt: Kaip Helpific veikia?
+            lv: Kā Helpific darbojas?
             nl: Hoe werkt Helpific?
             ru: Как устроен Helpific?
             zh: 完成如下几步，即可开始你的Helpific发现之旅
         offers-link:
             cs: Seznamte se s dobrovolníky
             de: Freiwillige treffen
+            el: Γνωρίστε τους εθελοντές
             en: Meet the volunteers
             et: Kohtu vabatahtlike abistajatega
             fi: Tapaa vapaaehtoiset
@@ -1250,12 +1543,15 @@ pages:
             it: Incontra i volontari
             ja: 助けてくれる人を探す
             ko: 봉사자들 만나기
+            lt: Susitikite su savanoriais
+            lv: 'Iepazīsties ar brīvprātīgajiem!'
             nl: Vrijwiligers ontmoeten
             ru: Знакомство с волонтерами
             zh: 与志愿者见面
         offers-link-alt:
             cs: Levé dveře
             de: Linke Tür
+            el: Αριστερή πόρτα
             en: Left door
             et: Vasak uks
             fi: Vasen ovi
@@ -1264,17 +1560,24 @@ pages:
             it: Sinistra
             ja: 左のドア
             ko: 왼쪽문
+            lt: Durys kairėje
+            lv: Durvis pa kreisi
             nl: linker deur
             ru: Левая дверь
             zh: 左边的门
         pad-title:
+            el: Διαγωνισμός σε πρόγραμμα PAD
             en: Competition in PAD project
             et: Konkurss PSA projektis
             fi: pages.index.pad-title
+            lt: Konkursas PAD projekte
+            lv: Konkurss P.A.V. projektā
+            nl: Competitie in P.A.D Project
             ru: Конкурс в проекте Р.П.О
         requests-link:
             cs: Pomozte těm kteří to potřebují
             de: Helfen Sie Menschen in Not
+            el: Βοηθείστε αυτούς που το έχουν ανάγκη
             en: Help those in need
             et: Aita abivajajaid
             fi: Auta apua tarvitsevia
@@ -1283,12 +1586,15 @@ pages:
             it: Aiuta chi ha bisogno
             ja: 困ってる人を助けてあげる
             ko: 도움이 필요한 사람들을 도와주세요.
-            nl: Helpen die in nood
+            lt: Pagalba skurstantiems
+            lv: 'Palīdzēt tiem, kam nepieciešams'
+            nl: Help hulpbehoevenden
             ru: 'Помоги тем, кто нуждается'
             zh: 帮助有需要的人
         requests-link-alt:
             cs: Pravé dveře
             de: Rechte Tür
+            el: Δεξιά πόρτα
             en: Right door
             et: Parem uks
             fi: Oikea ovi
@@ -1297,12 +1603,15 @@ pages:
             it: Destra
             ja: 右のドア
             ko: 오른쪽문
+            lt: Teisingos durys
+            lv: Durvis pa labi
             nl: Rechter deur
             ru: Правая дверь
             zh: 右边的门
         slogan:
             cs: 'Některé věci je lepší dělat společně!'
             de: 'Gemeinsam ist es einfach!'
+            el: Δεν είναι ευκολότερα μαζί?
             en: "Isn't it easier together?"
             et: 'Koos on lihtsam!'
             fi: Eikö yhdessä ole helpompaa?
@@ -1311,12 +1620,15 @@ pages:
             it: 'Insieme è più semplice!'
             ja: 一人より、誰かと一緒に
             ko: '함께하는 일, 어렵지 않습니다!'
-            nl: 'samen is gemakkelijker!'
+            lt: Argi kartu ne lengviau?
+            lv: 'Kopā ir vieglāk!'
+            nl: 'Samen is gemakkelijker!'
             ru: Разве вместе не легче?
             zh: 星多天空亮，人多智慧广
         text:
             cs: "<h2>Nikdy nebylo snazší pomáhat, nebo získat pomoc.</h2> <p>Helpific spojuje lidi se speciálními potřebami s lidmi co jim chtějí pomoci s každodenními aktivitami.</p> <p ng-if='info'>Nyní jsme {{ info.help }} splnili požadavků  a máme uživatelů.</p>"
             de: "<h2>Es war noch nie einfacher, Hilfe zu geben und zu bekommen.</h2> <p>Helpific verbindet Freiwillige mit Menschen, welche Hilfe in alltäglichen Aktivitäten benötigen.</p> <p ng-if='info'>Im Moment haben wir {{ info.help }} Hilfsanfragen befriedigt und {{ info.users }} aktive Freiwillige.</p>"
+            el: "<h2>Ποτέ δεν ήταν ευκολότερο να δώσεις και να πάρεις βοήθεια.</h2> <p>Helpific συνδέει ανθρώπους με ειδικές ανάγκες που χρειάζονται βοήθεια για καθημερινές δραστηριότητες με ανθρώπους που θέλουν να τους βοηθήσουν.</p> <p ng-if='info'>Αυτή τη στιγμή  έχουμε εκπληρωμένα αιτήματα και  χρήστες.</p>"
             en: "<h2>It's never been easier to give and get help.</h2> <p>Helpific connects people with special needs who need help with everyday activities to people who want to help them.</p> <p ng-if='info'>At the moment we have {{ info.help }} requests fulfilled and {{ info.users }} users.</p>"
             et: >
                 <h2>Kunagi varem pole abi osutamine ja saamine olnud nii
@@ -1330,6 +1642,8 @@ pages:
             it: "<h2>Non è mai stato più semplice aiutare e ricevere aiuto.</h2> <p>Helpific connette i volontari con coloro che necessitano aiuto per le faccende quotidiane.</p> <p ng-if='info'>Al momento abbiamo {{ info.help }} volontari attivi e {{ info.users }} richieste già esaudite.</p>"
             ja: "<h2>誰かを助けたり、誰かに助けをお願いするのって難しいと思っていませんか？</h2> <p>Helpificは毎日の生活で助けを必要としている人と、そこに手を差し伸べる優しい人をつなげます。</p> <p ng-if='info'>Helpific上では、すでにたくさんの心優しい人々が、困ってる人々を助けています。あなたも始めませんか？</p>"
             ko: "<h2>도움을 주고받는 일, 어렵지 않습니다.</h2> <p>Helpific은 일상 속에서 도움이 필요한 사람과 도움을 나눌 수 있는 사람을 연결합니다. </p> <p ng-if='info'> 현재까지 우리는  도움을 주고받았고  활동 중인 봉사자들이 있습니다.</p>"
+            lt: "<h2>Dar niekada nebuvo taip lengva duoti ir gauti</h2> <p>Helpific jungia žmones, kiekvieną dieną turinčiais specialiųjų poreikių ir žmones, kurie nori jiems padėti.</p> <p ng-if='info'>Šiuo metu mes turime  prašymų ir  vartotojų</p>"
+            lv: "<h2>Nekad nav bijis vienkāršāk dot un saņemt palīdzību.</h2> <p>Helpific savieno cilvēkus ar īpašām vajadzībām, kuriem nepieciešama palīdzība ikdienas aktivitātēs ar cilvēkiem, kas vēlas viņiem palīdzēt.</p> <p ng-if='info'>Šobrīd mums ir izpildīti  lūgumi un  lietotāju.</p>"
             nl: '<h2>Het is nooit gemakkelijker geweest om hulp to geven en te krijgen.</h2> <p>Helpific verbindt vrijwiligers met hen die hulp nodig hebben met hun dagelijkse activiteiten.</h2> <p> We hebben op het moment {{ info.help }} verzoeken voldaan en {{ info.users }} actieve vrijwiligers.</p>'
             ru: >
                 <h2>Никогда прежде не было так легко помогать другим и получать
@@ -1339,14 +1653,27 @@ pages:
                 активных помощников-добровольцев.</p>
             zh: "<h2>获得帮助从未像现在这样简单</h2> <p>Helpific把志愿者与那些有需要的人联系起来.</p> <p ng-if='info'>现在我们拥有一批乐于奉献，积极进取的志愿者向你提供帮助.</p>"
         twitter-title:
+            cs: Twitter příspěvky
+            de: Twitter Beiträge
+            el: Αναρτήσεις από το Twitter
             en: Twitter posts
             et: Postitused Twitteris
-            fi: pages.index.twitter-title
+            fi: Twitter viestiä
+            fr: Messages Twitter
+            hu: Twitter üzenete
+            it: I messaggi di Twitter
+            ja: Twitterの投稿
+            ko: 트위터 게시물
+            lt: Twitter skelbimai
+            lv: Twitter ziņas
+            nl: Twitterberichten
             ru: Сообщения в Twitter
+            zh: Twitter的职位
     messages:
         new-message:
             cs: Nová zpráva
             de: Neue Nachricht
+            el: Νέο μήνυμα
             en: New message
             et: Uus sõnum
             fi: Uusi viesti
@@ -1355,12 +1682,15 @@ pages:
             it: Nuovo messaggio
             ja: 新着メッセージ
             ko: 새 메시지
-            nl: Nieuwe Bericht
+            lt: Nauja žinutė
+            lv: Jauna vēstule
+            nl: Nieuw bericht
             ru: Новое сообщение
             zh: 新消息
         send:
             cs: Odeslat
             de: Senden
+            el: Αποστολή
             en: Send
             et: Saada
             fi: Lähetetty
@@ -1369,12 +1699,15 @@ pages:
             it: Inviato
             ja: 送信
             ko: 전송
+            lt: Siųsti
+            lv: Sūtīt
             nl: Sturen
             ru: Отправить
             zh: 发送
         title:
             cs: Zprávy
             de: Nachrichten
+            el: Μηνύματα
             en: Messages
             et: Sõnumid
             fi: Viestit
@@ -1383,6 +1716,8 @@ pages:
             it: Messaggi
             ja: メッセージ
             ko: 메시지
+            lt: Žinutės
+            lv: Vēstules
             nl: Berichten
             ru: Сообщения
             zh: 各种消息
@@ -1390,6 +1725,7 @@ pages:
         title:
             cs: Partneři
             de: Partner
+            el: Συνεργάτες
             en: Partners
             et: Partnerid
             fi: Kumppanit
@@ -1398,6 +1734,8 @@ pages:
             it: Partners
             ja: パートナー
             ko: 제휴
+            lt: Partneriai
+            lv: Partneri
             nl: Partner
             ru: Партнеры
             zh: 合作伙伴
@@ -1405,6 +1743,7 @@ pages:
         about-me-tab:
             cs: O mně
             de: Über mich
+            el: Σχετικά με εμένα
             en: About me
             et: Minust
             fi: Minusta
@@ -1413,12 +1752,15 @@ pages:
             it: 'Su '
             ja: あなたのことを教えてください
             ko: 자기소개
+            lt: Apie mane
+            lv: Par mums
             nl: Over mij
             ru: Обо мне
             zh: 关于我
         about-me-text:
             cs: 'Napište co byste chtěli, aby o vás lidé věděli'
             de: Schreiben Sie etwas über Sich
+            el: Γράψτε κάτι για εσάς
             en: Write something about you
             et: Kirjuta midagi endast
             fi: Kirjoita jotain itsestäsi
@@ -1427,12 +1769,15 @@ pages:
             it: Scrivi qualcosa su di te
             ja: あなたはどんな人ですか？　簡単に自己紹介を書いてみましょう
             ko: 당신은 어떤 사람인가요? 자유롭게 소개해 주세요
-            nl: Shrijv iets over u
+            lt: Parašykite ką nors apie save
+            lv: Uzraksti kaut ko par sevi
+            nl: Schrijf iets over jezelf
             ru: Напиши что-нибудь о себе
             zh: 你想让别人了解到你什么？请写下来
         about-me-video:
             cs: Odkaz k videu
             de: Video URL
+            el: Video URL
             en: Video URL
             et: Videoviide
             fi: Videon URL
@@ -1441,12 +1786,15 @@ pages:
             it: Video URL
             ja: ビデオ URL
             ko: 비디오 URL
+            lt: Video URL
+            lv: Video URL
             nl: Video URL
             ru: Ссылка на видео
             zh: 视频地址
         add-new-offer:
             cs: Přidat novu nabídku
             de: Neues Hilfsangebot hinzufügen
+            el: Προσθήκη νέας προσφοράς
             en: Add new offer
             et: Lisa uus pakkumine
             fi: Lisää uusi tarjous
@@ -1455,12 +1803,15 @@ pages:
             it: Aggiungi nuova offerta
             ja: 新しいオファーを追加する
             ko: 새 도움나눔 추가하기
-            nl: Nieuwe aanbiedingen toevoegen
+            lt: Pridėti naują pasiūlymą
+            lv: Pievienot jaunu piedāvājumu
+            nl: Nieuwe aanbieding toevoegen
             ru: Добавить новое предложение
             zh: 添加新的帮助
         add-new-request:
             cs: Přidat novou žádost o pomoc
             de: Neue Hilfsanfrage hinzufügen
+            el: Προσθήκη νέου αιτήματος
             en: Add new request
             et: Lisa uus soov
             fi: Lisää uusi pyyntö
@@ -1469,26 +1820,32 @@ pages:
             it: Aggiungi nuova richiesta
             ja: 新しいリクエストを追加する
             ko: 새 도움요청 추가하기
-            nl: Nieuwe verzoek toevoegen
+            lt: Pridėti naują prašymą
+            lv: Pievienot jaunu lūgumu
+            nl: Nieuw verzoek toevoegen
             ru: Добавить новую просьбу
             zh: 添加新的请求
         additional-info-title:
             cs: DALŠÍ INFORMACE
             de: Zusätzliche Informationen
+            el: ΠΡΟΣΘΕΤΕΣ ΠΛΗΡΟΦΟΡΙΕΣ
             en: ADDITIONAL INFORMATION
             et: LISAINFORMATSIOON
             fi: Lisätiedot
-            fr: Information complémentaire
+            fr: Informations complémentaires
             hu: További információk
             it: INFORMAZIONI ADDIZIONALI
             ja: 追加情報
             ko: 추가 정보
-            nl: EXTRA INFORMATIE
+            lt: Papildoma informacija
+            lv: PAPILDUS INFORMĀCIJA
+            nl: MEER INFORMATIE
             ru: ДОПОЛНИТЕЛЬНАЯ ИНФОРМАЦИЯ
             zh: 附加信息
         address:
             cs: Adresa
             de: Adresse
+            el: Διεύθυνση
             en: Address
             et: Aadress
             fi: Osoite
@@ -1497,12 +1854,15 @@ pages:
             it: Indirizzo
             ja: 住所
             ko: 주소
+            lt: Adresas
+            lv: Adrese
             nl: Adres
             ru: Адрес
             zh: 地址
         address-ph:
             cs: např. Sokolovská 37
             de: z.B. Leipziger Str. 12
+            el: 'πχ. Βασιλέως Κωνσταντίνου 32, Αθήνα'
             en: e.g. 767 5th Avenue
             et: nt. Tartu mnt. 1
             fi: esim. Esimerkkitie 8
@@ -1511,25 +1871,32 @@ pages:
             it: es. via Roma 13
             ja: 例：中区港町x-x
             ko: '예: 도봉구 859-19'
+            lt: pvz. Vokiečių g. 17
+            lv: piem. Brīvības iela 10
             nl: Bijv. Joseph Hollmanstraat 30
             ru: 'напр. Улица Пушкина, 50'
             zh: 比如，福田区深南大道2012号
         address-text:
             cs: 'Pokud budete využívat pomoci na stejné adrese, můžete ji napsat sem pro ušetření času. Nebude veřejně zobrazena.'
             de: 'Für den Fall, dass du meistens für die selbe Adresse Hilfe suchst, kannst du diese hier speichern, um später Zeit zu sparen. Wir werden diese nicht veröffentlichen.'
+            el: 'Σε περίπτωση που ψάχνετε για βοήθεια στην ίδια διεύθυνση, μπορείτε να την πληκτρολογήσετε εδώ, για να κερδίσετε χρόνο αργότερα. Δεν θα κοινοποιηθεί δημοσίως'
             en: 'In case you are seeking for help normally at the same address, you can type it in here, to save you time later. We will not share it public.'
             et: 'Juhul, kui otsite tavapäraselt abi samal aadressil, võite selle siia kirjutada, et hiljem aega säästa. Me ei avalikusta seda.'
             fi: 'Mikäli etsit apua yleensä tiettyyn samaan osoitteeseen, voit kirjoittaa osoitteen tähän säästääksesi aikaasi myöhemmin. Emme jaa osoitetta julkisesti.'
-            fr: ''
+            fr: "Au cas où vous chercheriez de l'aide pour la même adresse, vous pouvez l'enregistrer ici. Cela vous fera gagner du temps pour une echerche ultérieur. Cette information ne sera pas partagée. "
             hu: Abban az esetben ha általában ugyanazon a helyszínen lesz szükséged segítségre akkor ide írd be és ezzel később időt takaríthatsz meg. Ez nem lesz nyilvános.
             it: 'Nel caso tu necessitassi di assistenza presso il tuo indirizzo, lo puoi scrivere qui in modo tale da essere memorizzato. Non lo condivideremo a terzi.'
-            ja: pages.profile
-            ko: pages.profile
+            ja: あなたは同じアドレスで正常に助けを求めている場合、あなたは、ここでそれを入力することができ、後であなたの時間を節約するために。我々は、それが公共共有することはありません。
+            ko: '동일한 주소에서 일반적으로 도움을 추구하는 경우에, 당신은 여기에 입력 할 수 있습니다 나중에 시간을 절약 할 수 있습니다. 우리는 공공 공유하지 않습니다.'
+            lt: 'Jeigu ieškote nuolatinės pagalbos tuo pačiu adresu, galite jį įrašyti čia siekdami vėliau sutaupyti laiko. Viešai šios informacijos neskelbsime.'
+            lv: 'Gadījumos, ka tu meklē palīdzību tajā pašā adresē, Tu vari ierakstīt to šeit, lai vēlāk ietaupītu laiku. Mēs to izpaudīsim publiski. '
+            nl: 'Indien u gewoonlijk hulp nodig heeft op hetzelfde adres, kan u dit hier ingeven om later tijd te besparen. Deze informatie blijft vertrouwelijk.'
             ru: 'Если вы ищите помощь по тому же адресу то можете его сюда написать, что бы потом сэкономить время. Мы не афишируем его.'
-            zh: 'Pokud budete využívat pomoci na stejné adrese, můžete ji napsat sem pro ušetření času. Nebude veřejně zobrazena.'
+            zh: 如果你是在同一个地址通常寻求帮助，您可以在这里键入它，后来你节省时间。我们不会将其公开。
         city:
             cs: Město
             de: Stadt
+            el: Πόλη
             en: City
             et: Linn
             fi: Kaupunki
@@ -1538,12 +1905,15 @@ pages:
             it: Città
             ja: "\b市"
             ko: 시
-            nl: Stadt
+            lt: Miestas
+            lv: Pilsēta
+            nl: Stad
             ru: Город
             zh: 市/县
         city-ph:
             cs: např. Praha
             de: z.B. Dresden
+            el: π.χ. Αθήνα
             en: e.g. New York
             et: nt. Tallinn
             fi: esim. Helsinki
@@ -1552,12 +1922,15 @@ pages:
             it: es. Roma
             ja: 例：横浜市
             ko: '예: 서울'
+            lt: pvz. Vilnius
+            lv: piem. Rīga
             nl: bijv. Rotterdam
             ru: напр. Москва
             zh: 比如，深圳市
         country:
             cs: 'Země '
             de: Land
+            el: Χώρα
             en: Country
             et: Riik
             fi: Maa
@@ -1566,12 +1939,15 @@ pages:
             it: Nazione
             ja: 国
             ko: 국가명
+            lt: Šalis
+            lv: Valsts
             nl: Land
             ru: Страна
             zh: 国家/地区
         country-ph:
             cs: např. Česká Republika
             de: z.B. Deutschland
+            el: π.χ. Ελλάδα
             en: e.g. United States
             et: nt. Eesti
             fi: esim. Suomi
@@ -1580,12 +1956,15 @@ pages:
             it: es. Italia
             ja: 例：日本
             ko: '예: 한국'
+            lt: pvz. Lietuva
+            lv: piem. Latvija
             nl: bijv. Nederland
             ru: ' напр. Россия'
             zh: 比如，中国
         county:
             cs: Kraj
             de: Land
+            el: Περιοχή
             en: County
             et: Maakond
             fi: Maakunta
@@ -1594,12 +1973,15 @@ pages:
             it: Provincia
             ja: 都道府県
             ko: 시/도
+            lt: Regionas
+            lv: Apgabals
             nl: Provincie
             ru: Уезд
             zh: ' 省/直辖市/自治区/特别行政区'
         county-ph:
             cs: např. Jihomoravský kraj
             de: z.B. Sachsen
+            el: π.χ. Αττική
             en: e.g New York
             et: nt. Harjumaa
             fi: esim. Pirkanmaa
@@ -1608,11 +1990,15 @@ pages:
             it: 'es: MI'
             ja: 例：神奈川県
             ko: '예: 경기도'
+            lt: pvz. Aukštaitija
+            lv: piem. Garkalnes novads
+            nl: bijv. Oost-Vlaanderen
             ru: напр. Ленинградская область
             zh: 比如，广东省
         delete-photo:
             cs: Odstranit fotku
             de: Foto löschen
+            el: Διαγραφή φωτογραφίας
             en: Delete photo
             et: Kustuta pilt
             fi: Poista kuva
@@ -1621,12 +2007,15 @@ pages:
             it: Elimina foto
             ja: 写真を削除する
             ko: 사진 제거
+            lt: Ištrinti nuotrauką
+            lv: Dzēst fotogrāfiju
             nl: Foto verwijderen
             ru: Удалить фотографию
             zh: 删除照片
         email:
             cs: E-mail
             de: E-Mail
+            el: Ηλεκτρονικό ταχυδρομείο
             en: E-mail
             et: E-post
             fi: Sähköposti
@@ -1635,12 +2024,15 @@ pages:
             it: E-mail
             ja: メール
             ko: 이메일
+            lt: El. paštas
+            lv: E-pasts
             nl: E-mail
             ru: Э-почта
             zh: 电子邮箱
         email-ph:
             cs: např. jan.jablko@seznam.cz
             de: z.B. john@appleseed.com
+            el: π.χ. papadopoulos@gmail.com
             en: e.g. john@appleseed.com
             et: nt. juhan@õunaseeme.ee
             fi: esim. maija@meikäläinen.fi
@@ -1649,38 +2041,49 @@ pages:
             it: es. marco@telecom.it
             ja: 例：taro.yamada@softbank.ne.jp
             ko: '예: john@naver.com'
+            lt: pvz. eimutis@gmail.com
+            lv: piem. john@appleseed.com
             nl: 'bijv, Jan@hotmail.com'
             ru: напр. ivan@mail.ru
             zh: 比如，zhb1995824@163.com
         email-text:
             cs: 'Vaše osobní údaje nebudou sdíleny. Využijeme je jen v případě pokud Vám budeme muset sdělit něco velice důležitého, nebo poděkovat.'
             de: 'Wir werden deine Kontaktdaten mit niemanden teilen, außer du bist damit einverstanden. Dein Kontakt wird nur dazu verwendet, um dir über wichtige Informationen Bescheid zu sagen, oder um Danke zu sagen!'
+            el: 'Οι επαφές σας δε θα εμφανίζονται σε άλλους, παραμόνο αν το επιλέξετε. Οι επαφές σας θα χρησιμοποιηθούν μόνο αν πρέπει να σας γνωστοποιηθεί κάτι σημαντικό ή να σας ευχαριστήσουμε.'
             en: 'We will not share your contacts with anyone unless you tell us so. Your contacts will be used only if we need to let you know something important, or to say thank you!'
             et: 'Me ei jaga ilma Teie loata Teie kontaktandmeid kellelegi. Kasutame Teie kontaktandmeid ainult juhul, kui peame Teile midagi olulist teatama või et Teid tänada!'
             fi: 'Emme jaa yhteystietojasi kenenkään kanssa, ellet pyydä meitä tekemään niin. Yhteystietojasi tullaan käyttämään ainoastaan, mikäli meidän tulee tiedottaa sinulle jostakin tärkeästä asiasta tai kiittää sinua!'
-            fr: pages.profile.email-text
+            fr: On ne partagera pas vos données de contact sans votre permission. Vos données personnelles seront seulement utilisées en cas de besoin de vous communiquer des informations importantes ou pour vous remercier.
             hu: 'Az elérhetőségeidet a beleegyezésed nélkül nem osztjuk meg senkivel. Azokat csak abban az esetben használjuk, amikor tájékoztatni szeretnénk téged valamiről vagy köszönetet szeretnénk mondani.'
             it: 'Non condivideremo il tuo contatto con nessuno, a meno che tu non lo voglia. Il tuo contatto verrà utilizzato solo per farti sapere qualcosa di importante e per ringraziarti.'
-            ja: pages.profile.email-text
-            ko: pages.profile.email-text
+            ja: あなたがそのように私たちを教えない限り、私たちは誰と連絡先を共有することはありません。私たちは、あなたが重要な何かを知っている、またはあなたに感謝するようにする必要がある場合は、連絡先にのみ使用されます！
+            ko: '당신이 그렇게 말해하지 않는 한 우리는 누구와 연락처를 공유하지 않습니다. 우리는 당신이 중요한 뭔가를 알고, 또는 당신에게 고맙다는 말을 할 수 있도록해야 할 경우 연락처 만 사용됩니다!'
+            lt: 'Mes neviešinsime jūsų kontaktinės informacijos, jei jūs to nepageidausite. Ši informacija mums bus reikalinga siekiant jums pranešti ką nors svarbaus arba pasakyti Ačiū!'
+            lv: 'Mēs neizpaudīsim Tavu kontaktinformāciju, ja vien Tu to nejautāsi mums. Tava kontaktinformācija tiks izmantota tikai situācijās, kad tas patiesi būs nepieciešams vai lai pateiktu paldies!'
+            nl: 'Uw gegevens worden niet gedeeld zonder uw toestemming. De gegevens worden enkel gebruikt om u belangrijke informatie mee te delen of om u te bedanken!'
             ru: Мы не делимся вашими личными данными без вашего разрешения. Используем ваши личные данные только тогда когда хотим сообщить вам что-то важное или поблагодорить вас.
             zh: 我们不会将公开您的联系方式除非您希望我们这么做。您的联系信息只会用于重要信息通知，或者想对您说谢谢。
         first-second-name-text:
             cs: 'U vašich příspěvků, bude zobrazeno jen vaše křestní jméno. Celé jméno pomůže udržovat bezpečí v rámci platformy Helpific.'
             de: 'Wir werden nur deinen Vornamen verwenden, wenn du etwas schreibst, aber deinen vollständigen Namen zu wissen, hilft uns eine sicherere Plattform zu schaffen.'
-            en: 'We will only use your first name when displaying posts, but knowing your full name will help us creata a safer platform.'
+            el: 'Θα χρησιμοποιηούμε μόνο το όνομά σας όταν θα κάνετε ποστ, αλλά γνωρίζοντας το πλήρες ονοματεπώνυμό σας θα μας βοηθήσει να δημιουργήσουμε μια ασφαλέστερη πλατφόρμα.'
+            en: 'We will only use your first name when displaying posts, but knowing your full name will help us create a safer platform.'
             et: 'Kasutame postituste tegemisel ainult Teie eesnime, aga täisnime teadmine aitab meil luua turvalisemat platvormi.'
             fi: Käytämme ainoastaan etunimeäsi näytäessämme postit. Koko nimesi tietäminen auttaa kuitenkin meitä luomaan turvallisemman alustan.
-            fr: Nous utiliserons uniquement votre nom de famille lorsque nous posterons quelque chose mais sachez que votre prénom nous aidera a créer une plateforme plus sécurisée.
+            fr: "Nous ne partagerons pas votre contact sauf si vous l'autorisez. Nous vous contacterons uniquement pour vous faire parvenir une information importante ou pour vous remercier!"
             hu: 'A bejegyzéseidnél csak a keresztneved jelenik majd meg, de nekünk segít ha tudjuk a teljes neved, hogy egy biztonságosabb felületet tudjunk kialakítani.'
             it: 'Utilizzeremo solo il tuo nome quando mostreremo i posts, ma sapere il tuo cognome ci aiuterà a creare una piattaforma più sicura.'
-            ja: pages.profile.first-second-name-text
-            ko: pages.profile.first-second-name-text
+            ja: 投稿は、あなたの最初の名前で作られますが、知識の完全な名前は、私たちはより安全なプラットフォームを作成するのに役立ちます。
+            ko: '게시물은 당신의 이름으로 만들었지 만, 지식의 전체 이름은 우리가보다 안전한 플랫폼을 만들 수 있습니다.'
+            lt: 'Skelbimuose bus matomas tik jūsų vardas, tačiau norime žinoti jūsų pavardę siekdami sukurti saugesnę platformą.'
+            lv: 'Attēlojot ierakstus, mēs izmantosim tikai Tavu pirmo vārdu, bet būtu noderīgi zināt arī uzvārdu, lai radītu platformu drošāku.'
+            nl: 'Enkel uw voornaam wordt gebruikt in de weergave van berichten, maar het kennen van uw volledige naam helpt ons een veiliger platform te creëren.'
             ru: 'Используем в объявлениях только ваше имя. Но знание польного имени поможет нам создать более безопастную платформу. '
             zh: 我们知道您的全名，但显示帖子的时候不会显示您的姓氏，这样有助于建立一个更安全的平台。
         forename:
             cs: Jméno
             de: Vorname
+            el: Όνομα
             en: Forename
             et: Eesnimi
             fi: Etunimi
@@ -1689,12 +2092,15 @@ pages:
             it: Nome
             ja: 名
             ko: 이름
+            lt: Vardas
+            lv: Vārds
             nl: Voornaam
             ru: Имя
             zh: 名
         forename-ph:
             cs: např. Jan
             de: z.B. John
+            el: π.χ. Γιάννης
             en: e.g. John
             et: nt. Juhan
             fi: esim. Juha
@@ -1703,12 +2109,15 @@ pages:
             it: es. Marco
             ja: 例：太郎
             ko: 길동
-            nl: Bijv. Jan
+            lt: pvz. Jonas
+            lv: piem. Jānis
+            nl: bijv. Jan
             ru: напр. Иван
             zh: 比如，小明
         language:
             cs: Výchozí jazyk
             de: Bevorzugte Sprache
+            el: Γλώσσα προτίμησης
             en: Preferred language
             et: Eelistatud keel
             fi: Ensisijainen kieli
@@ -1717,26 +2126,32 @@ pages:
             it: Lingua preferita
             ja: 言語
             ko: 언어
+            lt: Pageidaujama kalba
+            lv: Izvēlētā valoda
             nl: Taal
             ru: Язык по умолчанию
             zh: 首选语言
         location-text:
             cs: 'Když budeme vědět, kde jste, bude snažší spojit vás s jinými lidmi.'
             de: 'Zu wissen wo du dich befindest, hilft uns dich schneller mit anderen Personen zu verbinden.'
+            el: Γνωρίζοντας πού βρίσκεστε μας βοηθάει να έρθετε σε επικοινωνία με άλλους ανθρώπους γρηγορότερα.
             en: Knowing where you are located helps us connect people faster.
             et: 'Kui teame Teie asukohta, saame inimesi kiiremini kokku viia.'
             fi: Sijaintisi tietäminen auttaa meitä yhdistämään ihmisiä nopeammin.
             fr: Savoir ou vous êtes localisé nous aidera a connecter les gens plus rapidement.
             hu: Ha ismerjük a tartózkodási helyed az segít nekünk összekapcsolni téged másokkal.
             it: Conoscere la tua posizione ci aiuterà a connetterti più velocemente con le persone.
-            ja: pages.profile.location-text
-            ko: pages.profile.location-text
+            ja: あなたがあなたの場所を知っている場合、我々はより速く、人と人をもたらすことができます。
+            ko: '당신이 당신의 위치를 알고있는 경우에, 우리는 빠른 사람들을 가져올 수 있습니다.'
+            lt: 'Žinojimas, kur esate, padės žmonėms lengviau jus surasti'
+            lv: 'Norādot savu atrašanās vietu, Tu palīdzi mums ātrāk '
             nl: 'Als je je locatie weten, kunnen we samen de mensen sneller te brengen.'
             ru: Если мы знаем ваше место жительство то это поможет нам быстрее связатся с людьми.
             zh: 了解您的所在位置有益于我们更快的联系他人.
         main-info-title:
             cs: HLAVNÍ INFORMACE
             de: Hauptinformationen
+            el: ΒΑΣΙΚΕΣ ΠΛΗΡΟΦΟΡΙΕΣ
             en: MAIN INFORMATION
             et: PÕHIINFORMATSIOON
             fi: Pääasialliset tiedot
@@ -1745,12 +2160,15 @@ pages:
             it: INFORMAZIONI PRINCIPALI
             ja: 主要な情報
             ko: 주요 정보
+            lt: PAGRINDINĖ INFORMACIJA
+            lv: GALVENĀ INFORMĀCIJA
             nl: Belangrijkste kenmerken
             ru: ОСНОВНАЯ ИНФОРМАЦИЯ
             zh: 主要信息
         markdown-info:
             cs: 'Pro formátování textu použijte <a href="https://en.wikipedia.org/wiki/Markdown#Example" target="_blank">Markdown</a>.'
             de: 'Design verwenden <a href="https://en.wikipedia.org/wiki/Markdown#Example" target="_blank">Markdown</a> um deinen Text zu gestalten.'
+            el: 'Χρησιμοποιείστε <a href="https://en.wikipedia.org/wiki/Markdown#Example" target="_blank">Markdown</a> για να φτιάξετε το στυλ του κειμένου.'
             en: 'Use <a href="https://en.wikipedia.org/wiki/Markdown#Example" target="_blank">Markdown</a> for styling your text.'
             et: 'Teksti kujundamiseks kasuta <a href="https://en.wikipedia.org/wiki/Markdown#Example" target="_blank">Markdowni</a>.'
             fi: 'Tekstin muokkaamiseen <a href="https://en.wikipedia.org/wiki/Markdown#Example" target="_blank">Markdown</a>.'
@@ -1759,12 +2177,15 @@ pages:
             it: 'Utilizza <a href="https://en.wikipedia.org/wiki/Markdown#Example" target="_blank">Markdown</a> per modellare il tuo testo.'
             ja: 'テキスト形式の変更には <a href="https://en.wikipedia.org/wiki/Markdown#Example" target="_blank">Markdown</a> を使ってください。'
             ko: '사용하기 <a href="https://en.wikipedia.org/wiki/Markdown#Example" target="_blank">Markdown</a> 텍스트 작성.'
+            lt: 'Naudokite <a href="https://en.wikipedia.org/wiki/Markdown#Example" target="_blank">Markdown</a> savo teksto stilizavimui.'
+            lv: 'Lieto <a href="https://en.wikipedia.org/wiki/Markdown#Example" target="_blank">Markdown</a> lai formatētu tekstu.'
             nl: 'Gebruik <a href="https://en.wikipedia.org/wiki/Markdown#Example" target="_blank">Markdown</a> voor stying uw tekst.'
             ru: ' Для оформления текста используй <a href="https://en.wikipedia.org/wiki/Markdown#Example" target="_blank">Markdown</a>.'
             zh: '使用 <a href="https://en.wikipedia.org/wiki/Markdown#Example" target="_blank">Markdown</a> 用来修饰你的文本'
         me-help-you-tab:
             cs: Pomohu druhým
             de: Ich kann anderen helfen
+            el: Μπορώ να βοηθήσω και άλλους
             en: I can help others
             et: Aitan sind
             fi: Voin auttaa muita
@@ -1773,12 +2194,15 @@ pages:
             it: Posso aiutare
             ja: 他の人を助けることができます
             ko: 나는 다른 사람을 도울 수 있습니다
-            nl: Ik kan anderen te helpen
+            lt: Aš galiu padėti kitiems
+            lv: Es varu palīdzēt citiem
+            nl: Ik kan anderen helpen
             ru: Я могу помочь другим
             zh: 我可以帮助别人
         me-help-you-text:
             cs: Jak mohu pomoci druhým?
             de: Wie können Sie anderen helfen? Sie müssen es nicht jetzt sofort ausfüllen.
+            el: Πώς μπορείτε να βοηθήσετε άλλους? Δεν είστε υποχρεωμένοι να το συμπληρώσετε εάν δε θέλετε τώρα.
             en: How can you help others? You do not have to fill it if you do not feel like it now.
             et: Kuidas sa saad teisi aidata?
             fi: 'Kuinka voin auttaa muita? Tätä ei tarvitse täyttää, jos et vielä halua.'
@@ -1787,12 +2211,15 @@ pages:
             it: Puoi aiutare?
             ja: どのようにして他の人を助けることができますか？　もしも気分が乗らなければ今すぐに書く必要はありません。
             ko: 다른 사람을 어떻게 도울 수 있나요?
-            nl: 'Hoe kan u anderen te helpen? U moet niet nu te vullen, als u niet willen.'
+            lt: Kuo aš galiu padėti kitiems? Šio laukelio užpildyti neprivalote.
+            lv: 'Kā tu vari palīdzēt citiem? Tu vari neaizpildīt šo aili šobrīd, ja nevēlies. '
+            nl: 'Hoe kan u anderen helpen? U hoeft dit niet nu te vullen, als u hier nu geen zin in heeft.'
             ru: Как Ты можешь помочь другим?
             zh: 你会怎样帮助别人？如果不清楚可以选择不填此项.
         me-help-you-video:
             cs: Odkaz k videu
             de: Video URL
+            el: Video URL
             en: Video URL
             et: Video viide
             fi: Videon URL
@@ -1801,12 +2228,15 @@ pages:
             it: Video URL
             ja: ビデオ URL
             ko: 비디오 URL
+            lt: Video URL
+            lv: Video URL
             nl: Video URL
             ru: Ссылка на видео
             zh: 视频地址
         messages:
             cs: Zprávy
             de: Nachrichten
+            el: Μηνύματα
             en: Messages
             et: Sõnumid
             fi: Viestit
@@ -1815,12 +2245,15 @@ pages:
             it: Messaggi
             ja: メッセージ
             ko: 메시지
+            lt: Žinutės
+            lv: Vēstules
             nl: Berichten
             ru: Сообщения
             zh: 所有消息
         newsletter:
             cs: Dostávat informace o Helpific
             de: Ich erlaube Helpific mir Newsletter zuzuschicken
+            el: Αποδέχομαι το Helpific να μου στέλνει newsletter
             en: I allow Helpific to send me newsletter
             et: Luban Helpificul saata mulle uudiskirju
             fi: Sallin Helpificin lähettää minulle uutiskirjeen
@@ -1829,12 +2262,16 @@ pages:
             it: Autorizzo Helpific ad inviarmi la newsletter
             ja: Helpificからの情報配信を希望します
             ko: Helpfic으로 부터 소식을 받고싶습니다
+            lt: 'Sutinku, kad Helpific siųstų savo naujienlaiškius'
+            lv: 'Es atļauju Helpific sūtīt man informatīvas vēstules. '
             nl: Ik wil graag informatie ontvangen
             ru: Разрешаю присылать мне бюллетень Helpific
             zh: 我允许Helpific给我发送订阅邮件
         phone:
+            bg: ''
             cs: Telefoní číslo
             de: Telefonnummer
+            el: Τηλέφωνο
             en: Phone number
             et: Telefoni number
             fi: Puhelinnumero
@@ -1843,44 +2280,66 @@ pages:
             it: Numero di telefono
             ja: 電話番号
             ko: 전화 번호
+            lt: Telefono numeris
+            lv: Telefona numurs
             nl: Telefoonnummer
             ru: Номер телефона
             zh: 电话
         phone-ph:
-            en: e.g. 5565xxxx
-            et: nt. 5565xxxx
-            ru: напр. 5565xxxx
+            cs: např. +420
+            de: z.B. +49xxxxxx
+            el: π.χ. +30xxxxxx
+            en: e.g. +xx xxxxx
+            et: nt. +372xxxxxx
+            fi: esim. +358xxxxxx
+            fr: ex. +33xxxxxx
+            hu: pl. +36xxxxxx
+            it: es. +34xxxxxx
+            ja: +81xxxxxx
+            ko: +82xxxxxx
+            lt: pvz. +370xxxxxx
+            lv: piem. +371xxxxx
+            nl: bijv. +31xxxxxx
+            ru: напр. +7xxxxxxx
+            zh: +86xxxxxxx
         photo:
             cs: Profilová fotka
             de: Profilbild
+            el: Φωτογραφία προφίλ
             en: Profile photo
             et: Profiilipilt
-            fi: Profiili kuva
+            fi: Profiilikuva
             fr: Photo du profil
             hu: Profilkép
             it: Foto profilo
             ja: プロフィール写真
             ko: 프로필 사진
+            lt: Profilio nuotrauka
+            lv: Profila bilde
             nl: Profielfoto
             ru: Фотография профиля
             zh: 头像
         photo-text:
             cs: '<strong>Profilový obrázek</strong>, dělá váš profil důvěryhodnější. Víte kdo vám pomůže nebo komu budete pomáhat.'
             de: '<strong>Profilbilder</strong> machen dein Profil viel glaubwürdiger. Würdest du nicht auch gerne wissen wollen, wie die Person aussieht, die dir helfen wird bzw. der du helfen möchtest?'
+            el: '<strong>Η φωτογραφία προφίλ</strong> σας κάνει το προφίλ σας πιο έμπιστο. Δε θα θέλατε να ξέρετε ποιο είναι αυτό το άτομο, ποιον θα βοηθήσετε ή ποιον πρόκειται να βοηθήσετε.'
             en: "<strong>Profile picture</strong> makes your profile a lot more trustworthy. Wouldn't you want to know who the person is, who you will help you or who you are going to help?"
             et: '<strong>Profiilipilt</strong> muudab Teie profiili palju usaldusväärsemaks. Kas Te ei sooviks teada, kes on see inimene, kes Teid aitab või keda Teie aitate?'
             fi: '<strong>Profiilikuva</strong> tekee profiilistasi paljon luotettavamman. Etkö haluaisi tietää, kuka on se henkilö, joka tulee auttamaan Sinua tai jota Sinä tulet auttamaan? '
             fr: '<strong>Votre photo de profile</strong> aide a vous reconnaitre. Ne voudriez vous pas connaitre la personne a qui vous avez affaire? Qui vous allez aider?'
             hu: '<strong>Profil kép</strong> hozzáadásával a profilod megbízhatóbb benyomást kelt. Te nem szeretnéd tudni ki az az ember, aki segíteni fog neked vagy akinek te fogsz segítséget nyújtani?'
             it: '<strong>La foto rende il tuo profilo</strong> più credibile e serio. Non ti piacerebbe sapere chi è la persona che aiuterai o che ti aiuterà?'
-            ja: ''
-            ko: ''
-            nl: ''
+            ja: プロフィールの写真は、あなたのプロフィールがより多くの信頼できるになります。あなたは人が誰であるかを知りたいと思いません、誰があなたを助けるか、誰が助けるつもりですか？
+            ko: '프로필 사진 프로필이 훨씬 더 신뢰할 수 있습니다. 당신은 그 사람이 누구인지 알고 싶지 않을 것이다, 누가 당신을 도울 것 또는 사람 당신은 도움이 될 수 있습니까?'
+            lt: '<strong>Profilio nuotrauka</strong> padės jums atrodyti patikimiau. Argi jūs nenorėtumėte pamatyti asmens, kuris nori jūsų pagalbos ar nori padėti jums?'
+            lv: '<strong>Profila bilde</strong> padara Tevi uzticamāku. Vai Tu nevēlētos zināt, kas ir persona, kurai Tu palīdzēsi vai Tev palīdzēs? '
+            nl: 'Een <strong>profielfoto<strong> maakt uw profiel een stuk betrouwbaarder. Zou je niet willen weten wie de persoon is die je zal helpen of wie je gaat helpen?'
             ru: '<strong>Фотография в профиле</strong> сделает вас более доверительным. Вы бы не хотели знать, кто вам помогает или кому помогаете вы?'
-            zh: 上传个人照片会使您的个人资料更可信哦。难道你不想知道你想要帮助或者帮助你的人是谁，长什么样吗?
+            zh: 资料图片使您的个人资料有很多更值得信赖。难道你想知道的人是谁，谁，你会帮助你或你是谁，要帮忙吗？
         photo-upload:
             cs: '%nahráno'
             de: '{{ photoUploadPercent }}% hochladen...'
+            el: '% ανέβηκε...'
             en: '{{ photoUploadPercent }}% uploaded...'
             et: '{{ photoUploadPercent }}% laaditud...'
             fi: '{{ photoUploadPercent }}% ladattu...'
@@ -1889,12 +2348,15 @@ pages:
             it: '{{ photoUploadPercent }}% caricamento'
             ja: '{{ photoUploadPercent }}% アップロード中...'
             ko: '{{ photoUploadPercent }}% 업로드중...'
+            lt: '% įkelta...'
+            lv: '% augšupielādēti...'
             nl: '{{ photoUploadPercent }}% geupload'
             ru: '{{ photoUploadPercent }}% загружено...'
             zh: '{{ photoUploadPercent }}% 上传中......'
         save-btn:
             cs: Uložit profil
             de: Profil sichern
+            el: Αποθήκευση προφιλ
             en: Save profile
             et: Salvesta profiil
             fi: Tallenna profiili
@@ -1903,12 +2365,15 @@ pages:
             it: Salva profilo
             ja: 保存プロフィール
             ko: 저장 프로필
+            lt: Išsaugoti profilį
+            lv: Saglabāt profilu
             nl: Profiel opslaan
             ru: Сохрани профиль
             zh: 保存个人资料
         save-info:
             cs: Informace na vašem profilu se ukládají automaticky
             de: Deine Profilinformationen werden automatisch gespeichert
+            el: Οι πληροφορίες του προφίλ σας αποθηκεύτηκαν αυτόματα
             en: Your profile info is saved automatically
             et: Sinu profiili info salvestub automaatselt
             fi: Profiilitiedot tallennetaan automaattisesti
@@ -1917,26 +2382,32 @@ pages:
             it: Le tue informazioni profilo si salvano automaticamente
             ja: プロフィールの情報は自動的に保存されます
             ko: 프로필 정보는 자동저장 됩니다
+            lt: Jūsų profilis yra išsaugomas automatiškai
+            lv: Jūsu profila informācija tiek saglabāta automātiski
             nl: Uw profiel informatie wordt automatisch opgeslagen
             ru: Информация твоего профиля сохраняется автоматически
             zh: 你的信息已自动保存
         slogan:
             cs: Slogan
             de: Slogan
+            el: Σλόγκαν
             en: Slogan
             et: Slõugan
-            fi: Slougan
+            fi: Iskulause
             fr: Slogan
             hu: Szlogen
             it: Slogan
             ja: スローガン
             ko: 좌우명
+            lt: Šūkis
+            lv: Sauklis
             nl: Leuze
             ru: Слоган
             zh: 标语
         slogan-ph:
             cs: např. Není to jednodušší společně?
             de: 'z.B. Gemeinsam ist es einfach!'
+            el: π.χ. Δεν είναι ευκολότερα μαζί;
             en: "e.g. Isn't it easier together?"
             et: 'nt. Koos on ju lihtsam!'
             fi: esim. Yhdessä on helpompaa
@@ -1945,12 +2416,15 @@ pages:
             it: es. Insieme è più semplice
             ja: 例：一人より、誰かと一緒に
             ko: '예: 함께하는 일, 어렵지 않습니다!'
+            lt: pvz. Argi kartu ne lengviau?
+            lv: 'piem. Kopā ir vieglāk!'
             nl: bijv. Is het niet gemakkelijker samen?
             ru: 'напр. Вместе проще!'
             zh: 比如，星多天空亮，人多智慧广
         surname:
             cs: Příjmení
             de: Nachname
+            el: Επώνυμο
             en: Surname
             et: Perenimi
             fi: Sukunimi
@@ -1959,12 +2433,15 @@ pages:
             it: Cognome
             ja: 姓
             ko: 성
+            lt: Pavardė
+            lv: Uzvārds
             nl: Achternaam
             ru: Фамилия
             zh: 姓
         surname-ph:
             cs: např. Novák
             de: z.B. Schneider
+            el: π.χ. Παπαδόπουλος
             en: e.g. Appleseed
             et: nt. Õunaseeme
             fi: esim. Sauli
@@ -1973,12 +2450,15 @@ pages:
             it: 'es: Rossi'
             ja: 例：山田
             ko: '예: 홍'
+            lt: pvz. Gedminas
+            lv: piem. Kalniņš
             nl: bijv. Bakker
             ru: напр. Иванов
             zh: 比如，赵
         title:
             cs: Můj profil
             de: Mein Profil
+            el: Το προφίλ μου
             en: My profile
             et: Minu profiil
             fi: Minun profiilini
@@ -1987,12 +2467,15 @@ pages:
             it: Il mio profilo
             ja: マイプロフィール
             ko: 내 프로필
+            lt: Mano profilis
+            lv: Mans profils
             nl: Mijn profiel
             ru: Мой профиль
             zh: 我的资料
         video-info:
             cs: 'Podporujeme <a href="https://youtube.com" target="_blank">YouTube</a>, <a href="https://vimeo.com" target="_blank">Vimeo</a> and <a href="https://wistia.com" target="_blank">Wistia</a> urls.'
             de: 'Wir unterstützen nur <a href="https://youtube.com" target="_blank">YouTube</a>, <a href="https://vimeo.com" target="_blank">Vimeo</a> und <a href="https://wistia.com" target="_blank">Wistia</a> urls.'
+            el: 'Υποστηρίζουμε μόνο <a href="https://youtube.com" target="_blank">YouTube</a>, <a href="https://vimeo.com" target="_blank">Vimeo</a> και <a href="https://wistia.com" target="_blank">Wistia</a> urls.'
             en: 'We support only <a href="https://youtube.com" target="_blank">YouTube</a>, <a href="https://vimeo.com" target="_blank">Vimeo</a> and <a href="https://wistia.com" target="_blank">Wistia</a> urls.'
             et: 'Toetatud on ainult <a href="https://youtube.com" target="_blank">YouTube</a>, <a href="https://vimeo.com" target="_blank">Vimeo</a> ja <a href="https://wistia.com" target="_blank">Wistia</a> viited.'
             fi: 'Tuemme vain <a href="https://youtube.com" target="_blank">YouTube</a>, <a href="https://vimeo.com" target="_blank">Vimeo</a> ja <a href="https://wistia.com" target="_blank">Wistia</a> viitteitä.'
@@ -2001,12 +2484,15 @@ pages:
             it: 'Supportiamo solo <a href="https://youtube.com" target="_blank">YouTube</a>, <a href="https://vimeo.com" target="_blank">Vimeo</a> e <a href="https://wistia.com" target="_blank">Wistia</a> urls.'
             ja: '<a href="https://youtube.com" target="_blank">YouTube</a>と<a href="https://vimeo.com" target="_blank">Vimeo</a>、<a href="https://wistia.com" target="_blank">Wistia</a>にのみ対応しています。'
             ko: "<a href=\"https://youtube.com\" target=\"_blank\">YouTube</a>, <a href=\"https://vimeo.com\" target=\"_blank\">Vimeo</a> und <a href=\"https://wistia.com\" target=\"_blank\">Wistia</a> urls'만 지원 가능합니다."
+            lt: 'Mes palaikome tik <a href="https://youtube.com" target="_blank">YouTube</a>, <a href="https://vimeo.com" target="_blank">Vimeo</a> and <a href="https://wistia.com" target="_blank">Wistia</a> urls.'
+            lv: 'Mēs atbalstām tikai <a href="https://youtube.com" target="_blank">YouTube</a>, <a href="https://vimeo.com" target="_blank">Vimeo</a> un <a href="https://wistia.com" target="_blank">Wistia</a> URLs.'
             nl: 'We steunen alleen <a href="https://youtube.com" target="_blank">YouTube</a>, <a href="https://vimeo.com" target="_blank">Vimeo</a> en <a href="https://wistia.com" target="_blank">Wistia</a> urls.'
             ru: 'Поддерживаются только ссылки на <a href="https://youtube.com" target="_blank">YouTube</a>, <a href="https://vimeo.com" target="_blank">Vimeo</a> и <a href="https://wistia.com" target="_blank">Wistia</a>.'
             zh: '我们仅支持来自 <a href="https://youtube.com" target="_blank">YouTube</a>, <a href="https://vimeo.com" target="_blank">Vimeo</a> and <a href="https://wistia.com" target="_blank">Wistia</a> 的url.'
         video-ph:
             cs: 'např. https://www.youtube.com/watch?v=p9xQFQ2X1F8'
             de: 'z.B. https://www.youtube.com/watch?v=p9xQFQ2X1F8'
+            el: 'π.χ. https://www.youtube.com/watch?v=p9xQFQ2X1F8'
             en: 'e.g. https://www.youtube.com/watch?v=p9xQFQ2X1F8'
             et: 'nt. https://www.youtube.com/watch?v=p9xQFQ2X1F8'
             fi: 'esim. https://www.youtube.com/watch?v=p9xQFQ2X1F8'
@@ -2015,25 +2501,32 @@ pages:
             it: 'es. https://www.youtube.com/watch?v=p9xQFQ2X1F8'
             ja: '例：https://www.youtube.com/watch?v=p9xQFQ2X1F8'
             ko: '예: https://www.youtube.com/watch?v=p9xQFQ2X1F8'
+            lt: 'pvz. https://www.youtube.com/watch?v=p9xQFQ2X1F8'
+            lv: 'piem. https://www.youtube.com/watch?v=p9xQFQ2X1F8'
             nl: 'bijv. https://www.youtube.com/watch?v=p9xQFQ2X1F8'
             ru: 'напр. https://www.youtube.com/watch?v=p9xQFQ2X1F8'
             zh: '比如，https://www.youtube.com/watch?v=p9xQFQ2X1F8'
         visibility-text:
             cs: 'Tyto informace budou viditelné pro ostatní připojené uživatele. Něco málo nám o sobě napište!'
             de: 'Diese Information wird für andere User sichtbar sein! Bitte erzähl uns mehr über dich.'
-            en: 'This information will be visible to other logged in users!  Please let us all know a little more about you.'
+            el: 'Αυτή η πληροφορία θα είναι ορατή σε άλλους χρήστες που θα είναι συνδεδεμένοι! Παρακαλούμε αφήστε μας να γνωρίζουμε περισσότερα για εσάς.'
+            en: 'This information will be visible to other logged in users! Please let us all know a little more about you.'
             et: 'See informatsioon on nähtav teistele sisselogitud kasutajatele! Palun, kirjuta natuke rohkem informatsiooni endast.'
             fi: 'Tämä tieto tulee näkymään muille kirjautuneille käyttäjille! Kerrothan meille kaikille tässä hieman lisää itsestäsi.'
-            fr: Cette information sera vue uniquement par les utilisateurs connectés.
+            fr: Cette information sera vue uniquement par les utilisateurs connectés.  Vous pouvez également nous en dire un peu plus à propos de vous.
             hu: 'Ez az információ látható lesz a többi regisztrált felhasználó számára! Kérünk segíts, hogy picit többet megtudhassunk rólad!'
             it: 'Queste informazioni saranno visibile agli utenti connessi! Faccia sapere qualcosa di te.'
-            ja: pages.profile.visibility-text
-            ko: pages.profile.visibility-text
+            ja: この情報は、ユーザーがログインして他に表示されます！私たちのすべてがあなたについてもう少し教えてください。
+            ko: '이 정보는 로그인 한 사용자 다른 볼 수 있습니다! 우리 모두 당신에 대해 좀 더 알려 주시기 바랍니다.'
+            lt: 'Ši informacija bus rodoma tik registruotiems vartotojams! Papasakokite apie save daugiau.'
+            lv: 'Šī informācija būs redzama citiem reģistrētiem lietotājiem! Ļauj mums uzzināt vairāk par Tevi!'
+            nl: 'Deze informatie is zichtbaar voor andere ingelogde gebruikers! Laat ons allemaal wat meer weten over jou!'
             ru: Эта информация видна другим пользовательям которые вошли на сайт.
             zh: 这个信息是对他人可见的！请让我们了解你的更多信息。
         you-help-me-tab:
             cs: 'Potřebuji pomoci '
             de: Ich brauche Hilfe
+            el: Χρειάζομαι βοήθεια
             en: I need help
             et: Vajan abi
             fi: Minä tarvitsen apua
@@ -2042,26 +2535,32 @@ pages:
             it: Ho bisogno di aiuto
             ja: 助けを必要としています
             ko: 도움이 필요합니다
+            lt: Man reikia pagalbos
+            lv: Man nepieciešama palīdzība
             nl: Ik heb hulp nodig
             ru: Мне нужна помощь
             zh: 我需要帮助
         you-help-me-text:
             cs: Jak Vám mohou lidé pomoci. Nemusíte vyplňovat pokud nehledáte pomoc.
             de: 'Wir können Menschen Ihnen helfen? Sie können es frei lassen, wenn Sie keine Hilfe über diese Website suchen.'
+            el: 'Πώς μπορούν οι άνθρωποι να σας βοηθήσουν; Μπορείτε να το αφήσετε κενό εάν δεν ψάχνετε για βοήθεια σε αυτή τη σελίδα. '
             en: How can people help you? You can leave it empty if you are not searching for help through this site.
             et: Millist abi sa vajad?
             fi: 'Millaista apua tarvitset? Tätä ei tarvitse täyttää, jos et vielä halua.'
-            fr: "Comment les utilisateurs peuvent vous aider ? Vous pouvez laisser ce champ vide si vous ne recherchez pas d'aide sur ce site"
+            fr: "Comment les utilisateurs peuvent vous aider ? Vous pouvez laisser ce champ vide si vous ne recherchez pas d'aide sur ce site."
             hu: Miben lehetnek mások segítségedre? Hagyd ezt a mezőt üresen ha jelenleg nincs szükséged segítségre.
             it: Come possiamo aiutarti?
             ja: どのような助けを必要としていますか？　もし助けを求めているのでないのならば、空欄のままにしてください。
             ko: '어떻게 사람들이 당신이 도울 수 있을까요? '
+            lt: 'Kaip žmonės gali jums padėti? Jei neieškote pagalbos, šį laukelį galite palikti tuščią.'
+            lv: 'Kā citi var palīdzēt Tev? Tu vari atstāt šo lauku tukšu, ja nemeklē palīdzību. '
             nl: Hoe kunnen mensen u helpen? U kunt het leeg laten als u geen help zoekt via deze site.
             ru: 'Какая помощь Тебе нужна? Если помощь не нужна, оставь это поле пустым.'
             zh: 你希望人们怎样帮到你？如果你不是通过此网站寻求帮助的话，可以跳过此项
         you-help-me-video:
             cs: Odkaz videa
             de: Video URL
+            el: Video URL
             en: Video URL
             et: Videoviide
             fi: Videon URL
@@ -2070,6 +2569,8 @@ pages:
             it: Video URL
             ja: ビデオ URL
             ko: 비디오 URL
+            lt: Video URL
+            lv: Video URL
             nl: Video URL
             ru: Ссылка на видео
             zh: 视频地址
@@ -2077,48 +2578,58 @@ pages:
         facebook:
             cs: Připojit přes Facebook
             de: Über Facebook anmelden
+            el: Σύνδεση μέσω Facebook
             en: Login over Facebook
             et: Logi sisse Facebooki kaudu
             fi: Kirjaudu sisään Facebookin kautta
-            fr: Connection par Facebook
+            fr: "S'identifier avec Facebook"
             hu: Bejelentkezés a Facebook segítségével
             it: Accesso con Facebook
             ja: Facebookの上でログイン
             ko: 페이스 북을 통해 로그인
+            lt: Registruotis naudojantis Facebook
+            lv: Ieiet izmantojot Facebook
             nl: Inloggen via Facebook
             ru: Войти через Facebook
             zh: 用Facebook登录
         google:
             cs: Připojit přes Google+
             de: Über Google+ anmelden
+            el: ' Σύνδεση μέσω Google+'
             en: Login over Google+
             et: Logi sisse Google+ kaudu
             fi: Kirjaudu sisään Google+ kautta
-            fr: Connection avec Google+
+            fr: "S'identifier avec Google+"
             hu: Bejelentkezés a Google+ segítségével
             it: Accesso con Google+
             ja: Google+にオーバーログイン
             ko: Google+를 통해 로그인
+            lt: Registruotis naudojantis Google+
+            lv: Ieiet izmantojot Google+
             nl: Inloggen via Google+
             ru: Войти через Google+
             zh: 用Google+登录
         terms:
             cs: '* Registrací, přijímáte podmínky požívání <a href="terms">a zásady ochrany soukromí</a>'
             de: '* Wenn Sie sich anmelden, akzeptieren Sie unsere <a href="terms">Nutungsbedingungen und Datenschutzrichtlinien</a>'
+            el: '* Εάν εγγραφείτε, αποδέχεστε τους όρους χρήσης <a href="terms">terms of use and privacy policy</a>'
             en: '* If you sign in, you accept our <a href="terms">terms of use and privacy policy</a>'
             et: '* Sisenedes nõustud meie <a href="terms">kasutaja- ja privaatsustingimustega</a>'
-            fi: '* Jos kirjaudut sisään hyväksyt meidän <a href="terms">käyttö- ja yksityisyyskäyttöehdot</a>'
+            fi: '* Kirjautumalla sisään hyväksyt meidän <a href="terms">käyttö- ja yksityisyyskäyttöehdot</a>'
             fr: "* Si vous vous inscrivez, vous acceptez nos <a href=\"terms\">conditions d'utilisation et notre politique de confidentialité</a>"
             hu: '* A belépéssel elfogadod a <a href="terms">Felhasználói Feltételeket</a>'
             it: '* Registrandoti, accetti <a href="terms">termini di utilizzo e politica sulla privacy</a>'
             ja: '* ログインするとHelpificの <a href="terms">利用規約とプライバシーポリシー</a> に同意したことになります'
             ko: '* 로그인시 <a href="terms">우리의 개인정보 보호정책을 사용을 수락하게됩니다</a>'
+            lt: '* Užsiregistravę sutinkate su <a href="terms">naudojimosi sąlygomis</a>'
+            lv: '* Reģistrējoties, Tu pieņem <a href="terms">lietošanas noteikumus un konfidencialitātes politiku</a>'
             nl: '* Als u zich aanmeldt, accepteert u onze <a href="terms">gebruiksvoorwaarden en het privacybeleid</a>'
             ru: '* Пользуясь сервисом, Ты соглашаешься с <a href="terms">правилами пользования</a>'
             zh: '* 如果你登陆此站，你需要遵守<a href="terms">使用与隐私条款</a>'
         text:
             cs: Použijte jednu z následujících možností k přihlášení...
             de: 'Bitt nutzen Sie Ihren bevorzugten Internetanbieter, um sich anzumelden...'
+            el: Παρακαλούμε χρησιμοποιείστε...
             en: Please use your preferred identity provider to sign in...
             et: Sisenemiseks kasuta meelepärast identiteedipakkujat...
             fi: Ole hyvä ja käytä haluamaasi tunnistetietojen tarjoajaa kirjautuaksesi sisään...
@@ -2127,12 +2638,15 @@ pages:
             it: Puoi utilizzare il tuo provider preferito per registrarti...
             ja: 希望のアカウントでログインしてください
             ko: 원하는 ID를 사용하십시오...
+            lt: Pasirinkite sau tinkamiausią registracijos būdą
+            lv: 'Lai reģistrētos, lūdzu, izvēlieties vēlamo pakalpojumu sniedzēju...'
             nl: Gebruik u favoriete ideintity provider om in te loggen...
             ru: Для входа используй подходящий сервис...
             zh: 请使用你偏好的社交网站进行登陆
         title:
             cs: Přihlásit se
             de: Anmelden
+            el: Εγγραφή
             en: Sign in
             et: Sisene
             fi: Kirjaudu sisään
@@ -2141,6 +2655,8 @@ pages:
             it: Accedi
             ja: ログイン
             ko: 로그인
+            lt: Registruotis
+            lv: Ienākt
             nl: Aanmelden
             ru: Войти
             zh: 登陆
@@ -2148,6 +2664,7 @@ pages:
         title:
             cs: Náš tým
             de: Unser Team
+            el: Η ομάδα μας
             en: Our Team
             et: Meie meeskond
             fi: Meidän tiimi
@@ -2156,6 +2673,8 @@ pages:
             it: Il nostro team
             ja: チーム
             ko: 함께하는 사람들
+            lt: Mūsų komanda
+            lv: Mūsu komanda
             nl: Ons Team
             ru: Наша команда
             zh: 我们的团队
@@ -2163,6 +2682,7 @@ pages:
         title:
             cs: Překlady
             de: Translations
+            el: Μεταφράσεις
             en: Translations
             et: Tõlked
             fi: Translations
@@ -2171,6 +2691,8 @@ pages:
             it: Translations
             ja: Translations
             ko: Translations
+            lt: Vertimai
+            lv: Tulkojumi
             nl: Translations
             ru: Translations
             zh: 翻译
@@ -2178,14 +2700,17 @@ pages:
         title:
             cs: Prosím aktualizujte své kontaktní údaje
             de: Bitte aktualisiere deine Kontaktinformationen
+            el: Παρακαλώ ενημερώστε τις πληροφορίες επικοινωνίας σας
             en: Please update your contact details
             et: Palun uuendage oma kontaktandmeid
             fi: 'Päivitä yhteystietosi, kiitos'
-            fr: "S'il vous plaît mettre à jour vos détails de contact"
+            fr: Merci de mettre à jour vos données de contact
             hu: Kérlek add meg az elérhetőségeidet
             it: Per favore aggiorna le tue informazioni di contatto
             ja: ご連絡先の詳細を更新してください
             ko: 연락처 정보를 업데이트하세요
+            lt: Prašome užpildyti savo kontaktinius duomenis
+            lv: 'Lūdzu, atjauniniet savu kontaktinformāciju'
             nl: Werk uw contactgegevens
             ru: 'Пожалуйста, обнови свои контактные данные'
             zh: 请更新您的详细联系信息
@@ -2193,6 +2718,7 @@ pages:
         about-me-tab:
             cs: O mně
             de: Über mich
+            el: Σχετικά με εμένα
             en: About me
             et: Minust
             fi: Minusta
@@ -2201,12 +2727,15 @@ pages:
             it: Su di me
             ja: 私について
             ko: 자기소개
+            lt: Apie mane
+            lv: Par mani
             nl: Over mij
             ru: Обо мне
             zh: 关于我
         donate:
             cs: Darovat
             de: Spenden
+            el: Δωρεά
             en: Donate
             et: Anneta
             fi: Lahjoita
@@ -2215,12 +2744,15 @@ pages:
             it: Donate
             ja: 寄付する
             ko: 기부
+            lt: Paremti
+            lv: Ziedot
             nl: Schenken
             ru: Сделать пожертвование
             zh: 捐助
         donate-info:
             cs: 'V případě darování dobrovolného příspěvku převeďte peníze na účet Helpific. Popis transakce musí být vyplněn "%s"'
             de: 'Für Spenden Überweisung an Helpific account. Spendenbescheinigung notwendig "%s"'
+            el: 'Μεταφορά χρημάτων στο λογαριασμό Helpific για δωρεές. Το ύψος της μεταφοράς πρέπει να είναι σε "%s"'
             en: 'For donation transfer money to Helpific account. Transfer description must be "%s"'
             et: 'Annetus kanna Helpificu kontole. Makse selgitusse märgi kindlasti "%s"'
             fi: 'Siirrä rahalahjoitus  Helpific tilille. Maksu selityksen täytyy olla "%s"'
@@ -2229,12 +2761,15 @@ pages:
             it: 'Per le donazioni utilizzare il conto Helpific "%s"'
             ja: '寄付をする方はHelpificの口座に送金してください "%s"'
             ko: '기부를 원하시면, Helpific계좌로 송금해주세요 "%s"'
+            lt: 'Paramą galite pervesti į Helpific sąskaitą. Mokėjimo aprašymas turi būti "%s"'
+            lv: 'Ziedot var pārskaitot naudu uz Helpific kontu. Pārskaitījuma aprakstam jābūt "%s"'
             nl: 'Voor donatie overmaken naar Helpific account. Transfer omschriving moet zijn "%s"'
             ru: 'Пожертвования следует переводить на банковский счет Helpific. В пояснении обязательно укажите "%s"'
             zh: '如您要向我们的项目提供资金支持，转账描述须为"%s"'
         help-offers:
             cs: Moje nabídky pomoci.
             de: Meine Hilfsangebote
+            el: Οι προσφορές μου
             en: My offers
             et: Minu pakkumised
             fi: Minun tarjoukseni
@@ -2243,12 +2778,15 @@ pages:
             it: Le mie offerte
             ja: マイ オファー
             ko: 내 도움나눔
+            lt: Mano pasiūlymai
+            lv: Mani piedāvājumi
             nl: Mijn aanbiedingen
             ru: Мои предложения
             zh: 我提供的帮助
         help-requests:
             cs: Moje žádosti o pomoc
             de: Meine Hilfsanfragen
+            el: Τα αιτήματά μου
             en: My requests
             et: Minu soovid
             fi: Minun pyyntöni
@@ -2257,12 +2795,15 @@ pages:
             it: Le mie richieste
             ja: マイ リクエスト
             ko: 내 도움 요청
+            lt: Mano prašymai
+            lv: Mani lūgumi
             nl: MIjn verzoeken
             ru: Мои просьбы
             zh: 我发出的请求
         me-help-you-tab:
             cs: Takto mohu pomoci ostatním
             de: Ich kann anderen helfen
+            el: Μπορώ να βοηθήσω και άλλους
             en: I can help others
             et: Aitan sind
             fi: Minä voin auttaa muita
@@ -2271,12 +2812,15 @@ pages:
             it: Posso aiutare chi ha bisogno
             ja: 私は他の人を助けることができます
             ko: '다른 사람을 도울 수 있습니다. '
+            lt: Aš galiu padėti kitiems
+            lv: Es varu palīdzēt citiem
             nl: Ik kan anderen te helpen
             ru: Я могу помочь другим
             zh: 我可以帮助别人
         send-message:
             cs: Odeslat zprávu
             de: Nachricht senden
+            el: Αποστολή μηνύματος
             en: Send message
             et: Saada sõnum
             fi: Lähetä viesti
@@ -2285,12 +2829,15 @@ pages:
             it: Invia messaggio
             ja: メッセージを送る
             ko: 메시지 전송
+            lt: Siųsti žinutę
+            lv: Sūtīt vēstuli
             nl: Bericht sturen
             ru: Отправить сообщение
             zh: 发送消息
         you-help-me-tab:
             cs: Potřebuji pomoci
             de: Ich brauche Hilfe
+            el: Χρειάζομαι βοήθεια
             en: I need help
             et: Vajan abi
             fi: Minä tarvitsen apua
@@ -2299,6 +2846,8 @@ pages:
             it: Necessito aiuto
             ja: 私は助けを必要としています
             ko: 도움이 필요합니다
+            lt: Man reikalinga pagalba
+            lv: Man nepieciešama palīdzība
             nl: ik heb hulp nodig
             ru: Мне нужна помощь
             zh: 我需要帮助
@@ -2306,20 +2855,24 @@ pages:
         count:
             cs: " Existují celkem {{ users.length }}  uživatelé zde <span ng-if='search_query'> - nalezeno {{ (users | filter:search_query).length }}</span>"
             de: "Insgesamt haben wir {{ users.length }} Nutzer hier <span ng-if='search_query'> - gefunden {{ (users | filter:search_query).length }}</span>"
+            el: "Όλοι οι χρήστες εδώ {{ users.length }} <span ng-if='search_query'> - found {{ (users | filter:search_query).length }}</span>"
             en: "There are total {{ users.length }} users here <span ng-if='search_query'> - found {{ (users | filter:search_query).length }}</span>"
             et: "Kokku on meil {{ users.length }} kasutajat <span ng-if='search_query'> - leiti {{ (users | filter:search_query).length }}</span>"
-            fi: "Kaikki {{ users.length }}  käyttäjät <span ng-if='search_query'> - leiti {{ (users | filter:search_query).length }}</span>"
+            fi: "Kaikki käyttäjät {{ users.length }} <span ng-if='search_query'> - leiti {{ (users | filter:search_query).length }}</span>"
             fr: "Total {{ users.length }}  d'utilisateurs ici <span ng-if='search_query'> - présents {{ (users | filter:search_query).length }}</span>"
             hu: "Összesen {{ users.length }} felhasználó van a rendszerben <span ng-if='search_query'> - találat {{ (users | filter:search_query).length }}</span>"
             it: "Totale {{ users.length }}  utenti <span ng-if='search_query'> - fondare {{ (users | filter:search_query).length }}</span>"
             ja: "全ユーザー{{ users.length }}　<span ng-if='search_query'> - 発見 {{ (users | filter:search_query).length }}</span>"
             ko: "전체 {{ users.length }}  사용자 <span ng-if='search_query'> - 녹이다 {{ (users | filter:search_query).length }}</span>\""
+            lt: "Visi vartotojai {{ users.length }} <span ng-if='search_query'> - rasti {{ (users | filter:search_query).length }}</span>"
+            lv: "Kopā ir {{ users.length }} lietotāju <span ng-if='search_query'> - found {{ (users | filter:search_query).length }}</span>"
             nl: "Er zijn totaal {{ users.length }} gebruikers hier <span ng-if='search_query'> - gevonden {{ (users | filter:search_query).length }}</span>"
             ru: "У нас в общей сложности {{ users.length }} участников <span ng-if='search_query'> - найдено {{ (users | filter:search_query).length }}</span>"
             zh: "所有的用户都在这里{{ users.length }} <span ng-if='search_query'> - 发现 {{ (users | filter:search_query).length }}</span>"
         title:
             cs: Uživatelé
             de: Nutzer
+            el: Χρήστες
             en: Users
             et: Kasutajad
             fi: Käyttäjät
@@ -2328,6 +2881,8 @@ pages:
             it: Utenti
             ja: ユーザー
             ko: 사용자
+            lt: Vartotojai
+            lv: Lietotāji
             nl: Gebruikers
             ru: Участники
             zh: 用户

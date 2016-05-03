@@ -60,7 +60,7 @@ require('ssl-root-cas/latest')
 
 // Configure i18n
 i18n.configure({
-    locales: ['en', 'et', 'fi', 'cs', 'fr', 'ru', 'hu', 'de', 'ko', 'zh', 'ja', 'it'],
+    locales: ['en', 'et', 'fi', 'cs', 'fr', 'ru', 'hu', 'de', 'ko', 'zh', 'ja', 'it', 'el', 'lt', 'lv'],
     defaultLocale: APP_DEFAULT_LOCALE,
     file: path.join(__dirname, 'locales.yaml'),
     updateFile: true,
@@ -74,7 +74,10 @@ i18n.configure({
         'cn': 'zh',
         'it': 'it',
         'fi': 'fi',
-        'fr': 'fr'
+        'fr': 'fr',
+        'lv': 'lv',
+        'lt': 'lt',
+        'el': 'el'
     }
 })
 
