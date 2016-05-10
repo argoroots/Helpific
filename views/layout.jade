@@ -165,8 +165,9 @@ html(lang=lang, ng-app='hlpfc')
                         a(href='terms')= t('nav.terms')
                         br
                         a(href='mittetulundusuhing-info')= t('nav.ngo-info')
-                        br
-                        a(href='http://vabatahtlikud.ee/vabatahtlik-tegevus/vabatahtliku-tegevuse-hea-tava', target='_blank') Vabatahtliku tegevuse hea tava
+                        if lang == 'et'
+                            br
+                            a(href='http://vabatahtlikud.ee/vabatahtlik-tegevus/vabatahtliku-tegevuse-hea-tava', target='_blank') Vabatahtliku tegevuse hea tava
                 .row
                     .col-xs-12.text-center
                         a(href='https://www.facebook.com/Helpific', target='_blank', title="Facebook", aria-label="Facebook")
