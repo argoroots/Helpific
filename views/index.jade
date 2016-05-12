@@ -17,10 +17,16 @@ block content
                 .row
                     .jumbotron.col-xs-12.text-center!= t('pages.index.text')
 
-                    .jumbotron.col-xs-12.text-center
+                    .jumbotron.col-xs-6.text-center
                         h2= t('pages.index.twitter-title')
                         <a class="twitter-timeline" href="https://twitter.com/Helpific" data-widget-id="670246404569309185" width="520" height="300" data-chrome="nofooter noheader">Tweets by @Helpific</a>
                         <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+                    .jumbotron.col-xs-6.text-center
+                        h2= t('pages.index.facebook-title')
+                        <div class="fb-page" data-href="https://www.facebook.com/Helpific/" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+                        <div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/Helpific/"><a href="https://www.facebook.com/Helpific/">Helpific</a></blockquote></div></div>
+
+
 
 
         .row.text-center
