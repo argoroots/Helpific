@@ -1737,6 +1737,22 @@ pages:
             nl: Kies uw weg
             ru: Выбери свой путь
             zh: 选择你的方式
+        facebook-title:
+            cs: Facebook příspěvky
+            de: Facebook Beiträge
+            el: Αναρτήσεις από το Facebook
+            en: Facebook posts
+            et: Postitused Facebook
+            fi: Facebook viestiä
+            fr: Messages Facebook
+            hu: Facebook üzenete
+            it: I messaggi di Facebook
+            ja: Facebookの投稿
+            lt: Facebook skelbimai
+            lv: Facebook ziņas
+            nl: Facebookberichten
+            ru: Сообщения в Facebook
+            zh: Facebook的职位
         how-it-works:
             cs: Jak funguje Helpific?
             de: Wie funktioniert Helpific?
