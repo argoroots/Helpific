@@ -1771,6 +1771,23 @@ pages:
             nl: Hoe werkt Helpific?
             ru: Как устроен Helpific?
             zh: 完成如下几步，即可开始你的Helpific发现之旅
+        kysk-project:
+            cs: pages.index.kysk-project
+            de: pages.index.kysk-project
+            el: pages.index.kysk-project
+            en: pages.index.kysk-project
+            et: Meie veeb on uuenemas
+            fi: pages.index.kysk-project
+            fr: pages.index.kysk-project
+            hu: pages.index.kysk-project
+            it: pages.index.kysk-project
+            ja: pages.index.kysk-project
+            ko: pages.index.kysk-project
+            lt: pages.index.kysk-project
+            lv: pages.index.kysk-project
+            nl: pages.index.kysk-project
+            ru: pages.index.kysk-project
+            zh: pages.index.kysk-project
         offers-link:
             cs: Seznamte se s dobrovolníky
             de: Freiwillige treffen
