@@ -118,9 +118,18 @@ router.get('/bb', function(req, res) {
     } else {
         res.render('bb.en.jade')
     }
-
 })
 
+
+// Show kysk page
+router.get('/kysk', function(req, res) {
+    var template = 'kysk.' + res.locals.lang + '.jade'
+    if(isTemplateExists(template)){
+        res.render(template)
+    } else {
+        res.render('kysk.et.jade')
+    }
+})
 
 // Show ngo-info page
 router.get('/mittetulundusuhing-info', function(req, res) {
