@@ -37,8 +37,21 @@ APP_AUTH_CORE_URL   = process.env.AUTH_CORE_URL || 'https://core.helpific.ee'
 APP_SIGNIN_PORT     = process.env.SIGNIN_PORT || 443
 
 
-log4js.loadAppender('file');
-log4js.addAppender(log4js.appenders.file('/var/log/helpific/helpific.log'), 'all');
+log4js.configure({
+    "appenders": [
+        {
+              type: "console"
+            , category: "all"
+        },
+        {
+            "type": "file",
+            "filename": "/var/log/helpific/helpific.log",
+            "maxLogSize": 50000000,
+            "backups": 10,
+            "category": "all"
+        }
+    ]
+});
 
 
 // start logging
