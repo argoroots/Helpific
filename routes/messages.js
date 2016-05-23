@@ -3,8 +3,8 @@ var _      = require('underscore')
 var async  = require('async')
 var moment = require('moment-timezone')
 
-var entu   = require('../helpers/entu')
-
+var entu        = require('../helpers/entu')
+var core_api    = require('../helpers/core-api')
 
 
 // Get conversations JSON
@@ -191,7 +191,7 @@ router.post('/:id', function(req, res, next) {
             },
             function(profile, callback) {
                 if(profile.has('email.value')) {
-                    entu.message({
+                    core_api.message({
                             to: profile.get('email.value'),
                             from: APP_ADMIN_EMAILS,
                             subject: res.locals.t('message.email-subject'),

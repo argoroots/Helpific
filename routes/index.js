@@ -218,7 +218,7 @@ router.post('/feedback', function(req, res, next) {
         },
         function(callback) {
             if(APP_FEEDBACK_EMAILS) {
-                entu.message({
+                core_api.message({
                         to: APP_FEEDBACK_EMAILS,
                         subject: res.locals.t('feedback.admin-email-subject'),
                         message: res.locals.t('feedback.admin-email-message',  new_id),
