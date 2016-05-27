@@ -22,26 +22,41 @@ block content
                     .jumbotron.col-xs-12.text-center!= t('pages.index.text')
 
         .row.text-center
-            .col-md-8.col-xs-12
-                .row
-                    h2.col-xs-12= t('pages.index.how-it-works')
-                    #bullet-1.col-xs-10.col-sm-4.col-md-3.col-xs-offset-1.col-sm-offset-0.col-md-offset-1.text-center
-                        .bullet 1
-                        | #{ t('pages.index.bullet-1') }
-                    #bullet-2.col-xs-10.col-sm-4.col-md-3.col-xs-offset-1.col-sm-offset-0.col-md-offset-1.text-center
-                        .bullet 2
-                        | #{ t('pages.index.bullet-2') }
-                    #bullet-3.col-xs-10.col-sm-4.col-md-2.col-xs-offset-1.col-sm-offset-0.col-md-offset-1.text-center
-                        .bullet 3
-                        | #{ t('pages.index.bullet-3') }
-            .col-md-4.col-xs-12
-                .row
-                    h2.col-xs-12= t('pages.index.kysk-project')
-                    p.text-left Saime toetust Kodanikuühiskonna Sihtkapitalilt,
-                        | et muuta oma veebi veelgi paremaks ja kasutajasõbralikumaks. Kui sooviksid jätta meile omapoolset tagasisidet, siis kirjuta meile
-                        | <a href="mailto: info@helpific.com">info@helpific.com</a>
-                .row
-                    img.img-responsive(src="/images/kysk/Kysk_logo.jpg")
+            if lang == 'et'
+                .col-md-8.col-xs-12
+                    .row
+                        h2.col-xs-12= t('pages.index.how-it-works')
+                        #bullet-1.col-xs-10.col-sm-4.col-md-3.col-xs-offset-1.col-sm-offset-0.col-md-offset-1.text-center
+                            .bullet 1
+                            | #{ t('pages.index.bullet-1') }
+                        #bullet-2.col-xs-10.col-sm-4.col-md-3.col-xs-offset-1.col-sm-offset-0.col-md-offset-1.text-center
+                            .bullet 2
+                            | #{ t('pages.index.bullet-2') }
+                        #bullet-3.col-xs-10.col-sm-4.col-md-2.col-xs-offset-1.col-sm-offset-0.col-md-offset-1.text-center
+                            .bullet 3
+                            | #{ t('pages.index.bullet-3') }
+                .col-md-4.col-xs-12
+                    .row
+                        h2.col-xs-12= t('pages.index.kysk-project')
+                        p.text-left Saime toetust Kodanikuühiskonna Sihtkapitalilt,
+                            | et muuta oma veebi veelgi paremaks ja kasutajasõbralikumaks. Kui sooviksid jätta meile omapoolset tagasisidet, siis kirjuta meile
+                            | <a href="mailto: info@helpific.com">info@helpific.com</a>
+                    .row
+                        img.img-responsive(src="/images/kysk/Kysk_logo.jpg")
+            else
+                .col-md-12.col-xs-12
+                    .row
+                        h2.col-xs-12= t('pages.index.how-it-works')
+                        #bullet-1.col-xs-10.col-sm-4.col-md-3.col-xs-offset-1.col-sm-offset-0.col-md-offset-1.text-center
+                            .bullet 1
+                            | #{ t('pages.index.bullet-1') }
+                        #bullet-2.col-xs-10.col-sm-4.col-md-3.col-xs-offset-1.col-sm-offset-0.col-md-offset-1.text-center
+                            .bullet 2
+                            | #{ t('pages.index.bullet-2') }
+                        #bullet-3.col-xs-10.col-sm-4.col-md-2.col-xs-offset-1.col-sm-offset-0.col-md-offset-1.text-center
+                            .bullet 3
+                            | #{ t('pages.index.bullet-3') }
+
 
         .row.spacer
 
