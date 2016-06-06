@@ -23,7 +23,7 @@ feedback:
         el: Προστέθηκε νέo Feedback
         en: Added new feedback
         et: Lisati uus tagasiside
-        fi: Uusi palaute vastaanotettu
+        fi: Uusi palaute lisätty
         fr: Derniers commentaires
         hu: 'Új visszajelzés '
         id: ''
@@ -234,7 +234,7 @@ help:
         el: Προστέθηκε νέο έτοιμα/προσφορά βοήθειας
         en: Added new help request/offer
         et: Lisati uus soov/pakkumine
-        fi: Lisää uusi avunpyyntö/tarjous
+        fi: Uusi avunpyyntö/tarjous lisätty
         fr: Nouvelle demande/offre postée
         hu: Új segítségkérés/felajánlás hozzáadása
         it: Nuova richiesta/offerta aggiunta
@@ -577,7 +577,7 @@ message:
         el: Νέο μήνυμα στο helpific.com
         en: New message in helpific.com
         et: Uus sõnum helpific.com'is
-        fi: Uusi viesti helpific.com'issa
+        fi: 'Uusi viesti helpific.com:ssa'
         fr: Nouveau message dans helpific.com
         hu: Új üzeneted érkezett a helpific.com-ra
         it: Nuovo messaggio su helpific.com
@@ -595,7 +595,7 @@ nav:
         el: Σχετικά
         en: About
         et: Meist
-        fi: Meistä
+        fi: Tietoa meistä
         fr: A propos
         hu: Magunkról
         it: Su Helpific
@@ -612,7 +612,7 @@ nav:
         el: Πέρα από τα σύνορα
         en: Beyond Borders
         et: Piirideta Elu
-        fi: Rajojen Takana
+        fi: Elämää ilman rajoja
         fr: Au Delà des Frontières
         hu: Túl a Határokon
         it: Oltre i Confini
@@ -646,7 +646,7 @@ nav:
         el: Arenguhüppe projekt
         en: Arenguhüppe projekt
         et: Arenguhüppe projekt
-        fi: Arenguhüppe projekt
+        fi: Helpificin kehittäminen
         fr: Arenguhüppe projekt
         hu: Arenguhüppe projekt
         it: Arenguhüppe projekt
@@ -749,7 +749,7 @@ nav:
         el: Πληροφορίες για τη ΜΚΟ
         en: NGO information
         et: MTÜ informatsioon
-        fi: Kansalaisjärjestöinformaatio
+        fi: Yhdistystiedot
         fr: Information ONG
         hu: Szervezeti információ
         it: Informazioni ONG
@@ -783,7 +783,7 @@ nav:
         el: Ανάπτυξη Θετικής Στάσης
         en: Positive Attitude Development
         et: Positiivse Suhtumise Arendamine
-        fi: Positiivisen Asenteen Kehittäminen
+        fi: PAD-projekti
         fr: Attitude de Développement Positive
         hu: Pozitív Attitüd Fejlesztése
         id: ''
@@ -801,7 +801,7 @@ nav:
         el: Συνεργάτες
         en: Partners
         et: Partnerid
-        fi: Partnerit
+        fi: Yhteistyökumppanit
         fr: Partenaires
         hu: Partnerek
         id: ''
@@ -993,7 +993,7 @@ pages:
             el: 'Προστέθηκε στις:'
             en: 'Added at:'
             et: 'Lisamise aeg:'
-            fi: 'Lisätty ajalla:'
+            fi: 'Lisäysaika:'
             fr: 'Ajouté à:'
             hu: 'Érkezett:'
             it: 'Inserito il:'
@@ -1027,7 +1027,7 @@ pages:
             el: Επεξεργασία
             en: Edit
             et: Muuda
-            fi: Muuta
+            fi: Muokkaa
             fr: Editer
             hu: Szerkesztés
             it: Modifica
@@ -1084,8 +1084,8 @@ pages:
                 my:search_my} | filter:search_query).length }}</span>
             el: >-
                 Υπάρχουν συνολικά  προφορές εδώ <span ng-if='search_query ||
-                searchMy'> - found {{ (help | filter:{status:s.status, type:type,
-                my:search_my} | filter:search_query).length }}</span>
+                searchMy'> - found {{ (help | filter:{status:s.status,
+                type:type, my:search_my} | filter:search_query).length }}</span>
             en: >-
                 There are total {{ (help | filter:{type:type }).length }} offers
                 here <span ng-if='search_query || searchMy'> - found {{ (help |
@@ -1134,9 +1134,10 @@ pages:
                 searchMy'> - found {{ (help | filter:{status:s.status,
                 type:type, my:search_my} | filter:search_query).length }}</span>
             nl: >-
-                Er zijn momenteel totaal {{ (help | filter:{type:type }).length }} aanbiedingen <span ng-if='search_query ||
-                search_my'> - found {{ (help | filter:{status:s.status,
-                type:type, my:search_my} | filter:search_query).length }}</span>
+                Er zijn momenteel totaal {{ (help | filter:{type:type }).length
+                }} aanbiedingen <span ng-if='search_query || search_my'> - found
+                {{ (help | filter:{status:s.status, type:type, my:search_my} |
+                filter:search_query).length }}</span>
             ru: >-
                 У нас в общей сложности {{ (help | filter:{type:type }).length
                 }} предложений <span ng-if='search_query || searchMy'> - найдено
@@ -1153,7 +1154,7 @@ pages:
             el: Τιμή υπηρεσίας (€) (Προαιρετικό)
             en: Service price (€) (Not obligatory)
             et: Teenuse hind (€) (Mitte kohustuslik)
-            fi: 'Palvelun hinta (€) (Vapaavalintainen) '
+            fi: 'Palvelun hinta (€) (Ei pakollinen) '
             fr: Prix du service (€) (Pas nécessaire)
             hu: A szolgáltatás díja (€) (Választható)
             it: Prezzo del servizio (€) (Non obbligatorio)
@@ -1314,11 +1315,15 @@ pages:
                 gefunden {{ (help | filter:{status:s.status, type:type,
                 my:search_my} | filter:search_query).length }}</span>
             el: >-
-                Υπάρχουν συνολικά {{ (help | filter:{type:type }).length }} αιτήματα εδώ <span ng-if='search_query ||
-                searchMy'> - found {{ (help | filter:{status:s.status, type:type, my:searchMy} | filter:search_query).length }}</span>
+                Υπάρχουν συνολικά {{ (help | filter:{type:type }).length }}
+                αιτήματα εδώ <span ng-if='search_query || searchMy'> - found {{
+                (help | filter:{status:s.status, type:type, my:searchMy} |
+                filter:search_query).length }}</span>
             en: >-
-                There are total {{ (help | filter:{type:type }).length }} requests here <span ng-if='search_query ||
-                searchMy'> - found {{ (help | filter:{status:s.status, type:type, my:searchMy} | filter:search_query).length }}</span>
+                There are total {{ (help | filter:{type:type }).length }}
+                requests here <span ng-if='search_query || searchMy'> - found {{
+                (help | filter:{status:s.status, type:type, my:searchMy} |
+                filter:search_query).length }}</span>
             et: >-
                 Kokku on meil {{ (help | filter:{type:type }).length }} soovi
                 <span ng-if='search_query || searchMy'> - leiti {{ (help |
@@ -1381,7 +1386,7 @@ pages:
             el: Συμφωνία πληρωμής (€) (Προαιρετικό)
             en: Agree to pay (€) (Not obligatory)
             et: Olen nõus maksma (€) (Mitte kohustuslik)
-            fi: Suostun maksamaan hinnan (€) (Valinnainen)
+            fi: Olen valmis maksamaan (€) (Ei pakollinen)
             fr: D'accord pour payer (€) (Pas nécessaire)
             hu: Ajánlott ár (€) (Választható)
             it: Disposto a pagare (€) (Non obbligatorio)
@@ -1398,7 +1403,7 @@ pages:
             el: Συμφωνία πληρωμής
             en: Agree to pay
             et: Olen nõus maksma
-            fi: Suostun maksamaan hinnan
+            fi: 'Olen valmis maksamaan '
             fr: D'accord pour payer
             hu: Ajánlott ár
             it: Disposto a pagare
@@ -1568,7 +1573,7 @@ pages:
             el: Ενεργός
             en: Active
             et: Aktiivsed
-            fi: Aktiivinen
+            fi: Aktiiviset
             fr: Actif
             hu: Aktív
             it: Attiva
@@ -1619,7 +1624,7 @@ pages:
             el: Ολοκληρώθηκε
             en: Done
             et: Tehtud
-            fi: Tehty
+            fi: Valmis
             fr: Achevé
             hu: Lezárt
             it: Eseguita
@@ -1636,7 +1641,7 @@ pages:
             el: Ολοκληρώθηκε
             en: Done
             et: Tehtud
-            fi: Tehty
+            fi: Valmis
             fr: Achevé
             hu: Lezárt
             it: Eseguita
@@ -1707,7 +1712,7 @@ pages:
                 έχετε ανάγκη
             en: Let us know what you can do or need
             et: 'Anna teada, kuidas saad aidata või mida vajad'
-            fi: Kerro meille mitä voit tehdä tai tarvitset
+            fi: 'Kerro, miten voit auttaa tai millaista apua tarvitset'
             fr: >-
                 Faites nous savoir ce que vous pouvez faire ou ce dont vous avez
                 besoin
@@ -1726,7 +1731,7 @@ pages:
             el: Προσφέρετε τη βοήθειά σας
             en: Make your needs and deeds work
             et: 'Tegutse, millal soovid!'
-            fi: Saa tarpeesi ja tekosi toimimaan
+            fi: 'Selaa muiden ilmoituksia, ja ota rohkeasti yhteyttä!'
             fr: Offrez votre aide
             hu: Vedd fel a kapcsolatot másokkal
             it: Entra in contatto con gli altri
@@ -1760,7 +1765,7 @@ pages:
             el: Αναρτήσεις από το Facebook
             en: Facebook posts
             et: Postitused Facebookis
-            fi: Facebook viestiä
+            fi: Seuraa meitä Facebookissa
             fr: Messages Facebook
             hu: Facebook üzenete
             it: I messaggi di Facebook
@@ -1794,7 +1799,7 @@ pages:
             el: Meie veeb on uuenemas
             en: Meie veeb on uuenemas
             et: Meie veeb on uuenemas
-            fi: Meie veeb on uuenemas
+            fi: Nettisivumme ovat uusiutumassa
             fr: Meie veeb on uuenemas
             hu: Meie veeb on uuenemas
             it: Meie veeb on uuenemas
@@ -1811,7 +1816,7 @@ pages:
             el: Γνωρίστε τους εθελοντές
             en: Meet the volunteers
             et: Kohtu vabatahtlike abistajatega
-            fi: Tapaa vapaaehtoiset
+            fi: Tutustu vapaaehtoisiin
             fr: Rencontrez les bénévoles
             hu: Felajánlások
             it: Incontra i volontari
@@ -1843,7 +1848,7 @@ pages:
             el: Διαγωνισμός σε πρόγραμμα PAD
             en: Competition in PAD project
             et: Konkurss PSA projektis
-            fi: pages.index.pad-title
+            fi: Kilpailu PAD-projektissa
             lt: Konkursas PAD projekte
             lv: Konkurss P.A.V. projektā
             nl: Competitie in P.A.D Project
@@ -1888,7 +1893,7 @@ pages:
             el: Δεν είναι ευκολότερα μαζί;
             en: Isn't it easier together?
             et: Koos on lihtsam!
-            fi: Eikö yhdessä ole helpompaa?
+            fi: Yhdessä on helpompaa!
             fr: N'est ce pas plus simple ensemble?
             hu: Együtt sokkal könnyebb!
             it: Insieme è più semplice!
@@ -1932,11 +1937,11 @@ pages:
                 }} täidetud abisoovi ja {{ info.users }} aktiivset
                 kasutajat.</p>
             fi: >-
-                <h2>Ikinä ei ole ollut helpompaa antaa ja saada apua!</h2>
-                <p>Helpific yhdistää vapaaehtoiset niille, jotka tarvitsevat
-                apua arkipäiväisissä askareissa.</p> <p ng-if='info'>Tähän asti
-                pyynnöt {{ info.help }} ovat täyttyneet ja {{ info.users }}
-                meillä on aktiivisia jäseniä.</p>"
+                <h2>Avun saaminen ja antaminen ei ole koskaan ollut näin
+                helppoa!</h2> <p>Helpific yhdistää arkipäiväisissä asioissa apua
+                tarvitsevat ihmiset ja vapaaehtoiset auttajat.</p> <p
+                ng-if='info'>Avunpyyntöjä on tähän mennessä täytetty ja
+                aktiivisia käyttäjiä on.</p>"
             fr: >-
                 <h2>Cela n'a jamais été aussi simple d'aider et de se faire
                 aider.</h2> <p>Helpific connecte les personnes ayant des besoins
@@ -1975,7 +1980,8 @@ pages:
                 <p>Helpific savieno cilvēkus ar īpašām vajadzībām, kuriem
                 nepieciešama palīdzība ikdienas aktivitātēs ar cilvēkiem, kas
                 vēlas viņiem palīdzēt.</p> <p ng-if='info'>Šobrīd mums ir
-                izpildīti {{ info.help }} lūgumi un {{ info.users }} lietotāju.</p>
+                izpildīti {{ info.help }} lūgumi un {{ info.users }}
+                lietotāju.</p>
             nl: >-
                 <h2>Het is nog nooit zo gemakkelijk geweest om hulp te krijgen
                 en te geven .</h2> <p>Helpific verbindt vrijwilligers met zij
@@ -1997,7 +2003,7 @@ pages:
             el: Αναρτήσεις από το Twitter
             en: Twitter posts
             et: Postitused Twitteris
-            fi: Twitter viestiä
+            fi: 'Seuraa meitä Twitterissä '
             fr: Messages Twitter
             hu: Twitter üzenete
             it: I messaggi di Twitter
@@ -2032,7 +2038,7 @@ pages:
             el: Αποστολή
             en: Send
             et: Saada
-            fi: Lähetetty
+            fi: Lähetä
             fr: Envoyer
             hu: Küldés
             it: Inviato
@@ -2067,7 +2073,7 @@ pages:
             el: Συνεργάτες
             en: Partners
             et: Partnerid
-            fi: Kumppanit
+            fi: Yhteistyökumppanit
             fr: Partenaires
             hu: Partnerek
             it: Partners
@@ -2085,7 +2091,7 @@ pages:
             el: Σχετικά με εμένα
             en: About me
             et: Minust
-            fi: Minusta
+            fi: Tietoa minusta
             fr: A propos de moi
             hu: Magamról
             it: 'Su '
@@ -2170,7 +2176,7 @@ pages:
             el: ΠΡΟΣΘΕΤΕΣ ΠΛΗΡΟΦΟΡΙΕΣ
             en: ADDITIONAL INFORMATION
             et: LISAINFORMATSIOON
-            fi: Lisätiedot
+            fi: Lisätietoja
             fr: Informations complémentaires
             hu: További információk
             it: INFORMAZIONI ADDIZIONALI
@@ -2204,7 +2210,7 @@ pages:
             el: 'πχ. Βασιλέως Κωνσταντίνου 32, Αθήνα'
             en: e.g. 767 5th Avenue
             et: nt. Tartu mnt. 1
-            fi: esim. Esimerkkitie 8
+            fi: esim. Hämeentie 8
             fr: ex. 28 rue des Lilas
             hu: pl. Kossuth utca 1.
             it: es. via Roma 13
@@ -2235,9 +2241,9 @@ pages:
                 Juhul, kui otsite tavapäraselt abi samal aadressil, võite selle
                 siia kirjutada, et hiljem aega säästa. Me ei avalikusta seda.
             fi: >-
-                Mikäli etsit apua yleensä tiettyyn samaan osoitteeseen, voit
-                kirjoittaa osoitteen tähän säästääksesi aikaasi myöhemmin. Emme
-                jaa osoitetta julkisesti.
+                Mikäli etsit apua yleensä samaan osoitteeseen, voit kirjoittaa
+                osoitteen tähän säästääksesi aikaasi myöhemmin. Emme jaa
+                osoitetta julkisesti.
             fr: >-
                 Au cas où vous chercheriez de l'aide pour la même adresse, vous
                 pouvez l'enregistrer ici. Cela vous fera gagner du temps pour
@@ -2413,7 +2419,7 @@ pages:
             el: π.χ. papadopoulos@gmail.com
             en: e.g. john@appleseed.com
             et: nt. juhan@õunaseeme.ee
-            fi: esim. maija@meikäläinen.fi
+            fi: esim. maija@meikalainen.fi
             fr: ex. pierre@orange.fr
             hu: pl. janos@telecom.hu
             it: es. marco@telecom.it
@@ -2447,10 +2453,9 @@ pages:
                 Kasutame Teie kontaktandmeid ainult juhul, kui peame Teile
                 midagi olulist teatama või et Teid tänada!
             fi: >-
-                Emme jaa yhteystietojasi kenenkään kanssa, ellet pyydä meitä
-                tekemään niin. Yhteystietojasi tullaan käyttämään ainoastaan,
-                mikäli meidän tulee tiedottaa sinulle jostakin tärkeästä asiasta
-                tai kiittää sinua!
+                Emme jaa yhteystietojasi ilman lupaa. Käytämme yhteystietojasi
+                ainoastaan, kun meidän tarvitsee tiedottaa jostain tärkeästä
+                asiasta tai haluamme kiittää sinua!
             fr: >-
                 On ne partagera pas vos données de contact sans votre
                 permission. Vos données personnelles seront seulement utilisées
@@ -2507,9 +2512,9 @@ pages:
                 Kasutame postituste tegemisel ainult Teie eesnime, aga täisnime
                 teadmine aitab meil luua turvalisemat platvormi.
             fi: >-
-                Käytämme ainoastaan etunimeäsi näytäessämme postit. Koko nimesi
-                tietäminen auttaa kuitenkin meitä luomaan turvallisemman
-                alustan.
+                Käytämme julkaisuissa ainoastaan etunimeäsi. Koko nimesi
+                tietäminen auttaa meitä kuitenkin luomaan turvallisemman
+                palvelun.
             fr: >-
                 Nous ne partagerons pas votre contact sauf si vous l'autorisez.
                 Nous vous contacterons uniquement pour vous faire parvenir une
@@ -2601,9 +2606,7 @@ pages:
                 με άλλους ανθρώπους γρηγορότερα.
             en: Knowing where you are located helps us connect people faster.
             et: 'Kui teame Teie asukohta, saame inimesi kiiremini kokku viia.'
-            fi: >-
-                Sijaintisi tietäminen auttaa meitä yhdistämään ihmisiä
-                nopeammin.
+            fi: Sijainnin tietäminen auttaa meitä yhdistämään ihmisiä nopeammin.
             fr: >-
                 Savoir ou vous êtes localisé nous aidera a connecter les gens
                 plus rapidement.
@@ -2630,7 +2633,7 @@ pages:
             el: ΒΑΣΙΚΕΣ ΠΛΗΡΟΦΟΡΙΕΣ
             en: MAIN INFORMATION
             et: PÕHIINFORMATSIOON
-            fi: Pääasialliset tiedot
+            fi: Perustiedot
             fr: Information principale
             hu: Főbb adatok
             it: INFORMAZIONI PRINCIPALI
@@ -2663,7 +2666,7 @@ pages:
                 href="https://en.wikipedia.org/wiki/Markdown#Example"
                 target="_blank">Markdowni</a>.
             fi: >-
-                Tekstin muokkaamiseen <a
+                Käytä tekstin muokkaamiseen <a
                 href="https://en.wikipedia.org/wiki/Markdown#Example"
                 target="_blank">Markdown</a>.
             fr: >-
@@ -2729,9 +2732,7 @@ pages:
                 How can you help others? You do not have to fill it if you do
                 not feel like it now.
             et: Kuidas sa saad teisi aidata?
-            fi: >-
-                Kuinka voin auttaa muita? Tätä ei tarvitse täyttää, jos et vielä
-                halua.
+            fi: Kuinka voit auttaa muita? Kohdan voi jättää myös tyhjäksi.
             fr: >-
                 Comment puis-je aider les autres ? Vous n'avez pas besoin de
                 remplir ce critère si vous ne le sentez pas aujourd'hui
@@ -2788,7 +2789,7 @@ pages:
             el: Αποδέχομαι το Helpific να μου στέλνει newsletter
             en: I allow Helpific to send me newsletter
             et: Luban Helpificul saata mulle uudiskirju
-            fi: Sallin Helpificin lähettää minulle uutiskirjeen
+            fi: Minulle saa lähettää Helpificin uutiskirjeitä
             fr: Autoriser Helpific a m'envoyer la newsletter
             hu: 'Engedélyezem a Helpific-nek, hogy hírlevelet küldjön nekem'
             it: Autorizzo Helpific ad inviarmi la newsletter
@@ -2987,7 +2988,7 @@ pages:
             el: π.χ. Δεν είναι ευκολότερα μαζί;
             en: e.g. Isn't it easier together?
             et: nt. Koos on ju lihtsam!
-            fi: esim. Yhdessä on helpompaa
+            fi: esim. Yhdessä on helpompaa!
             fr: ex. N'est-ce pas plus simple ensemble?
             hu: Együtt könnyebb!
             it: es. Insieme è più semplice
@@ -3165,7 +3166,7 @@ pages:
                 Palun, kirjuta natuke rohkem informatsiooni endast.
             fi: >-
                 Tämä tieto tulee näkymään muille kirjautuneille käyttäjille!
-                Kerrothan meille kaikille tässä hieman lisää itsestäsi.
+                Kerro meille vähän itsestäsi.
             fr: >-
                 Cette information sera vue uniquement par les utilisateurs
                 connectés.  Vous pouvez également nous en dire un peu plus à
@@ -3197,7 +3198,7 @@ pages:
             el: Χρειάζομαι βοήθεια
             en: I need help
             et: Vajan abi
-            fi: Minä tarvitsen apua
+            fi: Tarvitsen apua
             fr: J'ai besoin d'aide
             hu: Segítségre van szükségem
             it: Ho bisogno di aiuto
@@ -3223,8 +3224,8 @@ pages:
                 searching for help through this site.
             et: Millist abi sa vajad?
             fi: >-
-                Millaista apua tarvitset? Tätä ei tarvitse täyttää, jos et vielä
-                halua.
+                Millaista apua tarvitset? Voit jättää kohdan tyhjäksi, jos et
+                ole etsimässä apua.
             fr: >-
                 Comment les utilisateurs peuvent vous aider ? Vous pouvez
                 laisser ce champ vide si vous ne recherchez pas d'aide sur ce
@@ -3289,7 +3290,7 @@ pages:
             el: ' Σύνδεση μέσω Google+'
             en: Login over Google+
             et: Logi sisse Google+ kaudu
-            fi: Kirjaudu sisään Google+ kautta
+            fi: 'Kirjaudu sisään Google+:n kautta'
             fr: S'identifier avec Google+
             hu: Bejelentkezés a Google+ segítségével
             it: Accesso con Google+
@@ -3317,8 +3318,8 @@ pages:
                 * Sisenedes nõustud meie <a href="terms">kasutaja- ja
                 privaatsustingimustega</a>
             fi: >-
-                * Kirjautumalla sisään hyväksyt meidän <a href="terms">käyttö-
-                ja yksityisyyskäyttöehdot</a>
+                * Kirjautumalla sisään hyväksyt meidän <a
+                href="terms">käyttöehdot ja yksityisyyskäytännöt</a>
             fr: >-
                 * Si vous vous inscrivez, vous acceptez nos <a
                 href="terms">conditions d'utilisation et notre politique de
@@ -3354,9 +3355,7 @@ pages:
             el: Παρακαλούμε χρησιμοποιείστε...
             en: Please use your preferred identity provider to sign in...
             et: Sisenemiseks kasuta meelepärast identiteedipakkujat...
-            fi: >-
-                Ole hyvä ja käytä haluamaasi tunnistetietojen tarjoajaa
-                kirjautuaksesi sisään...
+            fi: Kirjaudu sisään Facebook- tai Google-tilin kautta...
             fr: Veuillez utiliser votre moyen d'identification préféré...
             hu: Válaszd ki a számodra megfelelő belépési módot...
             it: Puoi utilizzare il tuo provider preferito per registrarti...
@@ -3411,7 +3410,7 @@ pages:
             el: Μεταφράσεις
             en: Translations
             et: Tõlked
-            fi: Translations
+            fi: Käännökset
             fr: Traductions
             hu: Fordítások
             it: Translations
@@ -3492,8 +3491,8 @@ pages:
                 Annetus kanna Helpificu kontole. Makse selgitusse märgi
                 kindlasti "%s"
             fi: >-
-                Siirrä rahalahjoitus  Helpific tilille. Maksu selityksen täytyy
-                olla "%s"
+                Siirrä rahalahjoitus Helpificin tilille. Maksuselvitykseen
+                täytyy merkitä "%s"
             fr: >-
                 Faire un don par transfert d'argent sur le compte de Helpific.
                 Le montant du transfert doit être de "%s"

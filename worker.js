@@ -222,6 +222,30 @@ express()
         }
     })
 
+    // redirect to pages with language selected
+    .use('/help/requests', function(req, res) {
+        res.redirect('/:lang/help/requests')
+    })
+    .use('/help/offers', function(req, res) {
+        res.redirect('/:lang/help/offers')
+    })
+    .use('/messages', function(req, res) {
+        res.redirect('/:lang/messages')
+    })
+
+    .use('/profile', function(req, res) {
+        res.redirect('/:lang/profile')
+    })
+    .use('/contact', function(req, res) {
+        res.redirect('/:lang/contact')
+    })
+    .use('/signin', function(req, res) {
+        res.redirect('/:lang/signin')
+    })
+    .use('/users', function(req, res) {
+        res.redirect('/:lang/users')
+    })
+
     // initiate i18n
     .use(i18n.init)
 

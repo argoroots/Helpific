@@ -86,6 +86,8 @@ html(lang=lang, ng-app='hlpfc')
                                 li.dropdown
                                     a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false')
                                         = t('nav.projects')
+                                        | &nbsp;
+                                        span.caret
                                     ul.dropdown-menu
                                         li
                                             a(href='bb')= t('nav.bb')
@@ -138,7 +140,10 @@ html(lang=lang, ng-app='hlpfc')
                                     li
                                         a(href='signin')= t('nav.sign-in')
                                     li.dropdown
-                                        a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false')= t('locales.' + lang.toLowerCase())
+                                        a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false')
+                                            = t('locales.' + lang.toLowerCase())
+                                            | &nbsp;
+                                            span.caret
                                         ul.dropdown-menu
                                             each l in locales
                                                 li
@@ -192,7 +197,8 @@ html(lang=lang, ng-app='hlpfc')
                             a(href='http://vabatahtlikud.ee/vabatahtlik-tegevus/vabatahtliku-tegevuse-hea-tava', target='_blank') Vabatahtliku tegevuse hea tava
                 .row
                     .col-xs-12.text-left
-                        small Helpific on kantud tulumaksusoodustusega mittetulundusühingute ühenduste nimekirja alates 01.07.2016
+                        small
+                            i Helpific on kantud tulumaksusoodustusega mittetulundusühingute nimekirja alates 01.07.2016
                 .row
                     .col-xs-12.text-center
                         a(href='https://www.facebook.com/Helpific', target='_blank', title="Facebook", aria-label="Facebook")
