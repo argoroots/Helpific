@@ -209,6 +209,7 @@ express()
                         token: req.signedCookies.auth_token,
                         picture: op.get(user, 'picture'),
                         lang: op.get(user, 'person.language.values.0.value', APP_DEFAULT_LOCALE),
+                        forename: op.get(user, 'person.properties.forename.values.0.value'),
                         profileAcceptable: isProfileAcceptable(user)
                     }
                 } else {

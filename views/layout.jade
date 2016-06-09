@@ -135,7 +135,11 @@ html(lang=lang, ng-app='hlpfc')
                                 if user
                                     li.dropdown
                                         a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false')
-                                            i.fa.fa-user
+                                            = ' ' + user.forename
+                                                | &nbsp;
+                                                i.fa.fa-user
+                                                | &nbsp;
+                                                span.caret
                                         ul.dropdown-menu
                                             li
                                                 a(href='messages')= t('nav.me.messages')
