@@ -71,7 +71,14 @@ html(lang=lang, ng-app='hlpfc')
                     .container
                         .row
                             .col-xs-12
-                                ul.nav.navbar-right
+                                ul.nav.navbar-right.top-menu-nav
+                                    if lang == 'et'
+                                        li
+                                            a.top-menu(href='http://vabatahtlik.helpific.com/', title="Blogspot", target='_blank')= t('nav.blog')
+                                    else
+                                        li
+                                            a.top-menu(href='http://volunteer.helpific.com/', title="Blogspot", target='_blank')= t('nav.blog')
+
                                     li.dropdown
                                         a.dropdown-toggle.top-menu(href='#', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false')
                                             = t('locales.' + lang.toLowerCase())
@@ -103,12 +110,6 @@ html(lang=lang, ng-app='hlpfc')
                                     a(href='help/offers')= t('nav.offers')
                                 li
                                     a(href='about')= t('nav.about')
-                                if lang == 'et'
-                                    li
-                                        a(href='http://vabatahtlik.helpific.com/', title="Blogspot", target='_blank')= t('nav.blog')
-                                else
-                                    li
-                                        a(href='http://volunteer.helpific.com/', title="Blogspot", target='_blank')= t('nav.blog')
                                 li.dropdown
                                     a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false')
                                         = t('nav.projects')

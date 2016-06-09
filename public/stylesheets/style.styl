@@ -46,16 +46,23 @@ body
   background color-white-transparent
   border none
 
-  a.top-menu
-    line-height normal
-    padding-top 10px
-    color: #777
+  .top-menu-nav
+    padding-right 40px
 
-  a.top-menu:hover
-    text-decoration: underline
+    li
+      float: left;
 
-  .open a.top-menu
-    background: none!important
+    a.top-menu
+      line-height normal
+      padding-top 10px
+      color: #777
+
+    a.top-menu:hover
+      text-decoration: underline
+      background-color: color-white-transparent
+
+    .open a.top-menu
+      background: none!important
 
   .navbar-header
     min-height header-height
@@ -90,12 +97,10 @@ body
         padding-bottom 0px
         line-height header-height
         text-decoration none
+        font-size 20px
 
         &:hover
           text-decoration underline
-
-    .dropdown
-      font-size 20px
 
     .dropdown-menu
       margin-top -30px !important
