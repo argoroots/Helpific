@@ -67,7 +67,20 @@ html(lang=lang, ng-app='hlpfc')
 
         #wrap
             #main
-                nav.navbar.navbar-default.navbar-fixed-top
+                nav.navbar.navbar-default
+                    .container
+                        .row
+                            .col-xs-12
+                                ul.nav.navbar-right
+                                    li.dropdown
+                                        a.dropdown-toggle.top-menu(href='#', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false')
+                                            = t('locales.' + lang.toLowerCase())
+                                            | &nbsp;
+                                            span.caret
+                                        ul.dropdown-menu
+                                            each l in locales
+                                                li
+                                                    a(href='/' + l + path.substring(3))= t('locales.' + l)
                     .container
                         .navbar-header
                             button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#bs-example-navbar-collapse-1', aria-expanded='false')
@@ -83,6 +96,19 @@ html(lang=lang, ng-app='hlpfc')
                                 | #{ title }
                         .collapse.navbar-collapse(id='bs-example-navbar-collapse-1')
                             ul.nav.navbar-nav.navbar-right
+
+                                li
+                                    a(href='help/requests')= t('nav.requests')
+                                li
+                                    a(href='help/offers')= t('nav.offers')
+                                li
+                                    a(href='about')= t('nav.about')
+                                if lang == 'et'
+                                    li
+                                        a(href='http://vabatahtlik.helpific.com/', title="Blogspot", target='_blank')= t('nav.blog')
+                                else
+                                    li
+                                        a(href='http://volunteer.helpific.com/', title="Blogspot", target='_blank')= t('nav.blog')
                                 li.dropdown
                                     a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false')
                                         = t('nav.projects')
@@ -91,7 +117,6 @@ html(lang=lang, ng-app='hlpfc')
                                     ul.dropdown-menu
                                         li
                                             a(href='bb')= t('nav.bb')
-
                                         if lang == 'et'
                                             li
                                                 a(href='http://est.padproject.eu/')= t('nav.pad')
@@ -106,19 +131,6 @@ html(lang=lang, ng-app='hlpfc')
                                                 a(href='http://eng.padproject.eu/')= t('nav.pad')
                                         li
                                             a(href='kysk')= t('nav.kysk')
-                                li
-                                    a(href='help/requests')= t('nav.requests')
-                                li
-                                    a(href='help/offers')= t('nav.offers')
-                                li
-                                    a(href='about')= t('nav.about')
-                                if lang == 'et'
-                                    li
-                                        a(href='http://vabatahtlik.helpific.com/', title="Blogspot", target='_blank')= t('nav.blog')
-                                else
-                                    li
-                                        a(href='http://volunteer.helpific.com/', title="Blogspot", target='_blank')= t('nav.blog')
-
                                 if user
                                     li.dropdown
                                         a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false')
@@ -139,15 +151,6 @@ html(lang=lang, ng-app='hlpfc')
                                 else
                                     li
                                         a(href='signin')= t('nav.sign-in')
-                                    li.dropdown
-                                        a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false')
-                                            = t('locales.' + lang.toLowerCase())
-                                            | &nbsp;
-                                            span.caret
-                                        ul.dropdown-menu
-                                            each l in locales
-                                                li
-                                                    a(href='/' + l + path.substring(3))= t('locales.' + l)
                 block title
                     #title
                         .container
