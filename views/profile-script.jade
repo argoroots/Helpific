@@ -96,6 +96,8 @@ script.
             input.val(data.value)
             input.data('id', data.id)
             input.data('value', data.value)
-            location.href = '/' + data.value + '#{ path.substring(3) }'
+            if(input.attr('id') === 'language'){
+                location.href = '/' + (data.value ? data.value : 'en') + '#{ path.substring(3) }'
+            }
         }).fail(console.log)
     })
