@@ -4,6 +4,22 @@ var router = require('express').Router()
 var entu   = require('../helpers/entu')
 var core_api = require('../helpers/core-api')
 
+function commonCountries() {
+    return ['Estonia', 'United Kingdom', 'United States']
+}
+
+
+function notCommonCountries(arrayOfCountries) {
+    var commonCountries = commonCountries()
+    commonCountries.forEach(function(entity){
+        var index = arrayOfCountries.indexOf(entity)
+        if (index > -1) {
+            commonCountries.splice(index, 1)
+        }
+    })
+
+    return commonCountries
+}
 
 // Show user own profile
 router.get('/', function(req, res, next) {
