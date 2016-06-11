@@ -29,6 +29,26 @@ exports.configure = function(config) {
 }
 
 
+var getLanguageToShow = function (bestLocale, cookieLanguage, userLanguage, pathLanguage, ip) {
+    log.debug('bestLocale = ' + bestLocale + " cookieLanguage = " + cookieLanguage +
+        " userLanguage = " + userLanguage + " pathLanguage = " + pathLanguage + " ip = " + ip)
+
+    var a = null
+
+    if(i18nConfig.locales.indexOf(userLanguage) !== -1) {
+        log.debug('Selected language is userLanguage = ' + userLanguage)
+        a = userLanguage
+    } else if (i18nConfig.locales.indexOf(cookieLanguage) !== -1) {
+        log.debug('Selected language is cookieLanguage = ' + cookieLanguage)
+        a = cookieLanguage
+    } else if (i18nConfig.locales.indexOf(pathLanguage) !== -1) {
+        log.debug('Selected language is pathLanguage = ' + pathLanguage)
+        a = pathLanguage
+    }
+
+    return a
+};
+
 
 exports.init = function(req, res, next) {
 
@@ -39,27 +59,33 @@ exports.init = function(req, res, next) {
         "Our default is: " + locale.Locale["default"] + "\n" +
         "The best match is: " + bestLocale + "\n")
 
-    if(req.path === '/') {
-        if(op.get(res, 'locals.user.lang')) {
-            return res.redirect('/' + op.get(res, 'locals.user.lang'))
-        } else {
-            request.get({url: 'https://geoip.entu.eu/json/' + req.ip, strictSSL: true, json: true, timeout: 1000}, function(error, response, body) {
-                var path = op.get(i18nConfig, ['countries', op.get(body, 'country_code') ? op.get(body, 'country_code').toLowerCase() : null]) || bestLocale
-                return res.redirect('/' + path)
-            })
-        }
-    } else if(i18nConfig.locales.indexOf(req.path.split('/')[1]) === -1) {
-        var path = req.path.split('/')
-        path[1] = op.get(res, 'locals.user.lang') ? op.get(res, 'locals.user.lang') : bestLocale
-        return res.redirect(path.join('/'))
-    } else {
-        res.locals.lang = i18nConfig.lang = req.path.split('/')[1]
-        res.locals.locales = i18nConfig.locales
-        res.locals.t = translate
-        res.locals.tt = getText
+    var cookieLanguage = req.signedCookies.lang
+    var userLanguage = op.get(res, 'locals.user.lang');
+    var pathLanguage = req.path.split('/')[1];
+    var langToShow = getLanguageToShow(bestLocale, cookieLanguage, userLanguage, pathLanguage, req.ip);
 
-        next()
-    }
+    log.debug('langToShow = ' + langToShow)
+
+    request.get({url: 'https://geoip.entu.eu/json/' + req.ip, strictSSL: true, json: true, timeout: 1000}, function(error, response, body) {
+        var lang = langToShow || op.get(i18nConfig, ['countries', op.get(body, 'country_code') ? op.get(body, 'country_code').toLowerCase() : null]) || bestLocale
+        log.debug('Selected language is IP lang = ' + lang)
+
+
+        if(req.path === '/') {
+            return res.redirect('/' + lang)
+        } else if(i18nConfig.locales.indexOf(pathLanguage) === -1) {
+            var path = req.path.split('/')
+            path[1] = lang
+            return res.redirect(path.join('/'))
+        } else {
+            res.locals.lang = i18nConfig.lang = lang
+            res.locals.locales = i18nConfig.locales
+            res.locals.t = translate
+            res.locals.tt = getText
+
+            next()
+        }
+    })
 }
 
 

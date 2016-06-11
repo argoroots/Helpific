@@ -41,7 +41,9 @@ router.get('/done', function(req, res, next) {
             log.debug(JSON.stringify(profile))
             log.debug(url)
             res.clearCookie('redirect_url')
-            res.redirect('/' + profile.get('language.value', APP_DEFAULT_LOCALE) + url)
+            var language = profile.get('language.value', APP_DEFAULT_LOCALE);
+            res.cookie('lang', language, {signed:true, maxAge:1000*60*60*24*14})
+            res.redirect('/' + language + url)
         })
     })
 })

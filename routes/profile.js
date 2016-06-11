@@ -89,6 +89,7 @@ router.get('/', function(req, res, next) {
 router.post('/', function(req, res, next) {
     if(!res.authenticate()) return
 
+    log.debug('edit body = ' + JSON.stringify(req.body))
     entu.edit({
         id: res.locals.user.id,
         definition: 'person',
@@ -98,6 +99,9 @@ router.post('/', function(req, res, next) {
     }, function(error, response) {
         if(error) return next(error)
 
+        if(req.body.property === 'language') {
+            res.cookie('lang', req.body.value, {signed:true, maxAge:1000*60*60*24*14})
+        }
         res.send(response)
     })
 })
