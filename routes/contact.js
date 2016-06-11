@@ -4,7 +4,6 @@ var router = require('express').Router()
 var entu   = require('../helpers/entu')
 var core_api = require('../helpers/core-api')
 
-var commonCountries = ['Estonia', 'United Kingdom', 'United States']
 
 
 exports.notCommonCountries = notCommonCountries = function(arrayOfAllCountries, commonCountries) {
@@ -34,8 +33,8 @@ router.get('/', function(req, res, next) {
             if(countries){
                 res.render('contact', {
                     profile: profile,
-                    commonCountries: commonCountries,
-                    nonCommonCountries: notCommonCountries(countries, commonCountries)
+                    commonCountries: core_api.commonCountries,
+                    nonCommonCountries: core_api.notCommonCountries(countries, core_api.commonCountries)
                 })
             } else {
                 res.render('contact', {
