@@ -4,21 +4,20 @@ var router = require('express').Router()
 var entu   = require('../helpers/entu')
 var core_api = require('../helpers/core-api')
 
-function commonCountries() {
-    return ['Estonia', 'United Kingdom', 'United States']
-}
 
 
-function notCommonCountries(arrayOfCountries) {
-    var commonCountries = commonCountries()
+
+var commonCountries = ['Estonia', 'United Kingdom', 'United States']
+
+
+exports.notCommonCountries = notCommonCountries = function(arrayOfAllCountries, commonCountries) {
     commonCountries.forEach(function(entity){
-        var index = arrayOfCountries.indexOf(entity)
+        var index = arrayOfAllCountries.indexOf(entity)
         if (index > -1) {
-            commonCountries.splice(index, 1)
+            arrayOfAllCountries.splice(index, 1)
         }
     })
-
-    return commonCountries
+    return arrayOfAllCountries
 }
 
 // Show user own profile
@@ -84,8 +83,18 @@ router.get('/', function(req, res, next) {
     function(err, profile) {
         if(err) return next(err)
 
-        res.render('profile', {
-            profile: profile
+        core_api.getCountries('countries', {}, function(error, countries){
+            if(countries){
+                res.render('profile', {
+                    profile: profile,
+                    commonCountries: commonCountries,
+                    nonCommonCountries: notCommonCountries(countries, commonCountries)
+                })
+            } else {
+                res.render('profile', {
+                    profile: profile
+                })
+            }
         })
     })
 })

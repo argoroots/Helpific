@@ -413,7 +413,7 @@ getUsers = function(params, callback) {
 }
 
 
-getCountries = function(repository, params, callback) {
+exports.getCountries = getCountries = function(repository, params, callback) {
 
     var headers = {}
     var qs = {}
@@ -434,10 +434,10 @@ getCountries = function(repository, params, callback) {
         log.debug('------------- getCountries Body ' + body._embedded)
         var entities = []
         body._embedded[repository].forEach(function(entry) {
-            entities.push(entry)
+            entities.push(entry.name)
         });
 
-        extracted(entities, params, callback);
+        callback(null, entities)
     })
 }
 
