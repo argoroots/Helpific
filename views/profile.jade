@@ -3,10 +3,6 @@ extends layout
 block vars
     - title = t('pages.profile.title')
 
-block head
-    link(rel='stylesheet', type='text/css', href='https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css')
-    script(src='https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js')
-
 block content
     .container(ng-controller='profileCtrl')
         .row
@@ -76,7 +72,7 @@ block content
                     p= t('pages.profile.location-text')
 
                     .form-group
-                        label.control-label(ng-class='{ "active": p.coutry.edit }', for='country')= t('pages.profile.country')
+                        label.control-label(ng-class='{ "active": p.country.edit }', for='country')= t('pages.profile.country')
                         select#country.form-control(data-value=profile.get('country.value'),
                         data-id=profile.get('country.id'), ng-focus='p.country.edit = true', ng-blur='p.country.edit = false', ng-required='true', required)
                             if !profile.get('country.value')
@@ -145,8 +141,6 @@ block content
                         input#about-me-video.form-control(type='text', placeholder=t('pages.profile.video-ph'),
                         value=profile.get('about-me-video.value'), data-value=profile.get('about-me-video.value'),
                         data-id=profile.get('about-me-video.id'), ng-focus='p.about_video.edit = true', ng-blur='p.about_video.edit = false')
-                        p.text-right
-                            small!= t('pages.profile.video-info')
 
 
 
