@@ -35,15 +35,15 @@ var getLanguageToShow = function (bestLocale, cookieLanguage, userLanguage, path
 
     var a = null
 
-    if(i18nConfig.locales.indexOf(userLanguage) !== -1) {
+    if (i18nConfig.locales.indexOf(pathLanguage) !== -1) {
+        log.debug('Selected language is pathLanguage = ' + pathLanguage)
+        a = pathLanguage
+    } else if(i18nConfig.locales.indexOf(userLanguage) !== -1) {
         log.debug('Selected language is userLanguage = ' + userLanguage)
         a = userLanguage
     } else if (i18nConfig.locales.indexOf(cookieLanguage) !== -1) {
         log.debug('Selected language is cookieLanguage = ' + cookieLanguage)
         a = cookieLanguage
-    } else if (i18nConfig.locales.indexOf(pathLanguage) !== -1) {
-        log.debug('Selected language is pathLanguage = ' + pathLanguage)
-        a = pathLanguage
     }
 
     return a
