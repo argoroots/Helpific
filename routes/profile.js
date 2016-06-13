@@ -4,22 +4,6 @@ var router = require('express').Router()
 var entu   = require('../helpers/entu')
 var core_api = require('../helpers/core-api')
 
-
-
-
-var commonCountries = ['Estonia', 'United Kingdom', 'United States']
-
-
-exports.notCommonCountries = notCommonCountries = function(arrayOfAllCountries, commonCountries) {
-    commonCountries.forEach(function(entity){
-        var index = arrayOfAllCountries.indexOf(entity)
-        if (index > -1) {
-            arrayOfAllCountries.splice(index, 1)
-        }
-    })
-    return arrayOfAllCountries
-}
-
 // Show user own profile
 router.get('/', function(req, res, next) {
     if(!res.authenticate()) return
@@ -87,8 +71,8 @@ router.get('/', function(req, res, next) {
             if(countries){
                 res.render('profile', {
                     profile: profile,
-                    commonCountries: commonCountries,
-                    nonCommonCountries: notCommonCountries(countries, commonCountries)
+                    commonCountries: core_api.commonCountries,
+                    nonCommonCountries: core_api.notCommonCountries(countries, core_api.commonCountries)
                 })
             } else {
                 res.render('profile', {
@@ -105,6 +89,7 @@ router.get('/', function(req, res, next) {
 router.post('/', function(req, res, next) {
     if(!res.authenticate()) return
 
+    log.debug('edit body = ' + JSON.stringify(req.body))
     entu.edit({
         id: res.locals.user.id,
         definition: 'person',
@@ -114,6 +99,9 @@ router.post('/', function(req, res, next) {
     }, function(error, response) {
         if(error) return next(error)
 
+        if(req.body.property === 'language') {
+            res.cookie('lang', req.body.value, {signed:true, maxAge:1000*60*60*24*14})
+        }
         res.send(response)
     })
 })

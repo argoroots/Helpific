@@ -1,40 +1,21 @@
 script.
-    var md = {}
-    $('textarea').each(function () {
-        var input = $(this)
-        var id = input.attr('id')
-        md[id] = new SimpleMDE({
-            element: document.getElementById(id),
-            status: false,
-            spellChecker: false
-        })
-        md[id].render()
-        md[id].codemirror.on('focus', function () {
-            $("label[for='" + id + "']").addClass('active')
-            $('.CodeMirror').addClass('CodeMirror-focus')
-        })
-        md[id].codemirror.on('blur', function () {
-            $("label[for='" + id + "']").removeClass('active')
-            $('.CodeMirror').removeClass('CodeMirror-focus')
-            var value = md[id].value()
-            if (input.data('value') != value) {
-                var postdata = {
-                    property: input.attr('id'),
-                    id: input.data('id'),
-                    value: value
-                }
-                $.post('', postdata, function (data) {
-                    input.val(data.value)
-                    input.data('id', data.id)
-                    input.data('value', data.value)
-                }).fail(console.log)
-            }
-        })
-    })
     $(window).load(function(){
         $("input").each(function () {
             var input = $(this)
             var label = $('label[for="'+$(this).attr('id')+'"]');
+
+            input.removeClass('border-red-important')
+            label.removeClass('color-red')
+            if (input.attr('required') && input.val() == '') {
+                input.addClass('border-red-important')
+                label.addClass('color-red')
+            }
+        });
+
+
+        $("select").each(function () {
+            var input = $(this)
+            var label = $('label[for="' + $(this).attr('id') + '"]');
 
             input.removeClass('border-red-important')
             label.removeClass('color-red')
@@ -71,7 +52,7 @@ script.
         }
     })
     $('input[type="checkbox"]').change(function () {
-        input = $(this)
+        var input = $(this)
         if (input.data('value') != input.is(':checked')) {
             var postdata = {
                 property: input.attr('id'),
@@ -86,7 +67,17 @@ script.
         }
     })
     $('select').change(function () {
-        input = $(this)
+        var input = $(this)
+        var label = $('label[for="'+$(this).attr('id')+'"]');
+
+        input.removeClass('border-red-important')
+        label.removeClass('color-red')
+        if (input.attr('required') && input.val() == '') {
+            input.addClass('border-red-important')
+            label.addClass('color-red')
+            return
+        }
+
         var postdata = {
             property: input.attr('id'),
             id: input.data('id'),

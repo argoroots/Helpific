@@ -39,9 +39,15 @@ block content
                 .col-sm-8.col-sm-offset-2
                     .form-group
                         label.control-label(ng-class='{ "active": p.country.edit }', for='country')= ('*' + t('pages.profile.country'))
-                        input#country.form-control(type='text', placeholder=t('pages.profile.country-ph'),
-                        value=profile.get('country.value'), data-value=profile.get('country.value'),
+                        select#country.form-control(data-value=profile.get('country.value'),
                         data-id=profile.get('country.id'), ng-focus='p.country.edit = true', ng-blur='p.country.edit = false', ng-required='true', required)
+                            if !profile.get('country.value')
+                                option()
+                            each l in commonCountries
+                                option(selected=profile.get('country.value') == l, value=l)= l
+                            optgroup(label='-----------')
+                            each l in nonCommonCountries
+                                option(selected=profile.get('country.value') == l, value=l)= l
 
             .row.spacer
 

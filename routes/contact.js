@@ -2,8 +2,19 @@ var async  = require('async')
 var router = require('express').Router()
 
 var entu   = require('../helpers/entu')
+var core_api = require('../helpers/core-api')
 
 
+
+exports.notCommonCountries = notCommonCountries = function(arrayOfAllCountries, commonCountries) {
+    commonCountries.forEach(function(entity){
+        var index = arrayOfAllCountries.indexOf(entity)
+        if (index > -1) {
+            arrayOfAllCountries.splice(index, 1)
+        }
+    })
+    return arrayOfAllCountries
+}
 
 // Show user own profile
 router.get('/', function(req, res, next) {
@@ -17,9 +28,19 @@ router.get('/', function(req, res, next) {
         id: res.locals.user.id,
         auth_id: res.locals.user.id,
         auth_token: res.locals.user.token
-    }, function(error, result){
-        res.render('contact', {
-            profile: result
+    }, function(error, profile){
+        core_api.getCountries('countries', {}, function(error, countries){
+            if(countries){
+                res.render('contact', {
+                    profile: profile,
+                    commonCountries: core_api.commonCountries,
+                    nonCommonCountries: core_api.notCommonCountries(countries, core_api.commonCountries)
+                })
+            } else {
+                res.render('contact', {
+                    profile: profile
+                })
+            }
         })
     })
 

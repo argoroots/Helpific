@@ -12,6 +12,19 @@ var defaultTimeout = 120000
 
 exports.active = true
 
+exports.commonCountries = ['Estonia', 'Finland', 'United Kingdom', 'United States']
+
+
+exports.notCommonCountries = notCommonCountries = function(arrayOfAllCountries, commonCountries) {
+    commonCountries.forEach(function(entity){
+        var index = arrayOfAllCountries.indexOf(entity)
+        if (index > -1) {
+            arrayOfAllCountries.splice(index, 1)
+        }
+    })
+    return arrayOfAllCountries
+}
+
 
 function extracted(entities, params, callback) {
     var result = []
